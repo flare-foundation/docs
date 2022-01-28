@@ -14,11 +14,17 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       permalink: True
+  - pymdownx.arithmatex:
+      generic: true
+extra_javascript:
+  - assets/javascript/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 nav:
   - index.md
   - Technology:
-    - technology/validators.md
     - technology/state-connector.md
+    - technology/validators.md
   - Networks:
     - networks/songbird.md
     - networks/coston-testnet.md

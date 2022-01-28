@@ -45,15 +45,13 @@ You can access Songbird by using your Trezor T with the [MetaMask browser extens
 7. Follow the on screen instructions to export your public key
 8. Select your Account and click Unlock
 
-{% hint style="info" %}
-Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
-{% endhint %}
+!!! info
+    Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
 
 You will see your SGB balance on the overview. To receive SGB, copy your account address and share it with the sender. To send SGB, click Send and enter the recipient address, enter the desired amount and click Next. Follow the on screen instructions to confirm or reject the transaction on your Trezor device.
 
-{% hint style="warning" %}
-Always review all transaction details on your Trezor device before confirming any transaction!
-{% endhint %}
+!!! warning
+    Always review all transaction details on your Trezor device before confirming any transaction!
 
 ## Wrap and Delegate
 

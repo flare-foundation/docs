@@ -24,28 +24,27 @@ You can access Songbird by adding a custom network to the MetaMask browser exten
 2. Unlock your MetaMask wallet with your password
 3. Click on Custom RPC in the network dropdown menu
 
-    a) Enter network name: **Songbird**
+    a) Enter network name: ``Songbird``
 
-    b) Enter RPC URL: **https://songbird.towolabs.com/rpc**
+    b) Enter RPC URL: ``https://songbird.towolabs.com/rpc``
 
-    c) Enter chain ID: **19**
+    c) Enter chain ID: ``19``
 
-    d) Enter symbol: **SGB**
+    d) Enter symbol: ``SGB``
 
-    e) Enter block explorer URL: **https://songbird-explorer.flare.network**
+    e) Enter block explorer URL: ``https://songbird-explorer.flare.network``
 
     f) Click Save
+
 4. Select Songbird in the network dropdown menu
 
-{% hint style="info" %}
-Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
-{% endhint %}
+!!! info
+    Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
 
 You should now be able to see your Songbird (SGB) balance on the overview. To receive SGB, copy your account address and share it with the sender. To send SGB, click Send and enter the recipient address, enter the desired amount and click Next.
 
-{% hint style="warning" %}
-Always review all transaction details in MetaMask before confirming any transaction!
-{% endhint %}
+!!! warning
+    Always review all transaction details in MetaMask before confirming any transaction!
 
 ## Wrap and Delegate
 

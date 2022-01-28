@@ -2,7 +2,7 @@
 
 Flare leverages a 'merge-mining' approach for its block production where miners of existing blockchains have the opportunity to produce blocks on Flare in parallel to their mining responsibility on their host chain, earning mining rewards on Flare for doing so.
 
-{% embed url="https://twitter.com/Santiag78758327/status/1365119557627691011?s=20" %}
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">This is immensely important, the first time to my knowledge that a set of validators will represent the supra-nation states that are crypto / blockchain communities. Not a corporation, not a mining pool, or exchange, entire communities. Decentralization squared! <a href="https://t.co/mneXQ4PCUA">https://t.co/mneXQ4PCUA</a></p>&mdash; Santiago Velez (@Santiag78758327) <a href="https://twitter.com/Santiag78758327/status/1365119557627691011?ref_src=twsrc%5Etfw">February 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 The key design decisions of this mechanism are:
 
@@ -60,7 +60,7 @@ Below is an example Flare consensus sampling probability distribution:
 
 ```
 
-The probability of any particular validator $$V$$ in the above list being sampled during consensus is then:
+The probability of any particular validator $V$ in the above list being sampled during consensus is then:
 
 $$
 \frac{\texttt{weighting}_V}{\sum{\texttt{weighting}}}

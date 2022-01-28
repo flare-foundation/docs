@@ -18,7 +18,7 @@ To use your Ledger device with Songbird (SGB), first make sure that you have:
 6. Installed the latest version of [Google Chrome](https://www.google.com/chrome/)
 7. Installed the [MetaMask browser extension](https://metamask.io/download.html) **version 10.5.0 or later**
 
-### Install **the Songbird App**
+### Install the Songbird App
 
 After meeting the requirements, you can install the Songbird app by following these steps:
 
@@ -30,16 +30,15 @@ After meeting the requirements, you can install the Songbird app by following th
 6. Your Ledger device will display Processing…
 7. The app installation is complete
 
-{% hint style="info" %}
-Both Ethereum and Songbird Ledger apps can be used to sign transactions for the Songbird network.
-{% endhint %}
+!!! info
+    Both Ethereum and Songbird Ledger apps can be used to sign transactions for the Songbird network.
 
 ### Use Ledger Device with MetaMask
 
 You can access Songbird by using your Ledger device with the [MetaMask browser extension](https://metamask.io/download.html).
 
 1. Open the MetaMask browser extension and login
-2.  Click on Custom RPC in the networks dropdown
+2. Click on Custom RPC in the networks dropdown
 
     a) Enter network name: **Songbird**
 
@@ -61,15 +60,13 @@ You can access Songbird by using your Ledger device with the [MetaMask browser e
 9. A pop up box will appear listing paired Human Interface Devices (HID). Highlight your Ledger S or Ledger X and click Connect
 10. Select your Account and click Unlock
 
-{% hint style="success" %}
-Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
-{% endhint %}
+!!! info
+    Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
 
 You will see your SGB balance on the overview. To receive SGB, copy your account address and share it with the sender. To send SGB, click Send and enter the recipient address, enter the desired amount and click Next. If prompted, allow MetaMask to open Ledger Live and open the device bridge. Follow the on screen instructions to confirm or reject the transaction on your Ledger device.
 
-{% hint style="warning" %}
-Always review all transaction details on your Ledger device before confirming any transaction!
-{% endhint %}
+!!! warning
+    Always review all transaction details on your Ledger device before confirming any transaction!
 
 ## Wrap and Delegate
 
