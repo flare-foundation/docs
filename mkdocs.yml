@@ -1,6 +1,7 @@
 site_name: Flare Network Technical Documentation
 theme:
   name: material
+  custom_dir: docs/assets/overrides
   palette:
     scheme: default
   logo: assets/logo.png
@@ -16,10 +17,23 @@ markdown_extensions:
       permalink: True
   - pymdownx.arithmatex:
       generic: true
+extra_css:
+  - assets/stylesheets/extra.css
 extra_javascript:
   - assets/javascript/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra:
+  social:
+    - icon: fontawesome/solid/home
+      link: https://flare.xyz
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/FlareNetworks
+    - icon: fontawesome/brands/github
+      link: https://github.com/flare-foundation
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/XqNa7Rq
+copyright: Copyright &copy; 2022 Flare Networks
 nav:
   - index.md
   - Technology:
