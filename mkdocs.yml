@@ -1,3 +1,61 @@
-site_name: My Docs
+site_name: Flare Network Technical Documentation
 theme:
   name: material
+  palette:
+    scheme: default
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  features:
+    - navigation.sections
+    - navigation.top
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: True
+nav:
+  - index.md
+  - Technology:
+    - technology/validators.md
+    - technology/state-connector.md
+  - Networks:
+    - networks/songbird.md
+    - networks/coston-testnet.md
+  - Tutorials:
+    - Delegation:
+      - tutorials/delegation/README.md
+      - tutorials/delegation/delegation-in-detail.md
+      - tutorials/delegation-faq/README.md
+      - tutorials/delegation-faq/block-explorer-+-metamask.md
+    - Reward claiming:
+      - tutorials/reward-claiming/README.md
+      - tutorials/reward-claiming/reward-claiming-in-detail.md
+      - tutorials/reward-faq/README.md
+      - tutorials/reward-faq/block-explorer-+-metamask.md
+    - Wallets:
+      - tutorials/wallets/bifrost-wallet.md
+      - tutorials/wallets/dcent-wallet.md
+      - tutorials/wallets/how-to-access-flare-network-with-a-ledger-device.md
+      - tutorials/wallets/how-to-access-flare-network-with-a-trezor-device.md
+      - tutorials/wallets/how-to-access-flare-network-with-metamask.md
+      - tutorials/wallets/safepal-s1-wallet.md
+    - Developing on top of Flare:
+      - tutorials/developing-on-top-of-flare/README.md
+      - tutorials/developing-on-top-of-flare/important-links.md
+    - Price providers:
+      - Observation nodes:
+        - tutorials/price-provider/setting-up-an-observation-node/README.md
+        - tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md
+      - FTSO:
+        - tutorials/price-provider/ftso-price-provider/README.md
+        - tutorials/price-provider/ftso-price-provider/price-provider-faq.md
+        - tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md
+        - tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md
+      - Troubleshooting:
+        - tutorials/price-provider/troubleshooting/price-provider.md
+        - tutorials/price-provider/troubleshooting/observation-node.md
+      - tutorials/price-provider/whitelisting.md
+    - Block Explorers:
+      - tutorials/explorer/songbird-explorer.md
+      - tutorials/explorer/coston-explorer.md

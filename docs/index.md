@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Technical Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to the **Flare Network Technical Documentation** site!
 
-## Commands
+Here you can find descriptions about the [Technology](broken-reference) and [Tutorials](broken-reference) to get you started.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+!!! warning
 
-## Project layout
+    These pages are a **Work In Progress**.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    Join the Flare community on [Discord](https://discord.gg/XqNa7Rq) if there is anything you cannot find here.
