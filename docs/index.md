@@ -1,8 +1,8 @@
-# Technical Documentation
+# Welcome
 
 Welcome to the **Flare Network Technical Documentation** site!
 
-Here you can find descriptions about the [Technology](broken-reference) and [Tutorials](broken-reference) to get you started.
+Use the navigation menu to explore the Technology or Tutorial pages.
 
 !!! warning
 
