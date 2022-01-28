@@ -1,4 +1,4 @@
-site_name: Flare Network Technical Documentation
+site_name: Flare Technical Documentation
 theme:
   name: material
   custom_dir: docs/assets/overrides
