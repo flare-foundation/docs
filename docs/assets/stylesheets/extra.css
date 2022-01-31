@@ -1,3 +1,9 @@
+/* Define Flare's colors */
+:root2 {
+    --md-primary-fg-color: #b35160;
+    --md-accent-fg-color: #0000FF;
+}
+
 /* Restore admonition text size */
 .md-typeset .admonition {
     font-size: initial;

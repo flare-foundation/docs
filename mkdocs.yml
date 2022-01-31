@@ -3,21 +3,28 @@ theme:
   name: material
   custom_dir: docs/assets/overrides
   palette:
-    scheme: default
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   logo: assets/logo.png
   favicon: assets/favicon.png
   features:
     - navigation.sections
     - navigation.top
 markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - toc:
-      permalink: True
-  - pymdownx.arithmatex:
+  - admonition                  # Info boxes (in different colors)
+  - pymdownx.details            # "
+  - pymdownx.superfences        # "
+  - toc:                        # TOC control
+      permalink: True           # Add permalinks to headers
+  - pymdownx.arithmatex:        # Math blocks
       generic: true
-  - mdx_truly_sane_lists
+  - mdx_truly_sane_lists        # 2-space indented nested lists
 extra_css:
   - assets/stylesheets/extra.css
 extra_javascript:
