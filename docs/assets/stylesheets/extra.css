@@ -8,3 +8,8 @@
 .md-typeset .admonition {
     font-size: initial;
 }
+
+/* Hide the GitHub link at the top, it's not that interesting */
+.md-header__source {
+    visibility: hidden;
+}

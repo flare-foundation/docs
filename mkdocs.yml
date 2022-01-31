@@ -25,6 +25,9 @@ markdown_extensions:
   - pymdownx.arithmatex:        # Math blocks
       generic: true
   - mdx_truly_sane_lists        # 2-space indented nested lists
+plugins:
+  - search
+  - git-revision-date
 extra_css:
   - assets/stylesheets/extra.css
 extra_javascript:
@@ -42,6 +45,8 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/XqNa7Rq
 copyright: Copyright &copy; 2022 Flare Networks
+repo_url: https://github.com/segfaultxavi/flare-docs-test
+edit_uri: edit/main/docs/
 nav:
   - index.md
   - Technology:
