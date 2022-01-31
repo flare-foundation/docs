@@ -53,7 +53,7 @@ A Flare node will only pass a State Connector vote if both the incentivised set 
   1. The Flare node will automatically create a backup of the blockchain state at the last point that it will have in common with the incentivised set.
   2. The Flare node will then proceed along the branch that it locally believes is correct.
 * Else if the incentivised set fails to pass a vote, then:
-  1. &#x20;No branching occurs.
+  1. No branching occurs.
 
 ## Scalability
 
@@ -76,4 +76,3 @@ The gas usage of attestation providers is always constant, despite the number of
 ## New Event-Type Integrations
 
 New real-world event-type integrations are introduced to the State Connector via acceptance by the incentivised attestation providers, and without requiring any changes to the core voting or branching protocols described above. This enables rapid deployment of new use-cases without any validator-level code changes.
-

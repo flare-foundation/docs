@@ -10,7 +10,7 @@ The rewards are accumulated in the `FtsoRewardManager` contract and expire after
 
 The reward system distributes a large part of the yearly Songbird inflation to participants of the FTSO system. This could be seen as the mining process for the Songbird chain. During the first year of Songbird's existence, most of the 10% yearly inflation will be distributed to participants of the FTSO system. The distribution works such that the yearly inflation is divided into daily portions. That daily portion is split between all price epochs happening that day.
 
-The FTSO system includes price feeds for $ prices of a few assets, Ex: BTC/$, XRP/$ etc. Per price epoch one FTSO price feed is chosen to  be rewarded. The reward is split between the addresses which submitted the most accurate prices.
+The FTSO system includes price feeds for USD prices of a few assets, Ex: BTC/USD, XRP/USD etc. Per price epoch one FTSO price feed is chosen to  be rewarded. The reward is split between the addresses which submitted the most accurate prices.
 
 The reward flow:
 

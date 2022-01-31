@@ -4,8 +4,6 @@ description: How to connect your Trezor T hardware wallet to the Songbird networ
 
 # Trezor T
 
-
-
 Hardware wallets are considered among the more secure options to manage crypto assets and store private keys. Your crypto assets can remain safe, even if your computer or phone is compromised, as long as you keep your recovery phrase safe and review all transaction details before confirming transactions.
 
 ## Getting Started
@@ -25,19 +23,20 @@ To use your Trezor device with Songbird (SGB), first make sure that you have:
 You can access Songbird by using your Trezor T with the [MetaMask browser extension](https://metamask.io/download.html).
 
 1. Open the MetaMask browser extension in your browser
-2.  Click on Custom RPC in the networks dropdown
+2. Click on Custom RPC in the networks dropdown
 
-    a) Enter network name: **Songbird**
+    a) Enter network name: ``Songbird``
 
-    b) Enter RPC URL: **https://songbird.towolabs.com/rpc**
+    b) Enter RPC URL: ``https://songbird.towolabs.com/rpc``
 
-    c) Enter chain ID: **19**
+    c) Enter chain ID: ``19``
 
-    d) Enter symbol: **SGB**
+    d) Enter symbol: ``SGB``
 
-    e) Enter block explorer URL: **https://songbird-explorer.flare.network**
+    e) Enter block explorer URL: ``https://songbird-explorer.flare.network``
 
     f) Click Save
+
 3. Select Songbird in the networks dropdown
 4. Connect and unlock your Trezor device
 5. Click your account image and Connect Hardware Wallet
@@ -46,7 +45,7 @@ You can access Songbird by using your Trezor T with the [MetaMask browser extens
 8. Select your Account and click Unlock
 
 !!! info
-    Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
+    Please note that Towo Labs RPC node available at: [songbird.towolabs.com/rpc](https://songbird.towolabs.com/rpc) is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
 
 You will see your SGB balance on the overview. To receive SGB, copy your account address and share it with the sender. To send SGB, click Send and enter the recipient address, enter the desired amount and click Next. Follow the on screen instructions to confirm or reject the transaction on your Trezor device.
 

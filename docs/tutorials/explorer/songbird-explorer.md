@@ -11,4 +11,3 @@ API access to the Songbird Explorer is enabled for non-commercial use only: [API
 Please also see here for API examples available: [API Examples](https://songbird-explorer.flare.network/api-docs)
 
 Please make sure to follow the ERC-1155 standard to display NFTs correctly in the explorer, please see this specification, with extra focus on the metadata section: [ERC-1155 Metadata](https://eips.ethereum.org/EIPS/eip-1155#metadata)
-

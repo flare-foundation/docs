@@ -8,11 +8,11 @@ When delegating your vote power, you can earn rewards, but even more important o
 
 Yes. The tokens are never locked and can be used for any purpose: send, deposit etc.
 
-### **Do I lose ownership of my tokens when delegating my vote power?**
+### Do I lose ownership of my tokens when delegating my vote power?
 
 No, delegation never requires giving up ownership of your tokens.
 
-### What is the first step for delegating my **** vote power?
+### What is the first step for delegating my vote power?
 
 The first step is to wrap your SGB and create WSGB. WSGB has 1:1 conversion to SGB, it is a fundamental step for enabling a user to delegate his vote power.
 
@@ -49,7 +49,7 @@ For an account with lower SGB balance (\~ 500) it is better to delegate to 1 pri
 This depends on a few factors:
 
 * The delegated balance.
-* The price provider reward rate. 
+* The price provider reward rate.
 * The price provider fee. How much fee does the price provider take from addresses delegating to it.
 * The amount of vote power already delegated to this price provider.
 

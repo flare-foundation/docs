@@ -6,11 +6,13 @@ description: FAQ for users of the block explorer and metamask combination
 
 ### Where is the reward data found?
 
-All reward data can be find the FTSO Reward Manager here [ https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract). All claiming can be done here [https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract.](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract.)
+All reward data can be found in the [FTSO Reward Manager](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract).
+
+All claiming can be done here [https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract.](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract.)
 
 ### For which reward epochs can I claim rewards?
 
-In FTSO reward manager here[ ](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract)see API no. 11 `getEpochsWithUnclaimedRewards(beneficiary_address)`
+In the [FTSO reward manager](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract) see API no. 11 `getEpochsWithUnclaimedRewards(beneficiary_address)`
 
 ### What is the claim API?
 

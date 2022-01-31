@@ -39,7 +39,7 @@ You can access Songbird by adding a custom network to the MetaMask browser exten
 4. Select Songbird in the network dropdown menu
 
 !!! info
-    Please note that Towo Labs RPC node available at: https://songbird.towolabs.com/rpc is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
+    Please note that Towo Labs RPC node available at: [songbird.towolabs.com/rpc](https://songbird.towolabs.com/rpc) is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
 
 You should now be able to see your Songbird (SGB) balance on the overview. To receive SGB, copy your account address and share it with the sender. To send SGB, click Send and enter the recipient address, enter the desired amount and click Next.
 

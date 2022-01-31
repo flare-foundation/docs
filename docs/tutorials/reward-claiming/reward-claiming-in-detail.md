@@ -12,12 +12,12 @@ Reward claiming process depends on vote power delegation mode. The default deleg
 
 The user that has delegated vote power by percentage can claim rewards by calling the function `claimReward` with the following signature.
 
-```
+``` javascript
 function claimReward(
     address payable _recipient,
     uint256[] memory _rewardEpochs
 ) external returns (
-  	uint256 _rewardAmount
+    uint256 _rewardAmount
 )
 ```
 
@@ -31,7 +31,7 @@ Note that this function throws an exception if it is called by a user (`msg.send
 
 To specify an appropriate input array `_rewardEpochs`, the function `getEpochsWithUnclaimedRewards` can be used. It iterates over the past reward epochs that still enable reward claiming and gathers the ids of those, for which the reward allocated to `_beneficiary` has not yet been (fully) claimed.
 
-```
+``` javascript
 function getEpochsWithUnclaimedRewards(
     address _beneficiary
 ) external view override returns (
@@ -47,7 +47,7 @@ A user that is delegating by percentage can also use the function `claimRewardFr
 
 A user delegating vote power by amount can claim rewards by calling the function `claimRewardFromDataProviders` with the following signature.
 
-```
+``` javascript
 function claimRewardFromDataProviders(
     address payable _recipient,
     uint256[] memory _rewardEpochs,
@@ -68,7 +68,7 @@ The main difference in comparison to `claimReward` is that `claimRewardFromDataP
 
 To prepare the input array `_rewardEpochs`, a user that is delegating by amount can not use the function `getEpochsWithUnclaimedRewards` (a request fails with exception). Instead, the function `getEpochsWithClaimableRewards` can be called to get the information on the reward epochs for which the reward is still claimable, and `getStateOfRewardsFromDataProvider` to obtain details about the state of rewards in a specific (claimable) reward epoch. Below is a code snippet describing this procedure. The functions and their parameters are in more detail explained in the subsequent sections.
 
-```
+``` javascript
 (startEpochId, endEpochId) = getEpochsWithUnclaimedRewards();
 for (uint256 epochId = startEpochId; epochId <= endEpochId; epochId++) {
     (...) = getStateOfRewardsFromDataProviders(..., epochId, ...);
@@ -79,12 +79,12 @@ for (uint256 epochId = startEpochId; epochId <= endEpochId; epochId++) {
 
 For every call of `claimReward` or `claimRewardFromDataProviders` one or more events of the following type are issued. A specific event is associated with a single pair of price provider and reward epoch.
 
-```
+``` javascript
 event RewardClaimed(
     address indexed dataProvider,
     address indexed whoClaimed,
     address indexed sentTo,
-    uint256 rewardEpoch, 
+    uint256 rewardEpoch,
     uint256 amount
 )
 ```
@@ -101,7 +101,7 @@ Parameters:
 
 The reward can be claimed from the time the reward was allocated until the reward expiry epoch. The oldest and the newest reward epoch that allow reward claiming can be obtained by calling `getEpochsWithClaimableRewards` (these correspond to the return values `_startEpochId` and `_endEpochId`, respectively).
 
-```
+``` javascript
 function getEpochsWithClaimableRewards() external view returns  (
     uint256 _startEpochId,
     uint256 _endEpochId
@@ -110,7 +110,7 @@ function getEpochsWithClaimableRewards() external view returns  (
 
 The reward expiry epoch is also communicated through `RewardClaimsExpired` event.
 
-```
+``` javascript
 event RewardClaimsExpired(
     uint256 rewardEpochId
 )
@@ -139,7 +139,7 @@ Then `P` is entitled to the reward equal to `(SHARE * (1 - FP) * REWARD) + (FP *
 
 The reward amounts for a specific address can be checked by calling either `getStateOfRewards` or `getStateOfRewardsFromDataProviders`. The difference between these two functions is that in the first the array of price providers (to which the reward is initially allocated) is obtained based on delegation history, while in the second the array has to be specified as an input parameter. Note that `getStateOfRewards` can only be used for addresses that are declared to be delegating by percentage.
 
-```
+``` javascript
 function getStateOfRewards(
     address _beneficiary,
     uint256 _rewardEpoch
@@ -151,7 +151,7 @@ function getStateOfRewards(
 )
 ```
 
-```
+``` javascript
 function getStateOfRewardsFromDataProviders(
     address _beneficiary,
     uint256 _rewardEpoch,
@@ -180,7 +180,7 @@ Note that the amounts reported by these two methods are informational and can sl
 
 Price provider fee is determined by fee percentage. Current setting can be obtained by `getDataProviderCurrentFeePercentage`.
 
-```
+``` javascript
 function getDataProviderCurrentFeePercentage(
     address _dataProvider
 ) external view returns (
@@ -194,7 +194,7 @@ The value `_feePercentageBIPS` is given in basis points (BIPS), which is a perce
 
 The fee percentage is subject to changes. The changes made by price providers are time locked, meaning they are scheduled for some future time. Scheduled changes can be checked by calling `getDataProviderScheduledFeePercentageChanges`, which returns the fee percentages in future.
 
-```
+``` javascript
 function getDataProviderScheduledFeePercentageChanges(
     address _dataProvider
 ) external view returns (
@@ -212,4 +212,3 @@ Parameters:
 * `_fixed`: The positional array of boolean values indicating if the setting is fixed.
 
 If the scheduled fee percentage is not fixed, this means that it can still be updated by price provider over the course of the current reward epoch. After the current reward epoch passes, the setting becomes fixed.
-

@@ -8,7 +8,7 @@ Flare network is based on the Federated Byzantine Agreement (FBA) consensus algo
 
 Running an observation node is not mandatory. A price provider can utilize public interfaces, AKA public RPC nodes. Alas, running your own observation nodes provides a safer, faster and more robust connection, for submitting transactions and for reading events or other network data. Your own node for submitting transactions (`submitHashes`) enables sending those a few seconds later compared to public nodes. These few precious seconds can be used for getting more price data data before submitting your transaction.
 
-### **Setting up the node**
+### Setting up the node
 
 Set up a local instance of peering node to have a more stable connection. To set up a node follow the instructions provided on the [node-config](https://gitlab.com/flarenetwork/node-config) repo. Make sure to have enough disk space to allow for db resizes.
 
@@ -16,7 +16,7 @@ Set up a local instance of peering node to have a more stable connection. To set
 
 To set up the observation node, you need to whitelist your peering IP. Submit a whitelisting request [here](https://forms.gle/zHisUgitnSEHCGBb6). You will be notified about the whitelisting process via your submitted email. You can also check the status of whitelisting by running the command
 
-```
+``` bash
 curl -m 10 -sX POST --data '{ "jsonrpc":"2.0", "id":1, "method":"info.getNodeIP" }' -H 'content-type:application/json;' https://songbird.flare.network/ext/info
 ```
 
