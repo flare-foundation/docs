@@ -19,7 +19,7 @@ Uniquely, the State Connector can also handle any notional value represented by 
 
 There are three phases of the State Connector voting protocol, delineated based on the current timestamp on Flare, and overlapping such that multiple sets of requests for event proofs can be worked on in parallel.
 
-![The three phases of the State Connector voting protocol](/assets/3phases.png)
+![The three phases of the State Connector voting protocol](../assets/3phases.png)
 
 #### Request Phase
 
@@ -37,7 +37,7 @@ Finally in the next window of time, attestation providers _reveal_ their votes t
 
 The State Connector branching protocol protects Flare against incorrect interpretation of real-world events, _proactively_, such that there are never any rollbacks on the Flare blockchain state. Instead of having rollbacks, contention on state correctness is handled via automatic state branching into a correct and incorrect path. The security assumption is that if you as an independent node operator are following along with the correct real-world state, then you will always end up on the correct branch of the blockchain state.
 
-![The State Connector branching protocol](/assets/branchingProtocol.png)
+![The State Connector branching protocol](../assets/branchingProtocol.png)
 
 #### Incentivised Attestation Providers
 
@@ -61,7 +61,7 @@ Below are examples of design considerations in the State Connector that make it 
 
 #### Overlapped Voting Protocol
 
-![Overlapped voting protocol](/assets/3phasesOverlapping.png)
+![Overlapped voting protocol](../assets/3phasesOverlapping.png)
 
 Every window of time during the State Connector voting protocol is an opportunity to _request_ event proofs, meaning that while a new event is being requested, prior events can be voted on in both the commit and reveal phase. This multiplies the throughput of the state connector by a factor of three.
 

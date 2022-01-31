@@ -76,7 +76,7 @@ To recap, historical delegation APIs exist. For percentage delegations, each add
 
 ### Vote power block selection
 
-![Vote power block selection diagram](/assets/votepower diagram.svg)
+![Vote power block selection diagram](../../assets/votepower diagram.svg)
 
 The vote power of each price provider is cached and only recalculated at the start of each reward epoch. The selected vote power block (snap shot block) for a new epoch is selected randomly once the reward epoch starts\_.\_ It is selected randomly with uniform probability from the last quarter of mined blocks. This can **roughly** be approximated as taking the random block in the last quarter time-wise, but is **not necessarily correct**, as block mining density can change.
 
