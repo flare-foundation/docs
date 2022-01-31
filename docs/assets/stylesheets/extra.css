@@ -10,6 +10,7 @@
 }
 
 /* Hide the GitHub link at the top, it's not that interesting */
-.md-header__source {
-    visibility: hidden;
+.md-header__source,
+.md-nav__source {
+    display: none;
 }
