@@ -2,7 +2,7 @@
 
 ## Flare and EVM
 
-Songbird (later Flare) network runs the Etheruem EVM. Which means Etheruem contracts and tools can be used to develop on top of these chains. Both networks are layer 1 networks, and are running independent of main-net Ethereum. Check network documentation and whitepaper for more info.
+Songbird (later Flare) network runs the Ethereum EVM. Which means Ethereum contracts and tools can be used to develop on top of these chains. Both networks are layer 1 networks, and are running independent of main-net Ethereum. Check network documentation and whitepaper for more info.
 
 All existing tools and technologies available for Ethereum can be leveraged on Songbird network. The main infrastructure (FTSO, state connectors, fAssets) is written in Solidity using standard tools: ethers, web3, hardhat. State of the network can be observed using a block explorer, Metamask and a few other wallets [wallets](../wallets/ "mention").
 
@@ -20,7 +20,7 @@ Connection configuration for Songbird is described in [the Networks section](../
 
 ### Does Songbird support Ethereum-style contracts?
 
-Etheruem style contracts are supported by Songbird.
+Ethereum style contracts are supported by Songbird.
 
 ### Does Songbird support NFTs?
 
