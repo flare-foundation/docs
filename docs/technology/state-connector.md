@@ -37,7 +37,7 @@ Finally in the next window of time, attestation providers _reveal_ their votes t
 
 The State Connector branching protocol protects Flare against incorrect interpretation of real-world events, _proactively_, such that there are never any rollbacks on the Flare blockchain state. Instead of having rollbacks, contention on state correctness is handled via automatic state branching into a correct and incorrect path. The security assumption is that if you as an independent node operator are following along with the correct real-world state, then you will always end up on the correct branch of the blockchain state.
 
-![The State Connector branching protocol](/assets/branchingProtocol (1).png)
+![The State Connector branching protocol](/assets/branchingProtocol.png)
 
 #### Incentivised Attestation Providers
 
