@@ -1,4 +1,4 @@
 /* Restore admonition text size */
-.md-typeset .admonition.info {
+.md-typeset .admonition {
     font-size: initial;
 }
