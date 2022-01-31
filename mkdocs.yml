@@ -3,14 +3,7 @@ theme:
   name: material
   custom_dir: docs/assets/overrides
   palette:
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+    scheme: default
   logo: assets/logo.png
   favicon: assets/favicon.png
   features:
