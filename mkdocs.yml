@@ -7,8 +7,8 @@ theme:
   logo: assets/logo.png
   favicon: assets/favicon.png
   features:
-    - navigation.sections
-    - navigation.top
+    - navigation.sections       # Top-level pages are not docs but section titles
+    - navigation.top            # "Back to top" button appears upon upward scrolling
 markdown_extensions:
   - admonition                  # Info boxes (in different colors)
   - pymdownx.details            # "
@@ -19,8 +19,8 @@ markdown_extensions:
       generic: true
   - mdx_truly_sane_lists        # 2-space indented nested lists
 plugins:
-  - search
-  - git-revision-date
+  - search                      # Search box at the top
+  - git-revision-date           # Last edit timestamp at the bottom
 extra_css:
   - assets/stylesheets/extra.css
 extra_javascript:
