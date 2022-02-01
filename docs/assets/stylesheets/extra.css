@@ -1,7 +1,8 @@
 /* Define Flare's colors */
-:root {
+:root>* {
     --md-primary-fg-color: #363b66;
     --md-accent-fg-color: #b35160;
+    --md-footer-bg-color: var(--md-primary-fg-color);
 }
 
 /* Restore admonition text size */
