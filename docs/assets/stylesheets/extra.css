@@ -15,3 +15,9 @@
 .md-nav__source {
     display: none;
 }
+
+/* Underline links in the main text. Our primary color is too close
+ * to the regular text color and links are invisible. */
+.md-typeset a {
+    text-decoration: underline;
+}
