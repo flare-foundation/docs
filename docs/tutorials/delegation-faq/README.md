@@ -18,7 +18,7 @@ The first step is to wrap your SGB and create WSGB. WSGB has 1:1 conversion to S
 
 ### How do I wrap my SGB tokens?
 
-The actual wrapping will be done differently depending on the wallet you are using. See [wallets](../wallets/ "mention")section for more details.
+The actual wrapping will be done differently depending on the wallet you are using. See [wallets](../wallets/ "mention") section for more details.
 
 ### How much SGB should I wrap?
 
@@ -26,7 +26,7 @@ Note that gas can't be paid with wSGB. Always make sure not to wrap your full SG
 
 ### How do I delegate my WSGB vote power?
 
-wSGB. Delegation is done differently, depending on the wallet you use. See [wallets](../wallets/ "mention")section for more details.
+wSGB. Delegation is done differently, depending on the wallet you use. See [wallets](../wallets/ "mention") section for more details.
 
 ### How much vote power should I delegate?
 

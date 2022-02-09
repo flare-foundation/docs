@@ -39,7 +39,7 @@ You can access Songbird by adding a custom network to the MetaMask browser exten
 4. Select Songbird in the network dropdown menu
 
 !!! info
-    Please note that Towo Labs RPC node available at: [songbird.towolabs.com/rpc](https://songbird.towolabs.com/rpc) is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
+    Please note that Towo Labs RPC node available at: `https://songbird.towolabs.com/rpc` is only for individuals and **not for commercial use**. Companies and developers may contact Towo Labs to arrange dedicated access.
 
 You should now be able to see your Songbird (SGB) balance on the overview. To receive SGB, copy your account address and share it with the sender. To send SGB, click Send and enter the recipient address, enter the desired amount and click Next.
 
@@ -50,6 +50,6 @@ You should now be able to see your Songbird (SGB) balance on the overview. To re
 
 Once connected to the Songbird network, enter the address of the website or dapp you wish to use to wrap and delegate in the Metamask browser. A few of the data providers have developed dapps integrated with their websites that allow users to wrap, delegate and claim SGB rewards. Delegating using this method is not exclusive to one specific provider, as these dapps allow you to choose from a number of different providers.
 
-Examples of data providers that have developed dapps for wrapping and delegation are FTSO AU and Aureus Ox. Their dapps are available at [app.ftso.com.au](https://app.ftso.com.au/wrap) and [aureusox.com/dashboard](https://aureusox.com/dashboard)
+Examples of data providers that have developed dapps for wrapping and delegation are FTSO AU and Aureus Ox. Their dapps are available at [app.ftso.com.au](https://app.ftso.com.au/wrap) and [aureusox.com/dashboard](https://aureusox.com/dashboard).
 
-Other providers have their own websites and are developing similar dapps. See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso)
+Other providers have their own websites and are developing similar dapps. See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso).

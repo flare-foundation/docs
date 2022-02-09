@@ -18,6 +18,8 @@ markdown_extensions:
   - pymdownx.arithmatex:        # Math blocks
       generic: true
   - mdx_truly_sane_lists        # 2-space indented nested lists
+  - attr_list                   # { Annotations }
+  - md_in_html                  # Markdown inside HTML
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
