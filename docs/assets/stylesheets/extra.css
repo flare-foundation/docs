@@ -21,3 +21,14 @@
 .md-typeset a {
     text-decoration: underline;
 }
+
+/* Glossary */
+dt {
+    color: var(--md-primary-fg-color);
+    font-weight: bold;
+}
+
+dt:target {
+    background: var(--md-accent-fg-color--transparent);
+    border-radius: 4px;
+}

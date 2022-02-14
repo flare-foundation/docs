@@ -20,6 +20,7 @@ markdown_extensions:
   - mdx_truly_sane_lists        # 2-space indented nested lists
   - attr_list                   # { Annotations }
   - md_in_html                  # Markdown inside HTML
+  - def_list                    # Definition lists (Glossary)
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
@@ -46,6 +47,7 @@ nav:
   - index.md
   - Technology:
     - technology/state-connector.md
+    - technology/glossary.md
   - Networks:
     - networks/songbird.md
     - networks/coston-testnet.md
