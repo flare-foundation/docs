@@ -46,7 +46,6 @@ nav:
   - index.md
   - Technology:
     - technology/state-connector.md
-    - technology/validators.md
   - Networks:
     - networks/songbird.md
     - networks/coston-testnet.md
@@ -68,6 +67,7 @@ nav:
       - tutorials/wallets/how-to-access-flare-network-with-a-trezor-device.md
       - tutorials/wallets/how-to-access-flare-network-with-metamask.md
       - tutorials/wallets/safepal-s1-wallet.md
+      - tutorials/wallets/brave-wallet.md
     - Developing on top of Flare:
       - tutorials/developing-on-top-of-flare/README.md
       - tutorials/developing-on-top-of-flare/important-links.md

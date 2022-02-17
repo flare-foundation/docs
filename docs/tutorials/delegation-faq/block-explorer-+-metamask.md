@@ -8,7 +8,7 @@ Congratulations on taking this more technical approach, it will enable you to be
 
 ## How to find the address of my chosen price provider?
 
-In Flare metrics one can press on one chosen price provider and find the ‘songbird address’ which should look something like: `0xbf61db1cdb43d196309824473fa82e5b17581159`. When browsing such an address in the block explorer you should see that every few minutes it is submitting a transaction named: `SubmitPriceHashes` or `RevealPrices`.
+Google 'Flare metrics' and in that website, one can press on ones chosen price provider and find the 'songbird address' which should look something like: `0xbf61db1cdb43d196309824473fa82e5b17581159`. When browsing such an address in the block explorer you should see that every few minutes it is submitting a transaction named: `SubmitPriceHashes` or `RevealPrices`.
 
 ## Where can I find the delegation API
 

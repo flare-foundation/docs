@@ -55,8 +55,8 @@ You can access Songbird by using your Ledger device with the [MetaMask browser e
 3. Select Songbird in the networks dropdown
 4. Connect your Ledger device using USB
 5. Open the Songbird app on your Ledger device
-6. If Ledger Live is still running, you must now close it out on your computer
-7. In Advanced Settings ensure that the ‘Preferred Ledger Connection Type’ is set to “WebHID” in the drop-down menu (it should be the case by default)
+6. If Ledger Live is still running, you must now quit the app on your computer
+7. In Advanced Settings ensure that the ‘Preferred Ledger Connection Type’ is set to “WebHID” in the drop-down menu (it should be the case by default).
 8. Click your account image and Connect Hardware Wallet
 9. A pop up box will appear listing paired Human Interface Devices (HID). Highlight your Ledger S or Ledger X and click Connect
 10. Select your Account and click Unlock

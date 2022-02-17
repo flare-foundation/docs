@@ -15,8 +15,8 @@ The FTSO system includes price feeds for USD prices of a few assets, Ex: BTC/USD
 The reward flow:
 
 * Per price epoch all price feeds to an FTSO are being used to calculate a weighted median.
-* &#x20;The weighted median is the chosen price of this FTSO.
-* Following that, some percentage of the addresses on each side of the weighted median are chosen to be rewarded.
+* The weighted median is the chosen price of this FTSO (time series).
+* Next, a percentage of the addresses on each side of the weighted median are chosen to be rewarded.
 * Each address is rewarded according to its weight (vote power)
 * The reward data is sent to the `FtsoRewardManager` smart contract.
 * once the reward epoch is finalized. this reward can be claimed from the `FtsoRewardManager`.

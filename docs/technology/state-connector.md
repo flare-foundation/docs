@@ -4,16 +4,7 @@ description: Proving any real-world event to any contract on Flare
 
 # 🛰 State Connector
 
-The State Connector on Flare enables proving any real-world event to any contract on Flare, for example:
-
-* Any transaction from any blockchain
-* Bank transactions
-* KYC / AML information
-* The outcome of sporting events, etc.
-* The current mining power of any miner on any blockchain
-* Any existing and future API
-
-Uniquely, the State Connector can also handle any notional value represented by the events it proves. This property of the system is achieved by automated branching of the Flare Network state to correct event outcomes, without degrading the time-to-finality or throughput metrics of the network.
+The State Connector on Flare enables proving real-world events to any contract on Flare. Uniquely, the State Connector can also handle any notional value represented by the events it proves. This property of the system is achieved by automated branching of the Flare Network state to correct event outcomes, without degrading the time-to-finality or throughput metrics of the network.
 
 ## Voting Protocol
 
