@@ -4,7 +4,7 @@ Welcome to the **Flare Network Technical Documentation** site!
 
 Use the navigation menu to explore the Technology or Tutorial pages.
 
-!!! warning
+!!! note
 
     These pages are a **Work In Progress**.
 
