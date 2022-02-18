@@ -73,7 +73,7 @@ Quantum Resistance { #quantum_resistance }
 : The ability of a cryptographic algorithm (and therefore of a blockchain) to resist an attack from a theoretical quantum computer.
 
 Quorum { #quorum }
-: Number of participants on a consensus algorithm that must agree on a result for the whole network to accept that result. On a blockchain, once consensus is reached about a block, it is added to the ledger and the next block is processed.
+: Set of participants on a consensus algorithm that must agree on a result for the whole network to accept that result. On a blockchain, once consensus is reached about a block, it is added to the ledger and the next block is processed.
 
 Quorum Slice { #quorum_slice }
 : In FBA consensus each node has multiple lists of other nodes which it voluntarily decides to trust, forming its quorum slices. All nodes in a quorum slice agreeing on a result are enough to convince the node of that result. If the quorum slices are correctly built, global quorum emerges from these local quorum slices.
