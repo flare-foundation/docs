@@ -111,3 +111,5 @@ Turing-completeness { #turing-completeness }
 Validator { #validator }
 : A validator node is a machine connected to a blockchain network that verifies transactions and emits a vote. When there is a quorum among all validators regarding a given block of transactions, they are accepted into the blockchain.
 
+Wen flare { #wen_flare }
+: The war cry of all the impatient that would like to see the Flare network launch before it is fully tested. Pay no heed to them.
