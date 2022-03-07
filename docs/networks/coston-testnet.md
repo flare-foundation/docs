@@ -2,7 +2,7 @@
 
 Follow the links below to get started with the Coston testnet:
 
-* Chain ID: [16](https://github.com/ethereum-lists/chains/blob/master/\_data/chains/eip155-16.json)
+* Chain ID: [16](https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-16.json)
 * Asset Code: CFLR
 * RPC Endpoint: [https://coston-api.flare.network/ext/bc/C/rpc](https://coston-api.flare.network/ext/bc/C/rpc)
 * WebSocket Endpoint: [wss://coston-api.flare.network/ext/bc/C/ws](wss://coston-api.flare.network/ext/bc/C/ws)

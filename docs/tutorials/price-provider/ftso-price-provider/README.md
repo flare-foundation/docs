@@ -2,7 +2,7 @@
 
 ## Background
 
-Providing prices to the FTSO system makes you a part of a decentralized oracle system. FTSO price providers submit prices to on chain contracts deployed on the Songbird network. The main contracts a price provider will interact with are the _price Submitter_ and the _FTSO_ contracts. All the relevant contracts for the FTSO system are available on the smart contract repo, see the [important-links.md](../../developing-on-top-of-flare/important-links.md "mention") section. These contracts are deployed and verified on the [songbird explorer](https://songbird-explorer.flare.network).
+Providing prices to the FTSO system makes you a part of a decentralized oracle system. FTSO price providers submit prices to on chain contracts deployed on the Songbird network. The main contracts a price provider will interact with are the _price Submitter_ and the _FTSO_ contracts. All the relevant contracts for the FTSO system are available on the smart contract repo, see the [important-links.md](../../developing-on-top-of-flare/important-links.md) section. These contracts are deployed and verified on the [songbird explorer](https://songbird-explorer.flare.network).
 
 ## Perquisites
 

@@ -10,7 +10,7 @@ The `PriceSubmitter` contract is deployed at a fixed [address](https://songbird-
 
 ## Where can I browse the source code and documentation for contracts?
 
-All the important contracts are verified on the [blockscout](https://songbird-explorer.flare.network/blocks) explorer. The main smart contract repo is referenced here [important-links.md](../../developing-on-top-of-flare/important-links.md "mention").
+All the important contracts are verified on the [blockscout](https://songbird-explorer.flare.network/blocks) explorer. The main smart contract repo is referenced here [important-links.md](../../developing-on-top-of-flare/important-links.md).
 
 ## What are the important contracts I need to be aware of to be a price provider?
 
@@ -77,4 +77,4 @@ Price epoch durations are generally fixed and will not change abruptly. Any such
 
 ## Why am I getting strange reverts on submission?
 
-One reason could be related to the status of your node. Make sure the node is healthy and has enough peers. See [observation-node-faq.md](../setting-up-an-observation-node/observation-node-faq.md "mention")
+One reason could be related to the status of your node. Make sure the node is healthy and has enough peers. See [observation-node-faq.md](../setting-up-an-observation-node/observation-node-faq.md)

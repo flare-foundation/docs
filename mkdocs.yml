@@ -9,6 +9,7 @@ theme:
   features:
     - navigation.sections       # Top-level pages are not docs but section titles
     - navigation.top            # "Back to top" button appears upon upward scrolling
+    - navigation.indexes        # Allow section headers to have a page (see wallets/index.md)
 markdown_extensions:
   - admonition                  # Info boxes (in different colors)
   - pymdownx.details            # "
@@ -63,6 +64,7 @@ nav:
       - tutorials/reward-faq/README.md
       - tutorials/reward-faq/block-explorer-+-metamask.md
     - Wallets:
+      - tutorials/wallets/index.md
       - tutorials/wallets/bifrost-wallet.md
       - tutorials/wallets/dcent-wallet.md
       - tutorials/wallets/how-to-access-flare-network-with-a-ledger-device.md
