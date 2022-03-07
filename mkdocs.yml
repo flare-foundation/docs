@@ -41,7 +41,7 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/XqNa7Rq
 copyright: Copyright &copy; 2022 Flare Networks
-repo_url: https://github.com/segfaultxavi/flare-docs-test
+repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 nav:
   - index.md
