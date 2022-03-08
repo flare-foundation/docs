@@ -26,6 +26,7 @@
 dt {
     color: var(--md-primary-fg-color);
     font-weight: bold;
+    padding-left: 10px;
 }
 
 dt:target {
