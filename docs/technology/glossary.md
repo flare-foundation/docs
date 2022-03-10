@@ -13,7 +13,7 @@ Byzantine Fault Tolerance { #byzantine_fault_tolerance }
 : Property of a distributed system that is capable of continuous operation even when some of its participants are unreliable. Participants acting against the interest of the whole system, by accident or on purpose, are said to have “gone Byzantine”.
 
 Canary Network { #canary_network }
-: A network used for testing features under “real fire” conditions, before deploying them on the main network. All users of the canary network are real users, but they are aware of the experimental nature of the platform. The name comes from the time when actual mariners used actual canaries to detect the presence of poisonous gas in the mines.
+: A network used for testing features under “real fire” conditions, before deploying them on the main network. All users of the canary network are real users, but they are aware of the experimental nature of the platform. The name comes from the time when actual miners used actual canaries to detect the presence of poisonous gas in the mines.
 
 Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network (Byzantine Fault Tolerance).
