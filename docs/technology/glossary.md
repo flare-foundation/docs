@@ -1,5 +1,8 @@
 # 📖 Glossary
 
+Attestation { #attestation }
+: A data proof provided to the [State Connector](#state_connector) by a decentralized network of Attestation Providers that confirms the validity or otherwise of any request.
+
 Avalanche { #avalanche }
 : An open-source blockchain using the Snow family of consensus protocols and Proof of Stake for Sybil resistance. It is advertised as the fastest smart contract platform.
 
@@ -20,6 +23,9 @@ Consensus { #consensus }
 
 Coston { #coston }
 : The name given to the Flare public test network launched in January 2022, in remembrance and celebration of a great inventor, Martha J. Coston (1826-1904).
+
+Cross-chain (or inter-ecosystem) interoperability { #cross_chain }
+: Communication between two or more disparate blockchain ecosystems that are technologically incompatible due to the lack of shared systems, protocols or code (e.g. Ethereum and Solana).
 
 DAO { #dao }
 : A Decentralized Autonomous Organization is an entity with no central authority. Its governance is mandated by rules encoded on a blockchain so it is tamper-proof.
@@ -48,6 +54,9 @@ FTSO { #ftso }
 Governance { #governance }
 : Mechanism to propose, vote and implement changes on a blockchain protocol. On Flare, anybody can propose updates and Spark token holders vote to accept them.
 
+Light Client Relay { #light_client_relay }
+: A simplified communication mechanism built for speed that only queries the header data of any transaction and therefore lacks the security that comes from querying a full node with full history (e.g. [SPV](https://en.wikipedia.org/wiki/Bitcoin_network#Payment_verification)).
+
 Liquidity Pool { #liquidity_pool }
 : A collection of funds locked in a smart contract for the purpose of facilitating trading, lending and other functionality in a decentralized manner.
 
@@ -57,11 +66,14 @@ Main Network { #main_network }
 Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e. non-existing) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.
 
+Multi-chain (or intra-ecosystem) interoperability { #multi_chain }
+: Communication between two or more technologically compatible blockchains that exist within the same ecosystem and share systems, protocols and code (e.g. Polkadot Parachains, Cosmos Tendermint chains or Ethereum layer 2 protocols).
+
 NFT { #nft }
 : Non-Fungible Tokens are digital representations of assets which are unique and therefore non-mergeable (non-fungible), made unforgeable by blockchain technology. Common use cases are certificates of authenticity or ownership, or limited edition collectibles. Most NFT tokens are built on the Ethereum network using standards ERC-721 and ERC-1155.
 
 Oracle { #oracle }
-: A mechanism to provide external information to a blockchain, so that it can be used by smart contracts, for example. Flare oracles are called FTSO.
+: A mechanism to provide external information to a blockchain, so that it can be used by smart contracts, for example. Flare oracles are called [FTSO](#ftso).
 
 Proof of Stake { #proof_of_stake }
 : A kind of Sybil resistance based on staking assets to participate in consensus. The rationale is that a participant investing enough assets will not be interested in attacking the network that supports such assets. Moreover, if malicious behavior is detected part of the assets can be taken as punishment.
