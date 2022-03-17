@@ -38,7 +38,7 @@ The State Connector branching protocol protects Flare against incorrect interpre
 
 #### Incentivized Attestation Providers
 
-The minimal requirement to introduce new real-world events to Flare is to pass a vote via a default set of _incentivized_ attestation providers. This set always directly mirrors the current set of Flare Time Series Oracle (FTSO) providers, creating a parallel duty in addition to their regular price provider role. For their State Connector work, they receive an additional 1% inflation per year of the network's native asset FLR, or SGB on Songbird.
+The minimal requirement to introduce new real-world events to Flare is to pass a vote via a default set of _incentivized_ attestation providers.
 
 #### Local Attestation Providers
 
