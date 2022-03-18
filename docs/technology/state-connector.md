@@ -36,20 +36,20 @@ The State Connector branching protocol protects Flare against incorrect interpre
   <figcaption>The State Connector branching protocol.</figcaption>
 </figure>
 
-#### Incentivized Attestation Providers
+#### Default Attestation Providers
 
-The minimal requirement to introduce new real-world events to Flare is to pass a vote via a default set of _incentivized_ attestation providers.
+The minimum requirement to confirm the existence and validity of a blockchain transaction is for it to be confirmed by a majority of the default set of Attestation Providers.
 
 #### Local Attestation Providers
 
 Anyone may also operate their own _local_ attestation provider(s) without any capital requirement. Every Flare node operator, no matter how prominently they feature in the overall network, defines which local attestation provider(s) they wish to use for the State Connector branching protocol.
 
-A Flare node will only pass a State Connector vote if both the incentivized set and their locally-defined set of attestation providers pass the vote:
+A Flare node will only pass a State Connector vote if both the default set and their locally-defined set of attestation providers pass the vote:
 
-* If a Flare node's locally-defined set of attestation providers disagrees with the vote made by the incentivized set, then:
-  1. The Flare node will automatically create a backup of the blockchain state at the last point that it will have in common with the incentivized set.
+* If a Flare node's locally-defined set of attestation providers disagrees with the vote made by the default set, then:
+  1. The Flare node will automatically create a backup of the blockchain state at the last point that it will have in common with the default set.
   2. The Flare node will then proceed along the branch that it locally believes is correct.
-* Else if the incentivized set fails to pass a vote, then:
+* Else if the default set fails to pass a vote, then:
   1. No branching occurs.
 
 ## Scalability
@@ -75,4 +75,4 @@ The gas usage of attestation providers is always constant, despite the number of
 
 ## New Event-Type Integrations
 
-New real-world event-type integrations are introduced to the State Connector via acceptance by the incentivized attestation providers, and without requiring any changes to the core voting or branching protocols described above. This enables rapid deployment of new use-cases without any validator-level code changes.
+New real-world event-type integrations are introduced to the State Connector via acceptance by the default attestation providers, and without requiring any changes to the core voting or branching protocols described above. This enables rapid deployment of new use-cases without any validator-level code changes.
