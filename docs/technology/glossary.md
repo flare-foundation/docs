@@ -102,6 +102,9 @@ RPC { #rpc }
 Smart Contract { #smart_contract }
 : Computer program running on a blockchain, typically the EVM. The blockchain’s immutability ensures that the contract is not tampered with, and running it on several machines bound together by a consensus algorithm ensures faithful execution. Smart contracts are said to be self-enforcing.
 
+Songbird { #songbird }
+: Flare's [canary network](#canary_network), launched in September 2021.
+
 State Connector { #state_connector }
 : Piece of the Flare network that keeps track of the state of other networks, facilitating the implementation of advanced mechanisms like the FAssets. The State Connector uses several independent Attestation Providers that are rewarded for providing correct information.
 
