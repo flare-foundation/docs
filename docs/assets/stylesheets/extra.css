@@ -33,3 +33,9 @@ dt:target {
     background: var(--md-accent-fg-color--transparent);
     border-radius: 4px;
 }
+
+/* Glossary links */
+a[href*="/glossary/#"] {
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+}

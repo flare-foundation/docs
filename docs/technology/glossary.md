@@ -128,3 +128,11 @@ Validator { #validator }
 
 Wen flare { #wen_flare }
 : The war cry of all the impatient that would like to see the Flare network launch before it is fully tested. Pay no heed to them.
+
+<style>
+    /*Glossary links from within the glossary page*/
+    a[href^="#"] {
+        text-decoration-style: dotted;
+        text-decoration-thickness: 1px;
+    }
+</style>
