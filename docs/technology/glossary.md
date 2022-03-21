@@ -33,6 +33,9 @@ DAO { #dao }
 dApp { #dapp }
 : A Decentralized Application is a computer program that makes use of blockchain technology and therefore the information it uses or stores has the same benefits (trustlessness, censorship resistance, geographical redundancy, etc). The dapp itself may or may not be hosted on a blockchain.
 
+Data Provider { #data_provider }
+: Each of the multiple programs supplying external information to an FTSO running on the Flare network, and getting rewarded for it. Token holders can delegate their stake to a data provider and receive a share of the rewards.
+
 DeFi { #defi }
 : Decentralized Finance is a form of finance that does not rely on a central financial institution. DeFi is commonly based on blockchain technology.
 
@@ -47,6 +50,9 @@ FBA { #fba }
 
 FCP { #fcp }
 : The Flare Consensus Protocol is an asynchronous, ordered and leaderless version of Federated Byzantine Agreement (FBA) consensus. The whitepaper is already available and it is currently in the process of being implemented.
+
+Flare Token (FLR) { #flare_token_(flr) }
+: The native currency of the Flare Network.
 
 FTSO { #ftso }
 : The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information.
@@ -93,14 +99,8 @@ Quorum Slice { #quorum_slice }
 RPC { #rpc }
 : Remote Procedure Call is a protocol that allows a program executing on a network to request a service from another program, typically running on a different computer.
 
-Data Provider { #data_provider }
-: Each of the multiple programs supplying external information to an FTSO running on the Flare network, and getting rewarded for it. Token holders can delegate their stake to a data provider and receive a share of the rewards.
-
 Smart Contract { #smart_contract }
 : Computer program running on a blockchain, typically the EVM. The blockchain’s immutability ensures that the contract is not tampered with, and running it on several machines bound together by a consensus algorithm ensures faithful execution. Smart contracts are said to be self-enforcing.
-
-Flare Token (FLR) { #flare_token_(flr) }
-: The native currency of the Flare Network.
 
 State Connector { #state_connector }
 : Piece of the Flare network that keeps track of the state of other networks, facilitating the implementation of advanced mechanisms like the FAssets. The State Connector uses several independent Attestation Providers that are rewarded for providing correct information.
