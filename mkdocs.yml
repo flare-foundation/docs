@@ -25,6 +25,7 @@ markdown_extensions:
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
+  - autolinks                   # Use just filenames instead of full or relative paths
 extra_css:
   - assets/stylesheets/extra.css
 extra_javascript:
