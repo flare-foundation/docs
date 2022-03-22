@@ -1,4 +1,4 @@
-# 📖 Glossary
+# 🔠 Glossary
 
 Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized network of Attestation Providers that confirms the validity or otherwise of any request.
@@ -7,22 +7,22 @@ Avalanche { #avalanche }
 : An open-source blockchain using the Snow family of consensus protocols and Proof of Stake for Sybil resistance. It is advertised as the fastest smart contract platform.
 
 Block { #block }
-: For performance reasons, instead of processing transactions one by one, they are grouped together in blocks which are then validated by the consensus algorithm.
+: For performance reasons, [blockchains](#blockchain) do not process transactions one by one. Instead, transactions are grouped together in blocks which are then validated by the [consensus](#consensus) algorithm.
 
 Blockchain { #blockchain }
-: Digital ledger storing data and transactions on a distributed network of computers to make it more robust. Cryptography protects against information tampering, and a consensus algorithm ensures that the majority of the network agrees on the stored data even if some of the nodes act maliciously.
+: Digital [ledger](#ledger) storing data and transactions on a distributed network of computers to make it more robust. Cryptography protects against information tampering, and a [consensus](#consensus) algorithm ensures that the majority of the network agrees on the stored data even if some of its nodes act maliciously.
 
 Byzantine Fault Tolerance { #byzantine_fault_tolerance }
 : Property of a distributed system that is capable of continuous operation even when some of its participants are unreliable. Participants acting against the interest of the whole system, by accident or on purpose, are said to have “gone Byzantine”.
 
 Canary Network { #canary_network }
-: A network used for testing features under “real fire” conditions, before deploying them on the main network. All users of the canary network are real users, but they are aware of the experimental nature of the platform. The name comes from the time when actual miners used actual canaries to detect the presence of poisonous gas in the mines.
+: A network used for testing features under “real fire” conditions, before deploying them on the [main network](#main_network). All users of the canary network are real users, but they are aware of the experimental nature of the platform. The name comes from the time when actual miners used actual canaries to detect the presence of poisonous gas in the mines. Flare's canary network is called [Songbird](#songbird).
 
 Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network (Byzantine Fault Tolerance).
 
 Coston { #coston }
-: The name given to the Flare public test network launched in January 2021, in remembrance and celebration of a great inventor, Martha J. Coston (1826-1904).
+: The name given to the Flare public [test network](#test_network) launched in January 2021, in remembrance and celebration of a great inventor, Martha J. Coston (1826-1904).
 
 Cross-chain (or inter-ecosystem) interoperability { #cross_chain }
 : Communication between two or more disparate blockchain ecosystems that are technologically incompatible due to the lack of shared systems, protocols or code (e.g. Ethereum and Solana).
@@ -60,14 +60,17 @@ FTSO { #ftso }
 Governance { #governance }
 : Mechanism to propose, vote and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.
 
+Ledger { #ledger }
+: Historically, a book where financial transactions are recorded. In [blockchain](#blockchain) technology a ledger can contain any kind of information and it has multiple copies distributed among several computers, which are kept in sync by a [consensus](#consensus) algorithm.
+
 Light Client Relay { #light_client_relay }
 : A simplified communication mechanism built for speed that only queries the header data of any transaction and therefore lacks the security that comes from querying a full node with full history (e.g. [SPV](https://en.wikipedia.org/wiki/Bitcoin_network#Payment_verification)).
 
 Liquidity Pool { #liquidity_pool }
 : A collection of funds locked in a smart contract for the purpose of facilitating trading, lending and other functionality in a decentralized manner.
 
-Main Network { #main_network }
-: The computer network that supports a blockchain in its production stage, i.e., the real thing (instead of a Canary network).
+Main Network (MAINNET) { #main_network }
+: The computer network that supports a [blockchain](#blockchain) in its production stage, i.e., the real thing (instead of a [Canary](#canary_network) or [Test](#test_network) network).
 
 Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e. non-existing) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.
@@ -91,7 +94,7 @@ Quantum Resistance { #quantum_resistance }
 : The ability of a cryptographic algorithm (and therefore of a blockchain) to resist an attack from a theoretical quantum computer.
 
 Quorum { #quorum }
-: Set of participants on a consensus algorithm that must agree on a result for the whole network to accept that result. On a blockchain, once consensus is reached about a block, it is added to the ledger and the next block is processed.
+: Set of participants on a [consensus](#consensus) algorithm that must agree on a result for the whole network to accept that result. On a blockchain, once consensus is reached about a [block](#block), it is added to the [ledger](#ledger) and the next block is processed.
 
 Quorum Slice { #quorum_slice }
 : In FBA consensus each node has multiple lists of other nodes which it voluntarily decides to trust, forming its quorum slices. All nodes in a quorum slice agreeing on a result are enough to convince the node of that result. If the quorum slices are correctly built, global quorum emerges from these local quorum slices.
@@ -110,6 +113,9 @@ State Connector { #state_connector }
 
 Sybil Resistance { #sybil_resistance }
 : The ability of a distributed system to overcome a Sybil attack, in which a malicious actor creates multiple identities to gain voting or mining power. Resistance is typically gained by making voting or mining too costly for the attack to be worth it (as in Proof-of-Work or Proof-of-Stake) or by requiring new entities to be approved by existing actors (as in FBA).
+
+Test Network (TESTNET) { #test_network }
+: The computer network that supports a [blockchain](#blockchain) in its development stage. It is intended for testing purposes and should not store valuable assets, as its contents might be deleted (purposely or by accident) at any time. Compare to a [Canary](#canary_network) or [Main](#main_network) network. Flare's testnet is called [Coston](#coston).
 
 Transaction { #transaction }
 : A request to add information to the blockchain, which is then analyzed by the network and accepted when consensus is reached about its validity. It can be a movement of funds between two accounts, or the execution of a contract, for example.
