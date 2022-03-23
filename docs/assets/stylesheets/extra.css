@@ -46,5 +46,5 @@ a[href*="/glossary/#"] {
 }
 
 .md-header__button.md-logo :-webkit-any(img, svg) {
-    height: 2rem;
+    height: 1.5rem;
 }
