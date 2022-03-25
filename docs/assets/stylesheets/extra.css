@@ -5,8 +5,8 @@
     --md-footer-bg-color: var(--md-primary-fg-color);
 }
 
-/* Restore admonition text size */
-.md-typeset .admonition {
+/* Restore admonition and details text size */
+.md-typeset :is(.admonition, details) {
     font-size: initial;
 }
 
