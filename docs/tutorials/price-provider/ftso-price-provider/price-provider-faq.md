@@ -37,7 +37,7 @@ Open the [contract](https://songbird-explorer.flare.network/address/0x1000000000
 
 ## Which currencies are available on the network?
 
-The best way to get available currencies is to query the `FtsoRegistry` that holds information about available FTSOs, their addresses, prices and indices. Songbird currently supports the following symbols: `[XRP, LTC, XLM, DOGE, ADA, ALGO, BCH, DGB, BTC, ETH, FIL]`, but new ones could be added by governance vote.
+The best way to get available currencies is to query the `FtsoRegistry` that holds information about available FTSOs, their addresses, prices and indices. Songbird currently supports the following symbols: `[XRP, LTC, XLM, DOGE, ADA, ALGO, BCH, DGB, BTC, ETH, FIL, SGB]`, but new ones could be added by governance vote.
 
 ## Is there a slashing mechanism for non-availability?
 
