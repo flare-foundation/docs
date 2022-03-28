@@ -13,7 +13,9 @@ theme:
 markdown_extensions:
   - admonition                  # Info boxes (in different colors)
   - pymdownx.details            # "
-  - pymdownx.superfences        # "
+  - pymdownx.superfences        # Info boxes, tabs
+  - pymdownx.tabbed:            # Tabbed content
+      alternate_style: true
   - toc:                        # TOC control
       permalink: True           # Add permalinks to headers
   - pymdownx.arithmatex:        # Math blocks
