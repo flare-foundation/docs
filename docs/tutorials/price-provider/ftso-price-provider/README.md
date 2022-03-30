@@ -30,7 +30,7 @@ Please visit the [important-links.md](../../developing-on-top-of-flare/important
 
 The price providing process is structured as a commit/reveal scheme to prevent users from copying submission data. The commit and reveal phases have strict time windows of a few minutes. With each reveal the price provider is also providing a random number. The random number is used as a salt in the reveal-commit scheme and later used in the reward calculation process.
 
-Price providers are encouraged to provide strong cryptographically secure random numbers with high entropy and sufficient range. Strong random numbers are important for network security since this is the only true source of randomness on the network. Random numbers also make the commit-reveal scheme resilient to attacks. Random numberss bellow `2**128` are considered unsafe and are rejected on reveal.
+Price providers are encouraged to provide strong cryptographically secure random numbers with high entropy and sufficient range. Strong random numbers are important for network security since this is the only true source of randomness on the network. Random numbers also make the commit-reveal scheme resilient to attacks. Random numbers bellow 2^128^ are considered unsafe and are rejected on reveal.
 
 ## Going live
 

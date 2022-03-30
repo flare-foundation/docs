@@ -14,6 +14,10 @@ markdown_extensions:
   - admonition                  # Info boxes (in different colors)
   - pymdownx.details            # "
   - pymdownx.superfences        # Info boxes, tabs
+  - pymdownx.caret              # Allow superscript and insertion marks (^ and ^^)
+  - pymdownx.tilde              # Allow subscript and deletion marks (~ and ~~)
+  - pymdownx.keys               # Allow Keyboard marks (++)
+  - pymdownx.mark               # Allow selection marks (==)
   - pymdownx.tabbed:            # Tabbed content
       alternate_style: true
   - toc:                        # TOC control
