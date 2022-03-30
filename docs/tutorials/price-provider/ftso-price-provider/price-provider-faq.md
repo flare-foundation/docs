@@ -56,6 +56,7 @@ The following code snippets demonstrate how hashes can be generated in typescrip
      from web3 import Web3
      import eth_abi
 
+     minimal_random = 2 ** 128
 
      def submit_price_hash(
          ftsoIndices: List[int], prices: List[int], random: int, address: str
@@ -86,7 +87,10 @@ The following code snippets demonstrate how hashes can be generated in typescrip
          "0x3d91185a02774C70287F6c74Dd26d13DFB58ff16",
      ]
      prices = [0, 1, 2, 3, 5, 10, 50, 100, 101, 10 ** 5 + 1, 10 ** 8]
-     randoms = [0, 1, 100, 101, 100000000000000000000]
+     randoms = [
+          min_random + r for r in 
+          [0, 1, 100, 101, 100000000000000000000]
+     ]
      for addr in addrs:
          print(f"Address: {addr}")
          for rand in randoms:
