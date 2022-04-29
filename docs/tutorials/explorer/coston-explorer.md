@@ -2,7 +2,7 @@
 
 The Coston Explorer is a fork of [Blockscout](https://github.com/blockscout/blockscout) that has been adapted to the Coston Network.
 
-The current release version is 4.0.0-beta: [Blockscout 4.0.0-beta](https://github.com/blockscout/blockscout/releases/tag/v4.0.0-beta)
+The current release version is 4.1.2-beta: [Blockscout 4.1.2-beta](https://github.com/blockscout/blockscout/releases/tag/v4.1.2-beta)
 
 Here is a link to the docs: [Blockscout Docs](https://docs.blockscout.com)
 
