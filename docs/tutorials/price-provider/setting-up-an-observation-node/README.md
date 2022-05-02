@@ -10,7 +10,7 @@ Running an observation node is not mandatory. A price provider can utilize publi
 
 ### Setting up the node
 
-Set up a local instance of peering node to have a more stable connection. To set up a node follow the instructions provided on the [Flare node repository](https://github.com/flare-foundation/flare#readme) repo. Make sure to have enough disk space to allow for db resizes.
+Set up a local instance of peering node to have a more stable connection. To set up a node follow the instructions provided on the [Flare node repository](https://github.com/flare-foundation/flare#readme). Make sure to have enough disk space to allow for db resizes.
 
 ### Whitelisting
 
