@@ -66,7 +66,9 @@ A vote power block snapshot for current reward epoch is selected randomly and re
 
 ### Why should I avoid delegating in the last quarter of the current reward epoch?
 
-Your delegation might be too late for consideration in the next reward epoch since the vote power block for the next reward epoch will be randomly chosen from the blocks in the last quarter of the current epoch. How much reward can each price provider earn for me?
+Your delegation might be too late for consideration in the next reward epoch since the vote power block for the next reward epoch will be randomly chosen from the blocks in the last quarter of the current epoch.
+
+### How much reward can each price provider earn for me?
 
 This depends on a few factors:
 
