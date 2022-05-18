@@ -1,6 +1,6 @@
-# Price provider
+# Troubleshooting Price Providers
 
-### **I have increased my vote power, but the address is still not getting whitelisted, what is wrong?**
+### I have increased my vote power, but the address is still not getting whitelisted, what is wrong?
 
 Addresses are whitelisted based on vote power as reflected in the vote power block of the current reward epoch. Increased vote power on a different block will not enable your address to be whitelisted.
 
@@ -14,8 +14,8 @@ In the WNat [contract](https://songbird-explorer.flare.network/address/0x02f0826
 
 ### My submissions are reverted as being in the wrong epoch
 
-You might be submitting a bit too late in the current epoch. Try to submit the price a few seconds earlier. You might want to consider running an observation node that provides a better quality connection to the network. Also, check if you server time is synced with through Network Time Protocol (NTP).
+You might be submitting a bit too late in the current epoch. Try to submit the price a few seconds earlier. You might want to consider running an observation node that provides a better quality connection to the network. Also, check if your server time is synced with through Network Time Protocol (NTP).
 
-### **I am experiencing strange reverts when submitting and revealing prices**
+### I am experiencing strange reverts when submitting and revealing prices
 
 The unexpected reverts might come from the too low gas amount provided to submit/reveal transactions. Increase the gas limit of the transaction to 2500000.

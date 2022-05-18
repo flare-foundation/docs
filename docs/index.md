@@ -2,7 +2,12 @@
 
 Welcome to the **Flare Network Technical Documentation** site!
 
-Use the navigation menu to explore the Technology or Tutorial pages.
+These are the main sections:
+
+* **[Technology](tech/index.md)**: In-depth description of Flare's technology and tools.
+* **[User Guides](user/index.md)**: Step-by-step guides on how to use tools like the Block Explorer or the different wallets.
+* **[Infrastructure Guides](infra/index.md)**: Step-by-step guide on how to deploy the different components that make up the Flare ecosystem, and be rewarded for it.
+* **[Developer Docs](dev/index.md)**: Programming tutorials to help you build your app using Flare's tech.
 
 !!! note
 

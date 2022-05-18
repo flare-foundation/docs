@@ -1,8 +1,6 @@
----
-description: FAQ for users using the block explorer + metamask combination.
----
+# Manual Delegation
 
-# Block explorer + metamask FAQ
+This page explains how to delegate using a block explorer and Metamask.
 
 Congratulations on taking this more technical approach, it will enable you to better understand the system.
 

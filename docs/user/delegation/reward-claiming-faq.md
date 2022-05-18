@@ -15,11 +15,11 @@ This depends on a few factors:
 
 ## How do I see how much reward I can claim?
 
-This depends on the wallet you are using. See [wallets](../wallets/index.md) section to find more information and see the FAQ below for metamask users.
+This depends on the wallet you are using. See [wallets](../../user/wallets/index.md) section to find more information and see the FAQ below for metamask users.
 
 ## How do I claim my rewards?
 
-See [wallets](../wallets/index.md) section to find more information and see the FAQ below for metamask users.
+See [wallets](../../user/wallets/index.md) section to find more information and see the FAQ below for metamask users.
 
 ## When do I need to claim my rewards?
 
@@ -38,7 +38,7 @@ As general guidance, if you wrapped your SGB, delegated your voting power and th
 
 ## Where can I check the amount of rewards I have accrued in the current reward epoch?
 
-You can check the current amount of rewards (and unclaimed rewards) using the `FtsoRewardManager` contract (`getStateOfRewards`) or using your wallet. See [wallets](../wallets/index.md) section to find details for a specific wallet.
+You can check the current amount of rewards (and unclaimed rewards) using the `FtsoRewardManager` contract (`getStateOfRewards`) or using your wallet. See [wallets](../../user/wallets/index.md) section to find details for a specific wallet.
 
 ## I have claimed my rewards, how can I delegate the newly claimed SGB?
 

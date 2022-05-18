@@ -1,8 +1,6 @@
----
-description: FAQ for users of the block explorer and metamask combination
----
+# Manual Reward Claiming
 
-# Block explorer + metamask FAQ
+This page explains how to claim your delegation rewards using a block explorer and Metamask. This is the continuation of the [Manual delegation](manual-delegation.md) page.
 
 ### Where is the reward data found?
 

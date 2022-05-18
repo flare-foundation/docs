@@ -7,9 +7,10 @@ theme:
   logo: assets/logo.png
   favicon: assets/favicon.png
   features:
-    - navigation.sections       # Top-level pages are not docs but section titles
+    - navigation.tabs           # Top-level pages are shown as tabs on the header
+    - navigation.tabs.sticky    # Navigation tabs are always visible
     - navigation.top            # "Back to top" button appears upon upward scrolling
-    - navigation.indexes        # Allow section headers to have a page (see wallets/index.md)
+    - navigation.indexes        # Allow section headers to have a page (see tech/index.md)
 markdown_extensions:
   - admonition                  # Info boxes (in different colors)
   - pymdownx.details            # "
@@ -32,6 +33,42 @@ plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
   - autolinks                   # Use just filenames instead of full or relative paths
+  - redirects:                  # Allow creating redirects for moved pages
+      redirect_maps:
+          'technology/glossary.md': 'tech/glossary.md'
+          'technology/state-connector.md': 'tech/state-connector.md'
+          'networks/songbird.md': 'dev/reference/songbird.md'
+          'networks/coston-testnet.md': 'dev/reference/coston-testnet.md'
+          'tutorials/wallets/index.md': 'user/wallets/index.md'
+          'tutorials/wallets/bifrost-wallet.md': 'user/wallets/bifrost-wallet.md'
+          'tutorials/wallets/dcent-wallet.md': 'user/wallets/dcent-wallet.md'
+          'tutorials/wallets/how-to-access-flare-network-with-a-ledger-device.md': 'user/wallets/how-to-access-flare-network-with-a-ledger-device.md'
+          'tutorials/wallets/how-to-access-flare-network-with-a-trezor-device.md': 'user/wallets/how-to-access-flare-network-with-a-trezor-device.md'
+          'tutorials/wallets/how-to-access-flare-network-with-metamask.md': 'user/wallets/how-to-access-flare-network-with-metamask.md'
+          'tutorials/wallets/safepal-s1-wallet.md': 'user/wallets/safepal-s1-wallet.md'
+          'tutorials/wallets/brave-wallet.md': 'user/wallets/brave-wallet.md'
+          'tutorials/explorer/songbird-explorer.md': 'user/block-explorer.md'
+          'tutorials/explorer/coston-explorer.md': 'user/block-explorer.md'
+          'tutorials/developing-on-top-of-flare/README.md': 'dev/index.md'
+          'tutorials/developing-on-top-of-flare/important-links.md': 'dev/index.md'
+          'tutorials/delegation/README.md': 'user/delegation/README.md'
+          'tutorials/delegation/delegation-in-detail.md': 'user/delegation/delegation-in-detail.md'
+          'tutorials/delegation-faq/README.md': 'user/delegation/delegation-faq.md'
+          'tutorials/delegation-faq/block-explorer-+-metamask.md': 'user/delegation/manual-delegation.md'
+          'tutorials/reward-claiming/README.md': 'user/delegation/reward-claiming.md'
+          'tutorials/reward-claiming/reward-claiming-in-detail.md': 'user/delegation/reward-claiming-in-detail.md'
+          'tutorials/reward-faq/README.md': 'user/delegation/reward-claiming-faq.md'
+          'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/manual-reward-claiming.md'
+          'tutorials/price-provider/setting-up-an-observation-node/README.md': 'infra/observation.md'
+          'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'infra/observation.md'
+          'tutorials/price-provider/ftso-price-provider/README.md': 'infra/data/deploying.md'
+          'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'infra/data/deploying.md'
+          'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'infra/data/whitelisting.md'
+          'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'infra/data/whitelisting.md'
+          'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/troubleshooting.md'
+          'tutorials/price-provider/troubleshooting/observation-node.md': 'infra/observation.md'
+          'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
+
 extra_css:
   - assets/stylesheets/extra.css
 extra_javascript:
@@ -53,49 +90,42 @@ copyright: Copyright &copy; 2022 Flare Networks
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 nav:
-  - index.md
+  - Start:
+    - index.md
   - Technology:
-    - technology/state-connector.md
-    - technology/glossary.md
-  - Networks:
-    - networks/songbird.md
-    - networks/coston-testnet.md
-  - Tutorials:
+    - tech/index.md
+    - tech/glossary.md
+    - tech/state-connector.md
+  - User guides:
+    - user/index.md
+    - user/block-explorer.md
     - Delegation:
-      - tutorials/delegation/README.md
-      - tutorials/delegation/delegation-in-detail.md
-      - tutorials/delegation-faq/README.md
-      - tutorials/delegation-faq/block-explorer-+-metamask.md
-    - Reward claiming:
-      - tutorials/reward-claiming/README.md
-      - tutorials/reward-claiming/reward-claiming-in-detail.md
-      - tutorials/reward-faq/README.md
-      - tutorials/reward-faq/block-explorer-+-metamask.md
+      - user/delegation/README.md
+      - user/delegation/delegation-in-detail.md
+      - user/delegation/delegation-faq.md
+      - user/delegation/manual-delegation.md
+      - user/delegation/reward-claiming.md
+      - user/delegation/reward-claiming-in-detail.md
+      - user/delegation/reward-claiming-faq.md
+      - user/delegation/manual-reward-claiming.md
     - Wallets:
-      - tutorials/wallets/index.md
-      - tutorials/wallets/bifrost-wallet.md
-      - tutorials/wallets/dcent-wallet.md
-      - tutorials/wallets/how-to-access-flare-network-with-a-ledger-device.md
-      - tutorials/wallets/how-to-access-flare-network-with-a-trezor-device.md
-      - tutorials/wallets/how-to-access-flare-network-with-metamask.md
-      - tutorials/wallets/safepal-s1-wallet.md
-      - tutorials/wallets/brave-wallet.md
-    - Developing on top of Flare:
-      - tutorials/developing-on-top-of-flare/README.md
-      - tutorials/developing-on-top-of-flare/important-links.md
-    - Price providers:
-      - Observation nodes:
-        - tutorials/price-provider/setting-up-an-observation-node/README.md
-        - tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md
-      - FTSO:
-        - tutorials/price-provider/ftso-price-provider/README.md
-        - tutorials/price-provider/ftso-price-provider/price-provider-faq.md
-        - tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md
-        - tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md
-      - Troubleshooting:
-        - tutorials/price-provider/troubleshooting/price-provider.md
-        - tutorials/price-provider/troubleshooting/observation-node.md
-      - tutorials/price-provider/whitelisting.md
-    - Block Explorers:
-      - tutorials/explorer/songbird-explorer.md
-      - tutorials/explorer/coston-explorer.md
+      - user/wallets/index.md
+      - user/wallets/bifrost-wallet.md
+      - user/wallets/dcent-wallet.md
+      - user/wallets/how-to-access-flare-network-with-a-ledger-device.md
+      - user/wallets/how-to-access-flare-network-with-a-trezor-device.md
+      - user/wallets/how-to-access-flare-network-with-metamask.md
+      - user/wallets/safepal-s1-wallet.md
+      - user/wallets/brave-wallet.md
+  - Infrastructure guides:
+    - infra/index.md
+    - Data Providers:
+      - infra/data/deploying.md
+      - infra/data/whitelisting.md
+      - infra/data/troubleshooting.md
+    - infra/observation.md
+  - Developer docs:
+    - dev/index.md
+    - Reference guides:
+      - dev/reference/songbird.md
+      - dev/reference/coston-testnet.md
