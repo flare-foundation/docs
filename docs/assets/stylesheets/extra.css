@@ -49,6 +49,16 @@ a[href*="/glossary/#"] {
     height: 1.5rem;
 }
 
+/* BETA title tag */
+.beta-tag {
+    position: absolute;
+    right: -1rem;
+    top: 1.3rem;
+    color: var(--md-accent-fg-color);
+    transform: rotate(-10deg);
+    border: 2px solid var(--md-accent-fg-color);
+    line-height: 1rem;
+}
 /* Arrow to the current page in the navigation side bar */
 .md-sidebar--primary .md-nav__link--active::before,
 .md-sidebar--primary .md-nav__link--active a::before {
