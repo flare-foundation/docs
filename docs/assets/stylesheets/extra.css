@@ -56,3 +56,9 @@ a[href*="/glossary/#"] {
     position: absolute;
     left: 0;
 }
+
+/* Side by side images */
+figure img.side-by-side {
+    display: inline;
+    width: 49%;
+}
