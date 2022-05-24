@@ -1,4 +1,4 @@
-# 🔠 Glossary
+# Glossary
 
 Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized network of Attestation Providers that confirms the validity or otherwise of any request.

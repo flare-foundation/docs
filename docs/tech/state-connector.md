@@ -2,7 +2,7 @@
 description: Proving any real-world event to any contract on Flare
 ---
 
-# 🛰 State Connector
+# State Connector
 
 The State Connector on Flare enables proving real-world events to any contract on Flare. Uniquely, the State Connector can also handle any notional value represented by the events it proves. This property of the system is achieved by automated branching of the Flare Network state to correct event outcomes, without degrading the time-to-finality or throughput metrics of the network.
 
