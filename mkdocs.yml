@@ -96,6 +96,7 @@ nav:
     - tech/index.md
     - tech/glossary.md
     - tech/state-connector.md
+    - tech/validators.md
   - User guides:
     - user/index.md
     - user/block-explorer.md
