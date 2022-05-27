@@ -22,6 +22,11 @@
     text-decoration: underline;
 }
 
+/* Do not underline the permalinks in the headers */
+.headerlink {
+    text-decoration: none !important;
+}
+
 /* Glossary */
 dt {
     color: var(--md-primary-fg-color);
