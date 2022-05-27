@@ -25,7 +25,6 @@ markdown_extensions:
       permalink: 🖈             # Add permalinks to headers
   - pymdownx.arithmatex:        # Math blocks
       generic: true
-  - mdx_truly_sane_lists        # 2-space indented nested lists
   - attr_list                   # { Annotations }
   - md_in_html                  # Markdown inside HTML
   - def_list                    # Definition lists (Glossary)

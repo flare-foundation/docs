@@ -9,6 +9,10 @@
 .md-typeset :is(.admonition, details) {
     font-size: initial;
 }
+/* Remove little extra margin when admonitions are inside lists */
+.md-typeset li .admonition-title {
+    margin-top: 0 !important;
+}
 
 /* Hide the GitHub link at the top, it's not that interesting */
 .md-header__source,
