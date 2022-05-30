@@ -5,7 +5,8 @@
 This repository uses a docs-as-code approach, meaning that the same workflow used to contribute source code is followed.
 This means that to contribute new text or modify existing pages, a git branch should be created and then a [GitHub Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PR) should be submitted.
 
-PR's must then be reviewed by a colleague before merging into main, which automatically publishes the changes via a GitHub Action.
+PRs must be peer-reviewed before then getting merged into main.
+Once a PR is merged, its changes are automatically published via a GitHub Action.
 
 ## Style
 
