@@ -2,6 +2,12 @@
 
 Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized network of Attestation Providers that confirms the validity or otherwise of any request.
+Each attestation within a round is added to a merkle trie from which the resulting root hash is the attestation proof for the round.
+
+Attestation Provider { #attestation-provider }
+: Attestation providers play an essential role in the [attestation protocol](#attestation).
+They handle requests to provide attestations.
+These requests come in types called attestation types and have to be designed in such a way that they are [clear-cut decidable](#clear-cut_decidable).
 
 Avalanche { #avalanche }
 : An open-source blockchain using the Snow family of consensus protocols and [Proof of Stake](#proof_of_stake) for [Sybil resistance](#sybil_resistance). It is advertised as the fastest smart contract platform.
@@ -17,6 +23,13 @@ Byzantine Fault Tolerance { #byzantine_fault_tolerance }
 
 Canary Network { #canary_network }
 : A network used for testing features under “real fire” conditions, before deploying them on the [main network](#main_network). All users of the canary network are real users, but they are aware of the experimental nature of the platform. The name comes from the time when actual miners used actual canaries to detect the presence of poisonous gas in the mines. Flare's canary network is called [Songbird](#songbird).
+
+Clear-cut decidable { #clear-cut_decidable }
+: Clear-cut decidability requires having a synchronized view on data from external data sources (e.g. other chains) that are used for data attestations.
+For example, in slower block-producing blockchains like Bitcoin, one [attestation provider](#attestation-provider) may see a certain block at the moment of query while another one may not see it yet,
+since the block might not have been fully distributed throughout the network.
+Such providers would yield completely different attestations.
+Therefore, special data view synchronization protocols have to be applied.
 
 Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network ([Byzantine Fault Tolerance](#byzantine_fault_tolerance)).
