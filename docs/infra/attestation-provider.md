@@ -45,7 +45,7 @@ As of Q2 2022, this is roughly what you can expect from each node regarding disk
 
 ### Node Setup
 
-The first step is to set up nodes for each supported network, that the attestation provider suite can then use to make attestations.
+The first step is to set up a node for each supported network, which the attestation provider suite can then use to make attestations.
 
 The supported chains at the moment are the following:
 
@@ -58,8 +58,8 @@ The supported chains at the moment are the following:
 !!! warning "Setting the nodes up is a very long process"
 
     Since the attestation provider suite requires having access to all supported networks, it is required to have an up-to-date node setup for each network.
-    Certain networks take very long times to get synchronized with, such as algorand which requires indexing the whole history of the blockchain locally.
-    In our testing it took a few hours to sync up with litecoin, dogecoin and xrpl, more than a day for bitcoin and weeks for algorand.
+    Certain networks take very long times to get synchronized with, such as Algorand which requires indexing the whole history of the blockchain locally.
+    In our testing it took a few hours to sync up with Litecoin, Dogecoin and XRPL, more than a day for Bitcoin and weeks for Algorand.
 
 #### Chain Configuration
 
