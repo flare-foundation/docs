@@ -35,8 +35,6 @@ As of Q2 2022, this is roughly what you can expect from each node regarding disk
 | litecoin-data       | 90GB  |
 | ripple-data         | 230GB |
 
-We are looking into ways to run a non-full history algorand node.
-
 ### Dependencies
 
 * [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
