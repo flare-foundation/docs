@@ -63,12 +63,13 @@ The supported chains at the moment are the following:
 
 #### Chain Configuration
 
+Before the nodes can be launched, they have to be configured with credentials to access their respective networks.
 For this step, it is required to create a password that is at least 64 characters long.
 It is referred to later as `<your-password>`.
 
 ##### Ubuntu
 
-The provided `install.sh` script was written for Ubuntu 20.04, so if you are on another platform follow the [alternate set of instructions](#other-platforms) or adapt the script to your platform.
+The provided `install.sh` script was written for Ubuntu 20.04, so if you are on another platform follow the [instructions below](#other-platforms) or adapt the script to your platform.
 
 ```
 git clone https://github.com/flare-foundation/connected-chains-docker /opt/connected-chains
