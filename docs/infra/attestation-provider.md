@@ -16,8 +16,8 @@ Before proceeding with the [installation](#installation), it is essential to fol
 
 ### System Requirements
 
-The following specifications were observed to be able to run all nodes on a single machine.
-Ideally, a single node should be run on each system in production for better performance and uptime.
+The following specifications were observed to be able to run nodes for all supported blockchains on a single machine.
+Ideally, a dedicated node should be run for each connected blockchain in production for better performance and uptime.
 
 * **OS**: Ubuntu 20.04
 * **CPU Cores**: 16
