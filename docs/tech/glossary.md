@@ -28,8 +28,7 @@ Clear-cut decidable { #clear-cut_decidable }
 : Clear-cut decidability requires having a synchronized view on data from external data sources (e.g. other chains) that are used for data attestations.
 For example, in slower block-producing blockchains like Bitcoin, one [attestation provider](#attestation-provider) may see a certain block at the moment of query while another one may not see it yet,
 since the block might not have been fully distributed throughout the network.
-Such providers would yield completely different attestations.
-Therefore, special data view synchronization protocols have to be applied.
+Such providers would yield completely different attestations, which means special data view synchronization protocols have to be applied.
 
 Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network ([Byzantine Fault Tolerance](#byzantine_fault_tolerance)).
