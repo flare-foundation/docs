@@ -6,7 +6,7 @@ There are two situations in which it makes sense to do so:
 * Running unincentivized local attestation providers to act as a safeguard against malicious forks,
 * Running incentivized attestation providers to reap rewards, contributing to and helping improve the decentralization of the network while providing attestations for the [state connector](#state-connector).
 
-??? note "Rewards"
+!!! note "Rewards"
 
     Currently, the process of rewarding public attestation providers is still being discussed.
 
