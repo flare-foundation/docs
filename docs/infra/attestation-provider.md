@@ -35,6 +35,10 @@ As of Q2 2022, this is roughly what you can expect from each node regarding disk
 | litecoin-data       | 90GB  |
 | ripple-data         | 230GB |
 
+!!! note "High storage usage"
+
+    In the interest of decentralization, and to allow the maximum number of users to become Attestation Providers, alternate mechanisms are being researched to reduce such high requirements, like using non-full history Algorand nodes.
+
 ### Dependencies
 
 * [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
