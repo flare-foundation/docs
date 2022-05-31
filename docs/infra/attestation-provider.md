@@ -8,7 +8,7 @@ There are two situations in which it makes sense to do so:
 
 !!! note "Rewards"
 
-    Currently, the process of rewarding public attestation providers is still being discussed.
+    Currently, the exact rewarding mechanism to use is being discussed.
 
 ## Prerequisites
 
