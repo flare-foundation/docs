@@ -3,8 +3,8 @@
 This guide is a walk through to become an [attestation provider](#attestation-provider).
 There are two situations in which it makes sense to do so:
 
-* Running local attestation providers, without any capital requirement, to act as a safeguard against malicious forks,
-* Running an incentivized attestation provider to reap rewards, which contributes to the network and helps improve the decentralization of the network and provides attestations for the [state connector](#state-connector).
+* Running unincentivized local attestation providers to act as a safeguard against malicious forks,
+* Running incentivized attestation providers to reap rewards, contributing to and helping improve the decentralization of the network while providing attestations for the [state connector](#state-connector).
 
 ??? note "Rewards"
 
