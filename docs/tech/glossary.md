@@ -2,9 +2,9 @@
 
 Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized network of Attestation Providers that confirms the validity or otherwise of any request.
-Each attestation within a round is added to a merkle trie from which the resulting root hash is the attestation proof for the round.
+Each attestation within a round is added to a [Merkle Tree](#merkle_tree) from which the resulting root hash is the attestation proof for the round.
 
-Attestation Provider { #attestation-provider }
+Attestation Provider { #attestation_provider }
 : Attestation providers play an essential role in the [attestation protocol](#attestation).
 They handle requests to provide attestations.
 These requests come in types called attestation types and have to be designed in such a way that they are [clear-cut decidable](#clear-cut_decidable).
@@ -84,6 +84,9 @@ Liquidity Pool { #liquidity_pool }
 
 Main Network (MAINNET) { #main_network }
 : The computer network that supports a [blockchain](#blockchain) in its production stage, i.e., the real thing (instead of a [Canary](#canary_network) or [Test](#test_network) network).
+
+Merkle Tree { #merkle_tree }
+: A data structure that stores key value pairs in a hash tree to allow efficient and secure verification of its contents. Its specificity is that every leaf in the tree is labelled with the hash of its payload, and branches are labelled with the hash of the concatenation of their children.
 
 Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e. non-physical) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.
