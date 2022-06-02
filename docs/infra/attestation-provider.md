@@ -71,18 +71,6 @@ Before the nodes can be launched, they have to be configured with credentials to
 For this step, it is required to create a password that is at least 64 characters long.
 It is referred to later as `<your-password>`.
 
-##### Ubuntu
-
-The provided `install.sh` script was written for Ubuntu 20.04, so if you are on another platform follow the [instructions below](#other-platforms) or adapt the script to your platform.
-
-```
-git clone https://github.com/flare-foundation/connected-chains-docker /opt/connected-chains
-cd /opt/connected-chains
-./install.sh <your-password>
-```
-
-##### Other Platforms
-
 For each supported blockchain in the `./config` directory at the root of the repository, except for `ripple`, run the included script like so:
 
 * `(cd ./config/bitcoin && ./rpcauth.py admin <your-password>)`
@@ -141,7 +129,114 @@ Alternatively, it is possible to switch to [bind volume mounts](https://docs.doc
 * `git clone` hangs
   * Increase the following setting: `git config --global http.postBuffer <max-bytes>`
 
-## Installation
+## Attestation Suite Installation
+
+### System Requirements
+
+Minimal hardware requirements for running the attestation suite are:
+
+* **CPU**: 4 cores @ 2.2GHz
+* **DISK**: 500 GB SSD disk
+* **MEMORY**: 16 GB
+
+### Attestation Client
+
+Once the nodes are synced up, it is recommended to install the Attestation Suite on a different machine.
+
+The first step is to clone the attestation client repository.
+
+```bash
+cd ~
+mkdir -p attestation-suite
+cd attestation-suite
+
+git clone https://github.com/flare-foundation/attestation-client.git
+cd attestation-client
+```
+
+#### Dependencies
+
+* [`node 14.15.4`](https://nodejs.org/download/release/v14.15.4/)
+* [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* [`yarn`](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+* [`mysql`](https://www.mysql.com/downloads/)
+
+#### Initialization
+
+Now, the configuration files must be initialized.
+This is done by simply creating a directory in which to store the configuration, and copying the placeholder configuration files from `./configs/.install` to `../attestation-suite-config`.
+
+```bash
+mkdir -p ../attestation-suite-config
+cp -a ./configs/.install/. ../attestation-suite-config
+```
+
+### Configuration
+
+In the `attestation-suite-config` directory, edit the following `chain.credentials.json` file to configure the credentials to be used by the attestation client to access the previously set up nodes.
+Those credentials should be those that were generated during the [chain configuration step](#chain-configuration).
+The URLs to specify for each blockchain are the addresses at which the node APIs are reachable.
+
+// FIXME: What to do with database.json?
+
+* `database.json`
+
+// FIXME: Where should network credentials come from?
+
+* `network.credential.json`
+
+#### Setup Services
+
+The last step in the installation process is to configure services in `systemctl` for each attestation client, backend, and indexer.
+
+##### Ubuntu
+
+On Ubuntu, this step is automatized and all that is required is to call the `./scripts/install.sh` script.
+
+##### Other Platforms
+
+```bash
+mkdir -p ~/.config/systemd/user
+cp ./scripts/templates/*.service ~/.config/systemd/user
+```
+
+```bash
+systemctl --user daemon-reload
+
+systemctl --user enable indexer-xrp.service
+systemctl --user enable indexer-btc.service
+systemctl --user enable indexer-ltc.service
+systemctl --user enable indexer-algo.service
+systemctl --user enable indexer-doge.service
+
+# songbird
+systemctl --user enable songbird-attester-client.service
+systemctl --user enable songbird-backend.service
+
+# coston
+systemctl --user enable coston-attester-client.service
+systemctl --user enable coston-backend.service
+
+systemctl --user enable attester-alerts
+```
+
+```bash
+./scripts/compile.sh
+```
+
+```bash
+yarn ts-node lib/install/install.ts ../attestation-suite-config/
+```
+
+```bash
+./scripts/initialize-mysql.sh
+```
+
+```bash
+./scripts/deploy-all.sh
+```
+
+### Attestation Suite Installation
 
 > Recommended to do that on a different machine.
 > Node about CLI automatizing everything but only for Ubuntu 20.04 users
