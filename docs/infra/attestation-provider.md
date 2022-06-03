@@ -183,22 +183,29 @@ The URLs to specify for each blockchain are the addresses at which the node APIs
 
 // FIXME: Where should network credentials come from?
 
+> Network credential private keys are the private keys from the wallets you own.
+
 * `network.credential.json`
 
 #### Setup Services
 
-The last step in the installation process is to configure services in `systemctl` for each attestation client, backend, and indexer.
+The last step in the installation process is to configure services in `systemctl` for the attestation client, backend, and indexers.
 
-##### Ubuntu
+!!! warning "Running more than one attestation client"
 
-On Ubuntu, this step is automatized and all that is required is to call the `./scripts/install.sh` script.
+  It is currently impossible to run more than one attestation client at once.
+  Solutions are being researched to allow any number of clients to run at the same time.
 
-##### Other Platforms
+First, create a directory in which to store service configurations, and copy the templates from `./scripts/templates` there.
 
 ```bash
 mkdir -p ~/.config/systemd/user
 cp ./scripts/templates/*.service ~/.config/systemd/user
 ```
+
+Then, enable the indexer services.
+These services are in charge of caching the recent history of each blockchain to avoid congesting the networks with unnecessary requests from the attestation provider and adding latency to the attestation system.
+The `attester-alerts` service maintains a JSON file which describes the status of the components of the attestation suite.
 
 ```bash
 systemctl --user daemon-reload
@@ -209,42 +216,84 @@ systemctl --user enable indexer-ltc.service
 systemctl --user enable indexer-algo.service
 systemctl --user enable indexer-doge.service
 
-# songbird
-systemctl --user enable songbird-attester-client.service
-systemctl --user enable songbird-backend.service
-
-# coston
-systemctl --user enable coston-attester-client.service
-systemctl --user enable coston-backend.service
-
 systemctl --user enable attester-alerts
 ```
+
+Now, to provide attestations for the Songbird network, run the following command.
+
+```bash
+systemctl --user enable songbird-attester-client.service
+systemctl --user enable songbird-backend.service
+```
+
+Alternatively, for Coston, run the command below instead.
+
+```bash
+systemctl --user enable coston-attester-client.service
+systemctl --user enable coston-backend.service
+```
+
+Once the client and backend of your choice are up and running, run the `compile.sh` script to compile the solidity code used by the attestation provider.
 
 ```bash
 ./scripts/compile.sh
 ```
 
+Then, launch the following command to install the TypeScript program that manages the attestation suite.
+
 ```bash
 yarn ts-node lib/install/install.ts ../attestation-suite-config/
 ```
+
+ This next script is in charge of bootstrapping the MySQL database used by the attestation suite.
 
 ```bash
 ./scripts/initialize-mysql.sh
 ```
 
+Finally, running this last script deploys the indexers, backend and attestation client.
+
+!!! warning "Edit the script to deploy for the network you want to use"
+
+  By default, this script deploys the components for Coston, but if you want to provide attestations for the Songbird network instead, edit this script and switch the commented out lines like such:
+
+  ```bash
+  echo -e "${REDBOLD}[4.3] ${GREENBOLD}Installing Songbird Attester Client...${NC}"
+  bash ./scripts/deploy-songbird-attester
+
+  echo -e "${REDBOLD}[4.4] ${GREENBOLD}Installing Songbird Backend...${NC}"
+  bash ./scripts/deploy-songbird-backend
+
+  #echo -e "${REDBOLD}[4.3] ${GREENBOLD}Installing Coston Attester Client...${NC}"
+  #bash ./scripts/deploy-coston-attester
+
+  #echo -e "${REDBOLD}[4.4] ${GREENBOLD}Installing Coston Backend...${NC}"
+  #bash ./scripts/deploy-coston-backend
+  ```
+
 ```bash
 ./scripts/deploy-all.sh
 ```
 
-### Attestation Suite Installation
-
-> Recommended to do that on a different machine.
-> Node about CLI automatizing everything but only for Ubuntu 20.04 users
-> https://github.com/flare-foundation/attestation-client/blob/main/docs/installation/general-installation.md
+Now, the attestation suite should be up and ready to answer attestation requests on the network.
 
 ## Monitoring
 
-### Frontend (Rename)
+Since the attestation suite is a complex system composed of multiple services, it needs monitoring to ensure that it works as expected.
+
+There are currently two solutions to monitor the attestation suite.
+
+### Web UI
+
+> https://github.com/flare-foundation/attestation-frontend
+
+The Web UI allows you to view and create attestation requests, once you connect your Metamask account with a Coston wallet.
+
+!!! note "Publicly available demonstration"
+
+  A demo version of the Web UI is available at https://attestation-demo.flare.network/.
+
+
 
 ### Terminal UI
 
