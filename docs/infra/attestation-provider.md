@@ -12,7 +12,7 @@ There are two situations in which it makes sense to do so:
 
 ## Prerequisites
 
-Before proceeding with the [installation](#installation), it is essential to follow every prerequisite.
+Before proceeding with the [installation](#node-setup), it is essential to follow every prerequisite.
 
 ### System Requirements
 
@@ -177,15 +177,9 @@ In the `attestation-suite-config` directory, edit the following `chain.credentia
 Those credentials should be those that were generated during the [chain configuration step](#chain-configuration).
 The URLs to specify for each blockchain are the addresses at which the node APIs are reachable.
 
-// FIXME: What to do with database.json?
+The `database.credentials.json` file should be edited with the configured credentials to access your MySQL database.
 
-* `database.json`
-
-// FIXME: Where should network credentials come from?
-
-> Network credential private keys are the private keys from the wallets you own.
-
-* `network.credential.json`
+Finally, edit the `networks.credentials.json` file to enter the private key to your wallet, for either Coston or Songbird depending on which network you want to use.
 
 #### Setup Services
 
@@ -285,19 +279,20 @@ There are currently two solutions to monitor the attestation suite.
 
 ### Web UI
 
-> https://github.com/flare-foundation/attestation-frontend
-
 The Web UI allows you to view and create attestation requests, once you connect your Metamask account with a Coston wallet.
 
 !!! note "Publicly available demonstration"
 
   A demo version of the Web UI is available at https://attestation-demo.flare.network/.
 
-
-
 ### Terminal UI
 
-## Summary (Rename)
+// FIXME: I can't find the repository for this? David showed it to me but I'll have to ping him about it to get access to the source.
 
-> What has been done in this guide
-> What was gained by following the guide
+## Summary (FIXME: Rename)
+
+Now, you should have the following:
+
+* One or more machines with nodes that are synchronized with the supported blockchains
+* One or more machines with attestation suites deployed and ready to answer attestation requests
+* The tools to monitor your attestation suite and make sure it remains available
