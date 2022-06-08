@@ -22,7 +22,7 @@ markdown_extensions:
   - pymdownx.tabbed:            # Tabbed content
       alternate_style: true
   - toc:                        # TOC control
-      permalink: 🖈             # Add permalinks to headers
+      permalink: "#"            # Add permalinks to headers
   - pymdownx.arithmatex:        # Math blocks
       generic: true
   - attr_list                   # { Annotations }
