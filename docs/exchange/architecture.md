@@ -81,40 +81,38 @@ The [Exchange server](#exchange-server) must be continuously monitoring transfer
    const receivingAddress = "0x947c76694491d3fD67a73688003c4d36C8780A97";
 
    web3.eth.subscribe("pendingTransactions")
-       .on("data", function (transactionHash) {
-           // New transaction hash received.
-           // Retrieve the actual transaction.
-           web3.eth.getTransaction(transactionHash).then((tx) => {
-               // If it is directed to our address...
-               if (tx.to === receivingAddress) {
-                   // Mark it as pending.
-                   console.log("Transaction", tx.hash, "is pending");
-               }
-           });
-       })
-       .on("error", console.error);
+   .on("data", async (transactionHash) => {
+       // New transaction hash received.
+       // Retrieve the actual transaction.
+       let tx = await web3.eth.getTransaction(transactionHash);
+       // If it is directed to our address...
+       if (tx.to === receivingAddress) {
+           // Mark it as pending.
+           console.log("Transaction", tx.hash, "is pending");
+       }
+   }).on("error", console.error);
 
    web3.eth.subscribe("newBlockHeaders")
-       .on("data", function (block) {
-           // New block has been produced.
-           // Retrieve a block old enough to be considered stable.
-           web3.eth.getBlock(block.number - 5).then((block) => {
-               // Get all its transactions.
-               block.transactions.forEach(async (transactionHash) => {
-                   // Retrieve the actual transaction.
-                   web3.eth.getTransaction(transactionHash).then((tx) => {
-                       // If it is directed to our address...
-                       if (tx.to === receivingAddress) {
-                           // Mark it as confirmed.
-                           console.log("Transaction", tx.hash,
-                               "is confirmed in block", block.number);
-                       }
-                   });
-               });
-           });
-       })
-       .on("error", console.error);
+   .on("data", async (blockHeader) => {
+       // New block has been produced.
+       // Retrieve a block old enough to be considered confirmed.
+       let block = await web3.eth.getBlock(blockHeader.number - 5);
+
+       // Get all its transactions.
+       block.transactions.forEach(async (transactionHash) => {
+           // Retrieve the actual transaction.
+           let tx = await web3.eth.getTransaction(transactionHash);
+           // If it is directed to our address...
+           if (tx.to === receivingAddress) {
+               // Mark it as confirmed.
+               console.log("Transaction", tx.hash,
+                   "is confirmed in block", block.number);
+           }
+       });
+   }).on("error", console.error);
    ```
+
+   Note that all transactions from a block are retrieved simultaneously and this can easily trigger a rate limit on the node. A proper implementation should avoid this by serializing requests or managing the request rate manually.
 
 3. The server then **checks the wallet address** to find which user account it belongs to, and **adds the received amount to the user's balance**.
 
