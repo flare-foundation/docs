@@ -63,62 +63,63 @@ The [Exchange server](#exchange-server) must be continuously monitoring transfer
 
 2. The transaction is **detected** by the [Exchange server](#exchange-server) monitoring the wallets.
 
-   The server can discover a new transaction as soon as it is submitted by **subscribing** to the `pendingTransactions` event. This allows showing the transaction as "pending" in the UI, but there is still a chance that it is reverted.
+    The server can discover a new transaction as soon as it is submitted by **subscribing** to the `pendingTransactions` event. This allows showing the transaction as "pending" in the UI, but there is still a chance that it is reverted.
 
-   To avoid problems, the Exchange should only act on transactions appearing on blocks **old enough** for the chance of them being reverted to be negligible. This can be done by subscribing to the `newBlockHeaders` event and examining the transactions in a previous block (for example, 5 blocks behind).
+    To avoid problems, the Exchange should only act on transactions appearing on blocks **old enough** for the chance of them being reverted to be negligible. This can be done by subscribing to the `newBlockHeaders` event and examining the transactions in a previous block (for example, 5 blocks behind).
 
-   The code below exemplifies this process ([See the web3.js documentation](https://web3js.readthedocs.io){target=_blank} for the API details):
+    The code below exemplifies this process ([See the web3.js documentation](https://web3js.readthedocs.io){target=_blank} for the API details):
 
-   ```  typescript
-   // https://web3js.readthedocs.io
-   const Web3 = require('web3');
+    ```  typescript
+    // https://web3js.readthedocs.io
+    const Web3 = require('web3');
 
-   // Use your own node URL
-   // https://docs.flare.network/dev/reference/coston-testnet/
-   const web3 = new Web3("wss://coston-api.flare.network/ext/bc/C/ws");
+    // Use your own node URL
+    // https://docs.flare.network/dev/reference/coston-testnet/
+    const web3 = new Web3("wss://coston-api.flare.network/ext/bc/C/ws");
 
-   // Use your receiving wallet address
-   const receivingAddress = "0x947c76694491d3fD67a73688003c4d36C8780A97";
+    // Use your receiving wallet address
+    const receivingAddress = "0x947c76694491d3fD67a73688003c4d36C8780A97";
 
-   web3.eth.subscribe("pendingTransactions")
-   .on("data", async (transactionHash) => {
-       // New transaction hash received.
-       // Retrieve the actual transaction.
-       let tx = await web3.eth.getTransaction(transactionHash);
-       // If it is directed to our address...
-       if (tx.to === receivingAddress) {
-           // Mark it as pending.
-           console.log("Transaction", tx.hash, "is pending");
-       }
-   }).on("error", console.error);
+    web3.eth.subscribe("pendingTransactions")
+    .on("data", async (transactionHash) => {
+        // New transaction hash received.
+        // Retrieve the actual transaction.
+        let tx = await web3.eth.getTransaction(transactionHash);
+        // If it is directed to our address...
+        if (tx.to === receivingAddress) {
+            // Mark it as pending.
+            console.log("Transaction", tx.hash, "is pending");
+        }
+    }).on("error", console.error);
 
-   web3.eth.subscribe("newBlockHeaders")
-   .on("data", async (blockHeader) => {
-       // New block has been produced.
-       // Retrieve a block old enough to be considered confirmed.
-       let block = await web3.eth.getBlock(blockHeader.number - 5);
+    web3.eth.subscribe("newBlockHeaders")
+    .on("data", async (blockHeader) => {
+        // New block has been produced.
+        // Retrieve a block old enough to be considered confirmed.
+        let block = await web3.eth.getBlock(blockHeader.number - 5);
 
-       // Get all its transactions.
-       block.transactions.forEach(async (transactionHash) => {
-           // Retrieve the actual transaction.
-           let tx = await web3.eth.getTransaction(transactionHash);
-           // If it is directed to our address...
-           if (tx.to === receivingAddress) {
-               // Mark it as confirmed.
-               console.log("Transaction", tx.hash,
-                   "is confirmed in block", block.number);
-           }
-       });
-   }).on("error", console.error);
-   ```
+        // Get all its transactions.
+        block.transactions.forEach(async (transactionHash) => {
+            // Retrieve the actual transaction.
+            let tx = await web3.eth.getTransaction(transactionHash);
+            // If it is directed to our address...
+            if (tx.to === receivingAddress) {
+                // Mark it as confirmed.
+                console.log("Transaction", tx.hash,
+                    "is confirmed in block", block.number);
+            }
+        });
+    }).on("error", console.error);
+    ```
 
-   Note that all transactions from a block are retrieved simultaneously and this can easily trigger a rate limit on the node. A proper implementation should avoid this by serializing requests or managing the request rate manually.
+    !!! caution
+        Note that all transactions from a block are retrieved **simultaneously** and this can easily trigger a rate limit on the node. A proper implementation should avoid this by **serializing requests** or **managing the request rate manually**.
 
 3. The server then **checks the wallet address** to find which user account it belongs to, and **adds the received amount to the user's balance**.
 
 4. The server **announces a transaction** to the network (through the Exchange's own [observation node](#flare-observation-node)) to move the received funds to the [hot wallet](#exchanges-central-wallet-hot).
 
-   [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
+    [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
 5. The received funds are **transferred to the hot wallet** when the transaction is approved by the network. The reception wallets always remain empty.
 
@@ -137,6 +138,6 @@ Users must request withdrawals directly to the [Exchange server](#exchange-serve
 
 3. The server **announces a transaction** to the network (through the Exchange's own [observation node](#flare-observation-node)) to move the requested funds from the [hot wallet](#exchanges-central-wallet-hot) to the requested destination address.
 
-   [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
+    [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
 4. The requested funds are **transferred to the user's wallet** when the transaction is approved by the network.
