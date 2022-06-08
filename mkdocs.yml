@@ -19,6 +19,7 @@ markdown_extensions:
   - pymdownx.tilde              # Allow subscript and deletion marks (~ and ~~)
   - pymdownx.keys               # Allow Keyboard marks (++)
   - pymdownx.mark               # Allow selection marks (==)
+  - pymdownx.inlinehilite       # Syntax-highlight inline code
   - pymdownx.tabbed:            # Tabbed content
       alternate_style: true
   - toc:                        # TOC control
@@ -130,3 +131,9 @@ nav:
     - Reference guides:
       - dev/reference/songbird.md
       - dev/reference/coston-testnet.md
+  - Exchange guides:
+    - exchange/index.md
+    - exchange/architecture.md
+    - exchange/tokenomics.md
+    - exchange/delegation.md
+    - exchange/troubleshooting.md
