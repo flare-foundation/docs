@@ -1,7 +1,7 @@
 # Glossary
 
 Attestation { #attestation }
-: A data proof provided to the [State Connector](#state_connector) by a decentralized network of Attestation Providers that confirms the validity or otherwise of any request.
+: A data proof provided to the [State Connector](#state_connector) by a decentralized set of Attestation Providers that confirms the validity or otherwise of any request.
 
 Avalanche { #avalanche }
 : An open-source blockchain using the Snow family of consensus protocols and [Proof of Stake](#proof_of_stake) for [Sybil resistance](#sybil_resistance). It is advertised as the fastest smart contract platform.
