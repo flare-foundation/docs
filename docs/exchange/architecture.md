@@ -140,4 +140,8 @@ Users must request withdrawals directly to the [Exchange server](#exchange-serve
 
     [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
+    !!! caution
+        Please make sure you **sign the transaction** before submitting it, as shown in the example.
+        Unsigned transactions are ignored by the network.
+
 4. The requested funds are **transferred to the user's wallet** when the transaction is approved by the network.
