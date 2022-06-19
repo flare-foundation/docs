@@ -1,5 +1,7 @@
 # Troubleshooting Price Providers
 
+### When trying to whitelist my address I get an error - vote power too low
+This error means your vote power is too low and you can't yet whitelist your address. This can happen for two reasons, either your vote power is below the vote power of the 100th provider in the whitelist. The other reason could be that your current vote power is high enough but a new vote power block was not chosen yet. Note that a new vote power block is chosen per new reward epoch. 
 ### I have increased my vote power, but the address is still not getting whitelisted, what is wrong?
 
 Addresses are whitelisted based on vote power as reflected in the vote power block of the current reward epoch. Increased vote power on a different block will not enable your address to be whitelisted.
