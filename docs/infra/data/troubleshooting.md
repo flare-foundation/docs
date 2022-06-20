@@ -1,7 +1,18 @@
 # Troubleshooting Price Providers
 
-### When trying to whitelist my address I get an error - vote power too low
-This error means your vote power is too low and you can't yet whitelist your address. This can happen for two reasons, either your vote power is below the vote power of the 100th provider in the whitelist. The other reason could be that your current vote power is high enough but a new vote power block was not chosen yet. Note that a new vote power block is chosen per new reward epoch. 
+### When trying to whitelist my address I get the error "vote power too low"
+
+To whitelist the address of your [data provider](glossary.md#data_provider) you need a minimum amount of vote power, derived both from the address' staked `WSGB` and [delegation](glossary.md#delegate).
+
+This error is caused mainly by two reasons:
+
+- Your vote power is below the vote power of the 100<sup>th</sup> provider in the current whitelist.
+  Only the first 100 data providers can be whitelisted, strictly ordered by voting power, so you need to increase yours.
+
+- Your vote power is high enough, but it hasn't been taken into account yet.
+  Keep in mind that vote power is only read and whitelists updated once per reward epoch.
+  On [Songbird](../../dev/reference/songbird.md) reward epochs start roughly on Saturdays at 8:40AM UTC, so you will need to wait.
+
 ### I have increased my vote power, but the address is still not getting whitelisted, what is wrong?
 
 Addresses are whitelisted based on vote power as reflected in the vote power block of the current reward epoch. Increased vote power on a different block will not enable your address to be whitelisted.
