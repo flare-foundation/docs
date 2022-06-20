@@ -13,6 +13,13 @@
 .md-typeset li .admonition-title {
     margin-top: 0 !important;
 }
+/* Custom borderless admonition, just to help position images. Use with: */
+/* !!! image inline end "" */
+.md-typeset .admonition.image,
+.md-typeset details.image {
+    border: 0;
+    box-shadow: none;
+}
 
 /* Hide the GitHub link at the top, it's not that interesting */
 .md-header__source,
