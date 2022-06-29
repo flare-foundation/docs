@@ -53,7 +53,6 @@ Otherwise, queries like "What is the weather like in Paris?" would have a hard t
 
 The State Connector simply **forwards the request** to all connected Attestation Providers through an [EVM](glossary.md#evm) event.
 Therefore, the request is **not** stored on the blockchain and **its gas cost is very low** for the requester.
-The total cost of the request transaction is below 2000 gas, i.e. less than 10% of the cost of a simple payment transaction.
 
 ### 3. Data retrieval
 
@@ -69,14 +68,14 @@ To prevent Attestation Providers from peeking at each other's answers, these are
 
 ??? example "Submitting an attestation (For Attestation Provider developers)"
 
-    Attestation Providers use the `submitAttestation` method (#3) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/write-contract){ target=_blank }:
+    Attestation Providers use the `submitAttestation` method (#3) of the [StateConnector contract](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L92){ target=_blank }:
 
     ```solidity
     function submitAttestation(
-        uint256 bufferNumber,
-        bytes32 maskedMerkleHash,
-        bytes32 committedRandom,
-        bytes32 revealedRandom
+        uint256 _bufferNumber,
+        bytes32 _commitHash,
+        bytes32 _merkleRoot,
+        bytes32 _randomNumber
     ) external returns (
         bool _isInitialBufferSlot
     );
@@ -96,7 +95,7 @@ Otherwise, no consensus is achieved: requests remain unanswered and must be issu
 
     To retrieve the stored answers just read the `merkleRoots` public array (#8) in the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract){ target=_blank }.
 
-    More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L49){ target=_blank }.
+    More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L59){ target=_blank }.
 
     As shown below, multiple answers are actually packed into a single Merkle root. The [Attestation Packing](#attestation-packing) section explains how to retrieve an individual answer.
 
@@ -105,7 +104,7 @@ Otherwise, no consensus is achieved: requests remain unanswered and must be issu
 For simplicity, the above description omitted **two very important mechanisms**, reviewed here.
 
 The main one is **Attestation packing**, which decouples the number of requests from the number of answers, effectively providing unbounded scalability.
-It requires requests to be first **collected** and then **answered all at once**, so a serialization protocol called **RCR** is used.
+It requires requests to be first **collected** and then **answered all at once**, so a protocol called **RCR** is used.
 
 ### Overlapped RCR Protocol
 
@@ -153,8 +152,7 @@ A request is only **valid** (and therefore added to the proof) if it is well-for
 Different providers might have different views on what reality is, and this is why the State Connector runs a consensus algorithm on the received answers.
 
 Additionally, the allowed request types are **carefully designed to minimize the probability of contention**.
-For example, requiring some time for transactions to settle before inquiring about them:
-Does a given Bitcoin transaction with a specific hash exist on the Bitcoin chain at a specific block height, which was mined **at least 10 blocks ago**?
+For example, requiring some time for **transactions to settle** before inquiring about them, and forcing requests to include the hash of the block containing the transaction, which proves that the transaction has already been mined.
 
 Attestation Providers keep the actual retrieved data for a week, in case it contains additional information beyond the yes/no result.
 Users can request this data directly from the providers through the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md){ target=_blank }.
@@ -194,11 +192,11 @@ Additional points worth noting:
     3. **Rebuild the Merkle tree** for the retrieved data.
     There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/lib/utils/MerkleTree.ts){ target=_blank } library.
 
-    1. **Check** that the tree's root matches the Attestation Proof from step 1.
+    4. **Check** that the tree's root matches the Attestation Proof from step 1.
     If it does not match, this provider did not submit the answer agreed by the majority.
     Choose another provider in step 2.
 
-    1. Now that you know that the retrieved data has been agreed upon by the consensus, you can use it.
+    5. Now that you know that the retrieved data has been agreed upon by the consensus, you can use it.
     **Look for your request inside the returned data**.
     If it is not present, your request was deemed **invalid** (e.g. the queried transaction was not present).
 
