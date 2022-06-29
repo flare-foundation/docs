@@ -6,8 +6,7 @@ The **State Connector** is a smart contract running on the Flare network that al
 It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 
 This is accomplished by using a set of **independent Attestation Providers** which fetch the required information from the world and deliver it to the Flare network.
-The State Connector smart contract then checks if there is **enough consensus** among the received answers.
-If that is the case, it **publishes the results** and **rewards the appropriate providers**.
+The State Connector smart contract then checks if there is **enough consensus** among the received answers and **publishes the results** if so.
 
 <figure markdown>
   ![The State Connector](SC-intro.png){ loading=lazy .allow-zoom width=500px }
@@ -36,11 +35,10 @@ The answers, though, might contain any kind of additional data attached, like th
 
 Requests must adhere to one of the **available request types**, which have been designed to be **strictly decidable**, i.e., the answers are objective and cannot be argued.
 Otherwise, queries like "What is the weather like in Paris?" would have a hard time reaching consensus among the different Attestation Providers.
-Section [Adding New Attestation Types](#adding-new-attestation-types) below contains more details.
 
 ??? example "Making a request (for App developers)"
 
-    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/write-contract):
+    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/write-contract){ target=_blank }:
 
     ```solidity
     function requestAttestations(
@@ -49,7 +47,7 @@ Section [Adding New Attestation Types](#adding-new-attestation-types) below cont
     ```
 
     The `requestAttestations` method has a single parameter, `data`, which is a byte array with a content that depends on the desired **request type**.
-    You can learn how to build this array in the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types){target=_blank}.
+    You can learn how to build this array in the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types){ target=_blank }.
 
 ### 2. Request forwarding
 
@@ -64,7 +62,6 @@ E.g., retrieving data from another blockchain or public API.
 
 Keep in mind that Attestation Providers are **not controlled by Flare** in any way.
 Anybody can listen to the request events and provide answers using any combination of hardware, software and code they see fit.
-If the answer adheres to the protocol and it matches the majority consensus, such providers will be rewarded.
 
 ### 4. Attestation
 
@@ -101,13 +98,7 @@ Otherwise, no consensus is achieved: requests remain unanswered and must be issu
 
     More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L49){ target=_blank }.
 
-    As shown below, multiple answers are actually packed into a single Merkle root. The [Attestation Proof Unpacking](#proof-unpacking) section explains how to retrieve an individual answer.
-
-### 6. Rewards
-
-All Attestation Providers that submitted **the answer agreed by the majority** are rewarded.
-
-==The exact mechanism is still being designed (XXX).==
+    As shown below, multiple answers are actually packed into a single Merkle root. The [Attestation Packing](#attestation-packing) section explains how to retrieve an individual answer.
 
 ## Attestation Protocols
 
@@ -198,7 +189,7 @@ Additional points worth noting:
     1. In the attestation round after you made the request (3 attestation phases, so from 3 to 4.5 minutes) the **Attestation Proof** for the round should be available in the State Connector.
         Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract){ target=_blank }.
 
-    2. **Select any Attestation Provider** you want (==XXX Method TBD==) and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md){ target=_blank } path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
+    2. **Select any Attestation Provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md){ target=_blank } path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
 
     3. **Rebuild the Merkle tree** for the retrieved data.
     There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/lib/utils/MerkleTree.ts){ target=_blank } library.
@@ -212,49 +203,3 @@ Additional points worth noting:
     If it is not present, your request was deemed **invalid** (e.g. the queried transaction was not present).
 
         Otherwise, your request is valid and you can find any extra information about it in the data array.
-
-## Security
-
-### Branching Protocol
-
-> The State Connector branching protocol protects Flare against incorrect interpretation of real-world events, _proactively_, such that there are never any rollbacks on the Flare blockchain state. Instead of having rollbacks, contention on state correctness is handled via automatic state branching into a correct and incorrect path. The security assumption is that if you as an independent node operator are following along with the correct real-world state, then you will always end up on the correct branch of the blockchain state.
->
-> The minimum requirement to confirm the existence and validity of a blockchain transaction is for it to be confirmed by a majority of the default set of Attestation Providers.
->
-> Anyone may also operate their own _local_ attestation provider(s) without any capital requirement. Every Flare node operator, no matter how prominently they feature in the overall network, defines which local attestation provider(s) they wish to use for the State Connector branching protocol.
-
-    A Flare node will only pass a State Connector vote if both the default set and their locally-defined set of attestation providers pass the vote:
-
-    * If a Flare node's locally-defined set of attestation providers disagrees with the vote made by the default set, then:
-      1. The Flare node will automatically create a backup of the blockchain state at the last point that it will have in common with the default set.
-      2. The Flare node will then proceed along the branch that it locally believes is correct.
-    * Else if the default set fails to pass a vote, then:
-      1. No branching occurs.
-
-<figure markdown>
-  ![Default and Local attestation providers](SC-local-AP.png){ loading=lazy }
-  <figcaption>Default and Local attestation providers.</figcaption>
-</figure>
-
-<figure markdown>
-  ![Branching](SC-branching.png){ loading=lazy }
-  <figcaption>Branching.</figcaption>
-</figure>
-
-<figure markdown>
-  ![Branching resolution 1](SC-branching-resolution-1.png){ loading=lazy }
-  <figcaption>Branching resolution 1.</figcaption>
-</figure>
-
-<figure markdown>
-  ![Branching resolution 2](SC-branching-resolution-2.png){ loading=lazy }
-  <figcaption>Branching resolution 2.</figcaption>
-</figure>
-
-## Becoming an Attestation Provider
-
-> Anyone may operate as an attestation provider without any capital requirement, but a default incentivized set is used as the minimal requirement for passing a vote about the events in the previous set.
-
-## Adding New Attestation Types
-
-> New real-world event-type integrations are introduced to the State Connector via acceptance by the default attestation providers, and without requiring any changes to the core voting or branching protocols described above. This enables rapid deployment of new use-cases without any validator-level code changes.
