@@ -3,7 +3,7 @@
 Validator nodes are **online servers** running a blockchain's client software. They all keep a copy of the [ledger](glossary.md#ledger) and are constantly talking to each other to make sure the copies are **consistent** as new data is added.
 
 <figure markdown>
-  ![Validator node network](validator-network.png){ loading=lazy .allow-zoom }
+  ![Validator node network](validator-network.png){ loading=lazy .allow-zoom width=500px }
   <figcaption>A network of validator nodes, each one with an identical copy of the ledger.</figcaption>
 </figure>
 
