@@ -130,3 +130,18 @@ nav:
     - Reference guides:
       - dev/reference/songbird.md
       - dev/reference/coston-testnet.md
+      - API reference:
+        - dev/reference/userInterfaces/IDistribution.md
+        - dev/reference/userInterfaces/IDistributionToDelegators.md
+        - dev/reference/userInterfaces/IFtsoManager.md
+        - dev/reference/userInterfaces/IFtso.md
+        - dev/reference/userInterfaces/IFtsoRegistry.md
+        - dev/reference/userInterfaces/IFtsoRewardManager.md
+        - dev/reference/userInterfaces/IGovernanceSettings.md
+        - dev/reference/userInterfaces/IGovernanceVotePower.md
+        - dev/reference/userInterfaces/IGovernor.md
+        - dev/reference/userInterfaces/IPriceSubmitter.md
+        - dev/reference/userInterfaces/IVoterWhitelister.md
+        - dev/reference/userInterfaces/IVPContractEvents.md
+        - dev/reference/userInterfaces/IVPToken.md
+        - dev/reference/userInterfaces/IWNat.md
