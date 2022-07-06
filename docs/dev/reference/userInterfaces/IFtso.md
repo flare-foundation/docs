@@ -1,8 +1,5 @@
 # IFtso
 
-A very useful interface indeed!
-And an extra line!
-
 ## PriceFinalizationType
 
 ```solidity
@@ -21,17 +18,6 @@ enum PriceFinalizationType {
 ```solidity
 event PriceRevealed(address voter, uint256 epochId, uint256 price, uint256 timestamp, uint256 votePowerNat, uint256 votePowerAsset)
 ```
-
-This can be documented, right?
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| voter | address | Guess what? A voter. |
-| epochId | uint256 |  |
-| price | uint256 |  |
-| timestamp | uint256 |  |
-| votePowerNat | uint256 |  |
-| votePowerAsset | uint256 |  |
 
 ## PriceFinalized
 
