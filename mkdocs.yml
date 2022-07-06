@@ -148,6 +148,7 @@ nav:
       - dev/reference/contracts.md
       - dev/reference/network-configs.md
       - API reference:
+        - dev/reference/userInterfaces/index.md
         - dev/reference/userInterfaces/IDistribution.md
         - dev/reference/userInterfaces/IDistributionToDelegators.md
         - dev/reference/userInterfaces/IFtsoManager.md
