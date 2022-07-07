@@ -1,9 +1,19 @@
 # IVPContractEvents
 
-## Delegate
+<div class="api-node-type" markdown>
+
+## Events
+
+<div class="api-node" markdown>
+### Delegate
 
 ```solidity
-event Delegate(address from, address to, uint256 priorVotePower, uint256 newVotePower)
+event Delegate(
+    address from,
+    address to,
+    uint256 priorVotePower,
+    uint256 newVotePower
+)
 ```
 
 Event triggered when an account delegates or undelegates another account. 
@@ -12,14 +22,24 @@ For undelegation, `newVotePower` is 0.
 
 Note: the event is always emitted from VPToken's `writeVotePowerContract`.
 
-## Revoke
+</div>
+<div class="api-node" markdown>
+### Revoke
 
 ```solidity
-event Revoke(address delegator, address delegatee, uint256 votePower, uint256 blockNumber)
+event Revoke(
+    address delegator,
+    address delegatee,
+    uint256 votePower,
+    uint256 blockNumber
+)
 ```
 
 Event triggered only when account `delegator` revokes delegation to `delegatee`
 for a single block in the past (typically the current vote block).
 
 Note: the event is always emitted from VPToken's `writeVotePowerContract` and/or `readVotePowerContract`.
+
+</div>
+</div>
 

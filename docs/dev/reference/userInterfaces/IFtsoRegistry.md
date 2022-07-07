@@ -1,80 +1,151 @@
 # IFtsoRegistry
 
-## getFtso
+<div class="api-node-type" markdown>
+
+## Functions
+
+<div class="api-node" markdown>
+### getFtso
 
 ```solidity
-function getFtso(uint256 _ftsoIndex) external view returns (contract IIFtso _activeFtsoAddress)
+function getFtso(
+    uint256 _ftsoIndex
+) external view returns (
+    contract IIFtso _activeFtsoAddress);
 ```
 
-## getFtsoBySymbol
+</div>
+<div class="api-node" markdown>
+### getFtsoBySymbol
 
 ```solidity
-function getFtsoBySymbol(string _symbol) external view returns (contract IIFtso _activeFtsoAddress)
+function getFtsoBySymbol(
+    string _symbol
+) external view returns (
+    contract IIFtso _activeFtsoAddress);
 ```
 
-## getSupportedIndices
+</div>
+<div class="api-node" markdown>
+### getSupportedIndices
 
 ```solidity
-function getSupportedIndices() external view returns (uint256[] _supportedIndices)
+function getSupportedIndices(
+) external view returns (
+    uint256[] _supportedIndices);
 ```
 
-## getSupportedSymbols
+</div>
+<div class="api-node" markdown>
+### getSupportedSymbols
 
 ```solidity
-function getSupportedSymbols() external view returns (string[] _supportedSymbols)
+function getSupportedSymbols(
+) external view returns (
+    string[] _supportedSymbols);
 ```
 
-## getSupportedFtsos
+</div>
+<div class="api-node" markdown>
+### getSupportedFtsos
 
 ```solidity
-function getSupportedFtsos() external view returns (contract IIFtso[] _ftsos)
+function getSupportedFtsos(
+) external view returns (
+    contract IIFtso[] _ftsos);
 ```
 
-## getFtsoIndex
+</div>
+<div class="api-node" markdown>
+### getFtsoIndex
 
 ```solidity
-function getFtsoIndex(string _symbol) external view returns (uint256 _assetIndex)
+function getFtsoIndex(
+    string _symbol
+) external view returns (
+    uint256 _assetIndex);
 ```
 
-## getFtsoSymbol
+</div>
+<div class="api-node" markdown>
+### getFtsoSymbol
 
 ```solidity
-function getFtsoSymbol(uint256 _ftsoIndex) external view returns (string _symbol)
+function getFtsoSymbol(
+    uint256 _ftsoIndex
+) external view returns (
+    string _symbol);
 ```
 
-## getCurrentPrice
+</div>
+<div class="api-node" markdown>
+### getCurrentPrice
 
 ```solidity
-function getCurrentPrice(uint256 _ftsoIndex) external view returns (uint256 _price, uint256 _timestamp)
+function getCurrentPrice(
+    uint256 _ftsoIndex
+) external view returns (
+    uint256 _price,
+    uint256 _timestamp);
 ```
 
-## getCurrentPrice
+</div>
+<div class="api-node" markdown>
+### getCurrentPrice
 
 ```solidity
-function getCurrentPrice(string _symbol) external view returns (uint256 _price, uint256 _timestamp)
+function getCurrentPrice(
+    string _symbol
+) external view returns (
+    uint256 _price,
+    uint256 _timestamp);
 ```
 
-## getSupportedIndicesAndFtsos
+</div>
+<div class="api-node" markdown>
+### getSupportedIndicesAndFtsos
 
 ```solidity
-function getSupportedIndicesAndFtsos() external view returns (uint256[] _supportedIndices, contract IIFtso[] _ftsos)
+function getSupportedIndicesAndFtsos(
+) external view returns (
+    uint256[] _supportedIndices,
+    contract IIFtso[] _ftsos);
 ```
 
-## getSupportedSymbolsAndFtsos
+</div>
+<div class="api-node" markdown>
+### getSupportedSymbolsAndFtsos
 
 ```solidity
-function getSupportedSymbolsAndFtsos() external view returns (string[] _supportedSymbols, contract IIFtso[] _ftsos)
+function getSupportedSymbolsAndFtsos(
+) external view returns (
+    string[] _supportedSymbols,
+    contract IIFtso[] _ftsos);
 ```
 
-## getSupportedIndicesAndSymbols
+</div>
+<div class="api-node" markdown>
+### getSupportedIndicesAndSymbols
 
 ```solidity
-function getSupportedIndicesAndSymbols() external view returns (uint256[] _supportedIndices, string[] _supportedSymbols)
+function getSupportedIndicesAndSymbols(
+) external view returns (
+    uint256[] _supportedIndices,
+    string[] _supportedSymbols);
 ```
 
-## getSupportedIndicesSymbolsAndFtsos
+</div>
+<div class="api-node" markdown>
+### getSupportedIndicesSymbolsAndFtsos
 
 ```solidity
-function getSupportedIndicesSymbolsAndFtsos() external view returns (uint256[] _supportedIndices, string[] _supportedSymbols, contract IIFtso[] _ftsos)
+function getSupportedIndicesSymbolsAndFtsos(
+) external view returns (
+    uint256[] _supportedIndices,
+    string[] _supportedSymbols,
+    contract IIFtso[] _ftsos);
 ```
+
+</div>
+</div>
 
