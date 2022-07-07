@@ -1,80 +1,155 @@
 # IDistributionToDelegators
 
-## EntitlementStart
+<div class="api-node-type" markdown>
+
+## Events
+
+<div class="api-node" markdown>
+### EntitlementStart
 
 ```solidity
-event EntitlementStart(uint256 entitlementStartTs)
+event EntitlementStart(
+    uint256 entitlementStartTs
+)
 ```
 
-## AccountClaimed
+</div>
+<div class="api-node" markdown>
+### AccountClaimed
 
 ```solidity
-event AccountClaimed(address whoClaimed, address sentTo, uint256 month, uint256 amountWei)
+event AccountClaimed(
+    address whoClaimed,
+    address sentTo,
+    uint256 month,
+    uint256 amountWei
+)
 ```
 
-## AccountOptOut
+</div>
+<div class="api-node" markdown>
+### AccountOptOut
 
 ```solidity
-event AccountOptOut(address theAccount, bool confirmed)
+event AccountOptOut(
+    address theAccount,
+    bool confirmed
+)
 ```
 
-## optOutOfAirdrop
+</div>
+</div>
+<div class="api-node-type" markdown>
+
+## Functions
+
+<div class="api-node" markdown>
+### optOutOfAirdrop
 
 ```solidity
-function optOutOfAirdrop() external
+function optOutOfAirdrop(
+) external;
 ```
 
-## claim
+</div>
+<div class="api-node" markdown>
+### claim
 
 ```solidity
-function claim(address payable _recipient, uint256 _month) external returns (uint256 _amountWei)
+function claim(
+    address payable _recipient,
+    uint256 _month
+) external returns (
+    uint256 _amountWei);
 ```
 
-## claimToPersonalDelegationAccount
+</div>
+<div class="api-node" markdown>
+### claimToPersonalDelegationAccount
 
 ```solidity
-function claimToPersonalDelegationAccount(uint256 _month) external returns (uint256 _amountWei)
+function claimToPersonalDelegationAccount(
+    uint256 _month
+) external returns (
+    uint256 _amountWei);
 ```
 
-## getClaimableAmount
+</div>
+<div class="api-node" markdown>
+### getClaimableAmount
 
 ```solidity
-function getClaimableAmount(uint256 _month) external view returns (uint256 _amountWei)
+function getClaimableAmount(
+    uint256 _month
+) external view returns (
+    uint256 _amountWei);
 ```
 
-## getClaimableAmountOf
+</div>
+<div class="api-node" markdown>
+### getClaimableAmountOf
 
 ```solidity
-function getClaimableAmountOf(address account, uint256 _month) external view returns (uint256 _amountWei)
+function getClaimableAmountOf(
+    address account,
+    uint256 _month
+) external view returns (
+    uint256 _amountWei);
 ```
 
-## getClaimedAmount
+</div>
+<div class="api-node" markdown>
+### getClaimedAmount
 
 ```solidity
-function getClaimedAmount(uint256 _month) external view returns (uint256 _amountWei)
+function getClaimedAmount(
+    uint256 _month
+) external view returns (
+    uint256 _amountWei);
 ```
 
-## getClaimedAmountOf
+</div>
+<div class="api-node" markdown>
+### getClaimedAmountOf
 
 ```solidity
-function getClaimedAmountOf(address _account, uint256 _month) external view returns (uint256 _amountWei)
+function getClaimedAmountOf(
+    address _account,
+    uint256 _month
+) external view returns (
+    uint256 _amountWei);
 ```
 
-## getCurrentMonth
+</div>
+<div class="api-node" markdown>
+### getCurrentMonth
 
 ```solidity
-function getCurrentMonth() external view returns (uint256 _currentMonth)
+function getCurrentMonth(
+) external view returns (
+    uint256 _currentMonth);
 ```
 
-## getMonthToExpireNext
+</div>
+<div class="api-node" markdown>
+### getMonthToExpireNext
 
 ```solidity
-function getMonthToExpireNext() external view returns (uint256 _monthToExpireNext)
+function getMonthToExpireNext(
+) external view returns (
+    uint256 _monthToExpireNext);
 ```
 
-## secondsTillNextClaim
+</div>
+<div class="api-node" markdown>
+### secondsTillNextClaim
 
 ```solidity
-function secondsTillNextClaim() external view returns (uint256 _timetill)
+function secondsTillNextClaim(
+) external view returns (
+    uint256 _timetill);
 ```
+
+</div>
+</div>
 

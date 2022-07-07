@@ -1,45 +1,93 @@
 # IFtsoRewardManager
 
-## RewardClaimed
+<div class="api-node-type" markdown>
+
+## Events
+
+<div class="api-node" markdown>
+### RewardClaimed
 
 ```solidity
-event RewardClaimed(address dataProvider, address whoClaimed, address sentTo, uint256 rewardEpoch, uint256 amount)
+event RewardClaimed(
+    address dataProvider,
+    address whoClaimed,
+    address sentTo,
+    uint256 rewardEpoch,
+    uint256 amount
+)
 ```
 
-## UnearnedRewardsAccrued
+</div>
+<div class="api-node" markdown>
+### UnearnedRewardsAccrued
 
 ```solidity
-event UnearnedRewardsAccrued(uint256 epochId, uint256 reward)
+event UnearnedRewardsAccrued(
+    uint256 epochId,
+    uint256 reward
+)
 ```
 
-## RewardsDistributed
+</div>
+<div class="api-node" markdown>
+### RewardsDistributed
 
 ```solidity
-event RewardsDistributed(address ftso, uint256 epochId, address[] addresses, uint256[] rewards)
+event RewardsDistributed(
+    address ftso,
+    uint256 epochId,
+    address[] addresses,
+    uint256[] rewards
+)
 ```
 
-## RewardClaimsEnabled
+</div>
+<div class="api-node" markdown>
+### RewardClaimsEnabled
 
 ```solidity
-event RewardClaimsEnabled(uint256 rewardEpochId)
+event RewardClaimsEnabled(
+    uint256 rewardEpochId
+)
 ```
 
-## FeePercentageChanged
+</div>
+<div class="api-node" markdown>
+### FeePercentageChanged
 
 ```solidity
-event FeePercentageChanged(address dataProvider, uint256 value, uint256 validFromEpoch)
+event FeePercentageChanged(
+    address dataProvider,
+    uint256 value,
+    uint256 validFromEpoch
+)
 ```
 
-## RewardClaimsExpired
+</div>
+<div class="api-node" markdown>
+### RewardClaimsExpired
 
 ```solidity
-event RewardClaimsExpired(uint256 rewardEpochId)
+event RewardClaimsExpired(
+    uint256 rewardEpochId
+)
 ```
 
-## claimReward
+</div>
+</div>
+<div class="api-node-type" markdown>
+
+## Functions
+
+<div class="api-node" markdown>
+### claimReward
 
 ```solidity
-function claimReward(address payable _recipient, uint256[] _rewardEpochs) external returns (uint256 _rewardAmount)
+function claimReward(
+    address payable _recipient,
+    uint256[] _rewardEpochs
+) external returns (
+    uint256 _rewardAmount);
 ```
 
 Allows a percentage delegator to claim rewards.
@@ -47,19 +95,28 @@ This function is intended to be used to claim rewards in case of delegation by p
 
 _Reverts if `msg.sender` is delegating by amount_
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _recipient | address payable | address to transfer funds to |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | amount of total claimed rewards |
-
-## claimAndWrapReward
+</div>
+<div class="api-node" markdown>
+### claimAndWrapReward
 
 ```solidity
-function claimAndWrapReward(address payable _recipient, uint256[] _rewardEpochs) external returns (uint256 _rewardAmount)
+function claimAndWrapReward(
+    address payable _recipient,
+    uint256[] _rewardEpochs
+) external returns (
+    uint256 _rewardAmount);
 ```
 
 Allows a percentage delegator to claim and wrap rewards.
@@ -67,19 +124,28 @@ This function is intended to be used to claim and wrap rewards in case of delega
 
 _Reverts if `msg.sender` is delegating by amount_
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _recipient | address payable | address to transfer funds to |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | amount of total claimed rewards |
-
-## claimAndWrapRewardToOwner
+</div>
+<div class="api-node" markdown>
+### claimAndWrapRewardToOwner
 
 ```solidity
-function claimAndWrapRewardToOwner(address payable _rewardOwner, uint256[] _rewardEpochs) external returns (uint256 _rewardAmount)
+function claimAndWrapRewardToOwner(
+    address payable _rewardOwner,
+    uint256[] _rewardEpochs
+) external returns (
+    uint256 _rewardAmount);
 ```
 
 Allows a percentage delegator to claim and wrap rewards.
@@ -90,19 +156,29 @@ The caller does not have to be the owner, but must be allowed by owner by callin
 
 _Reverts if `msg.sender` is delegating by amount_
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardOwner | address payable | address of the reward owner; also, funds will be tranfered there |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | amount of total claimed rewards |
-
-## claimRewardFromDataProviders
+</div>
+<div class="api-node" markdown>
+### claimRewardFromDataProviders
 
 ```solidity
-function claimRewardFromDataProviders(address payable _recipient, uint256[] _rewardEpochs, address[] _dataProviders) external returns (uint256 _rewardAmount)
+function claimRewardFromDataProviders(
+    address payable _recipient,
+    uint256[] _rewardEpochs,
+    address[] _dataProviders
+) external returns (
+    uint256 _rewardAmount);
 ```
 
 Allows the sender to claim rewards from specified data providers.
@@ -110,20 +186,30 @@ This function is intended to be used to claim rewards in case of delegation by a
 
 _Function can be used by a percentage delegator but is more gas consuming than `claimReward`._
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _recipient | address payable | address to transfer funds to |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 | _dataProviders | address[] | array of addresses representing data providers to claim the reward from |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | amount of total claimed rewards |
-
-## claimAndWrapRewardFromDataProviders
+</div>
+<div class="api-node" markdown>
+### claimAndWrapRewardFromDataProviders
 
 ```solidity
-function claimAndWrapRewardFromDataProviders(address payable _recipient, uint256[] _rewardEpochs, address[] _dataProviders) external returns (uint256 _rewardAmount)
+function claimAndWrapRewardFromDataProviders(
+    address payable _recipient,
+    uint256[] _rewardEpochs,
+    address[] _dataProviders
+) external returns (
+    uint256 _rewardAmount);
 ```
 
 Allows the sender to claim and wrap rewards from specified data providers.
@@ -131,20 +217,30 @@ This function is intended to be used to claim and wrap rewards in case of delega
 
 _Function can be used by a percentage delegator but is more gas consuming than `claimReward`._
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _recipient | address payable | address to transfer funds to |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 | _dataProviders | address[] | array of addresses representing data providers to claim the reward from |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | amount of total claimed rewards |
-
-## claimAndWrapRewardFromDataProvidersToOwner
+</div>
+<div class="api-node" markdown>
+### claimAndWrapRewardFromDataProvidersToOwner
 
 ```solidity
-function claimAndWrapRewardFromDataProvidersToOwner(address payable _rewardOwner, uint256[] _rewardEpochs, address[] _dataProviders) external returns (uint256 _rewardAmount)
+function claimAndWrapRewardFromDataProvidersToOwner(
+    address payable _rewardOwner,
+    uint256[] _rewardEpochs,
+    address[] _dataProviders
+) external returns (
+    uint256 _rewardAmount);
 ```
 
 Allows the sender to claim and wrap rewards from specified data providers.
@@ -155,140 +251,214 @@ The caller does not have to be the owner, but must be allowed by owner by callin
 
 _Function can be used by a percentage delegator but is more gas consuming than `claimReward`._
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardOwner | address payable | address of the reward owner; also, funds will be tranfered there |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 | _dataProviders | address[] | array of addresses representing data providers to claim the reward from |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | amount of total claimed rewards |
-
-## addClaimExecutor
+</div>
+<div class="api-node" markdown>
+### addClaimExecutor
 
 ```solidity
-function addClaimExecutor(address _executor) external
+function addClaimExecutor(
+    address _executor
+) external;
 ```
 
 Called by reward owner to allow `_executor` to call `claimAndWrapRewardToOwner` or 
 `claimAndWrapRewardFromDataProvidersToOwner`.
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _executor | address | the account that will be able to call the `claim to owner` methods |
 
-## removeClaimExecutor
+</div>
+<div class="api-node" markdown>
+### removeClaimExecutor
 
 ```solidity
-function removeClaimExecutor(address _executor) external
+function removeClaimExecutor(
+    address _executor
+) external;
 ```
 
 Called by reward owner to revoke the allowance of `_executor` to call `claimAndWrapRewardToOwner` or 
 `claimAndWrapRewardFromDataProvidersToOwner`.
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _executor | address | the account that won't be able to call the `claim to owner` methods any more |
 
-## setDataProviderFeePercentage
+</div>
+<div class="api-node" markdown>
+### setDataProviderFeePercentage
 
 ```solidity
-function setDataProviderFeePercentage(uint256 _feePercentageBIPS) external returns (uint256 _validFromEpoch)
+function setDataProviderFeePercentage(
+    uint256 _feePercentageBIPS
+) external returns (
+    uint256 _validFromEpoch);
 ```
 
 Allows data provider to set (or update last) fee percentage.
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _feePercentageBIPS | uint256 | number representing fee percentage in BIPS |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _validFromEpoch | uint256 | reward epoch number when the setting becomes effective. |
-
-## active
+</div>
+<div class="api-node" markdown>
+### active
 
 ```solidity
-function active() external view returns (bool)
+function active(
+) external view returns (
+    bool);
 ```
 
 Allows reward claiming
 
-## getDataProviderCurrentFeePercentage
+</div>
+<div class="api-node" markdown>
+### getDataProviderCurrentFeePercentage
 
 ```solidity
-function getDataProviderCurrentFeePercentage(address _dataProvider) external view returns (uint256 _feePercentageBIPS)
+function getDataProviderCurrentFeePercentage(
+    address _dataProvider
+) external view returns (
+    uint256 _feePercentageBIPS);
 ```
 
 Returns the current fee percentage of `_dataProvider`
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _dataProvider | address | address representing data provider |
 
-## getDataProviderFeePercentage
+</div>
+<div class="api-node" markdown>
+### getDataProviderFeePercentage
 
 ```solidity
-function getDataProviderFeePercentage(address _dataProvider, uint256 _rewardEpoch) external view returns (uint256 _feePercentageBIPS)
+function getDataProviderFeePercentage(
+    address _dataProvider,
+    uint256 _rewardEpoch
+) external view returns (
+    uint256 _feePercentageBIPS);
 ```
 
 Returns the fee percentage of `_dataProvider` at `_rewardEpoch`
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _dataProvider | address | address representing data provider |
 | _rewardEpoch | uint256 | reward epoch number |
 
-## getDataProviderScheduledFeePercentageChanges
+</div>
+<div class="api-node" markdown>
+### getDataProviderScheduledFeePercentageChanges
 
 ```solidity
-function getDataProviderScheduledFeePercentageChanges(address _dataProvider) external view returns (uint256[] _feePercentageBIPS, uint256[] _validFromEpoch, bool[] _fixed)
+function getDataProviderScheduledFeePercentageChanges(
+    address _dataProvider
+) external view returns (
+    uint256[] _feePercentageBIPS,
+    uint256[] _validFromEpoch,
+    bool[] _fixed);
 ```
 
 Returns the scheduled fee percentage changes of `_dataProvider`
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _dataProvider | address | address representing data provider |
+
+*Returns*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _feePercentageBIPS | uint256[] | positional array of fee percentages in BIPS |
 | _validFromEpoch | uint256[] | positional array of block numbers the fee setings are effective from |
 | _fixed | bool[] | positional array of boolean values indicating if settings are subjected to change |
-
-## getEpochReward
+</div>
+<div class="api-node" markdown>
+### getEpochReward
 
 ```solidity
-function getEpochReward(uint256 _rewardEpoch) external view returns (uint256 _totalReward, uint256 _claimedReward)
+function getEpochReward(
+    uint256 _rewardEpoch
+) external view returns (
+    uint256 _totalReward,
+    uint256 _claimedReward);
 ```
 
 Returns information on epoch reward
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardEpoch | uint256 | reward epoch number |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _totalReward | uint256 | number representing the total epoch reward |
 | _claimedReward | uint256 | number representing the amount of total epoch reward that has been claimed |
-
-## getStateOfRewards
+</div>
+<div class="api-node" markdown>
+### getStateOfRewards
 
 ```solidity
-function getStateOfRewards(address _beneficiary, uint256 _rewardEpoch) external view returns (address[] _dataProviders, uint256[] _rewardAmounts, bool[] _claimed, bool _claimable)
+function getStateOfRewards(
+    address _beneficiary,
+    uint256 _rewardEpoch
+) external view returns (
+    address[] _dataProviders,
+    uint256[] _rewardAmounts,
+    bool[] _claimed,
+    bool _claimable);
 ```
 
 Returns the state of rewards for `_beneficiary` at `_rewardEpoch`
 
 _Reverts when queried with `_beneficary` delegating by amount_
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _beneficiary | address | address of reward beneficiary |
 | _rewardEpoch | uint256 | reward epoch number |
+
+*Returns*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -296,63 +466,99 @@ _Reverts when queried with `_beneficary` delegating by amount_
 | _rewardAmounts | uint256[] | positional array of reward amounts |
 | _claimed | bool[] | positional array of boolean values indicating if reward is claimed |
 | _claimable | bool | boolean value indicating if rewards are claimable |
-
-## getStateOfRewardsFromDataProviders
+</div>
+<div class="api-node" markdown>
+### getStateOfRewardsFromDataProviders
 
 ```solidity
-function getStateOfRewardsFromDataProviders(address _beneficiary, uint256 _rewardEpoch, address[] _dataProviders) external view returns (uint256[] _rewardAmounts, bool[] _claimed, bool _claimable)
+function getStateOfRewardsFromDataProviders(
+    address _beneficiary,
+    uint256 _rewardEpoch,
+    address[] _dataProviders
+) external view returns (
+    uint256[] _rewardAmounts,
+    bool[] _claimed,
+    bool _claimable);
 ```
 
 Returns the state of rewards for `_beneficiary` at `_rewardEpoch` from `_dataProviders`
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _beneficiary | address | address of reward beneficiary |
 | _rewardEpoch | uint256 | reward epoch number |
 | _dataProviders | address[] | positional array of addresses representing data providers |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmounts | uint256[] | positional array of reward amounts |
 | _claimed | bool[] | positional array of boolean values indicating if reward is claimed |
 | _claimable | bool | boolean value indicating if rewards are claimable |
-
-## getEpochsWithClaimableRewards
+</div>
+<div class="api-node" markdown>
+### getEpochsWithClaimableRewards
 
 ```solidity
-function getEpochsWithClaimableRewards() external view returns (uint256 _startEpochId, uint256 _endEpochId)
+function getEpochsWithClaimableRewards(
+) external view returns (
+    uint256 _startEpochId,
+    uint256 _endEpochId);
 ```
 
 Returns the start and the end of the reward epoch range for which the reward is claimable
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 
-## getEpochsWithUnclaimedRewards
+</div>
+<div class="api-node" markdown>
+### getEpochsWithUnclaimedRewards
 
 ```solidity
-function getEpochsWithUnclaimedRewards(address _beneficiary) external view returns (uint256[] _epochIds)
+function getEpochsWithUnclaimedRewards(
+    address _beneficiary
+) external view returns (
+    uint256[] _epochIds);
 ```
 
 Returns the array of claimable epoch ids for which the reward has not yet been claimed
 
 _Reverts when queried with `_beneficary` delegating by amount_
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _beneficiary | address | address of reward beneficiary |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _epochIds | uint256[] | array of epoch ids |
-
-## getClaimedReward
+</div>
+<div class="api-node" markdown>
+### getClaimedReward
 
 ```solidity
-function getClaimedReward(uint256 _rewardEpoch, address _dataProvider, address _claimer) external view returns (bool _claimed, uint256 _amount)
+function getClaimedReward(
+    uint256 _rewardEpoch,
+    address _dataProvider,
+    address _claimer
+) external view returns (
+    bool _claimed,
+    uint256 _amount);
 ```
 
 Returns the information on claimed reward of `_dataProvider` for `_rewardEpoch` by `_claimer`
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -360,66 +566,100 @@ Returns the information on claimed reward of `_dataProvider` for `_rewardEpoch` 
 | _dataProvider | address | address representing the data provider |
 | _claimer | address | address representing the claimer |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _claimed | bool | boolean indicating if reward has been claimed |
 | _amount | uint256 | number representing the claimed amount |
-
-## getRewardEpochToExpireNext
+</div>
+<div class="api-node" markdown>
+### getRewardEpochToExpireNext
 
 ```solidity
-function getRewardEpochToExpireNext() external view returns (uint256)
+function getRewardEpochToExpireNext(
+) external view returns (
+    uint256);
 ```
 
 Return reward epoch that will expire, when new reward epoch will start
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | [0] | uint256 | Reward epoch id that will expire next |
-
-## getRewardEpochVotePowerBlock
+</div>
+<div class="api-node" markdown>
+### getRewardEpochVotePowerBlock
 
 ```solidity
-function getRewardEpochVotePowerBlock(uint256 _rewardEpoch) external view returns (uint256)
+function getRewardEpochVotePowerBlock(
+    uint256 _rewardEpoch
+) external view returns (
+    uint256);
 ```
 
 Return reward epoch vote power block
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardEpoch | uint256 | reward epoch number |
 
-## getCurrentRewardEpoch
+</div>
+<div class="api-node" markdown>
+### getCurrentRewardEpoch
 
 ```solidity
-function getCurrentRewardEpoch() external view returns (uint256)
+function getCurrentRewardEpoch(
+) external view returns (
+    uint256);
 ```
 
 Return current reward epoch number
 
-## getInitialRewardEpoch
+</div>
+<div class="api-node" markdown>
+### getInitialRewardEpoch
 
 ```solidity
-function getInitialRewardEpoch() external view returns (uint256)
+function getInitialRewardEpoch(
+) external view returns (
+    uint256);
 ```
 
 Return initial reward epoch number
 
-## getDataProviderPerformanceInfo
+</div>
+<div class="api-node" markdown>
+### getDataProviderPerformanceInfo
 
 ```solidity
-function getDataProviderPerformanceInfo(uint256 _rewardEpoch, address _dataProvider) external view returns (uint256 _rewardAmount, uint256 _votePowerIgnoringRevocation)
+function getDataProviderPerformanceInfo(
+    uint256 _rewardEpoch,
+    address _dataProvider
+) external view returns (
+    uint256 _rewardAmount,
+    uint256 _votePowerIgnoringRevocation);
 ```
 
 Returns the information on rewards and initial vote power of `_dataProvider` for `_rewardEpoch`
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardEpoch | uint256 | reward epoch number |
 | _dataProvider | address | address representing the data provider |
 
+*Returns*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | number representing the amount of rewards |
 | _votePowerIgnoringRevocation | uint256 | number representing the vote power ignoring revocations |
+</div>
+</div>
 

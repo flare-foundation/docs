@@ -1,12 +1,24 @@
 # IPriceSubmitter
 
-## HashSubmitted
+<div class="api-node-type" markdown>
+
+## Events
+
+<div class="api-node" markdown>
+### HashSubmitted
 
 ```solidity
-event HashSubmitted(address submitter, uint256 epochId, bytes32 hash, uint256 timestamp)
+event HashSubmitted(
+    address submitter,
+    uint256 epochId,
+    bytes32 hash,
+    uint256 timestamp
+)
 ```
 
 Event emitted when hash was submitted through PriceSubmitter.
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -15,13 +27,24 @@ Event emitted when hash was submitted through PriceSubmitter.
 | hash | bytes32 | the submitted hash |
 | timestamp | uint256 | current block timestamp |
 
-## PricesRevealed
+</div>
+<div class="api-node" markdown>
+### PricesRevealed
 
 ```solidity
-event PricesRevealed(address voter, uint256 epochId, contract IFtsoGenesis[] ftsos, uint256[] prices, uint256 random, uint256 timestamp)
+event PricesRevealed(
+    address voter,
+    uint256 epochId,
+    contract IFtsoGenesis[] ftsos,
+    uint256[] prices,
+    uint256 random,
+    uint256 timestamp
+)
 ```
 
 Event emitted when prices were revealed through PriceSubmitter.
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -32,29 +55,50 @@ Event emitted when prices were revealed through PriceSubmitter.
 | random | uint256 |  |
 | timestamp | uint256 | current block timestamp |
 
-## submitHash
+</div>
+</div>
+<div class="api-node-type" markdown>
+
+## Functions
+
+<div class="api-node" markdown>
+### submitHash
 
 ```solidity
-function submitHash(uint256 _epochId, bytes32 _hash) external
+function submitHash(
+    uint256 _epochId,
+    bytes32 _hash
+) external;
 ```
 
 Submits hash for current epoch
 Emits HashSubmitted event
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _epochId | uint256 | Target epoch id to which hash is submitted |
 | _hash | bytes32 | Hash of ftso indices, prices, random number and voter address |
 
-## revealPrices
+</div>
+<div class="api-node" markdown>
+### revealPrices
 
 ```solidity
-function revealPrices(uint256 _epochId, uint256[] _ftsoIndices, uint256[] _prices, uint256 _random) external
+function revealPrices(
+    uint256 _epochId,
+    uint256[] _ftsoIndices,
+    uint256[] _prices,
+    uint256 _random
+) external;
 ```
 
 Reveals submitted prices during epoch reveal period
 The hash of ftso indices, prices, random number and voter address must be equal to the submitted hash
 Emits PricesRevealed event
+
+*Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -63,51 +107,82 @@ Emits PricesRevealed event
 | _prices | uint256[] | List of submitted prices in USD |
 | _random | uint256 | Submitted random number |
 
-## voterWhitelistBitmap
+</div>
+<div class="api-node" markdown>
+### voterWhitelistBitmap
 
 ```solidity
-function voterWhitelistBitmap(address _voter) external view returns (uint256)
+function voterWhitelistBitmap(
+    address _voter
+) external view returns (
+    uint256);
 ```
 
 Returns bitmap of all ftso's for which `_voter` is allowed to submit prices/hashes.
 If voter is allowed to vote for ftso at index (see *_FTSO_INDEX), the corrsponding
 bit in the result will be 1.
 
-## getVoterWhitelister
+</div>
+<div class="api-node" markdown>
+### getVoterWhitelister
 
 ```solidity
-function getVoterWhitelister() external view returns (address)
+function getVoterWhitelister(
+) external view returns (
+    address);
 ```
 
-## getFtsoRegistry
+</div>
+<div class="api-node" markdown>
+### getFtsoRegistry
 
 ```solidity
-function getFtsoRegistry() external view returns (contract IFtsoRegistryGenesis)
+function getFtsoRegistry(
+) external view returns (
+    contract IFtsoRegistryGenesis);
 ```
 
-## getFtsoManager
+</div>
+<div class="api-node" markdown>
+### getFtsoManager
 
 ```solidity
-function getFtsoManager() external view returns (contract IFtsoManagerGenesis)
+function getFtsoManager(
+) external view returns (
+    contract IFtsoManagerGenesis);
 ```
 
-## getCurrentRandom
+</div>
+<div class="api-node" markdown>
+### getCurrentRandom
 
 ```solidity
-function getCurrentRandom() external view returns (uint256)
+function getCurrentRandom(
+) external view returns (
+    uint256);
 ```
 
 Returns current random number
 
-## getRandom
+</div>
+<div class="api-node" markdown>
+### getRandom
 
 ```solidity
-function getRandom(uint256 _epochId) external view returns (uint256)
+function getRandom(
+    uint256 _epochId
+) external view returns (
+    uint256);
 ```
 
 Returns random number of the specified epoch
 
+*Parameters*
+
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _epochId | uint256 | Id of the epoch |
+
+</div>
+</div>
 
