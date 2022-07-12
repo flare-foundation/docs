@@ -20,9 +20,6 @@ Keeping this in mind, this page explains how to delegate the users' tokens and c
     Delegation works in 7-day periods called **Reward Epochs** which start every **Saturday at around 8:40AM UTC**.
     As shown later, several features of the delegation mechanism are timed according to these epochs.
 
-!!! note "Source of Rewards"
-    FTSO data provider rewards are generated through **inflation**. Please see the [Tokenomics page](./tokenomics.md) for more information.
-
 ## Selecting a data provider
 
 It is the Exchange that must select the FTSO [data provider](glossary.md#data_provider) upon which to delegate, so the first step is to choose the one you are most confident to provide **consistently good data** (and therefore higher rewards).

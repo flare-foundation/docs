@@ -134,6 +134,5 @@ nav:
   - Exchange guides:
     - exchange/index.md
     - exchange/architecture.md
-    - exchange/tokenomics.md
     - exchange/delegation.md
     - exchange/troubleshooting.md
