@@ -40,7 +40,7 @@ DeFi { #defi }
 : Decentralized Finance is a form of finance that does not rely on a central financial institution. DeFi is commonly based on blockchain technology.
 
 Delegate { #delegate }
-: To assign a duty to someone else so they do it for you. On the Flare network, an address can delegate any fraction of the votes associated with the tokens it holds to another address, for the purpose of [FTSO](#ftso) weighting or governance participation. Note that no tokens are transferred.
+: To assign a duty to someone else, so they do it for you. On the Flare network, an address can delegate any fraction of the votes associated with the tokens it holds to another address, for the purpose of [FTSO](#ftso) weighting or governance participation. Note that no tokens are transferred.
 
 EVM { #evm }
 : The Ethereum Virtual Machine allows executing smart contracts on the Ethereum network, regardless of the kind of computer that executes it. Multiple blockchain networks, including Flare, support EVM contracts.
@@ -131,6 +131,9 @@ Turing-completeness { #turing-completeness }
 
 Validator { #validator }
 : A validator node is a machine connected to a blockchain network that verifies transactions and emits a vote. When there is a quorum among all validators regarding a given block of transactions, they are accepted into the blockchain.
+
+Voting Power { #voting-power }
+: Weight proportional to the tokens held by an address plus the tokens [delegated](#delegate) to it. This weight is used during [FTSO](#ftso) operation and governance votes, for example.
 
 Wen flare { #wen_flare }
 : The war cry of all the impatient that would like to see the Flare network launch before it is fully tested. Pay no heed to them.

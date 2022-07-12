@@ -8,6 +8,7 @@ These are the main sections:
 * **[User Guides](user/index.md)**: Step-by-step guides on how to use tools like the Block Explorer or the different wallets.
 * **[Infrastructure Guides](infra/index.md)**: Step-by-step guides on how to deploy the different components that make up the Flare ecosystem, and be rewarded for it.
 * **[Developer Docs](dev/index.md)**: Programming tutorials to help you build your app using Flare's tech.
+* **[Exchange Guides](exchange/index.md)**: Hints and advice for exchanges willing to support the Flare blockchain.
 
 !!! note
 

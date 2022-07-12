@@ -10,3 +10,7 @@ Follow the links below to get started with the Coston testnet:
 * Block Explorer: [https://coston-explorer.flare.network/](https://coston-explorer.flare.network)
 * CFLR Faucet: [https://faucet.towolabs.com/](https://faucet.towolabs.com)
 * Running a Node: [https://github.com/flare-foundation/flare](https://github.com/flare-foundation/flare)
+
+Address derivation is the same as Ethereum.
+The recommended BIP path is `m/44’/60’/x’/0/0` (hardened) or `m/44’/60’/0’/0/x`.
+Address format validation is the same as Ethereum.
