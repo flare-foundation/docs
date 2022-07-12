@@ -1,4 +1,4 @@
-# 🐦 Songbird Canary Network
+# Songbird Canary Network
 
 Follow the links below to get started with the Songbird canary network:
 

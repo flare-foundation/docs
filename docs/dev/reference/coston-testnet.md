@@ -1,4 +1,4 @@
-# 🔬 Coston Test Network
+# Coston Test Network
 
 Follow the links below to get started with the Coston testnet:
 
