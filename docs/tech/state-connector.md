@@ -322,3 +322,17 @@ There are therefore only two ways to resolve a fork:
     Note that stopped nodes can resume now, and they **never had to roll back any transaction**.
 
 In summary, validators using at least one reliable local attestation provider do not have to worry about rollbacks, **even in the face of 51% attacks**.
+
+## Becoming an Attestation Provider
+
+Anyone may operate an attestation provider without any capital requirement (see the [attestation-client repository](https://github.com/flare-foundation/attestation-client){ target=_blank } for deployment information), which can readily be used as a **local provider** on validators that trust it.
+
+To be included in the [default set](#attestation-provider-sets), though, the same operator must run one of the **top-performing [FTSO](glossary.md#ftso) data providers** to prove its commitment to the network's well-being.
+More details will be added soon.
+
+## Adding New Attestation Types
+
+New real-world event-type integrations are introduced to the State Connector via acceptance by the default attestation providers, without requiring any changes to the core voting or branching protocols described above.
+This enables rapid deployment of new use-cases without any validator-level code changes.
+
+See the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types){ target=_blank } for more information.
