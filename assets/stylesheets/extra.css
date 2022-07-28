@@ -1,0 +1,80 @@
+/* Define Flare's colors */
+:root>* {
+    --md-primary-fg-color: #363b66;
+    --md-accent-fg-color: #b35160;
+    --md-footer-bg-color: var(--md-primary-fg-color);
+}
+
+/* Restore admonition and details text size */
+.md-typeset :is(.admonition, details) {
+    font-size: initial;
+}
+/* Remove little extra margin when admonitions are inside lists */
+.md-typeset li .admonition-title {
+    margin-top: 0 !important;
+}
+/* Custom borderless admonition, just to help position images. Use with: */
+/* !!! image inline end "" */
+.md-typeset .admonition.image,
+.md-typeset details.image {
+    border: 0;
+    box-shadow: none;
+}
+
+/* Hide the GitHub link at the top, it's not that interesting */
+.md-header__source,
+.md-nav__source {
+    display: none;
+}
+
+/* Underline links in the main text. Our primary color is too close
+ * to the regular text color and links are invisible. */
+.md-typeset a {
+    text-decoration: underline;
+}
+
+/* Do not underline the permalinks in the headers */
+.headerlink {
+    text-decoration: none !important;
+}
+
+/* Glossary */
+dt {
+    color: var(--md-primary-fg-color);
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+dt:target {
+    background: var(--md-accent-fg-color--transparent);
+    border-radius: 4px;
+}
+
+/* Glossary links */
+a[href*="/glossary/#"] {
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+}
+
+/* Enlarge Flare logo in the header */
+.md-header__button.md-logo {
+    padding: 0;
+}
+
+.md-header__button.md-logo :-webkit-any(img, svg) {
+    height: 1.5rem;
+}
+
+/* Arrow to the current page in the navigation side bar */
+.md-sidebar--primary .md-nav__link--active::before,
+.md-sidebar--primary .md-nav__link--active a::before {
+    content: "\27A4";
+    position: absolute;
+    left: 0;
+}
+
+/* Side by side images */
+figure img.side-by-side {
+    display: inline;
+    width: 49%;
+}
