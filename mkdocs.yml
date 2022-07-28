@@ -129,6 +129,7 @@ nav:
   - Developer docs:
     - dev/index.md
     - Reference guides:
+      - dev/reference/flare.md
       - dev/reference/songbird.md
       - dev/reference/coston-testnet.md
   - Exchange guides:
