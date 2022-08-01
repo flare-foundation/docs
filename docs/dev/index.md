@@ -2,18 +2,29 @@
 
 !!! info inline end "Quick links"
 
-    * [Main smart contracts repo](https://gitlab.com/flarenetwork/flare-smart-contracts)
-    * [Kickoff price provider package](https://www.npmjs.com/package/@flarenetwork/ftso_price_provider_kick_off_package)
-    * [Price provider reference implementation](https://github.com/flare-foundation/FTSO-price-provider)
-    * [Songbird explorer](https://songbird-explorer.flare.network)
-    * [Flare node repository](https://github.com/flare-foundation/flare)
+    * Main repos:
+
+        [Validator node](https://github.com/flare-foundation/flare),
+        [Smart contracts](https://gitlab.com/flarenetwork/flare-smart-contracts)
+
+    * Price provider:
+
+        [NPM Kickoff package](https://www.npmjs.com/package/@flarenetwork/ftso_price_provider_kick_off_package),
+        [Reference implementation](https://github.com/flare-foundation/FTSO-price-provider)
+
+    * Explorers:
+
+        [Flare](https://flare-explorer.flare.network),
+        [Songbird](https://songbird-explorer.flare.network),
+        [Coston](https://coston-explorer.flare.network)
+
     * [Discord](https://discord.com/invite/XqNa7Rq)
 
 ## Flare and the EVM
 
 Songbird (later Flare) network runs the Ethereum EVM. Which means Ethereum contracts and tools can be used to develop on top of these chains. Both networks are layer 1 networks, and are running independent of main-net Ethereum. Check network documentation and whitepaper for more info.
 
-All existing tools and technologies available for Ethereum can be leveraged on Songbird network. The main infrastructure (FTSO, State Connectors,F-Assets) is written in Solidity using standard tools: ethers, web3, hardhat. State of the network can be observed using a block explorer, Metamask and a few other [wallets](../user/wallets/index.md).
+All existing tools and technologies available for Ethereum can be leveraged on Songbird network. The main infrastructure (FTSO, State Connectors,F-Assets) is written in Solidity using standard tools: ethers, web3, hardhat. State of the network can be observed using a block explorer, MetaMask and a few other [wallets](../user/wallets/index.md).
 
 ## FAQ
 
@@ -22,7 +33,7 @@ All existing tools and technologies available for Ethereum can be leveraged on S
 You can interact with Songbird network through:
 
 * the [block explorer](https://songbird-explorer.flare.network),
-* [Metamask](https://metamask.io) or other [wallets](../user/wallets/index.md),
+* [MetaMask](https://metamask.io) or other [wallets](../user/wallets/index.md),
 * local development tools such as [hardhat](https://hardhat.org).
 
 Connection configuration for Songbird is described in [the Networks section](songbird.md).
@@ -100,4 +111,4 @@ let fnToEncode = web3Contract.methods.someMethodOnContract(param1, param2)
 
 ### How to reliably read events with web3?
 
-Subscription to events, for example using listeners in `ethers` library, proved to be unreliable, especially when higher traffic exists on the network. To reliably read events it is recommended to use [`getPastEvents`](https://web3js.readthedocs.io/en/v1.5.2/web3-eth-contract.html?highlight=getPastEvents#getpastevents) function on web3 contracts. This function has parameters `fromBlock` and `toBlock`. User has to track for which blocks the information was obtained and for which not. The number of blocks the user can specify in one web3 RPC call depends on the configuration of the RPC (network) node being used. In particular, if while running a node environment variable `WEB3_API` is set to `debug`(so called full node) usually 100 blocks of events can be read from the node through RPC call, while if `WEB3_API=enabled`(light node) only 1 block of events can be read.
+Subscription to events, for example using listeners in `ethers` library, proved to be unreliable, especially when higher traffic exists on the network. To reliably read events it is recommended to use [`getPastEvents`](https://web3js.readthedocs.io/en/v1.5.2/web3-eth-contract.html?highlight=getPastEvents#getpastevents) function on web3 contracts. This function has parameters `fromBlock` and `toBlock`. User has to track for which blocks the information was obtained and for which not. The number of blocks the user can specify in one web3 RPC call depends on the configuration of the RPC (network) node being used. In particular, if while running a node environment variable `WEB3_API` is set to `debug`(so-called full node) usually 100 blocks of events can be read from the node through RPC call, while if `WEB3_API=enabled`(light node) only 1 block of events can be read.
