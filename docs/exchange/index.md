@@ -7,7 +7,7 @@ This section contains hints and bits of advice for Exchanges willing to support 
     If your Exchange already supports Ethereum, you can support Flare by using the same code base. You just need to:
 
     * [Deploy a Flare Observation node](../infra/observation.md) to access the network.
-    * [Use the appropriate Chain ID for Songbird](../dev/reference/songbird.md).
+    * [Use the appropriate Chain ID](../dev/reference/network-configs.md).
     * Use standard Ethereum libraries like [web3.js](https://web3js.readthedocs.io/){target=_blank} if you want.
 
 ## The Tokens

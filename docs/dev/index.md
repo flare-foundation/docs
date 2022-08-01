@@ -36,7 +36,7 @@ You can interact with Songbird network through:
 * [MetaMask](https://metamask.io) or other [wallets](../user/wallets/index.md),
 * local development tools such as [hardhat](https://hardhat.org).
 
-Connection configuration for Songbird is described in [the Networks section](songbird.md).
+Connection configuration for Songbird is described in [the Networks Configuration section](network-configs.md).
 
 ### Does Songbird support Ethereum-style contracts?
 

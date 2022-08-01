@@ -11,7 +11,7 @@ This error is caused mainly by two reasons:
 
 - Your vote power is high enough, but it hasn't been taken into account yet.
   Keep in mind that vote power is only read and whitelists updated once per reward epoch.
-  On [Songbird](../../dev/reference/songbird.md) reward epochs start roughly on Saturdays at 8:40AM UTC, so you will need to wait.
+  On [Songbird](../../dev/reference/network-configs.md) reward epochs start roughly on Saturdays at 8:40AM UTC, so you will need to wait.
 
 ### I have increased my vote power, but the address is still not getting whitelisted, what is wrong?
 

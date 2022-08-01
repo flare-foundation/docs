@@ -38,8 +38,8 @@ plugins:
           'en/state-connector.md':  'tech/state-connector.md'
           'technology/glossary.md': 'tech/glossary.md'
           'technology/state-connector.md': 'tech/state-connector.md'
-          'networks/songbird.md': 'dev/reference/songbird.md'
-          'networks/coston-testnet.md': 'dev/reference/coston-testnet.md'
+          'networks/songbird.md': 'dev/reference/network-configs.md'
+          'networks/coston-testnet.md': 'dev/reference/network-configs.md'
           'tutorials/wallets/index.md': 'user/wallets/index.md'
           'tutorials/wallets/bifrost-wallet.md': 'user/wallets/bifrost-wallet.md'
           'tutorials/wallets/dcent-wallet.md': 'user/wallets/dcent-wallet.md'
@@ -69,6 +69,9 @@ plugins:
           'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/troubleshooting.md'
           'tutorials/price-provider/troubleshooting/observation-node.md': 'infra/observation.md'
           'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
+          'dev/reference/flare.md': 'dev/reference/network-configs.md'
+          'dev/reference/songbird.md': 'dev/reference/network-configs.md'
+          'dev/reference/coston-testnet.md': 'dev/reference/network-configs.md'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -129,9 +132,7 @@ nav:
   - Developer docs:
     - dev/index.md
     - Reference guides:
-      - dev/reference/flare.md
-      - dev/reference/songbird.md
-      - dev/reference/coston-testnet.md
+      - dev/reference/network-configs.md
   - Exchange guides:
     - exchange/index.md
     - exchange/architecture.md
