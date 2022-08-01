@@ -155,7 +155,7 @@ A request is only **valid** (and therefore added to the proof) if it is well-for
 Different providers might have different views on what reality is, and this is why the State Connector runs a consensus algorithm on the received answers.
 
 Additionally, the allowed request types are **carefully designed to minimize the probability of contention**.
-For example, requiring some time for **transactions to settle** before inquiring about them, and forcing requests to include the hash of the block containing the transaction, which proves that the transaction has already been mined.
+For example, requiring some time for **transactions to settle** before inquiring about them, and forcing requests to include the hash of a later block that confirms the transaction.
 
 Attestation providers keep the actual retrieved data for a week, in case it contains additional information beyond the yes/no result.
 Users can request this data directly from the providers through the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md){ target=_blank }.
