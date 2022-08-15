@@ -8,15 +8,19 @@ This is the information required to run a validator node or to develop on the di
 
 ## Configuration Values
 
-|                |          Flare           |          Songbird           |           Coston           |
-| -------------- | :----------------------: | :-------------------------: | :------------------------: |
-| ChainID        |       [14][flrId]        |         [19][sgbId]         |        [16][cflrId]        |
-| Asset Ticker   |          `FLR`           |            `SGB`            |           `CFLR`           |
-| RPC endpoint   |   [flare-api][flrRpc]    |   [songbird-api][sgbRpc]    |   [coston-api][cflrRpc]    |
-| Block Explorer | [flare-explorer][flrExp] | [songbird-explorer][sgbExp] | [coston-explorer][cflrExp] |
-| Test Faucet    |            -             |              -              |  [coston-faucet][cflrFau]  |
+|                            |          Flare           |          Songbird           |           Coston           |
+| -------------------------- | :----------------------: | :-------------------------: | :------------------------: |
+| ChainID                    |       [14][flrId]        |         [19][sgbId]         |        [16][cflrId]        |
+| Asset Ticker               |          `FLR`           |            `SGB`            |           `CFLR`           |
+| RPC endpoint `BETA`{.beta} |   [flare-api][flrRpc]    |   [songbird-api][sgbRpc]    |   [coston-api][cflrRpc]    |
+| Block Explorer             | [flare-explorer][flrExp] | [songbird-explorer][sgbExp] | [coston-explorer][cflrExp] |
+| Test Faucet                |            -             |              -              |  [coston-faucet][cflrFau]  |
 
-Please note that all [RPC](glossary.md#rpc) endpoints are rate-limited to avoid spamming attacks.
+All [RPC](glossary.md#rpc) endpoints are rate-limited to avoid spamming attacks.
+
+!!! Danger "Beta"
+
+    Please note that the offered public RPC endpoints are in an experimental phase and might suffer unexpected downtime.
 
 !!! Example "Sample query"
 
@@ -34,6 +38,10 @@ The recommended BIP paths are `m/44’/60’/x’/0/0` (hardened) and `m/44’/6
 ## RPC Nodes for Connected Chains
 
 Along with the endpoints listed above to interact with its own networks, Flare offers public [RPC](glossary.md#rpc) nodes for a series of other blockchain networks, to bootstrap development of connected services like [attestation providers](glossary.md#attestation).
+
+!!! Danger "Beta"
+
+    Please note that the offered public RPC endpoints are in an experimental phase and might suffer unexpected downtime.
 
 === "Bitcoin"
 

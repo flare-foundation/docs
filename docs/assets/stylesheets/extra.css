@@ -78,3 +78,11 @@ figure img.side-by-side {
     display: inline;
     width: 49%;
 }
+
+/* BETA tags
+ * Use as: `BETA`{.beta} */
+code.beta {
+    background-color: var(--md-accent-fg-color);
+    color: white;
+    border-radius: 0.3rem;
+}
