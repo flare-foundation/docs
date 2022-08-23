@@ -36,7 +36,7 @@ Therefore, depending on the time it is submitted, **a new delegation might not t
 ## Delegation Process
 
 <figure markdown>
-  ![Delegation process summary](delegation-summary.png){ loading=lazy .allow-zoom }
+  ![Delegation process summary](ftso-delegation.png){ loading=lazy .allow-zoom }
   <figcaption>Delegation process summary.</figcaption>
 </figure>
 
