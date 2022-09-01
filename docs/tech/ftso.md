@@ -5,7 +5,7 @@
 The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare network that **provides continuous estimations for price pairs**.
 It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 
-To achieve this, a set of **independent data providers** retrieve price pair information from exchanges and supply it to the FTSO system.
+To achieve this, a set of **independent data providers** retrieve price pair information from external sources (like centralized and decentralized Exchanges) and supply it to the FTSO system.
 This information is then weighted according to each provider's **voting power**, outlying data points are removed, and a **median** is calculated to produce the final estimate.
 
 <figure markdown>
@@ -31,7 +31,7 @@ The following process runs continuously, producing new price estimates every **P
     Each epoch, only submissions from the **100** data providers with the most **voting power** are taken into account.
     An account's voting power is based on its wrapped `$FLR` or `$SGB` balance and the delegations made to it (see [Vote Power](#vote-power) below).
 
-    Submitted data must be the current price (in `$USD`) for one or more of the supported price pairs (currently `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, `$FIL`, `$SGB`, and `$FLR`).
+    Submitted data must be the current price (in `$USD`) for one or more of the supported price pairs (currently `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, `$FIL`, and `$SGB`).
 
     More general data types might be added in the future.
 
@@ -91,11 +91,19 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target
 
 - A **snapshot** of each data provider's Vote Power is taken once per reward epoch, and the resulting weight is then used **throughout the next reward epoch**.
 
-- The actual snapshot block is called **Voting Power Block** and it is **randomly chosen** from the last 25% blocks of the previous epoch.
+- The actual snapshot block is called **Voting Power Block** and it is **randomly chosen** from the last blocks of the previous epoch (last 50% on Flare, last 25% on Songbird).
 
-    Note this does not need to match the last 25% of the _time_, since block production times are not constant.
+    Note this does not need to match the last 50% or 25% of the _time_, since block production times are not constant.
 
-    This ensures delegators will keep the stakes at least 25% of the time while still allowing new delegators ample time to enroll for the next epoch.
+    This ensures delegators will keep the stakes a significant portion of the time, while still allowing new delegators ample time to enroll for the next epoch.
+
+!!! note "Reward epochs"
+
+    The first reward epoch on **Songbird** started on Saturday, 18 September 2021 08:41:39 (GMT), 1631954499 in Unix time, and repeats every 7 days.
+    This means that **all Songbird reward epochs start on Saturday morning (GMT)**.
+
+    The first reward epoch on **Flare** started on Thursday, 21 July 2022 19:00:05 (GMT), 1658430005 in Unix time, and repeats every 3.5 days.
+    This means that **all Flare reward epochs start on Thursday evening (GMT) and Monday morning (GMT)**.
 
 ## Delegation
 
@@ -201,14 +209,14 @@ Find more details in [the Delegation guide](../user/delegation/delegation-in-det
 
 1. **Obtain wrapped tokens**
 
-    [Voting power](#vote-power) is staked on a data provider using **wrapped tokens** (`WFLR` and `WSGB`) whereas the **native tokens** are `FLR` and `SGB`.
+    [Voting power](#vote-power) is delegated on a data provider using **wrapped tokens** (`WFLR` and `WSGB`) whereas the **native tokens** are `FLR` and `SGB`.
 
     One wrapped token can be obtained for each native token without cost (except gas fees) using the `WNat` contract's `deposit` method.
+    Tokens get locked inside the `WNat` contract and cannot be used until they are unwrapped.
 
     Wrapped tokens can be **unwrapped** back to native tokens at any time using the `WNat` contract's `withdraw` method.
-    Wrapped tokens are locked inside the `WNat` contract and cannot be used until they are unwrapped.
 
-    `deposit` and `withdraw` are standard ERC-20 methods:
+    Wrapped tokens adhere to the ERC-20 standard, besides `deposit` and `withdraw`:
 
     ```solidity
     function deposit() public payable override;
@@ -293,7 +301,7 @@ Submission API is slightly different for the Flare and Songbird networks:
          
         ```
 
-    - **Reveal**: After all price data, a single random number must be submitted, to help with on-chain randomness generation.
+    - **Reveal**: After all price data, a single random number must be submitted.
 
         ```solidity
         function revealPrices(
@@ -318,7 +326,7 @@ Submission API is slightly different for the Flare and Songbird networks:
         ) external;
         ```
 
-    - **Reveal**: Along with each price a random number must be submitted, to help with on-chain randomness generation.
+    - **Reveal**: Along with each price a random number must be submitted.
 
         ```solidity
         function revealPrices(
@@ -390,4 +398,4 @@ In any case, the `getCurrentPrice` method is used:
 
 So, for instance, a return value of `2603` means a price of `0.02603 USD` (There are only **5** significant decimal places).
 
-The timestamp of the last price update is also returned.
+A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time){target=_blank} of the last price update is also returned.
