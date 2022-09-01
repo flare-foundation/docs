@@ -5,7 +5,7 @@
 The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare network that **provides continuous estimations for price pairs**.
 It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 
-To achieve this, a set of **independent data providers** retrieve price pair information from external sources (like centralized and decentralized Exchanges) and supply it to the FTSO system.
+To achieve this, a set of **independent data providers** retrieves price pair information from external sources (like centralized and decentralized Exchanges) and supplies it to the FTSO system.
 This information is then weighted according to each provider's **voting power**, outlying data points are removed, and a **median** is calculated to produce the final estimate.
 
 <figure markdown>
@@ -13,9 +13,9 @@ This information is then weighted according to each provider's **voting power**,
   <figcaption>FTSO summary.</figcaption>
 </figure>
 
-Data providers that supply **useful information** (this is, price pairs that are not removed as outliers) are **rewarded**, and the resulting price estimates are finally **published on-chain**.
+Data providers that supply **useful information** (price pairs that are not removed as outliers) are **rewarded**, and the resulting price estimates are finally **published on-chain**.
 
-This page gives technical details about the submission procedure and how the final estimate is calculated, how vote delegation works, how to submit price pairs, how to claim rewards and how to use the price information in an app.
+This page gives technical details about the submission procedure, how the final estimate is calculated, how vote delegation works, how to submit price pairs, how to claim rewards and how to use the price information in an app.
 
 ## Procedure Overview
 
@@ -64,7 +64,7 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target
   <figcaption>FTSO price calculation.</figcaption>
 </figure>
 
-- Each FTSO calculates the resulting price for a Price Epoch (3 minutes) using the submissions received from all data providers during that epoch.
+- The contract in charge of each price pair calculates the resulting price for a Price Epoch (3 minutes) using the submissions received from all data providers during that epoch.
 
 - Each submission has a **price** and a **weight**.
   Weight is based on the data provider's [voting power](#vote-power), as explained below.
@@ -91,11 +91,9 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target
 
 - A **snapshot** of each data provider's Vote Power is taken once per reward epoch, and the resulting weight is then used **throughout the next reward epoch**.
 
-- The actual snapshot block is called **Voting Power Block** and it is **randomly chosen** from the last blocks of the previous epoch (last 50% on Flare, last 25% on Songbird).
+- The actual snapshot block is called the **Voting Power Block** and it is **randomly chosen** from the last blocks of the previous epoch (last 50% on Flare, last 25% on Songbird).
 
     Note this does not need to match the last 50% or 25% of the _time_, since block production times are not constant.
-
-    This ensures delegators will keep the stakes a significant portion of the time, while still allowing new delegators ample time to enroll for the next epoch.
 
 !!! note "Reward epochs"
 
@@ -145,7 +143,7 @@ Instead, the amounts are accumulated in the `FtsoRewardManager` contract (see [S
 
 Claiming requires a contract call and therefore a slight **gas expenditure**.
 To save on gas costs, multiple reward epochs can be claimed simultaneously, however, **rewards expire after 90 days** so be careful.
-Moreover, you probably want to claim soon, to re-delegate the rewarded amount and obtain a compounded interest.
+Moreover, you probably want to claim soon, to re-delegate the received amount and obtain compounded rewards.
 
 It is also worth noting that:
 
@@ -159,7 +157,7 @@ For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-clai
 
 ## Technical Details
 
-!!! warning "This section is aimed at developers"
+!!! warning "This section is aimed at developers."
 
 ### System Architecture
 
