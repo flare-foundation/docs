@@ -31,7 +31,7 @@ The following process runs continuously, producing new price estimates every **P
     Each epoch, only submissions from the **100** data providers with the most **voting power** are taken into account.
     An account's voting power is based on its wrapped `$FLR` or `$SGB` balance and the delegations made to it (see [Vote Power](#vote-power) below).
 
-    Submitted data must be the current price (in `$USD`) for one or more of the supported price pairs (currently `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, `$FIL`, and `$SGB`).
+    Submitted data must be the current price (in `$USD`) for one or more of the supported price pairs, currently: `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, and `$FIL`. On Songbird, additionally, you have `$SGB`.
 
     More general data types might be added in the future.
 
