@@ -55,7 +55,7 @@ Flare Token (FLR) { #flare_token_(flr) }
 : The native currency of the Flare Network.
 
 FTSO { #ftso }
-: The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information.
+: The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information. [Read more...](ftso.md)
 
 Governance { #governance }
 : Mechanism to propose, vote and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.
