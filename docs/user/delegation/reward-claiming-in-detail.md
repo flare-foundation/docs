@@ -1,18 +1,27 @@
 # Reward claiming in detail
 
+!!! attention
+
+    This page is intended for developers.
+
 ## FTSO Rewards
 
-During the FTSO price voting process, rewards are being distributed to price (data) providers based on their WNAT (WSGB) vote power. Depending on the vote power share and price provider fee percentage, a part of this reward belongs to users who have delegated their WSGB vote power to the price providers. The rewards can be claimed via the contract `FtsoRewardManager` that implements `IFtsoRewardManager` interface as described in this document.
+During the FTSO price voting process, rewards are being distributed to data providers based on their vote power.
+Depending on the vote power share and price provider fee percentage, a part of this reward belongs to users who have delegated their `$WFLR` or `$WSGB` vote power to the price providers.
+The rewards can be claimed via the contract `FtsoRewardManager` that implements `IFtsoRewardManager` interface as described in this document.
 
 ### Reward claiming
 
-The reward claiming process depends on vote power delegation mode. The default delegation mode is delegation by percentage. Delegation by amount is intended for advanced users. The delegation mode of a user can be checked by calling `delegationModeOf` on the WNAT contract that implements  the`IVPToken` interface.
+The reward claiming process depends on vote power delegation mode.
+The default delegation mode is delegation by percentage.
+Delegation by amount is intended for advanced users.
+The delegation mode of a user can be checked by calling `delegationModeOf` on the WNAT contract that implements the`IVPToken` interface.
 
 #### Delegation by percentage
 
 The user that has delegated vote power by percentage can claim rewards by calling the function `claimReward` with the following signature.
 
-``` solidity
+```solidity
 function claimReward(
     address payable _recipient,
     uint256[] memory _rewardEpochs
@@ -31,7 +40,7 @@ Note that this function throws an exception if it is called by a user (`msg.send
 
 To specify an appropriate input array `_rewardEpochs`, the function `getEpochsWithUnclaimedRewards` can be used. It iterates over the past reward epochs that still enable reward claiming and gathers the IDs of those, for which the reward allocated to `_beneficiary` has not yet been (fully) claimed.
 
-``` solidity
+```solidity
 function getEpochsWithUnclaimedRewards(
     address _beneficiary
 ) external view override returns (
@@ -39,15 +48,15 @@ function getEpochsWithUnclaimedRewards(
 )
 ```
 
-To obtain more detailed information on reward status, its origin and amount, a user can use the functions `getStateOfRewards` or `getStateOfRewardsFromDataProviders` described later in the document.
+To obtain more detailed information on reward status, its origin and amount, a user can use the functions `getStateOfRewards` or `getStateOfRewardsFromDataProviders` described later in this page.
 
-A user that is delegating by percentage can also use the function `claimRewardFromDataProviders` (described in the following section) to claim the rewards only for specific price providers (e.g., if the user wishes to have rewards from different price providers transferred to different recipient addresses). However, the gas consumption for calling `claimRewardFromDataProviders` is larger.
+A user that is delegating by percentage can also use the function `claimRewardFromDataProviders` (described in the following section) to claim the rewards only for specific price providers (e.g., if the user wishes to have rewards from different price providers transferred to different recipient addresses). However, the gas consumption for calling `claimRewardFromDataProviders` higher.
 
 #### Delegation by amount
 
 A user delegating vote power by amount can claim rewards by calling the function `claimRewardFromDataProviders` with the following signature.
 
-``` solidity
+```solidity
 function claimRewardFromDataProviders(
     address payable _recipient,
     uint256[] memory _rewardEpochs,
@@ -66,9 +75,9 @@ Parameters:
 
 The main difference in comparison to `claimReward` is that `claimRewardFromDataProviders` requires a user to specify the array `_dataProviders` containing the addresses of price providers that the user has delegated the vote power to.
 
-To prepare the input array `_rewardEpochs`, a user that is delegating by amount can not use the function `getEpochsWithUnclaimedRewards` (a request fails with exception). Instead, the function `getEpochsWithClaimableRewards` can be called to get the information on the reward epochs for which the reward is still claimable, and `getStateOfRewardsFromDataProvider` to obtain details about the state of rewards in a specific (claimable) reward epoch. Below is a code snippet describing this procedure. The functions and their parameters are in more detail explained in the subsequent sections.
+To prepare the input array `_rewardEpochs`, a user that is delegating by amount cannot use the function `getEpochsWithUnclaimedRewards` (a request fails with exception). Instead, the function `getEpochsWithClaimableRewards` can be called to get the information on the reward epochs for which the reward is still claimable, and `getStateOfRewardsFromDataProvider` to obtain details about the state of rewards in a specific (claimable) reward epoch. Below is a code snippet describing this procedure. The functions and their parameters are in more detail explained in the subsequent sections.
 
-``` solidity
+```solidity
 (startEpochId, endEpochId) = getEpochsWithUnclaimedRewards();
 for (uint256 epochId = startEpochId; epochId <= endEpochId; epochId++) {
     (...) = getStateOfRewardsFromDataProviders(..., epochId, ...);
@@ -77,9 +86,10 @@ for (uint256 epochId = startEpochId; epochId <= endEpochId; epochId++) {
 
 #### Events
 
-For every call of `claimReward` or `claimRewardFromDataProviders` one or more events of the following type are issued. A specific event is associated with a single pair of price provider and reward epoch.
+For every call to `claimReward` or `claimRewardFromDataProviders` one or more events of the following type are issued.
+A specific event is associated with a single pair of price provider and reward epoch.
 
-``` solidity
+```solidity
 event RewardClaimed(
     address indexed dataProvider,
     address indexed whoClaimed,
@@ -97,11 +107,12 @@ Parameters:
 * `rewardEpoch`: The ID of the reward epoch the claimed reward corresponds to.
 * `amount`: The value of the claimed reward.
 
-#### Reward claim expiry
+#### Reward claim expiration
 
-The reward can be claimed from the time the reward was allocated until the reward expiry epoch. The oldest and the newest reward epoch that allow reward claiming can be obtained by calling `getEpochsWithClaimableRewards` (these correspond to the return values `_startEpochId` and `_endEpochId`, respectively).
+The reward can be claimed from the time the reward was allocated until the reward expiry epoch.
+The oldest and the newest reward epoch that allow reward claiming can be obtained by calling `getEpochsWithClaimableRewards` (these correspond to the return values `_startEpochId` and `_endEpochId`, respectively).
 
-``` solidity
+```solidity
 function getEpochsWithClaimableRewards() external view returns  (
     uint256 _startEpochId,
     uint256 _endEpochId
@@ -110,7 +121,7 @@ function getEpochsWithClaimableRewards() external view returns  (
 
 The reward expiry epoch is also communicated through `RewardClaimsExpired` event.
 
-``` solidity
+```solidity
 event RewardClaimsExpired(
     uint256 rewardEpochId
 )
@@ -139,7 +150,7 @@ Then `P` is entitled to the reward equal to `(SHARE * (1 - FP) * REWARD) + (FP *
 
 The reward amounts for a specific address can be checked by calling either `getStateOfRewards` or `getStateOfRewardsFromDataProviders`. The difference between these two functions is that in the first the array of price providers (to which the reward is initially allocated) is obtained based on delegation history, while in the second the array has to be specified as an input parameter. Note that `getStateOfRewards` can only be used for addresses that are declared to be delegating by percentage.
 
-``` solidity
+```solidity
 function getStateOfRewards(
     address _beneficiary,
     uint256 _rewardEpoch
@@ -151,7 +162,7 @@ function getStateOfRewards(
 )
 ```
 
-``` solidity
+```solidity
 function getStateOfRewardsFromDataProviders(
     address _beneficiary,
     uint256 _rewardEpoch,
@@ -180,7 +191,7 @@ Note that the amounts reported by these two methods are informational and can sl
 
 Price provider fee is determined by fee percentage. Current setting can be obtained by `getDataProviderCurrentFeePercentage`.
 
-``` solidity
+```solidity
 function getDataProviderCurrentFeePercentage(
     address _dataProvider
 ) external view returns (
@@ -192,9 +203,9 @@ The value `_feePercentageBIPS` is given in basis points (BIPS), which is a perce
 
 #### Scheduled fee percentage changes
 
-The fee percentage is subject to changes. The changes made by price providers are time locked, meaning they are scheduled for some future time. Scheduled changes can be checked by calling `getDataProviderScheduledFeePercentageChanges`, which returns the fee percentages in future.
+The fee percentage is subject to changes. The changes made by price providers are time locked, meaning they are scheduled for some future time. Scheduled changes can be checked by calling `getDataProviderScheduledFeePercentageChanges`, which returns the fee percentages in the future.
 
-``` solidity
+```solidity
 function getDataProviderScheduledFeePercentageChanges(
     address _dataProvider
 ) external view returns (
