@@ -17,62 +17,30 @@ This limitation means that, if your Exchange keeps all users' tokens in **a sing
 Keeping this in mind, this page explains how to delegate the users' tokens and collect the rewards.
 
 !!! note "Reward Epochs"
-    Delegation works in 7-day periods called **Reward Epochs** which start every **Saturday at around 8:40AM UTC**.
-    As shown later, several features of the delegation mechanism are timed according to these epochs.
+    As shown later, several features of the delegation mechanism are timed in **Reward Epochs**.
+
+    * On Songbird, these epochs last 7 days and start every **Saturday at around 8:40AM UTC**.
+    * On Flare, they last 3.5 days and start roughly every **Monday at 7:00 UTC and Thursday at 19:00 UTC**.
 
 ## Selecting a data provider
 
 It is the Exchange that must select the FTSO [data provider](glossary.md#data_provider) upon which to delegate, so the first step is to choose the one you are most confident to provide **consistently good data** (and therefore higher rewards).
 
-The list of **available data providers** for the current reward epoch can be retrieved from the [VoterWhitelister](https://songbird-explorer.flare.network/address/0xa76906EfBA6dFAe155FfC4c0eb36cDF0A28ae24D/read-contract){target=_blank} smart contract, method `getFtsoWhitelistedPriceProviders` (#4).
+Anyone can become an FTSO data provider, but only the ones that had the most [voting power](glossary.md#voting-power) during the previous reward epoch are available for delegation.
+
+The list of **available data providers** for the current reward epoch can be retrieved from the `VoterWhitelister` smart contract, method `getFtsoWhitelistedPriceProviders`.
 There exist a number of websites like [flaremetrics.io](https://flaremetrics.io/ftso){target=_blank} or [ftso-signal-providers](https://github.com/TowoLabs/ftso-signal-providers){target=_blank} that display this information in a far more convenient way.
 
 !!! note
-    The available data providers are the ones that had the most [voting power](glossary.md#voting-power) during the previous reward epoch.
+    Data providers [take a fee](../tech/ftso.md#rewards) before sharing their rewards with their delegators.
+    An Exchange can decide to **run its own data provider** to avoid paying this fee to an external entity, at the cost of having to **develop a good price prediction algorithm**.
 
-Bear in mind that delegations can be changed at any time, but they are only taken into account **once per reward epoch**, at a random point roughly in the 42h prior to a new reward epoch starting.
-Therefore, depending on the time it is submitted, **a new delegation might not take effect until 7 days later**, and any reward might not be collected until **7 days later than that**.
+    Keep in mind that FTSO data providing is already a very competitive business, and only the most successful algorithms are being rewarded.
+
+Lastly, delegations can be changed at any time, but they are only taken into account **once per reward epoch** (See more details in the [FTSO](../tech/ftso.md#vote-power) page).
+Therefore, depending on the time it is submitted, **a new delegation will not take effect until the beginning of the next reward epoch, or the one after that**.
+Furthermore, rewards cannot be collected until **another reward epoch has elapsed**.
 
 ## Delegation Process
 
-<figure markdown>
-  ![Delegation process summary](ftso-delegation.png){ loading=lazy .allow-zoom }
-  <figcaption>Delegation process summary.</figcaption>
-</figure>
-
-1. **Obtain WSGB tokens**
-
-    The native token of the Songbird Network is the **Songbird** (`SGB`), whereas voting power is staked on a data provider using the **Wrapped Songbird** (`WSGB`) token.
-
-    One `WSGB` token can be obtained for each `SGB` token without cost (except gas fees) using the [WNat contract](https://songbird-explorer.flare.network/address/0x02f0826ef6aD107Cfc861152B32B52fD11BaB9ED/write-contract){target=_blank}'s `deposit` method (#7).
-
-    `WSGB` tokens can be "unwrapped" back to `SGB` tokens at any time using the [WNat contract](https://songbird-explorer.flare.network/address/0x02f0826ef6aD107Cfc861152B32B52fD11BaB9ED/write-contract){target=_blank}'s `withdraw` method (#28).
-
-    The `SGB` tokens are locked inside the [WNat contract](https://songbird-explorer.flare.network/address/0x02f0826ef6aD107Cfc861152B32B52fD11BaB9ED/write-contract){target=_blank} and cannot be used until the `WSGB` tokens are unwrapped.
-
-2. **Delegate**
-
-    Choose what **percentage of your total `WSGB`** you want to delegate to each data provider (up to two).
-    Should your `WSGB` balance change, the delegated amounts are automatically adjusted.
-
-    Delegation is performed through the [WNat contract](https://songbird-explorer.flare.network/address/0x02f0826ef6aD107Cfc861152B32B52fD11BaB9ED/write-contract){target=_blank} too, using the `delegate` method (#5).
-    You need to provide the address of the chosen data provider and the percentage of your total WSGB you want to delegate **in bips** (hundredths of 1%, so 100% is 10’000 bips).
-
-    After a successful invocation of this method, **delegation is complete**.
-    **The following reward epoch** will take your delegated tokens into account when computing your selected data provider's weight.
-    If the data provider submits useful data and garners any rewards, you will be able to claim your share in the **subsequent reward epochs**.
-
-3. **Claim the rewards**
-
-    Each time a data provider produces valuable information all accounts that delegated to it **earn a reward** proportional to the amount they delegated.
-
-    These rewards accumulate in the [FtsoRewardManager contract](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract){target=_blank}, from where you can collect them **once the reward epoch is finished**, using the `claimReward` method (#3).
-
-    **Rewards can be claimed for several epochs at once**, which saves transaction fees, so the `claimReward` method requires the list of epochs to claim for.
-    To get the list of epochs with pending rewards you can use the `getEpochsWithUnclaimedRewards` method (#11).
-
-    **Unclaimed rewards expire after 90 days!**
-
-    For security reasons, the [FtsoRewardManager contract](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract){target=_blank} contains a **limited amount of tokens** and is replenished periodically.
-    If you are unable to claim your rewards because the contract is empty, please **try again the next day**.
-    This might happen when all delegators claim their rewards in a short period of time, so it is usually better to avoid claiming right when the reward epoch finishes.
+See [Manual Delegation and Claiming](../tech/ftso.md#manual-delegation-and-claiming) in the FTSO page.
