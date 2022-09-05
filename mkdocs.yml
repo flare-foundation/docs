@@ -127,7 +127,7 @@ nav:
       - user/wallets/brave-wallet.md
   - Infrastructure guides:
     - infra/index.md
-    - Data Providers:
+    - FTSO Data Providers:
       - infra/data/deploying.md
       - infra/data/whitelisting.md
       - infra/data/troubleshooting.md
