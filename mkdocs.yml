@@ -11,6 +11,7 @@ theme:
     - navigation.tabs.sticky    # Navigation tabs are always visible
     - navigation.top            # "Back to top" button appears upon upward scrolling
     - navigation.indexes        # Allow section headers to have a page (see tech/index.md)
+    - navigation.expand         # Have all sections of the TOC expand by default
     - content.tabs.link
 markdown_extensions:
   - admonition                  # Info boxes (in different colors)
