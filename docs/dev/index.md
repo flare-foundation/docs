@@ -2,7 +2,7 @@
 
 !!! info inline end "Quick links"
 
-    * Main repos:
+    * Main code repositories:
 
         [Validator node](https://github.com/flare-foundation/flare),
         [Smart contracts](https://gitlab.com/flarenetwork/flare-smart-contracts)
@@ -22,35 +22,40 @@
 
 ## Flare and the EVM
 
-Songbird (later Flare) network runs the Ethereum EVM. Which means Ethereum contracts and tools can be used to develop on top of these chains. Both networks are layer 1 networks, and are running independent of main-net Ethereum. Check network documentation and whitepaper for more info.
+The Songbird and Flare networks runs the Ethereum EVM, which means that Ethereum contracts and tools can be used to develop on top of these chains.
+Both networks are layer 1 networks, and are running independently of main-net Ethereum.
 
-All existing tools and technologies available for Ethereum can be leveraged on Songbird network. The main infrastructure (FTSO, State Connectors,F-Assets) is written in Solidity using standard tools: ethers, web3, hardhat. State of the network can be observed using a block explorer, MetaMask and a few other [wallets](../user/wallets/index.md).
+All existing tools and technologies available for Ethereum can be leveraged on Songbird and Flare.
+The main infrastructure ([FTSO](glossary.md#ftso), [State Connector](glossary.md#state_connector), ...) is written in Solidity using standard tools: ethers, web3, hardhat.
 
 ## FAQ
 
-### How can I interact with the Songbird network
+### How can I interact with Flare's networks?
 
-You can interact with Songbird network through:
+You can interact with Flare and Songbird through:
 
-* the [block explorer](https://songbird-explorer.flare.network),
-* [MetaMask](https://metamask.io) or other [wallets](../user/wallets/index.md),
-* local development tools such as [hardhat](https://hardhat.org).
+* The [block explorers](../user/block-explorer.md).
+* [MetaMask](https://metamask.io) and other [wallets](../user/wallets/index.md).
+* Local development tools such as [hardhat](https://hardhat.org).
 
-Connection configuration for Songbird is described in [the Networks Configuration section](network-configs.md).
+Connection configuration for all networks is described in [the Networks Configuration section](reference/network-configs.md).
 
-### Does Songbird support Ethereum-style contracts?
+### Does Flare support Ethereum-style contracts?
 
-Ethereum style contracts are supported by Songbird.
+Ethereum style contracts are supported by both Flare and Songbird.
 
-### Does Songbird support NFTs?
+### Does Flare support NFTs?
 
-Songbird network supports NFTs and many were already created on Songbird. The Blockscout explorer supports displaying NFTs.
+Flare and Songbird networks support NFTs and many have already been created on Songbird.
+The [block explorers](../user/block-explorer.md) support displaying NFTs.
 
-### How to verify if a transaction is finalized using web3?
+### How do I verify if a transaction is finalized using web3?
 
-On Songbird network obtaining the receipt of a submitted transaction does not guarantee that the transaction is finalized. One has to wait until the sender's account nonce increases. Here is an example of a helper function with exponential backoff that can be used to send signed transactions and wait for finalization.
+On Flare and Songbird obtaining the receipt of a submitted transaction does not guarantee that the transaction is finalized.
+One has to wait until the sender's account nonce increases.
+Here is an example of a helper function with exponential backoff that can be used to send signed transactions and wait for finalization.
 
-``` javascript
+```javascript
 async function sendAndFinalize(senderAddress, signedTx, delay = 1000) {
   let oldNonce = await web3.eth.getTransactionCount(senderAddress);
   let receipt = await sendSignedTransaction(signedTx.rawTransaction)
@@ -68,23 +73,24 @@ async function sendAndFinalize(senderAddress, signedTx, delay = 1000) {
 }
 ```
 
-### How to obtain a revert reason for a reverting contract call (web3)?
+### How do I obtain a revert reason for a reverting contract call using web3?
 
 In order to obtain the revert message of a reverted contract call transaction one has to follow the following steps:
 
-* Catch the exception, and verify, if the revert reason is a part of the exception data.
+* Catch the exception, and check if the revert reason is part of the exception data.
 
-if not:
+If not:
 
 * Repeat the same contract call while using `.call(...)` syntax and parse the revert reason.
 
-Note that repeating the same call with the `.call()` method is better done quickly, to assure that the chain has a similar state for both calls.
+Note that second step should be performed as soon as possible, to ensure that the chain has a similar state for both calls.
 
 ### Is there a code example for reading the revert reason?
 
-Below is a generic helper function to demonstrate this. Note that it relies on the function `sendAndFinalize` (see one of the previous answers above).
+Below is a generic helper function to demonstrate this.
+Note that it relies on the function `sendAndFinalize` (see one of the previous answers above).
 
-``` javascript
+```javascript
 async contractCall(account, from, to, gas, gasPrice, fnToEncode, nonce) {
   let tx = {from, to, gas, gasPrice, data: fnToEncode.encodeABI(), nonce};
   let signedTx = await account.signTransaction(tx);
@@ -104,11 +110,16 @@ async contractCall(account, from, to, gas, gasPrice, fnToEncode, nonce) {
 
 Here `account` and `fnToEncode` are obtained, for example, as follows:
 
-``` javascript
+```javascript
 let account = web3.eth.accounts.privateKeyToAccount(privateKey)
 let fnToEncode = web3Contract.methods.someMethodOnContract(param1, param2)
 ```
 
-### How to reliably read events with web3?
+### How do I reliably read events with web3?
 
-Subscription to events, for example using listeners in `ethers` library, proved to be unreliable, especially when higher traffic exists on the network. To reliably read events it is recommended to use [`getPastEvents`](https://web3js.readthedocs.io/en/v1.5.2/web3-eth-contract.html?highlight=getPastEvents#getpastevents) function on web3 contracts. This function has parameters `fromBlock` and `toBlock`. User has to track for which blocks the information was obtained and for which not. The number of blocks the user can specify in one web3 RPC call depends on the configuration of the RPC (network) node being used. In particular, if while running a node environment variable `WEB3_API` is set to `debug`(so-called full node) usually 100 blocks of events can be read from the node through RPC call, while if `WEB3_API=enabled`(light node) only 1 block of events can be read.
+Subscription to events, for example using listeners in the `ethers` library, has proved to be unreliable, especially when high traffic exists on the network.
+To reliably read events it is recommended to use the [`getPastEvents`](https://web3js.readthedocs.io/en/v1.5.2/web3-eth-contract.html?highlight=getPastEvents#getpastevents) function on web3 contracts.
+This function has parameters `fromBlock` and `toBlock`.
+User has to track for which blocks the information was obtained and for which it wasn't.
+The number of blocks the user can specify in one web3 RPC call depends on the configuration of the RPC node being used.
+In particular, if the node is run with the environment variable `WEB3_API` set to `debug` (so-called "full node"), usually 100 blocks of events can be read from the node through RPC call, whereas if `WEB3_API=enabled` ("light node") only 1 block of events can be read.
