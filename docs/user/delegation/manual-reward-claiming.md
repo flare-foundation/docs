@@ -1,21 +1,25 @@
-# Manual Reward Claiming
+# Manual reward claiming
 
 This page explains how to claim your delegation rewards using a block explorer and Metamask. This is the continuation of the [Manual delegation](manual-delegation.md) page.
 
-### Where is the reward data found?
+!!! caution
 
-All reward data can be found in the [FTSO Reward Manager](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract).
+    This page is intended for advanced users who know how to interact with the blockchain through a block explorer.
 
-All claiming can be done here [https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract.](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/write-contract.)
+## Where is the reward data found?
 
-### For which reward epochs can I claim rewards?
+All reward data can be found in the FTSO Reward Manager.
 
-In the [FTSO reward manager](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925/read-contract) see API no. 11 `getEpochsWithUnclaimedRewards(beneficiary_address)`
+## For which reward epochs can I claim rewards?
 
-### What is the claim API?
+In the FTSO reward manager contract use the `getEpochsWithUnclaimedRewards(beneficiary_address)` method.
 
-Api for claiming can be found in the FTSO Reward Manager, see API no 3: `claimReward (_recipient address, _rewardEpochs uint256[])`. The address should be your address and reward epochs should include the list of epochs you want to claim rewards for. You may claim rewards for multiple epochs at one go.
+## What is the claim API?
 
-### Where can I check the amount of rewards I have accrued in a reward epoch?
+API for claiming can be found in the FTSO Reward Manager, see method `claimReward (_recipient address, _rewardEpochs uint256[])`.
+The address should be your address and reward epochs should include the list of epochs you want to claim rewards for.
+You may claim rewards for multiple epochs at one go.
 
-You can check the current amount of rewards (and unclaimed rewards) in the `FtsoRewardManager` API no. 14 `getStateOfRewards(beneficiery address, rewardEpoch)`
+## Where can I check the amount of rewards I have accrued in a reward epoch?
+
+You can check the current amount of rewards (and unclaimed rewards) in the `FtsoRewardManager` method `getStateOfRewards(beneficiery address, rewardEpoch)`.

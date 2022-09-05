@@ -1,74 +1,89 @@
 # Delegation FAQ
 
-### Why should I delegate?
+## Why should I delegate?
 
-When delegating your vote power, you can earn rewards, but even more important one can support reliable price providers which in turn will strengthen the stability of the FTSO and the whole ecosystem.
+When delegating your vote power, you can earn rewards, but even more importantly, you can support reliable price providers which in turn will strengthen the stability of the FTSO and the whole ecosystem.
 
-### Can I still use my tokens after delegating my vote power?
+## Can I still use my tokens after delegating my vote power?
 
 Yes. The tokens are never locked and can be used for any purpose: send, deposit etc.
 
-### Do I lose ownership of my tokens when delegating my vote power?
+## Do I lose ownership of my tokens when delegating my vote power?
 
 No, delegation never requires giving up ownership of your tokens.
 
-### What is the first step for delegating my vote power?
+## What is the first step for delegating my vote power?
 
-The first step is to wrap your SGB and create WSGB. WSGB has 1:1 conversion to SGB, it is a fundamental step for enabling a user to delegate his vote power.
+The first step is to wrap your native tokens (`$FLR` or `$SGB`) into `$WFLR` or `$WSGB`.
+Wrapped tokens have a 1:1 conversion to native tokens.
+This is a fundamental step for enabling users to delegate their vote power.
 
-### How do I wrap my SGB tokens?
+## How do I wrap my native tokens?
 
-The actual wrapping will be done differently depending on the wallet you are using. See [wallets](../../user/wallets/index.md) section for more details.
+1. Through a supported wallet: see the [wallets section](../../user/wallets/index.md).
+2. Through a [dapp](glossary.md#dapp): some FTSO data providers have already started providing these dapps as a convenience, like [FTSO AU](https://app.ftso.au){target=_blank} or [Aureus Ox](https://aureusox.com/dashboard){target=_blank}.
+3. Through direct interaction with the blockchain, once you understand [manual delegation](manual-delegation.md).
 
-### How much SGB should I wrap?
+## How many tokens should I wrap?
 
-Note that gas can't be paid with wSGB. Always make sure not to wrap your full SGB holdings, but rather keep some SGB unwrapped for paying gas fees with your account.
+Note that gas cannot be paid with wrapped tokens, therefore always make sure not to wrap your full native holdings.
+Rather, keep some tokens unwrapped for paying gas fees with your account.
 
-### How do I delegate my WSGB vote power?
+## How do I delegate my vote power?
 
-wSGB. Delegation is done differently, depending on the wallet you use. See [wallets](../../user/wallets/index.md) section for more details.
+Same mechanisms as explained in [How do I wrap my native tokens?](#how-do-i-wrap-my-native-tokens) above.
 
-### How much vote power should I delegate?
+## How much vote power should I delegate?
 
-Once you own WSGB, it is best to delegate 100% of your vote power.
+Once you own wrapped tokens, it is best to delegate 100% of your vote power.
 
-### To whom should I delegate my vote power?
+## To whom should I delegate my vote power?
 
-For the ongoing stability of the FTSO it is highly recommended to delegate to reliable price providers. Ones that are committed to providing accurate price feeds. One should also consider the expected reward rate each price provider can offer.
+For the ongoing stability of the FTSO it is highly recommended delegating to reliable price providers.
+I.e. ones that are committed to providing accurate price feeds.
+One should also consider the expected reward rate each price provider can offer.
 
-### How many price providers can I delegate to?
+Google for "Flare Metrics" to find lists of FTSO data providers.
+
+## How many price providers can I delegate to?
 
 Each user can delegate to one or two price providers.
 
-### Should I delegate to one or two price providers?
+## Should I delegate to one or two price providers?
 
-For an account with lower SGB balance (~ 500) it is better to delegate to 1 price provider, since the gas amount when claiming for two providers is a bit higher, if you have a larger account, consider delegating to two price providers.
+For an account with a low balance (~ 500 tokens) it is better to delegate to 1 price provider, since the gas amount when claiming rewards for two providers is a bit higher.
+If you have a larger account, consider delegating to two price providers.
 
-### When I send or receive tokens is my delegation data automatically updated?
+## When I send or receive tokens is my delegation data automatically updated?
 
-Yes, if a user is using delegation by percentage, which means any WSGB that is newly wrapped, sent or received will automatically update the actual delegated vote power. If on the other hand you receive SGB tokens, you have to first wrap them to WSGB to be able to contribute to existing delegations.
+Yes, if a user is using delegation by percentage, which means any `$WFLR` or `$WSGB` that is newly wrapped, sent or received will automatically update the actual delegated vote power.
 
-### What if I want to update my delegations?
+On the other hand, if you receive native tokens, you have to first wrap them to be able to contribute to existing delegations.
 
-For updating delegation data the total percentage should always be equal to or smaller than 100%. So if you want to reduce some percentage from one price provider and increase for the other, you should first decrease the percentage from one price provider.
+## What if I want to update my delegations?
 
-### When is my delegation reflected?
+When updating delegation data the total percentage should always be equal to or smaller than 100%.
+So if you want to reduce some percentage from one price provider and increase for the other, you should first decrease the percentage from one price provider.
 
-Your delegation is reflected if it happens before a vote power snapshot is done for a reward epoch. Any delegation done after the snapshot block will only be reflected in the next reward epoch. See the reward section for more details.
+## When is my delegation reflected?
 
-### Do claimed, wrapped and delegated SGB become immediately effective in the ongoing reward epoch?
+Your delegation is reflected in the next reward epoch **if it happens before the vote power snapshot**.
+Any delegation done after the snapshot block will only be reflected **once the next reward epoch ends**.
 
-No. In general they start becoming effective for rewards in the next reward epoch, that is assuming wrapping and delegation were carried out before the vote power snapshot block.
+## Do claimed, wrapped and delegated tokens become immediately effective in the ongoing reward epoch?
 
-### When is the snapshot vote power taken for a reward epoch?
+No. In general, they start becoming effective for rewards in the next reward epoch, that is assuming wrapping and delegation were carried out before the vote power snapshot block.
 
-A vote power block snapshot for current reward epoch is selected randomly and retroactively at the beginning of a new epoch. It is selected from the last quarter of the previous reward epoch (in terms of blocks produced in the previous reward epoch).
+## When is the snapshot vote power taken for a reward epoch?
 
-### Why should I avoid delegating in the last quarter of the current reward epoch?
+A vote power block snapshot for current reward epoch is selected randomly and retroactively at the beginning of a new epoch.
+It is selected from the last half (on Flare) or the last quarter (on Songbird) of the previous reward epoch (in terms of **blocks** produced in the previous reward epoch).
 
-Your delegation might be too late for consideration in the next reward epoch since the vote power block for the next reward epoch will be randomly chosen from the blocks in the last quarter of the current epoch.
+## Why should I avoid delegating in the last half or quarter of the current reward epoch?
 
-### How much reward can each price provider earn for me?
+Your delegation might be too late for consideration in the next reward epoch since the vote power block for the next reward epoch will be randomly chosen from the blocks in the last half (on Flare) or quarter (on Songbird) of the current epoch.
+
+## How much reward can each price provider earn for me?
 
 This depends on a few factors:
 
@@ -80,8 +95,12 @@ This depends on a few factors:
 
 * The amount of vote power already delegated to this price provider.
 
-To encourage decentralization, there is a vote power cap and any excess vote power is not counted during the median calculation and rewarding phase. If there is over delegation, the same amount of rewards is split between more delegators.
+To encourage decentralization, there is a vote power cap and any excess vote power is not counted during the median calculation and rewarding phase.
+If there is over delegation, the same amount of rewards is split between more delegators.
 
-### Where can I see the expected rewards from a price provider?
+## Where can I see the expected rewards from a price provider?
 
-Each price provider has different performance that results in different reward rates. Sources for this data can be found on the web. Note the reward rate might be changing per each week. Try googling 'Flare metrics'.
+Each price provider has different performance that results in different reward rates.
+Sources for this data can be found on the web.
+Note the reward rate might be changing per each week.
+Try googling for "Flare metrics".
