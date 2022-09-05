@@ -26,7 +26,7 @@ Which will return a JSON containing node IP-s if your IP is whitelisted.
 
 After cloning and compiling the songbird node, adjust the necessary configurations in `songbird.sh` so that the database location points to the external disk. Run `./cmd/songbird.sh` to start bootstrapping. The first bootstrap needs quite a long time to complete and a large amount of disk space (depends on the network size, it can be up to `2TB`). Be sure to have sufficient hardware to run the node efficiently, the current minimum specifications are: 8 CPU cores, 16 GB of RAM and at least 2 TB disk space.
 
-After the bootstrap completes the query `curl http://127.0.0.1:9650/ext/health | jq .`  the query will return healthy and you can start using the node.
+After the bootstrap completes the query `curl http://127.0.0.1:9650/ext/health | jq` should return healthy and you can start using the node.
 
 If you need to restart the node, use the flag `--existing` to reuse the existing downloaded database. This will enable much faster resync on restart.
 
