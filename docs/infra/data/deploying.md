@@ -5,10 +5,10 @@
 Providing prices to the FTSO system makes you a part of a decentralized oracle system.
 FTSO price providers submit prices to on-chain contracts deployed on the Flare and Songbird networks.
 The main contracts a price provider will interact with are the `Price Submitter` and the `FTSO` contracts.
-All the relevant contracts for the FTSO system are available on the smart contract repo (see the [Developer Docs](../../dev/) section).
+All the relevant contracts for the FTSO system are available on the smart contract repo (see the [Developer Docs](../../dev/index.md) section).
 These contracts are deployed and verified on the [Block explorer](../../user/block-explorer.md).
 
-## Perquisites
+## Prerequisites
 
 To operate a price provider you need to be familiar with:
 
@@ -18,7 +18,7 @@ To operate a price provider you need to be familiar with:
 
 ## First steps
 
-To facilitate an easier start, one can use the kick-off NPM package [referenced here](../../../dev/).
+To facilitate an easier start, one can use the kick-off NPM package [referenced here](../../dev/index.md).
 This package showcases the main contracts related to whitelisting a price provider and submitting prices.
 The package enables you to deploy FTSO mock contracts in a local setup, and submit prices to those contracts.
 Working with the package should help all setup stages for your price provider.
@@ -32,7 +32,7 @@ Below aspects would be the same as working on-chain:
 
 The package does not cover the actual price calculation (weighted median) and rewarding as they occur on the real network.
 
-Please visit the [Developer Docs](../../../dev/) section to find a link to a reference implementation of a price provider.
+Please visit the [Developer Docs](../../dev/index.md) section to find a link to a reference implementation of a price provider.
 You can find useful ideas in this code that will help you interact with the FTSO contracts and the Flare chain.
 Do note you will have to do some work on top of this implementation if you would like to win rewards.
 
@@ -179,7 +179,7 @@ Any important updates and contract changes will be broadcasted to the community.
 ### Where can I browse the source code and documentation for contracts?
 
 All the important contracts are verified on the [Blocks Explorer](../../user/block-explorer.md).
-The main smart contract repo is referenced in the [Developer Docs](../../../../dev/) section.
+The main smart contract repo is referenced in the [Developer Docs](../../dev/index.md) section.
 
 ### What are the important contracts I need to be aware of to be a price provider?
 
