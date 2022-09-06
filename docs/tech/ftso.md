@@ -174,24 +174,24 @@ These are the most relevant contracts and their purpose:
 
     Access this contract to retrieve a specific price pair or information about it.
 
-    !!! warning
+    !!! note
 
         If an FTSO contract is **redeployed** (for example, to fix a bug), **its address will change** and apps using it will need to be updated.
         The FTSO Registry contract below keeps track of this so you do not have to.
 
     You can retrieve the addresses of all FTSO contracts using the `getAllFtsos` method in the FTSO Registry (below).
 
-- **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all price pairs
-  (See on [Flare](https://flare-explorer.flare.network/address/0xcD099A11ecd4b02aFF5F17eC46242a9a7cfdA527){target=_blank} and [Songbird](https://songbird-explorer.flare.network/address/0x6D222fb4544ba230d4b90BA1BfC0A01A94E6cB23){target=_blank}).
+- **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all price pairs.
 
-- **Price Submitter**: This is the contract the FTSO data providers use to submit their data
-  (See on [Flare](https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003){target=_blank} and [Songbird](https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003){target=_blank}).
+- **Price Submitter**: This is the contract the FTSO data providers use to submit their data.
 
-- **Reward Manager**: Use this contract to claim your rewards, whether you are a data provider or a delegator
-  (See on [Flare](https://flare-explorer.flare.network/address/0x6D55E24Dc2d3bD2Fc5Ae1fcCD1A73bc5f18A8A30){target=_blank} and [Songbird](https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925){target=_blank}).
+- **Reward Manager**: Use this contract to claim your rewards, whether you are a data provider or a delegator.
 
-- **Wrapped Native (WNat)**: Not exclusively related to the FTSO system, but required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires
-  (See on [Flare](https://flare-explorer.flare.network/address/0x1D80c49BbBCd1C0911346656B529DF9E5c2F783d){target=_blank} and [Songbird](https://songbird-explorer.flare.network/address/0x02f0826ef6aD107Cfc861152B32B52fD11BaB9ED){target=_blank}).
+- **Wrapped Native (WNat)**: Not exclusively related to the FTSO system, but required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
+
+!!! note
+
+    The [Contract Addresses](../dev/reference/contracts.md) page explains how to retrieve each contract's address in a secure way.
 
 Other contracts (like the FTSO Manager or the FTSO Daemon) are only meant for internal use by the FTSO system.
 
