@@ -134,6 +134,7 @@ nav:
   - Developer docs:
     - dev/index.md
     - Reference guides:
+      - dev/reference/contracts.md
       - dev/reference/network-configs.md
   - Exchange guides:
     - exchange/index.md
