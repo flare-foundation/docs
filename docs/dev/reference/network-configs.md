@@ -106,9 +106,9 @@ Along with the endpoints listed above to interact with its own networks, Flare o
         https://algorand-api.flare.network/v2/status | jq
         ```
 
-[flrId]: <https://github.com/ethereum-lists/chains/blob/master/\_data/chains/eip155-14.json>
-[sgbId]: <https://github.com/ethereum-lists/chains/blob/master/\_data/chains/eip155-19.json>
-[cflrId]: <https://github.com/ethereum-lists/chains/blob/master/\_data/chains/eip155-16.json>
+[flrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-14.json>
+[sgbId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-19.json>
+[cflrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-16.json>
 [flrRpc]: <https://flare-api.flare.network/>
 [sgbRpc]: <https://songbird-api.flare.network/>
 [cflrRpc]: <https://coston-api.flare.network/>
