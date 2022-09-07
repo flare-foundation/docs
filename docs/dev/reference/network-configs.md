@@ -4,17 +4,18 @@ This is the information required to run a validator node or to develop on the di
 
 * **Flare** is the [main network](glossary.md#main_network), launched in July 2022.
 * **Songbird** is the [canary network](glossary.md#canary_network), used for testing features under “real fire” conditions, before deploying them on the main network, and live since September 2021.
-* **Coston** is Flare's public [test network](glossary.md#coston) launched in January 2021.
+* **Coston** is Songbird's public [test network](glossary.md#coston) launched in January 2021.
+* **Coston2** is Flare's public [test network](glossary.md#coston) launched in September 2022.
 
 ## Configuration Values
 
-|                            |          Flare           |          Songbird           |           Coston           |
-| -------------------------- | :----------------------: | :-------------------------: | :------------------------: |
-| ChainID                    |       [14][flrId]        |         [19][sgbId]         |        [16][cflrId]        |
-| Asset Ticker               |          `FLR`           |            `SGB`            |           `CFLR`           |
-| RPC endpoint `BETA`{.beta} |   [flare-api][flrRpc]    |   [songbird-api][sgbRpc]    |   [coston-api][cflrRpc]    |
-| Block Explorer             | [flare-explorer][flrExp] | [songbird-explorer][sgbExp] | [coston-explorer][cflrExp] |
-| Test Faucet                |            -             |              -              |  [coston-faucet][cflrFau]  |
+|                            |          Flare           |          Songbird           |           Coston           |           Coston2            |
+| -------------------------- | :----------------------: | :-------------------------: | :------------------------: | :--------------------------: |
+| ChainID                    |       [14][flrId]        |         [19][sgbId]         |        [16][cflrId]        |        [114][c2flrId]        |
+| Asset Ticker               |          `FLR`           |            `SGB`            |           `CFLR`           |           `C2FLR`            |
+| RPC endpoint `BETA`{.beta} |   [flare-api][flrRpc]    |   [songbird-api][sgbRpc]    |   [coston-api][cflrRpc]    |   [coston2-api][c2flrRpc]    |
+| Block Explorer             | [flare-explorer][flrExp] | [songbird-explorer][sgbExp] | [coston-explorer][cflrExp] | [coston2-explorer][c2flrExp] |
+| Test Faucet                |            -             |              -              |  [coston-faucet][cflrFau]  |  [coston2-faucet][c2flrFau]  |
 
 All [RPC](glossary.md#rpc) endpoints are rate-limited to avoid spamming attacks.
 
@@ -109,10 +110,14 @@ Along with the endpoints listed above to interact with its own networks, Flare o
 [flrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-14.json>
 [sgbId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-19.json>
 [cflrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-16.json>
+[c2flrId]: <https://github.com/ethereum-lists/chains/pull/1559/files>
 [flrRpc]: <https://flare-api.flare.network/>
 [sgbRpc]: <https://songbird-api.flare.network/>
 [cflrRpc]: <https://coston-api.flare.network/>
+[c2flrRpc]: <https://coston2-api.flare.network/>
 [flrExp]: <https://flare-explorer.flare.network/>
 [sgbExp]: <https://songbird-explorer.flare.network/>
 [cflrExp]: <https://coston-explorer.flare.network/>
+[c2flrExp]: <https://coston2-explorer.flare.network/>
 [cflrFau]: <https://faucet.towolabs.com>
+[c2flrFau]: <https://coston2-faucet.towolabs.com>

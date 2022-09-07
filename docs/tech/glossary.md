@@ -22,7 +22,7 @@ Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network ([Byzantine Fault Tolerance](#byzantine_fault_tolerance)).
 
 Coston { #coston }
-: The name given to the Flare public [test network](#test_network) launched in January 2021, in remembrance and celebration of a great inventor, Martha J. Coston (1826-1904).
+: The name given to Flare's public [test networks](#test_network), in remembrance and celebration of a great inventor, [Martha J. Coston](https://en.wikipedia.org/wiki/Martha_Coston){target=_blank} (1826-1904).
 
 Cross-chain (or inter-ecosystem) interoperability { #cross_chain }
 : Communication between two or more disparate blockchain ecosystems that are technologically incompatible due to the lack of shared systems, protocols or code (e.g. Ethereum and Solana).

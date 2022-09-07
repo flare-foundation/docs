@@ -88,7 +88,7 @@ code.beta {
 }
 
 /* External link icons */
-a[href*="https://coston-explorer"] {
+a[href*="https://coston-explorer"], a[href*="https://coston2-explorer"] {
     background: url(/assets/coston-72px-transparent.png) center right no-repeat;
     background-size: 2em;
     padding-right: 2.25em;
