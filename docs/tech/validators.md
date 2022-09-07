@@ -29,7 +29,7 @@ And then normalized so the probabilities for all nodes add up to $1.0$.
 
 As it can be seen:
 
-- The logarithm (which might be replaced by a square root or similar monotonically decreasing function) reduces the importance of large stakes.
+- The logarithm (which might be replaced by a square root or similar compressing function) reduces the importance of large stakes.
 - Multiplying by the $RewardRate$ benefits the nodes that consistently provide good FTSO data.
 
 Both the $VotePower$ and the $RewardRate$ are evaluated once a week based on the previous week's results.
