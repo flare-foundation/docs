@@ -67,8 +67,8 @@ Brave users can access existing decentralized applications (dApps) created by in
 
     !!! info
 
-         These dApps are usually created by [FTSO](glossary.md#ftso) signal providers, but some of them (like FTSO AU) allow you to choose a different signal provider to delegate to.
+         These dApps are usually created by [FTSO](glossary.md#ftso) data providers, but some of them (like FTSO AU) allow you to choose a different data provider to delegate to.
 
 4. Follow the prompts to connect your Brave wallet and sign transactions when wrapping, delegating, or claiming rewards.
 
-See the full list of signal providers on Songbird at [flaremetrics.io](https://flaremetrics.io/ftso){target=_blank}.
+See the full list of data providers on Songbird at [flaremetrics.io](https://flaremetrics.io/ftso){target=_blank}.
