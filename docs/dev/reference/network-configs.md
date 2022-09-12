@@ -26,7 +26,20 @@ All [RPC](glossary.md#rpc) endpoints are rate-limited to avoid spamming attacks.
 !!! Example "Sample query"
 
     ```bash
-    curl -s -m 10 https://flare-api.flare.network/ext/health | jq
+    curl -s -m 10 --request POST 'https://flare-api.flare.network/ext/C/rpc' \
+        -H 'Content-Type: application/json' \
+        -d '{
+                "jsonrpc":"2.0",
+                "method":"eth_blockNumber",
+                "params":[],
+                "id":1
+        }'
+    ```
+
+    Returns the chain height, which should look something like:
+
+    ```json
+    {"jsonrpc":"2.0","id":1,"result":"0x103384"}
     ```
 
 ## Additional Notes
@@ -111,10 +124,10 @@ Along with the endpoints listed above to interact with its own networks, Flare o
 [sgbId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-19.json>
 [cflrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-16.json>
 [c2flrId]: <https://github.com/ethereum-lists/chains/pull/1559/files>
-[flrRpc]: <https://flare-api.flare.network/>
-[sgbRpc]: <https://songbird-api.flare.network/>
-[cflrRpc]: <https://coston-api.flare.network/>
-[c2flrRpc]: <https://coston2-api.flare.network/>
+[flrRpc]: <https://flare-api.flare.network/ext/C/rpc>
+[sgbRpc]: <https://songbird-api.flare.network/ext/C/rpc>
+[cflrRpc]: <https://coston-api.flare.network/ext/C/rpc>
+[c2flrRpc]: <https://coston2-api.flare.network/ext/C/rpc>
 [flrExp]: <https://flare-explorer.flare.network/>
 [sgbExp]: <https://songbird-explorer.flare.network/>
 [cflrExp]: <https://coston-explorer.flare.network/>
