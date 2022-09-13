@@ -126,9 +126,9 @@ Each attestation round has 3 **90-second** consecutive phases, called Request, C
 
 The RCR protocol is akin to making submissions in a closed envelope which is not opened until all submissions are received.
 
-Results are available at the end of the Reveal phase, so the answer to a particular request can take anywhere **from 3 to 4.5 minutes**, depending on the time in which the request was made inside the Collect phase.
+Results are available at the end of the Reveal phase, so the answer to a particular request can take anywhere **from 3 to 4.5 minutes**, depending on the time in which the request was made inside the Request phase.
 
-Furthermore, the phases of the RCR protocol are actually **overlapped**, so when requests are being **collected** for round $n$, answers are being simultaneously **committed** for the previous round $(n-1)$, and **revealed** for the round prior to that $(n-2)$.
+Furthermore, the phases of the RCR protocol are actually **overlapped**, so when requests are being **requested** for round $n+2$, answers are being simultaneously **committed** for the previous round $(n+1)$, and **revealed** for the round prior to that $(n)$.
 
 <figure markdown>
   ![Overlapped RCR protocol](SC-RCR-overlapped.png){ loading=lazy .allow-zoom }
@@ -226,7 +226,7 @@ To achieve this, two **sets** of attestation providers are defined:
 
     Additionally, each node operator can provide a list of **local** attestation providers to be accepted besides the ones from the default set.
 
-    Local providers are physically the same as default providers, and they are treated exactly the same by the State Connector.
+    Local providers are the same kind of nodes as default providers, and they are treated exactly the same by the State Connector.
     Furthermore, providers can belong to both sets.
 
 <figure markdown>
@@ -252,7 +252,7 @@ Ideally, local providers are managed by the same entity controlling the validato
 As a consequence of different validators using different attestation providers, sometimes State Connector queries can get different results on some validators, which naturally leads to **chain forks**.
 
 Typically, blockchains allow every branch in a fork to **coexist and grow independently**, until the discrepancy is detected and resolved.
-At that point, one of the branches is removed and all the validators that were following it experience a **rollback**:
+At that point, any branches deemed invalid are removed and all the validators that were following them experience a **rollback**:
 All transactions that happened after the fork are **reverted** and the state of those validators is synchronized with the rest of the network.
 
 When dealing with forks caused by the State Connector, the Flare network implements an **extra security measure**:
