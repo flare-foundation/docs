@@ -82,6 +82,9 @@ extra_javascript:
   - assets/javascripts/images.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://www.googletagmanager.com/gtag/js?id=G-3WZ2CSGYV1
+  - assets/javascripts/gtag.js
+  - assets/javascripts/cookie-consent.js
 extra:
   social:
     - icon: fontawesome/solid/house
