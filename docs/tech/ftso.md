@@ -6,14 +6,14 @@ The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare
 It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 
 To achieve this, a set of **independent data providers** retrieves price pair information from external sources (like centralized and decentralized Exchanges) and supplies it to the FTSO system.
-This information is then weighted according to each provider's **voting power**, outlying data points are removed, and a **median** is calculated to produce the final estimate.
+This information is then weighted according to each provider's **voting power** and a **median** is calculated to produce the final estimate.
 
 <figure markdown>
   ![FTSO summary](ftso-summary.png){ loading=lazy .allow-zoom }
   <figcaption>FTSO summary.</figcaption>
 </figure>
 
-Data providers that supply **useful information** (price pairs that are not removed as outliers) are **rewarded**, and the resulting price estimates are finally **published on-chain**.
+Data providers that supply **useful information** (price pairs that are not removed as outliers because they are too far away from the median value) are **rewarded**, and the resulting price estimates are finally **published on-chain**.
 
 This page gives technical details about the submission procedure, how the final estimate is calculated, how vote delegation works, how to submit price pairs, how to claim rewards and how to use the price information in an app.
 
@@ -39,16 +39,17 @@ The following process runs continuously, producing new price estimates every **P
 
     This is akin to submitting prices in a closed envelope, so when the round is over all envelopes are opened.
 
-    During a **3-minute** price epoch, providers fetch the information, run their algorithms and **submit a hash** of the data.
-    During the first half of the following price epoch (**1.5 minutes**) providers then submit the actual data.
+    During a **3-minute** price epoch, providers fetch the information, run their algorithms and **submit a hash** of the data (_commit_).
+    During the first half of the following price epoch (**1.5 minutes**) providers then submit the actual data (_reveal_).
 
     See technical details about the [submission process](#price-submission-process) below.
 
-3. The FTSO System calculates the **resulting median price** after removing extreme values, taking into account each provider's voting power (see [Resulting Price Calculation](#resulting-price-calculation) below).
+3. The FTSO System calculates the **resulting median price**, taking into account each provider's voting power (see [Resulting Price Calculation](#resulting-price-calculation) below).
 
-    Resulting price pairs are **publicly available for 5 price epochs** for any app or contract to retrieve.
+    Resulting price pairs are **publicly available for 5 price epochs** for any app or contract to read.
+    Previous epochs can always be retrieved from an archival node.
 
-4. For each price epoch in which the submitted data is not discarded as an outlier, data providers and their [delegators](#delegation) are **rewarded**.
+4. For each price epoch in which the submitted data is close enough to the median price, data providers and their [delegators](#delegation) are **rewarded**.
 
     Rewards are accumulated in **Reward Epochs** (**3.5 days** on the Flare network, **7 days** on Songbird) and can be claimed once the epoch finishes.
 
@@ -69,9 +70,9 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target
 - Each submission has a **price** and a **weight**.
   Weight is based on the data provider's [voting power](#vote-power), as explained below.
 
-- Submissions are **sorted** by price and the ones with the lowest and highest 25% of the weight are **discarded**.
+- The [weighted median](https://en.wikipedia.org/wiki/Weighted_median){target=_blank} of the prices is the resulting price for the price epoch.
 
-- The [weighted median](https://en.wikipedia.org/wiki/Weighted_median){target=_blank} of the remaining prices is the resulting price for the price epoch.
+- Submissions in the top and bottom 25% range are not [rewarded](#rewards).
 
 ## Vote Power
 
@@ -93,7 +94,7 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target
 
 - The actual snapshot block is called the **Voting Power Block** and it is **randomly chosen** from the last blocks of the previous epoch (last 50% on Flare, last 25% on Songbird).
 
-    Note this does not need to match the last 50% or 25% of the _time_, since block production times are not constant.
+    Note this only roughly corresponds to last 50% or 25% of the _time_, since block production times are not constant.
 
 !!! note "Reward epochs"
 
@@ -131,7 +132,7 @@ For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-clai
 
 A percentage of the annual network **inflation** is reserved to reward FTSO data providers, and distributed uniformly among the year's reward epochs (reward epochs are 7-days long on Songbird and 3.5-days long on Flare).
 
-Each reward epoch, rewards are distributed among all data providers whose submission [was not discarded](#resulting-price-calculation), according to their [Vote Power](#vote-power).
+Each reward epoch, rewards are distributed among all data providers whose submission fell [within 50% range of the calculated median price](#resulting-price-calculation).
 
 Then, each provider takes a **configurable fee** (20% by default) and distributes the rest of the reward among **all contributors to its Vote Power**, i.e. itself and all its delegators, according to the delegated amounts.
 Find more details in [the Delegation guide (Reward Claiming)](../user/delegation/reward-claiming-in-detail.md#reward-amount-in-depth).
@@ -207,7 +208,7 @@ Find more details in [the Delegation guide](../user/delegation/delegation-in-det
 
 1. **Obtain wrapped tokens**
 
-    [Voting power](#vote-power) is delegated on a data provider using **wrapped tokens** (`WFLR` and `WSGB`) whereas the **native tokens** are `FLR` and `SGB`.
+    [Voting power](#vote-power) is delegated to a data provider using **wrapped tokens** (`WFLR` and `WSGB`) whereas the **native tokens** are `FLR` and `SGB`.
 
     One wrapped token can be obtained for each native token without cost (except gas fees) using the `WNat` contract's `deposit` method.
     Tokens get locked inside the `WNat` contract and cannot be used until they are unwrapped.
@@ -280,7 +281,7 @@ To speed up the process, both phases are actually overlapped so:
 - The published price information is therefore updated **every 3 minutes**.
 
 Only a hash of the data is submitted during the Commit phase.
-Next, on the Reveal phase the actual data is sent.
+Next, in the Reveal phase the actual data is sent.
 If its hash does not match the previous commitment, the data is discarded.
 
 Submission API is slightly different for the Flare and Songbird networks:
