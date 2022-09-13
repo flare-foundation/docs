@@ -82,9 +82,6 @@ extra_javascript:
   - assets/javascripts/images.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://www.googletagmanager.com/gtag/js?id=G-3WZ2CSGYV1
-  - assets/javascripts/gtag.js
-  - assets/javascripts/cookie-consent.js
 extra:
   social:
     - icon: fontawesome/solid/house
@@ -95,7 +92,17 @@ extra:
       link: https://github.com/flare-foundation
     - icon: fontawesome/brands/discord
       link: https://discord.gg/XqNa7Rq
-copyright: Copyright &copy; 2022 Flare Networks.
+  analytics:
+    provider: google
+    property: G-3WZ2CSGYV1
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+copyright: Copyright &copy; 2022 Flare Networks. <a href="#__consent">Cookie settings</a>.
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 nav:
