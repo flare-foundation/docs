@@ -74,6 +74,28 @@ event RewardClaimsExpired(
 ```
 
 </div>
+<div class="api-node" markdown>
+### ClaimExecutorsChanged
+
+```solidity
+event ClaimExecutorsChanged(
+    address rewardOwner,
+    address[] executors
+)
+```
+
+</div>
+<div class="api-node" markdown>
+### AllowedClaimRecipientsChanged
+
+```solidity
+event AllowedClaimRecipientsChanged(
+    address rewardOwner,
+    address[] recipients
+)
+```
+
+</div>
 </div>
 <div class="api-node-type" markdown>
 
@@ -138,11 +160,12 @@ _Reverts if `msg.sender` is delegating by amount_
 | _rewardAmount | uint256 | amount of total claimed rewards |
 </div>
 <div class="api-node" markdown>
-### claimAndWrapRewardToOwner
+### claimAndWrapRewardByExecutor
 
 ```solidity
-function claimAndWrapRewardToOwner(
-    address payable _rewardOwner,
+function claimAndWrapRewardByExecutor(
+    address _rewardOwner,
+    address payable _recipient,
     uint256[] _rewardEpochs
 ) external returns (
     uint256 _rewardAmount);
@@ -150,8 +173,9 @@ function claimAndWrapRewardToOwner(
 
 Allows a percentage delegator to claim and wrap rewards.
 This function is intended to be used to claim and wrap rewards in case of delegation by percentage.
-The caller does not have to be the owner, but must be allowed by owner by calling `addClaimExecutor`.
-  It is actually safe for this to be called by anybody (nothing can be stolen), but by limiting who can
+The caller does not have to be the owner, but must be approved by the owner to claim on his behalf.
+  this approval is done by calling `addClaimExecutor`.
+It is actually safe for this to be called by anybody (nothing can be stolen), but by limiting who can
   call, we allow the owner to control the timing of the calls.
 
 _Reverts if `msg.sender` is delegating by amount_
@@ -160,7 +184,8 @@ _Reverts if `msg.sender` is delegating by amount_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| _rewardOwner | address payable | address of the reward owner; also, funds will be tranfered there |
+| _rewardOwner | address | address of the reward owner |
+| _recipient | address payable | address of the recipient; must be either _rewardOwner or one of the addresses   allowed by the _rewardOwner |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 
 *Returns*
@@ -232,11 +257,12 @@ _Function can be used by a percentage delegator but is more gas consuming than `
 | _rewardAmount | uint256 | amount of total claimed rewards |
 </div>
 <div class="api-node" markdown>
-### claimAndWrapRewardFromDataProvidersToOwner
+### claimAndWrapRewardFromDataProvidersByExecutor
 
 ```solidity
-function claimAndWrapRewardFromDataProvidersToOwner(
-    address payable _rewardOwner,
+function claimAndWrapRewardFromDataProvidersByExecutor(
+    address _rewardOwner,
+    address payable _recipient,
     uint256[] _rewardEpochs,
     address[] _dataProviders
 ) external returns (
@@ -245,8 +271,9 @@ function claimAndWrapRewardFromDataProvidersToOwner(
 
 Allows the sender to claim and wrap rewards from specified data providers.
 This function is intended to be used to claim and wrap rewards in case of delegation by amount.
-The caller does not have to be the owner, but must be allowed by owner by calling `addClaimExecutor`.
-  It is actually safe for this to be called by anybody (nothing can be stolen), but by limiting who can
+The caller does not have to be the owner, but must be approved by the owner to claim on his behalf.
+  this approval is done by calling `addClaimExecutor`.
+It is actually safe for this to be called by anybody (nothing can be stolen), but by limiting who can
   call, we allow the owner to control the timing of the calls.
 
 _Function can be used by a percentage delegator but is more gas consuming than `claimReward`._
@@ -255,7 +282,8 @@ _Function can be used by a percentage delegator but is more gas consuming than `
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| _rewardOwner | address payable | address of the reward owner; also, funds will be tranfered there |
+| _rewardOwner | address | address of the reward owner |
+| _recipient | address payable | address of the recipient; must be either _rewardOwner or one of the addresses   allowed by the _rewardOwner |
 | _rewardEpochs | uint256[] | array of reward epoch numbers to claim for |
 | _dataProviders | address[] | array of addresses representing data providers to claim the reward from |
 
@@ -266,41 +294,42 @@ _Function can be used by a percentage delegator but is more gas consuming than `
 | _rewardAmount | uint256 | amount of total claimed rewards |
 </div>
 <div class="api-node" markdown>
-### addClaimExecutor
+### setClaimExecutors
 
 ```solidity
-function addClaimExecutor(
-    address _executor
+function setClaimExecutors(
+    address[] _executors
 ) external;
 ```
 
-Called by reward owner to allow `_executor` to call `claimAndWrapRewardToOwner` or 
-`claimAndWrapRewardFromDataProvidersToOwner`.
+Set the addresses of executors, who are allowed to call claimAndWrapRewardByExecutor
+and claimAndWrapRewardFromDataProvidersByExecutor.
 
 *Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| _executor | address | the account that will be able to call the `claim to owner` methods |
+| _executors | address[] | The new executors. All old executors will be deleted and replaced by these. |
 
 </div>
 <div class="api-node" markdown>
-### removeClaimExecutor
+### setAllowedClaimRecipients
 
 ```solidity
-function removeClaimExecutor(
-    address _executor
+function setAllowedClaimRecipients(
+    address[] _recipients
 ) external;
 ```
 
-Called by reward owner to revoke the allowance of `_executor` to call `claimAndWrapRewardToOwner` or 
-`claimAndWrapRewardFromDataProvidersToOwner`.
+Set the addresses of allowed recipients in the methods claimAndWrapRewardByExecutor
+and claimAndWrapRewardFromDataProvidersByExecutor.
+Apart from these, the reward owner is always an allowed recipient.
 
 *Parameters*
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| _executor | address | the account that won't be able to call the `claim to owner` methods any more |
+| _recipients | address[] | The new allowed recipients. All old recipients will be deleted and replaced by these. |
 
 </div>
 <div class="api-node" markdown>
@@ -660,6 +689,35 @@ Returns the information on rewards and initial vote power of `_dataProvider` for
 | ---- | ---- | ----------- |
 | _rewardAmount | uint256 | number representing the amount of rewards |
 | _votePowerIgnoringRevocation | uint256 | number representing the vote power ignoring revocations |
+</div>
+<div class="api-node" markdown>
+### claimExecutors
+
+```solidity
+function claimExecutors(
+    address _rewardOwner
+) external view returns (
+    address[]);
+```
+
+Get the addresses of executors, who are allowed to call claimAndWrapRewardByExecutor
+and claimAndWrapRewardFromDataProvidersByExecutor.
+
+</div>
+<div class="api-node" markdown>
+### allowedClaimRecipients
+
+```solidity
+function allowedClaimRecipients(
+    address _rewardOwner
+) external view returns (
+    address[]);
+```
+
+Get the addresses of allowed recipients in the methods claimAndWrapRewardByExecutor
+and claimAndWrapRewardFromDataProvidersByExecutor.
+Apart from these, the reward owner is always an allowed recipient.
+
 </div>
 </div>
 

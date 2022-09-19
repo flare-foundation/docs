@@ -25,6 +25,27 @@ Delegate by percentage `_bips` of voting power to `_to` from `msg.sender`.
 
 </div>
 <div class="api-node" markdown>
+### batchDelegate
+
+```solidity
+function batchDelegate(
+    address[] _delegatees,
+    uint256[] _bips
+) external;
+```
+
+Undelegate all percentage delegations from teh sender and then delegate corresponding 
+  `_bips` percentage of voting power from the sender to each member of `_delegatees`.
+
+*Parameters*
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _delegatees | address[] | The addresses of the new recipients. |
+| _bips | uint256[] | The percentages of voting power to be delegated expressed in basis points (1/100 of one percent).   Total of all `_bips` values must be at most 10000. |
+
+</div>
+<div class="api-node" markdown>
 ### delegateExplicit
 
 ```solidity

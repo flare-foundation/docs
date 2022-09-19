@@ -38,6 +38,28 @@ event AccountOptOut(
 ```
 
 </div>
+<div class="api-node" markdown>
+### ClaimExecutorsChanged
+
+```solidity
+event ClaimExecutorsChanged(
+    address rewardOwner,
+    address[] executors
+)
+```
+
+</div>
+<div class="api-node" markdown>
+### AllowedClaimRecipientsChanged
+
+```solidity
+event AllowedClaimRecipientsChanged(
+    address rewardOwner,
+    address[] recipients
+)
+```
+
+</div>
 </div>
 <div class="api-node-type" markdown>
 
@@ -57,7 +79,19 @@ function optOutOfAirdrop(
 
 ```solidity
 function claim(
-    address payable _recipient,
+    address _recipient,
+    uint256 _month
+) external returns (
+    uint256 _amountWei);
+```
+
+</div>
+<div class="api-node" markdown>
+### claimAndWrap
+
+```solidity
+function claimAndWrap(
+    address _recipient,
     uint256 _month
 ) external returns (
     uint256 _amountWei);
@@ -72,6 +106,64 @@ function claimToPersonalDelegationAccount(
     uint256 _month
 ) external returns (
     uint256 _amountWei);
+```
+
+</div>
+<div class="api-node" markdown>
+### claimByExecutor
+
+```solidity
+function claimByExecutor(
+    address _rewardOwner,
+    address _recipient,
+    uint256 _month
+) external returns (
+    uint256 _amountWei);
+```
+
+</div>
+<div class="api-node" markdown>
+### claimAndWrapByExecutor
+
+```solidity
+function claimAndWrapByExecutor(
+    address _rewardOwner,
+    address _recipient,
+    uint256 _month
+) external returns (
+    uint256 _amountWei);
+```
+
+</div>
+<div class="api-node" markdown>
+### claimToPersonalDelegationAccountByExecutor
+
+```solidity
+function claimToPersonalDelegationAccountByExecutor(
+    address _rewardOwner,
+    uint256 _month
+) external returns (
+    uint256 _amountWei);
+```
+
+</div>
+<div class="api-node" markdown>
+### setClaimExecutors
+
+```solidity
+function setClaimExecutors(
+    address[] _executors
+) external;
+```
+
+</div>
+<div class="api-node" markdown>
+### setAllowedClaimRecipients
+
+```solidity
+function setAllowedClaimRecipients(
+    address[] _recipients
+) external;
 ```
 
 </div>
@@ -148,6 +240,28 @@ function getMonthToExpireNext(
 function secondsTillNextClaim(
 ) external view returns (
     uint256 _timetill);
+```
+
+</div>
+<div class="api-node" markdown>
+### claimExecutors
+
+```solidity
+function claimExecutors(
+    address _rewardOwner
+) external view returns (
+    address[]);
+```
+
+</div>
+<div class="api-node" markdown>
+### allowedClaimRecipients
+
+```solidity
+function allowedClaimRecipients(
+    address _rewardOwner
+) external view returns (
+    address[]);
 ```
 
 </div>
