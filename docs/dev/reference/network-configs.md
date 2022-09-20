@@ -1,11 +1,16 @@
 # Network Configurations
 
-This is the information required to run a validator node or to develop on the different Flare networks.
+This is the information required to run a node or to develop on the different Flare networks:
 
-* **Flare** is the [main network](glossary.md#main_network), launched in July 2022.
-* **Songbird** is the [canary network](glossary.md#canary_network), used for testing features under “real fire” conditions, before deploying them on the main network, and live since September 2021.
-* **Coston** is Songbird's public [test network](glossary.md#coston) launched in January 2021.
-* **Coston2** is Flare's public [test network](glossary.md#coston) launched in September 2022.
+* **Flare** is the [main network](glossary.md#main_network).
+* **Songbird** is the [canary network](glossary.md#canary_network), used for testing features under “real fire” conditions, before deploying them on the main network.
+* **Coston** is Songbird's public [test network](glossary.md#coston).
+* **Coston2** is Flare's public [test network](glossary.md#coston).
+
+<figure markdown>
+![The Flare networks](flare-network-types.png){ loading=lazy .allow-zoom width=500px }
+<figcaption>General feature adoption flow.</figcaption>
+</figure>
 
 ## Configuration Values
 
