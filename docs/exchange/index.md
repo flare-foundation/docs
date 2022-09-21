@@ -4,9 +4,9 @@ This section contains information and bits of advice for Exchanges willing to su
 
 The first thing you should know is that:
 
-!!! tip "Flare works just like Ethereum!"
+!!! tip "Flare is used just like Ethereum!"
 
-    If your Exchange already supports Ethereum, you can support Flare by using the same code base. You just need to:
+    Even though the node code is different, Flare offers the same API as Ethereum so you can integrate with it in the same way.
 
     * [Deploy a Flare Observation node](../infra/observation.md) to access the network.
     * [Use the appropriate Chain ID](../dev/reference/network-configs.md).
