@@ -10,7 +10,10 @@ However, submitting transactions through your own node offers a number of benefi
 
 * Transactions are sent directly to the network instead of through a third party, removing a potential security risk.
 * Public nodes are usually rate-limited (the amount of requests they accept per second is restricted).
+  Your own node does not have such restriction.
 * The time savings described above allow [FTSO data providers](glossary.md#data_provider) to submit their data a few seconds later, thus having more time to gather price data before submitting.
+
+This guide explains how to deploy your own observation node so you can reap these benefits.
 
 ## Prerequisites
 
@@ -309,7 +312,7 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
         https://coston2.flare.network/ext/info | jq -r ".result.nodeID"
         ```
 
-    Remember that you need to whitelist your node's IP address your queries will always be answered with 403 error codes.
+    Remember that you need to whitelist your node's IP address or your queries will always be answered with 403 error codes.
 
 * [`--http-host`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--http-host-string){target=_blank}:
     Use `--http-host=` (empty) to allow connections from other machines.
