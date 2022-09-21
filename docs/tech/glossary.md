@@ -90,6 +90,9 @@ Proof of Stake { #proof_of_stake }
 Proof of Work { #proof_of_work }
 : A kind of [Sybil resistance](#sybil_resistance) based on spending computer power to participate in consensus. The rationale is that attacking the network becomes prohibitively expensive in terms of computer power.
 
+Pruning { #pruning }
+: A [blockchain](#blockchain) database reduction technique, which keeps the state of all addresses (like their balance) and the [transactions](#transaction) that led to that state, but removes any old transaction that does not impact the current state anymore.
+
 Quantum Resistance { #quantum_resistance }
 : The ability of a cryptographic algorithm (and therefore of a blockchain) to resist an attack from a theoretical quantum computer.
 

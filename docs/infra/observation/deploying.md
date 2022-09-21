@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Observation nodes, aka "peering" nodes, enable anyone to observe the network and submit transactions.
+Observation nodes enable anyone to observe the network and submit transactions.
 Unlike [validator nodes](../../tech/validators.md), which provide state consensus and add blocks, observation nodes remain outside the network and have no effect on consensus or blocks.
 
 Running an observation node is optional.
@@ -57,6 +57,8 @@ This guide contains different instructions depending on which Flare Network you 
     |                 |             |                      | [jq](https://stedolan.github.io/jq/){target=_blank}             |
 
 Plus a reliable IPv4 or IPv6 network connection, with an open public port.
+
+Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#additional-configuration) can reduce the required disk space by as much as 60%.
 
 ## Installation
 
@@ -328,6 +330,12 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
     It defaults to `~/.avalanchego/db` on Flare and Coston 2, and to `~/.flare/db` on Songbird and Coston.
 
     You can use this option to store the database on an external drive, for example.
+
+* [`--pruning-enabled`](https://docs.avax.network/nodes/maintain/chain-config-flags#pruning-enabled-boolean){target=_blank}:
+    Enables [pruning](glossary.md#pruning) of old transactions, greatly reducing disk size requirements.
+    It defaults to `true`.
+
+    It you want to create a so-called **archival node**, i.e., one that keeps the whole history of the blockchain, set this parameter to `false`.
 
 * [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string){target=_blank}:
     Optional JSON configuration file, in case you want to use lots of non-default values.
