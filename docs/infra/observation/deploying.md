@@ -108,9 +108,9 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
         cd ..
         ```
 
-## Running the node
+## Running the Node
 
-### Node whitelisting
+### Node Whitelisting
 
 While the Flare and Songbird networks are being tested, all nodes wanting to peer with them (including observation nodes) need to have their IP address **whitelisted**.
 
@@ -143,7 +143,7 @@ To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@T
 
 Please note that whitelisting is **not needed** on the **Coston and Coston 2 networks**.
 
-### Quick start
+### Quick Start
 
 This is the minimum command to quickly get your node up and running.
 To understand each parameter read the following section.
