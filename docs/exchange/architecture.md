@@ -48,7 +48,7 @@ The [Exchange server](#exchange-server) updates this DB in response to user's de
 
 ### Flare Observation Node
 
-An observation node is a regular Flare node that does not partake in [consensus](glossary.md#consensus) but is still aware of the current state of the blockchain and allows submitting transactions. **It is highly recommended** that Exchanges deploy their own observation nodes to access the network, instead of relying on third-party services. Read the [Deploying an Observation Node](../infra/observation.md) guide to learn how to do this.
+An observation node is a regular Flare node that does not partake in [consensus](glossary.md#consensus) but is still aware of the current state of the blockchain and allows submitting transactions. **It is highly recommended** that Exchanges deploy their own observation nodes to access the network, instead of relying on third-party services. Read the [Deploying an Observation Node](../infra/observation/deploying.md) guide to learn how to do this.
 
 ## Detecting Deposits
 
