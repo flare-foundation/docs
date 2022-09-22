@@ -61,9 +61,11 @@ This guide contains different instructions depending on which Flare Network you 
 
 Plus a reliable IPv4 or IPv6 network connection, with an open public port.
 
-Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#additional-configuration) can reduce the required disk space by as much as 60%.
+Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#4-additional-configuration) can reduce the required disk space by as much as 60%.
 
-## Installation
+## Guide
+
+### 1. Installation
 
 === "Flare & Coston 2"
 
@@ -111,9 +113,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
         cd ..
         ```
 
-## Running the Node
-
-### Node Whitelisting
+### 2. Node Whitelisting
 
 While the Flare and Songbird networks are being tested, all nodes wanting to peer with them (including observation nodes) need to have their IP address **whitelisted**.
 
@@ -146,10 +146,10 @@ To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@T
 
 Please note that whitelisting is **not needed** on the **Coston and Coston 2 networks**.
 
-### Quick Start
+### 3. Run the Node
 
 This is the minimum command to quickly get your node up and running.
-To understand each parameter read the following section.
+To understand each parameter read the following step before launching the node.
 
 === "Flare"
 
@@ -209,6 +209,10 @@ To understand each parameter read the following section.
 
 After a lot of log messages the node should start **synchronizing** with the network, which might take a long time (currently about 4 hours for Flare, over a week for Songbird, depending on network speed and machine specs).
 
+You can **stop** the node at any time by pressing `Ctrl-C`.
+Use the same command line as before to **restart** the node.
+Synchronization will resume where it left if it is interrupted.
+
 You will know your node is fully booted and accepting transactions when the output of this command:
 
 ```bash
@@ -221,7 +225,7 @@ Contains the field `"healthy":true` in the returned JSON object.
 
     If the node gets stuck during bootstrap (it takes far longer than the estimates given above), try to add the parameter [`--bootstrap-retry-enabled=false`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-retry-enabled-boolean){target=_blank}.
 
-### Additional Configuration
+### 4. Additional Configuration
 
 These are some of the most relevant command line parameters you can use.
 You can read about all of them in the [Avalanche documentation](https://docs.avax.network/nodes/maintain/avalanchego-config-flags){target=_blank}.
@@ -343,7 +347,7 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
 * [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string){target=_blank}:
     Optional JSON configuration file, in case you want to use lots of non-default values.
 
-    ??? tip "Sample configuration file"
+    ??? tip "Sample configuration file for observation nodes"
 
         These are the most common configuration options.
         Put them in a file in the `{chain-config-dir}/C/config.json` folder.
