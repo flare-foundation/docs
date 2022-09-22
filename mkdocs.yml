@@ -145,6 +145,8 @@ nav:
     - Observation Nodes:
       - infra/observation/deploying.md
       - infra/observation/faq.md
+    - Validator Nodes:
+      - infra/validation/deploying.md
   - Developer docs:
     - dev/index.md
     - Reference guides:
