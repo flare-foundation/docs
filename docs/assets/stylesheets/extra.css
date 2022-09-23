@@ -86,22 +86,3 @@ code.beta {
     color: white;
     border-radius: 0.3rem;
 }
-
-/* External link icons */
-a[href*="https://coston-explorer"], a[href*="https://coston2-explorer"] {
-    background: url(/assets/coston-72px-transparent.png) center right no-repeat;
-    background-size: 2em;
-    padding-right: 2.25em;
-}
-
-a[href*="https://songbird-explorer"] {
-    background: url(/assets/songbird-72px-transparent.png) center right no-repeat;
-    background-size: 2em;
-    padding-right: 2em;
-}
-
-a[href*="https://flare-explorer"] {
-    background: url(/assets/flare-72px-transparent.png) center right no-repeat;
-    background-size: 2em;
-    padding-right: 2.25em;
-}
