@@ -33,7 +33,7 @@ SafePal users can access existing decentralized applications (dApps) created by 
 4. Scroll down, select the `Songbird` network, and click `Go`.
 5. A pop up will appear notifying that you are being redirected to a third party dApp. Press `Confirm`.
 
-Examples of signal providers that have developed dApps for wrapping and delegation are [Best FTSO](https://bestftso.xyz/delegate){target=_blank} and [FTSO AU](https://app.ftso.com.au/wrap){target=_blank}.
+Examples of signal providers that have developed dApps for wrapping and delegation are [Best FTSO](https://bestftso.xyz/delegate){target=_blank} and [FTSO AU](https://app.ftso.au/wrap){target=_blank}.
 
 Other signal providers are hosting similar websites or dApps for wrapping and delegation.
 See the full list of signal providers on Songbird here at [https://flaremetrics.io/ftso](https://flaremetrics.io/ftso){target=_blank}.

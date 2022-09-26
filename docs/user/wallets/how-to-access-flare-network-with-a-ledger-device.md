@@ -82,7 +82,7 @@ A few of the data providers have developed dapps integrated with their websites 
 Delegating using this method is not exclusive to one specific provider, as these dapps allow you to choose from a number of different providers.
 
 Examples of data providers that have developed dapps for wrapping and delegation are FTSO AU and Aureus Ox.
-Their dapps are available at [app.ftso.com.au](https://app.ftso.com.au/wrap){target=_blank} and [aureusox.com/dashboard](https://aureusox.com/dashboard){target=_blank}.
+Their dapps are available at [app.ftso.au](https://app.ftso.au/wrap){target=_blank} and [aureusox.com/dashboard](https://aureusox.com/dashboard){target=_blank}.
 
 Other providers have their own websites and are developing similar dapps.
 See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso){target=_blank}.
