@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Welcome
 
 Welcome to the **Flare Network Technical Documentation** site!

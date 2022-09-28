@@ -107,7 +107,7 @@ copyright: Copyright &copy; 2022 Flare Networks. <a href="#__consent">Cookie set
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 nav:
-  - Start:
+  - Home:
     - index.md
   - Technology:
     - tech/index.md
