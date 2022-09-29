@@ -55,6 +55,7 @@ As stated at the beginning, **remember to double-check the addresses** are corre
 
 | Contract                 | Flare Address                                  | Songbird Address                               |
 | ------------------------ | ---------------------------------------------- | ---------------------------------------------- |
+| **Address Updater**      | [0xbAF89d...][f-addr-updater]{target=_blank}   |                                                |
 | **FTSO Registry**        | [0xcD099A...][f-ftso-registry]{target=_blank}  | [0x6D222f...][s-ftso-registry]{target=_blank}  |
 | **FTSO Price Submitter** | [0x100000...][f-ftso-submitter]{target=_blank} | [0x100000...][s-ftso-submitter]{target=_blank} |
 | **FTSO Reward Manager**  | [0x6D55E2...][f-ftso-rewards]{target=_blank}   | [0xc57383...][s-ftso-rewards]{target=_blank}   |
@@ -66,6 +67,7 @@ As stated at the beginning, **remember to double-check the addresses** are corre
 [f-ftso-rewards]:   https://flare-explorer.flare.network/address/0x6D55E24Dc2d3bD2Fc5Ae1fcCD1A73bc5f18A8A30
 [f-ftso-whitelist]: https://flare-explorer.flare.network/address/0x0F45493e4C321b238e1fA242692BFFf3f30fBdfD
 [f-wnat]:           https://flare-explorer.flare.network/address/0x1D80c49BbBCd1C0911346656B529DF9E5c2F783d
+[f-addr-updater]:   https://flare-explorer.flare.network/address/0xbAF89d873d198FF78E72D2745B01cBA3c6e5BE6B
 [s-ftso-registry]:  https://songbird-explorer.flare.network/address/0x6D222fb4544ba230d4b90BA1BfC0A01A94E6cB23
 [s-ftso-submitter]: https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003
 [s-ftso-rewards]:   https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925
