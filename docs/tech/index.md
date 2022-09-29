@@ -1,3 +1,3 @@
-# Technology
+# Concepts
 
-This section contains in-depth descriptions of Flare's technology and tools.
+This section contains in-depth descriptions of Flare's key concepts and tools.

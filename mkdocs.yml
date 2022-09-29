@@ -109,7 +109,7 @@ edit_uri: edit/main/docs/
 nav:
   - Home:
     - index.md
-  - Technology:
+  - Concepts:
     - tech/index.md
     - tech/ftso.md
     - tech/state-connector.md
