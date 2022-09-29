@@ -72,7 +72,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
     Clone the [go-flare](https://github.com/flare-foundation/go-flare){target=_blank} repository and run the `build.sh` script:
 
     ```bash
-    git clone git@github.com:flare-foundation/go-flare.git
+    git clone https://github.com/flare-foundation/go-flare.git
     cd go-flare/avalanchego
     ./scripts/build.sh
     ```
@@ -95,7 +95,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
     Clone the [go-songbird](https://github.com/flare-foundation/go-songbird){target=_blank} repository and run the `build.sh` script:
 
     ```bash
-    git clone git@github.com:flare-foundation/go-songbird.git
+    git clone https://github.com/flare-foundation/go-songbird.git
     cd go-songbird
     ./scripts/build.sh
     ```
