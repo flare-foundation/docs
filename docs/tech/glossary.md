@@ -147,4 +147,9 @@ Wen flare { #wen_flare }
         text-decoration-style: dotted;
         text-decoration-thickness: 1px;
     }
+    /*Separating line for the glossary nav link from within the glossary page*/
+    .md-nav__link.md-nav__link--active {
+        border-top: solid 1px var(--md-default-fg-color--lightest);
+        padding-top: 8px;
+    }
 </style>

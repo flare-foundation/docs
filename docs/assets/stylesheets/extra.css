@@ -86,3 +86,9 @@ code.beta {
     color: white;
     border-radius: 0.3rem;
 }
+
+/* Separating line for the glossary nav link */
+.md-nav__item [href*="glossary/"] {
+    border-top: solid 1px var(--md-default-fg-color--lightest);
+    padding-top: 8px;
+}
