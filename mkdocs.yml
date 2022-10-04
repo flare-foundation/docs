@@ -111,6 +111,7 @@ nav:
     - index.md
   - Concepts:
     - tech/index.md
+    - tech/flare-launch-process.md
     - tech/ftso.md
     - tech/state-connector.md
     - tech/validators.md
