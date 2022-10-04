@@ -1,4 +1,4 @@
-# Flare launch Process
+# Flare Launch Process
 
 The Flare launch is delicate, as it involves a rather **large airdrop**, a **community vote**, and the deployment of a **novel meritocratic consensus** system.
 For this reason, it has been divided into a series of **sequential phases** with **clearly-defined triggers** that signal each transition.
@@ -21,21 +21,20 @@ Some definitions are required so the rest of the page is clear and unambiguous.
 * **FIP01**: [A governance proposal](https://flare.xyz/fip01/){target=_blank} that, among other things, changes the initial token distributions as explained below.
 This proposal needs to be voted on according to the schedule described in this page.
 
-* **Flare Airdrop for XRP Holders**: Any holder of XRP tokens in Dec 12, 2020, was eligible to receive FLR tokens (then called _Spark_ tokens) once the Flare network launched.
+* **Flare Airdrop for XRP Holders**: Certain holders of XRP tokens on Dec 12, 2020, were eligible to register for the FLR token distribution (then called _Spark_ tokens) once the Flare network launched.
     The claiming process is described in this (slightly outdated) [Flare blog post](https://flare.xyz/claiming-spark-faqs/){target=_blank}.
 
     The FIP01 proposal modifies the way in which the airdrop works.
 
-* **Original Airdrop**: 28.53B FLR tokens, which in the original distribution plan go _exclusively_ to XRP token holders.
+* **Original Airdrop**: 28.53B FLR tokens, which in the original distribution plan went to those who registered for the distribution.
 
-* **New Airdrop**: 4.28B FLR tokens destined exclusively to XRP token holders in the FIP01 distribution plan.
+* **New Airdrop**: 4.28B FLR tokens destined for those that registered for the distribution.
 
-* **Delegation Incentive Pool (DIP)**: 24.25B FLR tokens destined to _any Flare holder_ in the FIP01 distribution plan.
-These tokens go exclusively to XRP token holders in the original plan.
+* **Delegation Incentive Pool (DIP)**: 24.25B FLR tokens destined for _any Flare holder_ that participates in the network over 36 months as per the FIP01 distribution plan.
 
     _Note that the New Airdrop plus the DIP match the Original Airdrop._
 
-* **Token Distribution Event (TDE)**: The moment when the initial FLR tokens are distributed to XRP token holders.
+* **Token Distribution Event (TDE)**: The moment when the initial FLR tokens are distributed to those that registered for the FLR token distribution.
 These tokens were minted and locked when the network was created and will be released when it is sufficiently decentralized.
 
 ## Token Distribution Plans
@@ -44,13 +43,13 @@ It is worth summarizing the two current token distribution plans, as only one of
 
 * **Original Distribution Plan**:
 
-    * 15% of the **original airdrop** is sent to XRP token holders on the TDE, the rest over 30 months.
+    * 15% of the original airdrop is sent to those that registered for the FLR distribution upon the TDE, with the rest delivered monthly over the following 30 months.
     * Inflation is 10% of the fully diluted supply, per annum.
 
 * **FIP01 Distribution Plan**:
 
-    * The **new airdrop** is sent to XRP token holders on the TDE, the **DIP** will be sent to ALL FLR token holders (actually, wrapped FLR holders) over 37 months (Flare employees and companies excluded).
-    * Inflation is 10% of available supply on first year, then 7%, then 5% and stays there. Inflation is capped at 5bn FLR per year.
+    * The new airdrop is sent to those that registered for the FLR distribution upon the TDE, the DIP will be distributed  to ALL FLR token holders (actually, wrapped FLR holders) over 36 months (Flare employees and companies excluded).
+    * Inflation is 10% of available supply in the first year, then 7% the following year, 5% the year after and in perpetuity, except that from year 3 onwards inflation is capped at 5bn FLR per year.
     * Inflation distribution: 70% to [FTSO](./ftso.md) rewards, 20% to [validator](./validators.md) rewards and 10% to the default Attestation Provider Set of the [state connector](./state-connector.md).
 
 ## Flare Beta
