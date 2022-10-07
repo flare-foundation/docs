@@ -130,18 +130,16 @@ Flare will monitor how many of the airdrop tokens have reached the intended reci
 FTSO and validator rewards are enabled.
 Inflation is not burned anymore.
 
-<!-- Will we really start this phase if not enough exchanges have agreed to collaborate? -->
-
 ---
 
 ### FIP01 Notice Period
 
-!!! danger "Trigger: 75% of the new airdrop reaches its intended recipients"
+!!! danger "Trigger: 66% of the new airdrop reaches its intended recipients"
 
 The [FIP01 proposal](https://flare.xyz/fip01/){target=_blank} modifies how the rest of the tokens (after the TDE) are to be distributed, so it needs to be voted on by the community.
 Users will vote with their FLR token stake, so voting cannot start until enough tokens have reached the intended recipients.
 
-Once 75% of the FLR tokens distributed during the TDE reach these users, **a 1-week notice period** will start.
+Once 66% of the FLR tokens distributed during the TDE reach these users, **a 1-week notice period** will start.
 
 Flare will announce to the community that enough tokens have been distributed and the notice period has started.
 
