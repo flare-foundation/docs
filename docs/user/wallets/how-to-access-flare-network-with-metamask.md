@@ -12,8 +12,8 @@ Make sure that you have securely backed up your recovery phrase before proceedin
 
 To use MetaMask with Songbird or Flare, first make sure that you have:
 
-1. Installed the latest version of [Google Chrome](https://www.google.com/chrome/){target=_blank}.
-2. Installed the [MetaMask browser extension](https://metamask.io/download.html){target=_blank}.
+1. Installed the latest version of [Google Chrome](https://www.google.com/chrome/).
+2. Installed the [MetaMask browser extension](https://metamask.io/download.html).
 3. Created a new wallet or imported an existing wallet to MetaMask.
 4. Securely backed up your recovery phrase offline.
 5. Protected your MetaMask with a password.
@@ -62,4 +62,4 @@ A few [FTSO](glossary.md#ftso) data providers have developed dApps integrated wi
 Delegating using this method is not exclusive to one specific provider, as these dApps allow you to choose from a number of different providers.
 
 Other providers have their own websites and are developing similar dapps.
-See the full list of active data providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso){target=_blank}.
+See the full list of active data providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso).

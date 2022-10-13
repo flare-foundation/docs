@@ -41,7 +41,7 @@ Section [Adding New Attestation Types](#adding-new-attestation-types) below cont
 
 ??? example "Making a request (for App developers)"
 
-    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/write-contract){ target=_blank }:
+    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/write-contract):
 
     ```solidity
     function requestAttestations(
@@ -50,7 +50,7 @@ Section [Adding New Attestation Types](#adding-new-attestation-types) below cont
     ```
 
     The `requestAttestations` method has a single parameter, `data`, which is a byte array with a content that depends on the desired **request type**.
-    You can learn how to build this array in the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types){ target=_blank }.
+    You can learn how to build this array in the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types).
 
 ### 2. Request forwarding
 
@@ -71,7 +71,7 @@ To prevent attestation providers from peeking at each other's answers, these are
 
 ??? example "Submitting an attestation (For attestation provider developers)"
 
-    Attestation providers use the `submitAttestation` method (#3) of the [StateConnector contract](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L92){ target=_blank }:
+    Attestation providers use the `submitAttestation` method (#3) of the [StateConnector contract](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L92):
 
     ```solidity
     function submitAttestation(
@@ -85,7 +85,7 @@ To prevent attestation providers from peeking at each other's answers, these are
     ```
 
     Keep reading to understand the meaning of the parameters.
-    More information in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/attestation-protocol/state-connector-contract.md#providing-attestations){ target=_blank }.
+    More information in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/attestation-protocol/state-connector-contract.md#providing-attestations).
 
 ### 5. Consensus
 
@@ -96,9 +96,9 @@ Otherwise, **no consensus is achieved**: requests remain **unanswered** and must
 
 ??? example "Retrieving your request's answer (for App developers)"
 
-    To retrieve the stored answers just read the `merkleRoots` public array (#8) in the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract){ target=_blank }.
+    To retrieve the stored answers just read the `merkleRoots` public array (#8) in the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract).
 
-    More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L59){ target=_blank }.
+    More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L59).
 
     As shown below, multiple answers are actually packed into a single Merkle root. The [Attestation Packing](#attestation-packing) section explains how to retrieve an individual answer.
 
@@ -139,7 +139,7 @@ This means that new requests can be made without waiting for the previous ones t
 
 ### Attestation Packing
 
-Each round, attestation providers build a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree){ target=_blank } with the hashes of **all valid answers** for the round.
+Each round, attestation providers build a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) with the hashes of **all valid answers** for the round.
 The obtained **Merkle root** is then called the **Attestation Proof**, since it is proof of the presence of each individual answer.
 Finally, the attestation proof is submitted to the State Connector for consensus evaluation.
 
@@ -158,7 +158,7 @@ Additionally, the allowed request types are **carefully designed to minimize the
 For example, requiring some time for **transactions to settle** before inquiring about them, and forcing requests to include the hash of a later block that confirms the transaction.
 
 Attestation providers keep the actual retrieved data for a week, in case it contains additional information beyond the yes/no result.
-Users can request this data directly from the providers through the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md){ target=_blank }.
+Users can request this data directly from the providers through the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md).
 
 !!! note
     Please note that this data is **safe to use** even though it is obtained directly from the provider, because **its hash is consistent with the Attestation Proof** agreed upon by the State Connector's consensus.
@@ -177,7 +177,7 @@ Additional points worth noting:
 
 ??? example "Proof Unpacking (for App developers)"
 
-    The procedure for apps to check whether the State Connector answered yes or no to their request is detailed in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/verification-workflow.md){ target=_blank }. What follows is an illustrative summary.
+    The procedure for apps to check whether the State Connector answered yes or no to their request is detailed in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/verification-workflow.md). What follows is an illustrative summary.
 
     The basic idea is that you must **retrieve all data** (both requests and answers) for the round from an attestation provider.
     You then **rebuild the Merkle tree** with this data and check that it matches the Attestation Proof provided by the State Connector.
@@ -188,12 +188,12 @@ Additional points worth noting:
     </figure>
 
     1. In the attestation round after you made the request (3 attestation phases, so from 3 to 4.5 minutes) the **Attestation Proof** for the round should be available in the State Connector.
-        Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract){ target=_blank }.
+        Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract).
 
-    2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md){ target=_blank } path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
+    2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md) path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
 
     3. **Rebuild the Merkle tree** for the retrieved data.
-    There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/lib/utils/MerkleTree.ts){ target=_blank } library.
+    There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/lib/utils/MerkleTree.ts) library.
 
     4. **Check** that the tree's root matches the Attestation Proof from step 1.
     If it does not match, this provider did not submit the answer agreed by the majority.
@@ -327,7 +327,7 @@ In summary, validators using at least one reliable local attestation provider do
 
 ## Becoming an Attestation Provider
 
-Anyone may operate an attestation provider without any capital requirement (see the [attestation-client repository](https://github.com/flare-foundation/attestation-client){ target=_blank } for deployment information), which can readily be used as a **local provider** on validators that trust it.
+Anyone may operate an attestation provider without any capital requirement (see the [attestation-client repository](https://github.com/flare-foundation/attestation-client) for deployment information), which can readily be used as a **local provider** on validators that trust it.
 
 To be included in the [default set](#attestation-provider-sets), though, the same operator must run one of the **top-performing [FTSO](glossary.md#ftso) data providers** to prove its commitment to the network's well-being.
 More details will be added soon.
@@ -337,4 +337,4 @@ More details will be added soon.
 New real-world event-type integrations are introduced to the State Connector via acceptance by the default attestation providers, without requiring any changes to the core voting or branching protocols described above.
 This enables rapid deployment of new use-cases without any validator-level code changes.
 
-See the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types){ target=_blank } for more information.
+See the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types) for more information.

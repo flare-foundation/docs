@@ -58,7 +58,7 @@ The following process runs continuously, producing new price estimates every **P
 ## Resulting Price Calculation
 
 This is an overview of the filtering process that turns all submitted price pairs into a single estimate.
-See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target=_blank}.
+See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/).
 
 <figure markdown>
   ![FTSO price calculation](ftso-price.png){ loading=lazy .allow-zoom }
@@ -70,7 +70,7 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/){target
 - Each submission has a **price** and a **weight**.
   Weight is based on the data provider's [voting power](#vote-power), as explained below.
 
-- The [weighted median](https://en.wikipedia.org/wiki/Weighted_median){target=_blank} of the prices is the resulting price for the price epoch.
+- The [weighted median](https://en.wikipedia.org/wiki/Weighted_median) of the prices is the resulting price for the price epoch.
 
 - Submissions in the top and bottom 25% range are not [rewarded](#rewards).
 
@@ -290,7 +290,7 @@ Submission API is slightly different for the Flare and Songbird networks:
 
 === "Flare"
 
-    FTSO data providers submit price information through the [PriceSubmitter contract](https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003){target=_blank}.
+    FTSO data providers submit price information through the [PriceSubmitter contract](https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
 
     - **Commit**: A single hash is needed for all price pairs.
 
@@ -315,7 +315,7 @@ Submission API is slightly different for the Flare and Songbird networks:
 
 === "Songbird"
 
-    FTSO data providers submit price information through the [PriceSubmitter contract](https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003){target=_blank}.
+    FTSO data providers submit price information through the [PriceSubmitter contract](https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
 
     - **Commit**: A separate hash is needed for each price pair.
 
@@ -399,4 +399,4 @@ In any case, the `getCurrentPrice` method is used:
 
 So, for instance, a return value of `2603` means a price of `0.02603 USD` (There are only **5** significant decimal places).
 
-A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time){target=_blank} of the last price update is also returned.
+A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last price update is also returned.

@@ -1,7 +1,7 @@
 # Delegating on the user's behalf
 
 Delegation is one of the multiple ways in which the Flare blockchain rewards participants of the ecosystem.
-In particular, delegation allows token holders to put their stake behind an FTSO [data provider](glossary.md#data_provider) to increase its relative weight (See this [FTSO blog post](https://flare.xyz/ftso-a-breakdown/){target=_blank} for more information).
+In particular, delegation allows token holders to put their stake behind an FTSO [data provider](glossary.md#data_provider) to increase its relative weight (See this [FTSO blog post](https://flare.xyz/ftso-a-breakdown/) for more information).
 In return, each time a data provider submits useful information it **shares its reward with all the token holders that delegated to it**.
 
 The [Delegation Guide](../user/delegation/README.md) details this process for users.
@@ -29,7 +29,7 @@ It is the Exchange that must select the FTSO [data provider](glossary.md#data_pr
 Anyone can become an FTSO data provider, but only the ones that had the most [voting power](glossary.md#voting-power) during the previous reward epoch are available for delegation.
 
 The list of **available data providers** for the current reward epoch can be retrieved from the `VoterWhitelister` smart contract, method `getFtsoWhitelistedPriceProviders`.
-There exist a number of websites like [flaremetrics.io](https://flaremetrics.io/ftso){target=_blank} or [ftso-signal-providers](https://github.com/TowoLabs/ftso-signal-providers){target=_blank} that display this information in a far more convenient way.
+There exist a number of websites like [flaremetrics.io](https://flaremetrics.io/ftso) or [ftso-signal-providers](https://github.com/TowoLabs/ftso-signal-providers) that display this information in a far more convenient way.
 
 !!! note
     Data providers [take a fee](../tech/ftso.md#rewards) before sharing their rewards with their delegators.

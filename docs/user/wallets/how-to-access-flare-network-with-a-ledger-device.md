@@ -14,8 +14,8 @@ To use your Ledger device with Songbird (`$SGB`), first make sure that you have:
 3. Ledger Live is installed, open and ready to use.
 4. Installed the latest Ledger device firmware.
 5. Installed the latest version of the Ledger Ethereum app.
-6. Installed the latest version of [Google Chrome](https://www.google.com/chrome/){target=_blank}.
-7. Installed the [MetaMask browser extension](https://metamask.io/download.html){target=_blank} **version 10.5.0 or later**.
+6. Installed the latest version of [Google Chrome](https://www.google.com/chrome/).
+7. Installed the [MetaMask browser extension](https://metamask.io/download.html) **version 10.5.0 or later**.
 
 ## Install the Songbird App
 
@@ -85,4 +85,4 @@ Many data providers have developed dapps for wrapping and delegation.
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 Other providers have their own websites and are developing similar dapps.
-See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso){target=_blank}.
+See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso).

@@ -67,7 +67,7 @@ The [Exchange server](#exchange-server) must be continuously monitoring transfer
 
     To avoid problems, the Exchange should only act on transactions appearing on blocks **old enough** for the chance of them being reverted to be negligible. This can be done by subscribing to the `newBlockHeaders` event and examining the transactions in a previous block (for example, 5 blocks behind).
 
-    The code below exemplifies this process ([See the web3.js documentation](https://web3js.readthedocs.io){target=_blank} for the API details):
+    The code below exemplifies this process ([See the web3.js documentation](https://web3js.readthedocs.io) for the API details):
 
     ```  typescript
     // https://web3js.readthedocs.io
@@ -119,7 +119,7 @@ The [Exchange server](#exchange-server) must be continuously monitoring transfer
 
 4. The server **announces a transaction** to the network (through the Exchange's own [observation node](#flare-observation-node)) to move the received funds to the [hot wallet](#exchanges-central-wallet-hot).
 
-    [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
+    [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/). Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
 5. The received funds are **transferred to the hot wallet** when the transaction is approved by the network. The reception wallets always remain empty.
 
@@ -138,7 +138,7 @@ Users must request withdrawals directly to the [Exchange server](#exchange-serve
 
 3. The server **announces a transaction** to the network (through the Exchange's own [observation node](#flare-observation-node)) to move the requested funds from the [hot wallet](#exchanges-central-wallet-hot) to the requested destination address.
 
-    [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/){target=_blank}. Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
+    [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/). Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
     !!! caution
         Please make sure you **sign the transaction** before submitting it, as shown in the example.

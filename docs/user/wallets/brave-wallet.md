@@ -72,4 +72,4 @@ Brave users can access existing decentralized applications (dApps) created by in
 
 4. Follow the prompts to connect your Brave wallet and sign transactions when wrapping, delegating, or claiming rewards.
 
-See the full list of data providers on Songbird at [flaremetrics.io](https://flaremetrics.io/ftso){target=_blank}.
+See the full list of data providers on Songbird at [flaremetrics.io](https://flaremetrics.io/ftso).

@@ -21,43 +21,43 @@ This guide contains different instructions depending on which Flare Network you 
 
 === "Flare"
 
-    |                 | Hardware    |                      | Software                                                        |
-    | --------------: | :---------- | -------------------: | --------------------------------------------------------------- |
-    |   **CPU cores** | 8           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina)            |
-    |         **RAM** | 32          |     **Dependencies** | [Go](https://golang.org/doc/install){target=_blank} (>= 1.18.5) |
-    |  **Disk space** | 1 TB SSD    |                      | [gcc](https://gcc.gnu.org/){target=_blank}                      |
-    | **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/){target=_blank}                      |
-    |                 |             |                      | [jq](https://stedolan.github.io/jq/){target=_blank}             |
+    |                 | Hardware    |                      | Software                                             |
+    | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
+    |   **CPU cores** | 8           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
+    |         **RAM** | 32          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
+    |  **Disk space** | 1 TB SSD    |                      | [gcc](https://gcc.gnu.org/)                          |
+    | **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/)                          |
+    |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
 
 === "Songbird"
 
-    |                 | Hardware    |                      | Software                                                        |
-    | --------------: | :---------- | -------------------: | --------------------------------------------------------------- |
-    |   **CPU cores** | 8           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina)            |
-    |         **RAM** | 32          |     **Dependencies** | [Go](https://golang.org/doc/install){target=_blank} (>= 1.16.8) |
-    |  **Disk space** | 3.5 TB SSD  |                      | [gcc](https://gcc.gnu.org/){target=_blank}                      |
-    | **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/){target=_blank}                      |
-    |                 |             |                      | [jq](https://stedolan.github.io/jq/){target=_blank}             |
+    |                 | Hardware    |                      | Software                                             |
+    | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
+    |   **CPU cores** | 8           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
+    |         **RAM** | 32          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
+    |  **Disk space** | 3.5 TB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
+    | **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/)                          |
+    |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
 
 === "Coston"
 
-    |                 | Hardware    |                      | Software                                                        |
-    | --------------: | :---------- | -------------------: | --------------------------------------------------------------- |
-    |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina)            |
-    |         **RAM** | 16          |     **Dependencies** | [Go](https://golang.org/doc/install){target=_blank} (>= 1.16.8) |
-    |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/){target=_blank}                      |
-    | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/){target=_blank}                      |
-    |                 |             |                      | [jq](https://stedolan.github.io/jq/){target=_blank}             |
+    |                 | Hardware    |                      | Software                                             |
+    | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
+    |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
+    |         **RAM** | 16          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
+    |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
+    | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                          |
+    |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
 
 === "Coston 2"
 
-    |                 | Hardware    |                      | Software                                                        |
-    | --------------: | :---------- | -------------------: | --------------------------------------------------------------- |
-    |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina)            |
-    |         **RAM** | 16          |     **Dependencies** | [Go](https://golang.org/doc/install){target=_blank} (>= 1.18.5) |
-    |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/){target=_blank}                      |
-    | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/){target=_blank}                      |
-    |                 |             |                      | [jq](https://stedolan.github.io/jq/){target=_blank}             |
+    |                 | Hardware    |                      | Software                                             |
+    | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
+    |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
+    |         **RAM** | 16          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
+    |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
+    | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                          |
+    |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
 
 Plus a reliable IPv4 or IPv6 network connection, with an open public port.
 
@@ -69,7 +69,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 === "Flare & Coston 2"
 
-    Clone the [go-flare](https://github.com/flare-foundation/go-flare){target=_blank} repository and run the `build.sh` script:
+    Clone the [go-flare](https://github.com/flare-foundation/go-flare) repository and run the `build.sh` script:
 
     ```bash
     git clone https://github.com/flare-foundation/go-flare.git
@@ -92,7 +92,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 === "Songbird & Coston"
 
-    Clone the [go-songbird](https://github.com/flare-foundation/go-songbird){target=_blank} repository and run the `build.sh` script:
+    Clone the [go-songbird](https://github.com/flare-foundation/go-songbird) repository and run the `build.sh` script:
 
     ```bash
     git clone https://github.com/flare-foundation/go-songbird.git
@@ -117,7 +117,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 While the Flare and Songbird networks are being tested, all nodes wanting to peer with them (including observation nodes) need to have their IP address **whitelisted**.
 
-To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@TampaBay7`) or email ([tom@flare.network](mailto:tom@flare.network){target=_blank}) and request to be whitelisted.
+To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@TampaBay7`) or email ([tom@flare.network](mailto:tom@flare.network)) and request to be whitelisted.
 
 ??? tip "Checking the status of your whitelisting request"
 
@@ -223,15 +223,15 @@ Contains the field `"healthy":true` in the returned JSON object.
 
 !!! note
 
-    If the node gets stuck during bootstrap (it takes far longer than the estimates given above), try to add the parameter [`--bootstrap-retry-enabled=false`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-retry-enabled-boolean){target=_blank}.
+    If the node gets stuck during bootstrap (it takes far longer than the estimates given above), try to add the parameter [`--bootstrap-retry-enabled=false`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-retry-enabled-boolean).
 
 ### 4. Additional Configuration
 
 These are some of the most relevant command line parameters you can use.
-You can read about all of them in the [Avalanche documentation](https://docs.avax.network/nodes/maintain/avalanchego-config-flags){target=_blank}.
+You can read about all of them in the [Avalanche documentation](https://docs.avax.network/nodes/maintain/avalanchego-config-flags).
 
-* [`--bootstrap-ips`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-ips-string){target=_blank},
-    [`--bootstrap-ids`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-ids-string){target=_blank}:
+* [`--bootstrap-ips`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-ips-string),
+    [`--bootstrap-ids`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--bootstrap-ids-string):
     IP address and node ID of the peer used to connect to the rest of the network for bootstrapping.
 
     You can use Flare's public nodes for this, as shown in the quick start command given above:
@@ -318,33 +318,33 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
 
     Remember that you need to whitelist your node's IP address or your queries will always be answered with 403 error codes.
 
-* [`--http-host`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--http-host-string){target=_blank}:
+* [`--http-host`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--http-host-string):
     Use `--http-host=` (empty) to allow connections from other machines.
     Otherwise, only connections from `localhost` are accepted.
 
-* [`--http-port`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--http-port-int){target=_blank}:
+* [`--http-port`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--http-port-int):
     The port through which the node will listen to API requests.
     The default value is `9650`.
 
-* [`--staking-port`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--staking-port-int){target=_blank}:
+* [`--staking-port`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--staking-port-int):
     The port through which the network peers will connect to this node externally.
     Having this port accessible from the internet is required for correct node operation.
     The default value is `9651`.
 
-* [`--db-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--db-dir-string-file-path){target=_blank}:
+* [`--db-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--db-dir-string-file-path):
     Directory where the database is stored.
     Make sure to use a disk with enough space as recommended in the [Hardware prerequisites](#prerequisites) section.
     It defaults to `~/.avalanchego/db` on Flare and Coston 2, and to `~/.flare/db` on Songbird and Coston.
 
     You can use this option to store the database on an external drive, for example.
 
-* [`--pruning-enabled`](https://docs.avax.network/nodes/maintain/chain-config-flags#pruning-enabled-boolean){target=_blank}:
+* [`--pruning-enabled`](https://docs.avax.network/nodes/maintain/chain-config-flags#pruning-enabled-boolean):
     Enables [pruning](glossary.md#pruning) of old transactions, greatly reducing disk size requirements.
     It defaults to `true`.
 
     It you want to create a so-called **archival node**, i.e., one that keeps the whole history of the blockchain, set this parameter to `false`.
 
-* [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string){target=_blank}:
+* [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string):
     Optional JSON configuration file, in case you want to use lots of non-default values.
 
     ??? tip "Sample configuration file for observation nodes"

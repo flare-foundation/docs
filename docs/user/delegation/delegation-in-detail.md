@@ -97,7 +97,7 @@ The `transfer/mint/burn` functions will immediately update the actual vote power
 
 All vote power data is being checkpointed by block.
 For any vote power update due to delegation, transfer, or otherwise, a checkpoint is added.
-For anyone familiar with the [MiniMe token](https://github.com/Giveth/minime){target=_blank}, the checkpoint mechanism is similar, while differing in that more data is being checkpointed.
+For anyone familiar with the [MiniMe token](https://github.com/Giveth/minime), the checkpoint mechanism is similar, while differing in that more data is being checkpointed.
 
 When a voting campaign occurs, a past block will be randomly chosen and all vote power data will be taken from this block.
 This would actually work like taking a vote power snapshot for a specific block and using that for all addresses voting (providing prices) in the campaign.

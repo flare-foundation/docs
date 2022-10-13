@@ -4,7 +4,7 @@ Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized set of Attestation Providers that confirms the validity or otherwise of any request.
 
 Avalanche { #avalanche }
-: An open-source blockchain using the Snow family of consensus protocols and [Proof of Stake](#proof_of_stake) for [Sybil resistance](#sybil_resistance). It is advertised as the fastest smart contract platform. [Read more...](https://docs.avax.network/){target=_blank}
+: An open-source blockchain using the Snow family of consensus protocols and [Proof of Stake](#proof_of_stake) for [Sybil resistance](#sybil_resistance). It is advertised as the fastest smart contract platform. [Read more...](https://docs.avax.network/)
 
 Block { #block }
 : For performance reasons, [blockchains](#blockchain) do not process transactions one by one. Instead, transactions are grouped together in blocks which are then validated by the [consensus](#consensus) algorithm.
@@ -22,7 +22,7 @@ Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network ([Byzantine Fault Tolerance](#byzantine_fault_tolerance)).
 
 Coston { #coston }
-: The name given to Flare's public [test networks](#test_network), in remembrance and celebration of a great inventor, [Martha J. Coston](https://en.wikipedia.org/wiki/Martha_Coston){target=_blank} (1826-1904).
+: The name given to Flare's public [test networks](#test_network), in remembrance and celebration of a great inventor, [Martha J. Coston](https://en.wikipedia.org/wiki/Martha_Coston) (1826-1904).
 
 Cross-chain (or inter-ecosystem) interoperability { #cross_chain }
 : Communication between two or more disparate blockchain ecosystems that are technologically incompatible due to the lack of shared systems, protocols or code (e.g. Ethereum and Solana).
@@ -43,13 +43,13 @@ Delegate { #delegate }
 : To assign a duty to someone else, so they do it for you. On the Flare network, an address can delegate any fraction of the votes associated with the tokens it holds to another address, for the purpose of [FTSO](#ftso) weighting or governance participation. Note that no tokens are transferred.
 
 EVM { #evm }
-: The Ethereum Virtual Machine allows executing smart contracts on the Ethereum network, regardless of the kind of computer that executes it. Multiple blockchain networks, including Flare, support EVM contracts. [Read more...](https://ethereum.org/en/developers/docs/evm/){target=_blank}
+: The Ethereum Virtual Machine allows executing smart contracts on the Ethereum network, regardless of the kind of computer that executes it. Multiple blockchain networks, including Flare, support EVM contracts. [Read more...](https://ethereum.org/en/developers/docs/evm/)
 
 FBA { #fba }
 : Federated Byzantine Agreement is a form of [Byzantine fault tolerance](#byzantine_fault_tolerance) where each node keeps its own list of trusted nodes. It does not require nodes to invest stake or computing power as [Proof of Stake](#proof_of_stake) or [Proof of Work](#proof_of_work) protocols do.
 
 FCP { #fcp }
-: The Flare Consensus Protocol is an asynchronous, ordered and leaderless version of Federated Byzantine Agreement ([FBA](#fba)) consensus. The whitepaper is already available and it is currently in the process of being implemented. [Read more...](https://flare.xyz/whitepapers){target=_blank}
+: The Flare Consensus Protocol is an asynchronous, ordered and leaderless version of Federated Byzantine Agreement ([FBA](#fba)) consensus. The whitepaper is already available and it is currently in the process of being implemented. [Read more...](https://flare.xyz/whitepapers)
 
 Flare Token (FLR) { #flare_token_(flr) }
 : The native currency of the Flare's [main network](#main_network).
@@ -64,7 +64,7 @@ Ledger { #ledger }
 : Historically, a book where financial transactions are recorded. In [blockchain](#blockchain) technology a ledger can contain any kind of information and it has multiple copies distributed among several computers, which are kept in sync by a [consensus](#consensus) algorithm.
 
 Light Client Relay { #light_client_relay }
-: A simplified communication mechanism built for speed that only queries the header data of any transaction and therefore lacks the security that comes from querying a full node with full history (e.g. [SPV](https://en.wikipedia.org/wiki/Bitcoin_network#Payment_verification){target=_blank}).
+: A simplified communication mechanism built for speed that only queries the header data of any transaction and therefore lacks the security that comes from querying a full node with full history (e.g. [SPV](https://en.wikipedia.org/wiki/Bitcoin_network#Payment_verification)).
 
 Liquidity Pool { #liquidity_pool }
 : A collection of funds locked in a [smart contract](#smart_contract) for the purpose of facilitating trading, lending and other functionality in a decentralized manner.
@@ -76,10 +76,10 @@ Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e. non-physical) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.
 
 Multi-chain (or intra-ecosystem) interoperability { #multi_chain }
-: Communication between two or more technologically compatible blockchains that exist within the same ecosystem and share systems, protocols and code (e.g. [Polkadot Parachains](https://polkadot.network/parachains/){target=_blank}, [Cosmos Tendermint](https://tendermint.com/){target=_blank} chains or [Ethereum](https://ethereum.org/en/){target=_blank} layer 2 protocols).
+: Communication between two or more technologically compatible blockchains that exist within the same ecosystem and share systems, protocols and code (e.g. [Polkadot Parachains](https://polkadot.network/parachains/), [Cosmos Tendermint](https://tendermint.com/) chains or [Ethereum](https://ethereum.org/en/) layer 2 protocols).
 
 NFT { #nft }
-: Non-Fungible Tokens are digital representations of assets which are unique and therefore non-mergeable (non-fungible), made impossible to copy by blockchain technology. Common use cases are certificates of authenticity or ownership, or limited edition collectibles. Most NFT tokens are built on the [Ethereum network](https://ethereum.org/en/){target=_blank} using standards [ERC-721](https://eips.ethereum.org/EIPS/eip-721){target=_blank} and [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155){target=_blank}.
+: Non-Fungible Tokens are digital representations of assets which are unique and therefore non-mergeable (non-fungible), made impossible to copy by blockchain technology. Common use cases are certificates of authenticity or ownership, or limited edition collectibles. Most NFT tokens are built on the [Ethereum network](https://ethereum.org/en/) using standards [ERC-721](https://eips.ethereum.org/EIPS/eip-721) and [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155).
 
 Oracle { #oracle }
 : A mechanism to provide external information to a blockchain, so that it can be used by [smart contracts](#smart_contract), for example. Flare oracles are called [FTSO](#ftso).

@@ -4,10 +4,10 @@ SafePal S1 is a **non-custodial hardware wallet** that is considered one of the 
 
 ## Getting Started
 
-Purchase a SafePal S1 hardware device from the [official SafePal website](https://shop.safepal.io){target=_blank} in the products section and download their mobile app from either the [Apple App Store](https://apps.apple.com/us/app/safepal-wallet/id1548297139){target=_blank} or [Google Play Store](https://play.google.com/store/apps/details?id=io.safepal.wallet){target=_blank}.
+Purchase a SafePal S1 hardware device from the [official SafePal website](https://shop.safepal.io) in the products section and download their mobile app from either the [Apple App Store](https://apps.apple.com/us/app/safepal-wallet/id1548297139) or [Google Play Store](https://play.google.com/store/apps/details?id=io.safepal.wallet).
 
 Use of a SafePal S1 hardware wallet requires syncing the device with the mobile app.
-A step by step unboxing guide to initialize a new device/wallet, or import an existing one from a recovery phrase, can be found here: [https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet](https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet){target=_blank}.
+A step by step unboxing guide to initialize a new device/wallet, or import an existing one from a recovery phrase, can be found here: [https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet](https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet).
 
 Once your S1 device is set up and synced with the mobile app you will need to add `$SGB` and `$FLR` to your listed assets:
 
@@ -35,4 +35,4 @@ SafePal users can access existing decentralized applications (dApps) created by 
 5. A pop up will appear notifying that you are being redirected to a third party dApp. Press `Confirm`.
 
 Other data providers host similar websites or dApps for wrapping and delegation.
-See the full list of signal providers on Songbird at [https://flaremetrics.io/ftso](https://flaremetrics.io/ftso){target=_blank}.
+See the full list of signal providers on Songbird at [https://flaremetrics.io/ftso](https://flaremetrics.io/ftso).
