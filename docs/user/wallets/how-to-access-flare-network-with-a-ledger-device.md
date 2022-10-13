@@ -81,8 +81,8 @@ Once connected to the Songbird network, enter the address of the website or dapp
 A few of the data providers have developed dapps integrated with their websites that allow users to wrap, delegate and claim `$SGB` rewards.
 Delegating using this method is not exclusive to one specific provider, as these dapps allow you to choose from a number of different providers.
 
-Examples of data providers that have developed dapps for wrapping and delegation are FTSO AU and Aureus Ox.
-Their dapps are available at [app.ftso.au](https://app.ftso.au/wrap){target=_blank} and [aureusox.com/dashboard](https://aureusox.com/dashboard){target=_blank}.
+Many data providers have developed dapps for wrapping and delegation.
+Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 Other providers have their own websites and are developing similar dapps.
 See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso){target=_blank}.

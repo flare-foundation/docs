@@ -124,7 +124,8 @@ Find more details in [the Delegation guide](../user/delegation/delegation-in-det
 ### Delegation Procedure
 
 The easiest way to delegate your tokens is through a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
-Some FTSO data providers have already started providing these dapps as a convenience, like [FTSO AU](https://app.ftso.au){target=_blank} or [Aureus Ox](https://aureusox.com/dashboard){target=_blank}.
+Some FTSO data providers have already started providing these dapps as a convenience.
+Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-claiming) below briefly explains how to delegate manually by interacting directly with the FTSO smart contracts.
 
@@ -152,7 +153,8 @@ It is also worth noting that:
 
 - Data providers and their delegators must claim independently.
 
-Again, the simplest way to claim your FTSO rewards is through a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a dapp like [FTSO AU](https://app.ftso.au){target=_blank} or [Aureus Ox](https://aureusox.com/dashboard){target=_blank}.
+Again, the simplest way to claim your FTSO rewards is through a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a dapp.
+Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-claiming) below briefly explains how to claim manually by interacting directly with the FTSO smart contracts.
 

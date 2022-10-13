@@ -21,7 +21,8 @@ This is a fundamental step for enabling users to delegate their vote power.
 ## How do I wrap my native tokens?
 
 1. Through a supported wallet: see the [wallets section](../../user/wallets/index.md).
-2. Through a [dapp](glossary.md#dapp): some FTSO data providers have already started providing these dapps as a convenience, like [FTSO AU](https://app.ftso.au){target=_blank} or [Aureus Ox](https://aureusox.com/dashboard){target=_blank}.
+2. Through a [dapp](glossary.md#dapp): some FTSO data providers have already started providing these dapps as a convenience.
+Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 3. Through direct interaction with the blockchain, once you understand [manual delegation](manual-delegation.md).
 
 ## How many tokens should I wrap?
@@ -39,11 +40,11 @@ Once you own wrapped tokens, it is best to delegate 100% of your vote power.
 
 ## To whom should I delegate my vote power?
 
-For the ongoing stability of the FTSO it is highly recommended delegating to reliable price providers.
-I.e. ones that are committed to providing accurate price feeds.
-One should also consider the expected reward rate each price provider can offer.
+For the ongoing stability of the FTSO it is highly recommended delegating to reliable price providers,
+i.e., ones that are committed to providing accurate price feeds.
+Consider the expected reward rate each price provider can offer.
 
-Google for "Flare Metrics" to find lists of FTSO data providers.
+See [flaremetrics.io](https://flaremetrics.io/) for a list of FTSO data providers.
 
 ## How many price providers can I delegate to?
 
