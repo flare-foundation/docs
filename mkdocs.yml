@@ -113,6 +113,7 @@ nav:
   - Concepts:
     - tech/index.md
     - tech/flare-launch-process.md
+    - tech/api-portal.md
     - tech/ftso.md
     - tech/state-connector.md
     - tech/validators.md
@@ -153,6 +154,7 @@ nav:
     - dev/index.md
     - Reference guides:
       - dev/reference/contracts.md
+      - dev/reference/api-portal.md
       - dev/reference/network-configs.md
   - Exchange guides:
     - exchange/index.md
