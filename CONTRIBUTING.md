@@ -48,7 +48,15 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 * Use informative link titles. For example, instead of naming your links "link" or "here", wrap part of the sentence that is meant to be linked as a title.
 * Links to external sources should be:
-  * Clear, concise, factual (not tips & tricks-type articles, or blog posts)
-  * Reliable to stand the test of time (will not start to 404 because it's a personal blog and the person decided to get rid of it for example)
-  * From reliable sources (this is where Wikipedia isn't always perfect, but fine for technical subjects)
+    * Clear, concise, factual (not tips & tricks-type articles, or blog posts)
+    * Reliable to stand the test of time (will not start to 404 because it's a personal blog and the person decided to get rid of it for example)
+    * From reliable sources (this is where Wikipedia isn't always perfect, but fine for technical subjects)
 * Whenever possible, use internal links instead of external ones (if something has been described in our documents somewhere, link to it instead of externally)
+
+### Official Spellings
+
+Pay special attention to the capitalization and spacing of the following words:
+
+* Fassets
+* Layer Cake
+* Smart contracts
