@@ -66,3 +66,4 @@ Pay special attention to the capitalization and spacing of the following words:
 * Relay (when talking about Flare's cross-chain data relay protocol)
 * Smart contracts
 * State connector
+* WFLR, WSGB (the wrapped tokens)
