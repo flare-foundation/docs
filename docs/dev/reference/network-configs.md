@@ -14,13 +14,14 @@ This is the information required to run a node or to develop on the different Fl
 
 ## Configuration Values
 
-|                            |          Flare           |          Songbird           |           Coston           |           Coston2            |
-| -------------------------- | :----------------------: | :-------------------------: | :------------------------: | :--------------------------: |
-| ChainID                    |       [14][flrId]        |         [19][sgbId]         |        [16][cflrId]        |        [114][c2flrId]        |
-| Asset Ticker               |          `FLR`           |            `SGB`            |           `CFLR`           |           `C2FLR`            |
-| RPC endpoint `BETA`{.beta} |   [flare-api][flrRpc]    |   [songbird-api][sgbRpc]    |   [coston-api][cflrRpc]    |   [coston2-api][c2flrRpc]    |
-| Block Explorer             | [flare-explorer][flrExp] | [songbird-explorer][sgbExp] | [coston-explorer][cflrExp] | [coston2-explorer][c2flrExp] |
-| Test Faucet                |            -             |              -              |  [coston-faucet][cflrFau]  |  [coston2-faucet][c2flrFau]  |
+|                                |          Flare           |          Songbird           |           Coston           |           Coston2            |
+| ------------------------------ | :----------------------: | :-------------------------: | :------------------------: | :--------------------------: |
+| **Chain ID**                   |       [14][flrId]        |         [19][sgbId]         |        [16][cflrId]        |        [114][c2flrId]        |
+| **Asset Ticker**               |          `FLR`           |            `SGB`            |           `CFLR`           |           `C2FLR`            |
+| **RPC endpoint** `BETA`{.beta} |   [flare-api][flrRpc]    |   [songbird-api][sgbRpc]    |   [coston-api][cflrRpc]    |   [coston2-api][c2flrRpc]    |
+| [**Rosetta API**][rosetta-api] | [flare-rosetta][flrRos]  |              -              |             -              |              -               |
+| **Block Explorer**             | [flare-explorer][flrExp] | [songbird-explorer][sgbExp] | [coston-explorer][cflrExp] | [coston2-explorer][c2flrExp] |
+| **Test Faucet**                |            -             |              -              |  [coston-faucet][cflrFau]  |  [coston2-faucet][c2flrFau]  |
 
 All [RPC](glossary.md#rpc) endpoints are rate-limited to avoid spamming attacks.
 
@@ -133,9 +134,11 @@ Along with the endpoints listed above to interact with its own networks, Flare o
 [sgbRpc]: <https://songbird-api.flare.network/ext/C/rpc>
 [cflrRpc]: <https://coston-api.flare.network/ext/C/rpc>
 [c2flrRpc]: <https://coston2-api.flare.network/ext/C/rpc>
+[flrRos]: <https://flare-rosetta-api.flare.network/>
 [flrExp]: <https://flare-explorer.flare.network/>
 [sgbExp]: <https://songbird-explorer.flare.network/>
 [cflrExp]: <https://coston-explorer.flare.network/>
 [c2flrExp]: <https://coston2-explorer.flare.network/>
 [cflrFau]: <https://faucet.towolabs.com>
 [c2flrFau]: <https://coston2-faucet.towolabs.com>
+[rosetta-api]: <https://www.rosetta-api.org/>
