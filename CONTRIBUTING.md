@@ -57,6 +57,12 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 Pay special attention to the capitalization and spacing of the following words:
 
-* Fassets
+* FAssets
+* FIP.01
+* Flare Networks
+* Flare Time Series Oracle
 * Layer Cake
+* Merit-Based Consensus
+* Relay (when talking about Flare's cross-chain data relay protocol)
 * Smart contracts
+* State connector
