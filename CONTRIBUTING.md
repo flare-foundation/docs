@@ -57,6 +57,7 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 Pay special attention to the capitalization and spacing of the following words:
 
+* dapp
 * FAssets
 * FIP.01
 * Flare Networks
@@ -64,6 +65,6 @@ Pay special attention to the capitalization and spacing of the following words:
 * Layer Cake
 * Merit-Based Consensus
 * Relay (when talking about Flare's cross-chain data relay protocol)
-* Smart contracts
-* State connector
+* smart contracts
+* State Connector
 * WFLR, WSGB (the wrapped tokens)
