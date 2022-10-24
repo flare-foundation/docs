@@ -68,8 +68,8 @@ This initial period is called **Flare Beta**, and it will span several launch ph
 During this period:
 
 * There are 22 total validators **with equal validation power** (20K FLR each, initially).
-    * 5 run by the Flare Foundation.
-    * 15 run by 3 professional validators.
+    * 4 run by the Flare Foundation.
+    * 16 run by 4 professional validators.
     * 2 "virtual validators" collectively run by ALL FTSO data providers together.
 
         FTSO data providers have their initial validation power **artificially reduced** so that all of them combined have the power of **two** validators (i.e. 40K FLR tokens).
@@ -106,19 +106,19 @@ FTSO data providers:
 
 !!! danger "Trigger: The Flare validator source code becomes publicly available"
 
+Professional validators start onboarding, so the network stars becoming decentralized.
+
 FTSO data providers:
 
-* Can now deploy their own **validator** nodes.
+* Can submit prices, as they do on Songbird, but don't act as validators since they won't have funds to stake until the TDE.
 
-* Submit prices but are not rewarded. [All inflation is burned during observation mode](https://flare.xyz/om-inflation/).
-
-* Act as validators and their voting power [depends on their FTSO performance and stake](./validators.md).
+* Are not rewarded. [All inflation is burned during observation mode](https://flare.xyz/om-inflation/).
 
 ---
 
 ### Initial Distribution Period
 
-!!! danger "Trigger: 66% of validator power is independent of Flare,<br/>OR <br/>January 14th 2023 (whatever comes first)"
+!!! danger "Trigger: 66% of validator power is independent of Flare,<br/>AND <br/>Exchanges agree to distribute the FLR token to their customers within a few days of the TDE"
 
 !!! important "Token Distribution Event (TDE) happens"
     The **new airdrop** is sent to the Flare addresses provided by XRP token holders when they claimed.
@@ -126,6 +126,12 @@ FTSO data providers:
     Part of the airdrop is expected to go to Exchange accounts, which will then distribute it to the users that originally claimed (the **intended recipients**).
 
 Flare will monitor how many of the airdrop tokens have reached the intended recipients, by following the Exchange's communication channels.
+
+FTSO data providers:
+
+* Can now deploy their own **validator** nodes. The guide to do so will be available.
+
+* Act as validators and their voting power [depends on their FTSO performance and stake](./validators.md).
 
 FTSO and validator rewards are enabled.
 Inflation is not burned anymore.
