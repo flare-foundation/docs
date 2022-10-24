@@ -45,6 +45,9 @@ Delegate { #delegate }
 EVM { #evm }
 : The Ethereum Virtual Machine allows executing smart contracts on the Ethereum network, regardless of the kind of computer that executes it. Multiple blockchain networks, including Flare, support EVM contracts. [Read more...](https://ethereum.org/en/developers/docs/evm/)
 
+Faucet { #faucet }
+: A [dapp](#dapp) that distributes test tokens to anyone that requests them. Used only on [test networks](#test_network), obviously. See the [Network Configurations](../dev/reference/network-configs.md) page to learn about Flare's faucets.
+
 FBA { #fba }
 : Federated Byzantine Agreement is a form of [Byzantine fault tolerance](#byzantine_fault_tolerance) where each node keeps its own list of trusted nodes. It does not require nodes to invest stake or computing power as [Proof of Stake](#proof_of_stake) or [Proof of Work](#proof_of_work) protocols do.
 
@@ -118,7 +121,7 @@ Sybil Resistance { #sybil_resistance }
 : The ability of a distributed system to overcome a Sybil attack, in which a malicious actor creates multiple identities to gain voting or mining power. Resistance is typically gained by making voting or mining too costly for the attack to be worth it (as in [Proof of Work](#proof_of_work) or [Proof of Stake](#proof_of_stake)) or by requiring new entities to be approved by existing actors (as in [FBA](#fba)).
 
 Test Network (TESTNET) { #test_network }
-: The computer network that supports a [blockchain](#blockchain) in its development stage. It is intended for testing purposes and should not store valuable assets, as its contents might be deleted (purposely or by accident) at any time. Compare to a [Canary](#canary_network) or [Main](#main_network) network. Flare's testnet is called [Coston](#coston).
+: The computer network that supports a [blockchain](#blockchain) in its development stage. It is intended for testing purposes and should not store valuable assets, as its contents might be deleted (purposely or by accident) at any time. Among other facilities, testnets typically provide [faucets](#faucet). Compare to a [Canary](#canary_network) or [Main](#main_network) network. Flare's testnet is called [Coston](#coston).
 
 Transaction { #transaction }
 : A request to add information to the blockchain, which is then analyzed by the network and accepted when consensus is reached about its validity. It can be a movement of funds between two accounts, or the execution of a contract, for example.
