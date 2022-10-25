@@ -1,5 +1,5 @@
 ---
-og_image: ../../assets/launch-process-thumb.png
+og_image: /assets/launch-process-thumb.png
 og_description: The goal of this page is to remove any confusion around Flare's launch process.
 ---
 
