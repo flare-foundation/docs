@@ -18,19 +18,19 @@ Without further ado:
 
 Some definitions are required so the rest of the page is clear and unambiguous.
 
-* **FIP01**: [A governance proposal](https://flare.xyz/fip01/) that, among other things, changes the initial token distributions as explained below.
+* **FIP.01**: [A governance proposal](https://flare.xyz/fip01/) that, among other things, changes the initial token distributions as explained below.
 This proposal needs to be voted on according to the schedule described in this page.
 
 * **Flare Airdrop for XRP Holders**: Certain holders of XRP tokens on Dec 12, 2020, were eligible to register for the FLR token distribution (then called _Spark_ tokens) once the Flare network launched.
     The claiming process is described in this (slightly outdated) [Flare blog post](https://flare.xyz/claiming-spark-faqs/).
 
-    The FIP01 proposal modifies the way in which the airdrop works.
+    The FIP.01 proposal modifies the way in which the airdrop works.
 
 * **Original Airdrop**: 28.53B FLR tokens, which in the original distribution plan went to those who registered for the distribution.
 
 * **New Airdrop**: 4.28B FLR tokens destined for those that registered for the distribution.
 
-* **Delegation Incentive Pool (DIP)**: 24.25B FLR tokens destined for _any Flare holder_ that participates in the network over 36 months as per the FIP01 distribution plan.
+* **Delegation Incentive Pool (DIP)**: 24.25B FLR tokens destined for _any Flare holder_ that participates in the network over 36 months as per the FIP.01 distribution plan.
 
     _Note that the New Airdrop plus the DIP match the Original Airdrop._
 
@@ -39,14 +39,14 @@ These tokens were minted and locked when the network was created and will be rel
 
 ## Token Distribution Plans
 
-It is worth summarizing the two current token distribution plans, as only one of them will be implemented depending on whether [FIP01](https://flare.xyz/fip01/) is approved or not.
+It is worth summarizing the two current token distribution plans, as only one of them will be implemented depending on whether [FIP.01](https://flare.xyz/fip01/) is approved or not.
 
 * **Original Distribution Plan**:
 
     * 15% of the original airdrop is sent to those that registered for the FLR distribution upon the TDE, with the rest delivered monthly over the following 30 months.
     * Inflation is 10% of the fully diluted supply, per annum.
 
-* **FIP01 Distribution Plan**:
+* **FIP.01 Distribution Plan**:
 
     * The new airdrop is sent to those that registered for the FLR distribution upon the TDE, the DIP will be distributed  to ALL FLR token holders (actually, wrapped FLR holders) over 36 months (Flare employees and companies excluded).
     * Inflation is 10% of available supply in the first year, then 7% the following year, 5% the year after and in perpetuity, except that from year 3 onwards inflation is capped at 5bn FLR per year.
@@ -138,11 +138,11 @@ Inflation is not burned anymore.
 
 ---
 
-### FIP01 Notice Period
+### FIP.01 Notice Period
 
 !!! danger "Trigger: 66% of the new airdrop reaches its intended recipients"
 
-The [FIP01 proposal](https://flare.xyz/fip01/) modifies how the rest of the tokens (after the TDE) are to be distributed, so it needs to be voted on by the community.
+The [FIP.01 proposal](https://flare.xyz/fip01/) modifies how the rest of the tokens (after the TDE) are to be distributed, so it needs to be voted on by the community.
 Users will vote with their FLR token stake, so voting cannot start until enough tokens have reached the intended recipients.
 
 Once 66% of the FLR tokens distributed during the TDE reach these users, **a 1-week notice period** will start.
@@ -151,11 +151,11 @@ Flare will announce to the community that enough tokens have been distributed an
 
 ---
 
-### FIP01 Voting Period
+### FIP.01 Voting Period
 
 !!! danger "Trigger: 1 week after Notice Period starts"
 
-All FLR token holders (obtained either from the new airdrop or bought at Exchanges) can vote on [FIP01](https://flare.xyz/fip01/) using [the voting frontend](https://coston-manage.flare.rocks/flare/accounts).
+All FLR token holders (obtained either from the new airdrop or bought at Exchanges) can vote on [FIP.01](https://flare.xyz/fip01/) using [the voting frontend](https://coston-manage.flare.rocks/flare/accounts).
 
 Flare will announce to the community that the Voting Period has started and relay instructions on how to vote.
 
@@ -165,9 +165,9 @@ Voting Period will last 1 week.
 
 ### Regular Operation (Beta)
 
-!!! danger "Trigger: FIP01 is approved after 1 week of voting"
+!!! danger "Trigger: FIP.01 is approved after 1 week of voting"
 
-The changes proposed in [FIP01](https://flare.xyz/fip01/) **are implemented**.
+The changes proposed in [FIP.01](https://flare.xyz/fip01/) **are implemented**.
 The **DIP** is distributed to ALL holders of FLR during 37 months.
 
 [Flare Beta](#flare-beta) is still in operation but community-run validators gradually gain more power.
@@ -184,8 +184,8 @@ FTSO validators's validation power is not artificially reduced anymore and valid
 
 ---
 
-### Regular Non-FIP01 Operation
+### Regular Non-FIP.01 Operation
 
-!!! danger "Trigger: FIP01 is NOT approved after 1 week of voting"
+!!! danger "Trigger: FIP.01 is NOT approved after 1 week of voting"
 
 The [Original Distribution Plan](#token-distribution-plans) is implemented.
