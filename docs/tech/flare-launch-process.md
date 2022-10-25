@@ -9,10 +9,34 @@ The secondary goal is to serve as a real-time tracker of the **current phase**.
 
 Without further ado:
 
-<figure markdown>
-![Flare launch process](launch-process.png){ loading=lazy .allow-zoom width=500px }
-<figcaption>Flare's mainnet launch process.</figcaption>
-</figure>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 895 1844">
+  <image width="895" height="1844" xlink:href="../../assets/launch-process.png"></image>
+  <title>Click on a phase to navigate to its description.</title>
+  <a href="#private-observation-mode">
+    <rect x="262" y="111" fill="#fff" opacity="0" width="189" height="87"></rect>
+  </a>
+  <a href="#public-observation-mode">
+    <rect x="262" y="297" fill="#fff" opacity="0" width="189" height="87"></rect>
+  </a>
+  <a href="#initial-distribution-period">
+    <rect x="262" y="664" fill="#fff" opacity="0" width="189" height="87"></rect>
+  </a>
+  <a href="#fip01-notice-period">
+    <rect x="262" y="847" fill="#fff" opacity="0" width="189" height="87"></rect>
+  </a>
+  <a href="#fip01-voting-period">
+    <rect x="262" y="1032" fill="#fff" opacity="0" width="189" height="87"></rect>
+  </a>
+  <a href="#regular-operation-beta">
+    <rect x="262" y="1217" fill="#fff" opacity="0" width="189" height="185"></rect>
+  </a>
+  <a href="#regular-operation">
+    <rect x="262" y="1502" fill="#fff" opacity="0" width="189" height="185"></rect>
+  </a>
+  <a href="#regular-non-fip01-operation">
+    <rect x="502" y="1502" fill="#fff" opacity="0" width="189" height="185"></rect>
+  </a>
+</svg>
 
 ## Definitions
 
