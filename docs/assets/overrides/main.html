@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+    {{ super() }}
+    {% if page and page.meta and page.meta.og_image %}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@FlareNetworks" />
+        <meta property="og:image" content="{{ page.meta.og_image }}" />
+        <meta property="og:title" content="{{ page.title }}" />
+        <meta property="og:description" content="{{ page.meta.og_description }}" />
+    {% endif %}
+{% endblock %}

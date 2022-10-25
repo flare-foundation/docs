@@ -1,3 +1,8 @@
+---
+og_image: ../../assets/launch-process.png
+og_description: The goal of this page is to remove any confusion around Flare's launch process.
+---
+
 # Flare Launch Process
 
 The Flare launch is delicate, as it involves a rather **large airdrop**, a **community vote**, and the deployment of a **novel meritocratic consensus** system.
