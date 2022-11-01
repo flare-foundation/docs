@@ -96,7 +96,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
     ```bash
     git clone https://github.com/flare-foundation/go-songbird.git
-    cd go-songbird
+    cd go-songbird/avalanchego
     ./scripts/build.sh
     ```
 
