@@ -39,7 +39,7 @@ You can find this file in the `deployment/deploys` folder, and parse it to retri
 
 As stated at the beginning, **remember to double-check the addresses** are correct using only blockchain data.
 
-| Contract  | Flare                         | Songbird                         |
+|           | Flare                         | Songbird                         |
 | --------- | ----------------------------- | -------------------------------- |
 | Branch    | `flare_network_deployed_code` | `songbird_network_deployed_code` |
 | JSON file | [flare.json][f-json]          | [songbird.json][s-json]          |
