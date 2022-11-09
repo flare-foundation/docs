@@ -1,4 +1,4 @@
-# Troubleshooting Price Providers
+# Troubleshooting Data Providers
 
 ## When trying to whitelist my address I get the error "vote power too low"
 

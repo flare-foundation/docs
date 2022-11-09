@@ -19,7 +19,7 @@ Another complication here is that for each new token received, a new delegate op
 
 The explicit delegation method is built for advanced users or for contracts holding a large number of tokens for different users.
 Imagine a collateral contract holding many WSGB for many users.
-Each user depositing tokens might want to delegate to a different set of price providers.
+Each user depositing tokens might want to delegate to a different set of data providers.
 Explicit delegation will enable this contract to update the explicit delegation per user deposit and un-delegate every time a user wishes to withdraw its funds.
 
 Only one of the delegation methods can be used per address.
@@ -54,22 +54,25 @@ A voting campaign uses a randomly chosen block number from the past (vote power 
 When an address (data provider) casts its vote for a specific campaign, its vote power is taken from the vote power block for this campaign.
 Hence, the vote power of an address for this campaign does not reflect its present balance and delegation but rather the state at the time of the snapshot (in the vote power block).
 This design allows for a free use of tokens (non-locked) and a consistent vote power snapshot of token holdings.
-Voting campaigns are a generic concept; in FTSO system, the vote power of price providers is used as an influence in choosing the final price.
+Voting campaigns are a generic concept; in FTSO system, the vote power of data providers is used as an influence in choosing the final price.
 Each price submission is weighted according to the vote power scheme described here.
 
 ## Revoke
 
 Due to the substantial length of time one past vote power block is used for price submissions, a revoke feature was added.
-This feature can be used in case any specific price provider is found trying to attack and skew the reported price of the FTSO (flare oracle).
-In this situation, an off chain process (e.g. twitter storm) calls users to revoke vote power from a specific price provider.
+This feature can be used in case any specific data provider is found trying to attack and skew the reported price of the FTSO (flare oracle).
+In this situation, an off chain process (e.g. twitter storm) calls users to revoke vote power from a specific data provider.
 The revoke will update the cached value of the vote power for the specific block which is being used for this reward epoch.
 So if a user revokes its vote power delegation on a specific block, checkpoints for the vote power will not be updated, only the cached vote power values are zeroed.
 
 ## Vote power block selection
 
-![Vote power block selection diagram](../../assets/votepower diagram.svg)
+<figure markdown>
+![Vote power block selection diagram](../../assets/votepower diagram.svg){.allow-zoom}
+<figcaption>Vote power block selection.</figcaption>
+</figure>
 
-The vote power of each price provider is cached and only recalculated at the start of each reward epoch.
+The vote power of each data provider is cached and only recalculated at the start of each reward epoch.
 The selected vote power block (snapshot block) for a new epoch is selected randomly once the reward epoch starts.
 It is selected randomly with uniform probability from the last half (on Flare) or the last quarter (on Songbird) of mined blocks.
 This can **roughly** be approximated as taking the random block in the last half or quarter time-wise, but it is **not necessarily correct**, as block mining density can change.
@@ -125,8 +128,8 @@ Later calls to both of these functions will use the cached value if it exists.
 ### Retrieving historical data
 
 A large part of the native token inflation is distributed to participants in the FTSO price submission process.
-The reward won by a price provider is shared between the price provider and the vote power delegators to the price provider.
-The VP token exposes APIs that enable delegators to see how much vote power was delegated to a price provider in any past block.
+The reward won by a data provider is shared between the data provider and the vote power delegators to the data provider.
+The VP token exposes APIs that enable delegators to see how much vote power was delegated to a data provider in any past block.
 To enable this, the delegation percentage data are checkpointed after every change.
 Using the combination of delegation percentage and historical balance, each user can accurately see and show how much vote power they delegated to any address in the past.
 

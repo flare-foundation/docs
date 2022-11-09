@@ -2,7 +2,7 @@
 
 ## Why should I delegate?
 
-When delegating your vote power, you can earn rewards, but even more importantly, you can support reliable price providers which in turn will strengthen the stability of the FTSO and the whole ecosystem.
+When delegating your vote power, you can earn rewards, but even more importantly, you can support reliable data providers which in turn will strengthen the stability of the FTSO and the whole ecosystem.
 
 ## Can I still use my tokens after delegating my vote power?
 
@@ -40,20 +40,20 @@ Once you own wrapped tokens, it is best to delegate 100% of your vote power.
 
 ## To whom should I delegate my vote power?
 
-For the ongoing stability of the FTSO it is highly recommended delegating to reliable price providers,
+For the ongoing stability of the FTSO it is highly recommended delegating to reliable data providers,
 i.e., ones that are committed to providing accurate price feeds.
-Consider the expected reward rate each price provider can offer.
+Consider the expected reward rate each data provider can offer.
 
 See [flaremetrics.io](https://flaremetrics.io/) for a list of FTSO data providers.
 
-## How many price providers can I delegate to?
+## How many data providers can I delegate to?
 
-Each user can delegate to one or two price providers.
+Each user can delegate to one or two data providers.
 
-## Should I delegate to one or two price providers?
+## Should I delegate to one or two data providers?
 
-For an account with a low balance (~ 500 tokens) it is better to delegate to 1 price provider, since the gas amount when claiming rewards for two providers is a bit higher.
-If you have a larger account, consider delegating to two price providers.
+For an account with a low balance (~ 500 tokens) it is better to delegate to 1 data provider, since the gas amount when claiming rewards for two providers is a bit higher.
+If you have a larger account, consider delegating to two data providers.
 
 ## When I send or receive tokens is my delegation data automatically updated?
 
@@ -64,7 +64,7 @@ On the other hand, if you receive native tokens, you have to first wrap them to 
 ## What if I want to update my delegations?
 
 When updating delegation data the total percentage should always be equal to or smaller than 100%.
-So if you want to reduce some percentage from one price provider and increase for the other, you should first decrease the percentage from one price provider.
+So if you want to reduce some percentage from one data provider and increase for the other, you should first decrease the percentage from one data provider.
 
 ## When is my delegation reflected?
 
@@ -84,24 +84,24 @@ It is selected from the last half (on Flare) or the last quarter (on Songbird) o
 
 Your delegation might be too late for consideration in the next reward epoch since the vote power block for the next reward epoch will be randomly chosen from the blocks in the last half (on Flare) or quarter (on Songbird) of the current epoch.
 
-## How much reward can each price provider earn for me?
+## How much reward can each data provider earn for me?
 
 This depends on a few factors:
 
 * The delegated balance.
 
-* The price provider reward rate.
+* The data provider reward rate.
 
-* The price provider fee. How much fee does the price provider take from addresses delegating to it.
+* The data provider fee. How much fee does the data provider take from addresses delegating to it.
 
-* The amount of vote power already delegated to this price provider.
+* The amount of vote power already delegated to this data provider.
 
 To encourage decentralization, there is a vote power cap and any excess vote power is not counted during the median calculation and rewarding phase.
 If there is over delegation, the same amount of rewards is split between more delegators.
 
-## Where can I see the expected rewards from a price provider?
+## Where can I see the expected rewards from a data provider?
 
-Each price provider has different performance that results in different reward rates.
+Each data provider has different performance that results in different reward rates.
 Sources for this data can be found on the web.
 Note the reward rate might be changing per each week.
 Try googling for "Flare metrics".

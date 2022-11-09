@@ -8,10 +8,10 @@ If you have delegated vote power in the snapshot block of a reward epoch, and th
 
 This depends on a few factors:
 
-* How much vote power was delegated and to which price providers.
-* What was the performance of those price providers.
-* How much fee do those price providers take.
-* Was the total vote power of this price provider above the vote power cap.
+* How much vote power was delegated and to which data providers.
+* What was the performance of those data providers.
+* How much fee do those data providers take.
+* Was the total vote power of this data provider above the vote power cap.
 
 ## How do I see how much reward I can claim?
 

@@ -1,16 +1,16 @@
-# Deploying a Price Provider
+# Deploying a Data Provider
 
 ## Background
 
 Providing prices to the FTSO system makes you a part of a decentralized oracle system.
-FTSO price providers submit prices to on-chain contracts deployed on the Flare and Songbird networks.
-The main contracts a price provider will interact with are the `Price Submitter` and the `FTSO` contracts.
+FTSO data providers submit prices to on-chain contracts deployed on the Flare and Songbird networks.
+The main contracts a data provider will interact with are the `Price Submitter` and the `FTSO` contracts.
 All the relevant contracts for the FTSO system are available on the smart contract repo (see the [Developer Docs](../../dev/index.md) section).
 These contracts are deployed and verified on the [Block explorer](../../user/block-explorer.md).
 
 ## Prerequisites
 
-To operate a price provider you need to be familiar with:
+To operate a data provider you need to be familiar with:
 
 * Smart contracts and Solidity.
 * Interacting with smart contract using a web3 library.
@@ -19,9 +19,9 @@ To operate a price provider you need to be familiar with:
 ## First steps
 
 To facilitate an easier start, one can use the kick-off NPM package [referenced here](../../dev/index.md).
-This package showcases the main contracts related to whitelisting a price provider and submitting prices.
+This package showcases the main contracts related to whitelisting a data provider and submitting prices.
 The package enables you to deploy FTSO mock contracts in a local setup, and submit prices to those contracts.
-Working with the package should help all setup stages for your price provider.
+Working with the package should help all setup stages for your data provider.
 
 Working with this package is mostly identical to providing prices on-chain.
 Below aspects would be the same as working on-chain:
@@ -32,7 +32,7 @@ Below aspects would be the same as working on-chain:
 
 The package does not cover the actual price calculation (weighted median) and rewarding as they occur on the real network.
 
-Please visit the [Developer Docs](../../dev/index.md) section to find a link to a reference implementation of a price provider.
+Please visit the [Developer Docs](../../dev/index.md) section to find a link to a reference implementation of a data provider.
 You can find useful ideas in this code that will help you interact with the FTSO contracts and the Flare chain.
 Do note you will have to do some work on top of this implementation if you would like to win rewards.
 
@@ -40,10 +40,10 @@ Do note you will have to do some work on top of this implementation if you would
 
 The price providing process is structured as a commit/reveal scheme to prevent users from copying other user's submitted data.
 The commit and reveal phases have strict time windows of a few minutes.
-With each reveal the price provider is also providing a random number.
+With each reveal the data provider is also providing a random number.
 The random number is used as a salt in the reveal-commit scheme and later used in the reward calculation process.
 
-Price providers are encouraged to provide strong cryptographically-secure random numbers with high entropy and sufficient range.
+Data providers are encouraged to provide strong cryptographically-secure random numbers with high entropy and sufficient range.
 Strong random numbers are important for network security since this is the only true source of randomness on the network.
 Random numbers also make the commit-reveal scheme resilient to attacks.
 Random numbers below 2^128^ are considered unsafe and are rejected on reveal.
@@ -54,8 +54,8 @@ Once you feel comfortable with the local NPM package, you are ready to start sub
 
 To run on the real network you will have to face some new challenges:
 
-* **Gain vote power**: A price provider can only whitelist himself as a provider if they have enough vote power.
-* **Observation node**: It is recommended that each price provider runs an observation node.
+* **Gain vote power**: A data provider can only whitelist himself as a provider if they have enough vote power.
+* **Observation node**: It is recommended that each data provider runs an observation node.
 * **Timing issues**: You will face two challenges:
     * Align with the on-chain time data. The on-chain timestamp might skew up to 30-40 seconds from the real world time.
     * Figure out when to submit your price data. If you submit too late, the transaction might not get included, if submitting too early the price data might not be accurate enough.
@@ -169,7 +169,7 @@ The following code snippets demonstrate how hashes can be generated in Typescrip
          print()
      ```
 
-### Where can I find the contracts I need to interact with as a price provider?
+### Where can I find the contracts I need to interact with as a data provider?
 
 The `PriceSubmitter` contract is deployed at the fixed address `0x1000000000000000000000000000000000000003`.
 All the other contracts are available as read methods on the `PriceSubmitter` contract.
@@ -181,14 +181,14 @@ Any important updates and contract changes will be broadcasted to the community.
 All the important contracts are verified on the [Blocks Explorer](../../user/block-explorer.md).
 The main smart contract repo is referenced in the [Developer Docs](../../dev/index.md) section.
 
-### What are the important contracts I need to be aware of to be a price provider?
+### What are the important contracts I need to be aware of to be a data provider?
 
 1. The most important is the `PriceSubmitter` where you submit prices. It also has links to the below contracts.
 2. `FtsoRegistry`: Holds information about specific FTSOs, their symbols, indices and addresses.
 3. `FTSOManager`: Holds epoch and voting related configuration data and oversees all FTSOs, also gives access to additional useful contracts such as `Inflation and` `Supply` contracts.
-4. `VoterWhitelister`: The contract where a price provider list themselves to submit prices.
+4. `VoterWhitelister`: The contract where a data provider list themselves to submit prices.
 
-### How much does it cost to submit prices as price provider?
+### How much does it cost to submit prices as a data provider?
 
 Price submissions and reveals are currently discounted on Songbird and it costs approximately 3-4 SGB per day if all the submission and reveal transactions are successful.
 
@@ -219,7 +219,7 @@ The Flare network will start with the same symbols as Songbird.
 
 There is currently no slashing for not providing a price.
 If you do not provide a price in a specific price epoch, your can not gain reward in that epoch.
-So the unavailability has a direct negative impact on your reward rate as a price provider.
+So the unavailability has a direct negative impact on your reward rate as a data provider.
 
 ### The network time is not the same as local time, is there something wrong?
 
@@ -235,13 +235,13 @@ Each FTSO emits a `PriceFinalized` event that contains information about calcula
 There is currently no on-chain structure that holds this data.
 You might want to listen to events emitted by delegations.
 
-### The NPM library is written in Typescript, can I use another language to write a price provider?
+### The NPM library is written in Typescript, can I use another language to write a data provider?
 
-You are free to use any language to run the price provider, although some might be more suitable than others.
+You are free to use any language to run the data provider, although some might be more suitable than others.
 Try using a language that offers good support for Ethereum smart contracts, e.g. `web3-your-language`.
-Many successful price providers use different technologies such as: go, C#, or python.
+Many successful data providers use different technologies such as: go, C#, or python.
 
-### Is there any code for writing a price provider in Python?
+### Is there any code for writing a data provider in Python?
 
 This [gist](https://gist.github.com/jO-Osko/a9e8904cb3e8f9af5f154302117b4444) showcases the calculation of submit hashes in Python using the `web3py` library.
 

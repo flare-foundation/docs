@@ -7,7 +7,7 @@
         [Validator node](https://github.com/flare-foundation/flare),
         [Smart contracts](https://gitlab.com/flarenetwork/flare-smart-contracts)
 
-    * Price provider:
+    * Data provider:
 
         [NPM Kickoff package](https://www.npmjs.com/package/@flarenetwork/ftso_price_provider_kick_off_package),
         [Reference implementation](https://github.com/flare-foundation/FTSO-price-provider)
