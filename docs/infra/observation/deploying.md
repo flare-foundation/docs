@@ -325,12 +325,6 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
 
     You can use this option to store the database on an external drive, for example.
 
-* [`--pruning-enabled`](https://docs.avax.network/nodes/maintain/chain-config-flags#pruning-enabled-boolean):
-    Enables [pruning](glossary.md#pruning) of old transactions, greatly reducing disk size requirements.
-    It defaults to `true`.
-
-    It you want to create a so-called **archival node**, i.e., one that keeps the whole history of the blockchain, set this parameter to `false`.
-
 * [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string):
     Optional JSON configuration file, in case you want to use lots of non-default values.
 
@@ -364,3 +358,7 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
             "log-level": "info"
         }
         ```
+
+**Archival nodes**: An archival node keeps the whole history of the blockchain, instead of [pruning](glossary.md#pruning) old transactions which is the default setting.
+Use the [`pruning-enabled`](https://docs.avax.network/nodes/maintain/chain-config-flags#pruning-enabled-boolean) configuration setting to control whether your node performs pruning or not.
+Archival nodes have significantly increased disk requirements.
