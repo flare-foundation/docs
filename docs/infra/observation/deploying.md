@@ -113,38 +113,25 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
         cd ..
         ```
 
-### 2. Node Whitelisting
+### 2. Songbird Node Whitelisting
 
-While the Flare and Songbird networks are being tested, all nodes wanting to peer with them (including observation nodes) need to have their IP address **whitelisted**.
+While **Songbird** network is being tested, all nodes wanting to peer with it (including observation nodes) need to have their IP address **whitelisted**.
 
 To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@TampaBay7`) or email ([tom@flare.network](mailto:tom@flare.network)) and request to be whitelisted.
 
-??? tip "Checking the status of your whitelisting request"
+??? tip "Checking the status of your Songbird whitelisting request"
 
-    You can also check the status of your request by running:
-
-    === "Flare"
-
-        ``` bash
-        curl -m 10 -sX POST \
-        --data '{ "jsonrpc":"2.0", "id":1, "method":"info.getNodeIP" }' \
-        -H 'content-type:application/json;' \
-        https://flare.flare.network/ext/info
-        ```
-
-    === "Songbird"
-
-        ``` bash
-        curl -m 10 -sX POST \
-        --data '{ "jsonrpc":"2.0", "id":1, "method":"info.getNodeIP" }' \
-        -H 'content-type:application/json;' \
-        https://songbird.flare.network/ext/info
-        ```
+    ``` bash
+    curl -m 10 -sX POST \
+    --data '{ "jsonrpc":"2.0", "id":1, "method":"info.getNodeIP" }' \
+    -H 'content-type:application/json;' \
+    https://songbird.flare.network/ext/info
+    ```
 
     If your IP address is whitelisted, this command returns a JSON response.
     Otherwise you will get a 403 error ("Forbidden").
 
-Please note that whitelisting is **not needed** on the **Coston and Coston 2 networks**.
+Please note that whitelisting is **not needed** on the **Flare network** or any of the **Coston networks**.
 
 ### 3. Run the Node
 
