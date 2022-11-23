@@ -28,6 +28,12 @@
     --md-code-hl-operator-color: var(--md-default-fg-color--light);
     --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
     --md-code-hl-comment-color: var(--md-default-fg-color--lighter);
+    --md-code-hl-name-color: var(--md-code-fg-color);
+    --md-code-hl-operator-color: var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+    --md-code-hl-comment-color: var(--md-default-fg-color--light);
+    --md-code-hl-generic-color: var(--md-default-fg-color--light);
+    --md-code-hl-variable-color: var(--md-default-fg-color--light);
 }
 
 /* Remove shadow under header */
@@ -53,9 +59,14 @@
     background: var(--md-default-fg-color--lighter);
 }
 
-/* Restore admonition and details text size */
+/* Restore admonition and details text size and colors */
 .md-typeset :is(.admonition, details) {
     font-size: initial;
+    background-color: var(--md-default-bg-color--lightest);
+    color: var(--md-typeset-color);
+}
+.md-typeset :is(.admonition-title, summary) {
+    color: var(--md-default-fg-color);
 }
 /* Remove little extra margin when admonitions are inside lists */
 .md-typeset li .admonition-title {
@@ -67,6 +78,25 @@
 .md-typeset details.image {
     border: 0;
     box-shadow: none;
+}
+/* Slightly darker admonition headers */
+.md-typeset :is(.note) > :is(.admonition-title, summary) {
+    background-color: #448AFF55;
+}
+.md-typeset :is(.tip, .important) > :is(.admonition-title, summary) {
+    background-color: #00BFA555;
+}
+.md-typeset :is(.caution, .warning, .attention) > :is(.admonition-title, summary) {
+    background-color: #FF910055;
+}
+.md-typeset :is(.danger)> :is(.admonition-title, summary) {
+    background-color: #FF174455;
+}
+.md-typeset :is(.info)> :is(.admonition-title, summary) {
+    background-color: #00B8D455;
+}
+.md-typeset :is(.example)> :is(.admonition-title, summary) {
+    background-color: #7D4CFF55;
 }
 
 /* Hide the GitHub link at the top, it's not that interesting */
