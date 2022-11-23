@@ -151,7 +151,7 @@ figure img.side-by-side {
 
 /* BETA tags
  * Use as: `BETA`{.beta} */
-code.beta {
+.md-typeset code.beta {
     background-color: var(--md-accent-fg-color);
     color: white;
     border-radius: 0.3rem;
