@@ -142,10 +142,11 @@ code.beta {
 .md-typeset .cards ul li {
     border: 1px solid var(--md-default-fg-color--lightest);
     border-radius: 16px;
-    width: 350px;
+    width: 550px;
     padding: 8px;
     margin-left: 0;
     transition: background 0.25s;
+    padding: 16px;
 }
 
 .md-typeset .cards ul li:hover {
@@ -155,19 +156,20 @@ code.beta {
 
 .md-typeset .cards p {
     margin: 0;
-    text-align: center;
 }
 
 .md-typeset .cards strong {
-    font-weight: bold;
-    font-size: x-large;
-    text-decoration: none;
     color: var(--md-accent-fg-color);
 }
 
 .md-typeset .cards a {
     text-decoration: none;
     color: var(--md-primary-bg-color);
+}
+
+.md-typeset .cards svg {
+    float: left;
+    margin-right: 16px;
 }
 
 /* Recolor SVG icons in cards */
