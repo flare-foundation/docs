@@ -20,6 +20,12 @@
     --md-primary-bg-color--light: #888;
     --md-typeset-color: var(--md-primary-bg-color);
     --md-typeset-a-color: var(--md-primary-bg-color);
+    /* Code highlighting color shades */
+    --md-code-bg-color: black;
+    --md-code-fg-color: var(--md-primary-bg-color--light);
+    --md-code-hl-operator-color: var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
+    --md-code-hl-comment-color: var(--md-default-fg-color--lighter);
 }
 
 /* Remove shadow under header */
