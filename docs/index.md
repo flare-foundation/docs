@@ -8,31 +8,41 @@ hide:
 
 <div class="cards" markdown>
 
-* <a href="tech" markdown>![tech icon](assets/tech-icon.svg)
+* <a href="tech" markdown class="filled-svg">
+
+    --8<-- "docs/assets/tech-icon.svg"
 
     **Concepts**
 
     In-depth descriptions of Flare's key concepts and tools.</a>
 
-* <a href="user" markdown>![user icon](assets/user-icon.svg)
+* <a href="user" markdown class="filled-svg">
+
+    --8<-- "docs/assets/user-icon.svg"
 
     **User Guides**
 
     Step-by-step guides on how to use tools like the Block Explorer or the different wallets.</a>
 
-* <a href="infra" markdown>![infra icon](assets/infra-icon.svg)
+* <a href="infra" markdown class="stroked-svg">
+
+    --8<-- "docs/assets/infra-icon.svg"
 
     **Infrastructure Guides**
 
     Step-by-step guides on how to deploy the different components that make up the Flare ecosystem, and be rewarded for it.</a>
 
-* <a href="dev" markdown>![dev icon](assets/dev-icon.svg)
+* <a href="dev" markdown class="stroked-svg">
+
+    --8<-- "docs/assets/dev-icon.svg"
 
     **Developer Docs**
 
     Programming tutorials to help you build your app using Flare's tech.</a>
 
-* <a href="exchange" markdown>![exchange icon](assets/exchange-icon.svg)
+* <a href="exchange" markdown class="stroked-svg">
+
+    --8<-- "docs/assets/exchange-icon.svg"
 
     **Exchange Guides**
 

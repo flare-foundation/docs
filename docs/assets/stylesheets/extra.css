@@ -1,8 +1,35 @@
 /* Define Flare's colors */
 :root>* {
-    --md-primary-fg-color: #363b66;
-    --md-accent-fg-color: #b35160;
-    --md-footer-bg-color: var(--md-primary-fg-color);
+    --md-accent-fg-color: #d3385b;
+    --md-accent-fg-color--transparent: #d3385b40;
+    --md-default-fg-color--light: #222;
+    --md-footer-bg-color: var(--md-primary-bg-color--lighter);
+    --md-typeset-a-color: var(--md-primary-bg-color);
+}
+
+[data-md-color-scheme="flaredark"] {
+    --md-default-bg-color: #222;
+    --md-default-fg-color: white;
+    --md-default-fg-color--light: white;
+    --md-default-fg-color--lighter: #555;
+    --md-default-fg-color--lightest: #444;
+    --md-primary-fg-color: #222;
+    --md-primary-bg-color: #bbb;
+    --md-primary-bg-color--light: #888;
+    --md-typeset-color: var(--md-primary-bg-color);
+    --md-typeset-a-color: var(--md-primary-bg-color);
+}
+
+/* Remove shadow under header */
+.md-header {
+    box-shadow: none;
+}
+
+/* Logo and title: color and alignment */
+.md-header__title,
+.md-logo {
+    line-height: 2.8rem;
+    color: var(--md-default-fg-color);
 }
 
 /* Restore admonition and details text size */
@@ -40,7 +67,7 @@
 
 /* Glossary */
 dt {
-    color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
     font-weight: bold;
     padding-left: 10px;
 }
@@ -65,14 +92,6 @@ a[href*="/glossary/#"] {
     height: 1.5rem;
 }
 
-/* Arrow to the current page in the navigation side bar */
-.md-sidebar--primary .md-nav__link--active::before,
-.md-sidebar--primary .md-nav__link--active a::before {
-    content: "\27A4";
-    position: absolute;
-    left: 0;
-}
-
 /* Side by side images */
 figure img.side-by-side {
     display: inline;
@@ -93,6 +112,18 @@ code.beta {
     padding-top: 8px;
 }
 
+/* Bold text for current page in TOC and TABS*/
+.md-nav__link--active,
+.md-tabs__link--active {
+    font-weight: bold;
+}
+
+/* Highlight header links on hover */
+.md-tabs__link:is(:focus, :hover),
+.md-header__button:is(:focus, :hover) {
+    color: var(--md-accent-fg-color);
+}
+
 /* Cards */
 .md-typeset .cards ul {
     list-style: none;
@@ -103,7 +134,7 @@ code.beta {
 }
 
 .md-typeset .cards ul li {
-    border: 1px solid #eee;
+    border: 1px solid var(--md-default-fg-color--lightest);
     border-radius: 16px;
     width: 350px;
     padding: 8px;
@@ -113,7 +144,7 @@ code.beta {
 
 .md-typeset .cards ul li:hover {
     background: rgba(181, 78, 95, 0.2);
-    border: 1px solid #888;
+    border: 1px solid var(--md-default-fg-color);
 }
 
 .md-typeset .cards p {
@@ -125,10 +156,25 @@ code.beta {
     font-weight: bold;
     font-size: x-large;
     text-decoration: none;
-    color: #d3385b;
+    color: var(--md-accent-fg-color);
 }
 
 .md-typeset .cards a {
     text-decoration: none;
-    color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+}
+
+/* Recolor SVG icons in cards */
+.cards .stroked-svg svg path,
+.cards .stroked-svg svg line,
+.cards .stroked-svg svg circle,
+.cards .stroked-svg svg ellipse {
+    stroke: var(--md-primary-bg-color);
+}
+
+.cards .filled-svg svg path,
+.cards .filled-svg svg line,
+.cards .filled-svg svg circle,
+.cards .filled-svg svg ellipse {
+    fill: var(--md-primary-bg-color);
 }

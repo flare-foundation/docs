@@ -1,10 +1,23 @@
-site_name: Flare Technical Documentation
+site_name: Technical Documentation
 theme:
   name: material
   custom_dir: docs/assets/overrides
   palette:
-    scheme: default
-  logo: assets/logo.png
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: flaredark
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  logo: logo.svg                # Put it in the overrides folder!
   favicon: assets/favicon.png
   features:
     - navigation.tabs           # Top-level pages are shown as tabs on the header
@@ -30,6 +43,7 @@ markdown_extensions:
   - attr_list                   # { Annotations }
   - md_in_html                  # Markdown inside HTML
   - def_list                    # Definition lists (Glossary)
+  - pymdownx.snippets           # Import files with --8<--
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
@@ -102,7 +116,8 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-copyright: Copyright &copy; 2022 Flare Networks. <a href="#__consent">Cookie settings</a>.
+copyright: >-
+  &copy; 2022 Flare Networks. <a href="#__consent">Cookie settings</a>.
 site_url: https://docs.flare.network
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
