@@ -46,6 +46,11 @@
     color: var(--md-default-bg-color);
 }
 
+/* Back to top button */
+.md-top {
+    background: var(--md-default-fg-color--lighter);
+}
+
 /* Restore admonition and details text size */
 .md-typeset :is(.admonition, details) {
     font-size: initial;
