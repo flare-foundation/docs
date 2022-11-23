@@ -14,6 +14,8 @@
     --md-default-fg-color--lighter: #555;
     --md-default-fg-color--lightest: #444;
     --md-primary-fg-color: #222;
+    --md-primary-fg-color--light: #333;
+    --md-primary-fg-color--dark: #111;
     --md-primary-bg-color: #bbb;
     --md-primary-bg-color--light: #888;
     --md-typeset-color: var(--md-primary-bg-color);
@@ -130,6 +132,11 @@ code.beta {
     color: var(--md-accent-fg-color);
 }
 
+/* Header separator line */
+.md-header .md-tabs {
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
 /* Cards */
 .md-typeset .cards ul {
     list-style: none;
@@ -185,4 +192,38 @@ code.beta {
 .cards .filled-svg svg circle,
 .cards .filled-svg svg ellipse {
     fill: var(--md-primary-bg-color);
+}
+
+/* Images */
+.md-content figure {
+    background: white;
+    border-color: var(--md-default-fg-color--lighter);
+    border-width: 8px 1px 1px 1px;
+    border-style: solid;
+}
+
+.md-content figure img {
+    padding: 8px;
+}
+
+.md-content figure figcaption {
+    background: var(--md-default-fg-color--lighter);
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: 100%;
+}
+
+.md-content figure:hover {
+    border-color: var(--md-accent-fg-color);
+}
+
+.md-content figure:hover figcaption {
+    background: var(--md-accent-fg-color);
+}
+
+/* Tables */
+.md-typeset table:not([class]),
+.md-typeset table:not([class]) td {
+    border-color: var(--md-default-fg-color--lightest);
 }
