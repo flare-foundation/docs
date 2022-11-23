@@ -5,6 +5,7 @@
     --md-default-fg-color--light: #222;
     --md-footer-bg-color: var(--md-primary-bg-color--lighter);
     --md-typeset-a-color: var(--md-primary-bg-color);
+    --md-code-bg-color--transparent: var(--md-code-bg-color);
 }
 
 [data-md-color-scheme="flaredark"] {
@@ -22,6 +23,7 @@
     --md-typeset-a-color: var(--md-primary-bg-color);
     /* Code highlighting color shades */
     --md-code-bg-color: black;
+    --md-code-bg-color--transparent: #0008;
     --md-code-fg-color: var(--md-primary-bg-color--light);
     --md-code-hl-operator-color: var(--md-default-fg-color--light);
     --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
@@ -237,4 +239,12 @@ code.beta {
 .md-typeset table:not([class]),
 .md-typeset table:not([class]) td {
     border-color: var(--md-default-fg-color--lightest);
+}
+
+/* Inline code blocks */
+.md-typeset code {
+    background: var(--md-code-bg-color--transparent);
+}
+.md-typeset pre code {
+    background: var(--md-code-bg-color);
 }
