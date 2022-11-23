@@ -223,18 +223,26 @@ code.beta {
 }
 
 /* Recolor SVG icons in cards */
-.cards .stroked-svg svg path,
-.cards .stroked-svg svg line,
-.cards .stroked-svg svg circle,
-.cards .stroked-svg svg ellipse {
+.stroked-svg svg path,
+.stroked-svg svg line,
+.stroked-svg svg circle,
+.stroked-svg svg ellipse {
     stroke: var(--md-primary-bg-color);
 }
 
-.cards .filled-svg svg path,
-.cards .filled-svg svg line,
-.cards .filled-svg svg circle,
-.cards .filled-svg svg ellipse {
+.filled-svg svg path,
+.filled-svg svg line,
+.filled-svg svg circle,
+.filled-svg svg ellipse {
     fill: var(--md-primary-bg-color);
+}
+
+.big-svg {
+    text-align: center;
+}
+
+.big-svg svg {
+    width: 50%;
 }
 
 /* Images */

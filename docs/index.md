@@ -9,35 +9,35 @@ hide:
 <div class="cards" markdown>
 
 * <a href="tech" markdown class="filled-svg">
-    --8<-- "docs/assets/tech-icon.svg"
+    --8<-- "docs/assets/overrides/tech-icon.svg"
 
     **Concepts**
 
     Descriptions of Flare's key concepts and tools.</a>
 
 * <a href="user" markdown class="filled-svg">
-    --8<-- "docs/assets/user-icon.svg"
+    --8<-- "docs/assets/overrides/user-icon.svg"
 
     **User Guides**
 
     Step-by-step guides for tools like the Explorer or the different wallets.</a>
 
 * <a href="infra" markdown class="stroked-svg">
-    --8<-- "docs/assets/infra-icon.svg"
+    --8<-- "docs/assets/overrides/infra-icon.svg"
 
     **Infrastructure Guides**
 
     Step-by-step guides to deploy your own Flare network components.</a>
 
 * <a href="dev" markdown class="stroked-svg">
-    --8<-- "docs/assets/dev-icon.svg"
+    --8<-- "docs/assets/overrides/dev-icon.svg"
 
     **Developer Docs**
 
     Programming tutorials to help you build your app using Flare's tech.</a>
 
 * <a href="exchange" markdown class="stroked-svg">
-    --8<-- "docs/assets/exchange-icon.svg"
+    --8<-- "docs/assets/overrides/exchange-icon.svg"
 
     **Exchange Guides**
 

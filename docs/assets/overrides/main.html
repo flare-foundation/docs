@@ -11,3 +11,12 @@
         <meta property="og:description" content="{{ page.meta.og_description }}" />
     {% endif %}
 {% endblock %}
+
+{% block content %}
+    {% if page.meta.section_icon %}
+        <p markdown class="{{page.meta.section_icon_type}} big-svg">
+            {% include page.meta.section_icon %}
+        </p>
+    {% endif %}
+    {{ super() }}
+{% endblock %}
