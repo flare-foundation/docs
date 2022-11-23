@@ -14,7 +14,8 @@ The secondary goal is to serve as a real-time tracker of the **current phase**.
 
 Without further ado:
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 895 1844">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+viewBox="0 0 895 1844" style="background: white; padding: 8px;">
   <image width="895" height="1844" xlink:href="../../assets/launch-process.png"></image>
   <title>Click on a phase to navigate to its description.</title>
   <a href="#private-observation-mode">
