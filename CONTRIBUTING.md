@@ -15,6 +15,9 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 * Always keep the scope of the document in mind. A document should precisely fulfill its purpose, nothing more, nothing less. It is a common pitfall to end up going into rabbit holes and spending half a document explaining irrelevant details.
 * Try to write short sentences whenever possible to avoid complex grammar, complex use of tenses, ambiguous pronouns and so on. A good guideline when it comes to technical writing is to aim for 20-30 words per sentence. Keeping sentences short should however never come at the expense of clarity, syntactic cues and important information.
 * Just like in code, consistency is key.
+* USE A SPELL CHECKER.
+* Use a markdown checker or linter to get rid of the most common (and annoying) markdown issues, like trailing white space, blank lines, etc.
+  At some point this might be enforced.
 
 ### Sections
 
@@ -24,17 +27,19 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 ### Formatting
 
-* Lists should use the `*` character rather than the `-` character.
+* Lists should use the `*` character rather than the `-` character, always start capitalized and end with a full stop.
 * Paragraphs that include multiple sentences should have the sentences on separate lines, so that updating one sentence results in a clear diff where one line changes.
 * For long files that are not served within this repository, it is best to have a table of contents at the end of the introduction of the level one heading section.
 * Always specify the language for code blocks so that neither the syntax highlighter nor the text editor must guess. If no specific type makes sense, just use `text`.
+* Token names should always start with a dollar sign `$` and be enclosed in backticks `` ` ``: `$FLR`.
 
 ### Technical Writing
 
 * Use American English (`organize` instead of `organise`, `behavior` instead of `behaviour`, etc.)
 * Do not use gendered pronouns when talking about users/consumers/whatever but always `they/their` instead.
-* Do not use the future tense but use present simple for expressing general truths instead.
+* Avoid talking about *us*, or *we*, even if it means resorting to passive voice.
 * Use active voice when there is no specific need to use passive.
+* Do not use the future tense but use present simple for expressing general truths instead.
 * Abbreviations and acronyms should be spelled out the first time they appear in any technical document with the shortened form appearing in parentheses immediately after the term. The abbreviation or acronym can then be used throughout the document.
 * Avoid ambiguous and abstract language (i.e. really, quite, very), imprecise or subjective terms (i.e. fast, slow, tall, small) and words that have no precise meaning (i.e. bit, thing, stuff).
 * Avoid contractions (i.e. don't, you'll, etc.) as they are meant for informal contexts.
@@ -67,4 +72,4 @@ Pay special attention to the capitalization and spacing of the following words:
 * Relay (when talking about Flare's cross-chain data relay protocol)
 * smart contracts
 * State Connector
-* WFLR, WSGB (the wrapped tokens)
+* `$FLR`, `$SGB`, `$WFLR` and `$WSGB` (the wrapped tokens)
