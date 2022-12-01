@@ -12,14 +12,13 @@ This could be seen as the mining process for the Flare chains.
 During the first years of Flare's and Songbird's existence, most of the yearly inflation will be distributed to participants of the FTSO system.
 The distribution works such that the yearly inflation is divided into daily portions. That daily portion is split between all price epochs happening that day.
 
-The FTSO system includes price feeds for USD prices of a few assets, Ex: BTC/USD, XRP/USD etc.
-Per price epoch one FTSO price feed is chosen to be rewarded.
-The reward is split between the addresses which submitted the most accurate prices.
+The FTSO system includes data feeds for all types of data. Per epoch, one FTSO data feed is chosen to be rewarded.
+The reward is split between the addresses which submitted the most accurate data.
 
 Reward flow:
 
-* Per price epoch all price feeds to an FTSO are being used to calculate a weighted median.
-* The weighted median is the chosen price of this FTSO (time series).
+* Per epoch, all data feeds to an FTSO are used to calculate a weighted median.
+* The weighted median is chosen as the best result of this FTSO (time series).
 * Next, a percentage of the addresses on each side of the weighted median are chosen to be rewarded.
 * Each address is rewarded according to its weight (vote power).
 * The reward data is sent to the `FtsoRewardManager` smart contract.

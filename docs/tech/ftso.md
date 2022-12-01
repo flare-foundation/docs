@@ -2,62 +2,71 @@
 
 ## Introduction
 
-The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare network that **provides continuous estimations for price pairs**.
-It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
+The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare network that **provides continuous estimations for different types of data**. It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 
-To achieve this, a set of **independent data providers** retrieves price pair information from external sources (like centralized and decentralized Exchanges) and supplies it to the FTSO system.
-This information is then weighted according to each provider's **voting power** and a **median** is calculated to produce the final estimate.
+To achieve a secure, decentralized system, a set of **independent data providers** retrieves data from external sources, like centralized and decentralized exchanges, and supplies the data to the FTSO system. Then, this information is weighted according to each provider's **voting power**, and a **median** is calculated to produce the final estimate.
+
+!!! note "Important"
+
+    When FTSOs were initially designed, they supported only cryptocurrency price pairs. Now, they support all types of data. However, contract names and methods still refer to prices and price epochs, and price pairs are used in the following information to show how FTSOs work.
+
+The following diagram shows how price pairs are submitted to and filtered by the FTSO system.
 
 <figure markdown>
   ![FTSO summary](ftso-summary.png){ loading=lazy .allow-zoom }
   <figcaption>FTSO summary.</figcaption>
 </figure>
 
-Data providers that supply **useful information** (price pairs that are not removed as outliers because they are too far away from the median value) are **rewarded**, and the resulting price estimates are finally **published on-chain**.
+Data providers that supply **useful information**, such as price pairs that are not removed as outliers because they are too far away from the median value, are **rewarded**, and the resulting data estimates are finally **published on-chain**.
 
-This page gives technical details about the submission procedure, how the final estimate is calculated, how vote delegation works, how to submit price pairs, how to claim rewards and how to use the price information in an app.
+The following information describes:
+
+* The submission procedure
+* How the final estimate is calculated
+* How vote delegation works
+* How to submit data, claim rewards, and use the data in an app
 
 ## Procedure Overview
 
-The following process runs continuously, producing new price estimates every **Price Epoch**, which are **3 minutes long**.
+Using price data as an example, the procedure in the following diagram runs continuously. It produces new data estimates during every **Price Epoch**, which are **3 minutes long**.
 
 <figure markdown>
   ![FTSO workflow](ftso-workflow.png){ loading=lazy .allow-zoom }
   <figcaption>FTSO workflow.</figcaption>
 </figure>
 
-1. **Any user** with an account (address) on the Flare network can act as an FTSO data provider, **submit price signals** and **collect rewards**.
+1. **Any user** with an account (address) on the Flare network can act as an FTSO data provider, **submit data**, and **collect rewards**.
 
-    Each epoch, only submissions from the **100** data providers with the most **voting power** are taken into account.
+    During each epoch, only submissions from the **100** data providers with the most **voting power** are considered.
     An account's voting power is based on its wrapped `$FLR` or `$SGB` balance and the delegations made to it (see [Vote Power](#vote-power) below).
 
-    Submitted data must be the current price (in `$USD`) for one or more of the supported price pairs, currently: `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, and `$FIL`. On Songbird, additionally, you have `$SGB`.
+    In this example, submitted data must be the current price (in `$USD`) for one or more of the supported price pairs, currently: `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, and `$FIL`. On Songbird, additionally, you have `$SGB`.
 
     More general data types might be added in the future.
 
-2. FTSO data providers submit price pairs in rounds in a **Commit and Reveal** fashion, so they cannot peek at each other's submissions until a round is over.
+2. FTSO data providers submit data in rounds in a **commit-and-reveal** process, so they cannot see each other's submissions until a round is over.
 
-    This is akin to submitting prices in a closed envelope, so when the round is over all envelopes are opened.
+    This process is like submitting data in a closed envelope, and when the round is over, all envelopes are opened.
 
-    During a **3-minute** price epoch, providers fetch the information, run their algorithms and **submit a hash** of the data (_commit_).
-    During the first half of the following price epoch (**1.5 minutes**) providers then submit the actual data (_reveal_).
+    During a **3-minute** price epoch, providers fetch the information, run their algorithms, and **submit a hash** of the data (_commit_).
+    Then, during the first half of the following price epoch (**1.5 minutes**), providers submit the actual data (_reveal_).
 
-    See technical details about the [submission process](#price-submission-process) below.
+    See technical details about the [data-submission process](#data-submission-process) below.
 
-3. The FTSO System calculates the **resulting median price**, taking into account each provider's voting power (see [Resulting Price Calculation](#resulting-price-calculation) below).
+3. The FTSO system calculates the **resulting median**, taking into account each provider's voting power (see [How Results are Calculated](#how-results-are-calculated) below).
 
-    Resulting price pairs are **publicly available for 5 price epochs** for any app or contract to read.
+    Resulting data is **publicly available for 5 price epochs** for any app or contract to read.
     Previous epochs can always be retrieved from an archival node.
 
-4. For each price epoch in which the submitted data is close enough to the median price, data providers and their [delegators](#delegation) are **rewarded**.
+4. For each price epoch in which the submitted data is close enough to the median value, data providers and their [delegators](#delegation) are **rewarded**.
 
-    Rewards are accumulated in **Reward Epochs** (**3.5 days** on the Flare network, **7 days** on Songbird) and can be claimed once the epoch finishes.
+    Rewards are accumulated in **Reward Epochs** (**3.5 days** on the Flare network, **7 days** on Songbird) and can be claimed after the epoch finishes.
 
     See [Rewards](#rewards) below.
 
-## Resulting Price Calculation
+## How Results are Calculated
 
-This is an overview of the filtering process that turns all submitted price pairs into a single estimate.
+The following example uses price pairs to show the filtering process that turns all submitted data into a single estimate.
 See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/).
 
 <figure markdown>
@@ -65,14 +74,14 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/).
   <figcaption>FTSO price calculation.</figcaption>
 </figure>
 
-- The contract in charge of each price pair calculates the resulting price for a Price Epoch (3 minutes) using the submissions received from all data providers during that epoch.
+* The contract in charge of each price pair calculates the resulting price for a Price Epoch (3 minutes) using the submissions received from all data providers during that epoch.
 
-- Each submission has a **price** and a **weight**.
+* Each submission has a **price** and a **weight**.
   Weight is based on the data provider's [voting power](#vote-power), as explained below.
 
-- The [weighted median](https://en.wikipedia.org/wiki/Weighted_median) of the prices is the resulting price for the price epoch.
+* The [weighted median](https://en.wikipedia.org/wiki/Weighted_median) of the prices is the resulting price for the price epoch.
 
-- Submissions in the top and bottom 25% range are not [rewarded](#rewards).
+* Submissions in the top and bottom 25% range are not [rewarded](#rewards).
 
 ## Vote Power
 
@@ -81,35 +90,33 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/).
   <figcaption>FTSO delegation weight calculation.</figcaption>
 </figure>
 
-- As explained above, an FTSO data provider's submissions are weighted by its **Vote Power**.
+* As explained above, an FTSO data provider's submissions are weighted by its **Vote Power**.
   A data provider's Vote Power is proportional to the amount of **Wrapped Flare or Songbird tokens** (`$WFLR` or `$WSGB`) it holds, plus any amount [delegated to it](#delegation).
 
     !!! note
 
-        There also exists a **Vote Power Cap** which limits the influence of individual data providers to **2.5% of the total Vote Power** on Flare, and **10%** on Songbird.
+        A **Vote Power Cap** limits the influence of individual data providers to **2.5% of the total Vote Power** on Flare and **10%** on Songbird.
 
-        Any Vote Power above this cap is ignored, meaning that those `$WFLR` or `$WSGB` would probably be more effective delegated to a different data provider.
+        Any Vote Power above this cap is ignored. If vote power exceeds the limit, consider delegating those `$WFLR` or `$WSGB` to a different data provider.
 
-- A **snapshot** of each data provider's Vote Power is taken once per reward epoch, and the resulting weight is then used **throughout the next reward epoch**.
+* A **snapshot** of each data provider's Vote Power is taken once per reward epoch, and the resulting weight is then used **throughout the next reward epoch**.
 
-- The actual snapshot block is called the **Voting Power Block** and it is **randomly chosen** from the last blocks of the previous epoch (last 50% on Flare, last 25% on Songbird).
-
-    Note this only roughly corresponds to last 50% or 25% of the _time_, since block production times are not constant.
+* The actual snapshot block is called the **Voting Power Block** and it is **randomly chosen** from the last blocks of the previous epoch (last 50% on Flare, last 25% on Songbird). It only roughly corresponds to the last 50% or 25% of the _time_ because block production times are not constant.
 
 !!! note "Reward epochs"
 
-    The first reward epoch on **Songbird** started on Saturday, 18 September 2021 08:41:39 (GMT), 1631954499 in Unix time, and repeats every 7 days.
-    This means that **all Songbird reward epochs start on Saturday morning (GMT)**.
+    The first reward epoch on **Songbird** started on Saturday, 18 September 2021 08:41:39 (GMT), 1631954499 in Unix time and repeats every 7 days.
+    Therefore, **all Songbird reward epochs start on Saturday morning (GMT)**.
 
-    The first reward epoch on **Flare** started on Thursday, 21 July 2022 19:00:05 (GMT), 1658430005 in Unix time, and repeats every 3.5 days.
-    This means that **all Flare reward epochs start on Thursday evening (GMT) and Monday morning (GMT)**.
+    The first reward epoch on **Flare** started on Thursday, 21 July 2022 19:00:05 (GMT), 1658430005 in Unix time and repeats every 3.5 days.
+    Therefore, **all Flare reward epochs start on Thursday evening (GMT) and Monday morning (GMT)**.
 
 ## Delegation
 
 Holders of `$FLR` or `$SGB` tokens can **delegate** them to an FTSO data provider to increase its [Vote Power](#vote-power) and earn a share of its [Rewards](#rewards), resulting in a **mutually beneficial arrangement**.
 Furthermore, delegated tokens are **not locked**, meaning that they remain in the user's control and the delegation can be removed at any time.
 
-Delegation requires **wrapping** the native `$FLR` and `$SGB` into **ERC-20** `$WFLR` and `$WSGB` tokens, a reversible operation that can also be undone at any time.
+Delegation requires **wrapping** the native `$FLR` and `$SGB` into **ERC-20** `$WFLR` and `$WSGB` tokens, an operation you can reverse at any time.
 
 !!! note
 
@@ -131,29 +138,29 @@ For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-clai
 
 ## Rewards
 
-A percentage of the annual network **inflation** is reserved to reward FTSO data providers, and distributed uniformly among the year's reward epochs (reward epochs are 7-days long on Songbird and 3.5-days long on Flare).
+A percentage of the annual network **inflation** is reserved to reward FTSO data providers and distributed uniformly among the year's reward epochs (reward epochs are 7-days long on Songbird and 3.5-days long on Flare).
 
-Each reward epoch, rewards are distributed among all data providers whose submission fell [within 50% range of the calculated median price](#resulting-price-calculation).
+Each reward epoch, rewards are distributed among all data providers whose submission fell [within 50% range of the calculated median](#how-results-are-calculated).
 
 Then, each provider takes a **configurable fee** (20% by default) and distributes the rest of the reward among **all contributors to its Vote Power**, i.e. itself and all its delegators, according to the delegated amounts.
 Find more details in [the Delegation guide (Reward Claiming)](../user/delegation/reward-claiming-in-detail.md#reward-amount-in-depth).
 
-### Reward Claiming Procedure
+### Reward-Claiming Procedure
 
 FTSO rewards are not automatically transferred to their recipients.
 Instead, the amounts are accumulated in the `FtsoRewardManager` contract (see [System Architecture](#system-architecture) below) and must be claimed **once the reward epoch is finished**.
 
 Claiming requires a contract call and therefore a slight **gas expenditure**.
-To save on gas costs, multiple reward epochs can be claimed simultaneously, however, **rewards expire after 90 days** so be careful.
-Moreover, you probably want to claim soon, to re-delegate the received amount and obtain compounded rewards.
+To save on gas costs, multiple reward epochs can be claimed simultaneously. However, be aware that **rewards expire after 90 days**.
+Moreover, you probably want to claim soon, to redelegate the received amount and obtain compounded rewards.
 
 It is also worth noting that:
 
-- Rewards are paid in the network's native currency (`$FLR` on Flare, `$SGB` on Songbird).
+* Rewards are paid in the network's native currency (`$FLR` on Flare and `$SGB` on Songbird).
 
-- Data providers and their delegators must claim independently.
+* Data providers and their delegators must claim independently.
 
-Again, the simplest way to claim your FTSO rewards is through a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a dapp.
+The simplest way to claim your FTSO rewards is through a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md) or a dapp.
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-claiming) below briefly explains how to claim manually by interacting directly with the FTSO smart contracts.
@@ -166,41 +173,43 @@ For advanced users, [Manual Delegation and Claiming](#manual-delegation-and-clai
 
 The FTSO system is composed of multiple smart contracts running on the Flare Network.
 
+Using prices as an example, the following diagram shows the flow of data, queries, and rewards through the FTSO system:
+
 <figure markdown>
   ![FTSO component smart contracts](ftso-system.png){ loading=lazy .allow-zoom }
   <figcaption>FTSO component smart contracts.</figcaption>
 </figure>
 
-These are the most relevant contracts and their purpose:
+The following list describes the most relevant contracts and their purposes:
 
-- **FTSO**: Each tracked price pair is handled by its own FTSO contract, including calculation of the filtered price feed.
+* **FTSO**: Each data type is handled by its own FTSO contract, including calculation of the filtered feed.
 
-    Access this contract to retrieve a specific price pair or information about it.
+    To retrieve information about a data type, access this contract.
 
     !!! note
 
         If an FTSO contract is **redeployed** (for example, to fix a bug), **its address will change** and apps using it will need to be updated.
-        The FTSO Registry contract below keeps track of this so you do not have to.
+        The FTSO Registry contract below tracks this change for you.
 
-    You can retrieve the addresses of all FTSO contracts using the `getAllFtsos` method in the FTSO Registry (below).
+    You can retrieve the addresses of all FTSO contracts using the `getAllFtsos` method in the FTSO Registry.
 
-- **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all price pairs.
+* **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
 
-- **Price Submitter**: This is the contract the FTSO data providers use to submit their data.
+* **Price Submitter**: This contract is used by the FTSO data providers to submit their data. Although the contract is called `PriceSubmitter`, data is not limited to prices.
 
-- **Reward Manager**: Use this contract to claim your rewards, whether you are a data provider or a delegator.
+* **Reward Manager**: Use this contract to claim your rewards, whether you are a data provider or a delegator.
 
-- **Wrapped Native (WNat)**: Not exclusively related to the FTSO system, but required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
+* **Wrapped Native (WNat)**: This contract is not exclusively related to the FTSO system, but it is required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
 
 !!! note
 
-    The [Contract Addresses](../dev/reference/contracts.md) page explains how to retrieve each contract's address in a secure way.
+    The [Contract Addresses](../dev/reference/contracts.md) page explains how to securely retrieve each contract's address.
 
-Other contracts (like the FTSO Manager or the FTSO Daemon) are only meant for internal use by the FTSO system.
+Other contracts, like the FTSO Manager or the FTSO Daemon, are only meant for internal use by the FTSO system.
 
 ### Manual Delegation and Claiming
 
-This is a quick summary of the contracts and method calls required to manually delegate and claim FTSO rewards.
+The following information describes the contracts and method calls required to manually delegate and claim FTSO rewards.
 Find more details in [the Delegation guide](../user/delegation/delegation-in-detail.md).
 
 <figure markdown>
@@ -212,7 +221,7 @@ Find more details in [the Delegation guide](../user/delegation/delegation-in-det
 
     [Voting power](#vote-power) is delegated to a data provider using **wrapped tokens** (`WFLR` and `WSGB`) whereas the **native tokens** are `FLR` and `SGB`.
 
-    One wrapped token can be obtained for each native token without cost (except gas fees) using the `WNat` contract's `deposit` method.
+    One wrapped token can be obtained for each native token without cost, except gas fees, using the `WNat` contract's `deposit` method.
     Tokens get locked inside the `WNat` contract and cannot be used until they are unwrapped.
 
     Wrapped tokens can be **unwrapped** back to native tokens at any time using the `WNat` contract's `withdraw` method.
@@ -229,10 +238,10 @@ Find more details in [the Delegation guide](../user/delegation/delegation-in-det
 
 2. **Delegate**
 
-    Choose the **percentage of the total wrapped tokens** you want to delegate to each data provider (up to two).
-    Should the wrapped token balance change later, the delegated amounts are automatically adjusted.
+    Choose the **percentage of the total wrapped tokens** you want to delegate to 1 - 2 data providers.
+    If the wrapped-token balance changes later, the delegated amounts are automatically adjusted.
 
-    Delegation is performed through the `WNat` contract too, using the `delegate` method:
+    Delegation is done through the `WNat` contract too, using the `delegate` method:
 
     ```solidity
     function delegate(address _to, uint256 _bips) external;
@@ -260,39 +269,37 @@ Find more details in [the Delegation guide](../user/delegation/delegation-in-det
     This call must be made from the address that earned the rewards, but they can be sent to a different recipient, hence the `_recipient` parameter.
 
     Rewards can be claimed for several epochs at once so `_rewardEpochs` specifies the list of epochs to claim for.
-    To get the list of epochs with pending rewards you can use the `getEpochsWithUnclaimedRewards` method.
+    To get the list of epochs with pending rewards, you can use the `getEpochsWithUnclaimedRewards` method.
 
-    Moreover, the claimed reward is typically re-delegated, which involves wrapping the received `$FLR` or `$SGB`.
-    For convenience, the `claimAndWrapReward` method is offered (only on Flare) to perform claiming and wrapping in a single call.
+    Moreover, the claimed reward is typically redelegated, which involves wrapping the received `$FLR` or `$SGB`.
+    For convenience, you can use the `claimAndWrapReward` method on Flare to claim and wrap in one call.
 
     !!! note
 
-        For security reasons, the `FtsoRewardManager` contract contains a **limited amount of tokens** and is replenished periodically.
-        If you are unable to claim your rewards because the contract is empty, please **try again the next day**.
-        This might happen when all delegators claim their rewards in a short period of time, so it is usually better to avoid claiming right when the reward epoch finishes.
+        For security reasons, the `FtsoRewardManager` contract contains a **limited amount of tokens** and is replenished periodically. Sometimes, all delegators claim their rewards in a short period of time immediately after the reward epoch ends, and the contract becomes empty. If you are unable to claim your rewards because the contract is empty, please **try again the next day**.
 
-### Price Submission Process
+### Data-Submission Process
 
-Data submission uses a **Commit and Reveal** scheme to prevent providers from peeking at each other's submissions until a round is over.
+Data submission uses a **commit-and-reveal** scheme to prevent providers from viewing each other's submissions until a round is over.
 To speed up the process, both phases are actually overlapped so:
 
-- All Commit phases happen continuously in so-called **3-minute Price Epochs**.
+* All Commit phases happen continuously in so-called **3-minute Price Epochs**.
 
-- Reveal phases happen during the first half (**first 90 seconds**) of the following Commit phase.
+* Reveal phases happen during the first half (**first 90 seconds**) of the following Commit phase.
 
-- The published price information is therefore updated **every 3 minutes**.
+* The published price information is therefore updated **every 3 minutes**.
 
 Only a hash of the data is submitted during the Commit phase.
 Next, in the Reveal phase the actual data is sent.
 If its hash does not match the previous commitment, the data is discarded.
 
-Submission API is slightly different for the Flare and Songbird networks:
+The submission API is slightly different for the Flare and Songbird networks:
 
 === "Flare"
 
-    FTSO data providers submit price information through the [PriceSubmitter contract](https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
+    FTSO data providers submit data through the [PriceSubmitter contract](https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
 
-    - **Commit**: A single hash is needed for all price pairs.
+    - **Commit**: A single hash is needed for each submission.
 
         ```solidity
         function submitHash(
@@ -302,7 +309,7 @@ Submission API is slightly different for the Flare and Songbird networks:
          
         ```
 
-    - **Reveal**: After all price data, a single random number must be submitted.
+    - **Reveal**: After all data is submitted, a single random number must be submitted.
 
         ```solidity
         function revealPrices(
@@ -315,9 +322,9 @@ Submission API is slightly different for the Flare and Songbird networks:
 
 === "Songbird"
 
-    FTSO data providers submit price information through the [PriceSubmitter contract](https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
+    FTSO data providers submit data through the [PriceSubmitter contract](https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
 
-    - **Commit**: A separate hash is needed for each price pair.
+    - **Commit**: A separate hash is needed for each submission.
 
         ```solidity
         function submitPriceHashes(
@@ -327,7 +334,7 @@ Submission API is slightly different for the Flare and Songbird networks:
         ) external;
         ```
 
-    - **Reveal**: Along with each price a random number must be submitted.
+    - **Reveal**: Along with each data submission, a random number must be submitted too.
 
         ```solidity
         function revealPrices(
@@ -338,12 +345,12 @@ Submission API is slightly different for the Flare and Songbird networks:
         ) external;
         ```
 
-### Using the Price Pairs
+### Retrieving Data
 
-The price pairs produced by the FTSO are **publicly available** on the Flare and Songbird networks.
+Data produced by the FTSO is **publicly available** on the Flare and Songbird networks.
 
-All pairs can be retrieved either through the `FtsoRegistry` contract or directly through one of the `Ftso` contracts that handle each individual price pair.
-In any case, the `getCurrentPrice` method is used:
+All data can be retrieved either through the `FtsoRegistry` contract or directly through one of the `Ftso` contracts.
+In any case, the `getCurrentPrice` method is used. The following examples show how this method is used to retrieve price data.
 
 === "Retrieve by pair index"
 
@@ -392,11 +399,10 @@ In any case, the `getCurrentPrice` method is used:
 
     !!! note
 
-        Individual FTSO contracts might be updated from time to time, changing their address.
-        It is advisable not to cache these addresses and always use the `FtsoRegistry` instead.
+        Individual FTSO contracts might be updated periodically, which will change their addresses. Instead of caching these addresses, use the `FtsoRegistry`.
 
 `GetCurrentPrice` returns the requested price (the outcome of the previous 3-minute price epoch) in **`$USD` multiplied by 100'000**.
 
-So, for instance, a return value of `2603` means a price of `0.02603 USD` (There are only **5** significant decimal places).
+For example, a return value of `2603` means a price of `0.02603 USD` (There are only **5** significant decimal places).
 
 A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last price update is also returned.

@@ -125,7 +125,7 @@ Flare validator source code is **not** available yet.
 
 FTSO data providers:
 
-* Can submit prices, as they do on Songbird, but don't act as validators since they cannot run nodes.
+* Can submit data, as they do on Songbird, but don't act as validators since they cannot run nodes.
 
 * Are not rewarded. [All inflation is burned during observation mode](https://flare.xyz/om-inflation/).
 
@@ -139,7 +139,7 @@ Professional validators start onboarding, so the network stars becoming decentra
 
 FTSO data providers:
 
-* Can submit prices, as they do on Songbird, but don't act as validators since they won't have funds to stake until the TDE.
+* Can submit data, as they do on Songbird, but don't act as validators since they won't have funds to stake until the TDE.
 
 * Are not rewarded. [All inflation is burned during observation mode](https://flare.xyz/om-inflation/).
 

@@ -27,14 +27,14 @@ Then use `getRewardEpochVotePowerBlock` where one should set the current reward 
 
 In the WNat contract use `votePowerOfAt,` set the address and the block and read the response.
 
-## My submissions are reverted as being in the wrong epoch
+## My submissions are reverted as being in the wrong epoch.
 
 You might be submitting a bit too late in the current epoch.
-Try to submit the price a few seconds earlier.
+Try to submit the data a few seconds earlier.
 You might want to consider running an observation node that provides a better quality connection to the network.
 Also, check if your server time is synced through Network Time Protocol (NTP).
 
-## I am experiencing strange reverts when submitting and revealing prices
+## I am experiencing strange reverts when submitting and revealing data.
 
-The unexpected reverts might come from the too low gas amount provided to submit/reveal transactions.
+The unexpected reverts might come from the too low gas amount provided to submit-and-reveal transactions.
 Increase the gas limit of the transaction to 2'500'000 gwei.

@@ -41,7 +41,7 @@ Once you own wrapped tokens, it is best to delegate 100% of your vote power.
 ## To whom should I delegate my vote power?
 
 For the ongoing stability of the FTSO it is highly recommended delegating to reliable data providers,
-i.e., ones that are committed to providing accurate price feeds.
+i.e., ones that are committed to providing accurate data.
 Consider the expected reward rate each data provider can offer.
 
 See [flaremetrics.io](https://flaremetrics.io/) for a list of FTSO data providers.

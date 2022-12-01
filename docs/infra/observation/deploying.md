@@ -11,7 +11,7 @@ However, submitting transactions through your own node offers a number of benefi
 * Transactions are sent directly to the network instead of through a third party, removing a potential security risk.
 * Public nodes are usually rate-limited (the amount of requests they accept per second is restricted).
   Your own node does not have such restriction.
-* The time savings described above allow [FTSO data providers](glossary.md#data_provider) to submit their data a few seconds later, thus having more time to gather price data before submitting.
+* The time savings described above allow [FTSO data providers](glossary.md#data_provider) to submit their data a few seconds later, thus having more time to gather data before submitting.
 
 This guide explains how to deploy your own observation node so you can reap these benefits.
 

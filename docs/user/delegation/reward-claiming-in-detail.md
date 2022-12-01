@@ -6,7 +6,7 @@
 
 ## FTSO Rewards
 
-During the FTSO price voting process, rewards are being distributed to data providers based on their vote power.
+During the FTSO voting process, rewards are being distributed to data providers based on their vote power.
 Depending on the vote power share and data provider fee percentage, a part of this reward belongs to users who have delegated their `$WFLR` or `$WSGB` vote power to the data providers.
 The rewards can be claimed via the contract `FtsoRewardManager` that implements `IFtsoRewardManager` interface as described in this document.
 

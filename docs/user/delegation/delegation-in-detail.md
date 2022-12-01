@@ -54,14 +54,14 @@ A voting campaign uses a randomly chosen block number from the past (vote power 
 When an address (data provider) casts its vote for a specific campaign, its vote power is taken from the vote power block for this campaign.
 Hence, the vote power of an address for this campaign does not reflect its present balance and delegation but rather the state at the time of the snapshot (in the vote power block).
 This design allows for a free use of tokens (non-locked) and a consistent vote power snapshot of token holdings.
-Voting campaigns are a generic concept; in FTSO system, the vote power of data providers is used as an influence in choosing the final price.
-Each price submission is weighted according to the vote power scheme described here.
+Voting campaigns are a generic concept; in the FTSO system, the vote power of data providers is used to influence the selection of the final result.
+Each data submission is weighted according to the vote-power scheme described here.
 
 ## Revoke
 
-Due to the substantial length of time one past vote power block is used for price submissions, a revoke feature was added.
-This feature can be used in case any specific data provider is found trying to attack and skew the reported price of the FTSO (flare oracle).
-In this situation, an off chain process (e.g. twitter storm) calls users to revoke vote power from a specific data provider.
+Due to the substantial length of time one past vote power block is used for data submissions, a revoke feature was added.
+This feature can be used in case any specific data provider is found trying to attack and skew the reported data of the FTSO.
+In this situation, an off-chain process, such as a Twitter storm, calls users to revoke vote power from a specific data provider.
 The revoke will update the cached value of the vote power for the specific block which is being used for this reward epoch.
 So if a user revokes its vote power delegation on a specific block, checkpoints for the vote power will not be updated, only the cached vote power values are zeroed.
 
@@ -103,7 +103,7 @@ For any vote power update due to delegation, transfer, or otherwise, a checkpoin
 For anyone familiar with the [MiniMe token](https://github.com/Giveth/minime), the checkpoint mechanism is similar, while differing in that more data is being checkpointed.
 
 When a voting campaign occurs, a past block will be randomly chosen and all vote power data will be taken from this block.
-This would actually work like taking a vote power snapshot for a specific block and using that for all addresses voting (providing prices) in the campaign.
+This would actually work like taking a vote power snapshot for a specific block and using that for all addresses voting providing data in the campaign.
 The random process of choosing a block is designed to mitigate attacks such as flash-loan or short term loans.
 
 ### API
@@ -116,8 +116,8 @@ The random process of choosing a block is designed to mitigate attacks such as f
 ### Caching
 
 Due to reward distribution constraints that are described in the FTSO reward manager specification, the same vote power block is used for a rather long period of time.
-This time frame, named "reward epoch", includes many short price epochs.
-Meaning, FTSO price feeds commencing over a period of a few days will continuously derive vote power from the same vote power block in the past.
+This time frame, named "reward epoch", includes many short epochs.
+Meaning, FTSO data feeds commencing over a period of a few days will continuously derive vote power from the same vote power block in the past.
 
 Usage of the same vote power block for many campaigns calls for a caching mechanism.
 The caching mechanism stores the vote power per address per block if done through a dedicated caching enabled function.
@@ -127,7 +127,7 @@ Later calls to both of these functions will use the cached value if it exists.
 
 ### Retrieving historical data
 
-A large part of the native token inflation is distributed to participants in the FTSO price submission process.
+A large part of the native token inflation is distributed to participants in the FTSO data-submission process.
 The reward won by a data provider is shared between the data provider and the vote power delegators to the data provider.
 The VP token exposes APIs that enable delegators to see how much vote power was delegated to a data provider in any past block.
 To enable this, the delegation percentage data are checkpointed after every change.

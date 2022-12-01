@@ -2,10 +2,10 @@
 
 ## Background
 
-Providing prices to the FTSO system makes you a part of a decentralized oracle system.
-FTSO data providers submit prices to on-chain contracts deployed on the Flare and Songbird networks.
-The main contracts a data provider will interact with are the `Price Submitter` and the `FTSO` contracts.
-All the relevant contracts for the FTSO system are available on the smart contract repo (see the [Developer Docs](../../dev/index.md) section).
+Providing data to the FTSO system includes you in the decentralized oracle system.
+FTSO data providers submit data to on-chain contracts deployed on the Flare and Songbird networks.
+Data providers interact primarily with the `Price Submitter` and `FTSO` contracts.
+All the relevant contracts for the FTSO system are available in the smart contract repository (see the [Developer Docs](../../dev/index.md) section).
 These contracts are deployed and verified on the [Block explorer](../../user/block-explorer.md).
 
 ## Prerequisites
@@ -18,67 +18,67 @@ To operate a data provider you need to be familiar with:
 
 ## First steps
 
-To facilitate an easier start, one can use the kick-off NPM package [referenced here](../../dev/index.md).
-This package showcases the main contracts related to whitelisting a data provider and submitting prices.
-The package enables you to deploy FTSO mock contracts in a local setup, and submit prices to those contracts.
+To quickly get started, use the kick-off NPM package [referenced here](../../dev/index.md).
+This package showcases the main contracts related to whitelisting a data provider and submitting data.
+It also enables you to deploy FTSO mock contracts in a local setup and submit data to those contracts.
 Working with the package should help all setup stages for your data provider.
 
-Working with this package is mostly identical to providing prices on-chain.
-Below aspects would be the same as working on-chain:
+Working with this package is mostly identical to providing data on-chain.
+The following aspects would be the same as or similar to working on-chain:
 
 * Smart contract APIs (called functions).
 * Events.
 * Timing aspects are similar but not identical.
 
-The package does not cover the actual price calculation (weighted median) and rewarding as they occur on the real network.
+The package does not cover the actual data calculation (weighted median) and rewarding as they occur on the real network.
 
 Please visit the [Developer Docs](../../dev/index.md) section to find a link to a reference implementation of a data provider.
-You can find useful ideas in this code that will help you interact with the FTSO contracts and the Flare chain.
-Do note you will have to do some work on top of this implementation if you would like to win rewards.
+This code contains useful information that will help you interact with the FTSO contracts and the Flare chain.
+If you want to earn rewards, you must do additional work on top of this implementation.
 
-### Providing Random numbers
+### Providing random numbers
 
-The price providing process is structured as a commit/reveal scheme to prevent users from copying other user's submitted data.
-The commit and reveal phases have strict time windows of a few minutes.
-With each reveal the data provider is also providing a random number.
-The random number is used as a salt in the reveal-commit scheme and later used in the reward calculation process.
+The data-providing process is structured as a commit-and-reveal scheme to prevent users from copying another user's submitted data.
+The commit-and-reveal phases are restricted to only a few minutes in duration.
+With each reveal the data provider also provides a random number.
+The random number is used first as a salt in the commit-and-reveal scheme and later during the reward calculation process.
 
-Data providers are encouraged to provide strong cryptographically-secure random numbers with high entropy and sufficient range.
-Strong random numbers are important for network security since this is the only true source of randomness on the network.
-Random numbers also make the commit-reveal scheme resilient to attacks.
+Data providers are encouraged to provide strong, cryptographically secure, random numbers with high entropy and sufficient range.
+Strong random numbers are important for network security because they are the only true source of randomness on the network.
+Random numbers also make the commit-and-reveal scheme resilient to attacks.
 Random numbers below 2^128^ are considered unsafe and are rejected on reveal.
 
 ## Going live
 
-Once you feel comfortable with the local NPM package, you are ready to start submitting your prices on-chain.
+When you feel comfortable with the local NPM package, you are ready to start submitting your data on-chain.
 
-To run on the real network you will have to face some new challenges:
+To run on the real network you will face some new challenges:
 
-* **Gain vote power**: A data provider can only whitelist himself as a provider if they have enough vote power.
+* **Gain vote power**: Data providers can whitelist themselves as providers only if they have enough vote power.
 * **Observation node**: It is recommended that each data provider runs an observation node.
 * **Timing issues**: You will face two challenges:
-    * Align with the on-chain time data. The on-chain timestamp might skew up to 30-40 seconds from the real world time.
-    * Figure out when to submit your price data. If you submit too late, the transaction might not get included, if submitting too early the price data might not be accurate enough.
-* **Claim rewards**: Be sure to claim your reward regularly and wrap them so more vote power is gained.
+    * Align with the on-chain time data. The on-chain timestamp might skew up to 30 - 40 seconds from the real-world time.
+    * Determine when to submit your data. If you submit it too late, the transaction might not get included. If you submit it too early, the data might not be accurate enough.
+* **Claim rewards**: Be sure to claim your reward regularly and wrap them so you earn more vote power.
 
 ## Notes
 
-* On the real network `PriceSubmitter` is deployed at a fixed address `0x1000000000000000000000000000000000000003`.
+* On the real network `PriceSubmitter` is deployed at the fixed address `0x1000000000000000000000000000000000000003`.
 
 ## FAQ
 
 ### What can I do to generate strong random numbers?
 
-Use already available random number generators that provide a cryptographically-secure (pseudo) random number.
+Use already available random number generators that provide a cryptographically secure (pseudo) random number.
 One good example would be the `csprng` library for `nodejs` applications.
-Keep in mind that you can submit randoms with 256 bits so try to use all the bits for entropy.
+Remember that you can submit randoms with 256 bits so try to use all the bits for entropy.
 Strong random numbers can also be generated by using Web3 utils: `web3.utils.toBN(web3.utils.randomHex(32))`
 
-### How do I calculate hash for the commit-reveal scheme?
+### How do I calculate hash for the commit-and-reveal scheme?
 
-The full and up-to-date specification for the commit-reveal scheme is available in specifications on the flare [smart contract repo](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/docs/specs/PriceProvider.md).
+The full and up-to-date specification for the commit-and-reveal scheme is available in specifications in the Flare [smart contract repository](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/docs/specs/PriceProvider.md).
 
-The following code snippets demonstrate how hashes can be generated in Typescript and Python using publicly available Web3 libraries.
+The following code snippets demonstrate how hashes can be generated in Typescript and Python using publicly available Web3 libraries:
 
 === "Typescript"
 
@@ -173,7 +173,7 @@ The following code snippets demonstrate how hashes can be generated in Typescrip
 
 The `PriceSubmitter` contract is deployed at the fixed address `0x1000000000000000000000000000000000000003`.
 All the other contracts are available as read methods on the `PriceSubmitter` contract.
-You should periodically check for updates to have up to date information.
+Periodically check for updates to have up to date information.
 Any important updates and contract changes will be broadcasted to the community.
 
 ### Where can I browse the source code and documentation for contracts?
@@ -183,63 +183,62 @@ The main smart contract repo is referenced in the [Developer Docs](../../dev/ind
 
 ### What are the important contracts I need to be aware of to be a data provider?
 
-1. The most important is the `PriceSubmitter` where you submit prices. It also has links to the below contracts.
-2. `FtsoRegistry`: Holds information about specific FTSOs, their symbols, indices and addresses.
-3. `FTSOManager`: Holds epoch and voting related configuration data and oversees all FTSOs, also gives access to additional useful contracts such as `Inflation and` `Supply` contracts.
-4. `VoterWhitelister`: The contract where a data provider list themselves to submit prices.
+The most important contract is the `PriceSubmitter`, where you submit data. It also has links to the following contracts:
 
-### How much does it cost to submit prices as a data provider?
+* `FtsoRegistry`: Holds information about specific FTSOs, their symbols, indices and addresses.
+* `FTSOManager`: Holds epoch and voting-related configuration data and oversees all FTSOs.
+  It also gives access to additional useful contracts, such as the `Inflation` and `Supply` contracts.
+* `VoterWhitelister`: The contract where data providers list themselves to submit data.
 
-Price submissions and reveals are currently discounted on Songbird and it costs approximately 3-4 SGB per day if all the submission and reveal transactions are successful.
+### How much does it cost to submit data as a data provider?
 
-### Where can I see for which FTSOs I am eligible to submit prices?
+Data submissions and reveals are currently discounted on Songbird. If all the submission and reveal transactions are successful, the cost is approximately 3 - 4 SGB per day.
+
+### Where can I see the FTSOs for which I am eligible to submit prices?
 
 Each address is whitelisted separately for each FTSO contract.
-There are two ways to query whitelisting data, one through the `VoterWhitelister` contract, the other through the `PriceSubmitter` contract.
+Query whitelisting data through the `VoterWhitelister` contract or the `PriceSubmitter` contract.
 
-### How to read whitelisted addresses using the `VoterWhitelister` contract?
+### How can I read whitelisted addresses using the `VoterWhitelister` contract?
 
-Per FTSO there is an array of whitelisted addresses.
+Each FTSO contains an array of whitelisted addresses.
 Open an FTSO contract and use the method `getFtsoWhitelistedPriceProviders`.
-Set the required index and check if your address is in this list.
+Set the required index and check whether your address is in this list.
 
-### How to read whitelisted addresses using the `PriceSubmitter` contract?
+### How can I read whitelisted addresses using the `PriceSubmitter` contract?
 
-Open the contract and use the method `voterWhitelistBitmap` where you should set the address your would like to query.
+Open the contract and use the method `voterWhitelistBitmap` to set the address you want to query.
 The function returns a bitmap corresponding to allowed FTSO indices in big-endian format. If you were allowed to submit princess for FTSOs with indices 0, 1 and 3, the returned bitmap would be 11 (`1011` in binary).
 
 ### Which currencies are available on the network?
 
-The best way to get available currencies is to query the `FtsoRegistry` that holds information about available FTSOs, their addresses, prices and indices.
-Songbird currently supports the following symbols: `XRP, LTC, XLM, DOGE, ADA, ALGO, BCH, DGB, BTC, ETH, FIL, SGB`, but new ones could be added by governance vote.
+To get available currencies, query `FtsoRegistry`, which holds information about available FTSOs, their addresses, data, and indices.
+Songbird currently supports the following symbols: `XRP, LTC, XLM, DOGE, ADA, ALGO, BCH, DGB, BTC, ETH, FIL, SGB`. New symbols can be added by a governance vote.
 
-The Flare network will start with the same symbols as Songbird.
+The Flare network will start with the same symbols that Songbird supports.
 
-### Is there a slashing mechanism for non-availability?
+### Do data providers that are unavailable get slashed?
 
-There is currently no slashing for not providing a price.
-If you do not provide a price in a specific price epoch, your can not gain reward in that epoch.
-So the unavailability has a direct negative impact on your reward rate as a data provider.
+Unavailable data providers don't get slashed, but if they don't provide data in a specific epoch, they do not earn rewards in that epoch.
 
-### The network time is not the same as local time, is there something wrong?
+### The network time is not the same as local time. Is something wrong?
 
-Due to the decentralized state of the network, one might experience some occasional time drifts (+-30s).
-We suggest you keep synchronized local time with global time through Network Time Protocol (NTP) to avoid missing any submit/reveal periods.
+Due to the decentralized state of the network, you might experience some occasional time drifts (+-30s).
+We suggest you keep synchronized local time with global time through the Network Time Protocol (NTP) to avoid missing any submit/reveal periods.
 
-### Where can I get information on which prices are rewarded?
+### Where can I get information about which data is rewarded?
 
-Each FTSO emits a `PriceFinalized` event that contains information about calculated median price and rewarding bounds.
+Each FTSO emits a `PriceFinalized` event that contains information about calculated median data and rewarding bounds.
 
 ### How can I see who has delegated to me?
 
-There is currently no on-chain structure that holds this data.
-You might want to listen to events emitted by delegations.
+Currently no on-chain structure holds this data. Consider listening to events emitted by delegations.
 
-### The NPM library is written in Typescript, can I use another language to write a data provider?
+### The NPM library is written in Typescript. Can I use another language to write a data provider?
 
-You are free to use any language to run the data provider, although some might be more suitable than others.
+Yes, you can use any language to run the data provider, although some languages might be better than others.
 Try using a language that offers good support for Ethereum smart contracts, e.g. `web3-your-language`.
-Many successful data providers use different technologies such as: go, C#, or python.
+Many successful data providers use different technologies, such as go, C#, or python.
 
 ### Is there any code for writing a data provider in Python?
 
@@ -247,13 +246,12 @@ This [gist](https://gist.github.com/jO-Osko/a9e8904cb3e8f9af5f154302117b4444) sh
 
 ### Are delegations transferable between different addresses?
 
-Delegations are currently not transferable.
-Specifically, you can't re-delegate the vote power that was delegated to your address.
+Delegations are currently not transferable. Specifically, you can't redelegate the vote power that was delegated to your address.
 
 ### Does the price epoch vary with each FTSO?
 
-No, price epoch configurations are governed by `FtsoManager` (you can get them using the `getPriceEpochConfiguration` method).
-This is necessary so that all submissions (and reveals) can happen at the same time.
+No, price epoch configurations are governed by the `FtsoManager` contract. You can get them using the `getPriceEpochConfiguration` method.
+This governance is necessary so that all submissions and reveals can happen at the same time.
 
 ### Can price epoch duration change?
 
@@ -262,4 +260,4 @@ Any such change will be broadcasted to the community and be part of a governance
 
 ### Why am I getting strange reverts on submission?
 
-One reason could be related to the status of your node. Make sure the node is healthy and has enough peers. See [Troubleshooting](./troubleshooting.md)
+One reason could be related to the status of your node. Ensure the node is healthy and has enough peers. See [Troubleshooting](./troubleshooting.md).

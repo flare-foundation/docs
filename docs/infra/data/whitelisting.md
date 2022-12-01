@@ -2,12 +2,12 @@
 
 ## Procedure
 
-Only top vote power holders per FTSO are allowed to submit prices.
+Only top vote-power holders per FTSO are allowed to submit data.
 Per FTSO, the vote power of an address is based on the wrapped tokens balance (`$WFLR` or `$WSGB`).
 Whitelisting a data provider is done in a fully decentralized way and facilitated by the `VoterWhitelister` contract.
 Data providers can request to be whitelisted for a specific asset index using `requestWhitelistingVoter()` or request whitelisting for all assets at once `requestFullVoterWhitelisting()`.
 
-The `VoterWhitelister` contract enables price submissions only by whitelisted addresses.
+The `VoterWhitelister` contract enables data submissions only by whitelisted addresses.
 For each FTSO, up to N (currently 100) voters can be listed.
 The number of voters per asset can vary and is configurable by Governance.
 When a data provider tries to whitelist itself, its vote power is calculated using the vote power block of the current reward epoch.
@@ -28,7 +28,7 @@ The method `requestFullVoterWhitelisting` tries to whitelist your address for al
 ### Is there a minimal vote power required to be whitelisted as a data provider?
 
 There is no minimum vote power required.
-Top 100 data providers with the highest vote power can provide prices.
+Top 100 data providers with the highest vote power can provide data.
 This is handled on-chain by the `VoterWhitelister` contract.
 Once all the slots in the list are taken and a new address is being whitelisted, the address with the lowest vote power will be kicked out of the list.
 
