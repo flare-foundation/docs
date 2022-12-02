@@ -184,7 +184,7 @@ Flare will announce to the community that enough tokens have been distributed an
 
 !!! danger "Trigger: 1 week after Notice Period starts"
 
-All FLR token holders (obtained either from the new airdrop or bought at Exchanges) can vote on [FIP.01](https://flare.xyz/fip01/) using [the voting frontend](https://coston-manage.flare.rocks/flare/accounts).
+All FLR token holders (obtained either from the new airdrop or bought at Exchanges) can vote on [FIP.01](https://flare.xyz/fip01/) using a voting front-end (under development).
 
 Flare will announce to the community that the Voting Period has started and relay instructions on how to vote.
 
