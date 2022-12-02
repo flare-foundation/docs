@@ -59,7 +59,7 @@ To finish connecting:
 
 ## Wrap and Delegate
 
-Brave users can access existing decentralized applications (dApps) created by independent organizations to wrap and delegate their SGB and FLR tokens, via the following steps ([Read more about delegation](../delegation/README.md)):
+Brave users can access existing decentralized applications (dApps) created by independent organizations to wrap and delegate their SGB and FLR tokens, via the following steps ([Read more about delegation](../delegation/index.md)):
 
 1. Open Brave Browser and login to your wallet (make sure you are connected to Songbird or Flare).
 2. Open a second search tab within Brave.

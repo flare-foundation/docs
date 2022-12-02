@@ -54,7 +54,7 @@ plugins:
           'tutorials/explorer/coston-explorer.md': 'user/block-explorer.md'
           'tutorials/developing-on-top-of-flare/README.md': 'dev/index.md'
           'tutorials/developing-on-top-of-flare/important-links.md': 'dev/index.md'
-          'tutorials/delegation/README.md': 'user/delegation/README.md'
+          'tutorials/delegation/README.md': 'user/delegation/index.md'
           'tutorials/delegation/delegation-in-detail.md': 'user/delegation/delegation-in-detail.md'
           'tutorials/delegation-faq/README.md': 'user/delegation/delegation-faq.md'
           'tutorials/delegation-faq/block-explorer-+-metamask.md': 'user/delegation/manual-delegation.md'
@@ -74,7 +74,6 @@ plugins:
           'dev/reference/flare.md': 'dev/reference/network-configs.md'
           'dev/reference/songbird.md': 'dev/reference/network-configs.md'
           'dev/reference/coston-testnet.md': 'dev/reference/network-configs.md'
-          'infra/observation.md' : 'infra/observation/deploying.md'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -122,7 +121,8 @@ nav:
     - user/index.md
     - user/block-explorer.md
     - Delegation:
-      - user/delegation/README.md
+      - user/delegation/index.md
+      - user/delegation/delegation-overview.md
       - user/delegation/delegation-in-detail.md
       - user/delegation/delegation-faq.md
       - user/delegation/manual-delegation.md
@@ -142,17 +142,21 @@ nav:
   - Infrastructure guides:
     - infra/index.md
     - FTSO Data Providers:
+      - infra/data/index.md
       - infra/data/deploying.md
       - infra/data/whitelisting.md
       - infra/data/troubleshooting.md
     - Observation Nodes:
+      - infra/observation/index.md
       - infra/observation/deploying.md
       - infra/observation/faq.md
     - Validator Nodes:
+      - infra/validation/index.md
       - infra/validation/deploying.md
   - Developer docs:
     - dev/index.md
     - Reference guides:
+      - dev/reference/index.md
       - dev/reference/contracts.md
       - dev/reference/api-portal.md
       - dev/reference/network-configs.md

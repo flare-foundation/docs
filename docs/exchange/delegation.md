@@ -4,7 +4,7 @@ Delegation is one of the multiple ways in which the Flare blockchain rewards par
 In particular, delegation allows token holders to put their stake behind an FTSO [data provider](glossary.md#data_provider) to increase its relative weight (See this [FTSO blog post](https://flare.xyz/ftso-a-breakdown/) for more information).
 In return, each time a data provider submits useful information it **shares its reward with all the token holders that delegated to it**.
 
-The [Delegation Guide](../user/delegation/README.md) details this process for users.
+The [Delegation Guide](../user/delegation/index.md) details this process for users.
 However, since Exchanges keep user's tokens, only Exchanges can perform delegation.
 If you are an Exchange and want to offer your users the ability to earn rewards by delegation, this page summarizes the process and explains how to perform it on the user's behalf.
 
