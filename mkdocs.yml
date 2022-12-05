@@ -155,6 +155,8 @@ nav:
       - infra/validation/deploying.md
   - Developer docs:
     - dev/index.md
+    - dev/summary.md
+    - dev/faq.md
     - Reference guides:
       - dev/reference/index.md
       - dev/reference/contracts.md

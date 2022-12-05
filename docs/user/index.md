@@ -1,3 +1,9 @@
 # User Guides
 
 This section contains step-by-step guides on how to use tools like the Block Explorer or the different wallets.
+
+Select one of the topics below:
+
+* [Block Explorer](./block-explorer.md)
+* [Delegation](./delegation/index.md)
+* [Wallets](./wallets/index.md)
