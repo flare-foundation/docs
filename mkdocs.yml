@@ -120,7 +120,7 @@ nav:
   - User guides:
     - user/index.md
     - user/block-explorer.md
-    - Delegation:
+    - FTSO Delegation:
       - user/delegation/index.md
       - user/delegation/delegation-overview.md
       - user/delegation/delegation-in-detail.md

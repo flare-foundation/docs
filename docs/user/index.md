@@ -5,5 +5,5 @@ This section contains step-by-step guides on how to use tools like the Block Exp
 Select one of the topics below:
 
 * [Block Explorer](./block-explorer.md)
-* [Delegation](./delegation/index.md)
+* [FTSO Delegation](./delegation/index.md)
 * [Wallets](./wallets/index.md)
