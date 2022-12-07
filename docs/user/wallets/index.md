@@ -1,8 +1,6 @@
 # Wallets
 
-Choose your wallet from the navigation menu.
-
-Select one of the topics below:
+Choose your wallet:
 
 * [Bifrost Wallet](./bifrost-wallet.md)
 * [D'CENT Wallet](./dcent-wallet.md)
