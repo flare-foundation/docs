@@ -92,3 +92,42 @@ code.beta {
     border-top: solid 1px var(--md-default-fg-color--lightest);
     padding-top: 8px;
 }
+
+/* Cards */
+.md-typeset .cards ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 0;
+}
+
+.md-typeset .cards ul li {
+    background: #F9FBFC;
+    border-radius: 8px;
+    width: 350px;
+    padding: 8px;
+    margin-left: 0;
+    transition: background 0.25s;
+}
+
+.md-typeset .cards ul li:hover {
+    background: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset .cards p {
+    margin: 0;
+    text-align: center;
+}
+
+.md-typeset .cards strong {
+    font-weight: bold;
+    font-size: x-large;
+    text-decoration: none;
+    color: #3893CC;
+}
+
+.md-typeset .cards a {
+    text-decoration: none;
+    color: var(--md-primary-fg-color);
+}
