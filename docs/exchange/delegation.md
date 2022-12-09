@@ -1,4 +1,4 @@
-# Delegating on the user's behalf
+# Delegating on the User's Behalf
 
 Delegation is one of the multiple ways in which the Flare blockchain rewards participants of the ecosystem.
 In particular, delegation allows token holders to put their stake behind an FTSO [data provider](glossary.md#data_provider) to increase its relative weight (See this [FTSO blog post](https://flare.xyz/ftso-a-breakdown/) for more information).
@@ -22,7 +22,7 @@ Keeping this in mind, this page explains how to delegate the users' tokens and c
     * On Songbird, these epochs last 7 days and start every **Saturday at around 8:40AM UTC**.
     * On Flare, they last 3.5 days and start roughly every **Monday at 7:00 UTC and Thursday at 19:00 UTC**.
 
-## Selecting a data provider
+## Selecting a Data Provider
 
 It is the Exchange that must select the FTSO [data provider](glossary.md#data_provider) upon which to delegate, so the first step is to choose the one you are most confident to provide **consistently good data** (and therefore higher rewards).
 

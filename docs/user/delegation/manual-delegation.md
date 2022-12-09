@@ -1,4 +1,4 @@
-# Manual delegation
+# Manual Delegation
 
 This page explains how to delegate using a block explorer and Metamask.
 
@@ -16,7 +16,7 @@ Find the Flare or Songbird address which should look something like `0xbf61db1cd
 Input that address in a [block explorer](../block-explorer.md).
 You should see that every few minutes it is submitting transactions named `SubmitPriceHashes` and `RevealPrices`.
 
-## Where can I find the delegation API
+## Where can I find the delegation API?
 
 The delegation API can be found in the WNAT contract, in function `delegate`.
 

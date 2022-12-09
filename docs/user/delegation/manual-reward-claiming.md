@@ -1,4 +1,4 @@
-# Manual reward claiming
+# Manual Reward Claiming
 
 This page explains how to claim your delegation rewards using a block explorer and Metamask. This is the continuation of the [Manual delegation](manual-delegation.md) page.
 

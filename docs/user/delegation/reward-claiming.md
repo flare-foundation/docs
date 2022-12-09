@@ -1,4 +1,4 @@
-# Reward claiming overview
+# Reward Claiming Overview
 
 Each user delegating its vote power to an active data provider can earn rewards.
 The rewards are accumulated through the course of reward epochs, 7-days long on Songbird and 3.5-days long on Flare.

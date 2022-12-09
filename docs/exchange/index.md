@@ -8,11 +8,11 @@ The first thing you should know is that:
 
     Even though the node code is different, Flare offers the same API as Ethereum so you can integrate with it in the same way.
 
-    * [Deploy a Flare Observation node](../infra/observation/deploying.md) to access the network.
+    * [Deploy a Flare Observer node](../infra/observation/deploying.md) to access the network.
     * [Use the appropriate Chain ID](../dev/reference/network-configs.md).
     * Use standard Ethereum libraries like [web3.js](https://web3js.readthedocs.io/) if you want.
 
-## Quick Information About Flare
+## Quick Information about Flare
 
 |                                     |                                                                                 |
 | ----------------------------------- | ------------------------------------------------------------------------------- |

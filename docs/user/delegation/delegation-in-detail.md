@@ -1,4 +1,4 @@
-# Delegation in detail
+# Delegation in Detail
 
 Delegation enables a user to keep holding their balance (tokens) while delegating the vote power this balance represents.
 Two delegation methods are supported: The basic (normal) delegation is **delegation by percentage**, the other being **explicit delegation**.
@@ -34,20 +34,20 @@ The delegation system supports:
 
 Delegation units are the same as balance units.
 
-## Check pointing historical data
+## Check Pointing Historical Data
 
 Token data regarding vote power, delegation, balance and supply is all checkpointed to allow the retrieval of historical values.
 Per change in any value, a checkpoint is added to the array which includes the updated value and the block number.
 When trying to read historical data, a binary search is performed on the array.
 With this, the data retrieval cost grows on a logarithmic scale.
 
-## Vote power data
+## Vote Power Data
 
 The above delegation scheme creates a mapping from balance to vote power for each address.
 The vote power of each address reflects its own balance plus any delegated vote power from other addresses.
 Vote power is never reused (double-spent): if vote power is delegated, the delegating address does not have this vote power under its own account.
 
-## Voting campaigns using the vote power token
+## Voting Campaigns Using the Vote Power Token
 
 Checkpointed vote power data is used in voting campaigns (like FTSO reward epochs, for example).
 A voting campaign uses a randomly chosen block number from the past (vote power block).
@@ -65,7 +65,7 @@ In this situation, an off-chain process, such as a Twitter storm, calls users to
 The revoke will update the cached value of the vote power for the specific block which is being used for this reward epoch.
 So if a user revokes its vote power delegation on a specific block, checkpoints for the vote power will not be updated, only the cached vote power values are zeroed.
 
-## Vote power block selection
+## Vote Power Block Selection
 
 <figure markdown>
 ![Vote power block selection diagram](../../assets/votepower diagram.svg){.allow-zoom}
@@ -87,7 +87,7 @@ Any block between `2874828` and `3003881` is therefore eligible for selection as
 In this reward epoch, block `2881097` with timestamp `1637825442` (Thursday, November 25, 2021 7:30:42 AM GMT) was selected.
 This is before the last quarter of the week (Thursday, November 25, 2021 2:41:33 PM GMT) if we were to take the timestamp measure.
 
-## Developer information
+## Developer Information
 
 ### Contracts
 
@@ -125,7 +125,7 @@ For example, the normal vote power query function is `votePowerOfAt(address, blo
 This has a matching cache query: `votePowerOfAtCache(address, block)` which also caches the data on its first usage for a specific address and block.
 Later calls to both of these functions will use the cached value if it exists.
 
-### Retrieving historical data
+### Retrieving Historical Data
 
 A large part of the native token inflation is distributed to participants in the FTSO data-submission process.
 The reward won by a data provider is shared between the data provider and the vote power delegators to the data provider.

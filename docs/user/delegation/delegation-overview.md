@@ -1,4 +1,4 @@
-# Delegation overview
+# Delegation Overview
 
 Any user holding Flare tokens, whether `$FLR` on Flare or `$SGB` on Songbird, can delegate its vote power to data providers in the [Flare FTSO system](glossary.md#ftso).
 

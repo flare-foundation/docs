@@ -11,29 +11,29 @@ The suggested architecture uses a **Central Exchange wallet** with multiple **Us
   <figcaption>General structure of an Exchange.</figcaption>
 </figure>
 
-### Exchange's central wallet (hot)
+### Exchange's Central Wallet (Hot)
 
 This account contains the Exchange's funds required to perform user operations: Users' deposits are ultimately routed here, and users' withdrawals are taken from here.
 
 The private keys to this account need to be on an online machine (the [Exchange server](#exchange-server)) so this is considered a **hot wallet**. For security reasons, it is recommended that the hot wallet only contains enough funds to perform daily operations, whereas the bulk of the funds are kept in the [cold wallet](#exchanges-central-wallet-cold).
 
-### Exchange's central wallet (cold)
+### Exchange's Central Wallet (Cold)
 
 The private keys to this account are kept in an offline machine so it is less vulnerable to attacks. Moreover, it is recommended that this is a multi-signature account so the approval of more than one administrator is required to move funds from it.
 
 Periodically (e.g., once a day) funds are transferred from or to the [hot wallet](#exchanges-central-wallet-hot) so it can continue operating while the bulk of the funds are protected in the cold wallet.
 
-### Users' reception wallets
+### Users' Reception Wallets
 
 When users sign up with the Exchange, a reception wallet is created for them in order to perform deposits. The reception wallets are usually empty: as soon as they receive funds these are transferred to the [Exchange's hot wallet](#exchanges-central-wallet-hot).
 
 The private keys to the reception wallets always remain under the Exchange's control; these wallets are offered to users as a convenience only. Users cannot perform any operation on these wallets other than deposits.
 
-### User's wallet
+### User's Wallet
 
 This is the origin of deposits made to the Exchange and the receiver of withdrawals made from the Exchange. It can be a wallet in control of the user (the user holds its private key), a custodial wallet or another Exchange, for example.
 
-### Exchange server
+### Exchange Server
 
 This is an online server, part of the Exchange's infrastructure, that receives withdrawal requests from users and monitors the reception wallets to detect incoming deposits. It holds the private keys to the [hot wallet](#exchanges-central-wallet-hot) and to all the [reception wallets](#users-reception-wallets) so it can move funds from them in response to user's requests.
 
@@ -46,9 +46,9 @@ This database keeps track of every user's funds, since the actual tokens from al
 
 The [Exchange server](#exchange-server) updates this DB in response to user's deposits and withdrawals.
 
-### Flare Observation Node
+### Flare Observer Node
 
-An observation node is a regular Flare node that does not partake in [consensus](glossary.md#consensus) but is still aware of the current state of the blockchain and allows submitting transactions. **It is highly recommended** that Exchanges deploy their own observation nodes to access the network, instead of relying on third-party services. Read the [Deploying an Observation Node](../infra/observation/deploying.md) guide to learn how to do this.
+An observer node is a regular Flare node that does not partake in [consensus](glossary.md#consensus) but is still aware of the current state of the blockchain and allows submitting transactions. **It is highly recommended** that Exchanges deploy their own observer nodes to access the network, instead of relying on third-party services. Read the [Deploying an Observer Node](../infra/observation/deploying.md) guide to learn how to do this.
 
 ## Detecting Deposits
 
@@ -117,7 +117,7 @@ The [Exchange server](#exchange-server) must be continuously monitoring transfer
 
 3. The server then **checks the wallet address** to find which user account it belongs to, and **adds the received amount to the user's balance**.
 
-4. The server **announces a transaction** to the network (through the Exchange's own [observation node](#flare-observation-node)) to move the received funds to the [hot wallet](#exchanges-central-wallet-hot).
+4. The server **announces a transaction** to the network (through the Exchange's own [observer node](#flare-observer-node)) to move the received funds to the [hot wallet](#exchanges-central-wallet-hot).
 
     [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/). Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
@@ -136,7 +136,7 @@ Users must request withdrawals directly to the [Exchange server](#exchange-serve
 
 2. The server **checks** that the user has the required balance to perform the withdrawal.
 
-3. The server **announces a transaction** to the network (through the Exchange's own [observation node](#flare-observation-node)) to move the requested funds from the [hot wallet](#exchanges-central-wallet-hot) to the requested destination address.
+3. The server **announces a transaction** to the network (through the Exchange's own [observer node](#flare-observer-node)) to move the requested funds from the [hot wallet](#exchanges-central-wallet-hot) to the requested destination address.
 
     [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/). Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 

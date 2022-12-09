@@ -1,5 +1,5 @@
-# Validation Nodes
+# Validator Nodes
 
-Select one of the topics below:
+Select the topic below:
 
-* [Deploying a Validation Node](./deploying.md)
+* [Deploying a Validator Node](./deploying.md)

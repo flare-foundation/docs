@@ -1,4 +1,4 @@
-# Deploying a Validation Node
+# Deploying a Validator Node
 
 ## Introduction
 
@@ -22,9 +22,9 @@ This guide explains how to deploy your own validator node so you can participate
 
 ## Prerequisites
 
-Validators run the same software as regular **observation nodes**, therefore, this guide assumes you have already read the [Deploying an Observation Node](../observation/deploying.md) guide.
+Validators run the same software as regular **observer nodes**, therefore, this guide assumes you have already read the [Deploying an Observer Node](../observation/deploying.md) guide.
 
-The requirements to deploy a validator node are the same as for observation nodes, except on the CPU and RAM front which are heavier due to the extra work required:
+The requirements to deploy a validator node are the same as for observer nodes, except on the CPU and RAM front which are heavier due to the extra work required:
 
 |                 | Hardware    |                      | Software                                                        |
 | --------------: | :---------- | -------------------: | --------------------------------------------------------------- |
@@ -38,9 +38,9 @@ The requirements to deploy a validator node are the same as for observation node
 
 ### 1. Configure the Node
 
-A validator node is deployed like an observation node, but there are some things to consider first.
+A validator node is deployed like an observer node, but there are some things to consider first.
 
-Validators do more work than plain observation nodes so please consider the recommended **hardware specifications** above.
+Validators do more work than plain observer nodes so please consider the recommended **hardware specifications** above.
 
 Validator **security** impacts the whole network.
 Please consider the following items carefully:
@@ -54,7 +54,7 @@ Please consider the following items carefully:
 
 * The node should **only act as validator**, and not accept RPC API calls too.
 
-    You should deploy a separate observation node for that task, which can point to your validator for peering and bootstrapping.
+    You should deploy a separate observer node for that task, which can point to your validator for peering and bootstrapping.
 
 * The validator should only enable the minimum set of [EVM](glossary.md#evm) APIs by adding this line to a [configuration file](../observation/deploying.md#additional-configuration):
 
@@ -117,4 +117,4 @@ Please consider the following items carefully:
 
 ### 2. Run the Node
 
-After taking the above considerations into account, you can now start up your node by following the [Deploying an Observation Node](../observation/deploying.md) guide.
+After taking the above considerations into account, you can now start up your node by following the [Deploying an Observer Node](../observation/deploying.md) guide.

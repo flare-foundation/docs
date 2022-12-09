@@ -1,4 +1,4 @@
-# Reward claiming in detail
+# Reward Claiming in Detail
 
 !!! attention
 
@@ -10,14 +10,14 @@ During the FTSO voting process, rewards are being distributed to data providers 
 Depending on the vote power share and data provider fee percentage, a part of this reward belongs to users who have delegated their `$WFLR` or `$WSGB` vote power to the data providers.
 The rewards can be claimed via the contract `FtsoRewardManager` that implements `IFtsoRewardManager` interface as described in this document.
 
-### Reward claiming
+### Reward Claiming
 
 The reward claiming process depends on vote power delegation mode.
 The default delegation mode is delegation by percentage.
 Delegation by amount is intended for advanced users.
 The delegation mode of a user can be checked by calling `delegationModeOf` on the WNAT contract that implements the`IVPToken` interface.
 
-#### Delegation by percentage
+#### Delegation by Percentage
 
 The user that has delegated vote power by percentage can claim rewards by calling the function `claimReward` with the following signature.
 
@@ -52,7 +52,7 @@ To obtain more detailed information on reward status, its origin and amount, a u
 
 A user that is delegating by percentage can also use the function `claimRewardFromDataProviders` (described in the following section) to claim the rewards only for specific data providers (e.g., if the user wishes to have rewards from different data providers transferred to different recipient addresses). However, the gas consumption for calling `claimRewardFromDataProviders` higher.
 
-#### Delegation by amount
+#### Delegation by Amount
 
 A user delegating vote power by amount can claim rewards by calling the function `claimRewardFromDataProviders` with the following signature.
 
@@ -107,7 +107,7 @@ Parameters:
 * `rewardEpoch`: The ID of the reward epoch the claimed reward corresponds to.
 * `amount`: The value of the claimed reward.
 
-#### Reward claim expiration
+#### Reward Claim Expiration
 
 The reward can be claimed from the time the reward was allocated until the reward expiry epoch.
 The oldest and the newest reward epoch that allow reward claiming can be obtained by calling `getEpochsWithClaimableRewards` (these correspond to the return values `_startEpochId` and `_endEpochId`, respectively).
@@ -129,7 +129,7 @@ event RewardClaimsExpired(
 
 The information for which epochs the rewards have been already claimed can be obtained by checking the state of rewards described in the following section.
 
-### Reward amount in depth
+### Reward Amount in Depth
 
 #### Overview
 
@@ -146,7 +146,7 @@ Suppose `FP` denotes `P`'s fee percentage for `E`.
 
 Then `P` is entitled to the reward equal to `(SHARE * (1 - FP) * REWARD) + (FP * REWARD)`, and a delegator is entitled to the amount equal to `SHARE * (1 - FP) * REWARD`.
 
-#### State of rewards
+#### State of Rewards
 
 The reward amounts for a specific address can be checked by calling either `getStateOfRewards` or `getStateOfRewardsFromDataProviders`. The difference between these two functions is that in the first the array of data providers (to which the reward is initially allocated) is obtained based on delegation history, while in the second the array has to be specified as an input parameter. Note that `getStateOfRewards` can only be used for addresses that are declared to be delegating by percentage.
 
@@ -185,9 +185,9 @@ Parameters:
 
 Note that the amounts reported by these two methods are informational and can slightly differ from the actual amounts obtained via `claimReward` and `claimRewardFromDataProviders` due to rounding.
 
-### Reward fee
+### Reward Fee
 
-#### Current fee percentage
+#### Current Fee Percentage
 
 Data provider fee is determined by fee percentage. Current setting can be obtained by `getDataProviderCurrentFeePercentage`.
 
@@ -201,7 +201,7 @@ function getDataProviderCurrentFeePercentage(
 
 The value `_feePercentageBIPS` is given in basis points (BIPS), which is a percentage value multiplied by 100 (e.g., 10% fee is 1000).
 
-#### Scheduled fee percentage changes
+#### Scheduled Fee Percentage Changes
 
 The fee percentage is subject to changes. The changes made by data providers are time locked, meaning they are scheduled for some future time. Scheduled changes can be checked by calling `getDataProviderScheduledFeePercentageChanges`, which returns the fee percentages in the future.
 

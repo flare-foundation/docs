@@ -1,4 +1,4 @@
-# Reward claiming FAQ
+# Reward Claiming FAQ
 
 ## Am I eligible for rewards?
 

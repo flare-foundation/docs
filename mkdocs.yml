@@ -116,7 +116,7 @@ nav:
     - tech/state-connector.md
     - tech/validators.md
     - tech/glossary.md
-  - User guides:
+  - User Guides:
     - user/index.md
     - user/block-explorer.md
     - FTSO Delegation:
@@ -138,30 +138,30 @@ nav:
       - user/wallets/how-to-access-flare-network-with-metamask.md
       - user/wallets/safepal-s1-wallet.md
       - user/wallets/brave-wallet.md
-  - Infrastructure guides:
+  - Infrastructure Guides:
     - infra/index.md
     - FTSO Data Providers:
       - infra/data/index.md
       - infra/data/deploying.md
       - infra/data/whitelisting.md
       - infra/data/troubleshooting.md
-    - Observation Nodes:
+    - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md
       - infra/observation/faq.md
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
-  - Developer docs:
+  - Developer Docs:
     - dev/index.md
     - dev/summary.md
     - dev/faq.md
-    - Reference guides:
+    - Reference Guides:
       - dev/reference/index.md
       - dev/reference/contracts.md
       - dev/reference/api-portal.md
       - dev/reference/network-configs.md
-  - Exchange guides:
+  - Exchange Guides:
     - exchange/index.md
     - exchange/architecture.md
     - exchange/delegation.md

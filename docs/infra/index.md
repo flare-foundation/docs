@@ -5,5 +5,5 @@ This section contains step-by-step guides on how to deploy the different compone
 Select one of the topics below:
 
 * [FTSO Data Providers](./data/index.md)
-* [Observation Nodes](./observation/index.md)
-* [Validation Nodes](./validation/index.md)
+* [Observer Nodes](./observation/index.md)
+* [Validator Nodes](./validation/index.md)

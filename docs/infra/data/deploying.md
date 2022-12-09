@@ -16,9 +16,9 @@ To operate a data provider you need to be familiar with:
 * Interacting with smart contract using a web3 library.
 * The Hardhat runtime environment.
 
-## First steps
+## First Steps
 
-To quickly get started, use the kick-off NPM package [referenced here](../../dev/index.md).
+To quickly get started, use the [NPM kick-off package](https://www.npmjs.com/package/@flarenetwork/ftso_price_provider_kick_off_package).
 This package showcases the main contracts related to whitelisting a data provider and submitting data.
 It also enables you to deploy FTSO mock contracts in a local setup and submit data to those contracts.
 Working with the package should help all setup stages for your data provider.
@@ -36,7 +36,7 @@ Please visit the [Developer Docs](../../dev/index.md) section to find a link to 
 This code contains useful information that will help you interact with the FTSO contracts and the Flare chain.
 If you want to earn rewards, you must do additional work on top of this implementation.
 
-### Providing random numbers
+### Providing Random Numbers
 
 The data-providing process is structured as a commit-and-reveal scheme to prevent users from copying another user's submitted data.
 The commit-and-reveal phases are restricted to only a few minutes in duration.
@@ -48,14 +48,14 @@ Strong random numbers are important for network security because they are the on
 Random numbers also make the commit-and-reveal scheme resilient to attacks.
 Random numbers below 2^128^ are considered unsafe and are rejected on reveal.
 
-## Going live
+## Going Live
 
 When you feel comfortable with the local NPM package, you are ready to start submitting your data on-chain.
 
 To run on the real network you will face some new challenges:
 
 * **Gain vote power**: Data providers can whitelist themselves as providers only if they have enough vote power.
-* **Observation node**: It is recommended that each data provider runs an observation node.
+* **Observer node**: It is recommended that each data provider runs an observer node.
 * **Timing issues**: You will face two challenges:
     * Align with the on-chain time data. The on-chain timestamp might skew up to 30 - 40 seconds from the real-world time.
     * Determine when to submit your data. If you submit it too late, the transaction might not get included. If you submit it too early, the data might not be accurate enough.

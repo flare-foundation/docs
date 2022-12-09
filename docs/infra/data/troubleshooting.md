@@ -31,7 +31,7 @@ In the WNat contract use `votePowerOfAt,` set the address and the block and read
 
 You might be submitting a bit too late in the current epoch.
 Try to submit the data a few seconds earlier.
-You might want to consider running an observation node that provides a better quality connection to the network.
+You might want to consider running an observer node that provides a better quality connection to the network.
 Also, check if your server time is synced through Network Time Protocol (NTP).
 
 ## I am experiencing strange reverts when submitting and revealing data.

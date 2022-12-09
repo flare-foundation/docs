@@ -2,9 +2,9 @@
 
 Flare provides block explorers for all its networks:
 
-- [Flare explorer](https://flare-explorer.flare.network)
-- [Songbird explorer](https://songbird-explorer.flare.network)
-- [Coston explorer](https://coston-explorer.flare.network)
+- [Flare Explorer](https://flare-explorer.flare.network)
+- [Songbird Explorer](https://songbird-explorer.flare.network)
+- [Coston Explorer](https://coston-explorer.flare.network)
 
 All explorers are a fork of [Blockscout](https://github.com/blockscout/blockscout), adapted to the Flare networks ([Blockscout Docs](https://docs.blockscout.com)).
 

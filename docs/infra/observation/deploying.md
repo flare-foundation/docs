@@ -1,11 +1,11 @@
-# Deploying an Observation Node
+# Deploying an Observer Node
 
 ## Introduction
 
-Observation nodes enable anyone to observe the network and submit transactions.
-Unlike [validator nodes](../../tech/validators.md), which provide state consensus and add blocks, observation nodes remain outside the network and have no effect on consensus or blocks.
+Observer nodes enable anyone to observe the network and submit transactions.
+Unlike [validator nodes](../../tech/validators.md), which provide state consensus and add blocks, observer nodes remain outside the network and have no effect on consensus or blocks.
 
-Running an observation node is optional.
+Running an observer node is optional.
 However, submitting transactions through your own node offers a number of benefits:
 
 * Transactions are sent directly to the network instead of through a third party, removing a potential security risk.
@@ -13,7 +13,7 @@ However, submitting transactions through your own node offers a number of benefi
   Your own node does not have such restriction.
 * The time savings described above allow [FTSO data providers](glossary.md#data_provider) to submit their data a few seconds later, thus having more time to gather data before submitting.
 
-This guide explains how to deploy your own observation node so you can reap these benefits.
+This guide explains how to deploy your own observer node so you can reap these benefits.
 
 ## Prerequisites
 
@@ -115,7 +115,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 ### 2. Songbird Node Whitelisting
 
-While **Songbird** network is being tested, all nodes wanting to peer with it (including observation nodes) need to have their IP address **whitelisted**.
+While **Songbird** network is being tested, all nodes wanting to peer with it (including observer nodes) need to have their IP address **whitelisted**.
 
 To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@TampaBay7`) or email ([tom@flare.network](mailto:tom@flare.network)) and request to be whitelisted.
 
@@ -328,7 +328,7 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
 * [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string):
     Optional JSON configuration file, in case you want to use lots of non-default values.
 
-    ??? tip "Sample configuration file for observation nodes"
+    ??? tip "Sample configuration file for observer nodes"
 
         These are the most common configuration options.
         Put them in a file in the `{chain-config-dir}/C/config.json` folder.
