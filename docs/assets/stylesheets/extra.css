@@ -103,8 +103,8 @@ code.beta {
 }
 
 .md-typeset .cards ul li {
-    background: #F9FBFC;
-    border-radius: 8px;
+    border: 1px solid #eee;
+    border-radius: 16px;
     width: 350px;
     padding: 8px;
     margin-left: 0;
@@ -112,7 +112,8 @@ code.beta {
 }
 
 .md-typeset .cards ul li:hover {
-    background: var(--md-accent-fg-color--transparent);
+    background: rgba(181, 78, 95, 0.2);
+    border: 1px solid #888;
 }
 
 .md-typeset .cards p {
@@ -124,7 +125,7 @@ code.beta {
     font-weight: bold;
     font-size: x-large;
     text-decoration: none;
-    color: #3893CC;
+    color: #d3385b;
 }
 
 .md-typeset .cards a {
