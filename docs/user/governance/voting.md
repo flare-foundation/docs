@@ -133,7 +133,7 @@ Votes can be transferred to another account while the `$WSGB` tokens remain in y
 This is useful, for example, if you have `$WSGB` in multiple self-custody wallets, since you can simplify your voting process by transferring all the votes to a single wallet.
 
 By completing the following process, you are crediting another account with votes only;
-The tokens themselves stay in the original wallet.
+the tokens themselves stay in the original wallet.
 
 1. Copy the Songbird address you want to transfer votes to.
 2. On the **Voting** tab in the Flare Portal, locate your amount of current votes in the black box, and click **Transfer votes**.
