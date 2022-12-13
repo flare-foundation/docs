@@ -103,6 +103,7 @@ extra:
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
 copyright: Copyright &copy; 2022 Flare Networks. <a href="#__consent">Cookie settings</a>.
+site_url: https://docs.flare.network
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 nav:
