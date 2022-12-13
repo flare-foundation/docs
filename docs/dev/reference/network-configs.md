@@ -126,6 +126,18 @@ Along with the endpoints listed above to interact with its own networks, Flare o
         https://algorand-api.flare.network/v2/status | jq
         ```
 
+=== "Ethereum"
+
+    **RPC endpoint**: [https://ethereum-api.flare.network/](https://ethereum-api.flare.network/)
+
+    !!! Example "Sample query"
+
+        ```bash
+        curl -s -X POST -m 10 -H "Content-Type: application/json" \
+        -d '{"jsonrpc": "2.0", "id":67, "method":"eth_syncing", "params":[]}' \
+        https://ethereum-api.flare.network | jq
+        ```
+
 [flrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-14.json>
 [sgbId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-19.json>
 [cflrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-16.json>
