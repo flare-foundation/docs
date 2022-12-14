@@ -22,7 +22,7 @@ Consensus { #consensus }
 : Algorithm that makes nodes on a blockchain’s network agree on the validity of a given transaction, even if some of the nodes provide invalid transactions or try to disrupt the network ([Byzantine Fault Tolerance](#byzantine_fault_tolerance)).
 
 Coston { #coston }
-: The name given to Flare's public [test networks](#test_network), in remembrance and celebration of a great inventor, [Martha J. Coston](https://en.wikipedia.org/wiki/Martha_Coston) (1826-1904).
+: The name given to both of Flare's public [test networks](#test_network) (Coston and Coston2), in remembrance and celebration of a great inventor, [Martha J. Coston](https://en.wikipedia.org/wiki/Martha_Coston) (1826-1904).
 
 Cross-chain (or inter-ecosystem) interoperability { #cross_chain }
 : Communication between two or more disparate blockchain ecosystems that are technologically incompatible due to the lack of shared systems, protocols or code (e.g. Ethereum and Solana).
@@ -121,7 +121,7 @@ Sybil Resistance { #sybil_resistance }
 : The ability of a distributed system to overcome a Sybil attack, in which a malicious actor creates multiple identities to gain voting or mining power. Resistance is typically gained by making voting or mining too costly for the attack to be worth it (as in [Proof of Work](#proof_of_work) or [Proof of Stake](#proof_of_stake)) or by requiring new entities to be approved by existing actors (as in [FBA](#fba)).
 
 Test Network (TESTNET) { #test_network }
-: The computer network that supports a [blockchain](#blockchain) in its development stage. It is intended for testing purposes and should not store valuable assets, as its contents might be deleted (purposely or by accident) at any time. Among other facilities, testnets typically provide [faucets](#faucet). Compare to a [Canary](#canary_network) or [Main](#main_network) network. Flare's testnet is called [Coston](#coston).
+: The computer network that supports a [blockchain](#blockchain) in its development stage. It is intended for testing purposes and should not store valuable assets, as its contents might be deleted (purposely or by accident) at any time. Among other facilities, testnets typically provide [faucets](#faucet). Compare to a [Canary](#canary_network) or a [Main](#main_network) network. Flare's testnets are [Coston](#coston) for Songbird and [Coston2](#coston) for Flare.
 
 Transaction { #transaction }
 : A request to add information to the blockchain, which is then analyzed by the network and accepted when consensus is reached about its validity. It can be a movement of funds between two accounts, or the execution of a contract, for example.
