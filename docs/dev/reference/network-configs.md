@@ -134,7 +134,7 @@ Along with the endpoints listed above to interact with its own networks, Flare o
 
         ```bash
         curl -s -X POST -m 10 -H "Content-Type: application/json" \
-        -d '{"jsonrpc": "2.0", "id":67, "method":"eth_syncing", "params":[]}' \
+        -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
         https://ethereum-api.flare.network | jq
         ```
 
