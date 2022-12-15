@@ -6,4 +6,6 @@ These nodes are **not rate-limited**, so it is typically **more convenient** to 
 
 This is one more step towards Flare's goal to **connect all blockchains**.
 
-!!! info "[Visit Flare's API Portal website](https://api-portal.flare.network/)"
+!!! info "Visit [Flare's API Portal website](https://api-portal.flare.network/)"
+
+!!! help "Visit the [API Portal's FAQ](https://api-portal.flare.network/faq) if you are having authentication issues!"
