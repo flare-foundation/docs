@@ -6,4 +6,5 @@ Select one of the topics below:
 
 * [Block Explorer](./block-explorer.md)
 * [FTSO Delegation](./delegation/index.md)
+* [Governance](./governance/index.md)
 * [Wallets](./wallets/index.md)
