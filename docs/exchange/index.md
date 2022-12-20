@@ -35,3 +35,9 @@ Technical information in the [Network Configuration section](../dev/reference/ne
 !!! note
 
     The `$FLR` and `$SGB` tokens are **not** [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) tokens: they are the **native currency** of **Flare** (the [Main network](glossary.md#main_network)) and **Songbird** (The [Canary network](glossary.md#canary_network)) respectively. As such, these tokens are handled the same way `$ETH` is handled on the Ethereum blockchain.
+
+Select one of the topics below:
+
+* [Architecture of an Exchange](./architecture.md)
+* [Delegating on the User's Behalf](./delegation.md)
+* [Troubleshooting Guide](./troubleshooting.md)
