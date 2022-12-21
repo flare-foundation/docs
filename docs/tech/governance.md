@@ -4,13 +4,13 @@
 
 Flare governance gives everyone in the ecosystem the opportunity to collaborate on decision-making on the [Flare and Songbird](network-configs.md) networks, making governance an important element of decentralization.
 
-This process supports the ability for the Flare Foundation and Flare and Songbird community members to:
+This process enables the Flare Foundation and Flare and Songbird community members to:
 
 * Propose policy changes.
 * Vote on them.
 * Execute them if accepted.
 
-The following sections detail the different kinds of proposals Flare allows, and the process for each of them.
+The following sections detail the different kinds of proposals Flare allows and the process for each of them.
 
 If you are already familiar with Flare's governance and just need to know how to cast your vote through the Flare Portal, check the [Voting User Guide](../user/governance/voting.md).
 
@@ -19,14 +19,15 @@ If you are already familiar with Flare's governance and just need to know how to
 Excluding the [testnets](glossary.md#test_network) Coston and Coston2, Flare currently has two networks: Flare and Songbird.
 Moreover, two kinds of proposals are planned, depending on who initiates them: those proposed by the community and those proposed by the Flare Foundation.
 
-This leads to four types of proposals, of which only one is currently supported and detailed next.
+This situation leads to four types of proposals, of which only one is currently supported and detailed next.
 
 ### Songbird Test Proposals (STPs)
 
-These are proposals initiated by the Flare Foundation aimed at improving the Songbird network.
+Songbird Test Proposals are initiated by the Flare Foundation and are aimed at improving the Songbird network.
 Community-initiated proposals or those aimed at the Flare network will be supported in the future.
 
-To increase the swiftness at which new proposals can be tested on Songbird, STPs are accepted by default, meaning that they are only rejected if enough votes are cast against them. Conversely, to increase its stability, future proposals affecting the Flare network will be rejected by default, meaning that they will only be accepted if enough votes are cast in their favor. See [Voting Outcome](#voting-outcome) below for more details.
+To increase the swiftness at which new proposals can be tested on Songbird, STPs are accepted by default, meaning that they are rejected only if enough votes are cast against them.
+Conversely, to increase its stability, future proposals affecting the Flare network will be rejected by default, meaning that they will be accepted only if enough votes are cast in their favor. See [Voting Outcome](#voting-outcome) below for more details.
 
 #### Who Votes
 
@@ -49,7 +50,7 @@ The Flare Foundation will announce proposals in advance, so that users can read 
     Votes can be transferred to another account while the `$WSGB` tokens remain in the user's possession.
     This is useful, for example, if a user has `$WSGB` in multiple self-custody wallets, since voting can then be simplified by transferring all the votes to a single wallet and voting from there.
 
-    Votes can only be transferred to one address, but an address can receive votes from multiple ones.
+    Votes can only be transferred to one address, but an it can receive votes from multiple addresses.
     Received votes cannot be transferred again to a third address.
 
     !!! note
@@ -65,13 +66,13 @@ The Flare Foundation will announce proposals in advance, so that users can read 
 
 #### The Vote Count Block
 
-Since the amount of `$WSGB` an account holds varies over time, a snapshot of all accounts is taken before each voting starts.
-The amount of `$WSGB` held by an account at the snapshot then dictates the number of votes available later on.
+Since the amount of `$WSGB` an account holds varies over time, a snapshot of all accounts is taken before each voting period starts.
+The amount of `$WSGB` held by an account at the snapshot then dictates the number of votes available later.
 
 The block at which the snapshot is taken is called the **vote count block**.
 
 To encourage users to use their tokens and keep them in the network, instead of just acquiring them for voting and then disposing of them, the vote count block is randomly selected.
-The next section details when this happens, exactly.
+The next section details when this happens.
 
 #### Voting Process
 
@@ -91,10 +92,10 @@ The next section details when this happens, exactly.
     The duration of this period is also random.
 
     !!! warning
-        If you need to wrap tokens, do so before this period starts since tokens wrapped after the vote count block will not result in additional votes.
+        If you need to wrap tokens, do so before this period starts since tokens wrapped after the selected vote count block will not result in additional votes.
 
 * **Voting period**: The proposal is submitted to the [Flare Portal](https://portal.flare.network) and it is immediately available for voting.
-    Voting concludes after a week and final results are presented on the portal.
+    Voting concludes after a week, and final results are presented on the portal.
 
 #### Voting Outcome
 
@@ -102,7 +103,7 @@ A vote must satisfy two conditions to pass.
 Because voting on STPs is rejection-based, both conditions must hold true for a proposal to be rejected.
 
 * **Threshold condition**: A minimum quorum must be reached, meaning that enough votes must be cast.
-    For STPs this is at least 75% of all `$WSGB` tokens in circulation at the [vote count block](#the-vote-count-block).
+    For STPs this quorum is at least 75% of all `$WSGB` tokens in circulation at the [vote count block](#the-vote-count-block).
 * **Majority condition**: More than 50% of the votes cast, must be against the proposal.
 
 Therefore, an STP will be accepted if the quorum threshold is not reached or if less than half of the cast votes are against it.
