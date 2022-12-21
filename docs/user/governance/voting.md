@@ -13,11 +13,11 @@ This guide shows how to use the [Flare Portal](https://portal.flare.network) to 
 
 This section summarizes the voting process, which is explained in more detail in the [Governance page](../../tech/governance.md).
 
-For now, all changes to the Songbird network are determined by the outcome of votes on [Songbird Testing Proposals](../../tech/governance.md#STPs) (STPs), which are published by the Flare Foundation.
+For now, all changes to the Songbird network are determined by the outcome of votes on [Songbird Testing Proposals](../../tech/governance.md#songbird-test-proposals-stps) (STPs), which are published by the Flare Foundation.
 
 Each account can cast a number of votes equal to the amount of `$WSGB` (wrapped `$SGB`) it holds.
 Since this amount varies over time, a snapshot of all accounts is taken at a block randomly chosen before voting starts.
-This block is called the [vote power block](../../tech/governance.md#the-vote-power-block).
+This block is called the [vote power block](../../tech/governance.md#the-vote-count-block).
 
 There is a **notice period** before snapshots are taken.
 If you need to wrap tokens before a voting, **wrap them during this period so that they are always included in the snapshot**.
@@ -107,7 +107,7 @@ Remember to wrap your tokens before voting starts, as explained in the [Governan
 
     `$WSGB` is required to vote.
     Ensure you have `$WSGB` in the wallet you will use to vote.
-    For more information, see [Getting $WSGB](#getting-wsgb).
+    For more information, see [Getting $WSGB](#2-getting-wsgb).
 
 1. In the Flare Portal, select the **Voting** tab.
    The **Governance Proposals** page is displayed.
