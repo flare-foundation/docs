@@ -83,7 +83,7 @@ The next section details when this happens.
 
 * **Announcement**: The Flare Foundation publishes the STP online and announces it through social media channels (linked on the footer of this page) and [the Flare website](https://flare.network).
 
-* **Notice period**: Once the proposal is published, the Flare Foundation allows a one-week notice period before voting can start.
+* **Notice period**: Once the proposal is published, the Flare Foundation allows a notice period before voting can start, typically lasting one week.
     During this time the proposal can be discussed, clarified, commented on, and even cancelled if serious issues are found with it.
 
     For security reasons only, the Foundation may reduce the timeframe of this period.
