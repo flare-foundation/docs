@@ -5,7 +5,7 @@ section_icon_type: stroked-svg
 
 # Developer Docs
 
-!!! info inline end "Quick links"
+!!! info "Quick links"
 
     * Main code repositories:
 
