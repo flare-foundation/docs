@@ -103,7 +103,11 @@ A vote must satisfy two conditions to pass.
 Because voting on STPs is rejection-based, both conditions must hold true for a proposal to be rejected.
 
 * **Threshold condition**: A minimum quorum must be reached, meaning that enough votes must be cast.
-    For STPs this quorum is at least 75% of all `$WSGB` tokens in circulation at the [vote count block](#the-vote-count-block).
+    For STPs this quorum is at least 75% of all `$SGB` tokens in circulation (excluding the Flare Foundation's tokens) at the [vote count block](#the-vote-count-block).
+
+    Note that the quorum is specified as a fraction of the circulating native `$SGB` tokens instead of the wrapped tokens `$WSGB` used for voting.
+    This measure tries, again, to encourage users to wrap their tokens and use them in the network.
+
 * **Majority condition**: More than 50% of the votes cast, must be against the proposal.
 
 Therefore, an STP will be accepted if the quorum threshold is not reached or if less than half of the cast votes are against it.

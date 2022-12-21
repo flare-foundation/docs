@@ -13,7 +13,7 @@ This guide shows how to use the [Flare Portal](https://portal.flare.network) to 
 
 This section summarizes the voting process, which is explained in more detail in the [Governance page](../../tech/governance.md).
 
-All changes to the Songbird network are determined by the outcome of votes on [Songbird Testing Proposals](../../tech/governance.md#STPs) (STPs), which are, for now, published only by the Flare Foundation.
+For now, all changes to the Songbird network are determined by the outcome of votes on [Songbird Testing Proposals](../../tech/governance.md#STPs) (STPs), which are published by the Flare Foundation.
 
 Each account can cast a number of votes equal to the amount of `$WSGB` (wrapped `$SGB`) it holds.
 Since this amount varies over time, a snapshot of all accounts is taken at a block randomly chosen before voting starts.
