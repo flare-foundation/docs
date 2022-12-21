@@ -127,9 +127,9 @@ nav:
   - Concepts:
     - tech/index.md
     - tech/flare-launch-process.md
-    - tech/governance.md
     - tech/api-portal.md
     - tech/ftso.md
+    - tech/governance.md
     - tech/state-connector.md
     - tech/validators.md
     - tech/glossary.md

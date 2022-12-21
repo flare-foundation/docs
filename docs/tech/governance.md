@@ -4,238 +4,112 @@
 
 Flare governance gives everyone in the ecosystem the opportunity to collaborate on decision-making on the [Flare and Songbird](network-configs.md) networks, making governance an important element of decentralization.
 
-The governance process supports the ability for the Flare Foundation and Flare and Songbird community members to propose policy changes, vote on them, and execute them.
+This process supports the ability for the Flare Foundation and Flare and Songbird community members to:
 
-The governance process will eventually include four types of proposals:
+* Propose policy changes.
+* Vote on them.
+* Execute them if accepted.
 
-* Songbird Testing Proposals (STPs).
-* Flare Improvement Proposals (FIPs).
-* Songbird Improvement Proposals (SIPs).
-* Songbird Improvement Proposals (SIPs) that enable community members to propose changes to Flare.
+The following sections detail the different kinds of proposals Flare allows, and the process for each of them.
 
-## Proposals
+If you are already familiar with Flare's governance and just need to know how to cast your vote through the Flare Portal, check the [Voting User Guide](../user/governance/voting.md).
 
-Only the first type of proposals, STPs, are currently available.
+## Flare's Governance
 
-### STPs
+Excluding the [testnets](glossary.md#test_network) Coston and Coston2, Flare currently has two networks: Flare and Songbird.
+Moreover, two kinds of proposals are planned, depending on who initiates them: those proposed by the community and those proposed by the Flare Foundation.
 
-When changes to the Flare network require testing, the Flare Foundation submits Songbird Testing Proposals (STPs).
+This leads to four types of proposals, of which only one is currently supported and detailed next.
 
-### Types of Voting
+### Songbird Test Proposals (STPs)
 
-Proposals can have one of two types of voting: Acceptance-based or rejection-based.
+These are proposals initiated by the Flare Foundation aimed at improving the Songbird network.
+Community-initiated proposals or those aimed at the Flare network will be supported in the future.
 
-* **Acceptance-based**: Proposals need a minimum number of **in-favor** votes to be approved.
-* **Rejection-based**: Proposals need a minimum number of **against** votes to be rejected.
+To increase the swiftness at which new proposals can be tested on Songbird, STPs are accepted by default, meaning that they are only rejected if enough votes are cast against them. Conversely, to increase its stability, future proposals affecting the Flare network will be rejected by default, meaning that they will only be accepted if enough votes are cast in their favor. See [Voting Outcome](#voting-outcome) below for more details.
 
-To avoid overburdening the community with an excessive amount of votes, STPs are rejection-based.
-Conversely, future FIPs will be acceptance-based for improved stability.
+#### Who Votes
 
-### Proposal Information
+Anyone who holds `$SGB` can vote on STPs.
+However, the tokens must be wrapped into `$WSGB` before the proposal is submitted to be able to vote with them.
 
-Here is the proposal information that a user can retrieve:
-
-| Information   | Comments                                      |
-|:------------- | :-------------------------------------------- |
-| Address | Of the creator of the proposal. |
-| Type of proposal | `True` if it is acceptance-based; `False` if it is rejection-based. STPs are rejection-based, i.e., they are accepted unless there is a large majority (more than 50%) against it and 75% or more of possible votes are cast. |
-| Vote count block | The block at which the number of votes each user has available for voting on this proposal is determined. |
-| Voting start time | In UNIX seconds. |
-| Voting end time | In UNIX seconds. |
-| Execution start time | In UNIX timestamp; `0` if the proposal is for gathering the community’s opinion only and does not require execution of any contract. |
-| Execution end time | In UNIX timestamp; `0` if the proposal is for gathering the community’s opinion only and does not require execution of any contract. |
-| Threshold condition (in BIPS) | Percentage of the total possible votes that are needed for the proposal to proceed. 10'000 BIPS = 100%. |
-| Majority condition (in BIPS) | Percentage of the cast votes that are needed to reject a proposal. 10'000 BIPS = 100%. |
-| All possible votes | Available at the proposal's vote count block. |
-
-### Notice Period
-
-When a proposal is published, the Flare Foundation allows a one-week notice period before voting can start.
-During this time the Flare Foundation and others may make formal comments on the proposal.
-For security reasons only, the Foundation may reduce the timeframe of this period.
-
-### Canceling a Proposal
-
-If a problem arises with the proposal settings, the proposal creator can cancel the proposal if voting has not yet begun.
-Voting on a canceled proposal is not possible.
-The proposer can create a new proposal with a new ID and the correct settings.
-
-## Voting
-
-Here is the proposal and voting process for STPs:
-
-<figure markdown>
-  ![STP governance process after launch](gov-stp-governance-process.png){ loading=lazy .allow-zoom }
-  <figcaption>STP governance process after Flare launch.</figcaption>
-</figure>
-
-### Who Votes
-
-Anyone who holds `$SGB` can vote on Songbird.
-The tokens must be wrapped before the proposal is submitted to be able to vote with them.
+Once wrapped, every `$WSGB` grants one vote.
 
 !!! important
-    Your available votes depend on the amount of wrapped tokens (`$WSGB`) you hold, not your native `$SGB` tokens.
-    Remember to wrap your tokens.
-    Always keep some amount of native SGB to pay for gas fees.
+    Available votes depend on the amount of wrapped tokens (`$WSGB`) held, not the native `$SGB` tokens.
+    Therefore, **remember to wrap your tokens**.
 
-Flare will announce proposals through their website and social media, so that you can read the proposal and wrap your tokens if you want to vote.
+!!! important
+    When wrapping, **remember to keep some amount of native `$SGB` to pay for transaction fees**.
 
-### Delegation of Votes
+The Flare Foundation will announce proposals in advance, so that users can read them and wrap their tokens if they have to.
 
-You can transfer votes to another address by signing a delegation transaction for a recipient.
-For example, if you have more than one address, you can consolidate your votes by delegating them to a single address.
-A delegation is valid from the time the delegation transaction is confirmed.
-You can only delegate to one address, but any address can be the recipient for multiple delegations.
-Users cannot redelegate votes that other addresses delegated to them.
+??? info "Vote Transfer"
 
-!!! note
-    Delegating votes has no connection with or effect on FTSO delegation.
+    Votes can be transferred to another account while the `$WSGB` tokens remain in the user's possession.
+    This is useful, for example, if a user has `$WSGB` in multiple self-custody wallets, since voting can then be simplified by transferring all the votes to a single wallet and voting from there.
 
-#### Changing Delegation
+    Votes can only be transferred to one address, but an address can receive votes from multiple ones.
+    Received votes cannot be transferred again to a third address.
 
-To change the delegation of votes, delegate to a different recipient or remove the delegation.
+    !!! note
+        Transferring votes has no connection with FTSO delegation:
+        `$WSGB` can be delegated to an [FTSO data provider](glossary.md#data_provider) and at the same time the votes it grants can be transferred to a different address.
 
-In the following example you can see changes of votes due to delegations from others, delegating to another address, and due to wrapping or unwrapping tokens.
+    The following example shows the changes produced by vote transfers, and token wrapping and unwrapping:
 
-<figure markdown>
-  ![Changes in number of votes](gov-changes-in-number-of-votes.png){ loading=lazy .allow-zoom }
-  <figcaption>Changes in the number of votes.</figcaption>
-</figure>
-
-### Voting Period
-
-The Flare Foundation will generally adhere to a one-week voting period.
-For security reasons only, the Foundation may reduce the timeframe of this period.
-
-### Two Ways to Vote
-
-You can vote using a point-and-click user interface, or, if you are a developer, you can vote directly through the contracts.
-
-To vote using the user interface, go to [Governance Proposals](https://governance.dev.aflabs.org/songbird).<!---This link is a place holder. What is the link to the UI doc?-->
-
-??? example "Vote Directly through the Contracts (for Developers)"
-
-    To cast a vote, sign a transaction, which calls one of the following functions:
-
-    * `PF.castVote(uint256 proposalId, uint8 support)`
-    * `PF.castVoteWithReason(uint256 proposalId, uint8 support, string reason)`
-    * `PF.castVoteBySig(uint256 proposalId, uint8 support, uint8 v, bytes32 r, bytes32 s)`
-
-    The `support` parameter has two possible values:
-
-    *  `0` for voting against the proposal (NO)
-    *  `1` to vote in support of the proposal (YES)
-
-    The `reason` parameter in the second function is used to state an optional reason for your vote.
-    
-    The `v`, `r` and `s` parameters represent a signature.
-    They are used to submit the vote for a signed entity.
-    An example of using a signature is when a user does not want to expose his private key and signs his vote offline.
-    Using the third function, any address can then cast this user’s vote provided that he provides the signature parts `v`, `r` and `s`.
-
-    To create the signature to use for the input parameters of the third function, perform the following actions (stated here in TypeScript):
-
-    1. Calculate the  `domainSeparator`:
-    ```
-    let typeHash = web3.utils.soliditySha3("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)");
-    let hashedName = web3.utils.soliditySha3(PF.name());
-    let versionHex = web3.utils.utf8ToHex(PF.version());
-    let hashedVersion = web3.utils.soliditySha3(versionHex);
-    let chainId = <chainId>; // 19 for Songbird, 14 for Flare
-    let contractAddress = <contractAddress>;
-    let encodedDomainSeparator = web3.eth.abi.encodeParameters(["bytes32", "bytes32", "bytes32", "uint256", "address"], [typeHash, hashedName,  hashedVersion, chainId, contractAddress])
-    let domainSeparator = web3.utils.soliditySha3(encodedDomainSeparator) as string;
-    ```
-
-    2. Calculate hashes:
-    ```
-    let abi = web3.eth.abi.encodeParameters(['bytes32', 'uint256', 'uint8'], [PF.BALLOT_TYPEHASH(), <proposalId>, <support>]); 
-    let structHash = web3.utils.keccak256(abi);
-    let abiEncodePacked = "0x1901" + domainSeparator.slice(2) + structHash.slice(2);
-    let hashTypedDataV4 = web3.utils.soliditySha3(abiEncodePacked) as string;
-    ```
-
-    3. Sign with your private key:
-    ```
-    let signature = web3.eth.accounts.sign(hashTypedDataV4, <privateKey>);
-    let v = signature.v;
-    let r = signature.r;
-    let s = signature.s;
-    ```
-
-    All functions return the number of votes with which the user voted (multiplied by 10^18 and returned as an integer).
-
-    To check if you already voted on a proposal, call the function `PF.hasVoted(uint256 proposalId, address user)`, which returns either `true` or `false`.
-    To check how you voted, check the transaction that called one of the functions for casting a vote.
-
-### Criteria for Proposal Success
-
-A vote must satisfy two conditions, a Threshold condition and a Majority condition.
-Because voting on STPs is rejection-based, both conditions must hold true or they will be accepted:
-
-* The voting threshold must be reached, meaning that enough votes must be cast (at least 75% of all `$WSGB` tokens in circulation at a specific time).
-* The majority, greater than 50% of the votes cast, must be against the proposal.
-
-### How Votes are Calculated
-
-Essentially, the number of votes that a user has is equal to the amount of wrapped Songbird (`$WSGB`) that this address holds at the specified time (at some block).
-The number of votes can be a decimal number (up to 18 places).
-
-Some important concepts explain how votes are calculated in greater detail:
-
-* The vote count block.<!---Name- votepowerblock, vote count block - is TBD.-->
-* Delegated votes.
+    <figure markdown>
+      ![Changes in number of votes](gov-changes-in-number-of-votes.png){ loading=lazy .allow-zoom }
+      <figcaption>Changes in the number of votes.</figcaption>
+    </figure>
 
 #### The Vote Count Block
 
-Because the number of wrapped tokens is subject to change, the block to use to count the tokens must be determined.
-This block is called the _vote count block_ and this is how it is determined:
+Since the amount of `$WSGB` an account holds varies over time, a snapshot of all accounts is taken before each voting starts.
+The amount of `$WSGB` held by an account at the snapshot then dictates the number of votes available later on.
 
-The vote count block is selected by going back a specified amount of seconds.
-From there, a random block number is selected that is between the starting block of that reward epoch and the current block.
-The number of votes that the user has is equal to the amount of wrapped Songbird tokens (`$WSGB`) that the user holds at that random block.
+The block at which the snapshot is taken is called the **vote count block**.
 
-<figure markdown>
-  ![Vote power block selection](gov-vote-power-block-selection.png){ loading=lazy .allow-zoom }
-  <figcaption>Vote count block selection.</figcaption>
-</figure>
+To encourage users to use their tokens and keep them in the network, instead of just acquiring them for voting and then disposing of them, the vote count block is randomly selected.
+The next section details when this happens, exactly.
 
-### Voting Results
-
-Voting results returned include:
-
-* Total possible number of votes for the proposal.
-* Votes cast in support.
-* Votes cast against.
-
-### Proposal Statuses
-
-Here are the possible statuses of proposals:
-
-| Status        | Description                                   |
-|:------------- | :-------------------------------------------- |
-| _Pending_ | Submitted, but not open for voting yet. Every proposal starts in the _Pending_ status. Includes the notice period when the community can comment on the proposal. |
-| _Canceled_ | If a problem arises with the proposal settings, the creator can cancel the it if the voting period has not yet begun. |
-| _Active_ | The voting period is open. Unless otherwise announced, it is open for one-week. |
-| _Defeated_ | 75% or more of potential voters cast a vote and more than 50% voted against it. See [Criteria for proposal success](#criteria-for-proposal-success). |
-| _Succeeded_ | 75% or more of potential voters cast a vote and 50% or less voted against it. Waiting for the execution window to start. The Execution Start Time is configurable, which may cause a wait time unless it is set to last 0 seconds. See [Criteria for proposal success](#criteria-for-proposal-success) and [Execution](#execution). |
-| _Queued_ | Execution window has started. Waiting for the proposal creator to actually execute the proposal. See [Execution](#execution). |
-| _Executed_ | Succeeded and the proposal creator has executed it. See [Execution](#execution). |
+#### Voting Process
 
 <figure markdown>
-  ![Proposal statuses](gov-stp-statuses.png){ loading=lazy .allow-zoom }
-  <figcaption>Proposal statuses.</figcaption>
+  ![STP voting process](gov-stp-governance-process.png){ loading=lazy .allow-zoom }
+  <figcaption>STP voting process.</figcaption>
 </figure>
 
-If a proposal is _Pending_, _Active_, _Succeeded_, or _Queued_, it still has a chance of being executed.
+* **Announcement**: The Flare Foundation publishes the STP online and announces it through social media channels (linked on the footer of this page) and [the Flare website](https://flare.network).
 
-If a proposal is _Canceled_ or _Defeated_ it will not be executed.
+* **Notice period**: Once the proposal is published, the Flare Foundation allows a one-week notice period before voting can start.
+    During this time the proposal can be discussed, clarified, commented on, and even cancelled if serious issues are found with it.
 
-## Execution
+    For security reasons only, the Foundation may reduce the timeframe of this period.
 
-For an STP to be executed, it must meet certain conditions:
+* **Block selection period**: The [vote count block](#the-vote-count-block) is selected at a random time during this period.
+    The duration of this period is also random.
 
-* It must not be rejected.
-  See [Rejection based voting](#rejection-based-voting).
-* The user who submitted the proposal must sign an execute transaction.
+    !!! warning
+        If you need to wrap tokens, do so before this period starts since tokens wrapped after the vote count block will not result in additional votes.
+
+* **Voting period**: The proposal is submitted to the [Flare Portal](https://portal.flare.network) and it is immediately available for voting.
+    Voting concludes after a week and final results are presented on the portal.
+
+#### Voting Outcome
+
+A vote must satisfy two conditions to pass.
+Because voting on STPs is rejection-based, both conditions must hold true for a proposal to be rejected.
+
+* **Threshold condition**: A minimum quorum must be reached, meaning that enough votes must be cast.
+    For STPs this is at least 75% of all `$WSGB` tokens in circulation at the [vote count block](#the-vote-count-block).
+* **Majority condition**: More than 50% of the votes cast, must be against the proposal.
+
+Therefore, an STP will be accepted if the quorum threshold is not reached or if less than half of the cast votes are against it.
+
+#### Execution
+
+Once a proposal is accepted, Flare's governance contracts allow for its automatic execution via a contract call.
+
+However, STPs might require changes that are not implementable through a smart contract and therefore automatic execution is disabled for them.
+STPs are manually executed by the Flare Foundation.
