@@ -20,7 +20,7 @@ Since this amount varies over time, a snapshot of all accounts is taken at a blo
 This block is called the [vote power block](../../tech/governance.md#the-vote-power-block).
 
 There is a **notice period** before snapshots are taken.
-It you need to wrap tokens before a voting, **wrap them during this period so that they are always included in the snapshot**.
+If you need to wrap tokens before a voting, **wrap them during this period so that they are always included in the snapshot**.
 
 !!! tip
     It is worth noting that you can use the same `$WSGB` tokens to simultaneously vote on STPs and delegate to [FTSO data providers](glossary.md#data_provider).
