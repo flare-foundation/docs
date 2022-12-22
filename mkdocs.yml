@@ -132,6 +132,7 @@ nav:
     - tech/api-portal.md
     - tech/ftso.md
     - tech/governance.md
+    - tech/personal-delegation-account.md
     - tech/state-connector.md
     - tech/validators.md
     - tech/glossary.md
@@ -177,6 +178,7 @@ nav:
   - Developer Docs:
     - dev/index.md
     - dev/automatic-claiming.md
+    - dev/personal-delegation-account.md
     - dev/summary.md
     - Getting Started Docs:
       - dev/getting-started/index.md

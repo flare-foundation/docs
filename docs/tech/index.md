@@ -14,6 +14,7 @@ Select one of the topics below:
 * [Flare API Portal](./api-portal.md)
 * [FTSO](./ftso.md)
 * [Governance](./governance.md)
+* [Personal Delegation Accounts](./personal-delegation-account.md)
 * [State Connector](./state-connector.md)
 * [Validator Nodes](./validators.md)
 * [Glossary](./glossary.md)
