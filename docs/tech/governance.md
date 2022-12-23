@@ -49,20 +49,26 @@ The Flare Foundation will announce proposals in advance, so that users can read 
 
     Votes can be transferred to another account while the `$WSGB` tokens remain in the user's possession.
     This is useful, for example, if a user has `$WSGB` in multiple self-custody wallets, since voting can then be simplified by transferring all the votes to a single wallet and voting from there.
+    {#vote-transfer}
 
-    Votes can only be transferred to one address, but an it can receive votes from multiple addresses.
+    Votes can only be transferred to one address, but it can receive votes from multiple addresses.
     Received votes cannot be transferred again to a third address.
 
-    !!! note
-        Transferring votes has no connection with FTSO delegation:
-        `$WSGB` can be delegated to an [FTSO data provider](glossary.md#data_provider) and at the same time the votes it grants can be transferred to a different address.
+    **Once activated, vote transfers always send 100% of an account's votes to the selected address and remain active until they are canceled.**
 
-    The following example shows the changes produced by vote transfers, and token wrapping and unwrapping:
+    As an example, if you have 100 `$WSGB` before a proposal and you activate the transfer, you will transfer 100 votes.
+    If you later add 100 more `$WSGB`, for the next proposal you will automatically transfer 200 votes, since the transfer remains active until you cancel it.
+
+    The following is a more complex example, showing the changes produced by vote transfers, and token wrapping and unwrapping:
 
     <figure markdown>
       ![Changes in number of votes](gov-changes-in-number-of-votes.png){ loading=lazy .allow-zoom }
       <figcaption>Changes in the number of votes.</figcaption>
     </figure>
+
+    !!! note
+        Transferring votes has no connection with FTSO delegation:
+        `$WSGB` tokens can be delegated to an [FTSO data provider](glossary.md#data_provider) and at the same time the votes they grant can be transferred to a different address.
 
 #### The Vote Count Block
 

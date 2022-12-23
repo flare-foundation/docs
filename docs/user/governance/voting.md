@@ -132,6 +132,8 @@ Your contribution to this proposal is now complete.
 Votes can be transferred to another account while the `$WSGB` tokens remain in your possession.
 This is useful, for example, if you have `$WSGB` in multiple self-custody wallets, since you can simplify your voting process by transferring all the votes to a single wallet.
 
+You can read all the details about transferring votes in the [Governance page](../../tech/governance.md#vote-transfer).
+
 By completing the following process, you are crediting another account with votes only;
 the tokens themselves stay in the original wallet.
 
