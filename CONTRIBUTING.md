@@ -5,8 +5,57 @@
 This repository uses a docs-as-code approach, meaning that the same workflow used to contribute source code is followed.
 This means that to contribute new text or modify existing pages, a git branch should be created and then a [GitHub Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) (PR) should be submitted.
 
-PRs must be peer-reviewed before then getting merged into main.
+PRs must be peer-reviewed before getting merged into main.
 Once a PR is merged, its changes are automatically published via a GitHub Action.
+
+## Automatic Checking
+
+### Linting
+
+If using [Visual Studio Code](https://code.visualstudio.com/), install the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) and [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extensions.
+
+Then add these settings to your `settings.json` file:
+
+```json
+    "markdownlint.config": {
+        "MD007": {
+            "indent": 4 // Unordered lists indented by 4, as per the standard
+        },
+        "MD013": false,
+        "MD033": false,
+        "MD026": {
+            "punctuation": ".,;:"
+        },
+        "MD024": {
+            "siblings_only": true // Allow headers with same name if they are not siblings
+        },
+        "MD046": false, // Because Admonition indentation looks like an indented code block
+    },
+```
+
+### Link Checking
+
+Install [linkchecker-markdown](https://github.com/scivision/linkchecker-markdown):
+
+```bash
+pip install linkcheckmd
+```
+
+And run `linkcheckmarkdown -r docs` before submitting PRs to verify you are not introducing broken links.
+
+These are currently false positives which can be safely ignored:
+
+```text
+ ('how-to-access-flare-network-with-a-ledger-device.md', 'https://metamask.io/download.html', 404)
+ ('how-to-access-flare-network-with-metamask.md', 'https://metamask.io/download.html', 404)
+ ('how-to-access-flare-network-with-a-trezor-device.md', 'https://metamask.io/download.html', 404)
+ ('network-configs.md', 'https://bitcoin-api.flare.network', 405)
+ ('network-configs.md', 'https://litecoin-api.flare.network', 405)
+ ('network-configs.md', 'https://dogecoin-api.flare.network', 405)
+ ('network-configs.md', 'https://xrpl-api.flare.network', 400)
+ ('network-configs.md', 'https://algorand-api.flare.network', 404)
+ ('safepal-s1-wallet.md', 'https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet', 403)
+```
 
 ## Style
 
