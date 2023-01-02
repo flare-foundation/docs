@@ -136,7 +136,7 @@ FTSO data providers:
 
 !!! danger "Trigger: The Flare validator source code becomes publicly available"
 
-Professional validators start onboarding, so the network stars becoming decentralized.
+Professional validators start onboarding, so the network starts becoming decentralized.
 
 FTSO data providers:
 
