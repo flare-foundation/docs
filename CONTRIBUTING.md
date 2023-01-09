@@ -111,10 +111,12 @@ These are currently false positives which can be safely ignored:
 
 Pay special attention to the capitalization and spacing of the following words:
 
+* autoclaiming
 * dapp
 * FAssets
 * FIP.01
-* Flare Networks
+* Flare network (the blockchain, sibling to the Songbird network)
+* Flare Networks (The company)
 * Flare Time Series Oracle
 * Layer Cake
 * Merit-Based Consensus
