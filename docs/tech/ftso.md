@@ -95,7 +95,7 @@ See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/).
 
     !!! note
 
-        A **Vote Power Cap** limits the influence of individual data providers to **2.5% of the total Vote Power** on Flare and **10%** on Songbird.
+        A **Vote Power Cap** limits the influence of individual data providers to **2.5% of the total Vote Power** both on Flare and Songbird.
 
         Any Vote Power above this cap is ignored. If vote power exceeds the limit, consider delegating those `$WFLR` or `$WSGB` to a different data provider.
 
