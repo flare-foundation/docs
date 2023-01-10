@@ -77,11 +77,12 @@ plugins:
           'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/manual-reward-claiming.md'
           'tutorials/price-provider/setting-up-an-observation-node/README.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'infra/observation/deploying.md'
-          'tutorials/price-provider/ftso-price-provider/README.md': 'infra/data/deploying.md'
-          'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'infra/data/deploying.md'
+          'tutorials/price-provider/ftso-price-provider/README.md': 'infra/data/operating.md'
+          'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'infra/data/operating.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'infra/data/whitelisting.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'infra/data/whitelisting.md'
-          'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/troubleshooting.md'
+          'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/operating.md'
+          'infra/data/deploying.md':  'infra/data/operating.md'
           'tutorials/price-provider/troubleshooting/observation-node.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
           'dev/reference/flare.md': 'dev/reference/network-configs.md'
@@ -162,9 +163,8 @@ nav:
     - infra/index.md
     - FTSO Data Providers:
       - infra/data/index.md
-      - infra/data/deploying.md
+      - infra/data/operating.md
       - infra/data/whitelisting.md
-      - infra/data/troubleshooting.md
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md

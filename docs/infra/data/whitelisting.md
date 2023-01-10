@@ -1,47 +1,54 @@
-# Whitelisting a Data Provider
+# Working with Whitelists
 
-## Procedure
+## Introduction
 
-Only top vote-power holders per FTSO are allowed to submit data.
-Per FTSO, the vote power of an address is based on the wrapped tokens balance (`$WFLR` or `$WSGB`).
-Whitelisting a data provider is done in a fully decentralized way and facilitated by the `VoterWhitelister` contract.
-Data providers can request to be whitelisted for a specific asset index using `requestWhitelistingVoter()` or request whitelisting for all assets at once `requestFullVoterWhitelisting()`.
+To be a data provider, you must be **whitelisted**.
+Only the top 100 data providers with the most vote power per FTSO can submit data.
+No minimum amount of [vote power](../../tech/ftso.md#vote-power) is required.
+Per FTSO, a data provider's vote power is based on its balance of `$WFLR` or `$WSGB`.
+When a data provider tries to whitelist itself, its [vote power](../../tech/ftso.md#vote-power) is calculated by the vote-power block of the current reward epoch.
+Increased vote power on a different block will not enable your address to be whitelisted.
+Vote power is only read and whitelists updated once per reward epoch.
+Reward epochs start roughly on Saturdays at 8:40AM UTC on Songbird, and on Monday at 7:00 UTC and Thursday at 19:00 UTC on Flare.
+Whitelisting a data provider is a fully decentralized process facilitated by the `VoterWhitelister` contract.
+To retrieve this contract, see [Contract Addresses](../../dev/reference/contracts.md).
 
-The `VoterWhitelister` contract enables data submissions only by whitelisted addresses.
-For each FTSO, up to N (currently 100) voters can be listed.
-The number of voters per asset can vary and is configurable by Governance.
-When a data provider tries to whitelist itself, its vote power is calculated using the vote power block of the current reward epoch.
+To be added to the whitelist, submit a request for your address by using one of the functions listed in the next section.
+When the whitelist is not full, your address is immediately added to it.
+If both the list is full and your vote power is greater than the data provider with the lowest vote power, your address replaces that data provider's address on the whitelist.
 
-The prerequisite for a data provider is explicit whitelisting.
-Each user can request its address to be whitelisted by the `VoterWhitelister` contract.
-If the whitelist is not full, the address is immediately whitelisted.
-If the list is full, the user with the lowest voter power is found and replaced with the requesting user only if the new user's power is strictly greater.
+If the number of spaces for data providers is ever reduced by governance, addresses will be removed from the whitelist one by one, beginning with the address with the lowest vote power.
 
-Should the number of voter slots ever be reduced, voter addresses will be removed from the whitelist one by one, each time removing the address with the lowest power.
-Events are fired to notify voters about the change of voter status on the whitelist.
+Events are emitted to notify providers about changes of their status on the whitelist.
+Once an address is delisted, submissions will also start reverting.
 
-There are two methods that you can use to whitelist your public address.
-The method `requestFullVoterWhitelisting` tries to whitelist your address for all available FTSOs, while `requestWhitelistingVoter` tries to whitelist the address for a specified FTSO index.
+## Requesting to be Added to the Whitelist or Relisted
 
-## FAQ
+Use the following methods in the `VoterWhitelister` contract:
 
-### Is there a minimal vote power required to be whitelisted as a data provider?
+* `requestWhitelistingVoter()`: Requests whitelisting for a specific asset index.
+* `requestFullVoterWhitelisting()`: Requests whitelisting for all assets.
 
-There is no minimum vote power required.
-Top 100 data providers with the highest vote power can provide data.
-This is handled on-chain by the `VoterWhitelister` contract.
-Once all the slots in the list are taken and a new address is being whitelisted, the address with the lowest vote power will be kicked out of the list.
+Ensure you have more delegations and vote power than the data provider that has the lowest amount before the vote power block is chosen and before you submit the request to be relisted.
 
-### Where can I check if I am whitelisted as a data provider?
+## Reading Whitelists
 
-Every time a new data provider’s address is added to the whitelist (or an old one is removed), an event is emitted.
-Once an address is unlisted, submissions will also start failing (reverting).
-It can also help to listen to events that will notify you about delisting once it happens.
+Each FTSO contains an array of whitelisted addresses.
+Use the functions in the following contracts to determine whether you are on the list and eligible to submit data:
 
-### If I was removed from the whitelist, how can I re-list myself?
+* **`VoterWhitelister` contract**
 
-If your address was kicked out of the whitelist, you will be able to list yourself once the next reward epoch starts.
-For doing this you will need more vote power than one of the listed providers.
-You should see if you can have more delegations done to your address before the next reward epoch vote power block (snapshot) is chosen.
-You should probably try to re-list anyway, since maybe some other provider has fewer delegations and lower vote power than you by the time you try again.
-See also [troubleshooting](./troubleshooting.md)
+    The `getFtsoWhitelistedPriceProviders` function returns a list of addresses for all data providers on the whitelist.
+    Specify the required index, run the query, and search for your address.
+
+* **`PriceSubmitter` contract**
+
+    The `voterWhitelistBitmap` function returns a bitmap corresponding to allowed FTSO indices in big-endian format.
+    Specify your address, run the query and examine the returned bitmap.
+    E.g., if you were allowed to submit prices for FTSOs with indices 0, 2 and 3, the returned bitmap would be 13 (`1101` in binary).
+
+## Monitoring Your Whitelist Status
+
+When you are added to a whitelist, the `VoterWhitelisted` event is emitted from the `VoterWhitelister` contract.
+When you are removed from a whitelist, the `VoterRemovedFromWhitelist` event is emitted, and your subsequent submissions fail.
+To stay aware of your whitelist status, consider listening to events that notify you about additions and removals when they happen.
