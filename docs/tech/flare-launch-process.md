@@ -73,7 +73,7 @@ It is worth summarizing the two current token distribution plans, as only one of
 
 * **Original Distribution Plan**:
 
-    * 15% of the original airdrop is sent to those that registered for the FLR distribution upon the TDE, with the rest delivered monthly over the following 30 months.
+    * 15% of the original airdrop is sent to those that registered for the FLR distribution upon the TDE, with the rest delivered monthly over the following 36 months.
     * Inflation is 10% of the fully diluted supply, per annum.
 
 * **FIP.01 Distribution Plan**:
