@@ -4,7 +4,8 @@ An integral part of the [governance process](../../tech/governance.md), voting i
 
 This process can be performed directly through Flare's smart contracts, but the Flare Foundation has developed the [Flare Portal](https://portal.flare.network) to enable you to conveniently cast your vote.
 
-The following information is about voting on the Flare and Songbird networks. Ensure you have selected one of these networks in your wallet.
+The following information is about voting on the Flare and Songbird networks.
+Ensure you have selected one of these networks in your wallet.
 
 ## Governance Process Summary
 
@@ -12,11 +13,11 @@ This section summarizes the voting process, which is explained in more detail in
 
 All changes to the Flare and Songbird networks are determined by the outcomes of votes on [Flare Improvement Proposals and Songbird Testing Proposals](../../tech/governance.md#flare-improvement-proposals-and-songbird-test-proposals).
 
-All proposals are published by the Flare Foundation.
+For now, all proposals are published by the Flare Foundation.
 
 On each network, each account can cast a number of votes equal to the amount of wrapped tokens it holds.
 Since this amount varies over time, a snapshot of all accounts is taken at a block randomly chosen before voting starts.
-This block is called the [vote power block](../../tech/governance.md#the-vote-count-block).
+This block is called the [vote count block](../../tech/governance.md#the-vote-count-block).
 
 Before snapshots are taken, a **notice period** occurs.
 If you need to wrap tokens before a voting, **wrap them during this notice period so that they are always included in the snapshot**.
@@ -30,7 +31,7 @@ To vote on any proposal, you need an account that contains wrapped tokens.
 You can wrap your tokens by using the [Flare Portal](https://portal.flare.network), as shown in the [Getting Wrapped Tokens](#2-getting-wrapped-tokens) section below.
 
 !!! warning
-    Only wrapped tokens held at the vote power block are considered towards your vote count.
+    Only wrapped tokens held at the vote count block are considered towards your vote count.
     Tokens wrapped or received afterwards will **not** result in additional votes.
 
     If you need to wrap tokens, always do so during the **notice period**.
@@ -138,7 +139,7 @@ You can read all the details about transferring votes in the [Governance page](.
 By completing the following process, you are crediting another account with votes only;
 the tokens themselves stay in the original wallet.
 
-1. Copy the Songbird address you want to transfer votes to.
+1. Copy the Flare or Songbird address you want to transfer votes to.
 2. On the **Voting** tab in the Flare Portal, locate your amount of current votes in the black box, and click **Transfer votes**.
    The **Information about transferred votes** window is displayed.
 3. Read the disclaimer, and click **Transfer votes**.
