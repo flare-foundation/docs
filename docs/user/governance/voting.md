@@ -2,36 +2,35 @@
 
 An integral part of the [governance process](../../tech/governance.md), voting is the way you influence decisions about how Flare and Songbird operate.
 
-This process can be performed directly through Flare's smart contracts, but the Flare Foundation has developed a portal that provides more convenient access.
+This process can be performed directly through Flare's smart contracts, but the Flare Foundation has developed the [Flare Portal](https://portal.flare.network) to enable you to conveniently cast your vote.
 
-This guide shows how to use the [Flare Portal](https://portal.flare.network) to cast your vote.
-
-!!! info
-    The following information is about voting on the Songbird network. Voting on the Flare network is a feature that will be implemented later.
+The following information is about voting on the Flare and Songbird networks. Ensure you have selected one of these networks in your wallet.
 
 ## Governance Process Summary
 
 This section summarizes the voting process, which is explained in more detail in the [Governance page](../../tech/governance.md).
 
-For now, all changes to the Songbird network are determined by the outcome of votes on [Songbird Testing Proposals](../../tech/governance.md#songbird-test-proposals-stps) (STPs), which are published by the Flare Foundation.
+All changes to the Flare and Songbird networks are determined by the outcomes of votes on [Flare Improvement Proposals and Songbird Testing Proposals](../../tech/governance.md#flare-improvement-proposals-and-songbird-test-proposals).
 
-Each account can cast a number of votes equal to the amount of `$WSGB` (wrapped `$SGB`) it holds.
+All proposals are published by the Flare Foundation.
+
+On each network, each account can cast a number of votes equal to the amount of wrapped tokens it holds.
 Since this amount varies over time, a snapshot of all accounts is taken at a block randomly chosen before voting starts.
 This block is called the [vote power block](../../tech/governance.md#the-vote-count-block).
 
-There is a **notice period** before snapshots are taken.
-If you need to wrap tokens before a voting, **wrap them during this period so that they are always included in the snapshot**.
+Before snapshots are taken, a **notice period** occurs.
+If you need to wrap tokens before a voting, **wrap them during this notice period so that they are always included in the snapshot**.
 
 !!! tip
-    It is worth noting that you can use the same `$WSGB` tokens to simultaneously vote on STPs and delegate to [FTSO data providers](glossary.md#data_provider).
+    It is worth noting that you can use the same wrapped tokens to simultaneously vote on proposals and delegate to [FTSO data providers](glossary.md#data_provider).
 
 ## Requirements
 
-To vote on any STP, you need an account that contains wrapped Songbird tokens, `$WSGB`.
-You can wrap your Songbird tokens (`$SGB`) by using the [Flare Portal](https://portal.flare.network), as shown in the [Getting `$WSGB`](#2-getting-wsgb) section below.
+To vote on any proposal, you need an account that contains wrapped tokens.
+You can wrap your tokens by using the [Flare Portal](https://portal.flare.network), as shown in the [Getting Wrapped Tokens](#2-getting-wrapped-tokens) section below.
 
 !!! warning
-    Only `$WSGB` tokens held at the vote power block are considered towards your vote count.
+    Only wrapped tokens held at the vote power block are considered towards your vote count.
     Tokens wrapped or received afterwards will **not** result in additional votes.
 
     If you need to wrap tokens, always do so during the **notice period**.
@@ -54,7 +53,7 @@ The first step to use the portal is to connect your wallet to it, and the proced
 2. Paste the Flare Portal URL in the search field at the top of the window, and click **Search**.
 3. Click **Connect to Wallet**.
 4. Select **Bifrost Wallet**.
-5. Ensure the **Songbird/Coston** chain is selected in the pop-up window, and click **Connect**.
+5. Ensure either the Flare or Songbird network is selected in the pop-up window, and click **Connect**.
 
 Your wallet is now connected to the portal.
 
@@ -86,18 +85,20 @@ Your wallet is now connected to the portal.
 
 Your wallet is now connected to the portal.
 
-### 2. Getting `$WSGB`
+### 2. Getting Wrapped Tokens
 
-`$WSGB` is required to vote.
-To wrap your `$SGB` into `$WSGB`:
+Wrapped tokens are required to vote.
 
-1. On the **Account** tab in the Flare Portal, locate your `$SGB` balance, and click **Wrap**.
-2. Specify the amount of `$SGB` you want to wrap, and click **Wrap**.
+To wrap your tokens:
+
+1. On the **Account** tab in the Flare Portal, ensure you are connected to the network on which the proposal will be voted.
+2. Locate your token balance, and click **Wrap**.
+3. Specify the amount you want to wrap, and click **Wrap**.
 
     !!! warning "Never wrap all your tokens"
         Always leave some unwrapped tokens to pay for transaction fees.
 
-3. Confirm the transaction in your wallet.
+4. Confirm the transaction in your wallet.
 
 Remember to wrap your tokens before voting starts, as explained in the [Governance Process Summary](#governance-process-summary) section above.
 
@@ -105,9 +106,9 @@ Remember to wrap your tokens before voting starts, as explained in the [Governan
 
 !!! important
 
-    `$WSGB` is required to vote.
-    Ensure you have `$WSGB` in the wallet you will use to vote.
-    For more information, see [Getting $WSGB](#2-getting-wsgb).
+    Wrapped tokens are required to vote.
+    Depending on the network, ensure you have either `$FLR` or `$SGB` in the wallet you will use to vote.
+    For more information, see [Getting Wrapped Tokens](#2-getting-wrapped-tokens).
 
 1. In the Flare Portal, select the **Voting** tab.
    The **Governance Proposals** page is displayed.
@@ -129,8 +130,8 @@ Your contribution to this proposal is now complete.
 
 ## Transferring Votes
 
-Votes can be transferred to another account while the `$WSGB` tokens remain in your possession.
-This is useful, for example, if you have `$WSGB` in multiple self-custody wallets, since you can simplify your voting process by transferring all the votes to a single wallet.
+Votes can be transferred to another account while the wrapped tokens remain in your possession.
+This is useful, for example, if you have wrapped tokens in multiple self-custody wallets, since you can simplify your voting process by transferring all the votes to a single wallet.
 
 You can read all the details about transferring votes in the [Governance page](../../tech/governance.md#vote-transfer).
 
