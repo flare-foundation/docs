@@ -60,5 +60,5 @@ It is calculated as `total_reward / vote_power * (100 - fee)`, where fee is give
 
 ## What is a vote power cap and how does it influence my yields?
 
-To facilitate decentralization of the network a share of vote power considered for rewarding is capped to 10% of all `$WSGB` in circulation (on Songbird) or to 2.5% of all `$WFLR` in circulation (on Flare).
+To facilitate decentralization of the network the share of vote power considered for rewarding is capped to 2.5% of all `$WSGB` or `$WFLR` in circulation.
 If a data provider gets more vote power through delegations, only a part of vote power (up to vote power cap) will compete for rewards while earned rewards will be distributed to all delegators, making the yield (reward rate) of the data provider lower.
