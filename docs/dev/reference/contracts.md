@@ -56,18 +56,21 @@ As stated at the beginning, **remember to double-check the addresses** are corre
 | Contract                 | Flare Address                   | Songbird Address                |
 | ------------------------ | ------------------------------- | ------------------------------- |
 | **Address Updater**      | [0xbAF89d...][f-addr-updater]   |                                 |
-| **FTSO Registry**        | [0xcD099A...][f-ftso-registry]  | [0x6D222f...][s-ftso-registry]  |
+| **FTSO Manager**         | [0x2F5107...][f-ftso-manager]   | [0xbfA12e...][s-ftso-manager]   |
+| **FTSO Registry**        | [0x13DC2b...][f-ftso-registry]  | [0x6D222f...][s-ftso-registry]  |
 | **FTSO Price Submitter** | [0x100000...][f-ftso-submitter] | [0x100000...][s-ftso-submitter] |
-| **FTSO Reward Manager**  | [0x6D55E2...][f-ftso-rewards]   | [0xc57383...][s-ftso-rewards]   |
+| **FTSO Reward Manager**  | [0x9EDCa8...][f-ftso-rewards]   | [0xc57383...][s-ftso-rewards]   |
 | **FTSO Whitelister**     | [0x0F4549...][f-ftso-whitelist] | [0xa76906...][s-ftso-whitelist] |
 | **WNat**                 | [0x1D80c4...][f-wnat]           | [0x02f082...][s-wnat]           |
 
-[f-ftso-registry]:  https://flare-explorer.flare.network/address/0xcD099A11ecd4b02aFF5F17eC46242a9a7cfdA527
+[f-ftso-manager]:   https://flare-explorer.flare.network/address/0x2F5107461D1BF7D4D6d3b2b577621b2071343166
+[f-ftso-registry]:  https://flare-explorer.flare.network/address/0x13DC2b5053857AE17a4f95aFF55530b267F3E040
 [f-ftso-submitter]: https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003
-[f-ftso-rewards]:   https://flare-explorer.flare.network/address/0x6D55E24Dc2d3bD2Fc5Ae1fcCD1A73bc5f18A8A30
+[f-ftso-rewards]:   https://flare-explorer.flare.network/address/0x9EDCa806834e89cC928EF4951cE0506Be8416309
 [f-ftso-whitelist]: https://flare-explorer.flare.network/address/0x0F45493e4C321b238e1fA242692BFFf3f30fBdfD
 [f-wnat]:           https://flare-explorer.flare.network/address/0x1D80c49BbBCd1C0911346656B529DF9E5c2F783d
 [f-addr-updater]:   https://flare-explorer.flare.network/address/0xbAF89d873d198FF78E72D2745B01cBA3c6e5BE6B
+[s-ftso-manager]:   https://flare-explorer.flare.network/address/0xbfA12e4E1411B62EdA8B035d71735667422A6A9e
 [s-ftso-registry]:  https://songbird-explorer.flare.network/address/0x6D222fb4544ba230d4b90BA1BfC0A01A94E6cB23
 [s-ftso-submitter]: https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003
 [s-ftso-rewards]:   https://songbird-explorer.flare.network/address/0xc5738334b972745067fFa666040fdeADc66Cb925
