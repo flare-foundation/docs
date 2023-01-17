@@ -154,6 +154,7 @@ nav:
       - user/wallets/index.md
       - user/wallets/bifrost-wallet.md
       - user/wallets/dcent-wallet.md
+      - user/wallets/enkrypt-wallet.md
       - user/wallets/how-to-access-flare-network-with-a-ledger-device.md
       - user/wallets/how-to-access-flare-network-with-a-trezor-device.md
       - user/wallets/how-to-access-flare-network-with-metamask.md
