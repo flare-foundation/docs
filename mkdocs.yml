@@ -177,9 +177,11 @@ nav:
     - dev/index.md
     - dev/summary.md
     - dev/faq.md
-    - Getting Started:
-      - Deployment:
-        - dev/gettingstarted/deploying/remix.md
+    - Getting Started Guides:
+      - dev/getting-started/index.md
+      - Contract Deployment:
+        - dev/getting-started/deployment/index.md
+        - Using Remix: dev/getting-started/deployment/remix.md
     - Reference Guides:
       - dev/reference/index.md
       - dev/reference/contracts.md
