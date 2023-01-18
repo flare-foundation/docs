@@ -1,53 +1,64 @@
 # Contract Deployment Using Hardhat
 
-[Hardhat](https://hardhat.org/) is an environment developers use to test, compile, deploy and debug dApps based on the Ethereum blockchain. It's a flexible and extensible task runner that helps you manage and automate the recurring tasks inherent to developing smart contracts and dApps.
+[Hardhat](https://hardhat.org/) is an environment developers use to test, compile, deploy and debug dapps based on any blockchain compatible Ethereum's [EVM](glossary.md#evm).
+Hardhat is a flexible and extensible task runner that helps you manage and automate the recurring tasks inherent to developing smart contracts and dapps.
 
-This article shows you how to set up Hardhat and use it to build, test and deploy any smart contract on Flare.
-
+This article, partially based on the [Hardhat documentation](https://hardhat.org/hardhat-runner/docs/getting-started) shows you how to set up Hardhat and use it to build, test and deploy smart contracts on Flare.
 
 ## Guide
 
-### 1. Setting up the Environment
+### 1. Set up the Environment
 
-There are a few technical requirements for developers to start using Hardhat. Please Install the following dependencies:
+Install the following dependencies:
 
-* [NodeJSv12+ LTS & Npm/Yarn Package Installer](https://nodejs.org/en/)
+* [NodeJSv12+ LTS and npm/Yarn Package Installer](https://nodejs.org/en/).
 
 !!! tip
-    You can also checkout [Official Guide by Hardhat](https://hardhat.org/tutorial/setting-up-the-environment) to install Node.js for different OS - Ubuntu, MacOS and Windows.
+    Check the [Official Guide by Hardhat](https://hardhat.org/tutorial/setting-up-the-environment) if you have issues installing this package.
 
+Once the above dependencies are installed, create an npm empty project by running the following commands in a terminal:
 
-Once the above dependencies are installed successfully, you need to create an npm project, Run the following commands step by step in your terminal -
-
-```shell
+```bash
 mkdir flare-tutorial
 cd flare-tutorial
 npm init
-npm install --save-dev hardhat
-
 ```
 
-### 2. Creating a Hardhat Project
+Press **Enter** on each of the prompts.
 
-To create a sample project, run **npx hardhat** in your project folder.
+Finally, add Hardhat and a few dependencies to the project, since you will use them in this tutorial.
 
-```shell
+```bash
+npm install --save-dev \
+  hardhat \
+  @nomicfoundation/hardhat-toolbox \
+  @nomiclabs/hardhat-ethers \
+  dotenv
+```
+
+### 2. Create a Hardhat Project
+
+Hardhat can quick-start your development by providing a sample project.
+Just run:
+
+```bash
 npx hardhat
-
 ```
 
 You should see the following prompt:
 
 <figure markdown>
-  ![Hardhat Prompt](hardhat1.png){ loading=lazy .allow-zoom }
-  <figcaption>Hardhat Prompt</figcaption>
+  ![Hardhat project creation prompt](hardhat1.png){ loading=lazy .allow-zoom }
+  <figcaption>Hardhat project creation prompt.</figcaption>
 </figure>
 
-**Choose the JavaScript project** and Press **Enter** & choose **'Y'** for rest of the prompts
+Choose the `Create a JavaScript project` with the **Up** and **Down** keys, and Press **Enter**.
+Then press **Y** for rest of the prompts.
 
-### 3. Compiling your contracts
+When done, it should print `Project created`.
 
-Next, if you take a look in the ***contracts/*** folder, you'll see Lock.sol which consistis of a simple digital lock, where users could only withdraw funds after a given period of time:
+If you take a look in the `contracts` folder, you should find a sample source file called `Lock.sol`.
+It is a Solidity smart contract implementing a simple digital lock, where users can only withdraw funds after a given period of time:
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -84,21 +95,22 @@ contract Lock {
         owner.transfer(address(this).balance);
     }
 }
-
 ```
 
-To compile it, simply run:
-```shell
+### 3. Compile the Contracts
+
+To compile the sample project, simply run:
+
+```bash
 npx hardhat compile
 ```
 
-### 4. Configuring Hardhat for Flare
+Upon successful compilation it will print `Compiled 1 Solidity file successfully`.
 
-* Go to **hardhat.config.js** file and update the hardhat-config with [flare-network-configurations]((../../reference/network-configs.md))
-* Create [.env](https://www.npmjs.com/package/dotenv) file in the root that can store your [private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
-* Make sure to install hardhat-ethers & dotenv by running ```npm i @nomiclabs/hardhat-ethers``` & ```npm i dotenv```
+### 4. Configure the Project
 
-You can copy and paste the following code to **hardhat.config.js** file
+In order to be deployed on any of the [Flare networks](../../reference/network-configs.md), the project needs to be configured.
+Edit the `hardhat.config.js` file and replace its contents with the following:
 
 ```javascript
 require('dotenv').config();
@@ -133,52 +145,56 @@ module.exports = {
     }
   },
 };
-
 ```
+
+Then, create a file called `.env` at the root of you project (where the `hardhat.config.js` file resides) to store the private key for the account to use for testing.
+[`.env` files](https://www.npmjs.com/package/dotenv) are useful to store local information which should not be committed into the source repository.
+In this tutorial, you need to store your test account's [private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) in this format:
+
+```ini
+PRIVATE_KEY="0x0000000000000000000000000000000000000000000000000000000000000000"
+```
+
+That is, 64 hexadecimal characters after the `0x`.
 
 !!! Caution
-    Make sure to add your mnemonic or private key and add it to a separate file named ".env" & make sure never to upload this file to GitHub or GitLab.
 
-### 5. Testing the Contract
+    Make sure you never upload your `.env` file to a remote repository.
 
-If you take a look in the ***test/*** folder, you'll see a test file that comes with tests that use Mocha, Chai, and Ethers.js which we have to install -
+    For this reason, the `.gitignore` file that Hardhat created for you already ignores `.env` files.
 
-```shell
-npm install mocha
-npm install chai
-npm install --save ethers
-```
+### 5. Test the Contract
 
-To run tests with Hardhat, you just need to type the following:
+In the `test` folder you should find a ready-made test file that verifies the contract works as expected.
 
-```shell
+To run tests with Hardhat, you just need to run:
+
+```bash
 npx hardhat test
 ```
-Expected Results:
+
+You should get:
 
 <figure markdown>
-  ![Hardhat Prompt](hardhat2.png){ loading=lazy .allow-zoom }
-  <figcaption>Hardhat Prompt</figcaption>
+  ![Lock contract test results](hardhat2.png){ loading=lazy .allow-zoom }
+  <figcaption>Lock contract test results.</figcaption>
 </figure>
 
-### 6. Deploying the Contract
+### 6. Deploy the Contract
 
-Let's deploy our contract to Coston2 testnet, To deploy the contract we will use a Hardhat script that is already present Inside the ***scripts/*** folder 
+Finally, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-configs.md), using a Hardhat script from the `scripts` folder.
 
-Run this command in root of the project directory:
+Run this command in the root of the project:
 
-```shell
+```bash
 npx hardhat run scripts/deploy.js --network coston2
 ```
 
-You can check the status of your contract by copy and pasting the address on [Block Explorer](https://coston2-explorer.flare.network/)
+You should get an output similar to:
 
-**Congratulations! You have successfully deployed Greeter Smart Contract. Now you can interact with the Smart Contract by building a dApp.**
+```text
+Lock with 1 ETH and unlock timestamp 1705592309 deployed to 0xdC7781FA9fA7e2d0313cd0229a5080B4e30663a5
+```
 
-
-
-
-
-
-
-
+The last part is the address where the contract has been deployed.
+You can check the status of the contract by copy and pasting this address in the [Block Explorer](https://coston2-explorer.flare.network/).
