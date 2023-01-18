@@ -175,12 +175,13 @@ nav:
   - Developer Docs:
     - dev/index.md
     - dev/summary.md
-    - dev/faq.md
     - Getting Started Guides:
       - dev/getting-started/index.md
       - Contract Deployment:
         - dev/getting-started/deployment/index.md
         - Using Remix: dev/getting-started/deployment/remix.md
+        - Using Hardhat: dev/getting-started/deployment/hardhat.md
+    - dev/faq.md
     - Reference Guides:
       - dev/reference/index.md
       - dev/reference/contracts.md
