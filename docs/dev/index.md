@@ -23,6 +23,8 @@ section_icon_type: stroked-svg
         [Songbird](https://songbird-explorer.flare.network),
         [Coston](https://coston-explorer.flare.network)
 
+    * [RPC Nodes for Connected Chains](./reference/network-configs.md#rpc-nodes-for-connected-chains)
+
     * [Discord](https://discord.com/invite/XqNa7Rq)
 
 Select one of the topics below:
