@@ -176,12 +176,14 @@ nav:
   - Developer Docs:
     - dev/index.md
     - dev/summary.md
-    - Getting Started Guides:
+    - Getting Started Docs:
       - dev/getting-started/index.md
       - Contract Deployment:
         - dev/getting-started/deployment/index.md
         - Using Remix: dev/getting-started/deployment/remix.md
         - Using Hardhat: dev/getting-started/deployment/hardhat.md
+        - Using Truffle: dev/getting-started/deployment/truffle.md
+        - Using Foundry: dev/getting-started/deployment/foundry.md
     - dev/faq.md
     - Reference Guides:
       - dev/reference/index.md
