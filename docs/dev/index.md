@@ -29,4 +29,5 @@ Select one of the topics below:
 
 * [Flare and the EVM](./summary.md)
 * [FAQ](./faq.md)
+* [Getting Started Docs](./getting-started/index.md)
 * [Reference Guides](./reference/index.md)
