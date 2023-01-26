@@ -68,13 +68,13 @@ plugins:
           'tutorials/developing-on-top-of-flare/README.md': 'dev/index.md'
           'tutorials/developing-on-top-of-flare/important-links.md': 'dev/index.md'
           'tutorials/delegation/README.md': 'user/delegation/index.md'
-          'tutorials/delegation/delegation-in-detail.md': 'user/delegation/delegation-in-detail.md'
-          'tutorials/delegation-faq/README.md': 'user/delegation/delegation-faq.md'
-          'tutorials/delegation-faq/block-explorer-+-metamask.md': 'user/delegation/manual-delegation.md'
-          'tutorials/reward-claiming/README.md': 'user/delegation/reward-claiming.md'
-          'tutorials/reward-claiming/reward-claiming-in-detail.md': 'user/delegation/reward-claiming-in-detail.md'
-          'tutorials/reward-faq/README.md': 'user/delegation/reward-claiming-faq.md'
-          'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/manual-reward-claiming.md'
+          'tutorials/delegation/delegation-in-detail.md': 'tech/ftso.md'
+          'tutorials/delegation-faq/README.md': 'tech/ftso.md'
+          'tutorials/delegation-faq/block-explorer-+-metamask.md': 'user/delegation/managing-delegations.md'
+          'tutorials/reward-claiming/README.md': 'tech/ftso.md'
+          'tutorials/reward-claiming/reward-claiming-in-detail.md': 'user/delegation/managing-rewards.md'
+          'tutorials/reward-faq/README.md': 'tech/ftso.md'
+          'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/managing-rewards.md'
           'tutorials/price-provider/setting-up-an-observation-node/README.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/ftso-price-provider/README.md': 'infra/data/operating.md'
@@ -88,6 +88,14 @@ plugins:
           'dev/reference/flare.md': 'dev/reference/network-configs.md'
           'dev/reference/songbird.md': 'dev/reference/network-configs.md'
           'dev/reference/coston-testnet.md': 'dev/reference/network-configs.md'
+          'user/delegation/delegation-overview.md': 'tech/ftso.md'
+          'user/delegation/delegation-faq.md': 'tech/ftso.md'
+          'user/delegation/delegation-in-detail.md': 'tech/ftso.md'
+          'user/delegation/manual-delegation.md': 'user/delegation/managing-delegations.md'
+          'user/delegation/manual-reward-claiming.md': 'user/delegation/managing-rewards.md'
+          'user/delegation/reward-claiming.md': 'tech/ftso.md'
+          'user/delegation/reward-claiming-faq.md': 'tech/ftso.md'
+          'user/delegation/reward-claiming-in-detail.md': 'tech/ftso.md'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -142,14 +150,8 @@ nav:
     - user/block-explorer.md
     - FTSO Delegation:
       - user/delegation/index.md
-      - user/delegation/delegation-overview.md
-      - user/delegation/delegation-in-detail.md
-      - user/delegation/delegation-faq.md
-      - user/delegation/manual-delegation.md
-      - user/delegation/reward-claiming.md
-      - user/delegation/reward-claiming-in-detail.md
-      - user/delegation/reward-claiming-faq.md
-      - user/delegation/manual-reward-claiming.md
+      - user/delegation/managing-delegations.md
+      - user/delegation/managing-rewards.md
     - Governance:
       - user/governance/index.md
       - user/governance/voting.md
@@ -164,6 +166,7 @@ nav:
       - user/wallets/how-to-access-flare-network-with-metamask.md
       - user/wallets/safepal-s1-wallet.md
       - user/wallets/brave-wallet.md
+    - user/wrapping-tokens.md
   - Infrastructure Guides:
     - infra/index.md
     - FTSO Data Providers:

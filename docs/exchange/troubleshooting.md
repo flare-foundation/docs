@@ -4,6 +4,6 @@ This page contains links to other sections answering the most common support req
 
 * [Regarding Node Deployment](../infra/observation/faq.md#troubleshooting)
 
-* [Regarding Delegation](../user/delegation/delegation-faq.md)
+* [Regarding Delegation](../user/delegation/managing-delegations.md)
 
-* [Regarding Reward Claiming](../user/delegation/reward-claiming-faq.md)
+* [Regarding Reward Claiming](../user/delegation/managing-rewards.md)

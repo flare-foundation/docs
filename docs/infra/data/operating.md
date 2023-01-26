@@ -220,7 +220,7 @@ To run on the real network, you need to:
     * The later you submit, the more time you have to gather data.
         However, if you submit too late, you might miss the epoch window.
         Find the balance that works best for you.
-* **Claim rewards**: Ensure you regularly [claim your rewards](../../user/delegation/reward-claiming.md) and wrap them to earn more vote power. Each FTSO emits a `PriceFinalized` event that contains information about calculated median data and rewarding bounds.
+* **Claim rewards**: Ensure you regularly [claim your rewards](../../user/delegation/managing-rewards.md) and wrap them to earn more vote power. Each FTSO emits a `PriceFinalized` event that contains information about calculated median data and rewarding bounds.
 * **Set the gas limit** of your commit-and-reveal transactions to around 2'500'000 gwei so that you provide enough gas.
 
 ## Maximizing Your Data Algorithm's Performance
