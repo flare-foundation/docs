@@ -184,7 +184,6 @@ nav:
         - Using Hardhat: dev/getting-started/deployment/hardhat.md
         - Using Truffle: dev/getting-started/deployment/truffle.md
         - Using Foundry: dev/getting-started/deployment/foundry.md
-        - Deployment at a Specific Address: dev/getting-started/deployment/specific-address.md
     - dev/faq.md
     - Reference Guides:
       - dev/reference/index.md
