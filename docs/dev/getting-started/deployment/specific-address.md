@@ -1,8 +1,10 @@
-# Contract Deployment at same address in different chains
+# Contract Deployment at a Specific Address
 
-Every time we deploy a new smart contract on the blockchain, we receive a unique address for the contract. There is a proper mechanism based on which smart contract addresses are generated. 
+Every time we deploy a new smart contract on the blockchain, we receive a unique address for the contract.
+There is a proper mechanism based on which smart contract addresses are generated.
 
-Deploying Contracts at the same address in different chains makes the smart contract much more developer-friendly and can be useful for testing purposes. Also it helps to Keep track easily and helpful to users interacting with your addresses across various networks.
+Deploying Contracts at the same address in different chains makes the smart contract much more developer-friendly and can be useful for testing purposes.
+Also it helps to Keep track easily and helpful to users interacting with your addresses across various networks.
 
 There are two ways you can deterministically deploy a contract across multiple networks.
 
@@ -12,9 +14,9 @@ Using [`CREATE`](https://ethereum.stackexchange.com/questions/68943/create-opcod
 
 So if you want to deploy on the **SAME address** in different chains than you need to manage the same Nonce in different chain keeping in mind that you use the same wallet address for deployment.
 
-However Maintaining the **nonces** can be a hassle. For instance, if you need to use the address to sign a transaction on one network, you must ensure that you update the nonces on all other networks if you want to deploy another contract deterministically and also there is no way to predetermine what that deployment address will be in the counterfactual.
+However, maintaining the **nonces** can be a hassle. For instance, if you need to use the address to sign a transaction on one network, you must ensure that you update the nonces on all other networks if you want to deploy another contract deterministically and also there is no way to predetermine what that deployment address will be in the counterfactual.
 
-2. Using **CREATE2** opCode: 
+2. Using **CREATE2** opCode:
 
 Create2 is a more robust alternative to deployment & deriving contract addresses that does not rely on setting the nonces. The CREATE2 opcode also gives us the ability predict the address where a contract will be deployed.
 
@@ -24,7 +26,7 @@ Using the EVM opCode `CREATE2` a contract can be deployed on the same address us
 * Salt: A required arbitrary value provided by the user. For eg: ‘hello’.
 * Deployer address: The Ethereum wallet address used to deploy a contract.
 
-Instead of the nonce, create2 uses a random salt hex set by the user. With the salt hex, a specific contract address can then be derived with the wallet address and bytecode. 
+Instead of the nonce, create2 uses a random salt hex set by the user. With the salt hex, a specific contract address can then be derived with the wallet address and bytecode.
 
 The whole idea behind [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) opcode is to make the resulting address independent of future events.
 
@@ -32,14 +34,13 @@ The whole idea behind [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) opcod
 
     If you run a transaction again on the same network with same Bytecode, Salt and Address it will fail because a contract has already been deployed to that address.
 
-
 ## Guide
 
 ### 1. Create a Project
 
 You can use Hardhat or Truffle to create a project, We will use Hardhat in this article!
 
-Please check [Hardhat Tutorial]((./hardhat.md)) and setup a Project.
+Please check [Hardhat Tutorial](./hardhat.md) and set up a Project.
 
 ### 2. Writing & Deploying the Contracts
 
@@ -78,7 +79,7 @@ npx hardhat compile
 
 Upon successful compilation it will print `Compiled 1 Solidity file successfully`.
 
-Now let's create a deploy script and deploy our factory, In your scripts folder, create a new file named `deployFactory.js` and paste the following:
+Now let's create a deployment script and deploy our factory, In your scripts folder, create a new file named `deployFactory.js` and paste the following:
 
 ``` javascript
 const main = async () => {
@@ -87,7 +88,7 @@ const main = async () => {
     await factory.deployed();
     console.log("Factory deployed to:", factory.address);
   }
-  
+
   main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
@@ -106,6 +107,7 @@ npx hardhat run scripts/deployFactory.js --network goerli
 npx hardhat run scripts/deployFactory.js --network coston
 npx hardhat run scripts/deployFactory.js --network coston2
 ```
+
 If successful, each deployment should return the same address on every network:
 
 ``` bash
@@ -113,6 +115,7 @@ Factory deployed to: 0x437E85F89866d3D3dcE3bc91D4FBFfa0e050AADB
 Factory deployed to: 0x437E85F89866d3D3dcE3bc91D4FBFfa0e050AADB
 Factory deployed to: 0x437E85F89866d3D3dcE3bc91D4FBFfa0e050AADB
 ```
+
 !!! Tip
 
     Be sure to save your factory address so we can use it to later deploy other contracts.
@@ -134,9 +137,10 @@ contract HelloWorld {
     }
 }
 ```
+
 This is a simple contract that will print the string “Hello World!”
 
-Now let's create a deploy script and deploy our contract, In your scripts folder, create a new file named `deployHelloWorld.js` and paste the following:
+Now let's create a deployment script and deploy our contract, In your scripts folder, create a new file named `deployHelloWorld.js` and paste the following:
 
 ``` javascript
 const { ethers } = require("hardhat");
@@ -153,7 +157,7 @@ const main = async () => {
     console.log("hello world contract has been deployed at ", address);
     const greeting = await helloWorldContract.greeting();
   })
-  
+
 }
 main().catch((error) => {
   console.error(error);
@@ -167,7 +171,7 @@ Here we have used the **DeterministicDeployFactory** contract to deploy the **He
 
     Do change the factoryAddress in the above file with your own Factory deployed address
 
-Now use the following command to deploy the `HelloWorld` contract across mutiple networks:
+Now use the following command to deploy the `HelloWorld` contract across multiple networks:
 
 ```bash
 npx hardhat run scripts/deployHelloWorld.js --network goerli
@@ -182,18 +186,8 @@ hello world contract has been deployed at  0x8929912256646340496f3cF5d17d56F967c
 hello world contract has been deployed at  0x8929912256646340496f3cF5d17d56F967cc554A
 hello world contract has been deployed at  0x8929912256646340496f3cF5d17d56F967cc554A
 ```
+
 This is done with the help of the create2 function.
 You can always check the status of the contract by copy and pasting this address in the respective Block Explorer.
 
-
-You can use this method to deploy your smart contract at the same address across mutiple EVM networks like Flare, Songbird, Ethereum, Polygon, Optimism etc.
-
-
-
-
-
-
-
-
-
-
+You can use this method to deploy your smart contract at the same address across multiple EVM networks like Flare, Songbird, Ethereum, Polygon, Optimism etc.

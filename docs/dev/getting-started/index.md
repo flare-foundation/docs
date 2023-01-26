@@ -1,4 +1,4 @@
-# Getting Started Guides
+# Getting Started Docs
 
 Select one of the categories below:
 

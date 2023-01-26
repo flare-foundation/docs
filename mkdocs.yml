@@ -176,15 +176,15 @@ nav:
   - Developer Docs:
     - dev/index.md
     - dev/summary.md
-    - Getting Started Guides:
+    - Getting Started Docs:
       - dev/getting-started/index.md
       - Contract Deployment:
         - dev/getting-started/deployment/index.md
         - Using Remix: dev/getting-started/deployment/remix.md
         - Using Hardhat: dev/getting-started/deployment/hardhat.md
         - Using Truffle: dev/getting-started/deployment/truffle.md
-        - Using Foundary: dev/getting-started/deployment/foundary.md
-        - Same Address in Different Chains: dev/getting-started/deployment/sameaddress.md
+        - Using Foundry: dev/getting-started/deployment/foundry.md
+        - Deployment at a Specific Address: dev/getting-started/deployment/specific-address.md
     - dev/faq.md
     - Reference Guides:
       - dev/reference/index.md
