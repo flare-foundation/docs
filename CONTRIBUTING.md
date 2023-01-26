@@ -12,7 +12,7 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 ### Linting
 
-If using [Visual Studio Code](https://code.visualstudio.com/), install the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) and [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extensions.
+If using [Visual Studio Code](https://code.visualstudio.com/), install the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one), the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and the [nbsp-vscode](https://marketplace.visualstudio.com/items?itemName=possan.nbsp-vscode) extensions.
 
 Then add these settings to your `settings.json` file:
 
@@ -97,6 +97,7 @@ These are currently false positives which can be safely ignored:
 * Avoid jargon and humor.
 * Avoid em-dashes. Putting non-restrictive relative clauses into separate sentences leads to simpler, clearer writing. If em-dashes are needed, make sure to use the right character: `—` (alt code: `ALT+0151`).
 * When referring to something in a certain way (i.e. `FBAS` for *Federated Byzantine Agreement System*) make sure to consistently use only FBAS after the term is introduced.
+* Do *not* spell out numbers, even if they are small. These are tech docs where numbers are expected to be numbers.
 
 ### Links
 
