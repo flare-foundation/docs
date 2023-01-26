@@ -35,7 +35,11 @@ The first thing you should know is that:
 [brand-assets]: https://drive.google.com/drive/folders/1mPrtIBb2k88E4f1fguEm3eAXLW74xOry?usp=sharing
 [github]: https://github.com/flare-foundation/flare
 
-Technical information in the [Network Configuration section](../dev/reference/network-configs.md).
+Network configuration information, including:
+
+* [Different Flare networks](../dev/reference/network-configs.md)
+* [Configuration Values](../dev/reference/network-configs.md#configuration-values)
+* [RPC Nodes for Connected Chains](../dev/reference/network-configs.md#rpc-nodes-for-connected-chains)
 
 !!! note
 

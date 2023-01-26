@@ -5,7 +5,16 @@ section_icon_type: stroked-svg
 
 # Developer Docs
 
+Select one of the topics below:
+
+* [Flare and the EVM](./summary.md)
+* [FAQ](./faq.md)
+* [Getting Started Docs](./getting-started/index.md)
+* [Reference Guides](./reference/index.md)
+
 !!! info "Quick links"
+
+    Here are some pages that developers frequently search:
 
     * Main code repositories:
 
@@ -26,10 +35,3 @@ section_icon_type: stroked-svg
     * [RPC Nodes for Connected Chains](./reference/network-configs.md#rpc-nodes-for-connected-chains)
 
     * [Discord](https://discord.com/invite/XqNa7Rq)
-
-Select one of the topics below:
-
-* [Flare and the EVM](./summary.md)
-* [FAQ](./faq.md)
-* [Getting Started Docs](./getting-started/index.md)
-* [Reference Guides](./reference/index.md)
