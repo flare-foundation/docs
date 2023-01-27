@@ -31,7 +31,7 @@ To find the addresses of these contracts, see the [Contract Addresses](../dev/re
 
 ## User Operations
 
-This section shows how to perform operations required to enable auto-claiming.
+This section shows how to perform operations required to enable autoclaiming.
 The main step is to set the executor that will perform the claiming for the user who has accrued rewards.
 Then other operations are explained, such as changing the executor and disabling automatic claiming.
 
@@ -83,7 +83,7 @@ To disable automatic claiming, remove all executors by sending an empty array of
 
 This section shows how to perform operations required in an executor-facing application, for example, becoming an executor.
 While the main step for manual executors is only claiming rewards, the main steps for registered executors are registering, setting a fee, and claiming rewards.
-Other operations like changing the fee, unregistering as an executor, and learning which addresses to claim for are helpful for registered executors.
+Other operations like changing the fee, unregistering as an executor, and learning which addresses to claim for are also explained.
 
 ### Becoming an Executor
 

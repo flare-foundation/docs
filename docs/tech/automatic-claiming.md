@@ -25,7 +25,7 @@ For executors, automatic claiming is an opportunity to earn a fee for performing
 
 ## How Automatic Claiming Works
 
-Without an executor, users need claim twice a week if they want to benefit from the rewards as soon as possible.
+Without an executor, users need to claim twice a week if they want to benefit from the rewards as soon as possible.
 
 <figure markdown>
   ![Claiming Process without Executor](executor-process-without.png){ loading=lazy .allow-zoom width=500px }
@@ -79,9 +79,11 @@ With a registered executor, all agreements happen on-chain.
 Here is how the registered claiming process works, with applications performing these actions on behalf of executors and users:
 
 1. Executors who want to make themselves publicly available to users register as executors, paying a registration fee.
+The fee to register as an executor is burned.
 2. Registered executors post their fee for claiming rewards.
 3. Users who have accrued rewards and want an executor to claim on their behalf can choose from the list of registered executors.
 4. These users pay a setup fee to enable a registered executor to claim their rewards.
+   The fee to enable a registered executor is sent to the executor.
 5. Executors claim rewards for one or more users, and their fees are automatically deducted from the claimed rewards.
 6. Executors notify users off-chain if they discontinue providing this service.
 
