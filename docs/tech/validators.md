@@ -34,7 +34,7 @@ As it can be seen:
 
 Both the $VotePower$ and the $RewardRate$ are evaluated once a week based on the previous week's results.
 
-The plots below show the equalizing effect of this formula on actual data taken from [flaremetrics.io](https://flaremetrics.io/):
+The plots below show the equalizing effect of this formula on actual data taken from [flaremetrics.io](https://flaremetrics.io/) in 2022 (some provider names might have changed):
 
 <figure markdown>
   ![Validator vote power](validator-vote-power.png){ loading=lazy .allow-zoom .side-by-side }![Validator log vote power](validator-log-vote-power.png){ loading=lazy .allow-zoom .side-by-side }
