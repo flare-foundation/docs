@@ -97,7 +97,7 @@ These are currently false positives which can be safely ignored:
 * Avoid jargon and humor.
 * Avoid em-dashes. Putting non-restrictive relative clauses into separate sentences leads to simpler, clearer writing. If em-dashes are needed, make sure to use the right character: `—` (alt code: `ALT+0151`).
 * When referring to something in a certain way (i.e. `FBAS` for *Federated Byzantine Agreement System*) make sure to consistently use only FBAS after the term is introduced.
-* Do *not* spell out numbers, even if they are small. These are tech docs where numbers are expected to be numbers.
+* Use digits when the number is mostly meant to be used in a program. Spell our numbers when they are not.
 
 ### Links
 
