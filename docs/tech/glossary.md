@@ -3,6 +3,9 @@
 Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized set of Attestation Providers that confirms the validity or otherwise of any request.
 
+Autoclaiming { #autoclaiming }
+: Automatic claiming enables users to appoint an [executor](#executor) to claim rewards on their behalf. [Read more...](./automatic-claiming.md)
+
 Avalanche { #avalanche }
 : An open-source blockchain using the Snow family of consensus protocols and [Proof of Stake](#proof_of_stake) for [Sybil resistance](#sybil_resistance). It is advertised as the fastest smart contract platform. [Read more...](https://docs.avax.network/)
 
@@ -45,6 +48,9 @@ Delegate { #delegate }
 EVM { #evm }
 : The Ethereum Virtual Machine allows executing smart contracts on the Ethereum network, regardless of the kind of computer that executes it. Multiple blockchain networks, including Flare, support EVM contracts. [Read more...](https://ethereum.org/en/developers/docs/evm/)
 
+Executor { #executor }
+: Users who do not want to claim rewards themselves can set an executor to claim rewards for them and send them directly to their users' accounts. [Read more...](./automatic-claiming.md)
+
 Faucet { #faucet }
 : A [dapp](#dapp) that distributes test tokens to anyone that requests them. Used only on [test networks](#test_network), obviously. See the [Network Configurations](../dev/reference/network-configs.md) page to learn about Flare's faucets.
 
@@ -58,7 +64,7 @@ Flare Token (FLR) { #flare_token_(flr) }
 : The native currency of the Flare's [main network](#main_network).
 
 FTSO { #ftso }
-: The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information. [Read more...](ftso.md)
+: The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information. [Read more...](./ftso.md)
 
 Governance { #governance }
 : Mechanism to propose, vote and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.

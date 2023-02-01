@@ -127,6 +127,7 @@ nav:
     - index.md
   - Concepts:
     - tech/index.md
+    - tech/automatic-claiming.md
     - tech/flare-launch-process.md
     - tech/api-portal.md
     - tech/ftso.md
@@ -175,6 +176,7 @@ nav:
       - infra/validation/deploying.md
   - Developer Docs:
     - dev/index.md
+    - dev/automatic-claiming.md
     - dev/summary.md
     - Getting Started Docs:
       - dev/getting-started/index.md

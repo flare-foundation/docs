@@ -20,6 +20,7 @@ From it, the following contract addresses can be retrieved:
     - Individual `FTSO` contracts: `FtsoManager.getFtsos()`
     - `FTSORewardManager`: `FtsoManager.rewardManager()`
         - `WNat`: `FtsoRewardManager.wNat()`
+        - `ClaimSetupManager`: `FtsoRewardManager.claimSetupManager`
 - `FTSORegistry`: `PriceSubmitter.getFtsoRegistry()`
 - `FTSOWhitelister`: `PriceSubmitter.voterWhitelister()`
 
