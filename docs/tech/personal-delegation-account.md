@@ -12,9 +12,7 @@ Here are some of the differences from a regular account:
 
 * A PDA cannot have another PDA of its own.
 * Each PDA is available only on the Flare network and has a specialized contract for that PDA only.
-* Functions of the user's PDA can only be invoked by calling them through the Claim Setup Manager (CSM) contract.
-* The functionality they offer is limited, such as enabling and disabling a PDA, delegating for rewards, delegating for governance voting, withdrawing, and transferring external tokens.
-* PDA addresses cannot vote directly, but their owners can transfer all their votes to another address (their main account or someone else's).
+* PDA addresses cannot participate in [governance](./governance.md) directly, but their owners can transfer all their votes to another address (their main account or someone else's).
 * A PDA automatically converts any `$FLR` tokens transferred to it to wrapped Flare tokens (`$WFLR`), which are more useful for functions such as delegation.
 * Only the owner of the main account can transfer funds from the PDA and only to the main account.
 
