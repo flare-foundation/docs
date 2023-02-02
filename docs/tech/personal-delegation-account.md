@@ -11,7 +11,6 @@ Like regular accounts, it is under control of the owner and can perform function
 Here are some of the differences from a regular account:
 
 * A PDA cannot have another PDA of its own.
-* Each PDA is available only on the Flare network and has a specialized contract for that PDA only.
 * PDA addresses cannot participate in [governance](./governance.md) directly, but their owners can transfer all their votes to another address (their main account or someone else's).
 * A PDA automatically converts any `$FLR` tokens transferred to it to wrapped Flare tokens (`$WFLR`), which are more useful for functions such as delegation.
 * Only the owner of the main account can transfer funds from the PDA and only to the main account.

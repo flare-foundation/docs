@@ -40,23 +40,23 @@ When users disable their PDA, `FTSO.autoClaim()` claims only the rewards for the
 To check if a user's PDA is enabled, call `CSM.getDelegationAccountData()`.
 It returns both the PDA address and its state:
 
-| Condition                  | Address     | State   |
-| -------------------------- | ----------- | ------- |
-| PDA is enabled             | PDA address | `true`  |
-| PDA is disabled            | PDA address | `false` |
-| PDA has never been created | 0           | -       |
+| Condition                  | Address       | State   |
+| -------------------------- | ------------- | ------- |
+| PDA is enabled             | PDA address   | `true`  |
+| PDA is disabled            | PDA address   | `false` |
+| PDA has never been created | `0x000...000` | `false` |
 
 !!! warning "Never rely solely on the returned address being non-zero to check if an account has a PDA."
 
 ## Delegation and Rewards
 
-A PDA is a regular account for which you don't have private keys and which must be managed through the CSM contract.
+A PDA is a regular account for which there are no private keys and which must be managed through the CSM contract instead.
 
-It can delegate rewards like a regular account with the same methods, such as `batchDelegate()`.
-It can also claim rewards like a regular account with the same methods, such as `claimReward(address recipient, uint256[] rewardEpochs)`, where `recipient` allows you to send to any address, including a PDA.
+Conveniently, the method signatures to delegate on the CSM are the same as on the `WNat` contract where delegation is usually performed, for instance `CSM.batchDelegate()`.
+FTSO reward claiming, though, is still performed through the `FTSORewardManager`, for example using `claimReward(address recipient, ...)` where `recipient` allows sending to any address, including a PDA.
 For information on how to delegate and claim FTSO rewards, see [Delegation](../tech/ftso.md#delegation) and [Rewards](../tech/ftso.md#rewards).
 
-In addition to the methods used for regular accounts, you can also automatically claim to the PDA or the main account with `FTSO.autoClaim()`, depending on whether the PDA is enabled or not.
+In addition to the methods used for regular accounts, `FTSO.autoClaim()` automatically claims to the PDA or the main account depending on whether the PDA is enabled or not.
 If users disable their PDA, `autoClaim()` claims rewards for only their main account and to only their main account.
 
 !!! note
