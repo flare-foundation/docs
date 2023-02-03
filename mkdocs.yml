@@ -137,8 +137,8 @@ nav:
     - tech/validators.md
     - tech/glossary.md
   - User Guides:
-    - user/automatic-claiming.md
     - user/index.md
+    - user/automatic-claiming.md
     - user/block-explorer.md
     - FTSO Delegation:
       - user/delegation/index.md
