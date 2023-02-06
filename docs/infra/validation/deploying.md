@@ -26,13 +26,14 @@ Validators run the same software as regular **observer nodes**, therefore, this 
 
 The requirements to deploy a validator node are the same as for observer nodes, except on the CPU and RAM front which are heavier due to the extra work required:
 
-|                 | Hardware    |                      | Software                                                        |
-| --------------: | :---------- | -------------------: | --------------------------------------------------------------- |
-|   **CPU cores** | 16          | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina)            |
-|         **RAM** | 64          |     **Dependencies** | [Go](https://golang.org/doc/install){target=_blank} (>= 1.18.5) |
-|  **Disk space** | 1 TB SSD    |                      | [gcc](https://gcc.gnu.org/){target=_blank}                      |
-| **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/){target=_blank}                      |
-|                 |             |                      | [jq](https://stedolan.github.io/jq/){target=_blank}             |
+|                 | Hardware    |                      | Software                                             |
+| --------------: | :---------- | -------------------: | ---------------------------------------------------- |
+|   **CPU cores** | 16          | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
+|         **RAM** | 64 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
+|  **Disk space** | 1 TB SSD    |                      | [gcc](https://gcc.gnu.org/)                          |
+| **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/)                          |
+|                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
+|                 |             |                      | [npm](https://docs.npmjs.com) (>= 8.11)              |
 
 ## Guide
 

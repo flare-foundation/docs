@@ -24,7 +24,7 @@ This guide contains different instructions depending on which Flare Network you 
     |                 | Hardware    |                      | Software                                             |
     | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
     |   **CPU cores** | 8           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
-    |         **RAM** | 32          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
+    |         **RAM** | 32 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
     |  **Disk space** | 1 TB SSD    |                      | [gcc](https://gcc.gnu.org/)                          |
     | **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/)                          |
     |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
@@ -34,7 +34,7 @@ This guide contains different instructions depending on which Flare Network you 
     |                 | Hardware    |                      | Software                                             |
     | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
     |   **CPU cores** | 8           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
-    |         **RAM** | 32          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
+    |         **RAM** | 32 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
     |  **Disk space** | 3.5 TB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
     | **Disk growth** | 2.5 TB/year |                      | [g++](https://gcc.gnu.org/)                          |
     |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
@@ -44,7 +44,7 @@ This guide contains different instructions depending on which Flare Network you 
     |                 | Hardware    |                      | Software                                             |
     | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
     |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
-    |         **RAM** | 16          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
+    |         **RAM** | 16 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
     |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
     | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                          |
     |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
@@ -54,7 +54,7 @@ This guide contains different instructions depending on which Flare Network you 
     |                 | Hardware    |                      | Software                                             |
     | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
     |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
-    |         **RAM** | 16          |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
+    |         **RAM** | 16 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.18.5)     |
     |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
     | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                          |
     |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
