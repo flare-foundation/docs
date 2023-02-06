@@ -34,6 +34,7 @@
     --md-code-hl-comment-color: var(--md-default-fg-color--light);
     --md-code-hl-generic-color: var(--md-default-fg-color--light);
     --md-code-hl-variable-color: var(--md-default-fg-color--light);
+    --md-code-hl-color: var(--md-accent-fg-color--transparent);
 }
 
 /* Remove shadow under header */
