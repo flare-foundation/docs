@@ -10,7 +10,7 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 ## Automatic Checking
 
-### Linting
+### Markdown Linting
 
 If using [Visual Studio Code](https://code.visualstudio.com/), install the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one), the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and the [nbsp-vscode](https://marketplace.visualstudio.com/items?itemName=possan.nbsp-vscode) extensions.
 
@@ -125,3 +125,9 @@ Pay special attention to the capitalization and spacing of the following words:
 * smart contracts
 * State Connector
 * `$FLR`, `$SGB`, `$WFLR` and `$WSGB` (the wrapped tokens)
+
+### Images
+
+* In the screenshots, no partner should be prioritized over others.
+    For example, all FTSO data provider names and addresses should be blurred to make them illegible.
+    Use a 20px Gaussian Blur filter on Gimp.
