@@ -136,6 +136,7 @@ nav:
   - Concepts:
     - tech/index.md
     - tech/automatic-claiming.md
+    - tech/the-flaredrop.md
     - tech/flare-launch-process.md
     - tech/api-portal.md
     - tech/ftso.md
