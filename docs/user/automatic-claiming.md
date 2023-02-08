@@ -46,7 +46,7 @@ Now that you have your desired executor's address, you can set it as the executo
    The interface to your **Main Account** opens.
 3. In the **Executor** section, click **Add**.<!--Add an image when the UI is updated.-->
 4. Paste the executor's address.
-    A message confirms the executor's fee, whether it is a registered executor, and whether rewards go to your Main Account or Personal Delegation Account.
+    A message confirms the executor's fee, whether it is a registered executor, and whether rewards go to your Main Account or your [Personal Delegation Account (PDA)](../tech/personal-delegation-account.md).
 5. To set this executor, click **Confirm**.
     <figure markdown>
     ![Set an executor](executor-portal-set.png){ loading=lazy .allow-zoom width=500px }
