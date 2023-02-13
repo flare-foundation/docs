@@ -1,11 +1,11 @@
 # Enkrypt Wallet
 
-Enkrypt is a **multichain**, **open-source** and **non-custodial** wallet that tracks no data.
+[Enkrypt](https://www.enkrypt.com/?mtm_campaign=Flare%20Wiki%20-%20Getting%20started%20with%20Enkrypt) is a **multichain**, **open-source** and **non-custodial** wallet that tracks no data.
 It interacts with Polkadot, Ethereum, Bitcoin and more, all directly in the browser.
 
 ## Getting Started
 
-1. Install [Enkrypt](https://www.enkrypt.com).
+1. Install [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Flare%20Wiki%20-%20Getting%20started%20with%20Enkrypt).
 2. Create a new wallet or import an existing wallet to Enkrypt.
 3. Securely back up your recovery phrase offline.
 4. Protect your Enkrypt wallet with a password.
