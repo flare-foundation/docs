@@ -130,4 +130,4 @@ Pay special attention to the capitalization and spacing of the following words:
 
 * In the screenshots, no partner should be prioritized over others.
     For example, all FTSO data provider names and addresses should be blurred to make them illegible.
-    Use a 20px Gaussian Blur filter on Gimp.
+    Use a 20px Gaussian Blur filter on Gimp (Or 7 Standard Deviations if your version of Gimp does not allow to specify pixels).
