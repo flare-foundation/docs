@@ -13,4 +13,5 @@ Select one of the topics below:
 * [Block Explorer](./block-explorer.md)
 * [FTSO Delegation](./delegation/index.md)
 * [Governance](./governance/index.md)
+* [Personal Delegation Accounts](./personal-delegation-account.md)
 * [Wallets](./wallets/index.md)
