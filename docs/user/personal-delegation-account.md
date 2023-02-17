@@ -8,7 +8,7 @@ See [the Concept page](../tech/personal-delegation-account.md) for more detail.
 
 Particularly, the balance of a PDA can still be redelegated to earn compounded interest and the governance votes it grants can be transferred to another address.
 
-If you configured an [executor](../tech/automatic-claiming.md), it automatically claims rewards to the PDA if it is enabled.
+If a PDA is enabled and you configured an [executor](../tech/automatic-claiming.md), it automatically claims rewards for the main account and the PDA, and sends them to the PDA.
 
 ## Enabling a PDA
 
@@ -42,7 +42,8 @@ Your PDA is now ready to receive rewards!
 ![PDA Enabled](pda-enabled.png){ loading=lazy .allow-zoom }
 <figcaption>The PDA address is enabled.</figcaption>
 </figure>
-If you have an [executor](../tech/automatic-claiming.md) enabled, the executor automatically claims rewards to the PDA.
+
+If a PDA is enabled and you configured an [executor](../tech/automatic-claiming.md), it automatically claims rewards for the main account and the PDA, and sends them to the PDA.
 
 ## Operations available in a PDA
 
@@ -50,7 +51,7 @@ Other operations available are:
 
 | Operation     | Description            |
 | ------------- | ---------------------- |
-| **Disable**   | You can **Disable** the PDA at any time. Disabling sends all `$WFLR` back to the main account to your `$WFLR` balance. Automatic claims from executors will go the main account as well. |
+| **Disable**   | You can **Disable** the PDA at any time. Disabling sends all `$WFLR` back to the main account to your `$WFLR` balance. Automatic claims from executors will go to the main account as well. |
 | **Withdraw**  | You can withdraw from your PDA at any time. Click **Withdraw**, enter the amount of `$WFLR` to withdraw, and click **Withdraw** again. The amount is sent to your main account to your `$WFLR` balance. |
 | **Delegate**  | You can [delegate](../tech/personal-delegation-account.md) your rewards to FTSO data providers for compounded rewards. |
 | **Transfer votes**  | A PDA cannot vote on governance proposals directly, but it can [transfer its votes](../tech/governance.md#vote-transfer) to another address, including its main account. Click **Transfer votes**, click **main account** or enter an address to transfer to, and click **Confirm**. |

@@ -14,6 +14,7 @@ Here are some of the differences from a regular account:
 * PDA addresses cannot participate in [governance](./governance.md) directly, but their owners can transfer all their votes to another address (their main account or someone else's).
 * A PDA automatically converts any `$FLR` tokens transferred to it to wrapped Flare tokens (`$WFLR`), which are more useful for functions such as delegation.
 * Only the owner of the main account can transfer funds from the PDA and only to the main account.
+* When an [executor](./automatic-claiming.md) is configured, it will claim rewards both from the main account and the PDA, and send them to the PDA.
 
 !!! warning
 

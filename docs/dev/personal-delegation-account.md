@@ -56,7 +56,7 @@ Conveniently, the method signatures to delegate on the CSM are the same as on th
 FTSO reward claiming, though, is still performed through the `FTSORewardManager`, for example using `claimReward(address recipient, ...)` where `recipient` allows sending to any address, including a PDA.
 For information on how to delegate and claim FTSO rewards, see [Delegation](../tech/ftso.md#delegation) and [Rewards](../tech/ftso.md#rewards).
 
-In addition to the methods used for regular accounts, `FTSO.autoClaim()` automatically claims to the PDA or the main account depending on whether the PDA is enabled or not.
+In addition to the methods used for regular accounts, `FTSO.autoClaim()` automatically claims for both the main account and the PDA, to the PDA or the main account depending on whether the PDA is enabled or not.
 If users disable their PDA, `autoClaim()` claims rewards for only their main account and to only their main account.
 
 !!! note
