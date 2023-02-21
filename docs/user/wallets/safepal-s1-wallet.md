@@ -13,26 +13,26 @@ Once your S1 device is set up and synced with the mobile app you will need to ad
 
 1. Ensure the SafePal S1 is updated with the latest firmware, **version V1.0.32** or later.
 2. Login to your SafePal mobile app and have your S1 device turned on and unlocked.
-3. Scroll to the bottom of your listed assets in the mobile app and select `Add`.
+3. Scroll to the bottom of your listed assets in the mobile app and click **Add**.
 4. Search for Songbird (`$SGB`) or Flare (`$FLR`) and click the gray button on the right which will then turn blue.
-5. Click the `Add Coin` box also in blue at the bottom of the screen.
+5. Click the **Add Coin** box also in blue at the bottom of the screen.
 6. Follow the series of prompts which require scanning QR codes from both your S1 wallet and mobile app to finalize adding the asset.
 
 ## Wrap and Delegate
 
-SafePal users can access existing decentralized applications (dApps) created by independent FTSO data providers to wrap and delegate their `$SGB` and`$FLR` tokens:
+SafePal users can access existing decentralized applications (dapps) created by independent FTSO data providers to wrap and delegate their `$SGB` and`$FLR` tokens:
 
 1. Open the SafePal mobile app and navigate to the built-in web browser by clicking the four squares at the bottom middle of the screen.
-2. Enter the address of the website or dApp you wish to use to wrap and delegate in the search bar at the top of the screen.
+2. Enter the address of the website or dapp you wish to use to wrap and delegate in the search bar at the top of the screen.
 
     !!! info
 
-         These dApps are usually created by FTSO [data providers](glossary.md#data_provider), but some of them allow you to choose a different data provider to delegate to.
+         These dapps are usually created by FTSO [data providers](glossary.md#data_provider), but some of them allow you to choose a different data provider to delegate to.
          Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 3. After copying and pasting the address, click the drop-down menu to the right of the search tab.
-4. Scroll down, select the `Songbird` or `Flare` networks, and click `Go`.
-5. A pop up will appear notifying that you are being redirected to a third party dApp. Press `Confirm`.
+4. Scroll down, select the **Songbird** or **Flare** networks, and click **Go**.
+5. A pop up will appear notifying that you are being redirected to a third party dapp. Press **Confirm**.
 
-Other data providers host similar websites or dApps for wrapping and delegation.
+Other data providers host similar websites or dapps for wrapping and delegation.
 See the full list of signal providers on Songbird at [https://flaremetrics.io/ftso](https://flaremetrics.io/ftso).

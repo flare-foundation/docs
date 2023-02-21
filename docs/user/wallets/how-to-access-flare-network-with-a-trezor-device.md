@@ -10,7 +10,7 @@ To use your Trezor device with Flare (`$FLR`) or Songbird (`$SGB`), first make s
 1. Initialized your Trezor device with a recovery phrase.
 2. Protected your Trezor device with a PIN code.
 3. Trezor Suite is installed, open and ready to use.
-4. Enabled Ethereum under the Crypto tab in Trezor Suite.
+4. Enabled Ethereum under the **Crypto** tab in Trezor Suite.
 5. Installed the latest Trezor device firmware.
 6. Installed the latest version of [Google Chrome](https://www.google.com/chrome/).
 7. Installed the [MetaMask browser extension](https://metamask.io/download.html).
@@ -20,36 +20,35 @@ To use your Trezor device with Flare (`$FLR`) or Songbird (`$SGB`), first make s
 You can access Flare and Songbird by using your Trezor T with the MetaMask browser extension.
 
 1. Open the MetaMask browser extension in your browser.
-2. Click on Custom RPC in the network dropdown.
+2. Click **Custom RPC** in the network dropdown.
 
     === "Songbird"
 
-        | Field              | Value                                          |
-        | ------------------ | ---------------------------------------------- |
-        | Network Name       | **Songbird**                                   |
-        | New RPC URL        | <https://songbird-api.flare.network/ext/C/rpc> |
-        | Chain ID           | **19**                                         |
-        | Currency Symbol    | **SGB**                                        |
-        | Block Explorer URL | <https://songbird-explorer.flare.network>      |
+        | Field                  | Value                                          |
+        | ---------------------- | ---------------------------------------------- |
+        | **Network Name**       | Songbird                                       |
+        | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
+        | **Chain ID**           | 19                                             |
+        | **Currency Symbol**    | SGB                                            |
+        | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
 
     === "Flare"
 
-        | Field              | Value                                       |
-        | ------------------ | ------------------------------------------- |
-        | Network Name       | **Flare**                                   |
-        | New RPC URL        | <https://flare-api.flare.network/ext/C/rpc> |
-        | Chain ID           | **14**                                      |
-        | Currency Symbol    | **FLR**                                     |
-        | Block Explorer URL | <https://flare-explorer.flare.network>      |
+        | Field                  | Value                                       |
+        | ---------------------- | ------------------------------------------- |
+        | **Network Name**       | Flare                                       |
+        | **New RPC URL**        | <https://flare-api.flare.network/ext/C/rpc> |
+        | **Chain ID**           | 14                                          |
+        | **Currency Symbol**    | FLR                                         |
+        | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
 
-    Finally, click ``Save``.
-
-3. Select Flare or Songbird in the network dropdown.
-4. Connect and unlock your Trezor device.
-5. Click your account image and `Connect Hardware Wallet`.
-6. Select Trezor and click `Continue`.
-7. Follow the on screen instructions to export your public key.
-8. Select your Account and click `Unlock`.
+3. Click **Save**.
+4. Select **Flare** or **Songbird** in the network dropdown.
+5. Connect and unlock your Trezor device.
+6. Click your account image and **Connect Hardware Wallet**.
+7. Select Trezor and click **Continue**.
+8. Follow the on screen instructions to export your public key.
+9. Select your Account and click **Unlock**.
 
 !!! info
 
@@ -59,7 +58,7 @@ You can access Flare and Songbird by using your Trezor T with the MetaMask brows
 
 You will see your `$FLR` or `$SGB` balance on the overview.
 To receive tokens, copy your account address and share it with the sender.
-To send tokens, click `Send` and enter the recipient address, enter the desired amount and click `Next`.
+To send tokens, click **Send** and enter the recipient address, enter the desired amount and click **Next**.
 Follow the on screen instructions to confirm or reject the transaction on your Trezor device.
 
 !!! warning

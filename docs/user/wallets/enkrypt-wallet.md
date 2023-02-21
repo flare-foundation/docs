@@ -17,23 +17,23 @@ This involves adding a custom network via the following steps:
 
     === "Songbird"
 
-         | Field              | Value                                          |
-         | ------------------ | ---------------------------------------------- |
-         | Chain ID           | **19**                                         |
-         | Network Name       | **Songbird**                                   |
-         | Currency Symbol    | **SGB**                                        |
-         | New RPC URL        | <https://songbird-api.flare.network/ext/C/rpc> |
-         | Block Explorer URL | <https://songbird-explorer.flare.network>      |
+         | Field                  | Value                                          |
+         | ---------------------- | ---------------------------------------------- |
+         | **Chain ID**           | 19                                             |
+         | **Network Name**       | Songbird                                       |
+         | **Currency Symbol**    | SGB                                            |
+         | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
+         | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
 
     === "Flare"
 
-         | Field              | Value                                       |
-         | ------------------ | ------------------------------------------- |
-         | Chain ID           | **14**                                      |
-         | Network Name       | **Flare**                                   |
-         | Currency Symbol    | **FLR**                                     |
-         | New RPC URL        | <https://flare-api.flare.network/ext/C/rpc> |
-         | Block Explorer URL | <https://flare-explorer.flare.network>      |
+         | Field                  | Value                                       |
+         | ---------------------- | ------------------------------------------- |
+         | **Chain ID**           | 14                                          |
+         | **Network Name**       | Flare                                       |
+         | **Currency Symbol**    | FLR                                         |
+         | **New RPC URL**        | <https://flare-api.flare.network/ext/C/rpc> |
+         | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
 
 You should now see your tokens in the balance and be able to use Enkrypt to connect to any web DApp designed for the Flare or Songbird networks.
 

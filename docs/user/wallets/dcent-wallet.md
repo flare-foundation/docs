@@ -13,19 +13,19 @@ Once your device is set up and synced with the mobile app you will need to add `
 
 1. Ensure the D'cent biometric wallet is updated with the latest firmware, v2.24.0 or later.
 2. Login to your D'cent mobile app and have your device turned on, unlocked, and paired via Bluetooth.
-3. Click the `+` sign on the bottom right of the `Account` tab.
-4. Search for "Flare" or "Songbird" in the search box.
-5. Select the `Flare Token (FLR)` or `Songbird Token (SGB)`.
-6. Name your new account and click `Create`.
+3. Click the **+** sign on the bottom right of the **Account** tab.
+4. Search for _Flare_ or _Songbird_ in the search box.
+5. Select the **Flare Token (FLR)** or **Songbird Token (SGB)**.
+6. Name your new account and click **Create**.
 
 Repeat for the other token.
 
 You should also add the wrapped versions of the tokens (`$WFLR` and `$WSGB`) to the listed assets:
 
-1. With your device unlocked and paired, click the `+` sign on the bottom right of the `Account` tab.
-2. Search for "Wrapped Flare" or "Wrapped Songbird" in the search box.
+1. With your device unlocked and paired, click the **+** sign on the bottom right of the **Account** tab.
+2. Search for _Wrapped Flare_ or _Wrapped Songbird_ in the search box.
 3. Select the wrapped token.
-4. Name your new account and click `Create`.
+4. Name your new account and click **Create**.
 
 ## Wrap and Delegate
 
@@ -33,18 +33,18 @@ Users can wrap and delegate their `$SGB`/`$WSGB` using D'cent's native FTSO Port
 
 !!! note "Delegation instructions for the Flare network are awaiting confirmation"
 
-1. Click the `Discovery` tab at the bottom middle of the screen.
-2. Select the `FTSO Portal` from the menu then click `Go`.
-3. Choose the Songbird account you wish to use and click `Connect`.
-4. You will need to wrap your `$SGB` by clicking `SGB ↔️ WSGB` marked in green near the top middle of the screen.
-5. Input the `$SGB` amount you want to wrap and click the green `SGB ↔️ WSGB` box.
-6. Click `Confirm` and follow the prompts to sign the transaction with your hardware device.
-7. You can now delegate your `$WSGB` by clicking `Add delegation`.
-8. Select a provider and input the percentage of your `$WSGB` holdings you want to delegate to their service and press `Delegate`.
+1. Click the **Discovery** tab at the bottom middle of the screen.
+2. Select the **FTSO Portal** from the menu then click **Go**.
+3. Choose the Songbird account you wish to use and click **Connect**.
+4. You will need to wrap your `$SGB` by clicking **SGB ↔️ WSGB** marked in green near the top middle of the screen.
+5. Input the `$SGB` amount you want to wrap and click the green **SGB ↔️ WSGB** box.
+6. Click **Confirm** and follow the prompts to sign the transaction with your hardware device.
+7. You can now delegate your `$WSGB` by clicking **Add delegation**.
+8. Select a provider and input the percentage of your `$WSGB` holdings you want to delegate to their service and press **Delegate**.
 
     !!! note
 
-        Providers listed as a `Partner` have additional security features integrated with D'cent.
+        Providers listed as a _Partner_ have additional security features integrated with D'cent.
 
-9. Click `Confirm` and follow the prompts to sign the transaction with your hardware device.
-10. Repeat steps 7 through 9 if you wish to add a second provider (up to two).
+9. Click **Confirm** and follow the prompts to sign the transaction with your hardware device.
+10. To add a second provider (up to two), repeat steps 7 through 9.

@@ -8,9 +8,9 @@ This article shows you how to deploy a Hello World contract to the Flare blockch
 
 ### 1. Create a New File
 
-* Visit the [Remix IDE](https://remix.ethereum.org/) and click on the `New File` button.
-* Name it **HelloWorld.sol**.
-* Drag and drop it to the `contracts` folder.
+* Visit the [Remix IDE](https://remix.ethereum.org/) and click the **New File** button.
+* Name it `HelloWorld.sol`.
+* Drag and drop it to the **contracts** folder.
 
 <figure markdown>
   ![New file in the Remix IDE](remix.png){ loading=lazy .allow-zoom width=500px }
@@ -19,7 +19,7 @@ This article shows you how to deploy a Hello World contract to the Flare blockch
 
 ### 2. Write Your Contract
 
-Copy and paste the smart contract code provided below into the newly created **HelloWorld.sol** file.
+Copy and paste the smart contract code provided below into the newly created `HelloWorld.sol` file.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -49,9 +49,9 @@ contract HelloWorld {
 ### 3. Compile Your Contract
 
 * Go to the Solidity Compiler tab (on the left), and select compiler version `0.8.17`.
-* Now, click on the `Compile HelloWorld.sol` button.
+* Now, click the **Compile HelloWorld.sol** button.
 
-After successful compilation, it will show a **Green tick mark** on the Compiler tab button.
+After successful compilation, it will show a **Green tick mark** on the **Compiler** tab button.
 
 <figure markdown>
   ![Compilation successful](compile.png){ loading=lazy .allow-zoom }
@@ -82,7 +82,7 @@ Therefore, deploying your smart contracts first on the test network is highly re
   <figcaption>Environment selection on Remix.</figcaption>
 </figure>
 
-* Click on the `Deploy` button and confirm the `CONTRACT DEPLOYMENT` transaction in MetaMask.
+* Click the **Deploy** button and confirm the **CONTRACT DEPLOYMENT** transaction in MetaMask.
 
 <figure markdown>
   ![Contract deployment transaction](deploy2.png){ loading=lazy .allow-zoom }
@@ -97,12 +97,12 @@ Therefore, deploying your smart contracts first on the test network is highly re
 
 You can now interact with the contract to verify that it is working as intended.
 
-* In the `Deployed Contracts` section at the bottom of the left column, expand the `HELLOWORLD` contract to see its methods and data:
+* In the **Deployed Contracts** section at the bottom of the left column, expand the `HELLOWORLD` contract to see its methods and data:
     * `update` method.
     * `message` public variable.
-* Type a message in the box next to the `update` button and click on the button.
+* Type a message in the box next to the **update** button and click the button.
 * Confirm the deployment transaction in MetaMask.
-* Check that the contract has been updated by clicking on the `message` button and verifying you get back the message you typed before.
+* Check that the contract has been updated by clicking the **message** button and verifying you get back the message you typed before.
 
 <figure markdown>
   ![Interact with the contract](deploy3.png){ loading=lazy .allow-zoom }

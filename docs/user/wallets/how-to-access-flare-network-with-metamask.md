@@ -26,31 +26,31 @@ Once your wallet is set up, you need to add a custom network to the MetaMask bro
 
     === "Songbird"
 
-        | Field              | Value                                          |
-        | ------------------ | ---------------------------------------------- |
-        | Network Name       | **Songbird**                                   |
-        | New RPC URL        | <https://songbird-api.flare.network/ext/C/rpc> |
-        | Chain ID           | **19**                                         |
-        | Currency Symbol    | **SGB**                                        |
-        | Block Explorer URL | <https://songbird-explorer.flare.network>      |
+        | Field                  | Value                                          |
+        | ---------------------- | ---------------------------------------------- |
+        | **Network Name**       | Songbird                                       |
+        | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
+        | **Chain ID**           | 19                                             |
+        | **Currency Symbol**    | SGB                                            |
+        | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
 
     === "Flare"
 
-        | Field              | Value                                       |
-        | ------------------ | ------------------------------------------- |
-        | Network Name       | **Flare**                                   |
-        | New RPC URL        | <https://flare-api.flare.network/ext/C/rpc> |
-        | Chain ID           | **14**                                      |
-        | Currency Symbol    | **FLR**                                     |
-        | Block Explorer URL | <https://flare-explorer.flare.network>      |
+        | Field                  | Value                                       |
+        | ---------------------- | ------------------------------------------- |
+        | **Network Name**       | Flare                                       |
+        | **New RPC URL**        | <https://flare-api.flare.network/ext/C/rpc> |
+        | **Chain ID**           | 14                                          |
+        | **Currency Symbol**    | FLR                                         |
+        | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
 
-    Finally, click ``Save``.
-
-4. Select Songbird or Flare in the network dropdown menu
+4. lick **Save**.
+5. Select **Songbird** or **Flare** in the network dropdown menu
 
 You should now be able to see your Songbird or Flare balance on the overview.
 To receive tokens, copy your account address and share it with the sender.
-To send tokens, click ``Send`` and enter the recipient address, enter the desired amount and click ``Next``.
+To send tokens, click **Send** and enter the recipient address.
+Enter the desired amount and click **Next**.
 
 !!! warning
     Always review all transaction details in MetaMask before confirming any transaction!
