@@ -406,6 +406,6 @@ In any case, using the `getCurrentPriceWithDecimals` method is recommended. The 
 
 `GetCurrentPriceWithDecimals` returns the requested price (the outcome of the previous 3-minute price epoch) in **`$USD` multiplied by 100'000** and how many decimal places it has.
 
-For example, a return value of `2603` with `assetPriceUsdDecimals` of `5` means a price of `0.02603 USD` (There are **5** significant decimal places).
+For example, a return value of `2603` with `_assetPriceUsdDecimals` of `5` means a price of `0.02603 USD` (There are **5** significant decimal places).
 
 A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last price update is also returned.
