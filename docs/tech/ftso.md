@@ -350,18 +350,19 @@ The submission API is slightly different for the Flare and Songbird networks:
 Data produced by the FTSO is **publicly available** on the Flare and Songbird networks.
 
 All data can be retrieved either through the `FtsoRegistry` contract or directly through one of the `Ftso` contracts.
-In any case, the `getCurrentPrice` method is used. The following examples show how this method is used to retrieve price data.
+In any case, using the `getCurrentPriceWithDecimals` method is recommended. The following examples show how to use this method to retrieve price data.
 
 === "Retrieve by pair index"
 
     From the `FtsoRegistry` contract:
 
     ```solidity
-    function getCurrentPrice(
+    function getCurrentPriceWithDecimals(
         uint256 _ftsoIndex
     ) external view returns (
         uint256 _price,
-        uint256 _timestamp
+        uint256 _timestamp,
+        uint256 _assetPriceUsdDecimals
     );
     ```
 
@@ -372,11 +373,12 @@ In any case, the `getCurrentPrice` method is used. The following examples show h
     From the `FtsoRegistry` contract:
 
     ```solidity
-    function getCurrentPrice(
+    function getCurrentPriceWithDecimals(
         string memory _symbol
     ) external view returns (
         uint256 _price,
-        uint256 _timestamp
+        uint256 _timestamp,
+        uint256 _assetPriceUsdDecimals
     );
     ```
 
@@ -387,13 +389,14 @@ In any case, the `getCurrentPrice` method is used. The following examples show h
     First you need to obtain the address of the `Ftso` contract managing the price pair you are interested in.
     You can use `getSupportedIndicesSymbolsAndFtsos` from the `FtsoRegistry`, for example.
 
-    Then call `getCurrentPrice` on the FTSO directly:
+    Then call `getCurrentPriceWithDecimals` on the FTSO directly:
 
     ```solidity
-    function getCurrentPrice(
+    function getCurrentPriceWithDecimals(
     ) external view returns (
         uint256 _price,
-        uint256 _timestamp
+        uint256 _timestamp,
+        uint256 _assetPriceUsdDecimals
     );
     ```
 
@@ -401,8 +404,8 @@ In any case, the `getCurrentPrice` method is used. The following examples show h
 
         Individual FTSO contracts might be updated periodically, which will change their addresses. Instead of caching these addresses, use the `FtsoRegistry`.
 
-`GetCurrentPrice` returns the requested price (the outcome of the previous 3-minute price epoch) in **`$USD` multiplied by 100'000**.
+`GetCurrentPriceWithDecimals` returns the requested price (the outcome of the previous 3-minute price epoch) in **`$USD` multiplied by 100'000** and how many decimal places it has.
 
-For example, a return value of `2603` means a price of `0.02603 USD` (There are only **5** significant decimal places).
+For example, a return value of `2603` with `assetPriceUsdDecimals` of `5` means a price of `0.02603 USD` (There are **5** significant decimal places).
 
 A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last price update is also returned.
