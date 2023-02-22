@@ -279,6 +279,9 @@ figure img.side-by-side {
 .md-typeset table:not([class]) td {
     border-color: var(--md-default-fg-color--lightest);
 }
+.md-typeset table:not([class]) th {
+    background-color: var(--md-code-bg-color--transparent);
+}
 
 /* Inline code blocks */
 .md-typeset code {
@@ -308,4 +311,9 @@ figure img.side-by-side {
     background-color: #d3385b;
     -webkit-mask-image: var(--md-admonition-icon--tool);
     mask-image: var(--md-admonition-icon--tool);
+}
+
+/* Tabbed boxes */
+.md-typeset .tabbed-labels>label {
+    color: var(--md-typeset-color);
 }
