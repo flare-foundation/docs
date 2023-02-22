@@ -74,7 +74,7 @@ Therefore, deploying your smart contracts first on the test network is highly re
     - Ensure that you have enough Coston2 native tokens `$C2FLR` to pay for gas.
       Visit the [Coston2 Faucet](https://coston2-faucet.towolabs.com/) to request some `$C2FLR`.
 
-* Go to the `Deploy & Run Transactions` tab (the last one) and select `Injected Provider - Metamask` from the `ENVIRONMENT` dropdown.
+* Go to the **Deploy & Run Transactions** tab (the last one) and select **Injected Provider - Metamask** from the **ENVIRONMENT** dropdown.
   Accept the connection request received in MetaMask if necessary.
 
 <figure markdown>
