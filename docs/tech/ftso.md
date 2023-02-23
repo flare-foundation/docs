@@ -405,8 +405,8 @@ The following examples show how to use this method to retrieve price data.
 
         Individual FTSO contracts might be updated periodically, which will change their addresses. Instead of caching these addresses, use the `FtsoRegistry`.
 
-`GetCurrentPriceWithDecimals` returns the requested price (the outcome of the previous 3-minute price epoch) in `$USD` shifting the comma by the ammount of decimal places returned in `_assetPriceUsdDecimals`.
-That is, the actual price is  `_price` * 10 ^`_assetPriceUsdDecimals`^.
+`GetCurrentPriceWithDecimals` returns the requested price (the outcome of the previous 3-minute price epoch) in `$USD` shifting the comma by the amount of decimal places returned in `_assetPriceUsdDecimals`.
+That is, the actual price is  `_price` * 10 ^-`_assetPriceUsdDecimals`^.
 
 For example, a return value of `2603` with `_assetPriceUsdDecimals` of `5` means a price of `0.02603 USD` (There are only **5** significant decimal places).
 
