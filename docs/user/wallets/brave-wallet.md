@@ -25,23 +25,23 @@ This involves adding a custom network via the following steps:
 
     === "Songbird"
 
-         | Field                     | Value                                          |
-         | ------------------------- | ---------------------------------------------- |
-         | The id of new chain       | **19**                                         |
-         | Enter name of new chain   | **Songbird**                                   |
-         | Chain's currency name     | **Songbird**                                   |
-         | Chain's currency symbol   | **SGB**                                        |
-         | Chain’s currency decimals | **18**                                         |
-         | RPC URLs                  | <https://songbird-api.flare.network/ext/C/rpc> |
-         | Icon URLs_                | _(leave blank)_                                |
-         | Block Explorer URLs       | <https://songbird-explorer.flare.network>      |
+         | Field                   | Value                                         |
+         | ----------------------- | --------------------------------------------- |
+         | The id of new chain           | **19**                                            |
+         | Enter name of new chain        | **Songbird**                                      |
+         | Chain's currency name       | **Songbird**                                      |
+         | Chain's currency symbol     | **SGB**                                           |
+         | Chain's currency decimals   | **18**                                            |
+         | RPC URLs           | <https://songbird-api.flare.network/ext/C/rpc> |
+         | Icon URLs_         | _(leave blank)_                                |
+         | Block Explorer URLs | <https://songbird-explorer.flare.network>     |
 
     === "Flare"
 
          | Field                     | Value                                       |
          | ------------------------- | ------------------------------------------- |
-         | The id of new chain       | **14**                                      |
-         | Enter name of new chain   | **Flare**                                   |
+         | The ID of the new chain       | **14**                                      |
+         | Enter name of the new chain  | **Flare**                                   |
          | Chain's currency name     | **Flare**                                   |
          | Chain's currency symbol   | **FLR**                                     |
          | Chain’s currency decimals | **18**                                      |
@@ -54,7 +54,7 @@ This involves adding a custom network via the following steps:
 To finish connecting:
 
 1. Enter your password and login to your wallet.
-2. On the left of the screen next to ``Balance`` click the drop-down menu and select Songbird or Flare.
+2. On the left of the screen next to ``Balance``, click the drop-down menu and select Songbird or Flare.
 3. Connection is now complete.
 
 ## Wrap and Delegate
@@ -63,11 +63,11 @@ Brave users can access existing decentralized applications (dApps) created by in
 
 1. Open Brave Browser and login to your wallet (make sure you are connected to Songbird or Flare).
 2. Open a second search tab within Brave.
-3. Enter the address of the website or dApp you wish to use to wrap and delegate in the search bar at the top of the screen.
+3. Enter the address of the website or dapp you wish to use to wrap and delegate in the search bar at the top of the screen.
 
     !!! info
 
-         These dApps are usually created by FTSO [data providers](glossary.md#data_provider), but some of them allow you to choose a different data provider to delegate to.
+         These dapps are usually created by FTSO [data providers](glossary.md#data_provider), but some of them allow you to choose a different data provider to delegate to.
          Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 4. Follow the prompts to connect your Brave wallet and sign transactions when wrapping, delegating, or claiming rewards.
