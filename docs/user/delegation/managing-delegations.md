@@ -45,7 +45,7 @@ This information explains how to manage your delegations using the [Flare Portal
 
 ### Removing Delegations
 
-1. Open the [Flare Portal](https://portal.flare.network), connect your wallet, and ensure you are connected the network you want.
+1. Open the [Flare Portal](https://portal.flare.network), connect your wallet, and ensure you are connected to the network you want.
 2. On the **Main Account** tab, locate the **FTSO provider delegations** field, and click **Delegate**. The **Delegate FTSO providers** window is displayed.
 3. Drag the slider to 0% for one or both of the data providers, and click **Submit**.
 4. Follow the steps to confirm the transaction in your wallet.
@@ -63,8 +63,8 @@ This information explains how to manage your delegations using the [block explor
 
     On the **Transactions** tab, a list of recently submitted `SubmitHash` and `RevealPrices` transactions are displayed to confirm that the data provider is operating.
 
-3. Open a [block explorer](./block-explorer.md).
-4. From the block explorer, follow the [Retrieval from Blockchain procedure](../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
+3. Open a [block explorer](../block-explorer.md) if you have not done so yet.
+4. From the block explorer, follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
 5. Click **Connect Wallet**, and complete the steps to connect your wallet.
 6. Click the **Write Contract** tab, locate the `delegate` method, and specify values for these parameters:
 
@@ -75,22 +75,22 @@ This information explains how to manage your delegations using the [block explor
 8. Follow the steps to complete the transaction in your wallet. Delegation is complete.
 
     In the next reward epoch, your newly delegated tokens will be included in the calculation of your selected data provider's weight.
-    If the data provider submits useful data and garners any rewards, you will be able to [claim your share of the rewards](managing-rewards.md) when the reward epoch is over.
+    If the data provider submits useful data and garners any rewards, you will be able to [claim your share of the rewards](./managing-rewards.md) when the reward epoch is over.
 
 ### Removing Delegations
 
-1. On the **Write Contract** tab in the WNat contract, locate the `delegate` method, change the value of **_bips(uin256)** for the data provider's address to 0, and click **Write** to run the method.
+1. On the **Write Contract** tab in the `WNat` contract, locate the `delegate` method, change the value of **_bips(uin256)** for the data provider's address to 0, and click **Write** to run the method.
 2. Follow the steps to complete the transaction in your wallet.
 
 ### Redelegating Vote Power
 
-1. On the **Write Contract** tab in the WNat contract, locate the `undelegateAll` method, and click **Write** to run the method.
+1. On the **Write Contract** tab in the `WNat` contract, locate the `undelegateAll` method, and click **Write** to run the method.
 2. Follow the steps to complete the transaction in your wallet. All your delegations are removed.
-3. Delegate to the data providers you've chosen by following [the previous set of steps to delegate](#delegating-your-vote-power).
+3. Delegate to the data providers you've chosen by following [the previous set of steps to delegate](#delegating-your-vote-power_1).
 
 ### Revoking Vote Power
 
-1. On the **Write Contract** tab in the WNat contract, locate the `revokeDelegationAt` method, and specify values for the following parameters:
+1. On the **Write Contract** tab in the `WNat` contract, locate the `revokeDelegationAt` method, and specify values for the following parameters:
 
     * **_who(address)**: The address of the data provider from whom you will revoke your delegation.
     * **_blockNumber(uint256)**: The block number at which your delegation will be revoked.

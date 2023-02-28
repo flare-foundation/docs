@@ -23,7 +23,7 @@ The following information describes:
 * [How results are calculated](#how-results-are-calculated)
 * [Vote power](#vote-power)
 * [Delegation](#delegation)
-* How to [submit data](#data-submission-process), [claim rewards](#reward-claiming-procedure), and [use the data in an app](#technical-details)
+* How developers can [submit data](#data-submission-process), [claim rewards](#reward-claiming-procedure), and [use the data in an app](#technical-details)
 
 ## Procedure Overview
 
@@ -122,14 +122,16 @@ Before you can delegate your native `$FLR` and `$SGB` tokens, you must [wrap the
 After you wrap your tokens, you will have the vote power that is equivalent to the wrapped token balance, and you can delegate 100% of this vote power to 1 or 2 data providers.
 Delegating 100% of your vote power to reliable data providers committed to providing accurate data maximizes your rewards and enhances the stability of the ecosystem.
 
-!!! example "This section is for advanced users."
+!!! example "The reward rate (for advanced users)"
 
     As you explore data providers, consider the expected reward rate each one offers.
-    The reward rate is a metric of yield of data providers describing how many tokens were earned by a data provider during a reward epoch for every 100 tokens delegated. The reward rate is calculated as `total_reward / vote_power * (100 - fee)`, where
+    The reward rate describes how many tokens were earned by a data provider during a reward epoch for every 100 tokens delegated.
 
-    * **`total_reward`**: All accumulated rewards for the data provider and its delegators in the reward epoch.
-    * **`vote_power`**: All the data provider's `$WFLR` and all the `$WFLR` delegated to it in the vote-power block selected for the reward epoch.
-    * **`fee`**: The amount kept by the data provider as compensation for the service it provides. The value is specified as a percentage. For example, if the data provider's fee is 21.3%, specify 21.3 to calculate the reward rate.
+    The reward rate is calculated as $total\_reward / vote\_power * (100 - fee)$, where:
+
+    * $total\_reward$: All accumulated rewards for the data provider and its delegators in the reward epoch.
+    * $vote\_power$: All the data provider's `$WFLR` and all the `$WFLR` delegated to it in the vote-power block selected for the reward epoch.
+    * $fee$: The amount kept by the data provider as compensation for the service it provides. The value is specified as a percentage. For example, if the data provider's fee is 21.3%, specify 21.3 to calculate the reward rate.
 
     Because rewards are distributed in units of `$FLR`, the reward rate is calculated in units of `$FLR`.
 
@@ -149,6 +151,8 @@ Sometimes, a data provider might maliciously attack the FTSO system to skew the 
 In this situation, an off-chain process, such as a Twitter storm, calls for users to revoke vote power from the data provider that has attacked the system.
 When vote power is revoked, the revocation occurs immediately.
 
+[Learn how to perform this operation](../user/delegation/managing-delegations.md#revoking-vote-power) from the block explorer.
+
 ### Effects of the Vote-Power Block Snapshot on Delegations
 
 The following table shows when new, changed, and revoked delegations take effect in relation to the vote-power block snapshot.
@@ -161,7 +165,7 @@ The following table shows when new, changed, and revoked delegations take effect
 
 ### Delegation Procedure
 
-You can [delegate your tokens](../user/delegation/managing-delegations.md) using the [Flare Portal](../user/delegation/managing-delegations.md#managing-delegations-with-the-flare-portal), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
+You can [delegate your tokens](../user/delegation/managing-delegations.md) using the [Flare Portal](../user/delegation/managing-delegations.md#using-the-flare-portal), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Some FTSO data providers have already started providing these dapps as a convenience.
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
@@ -194,7 +198,7 @@ After 90 days, unclaimed rewards on Flare are burned, and on Songbird, they are 
 FTSO rewards are not automatically transferred to their recipients.
 Instead, the amounts are accumulated in a contract, as described in the [System Architecture](#system-architecture), and must be claimed **once the reward epoch is finished**.
 
-You can [claim your rewards](../user/delegation/managing-rewards.md) using the [Flare Portal](../user/delegation/managing-rewards.md#managing-rewards-with-the-flare-portal), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
+You can [claim your rewards](../user/delegation/managing-rewards.md) using the [Flare Portal](../user/delegation/managing-rewards.md#using-the-flare-portal), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 To save on gas costs, rewards from multiple reward epochs are claimed simultaneously when you use the Portal. However, be aware that **rewards expire after 90 days**.
@@ -251,7 +255,7 @@ Other contracts, like the FTSO Manager or the FTSO Daemon, are only meant for in
 
 ### Manual Delegation and Claiming
 
-The following graphic shows the delegation process. You can call methods in several different smart contracts to manually [delegate vote power](../user/delegation/managing-delegations.md#managing-delegations-with-a-block-explorer) and [claim rewards](../user/delegation/managing-rewards.md#managing-your-rewards-with-a-block-explorer).
+The following graphic shows the delegation process. You can call methods in several different smart contracts to manually [delegate vote power](../user/delegation/managing-delegations.md#using-the-block-explorer) and [claim rewards](../user/delegation/managing-rewards.md#using-the-block-explorer).
 
 <figure markdown>
   ![Delegation process summary](ftso-delegation.png){ loading=lazy .allow-zoom }

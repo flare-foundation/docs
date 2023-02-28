@@ -1,6 +1,6 @@
 # Managing Rewards
 
-Use this information to manage [rewards](../../tech/ftso.md#rewards) by using the Flare Portal or the block explorer. Rewards are accrued from your delegations to FTSO data providers whose submitted data is close to the calculated median value in a price epoch.
+Use this information to manage [FTSO delegation rewards](../../tech/ftso.md#rewards) by using the Flare Portal or the block explorer. Rewards are accrued from your delegations to FTSO data providers whose submitted data is close to the calculated median value in a price epoch.
 
 ## Using the Flare Portal
 
@@ -25,12 +25,15 @@ This information explains how to manage your rewards using the [Flare Portal](ht
 
 4. On the **Main Account** tab, locate the **Claim your delegation rewards** section to determine whether you have claimable rewards and whether those rewards can currently be claimed:
 
-    * If you have rewards to claim and the reward manager contains the tokens, the **Claim** button is enabled and shows the amount of rewards you can claim. Go to Step 3.
-    * If you have rewards to claim, but the reward manager currently does not contain tokens, the **Claim** button shows the amount of rewards you can claim but is disabled.
+    * If you have rewards to claim and the reward manager contains enough tokens, the **Claim** button is enabled and shows the amount of rewards you can claim. Go to Step 5.
+    * If you have rewards to claim, but the reward manager currently does not contain enough tokens, the **Claim** button shows the amount of rewards you can claim but is disabled.
 
-        For security reasons, a **limited amount of tokens** is stored at a given time. Sometimes, all delegators claim their rewards in a short period of time immediately after the reward epoch ends, and the token storage is depleted. The storage is replenished periodically. If you are currently unable to claim your rewards because the storage is empty, **try again the next day**.
+        For security reasons, a **limited amount of tokens** is stored at a given time in the reward manager contract.
+        Sometimes, all delegators claim their rewards in a short period of time immediately after the reward epoch ends, and the token storage is depleted.
+        The storage is replenished periodically.
+        If you are currently unable to claim your rewards because the storage is empty, **try again the next day**.
 
-    * If you don't have claimable rewards, the **Claim** button is disabled.
+    * If you don't have claimable rewards, the **Claim** button shows **0** and is disabled.
 
     The following image shows an account with claimable rewards:
 
@@ -46,7 +49,8 @@ This information explains how to manage your rewards using the [Flare Portal](ht
     <figcaption>Claim your delegation rewards.</figcaption>
     </figure>
 
-6. **Optional**: By default, the option to send your rewards to your [personal delegation account](../../tech/personal-delegation-account.md) is preselected. To send your rewards to the address that you connected to the Portal, deselect the option.
+6. **Optional**: If you have enabled your [personal delegation account](../../tech/personal-delegation-account.md), the option to send your rewards to the PDA is preselected by default.
+    To send your rewards to the address that you connected to the Portal instead, deselect the option.
 7. Click **Claim All Rewards** to claim all available rewards for the listed epochs.
 8. Follow the steps to confirm the transaction in your wallet. Your rewards are claimed, and your updated balance of native tokens is displayed.
 
@@ -79,9 +83,9 @@ This information explains how to manage your rewards using the [block explorer](
 1. Open a [block explorer](../block-explorer.md).
 2. From the block explorer, follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
 3. Click **Connect Wallet**, and complete the steps to connect your wallet.
-4. On the **Read Contract** tab, locate the `getStateofRewards` method, and specify values for the following parameters:
+4. On the **Read Contract** tab, locate the `getStateOfRewards` method, and specify values for the following parameters:
 
     * **_beneficiary(address)**: The address to check for rewards.
     * **_rewardEpoch(uint256)**: The epoch in which you want to check the address for rewards.
 
-5. Click **Query** to run the `getStateofRewards` method. The amount of rewards due from each data provider and whether they have already been claimed is returned.
+5. Click **Query** to run the `getStateOfRewards` method. The amount of rewards due from each data provider and whether they have already been claimed is returned.
