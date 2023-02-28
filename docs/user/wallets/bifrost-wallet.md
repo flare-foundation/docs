@@ -34,7 +34,7 @@ To wrap and delegate your `$SGB` or `$FLR` tokens using Bifrost Wallet, see [the
     10. Select which provider you want to delegate to (you can select up to 2 providers).
     11. Choose the percentage of your `$WSGB` you wish to delegate to that specific provider.
     12. Click **Continue**, then click **Confirm**, and finally click **Close**.
-    13. To delegate to a second provider, repeat steps 10 to 13.
+    13. To delegate to a second provider, repeat steps 9 to 13.
 
 === "Flare"
 
@@ -51,4 +51,4 @@ To wrap and delegate your `$SGB` or `$FLR` tokens using Bifrost Wallet, see [the
     10. Select which provider you want to delegate to (you can select up to 2 providers).
     11. Choose the percentage of your `$WFLR` you wish to delegate to that specific provider.
     12. Click **Continue**, then click **Confirm**, and finally click **Close**.
-    13. To delegate to a second provider, repeat steps 10 to 13.
+    13. To delegate to a second provider, repeat steps 9 to 13.

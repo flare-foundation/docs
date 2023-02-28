@@ -44,7 +44,7 @@ Once your wallet is set up, you need to add a custom network to the MetaMask bro
         | **Currency Symbol**    | FLR                                         |
         | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
 
-4. lick **Save**.
+4. Click **Save**.
 5. Select **Songbird** or **Flare** in the network dropdown menu
 
 You should now be able to see your Songbird or Flare balance on the overview.

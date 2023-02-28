@@ -19,36 +19,35 @@ Once your wallet is set up, you will need to connect to one of Flare's networks.
 This involves adding a custom network via the following steps:
 
 1. Open Brave Browser on your computer.
-2. Navigate to settings and select **Wallet** from the list of options.
-3. In the box on the right, click **Networks**, then **Add**.
+2. Navigate to **Settings** and select **Web3** from the list of options.
+3. In the box on the right, click **Wallet Networks**, then **Add**.
 4. Input the following information in the appropriate fields:
-   <!--Are there actually field names for these? I give it a shot in the first table. Is there a way I can check this? Is there supposed to be an underscore after the "Icon URLs_", typo?-->
 
     === "Songbird"
 
-         | Field                   | Value                                          |
-         | ----------------------- | ---------------------------------------------- |
-         | **Chain ID**            | 19                                             |
-         | **Network Name**        | Songbird                                       |
-         | **Currency Name**       | Songbird                                       |
-         | **Currency Symbol**     | SGB                                            |
-         | **Currency Decimals**   | 18                                             |
-         | **RPC URLs**            | <https://songbird-api.flare.network/ext/C/rpc> |
-         | **Icon URLs_**          | _(leave blank)_                                |
-         | **Block Explorer URLs** | <https://songbird-explorer.flare.network>      |
+         | Field                         | Value                                          |
+         | ----------------------------- | ---------------------------------------------- |
+         | **The id of chain**           | 19                                             |
+         | **The name of chain**         | Songbird                                       |
+         | **Chain's currency name**     | Songbird                                       |
+         | **Chain's currency symbol**   | SGB                                            |
+         | **Chain's currency decimals** | 18                                             |
+         | **RPC URLs**                  | <https://songbird-api.flare.network/ext/C/rpc> |
+         | **Icon URLs**                 | _(leave blank)_                                |
+         | **Block explorer URLs**       | <https://songbird-explorer.flare.network>      |
 
     === "Flare"
 
-         | Field                       | Value                                       |
-         | --------------------------- | ------------------------------------------- |
-         | The ID of the new chain     | 14                                          |
-         | Enter name of the new chain | Flare                                       |
-         | Chain's currency name       | Flare                                       |
-         | Chain's currency symbol     | FLR                                         |
-         | Chain’s currency decimals   | 18                                          |
-         | RPC URLs                    | <https://flare-api.flare.network/ext/C/rpc> |
-         | Icon URLs_                  | _(leave blank)_                             |
-         | Block Explorer URLs         | <https://flare-explorer.flare.network>      |
+         | Field                         | Value                                       |
+         | ----------------------------- | ------------------------------------------- |
+         | **The id of chain**           | 14                                          |
+         | **The name of chain**         | Flare                                       |
+         | **Chain's currency name**     | Flare                                       |
+         | **Chain's currency symbol**   | FLR                                         |
+         | **Chain's currency decimals** | 18                                          |
+         | **RPC URLs**                  | <https://flare-api.flare.network/ext/C/rpc> |
+         | **Icon URLs**                 | _(leave blank)_                             |
+         | **Block explorer URLs**       | <https://flare-explorer.flare.network>      |
 
 5. Click **Submit**.
 
