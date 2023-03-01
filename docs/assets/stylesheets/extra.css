@@ -317,3 +317,14 @@ figure img.side-by-side {
 .md-typeset .tabbed-labels>label {
     color: var(--md-typeset-color);
 }
+
+/* Important tables */
+.md-typeset .important-table table {
+    font-size: large !important;
+}
+
+.important-table .md-typeset__scrollwrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
