@@ -22,12 +22,18 @@ Users then receive an amount equal to their month's sampled `$WFLR` holdings div
 
 Upon claiming, the `$FLR` entitlement is sent directly to the claiming address or to its [Personal Delegation Account (PDA)](./personal-delegation-account.md), if it is enabled.
 When claiming to the PDA, tokens are automatically wrapped into `$WFLR`.
+Each distribution expires two bank months and a week (67 days) after it becomes claimable.
 
 To ensure having no effect on the amount of `$FLR` that each claiming address receives, Flare Foundation and team addresses opt out of the Flaredrop distribution.
 
-!!! warning "You must wrap `$FLR` to receive it."
+!!! warning "Two steps to ensure receiving all your `$FLR` !"
 
-    Remember that rewards are proportional to the `$WFLR` balance, not `$FLR`, so always wrap as much `$FLR` as you can!
+    You must:
+
+    1. **Wrap `$FLR` to receive it.**
+    Rewards are proportional to the `$WFLR` balance, not `$FLR`, so always wrap as much `$FLR` as you can!
     Wrapping has no downside: Wrapped tokens continue to be available for [delegation](./ftso.md#delegation) and [governance voting](./governance.md), for example, and they can be unwrapped at any time.
+    2. **Claim before the distribution expires.**
+    After the distribution becomes claimable, it expires in two bank months and a week (67 days).
 
 You can also enable [automatic claiming](./automatic-claiming.md) to make sure you don't miss any Flaredrop!
