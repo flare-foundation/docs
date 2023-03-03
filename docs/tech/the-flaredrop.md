@@ -25,10 +25,9 @@ When claiming to the PDA, tokens are automatically wrapped into `$WFLR`.
 
 To ensure having no effect on the amount of `$FLR` that each claiming address receives, Flare Foundation and team addresses opt out of the Flaredrop distribution.
 
-!!! warning "You must wrap `$FLR` to receive it. Claiming lasts 67 days."
+!!! warning "You must wrap `$FLR` to receive it."
 
     Remember that rewards are proportional to the `$WFLR` balance, not `$FLR`, so always wrap as much `$FLR` as you can!
     Wrapping has no downside: Wrapped tokens continue to be available for [delegation](./ftso.md#delegation) and [governance voting](./governance.md), for example, and they can be unwrapped at any time.
-    After the distribution becomes claimable, it expires in two bank months and a week (67 days).
 
 You can also enable [automatic claiming](./automatic-claiming.md) to make sure you don't miss any Flaredrop!
