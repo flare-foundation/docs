@@ -321,6 +321,7 @@ figure img.side-by-side {
 /* Important tables */
 .md-typeset .important-table table {
     font-size: large !important;
+    background: var(--md-code-bg-color);
 }
 
 .important-table .md-typeset__scrollwrap {

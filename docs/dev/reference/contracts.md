@@ -18,9 +18,9 @@ All of Flare's smart contract addresses can be retrieved from the `FlareContract
 This is the only contract address given in this documentation.
 
 <div class="important-table" markdown>
-|           `FlareContractRegistry`            |
-| :------------------------------------------: |
-| `0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019` |
+|                                    `FlareContractRegistry`                                     |
+| :--------------------------------------------------------------------------------------------: |
+| <pre><code style="padding-right: 3em;">0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019</code></pre> |
 </div>
 
 !!! important "This contract is available at the same address in all Flare networks: Flare, Songbird, Coston and Coston2."
@@ -72,7 +72,7 @@ You can find this file in the `deployment/deploys` folder, and parse it to retri
 | -------- | -------------------------------- | ----------------------- |
 | Flare    | `flare_network_deployed_code`    | [flare.json][f-json]    |
 | Songbird | `songbird_network_deployed_code` | [songbird.json][s-json] |
-| Coston   | `coston_network_deployed_code`   | [coston.json][c-json]    |
+| Coston   | `coston_network_deployed_code`   | [coston.json][c-json]   |
 | Coston2  | `coston2_network_deployed_code`  | [coston2.json][c2-json] |
 
 [f-json]: https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/flare_network_deployed_code/deployment/deploys/flare.json
