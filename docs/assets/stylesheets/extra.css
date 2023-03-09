@@ -6,6 +6,7 @@
     --md-footer-bg-color: var(--md-primary-bg-color--lighter);
     --md-typeset-a-color: var(--md-primary-bg-color);
     --md-code-bg-color--transparent: var(--md-code-bg-color);
+    --md-default-fg-color--lightest: #eee;
 }
 
 [data-md-color-scheme="flaredark"] {
@@ -23,7 +24,7 @@
     --md-typeset-a-color: var(--md-primary-bg-color);
     /* Code highlighting color shades */
     --md-code-bg-color: black;
-    --md-code-bg-color--transparent: #0008;
+    --md-code-bg-color--transparent: #0004;
     --md-code-fg-color: var(--md-primary-bg-color--light);
     --md-code-hl-operator-color: var(--md-default-fg-color--light);
     --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
@@ -57,7 +58,7 @@
 
 /* Back to top button */
 .md-top {
-    background: var(--md-default-fg-color--lighter);
+    background: var(--md-default-fg-color--lightest);
 }
 
 /* Restore admonition and details text size and colors */
@@ -168,6 +169,12 @@ figure img.side-by-side {
 .md-nav__link--active,
 .md-tabs__link--active {
     font-weight: bold;
+    color: var(--md-default-fg-color);
+}
+
+.md-tabs__item:has(.md-tabs__link--active) {
+    background: var(--md-default-bg-color);
+    border-radius: 10px 10px 0 0;
 }
 
 /* Highlight header links on hover */
@@ -178,7 +185,12 @@ figure img.side-by-side {
 
 /* Header separator line */
 .md-header .md-tabs {
-    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    border-bottom: 0;
+    background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-header {
+    background-color: var(--md-default-fg-color--lightest);
 }
 
 /* Cards */
