@@ -175,6 +175,7 @@ figure img.side-by-side {
 
 /* Bold text for current page in TOC and TABS*/
 .md-nav--primary .md-nav__item .md-nav__link--active,
+.md-nav--secondary .md-nav__item .md-nav__link--active,
 .md-tabs__link--active {
     font-weight: bold;
     color: var(--md-default-fg-color);
@@ -183,6 +184,11 @@ figure img.side-by-side {
 .md-tabs__item:has(.md-tabs__link--active) {
     background: var(--md-default-bg-color);
     border-radius: 10px 10px 0 0;
+}
+
+/* Previous headers in the secondary TOC */
+.md-nav__link--passed {
+    color: var(--md-default-fg-color--lighter);
 }
 
 /* Highlight header links on hover */
