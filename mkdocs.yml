@@ -184,6 +184,7 @@ nav:
   - Developer Docs:
     - dev/index.md
     - dev/automatic-claiming.md
+    - dev/the-flaredrop.md
     - dev/personal-delegation-account.md
     - dev/summary.md
     - Getting Started Docs:

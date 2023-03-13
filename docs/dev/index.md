@@ -8,10 +8,11 @@ section_icon_type: stroked-svg
 Select one of the topics below:
 
 * [Automatic Claiming](./automatic-claiming.md)
-* [Personal Delegation Accounts](./personal-delegation-account.md)
+* [The Flaredrop](./the-flaredrop.md)
 * [Flare and the EVM](./summary.md)
 * [FAQ](./faq.md)
 * [Getting Started Docs](./getting-started/index.md)
+* [Personal Delegation Accounts](./personal-delegation-account.md)
 * [Reference Guides](./reference/index.md)
 
 !!! info "Quick links"
