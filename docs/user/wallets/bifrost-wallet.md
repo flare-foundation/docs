@@ -1,6 +1,6 @@
 # Bifrost Wallet
 
-Bifrost Wallet is a **non-custodial mobile wallet** available for both Android and iOS.
+Bifrost Wallet is a **noncustodial mobile wallet** available for both Android and iOS.
 You can view your portfolio of crypto assets, access decentralized applications through the in-app browser and perform operations on various blockchain networks, including sending, receiving, wrapping and delegating Flare (`$FLR`) and Songbird (`$SGB`).
 
 ## Getting Started
@@ -13,42 +13,12 @@ The official guides in the [Bifrost Wallet help center](https://support.bifrostw
 
 !!! note "XRP Airdrop"
 
-    Note that, **once `$FLR` distribution begins**,  users who imported their Ethereum-style claim address into Bifrost to access the XRP airdrop will automatically see their tokens in the Flare asset row in the `COINS` section.
+    Note that, **once `$FLR` distribution begins**, users who imported their Ethereum-style claim address into Bifrost to access the XRP airdrop will automatically see their tokens in the Flare asset row in the `COINS` section.
+
+## Adding Flare Tokens
+
+When your balance of any native or wrapped token on the Flare network or Songbird network is more than 0, Bifrost Wallet automatically displays the balance. No additional action is required.
 
 ## Wrap and Delegate
 
-To wrap and delegate your `$SGB` or `$FLR` tokens using Bifrost Wallet, see [the official guide](https://support.bifrostwallet.com/en/articles/5588951-wrap-and-delegate-songbird) (works for both Songbird and Flare) or follow the steps outlined below:
-
-=== "Songbird"
-
-    1. Open the Bifrost app and create or restore a wallet.
-    2. Click on the **Songbird** asset row on the home screen (visible once you hold some `$SGB`).
-    3. Click the 3 horizontal dots on the upper right-hand side of the screen, and click **Wrap**.
-    4. Select the amount of `$SGB` you wish to wrap and click **Continue**.
-    5. Click **Confirm** and then **Close**.
-    6. Select the back arrow in the upper left-hand corner of the screen.
-    A second asset row opens on your home screen for **Wrapped Songbird** (`$WSGB`).
-    7. Click on the **Wrapped Songbird** asset row.
-    8. Click the 3 horizontal dots on the upper right-hand side of the screen and click **Delegate**.
-    9.  Click the **Add Provider** tab toward the bottom of the screen.
-    10. Select which provider you want to delegate to (you can select up to 2 providers).
-    11. Choose the percentage of your `$WSGB` you wish to delegate to that specific provider.
-    12. Click **Continue**, then click **Confirm**, and finally click **Close**.
-    13. To delegate to a second provider, repeat steps 9 to 13.
-
-=== "Flare"
-
-    1. Open the Bifrost app and create or restore a wallet.
-    2. Click on the Flare asset row on the home screen (visible once you hold some `$FLR`).
-    3. Click the 3 horizontal dots on the upper right-hand side of the screen, and click **Wrap**.
-    4. Select the amount of `$FLR` you wish to wrap and click **Continue**.
-    5. Click **Confirm** and then **Close**.
-    6. Select the back arrow in the upper left-hand corner of the screen.
-    A second asset row opens on your home screen for **Wrapped Flare** (`$WFLR`).
-    7. Click on the **Wrapped Flare** asset row.
-    8. Click the 3 horizontal dots on the upper right-hand side of the screen and click **Delegate**.
-    9.  Click the **Add Provider** tab toward the bottom of the screen.
-    10. Select which provider you want to delegate to (you can select up to 2 providers).
-    11. Choose the percentage of your `$WFLR` you wish to delegate to that specific provider.
-    12. Click **Continue**, then click **Confirm**, and finally click **Close**.
-    13. To delegate to a second provider, repeat steps 9 to 13.
+To wrap and delegate your `$FLR` or `$SGB` tokens using Bifrost Wallet, see [the official guide](https://support.bifrostwallet.com/en/articles/5588951-wrap-and-delegate-songbird).

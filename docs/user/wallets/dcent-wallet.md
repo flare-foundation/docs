@@ -1,35 +1,36 @@
 # D'CENT Wallet
 
-D'CENT Biometric Wallet is a **non-custodial hardware wallet** and is considered one of the most secure ways to manage your crypto assets.
+D'CENT Biometric Wallet is a **noncustodial hardware wallet** and is considered one of the most secure ways to manage your crypto assets.
 
 ## Getting Started
 
 Purchase a D'CENT Biometric hardware wallet from the [official D'CENT shop](https://dcentwallet.com/Shop) or download their software wallet/mobile app from the [Apple App Store](https://apps.apple.com/us/app/dcent-wallet/id1447206611) or [Google Play Store](https://play.google.com/store/apps/details?id=com.kr.iotrust.dcent.wallet).
 Then either initialize a new wallet or import an existing one from a recovery phrase.
 
-The official D'cent device setup help guides can be found here: [https://userguide.dcentwallet.com/biometric-wallet/setting-up](https://userguide.dcentwallet.com/biometric-wallet/setting-up).
+The official D'CENT device setup help guides can be found here: [https://userguide.dcentwallet.com/biometric-wallet/setting-up](https://userguide.dcentwallet.com/biometric-wallet/setting-up).
 
-Once your device is set up and synced with the mobile app you will need to add `$FLR` and `$SGB` to your listed assets:
+## Adding Flare Tokens
 
-1. Ensure the D'cent biometric wallet is updated with the latest firmware, v2.24.0 or later.
-2. Login to your D'cent mobile app and have your device turned on, unlocked, and paired via Bluetooth.
+After your device is set up and synced with the mobile app, complete the following procedure to add native tokens `$FLR` and `$SGB` to your listed assets. Although this procedure also explains how to add the wrapped tokens `$WFLR` and `$WSGB` to your listed assets, you can automatically [add `$WFLR` and `$WSGB` using the Flare Portal](../wrapping-tokens.md#automatically).
+
+1. Ensure the D'CENT biometric wallet is updated with the latest firmware, v2.24.0 or later.
+2. Login to your D'CENT mobile app and have your device turned on, unlocked, and paired via Bluetooth.
 3. Click the **+** sign on the bottom right of the **Account** tab.
-4. Search for _Flare_ or _Songbird_ in the search box.
-5. Select the **Flare Token (FLR)** or **Songbird Token (SGB)**.
-6. Name your new account and click **Create**.
+4. In the **Search** box, search for one of the following tokens to add, and select the result:
 
-Repeat for the other token.
+     | Token                | Result                  |
+     | ---------------------| ----------------------- |
+     | `Flare`              | Flare (FLR)             |
+     | `Songbird`           | Songbird Token (SGB)    |
+     | `Wrapped Flare`      | Wrapped Flare (WFLR)    |
+     | `Wrapped Songbird`   | Wrapped Songbird (WSGB) |
 
-You should also add the wrapped versions of the tokens (`$WFLR` and `$WSGB`) to the listed assets:
-
-1. With your device unlocked and paired, click the **+** sign on the bottom right of the **Account** tab.
-2. Search for _Wrapped Flare_ or _Wrapped Songbird_ in the search box.
-3. Select the wrapped token.
-4. Name your new account and click **Create**.
+5. Name your new account, and click **Create**.
+6. Repeat steps 4 and 5 for each token you want to add to the list of assets in your wallet.
 
 ## Wrap and Delegate
 
-Users can wrap and delegate their `$SGB`/`$WSGB` using D'cent's native FTSO Portal:
+Users can wrap and delegate their `$SGB`/`$WSGB` using D'CENT's native FTSO Portal:
 
 !!! note "Delegation instructions for the Flare network are awaiting confirmation"
 

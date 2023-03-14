@@ -1,6 +1,6 @@
 # SafePal S1 Wallet
 
-SafePal S1 is a **non-custodial hardware wallet** that is considered one of the most secure ways to manage your crypto assets.
+SafePal S1 is a **noncustodial hardware wallet** that is considered one of the most secure ways to manage your crypto assets.
 
 ## Getting Started
 
@@ -9,18 +9,47 @@ Purchase a SafePal S1 hardware device from the [official SafePal website](https:
 Use of a SafePal S1 hardware wallet requires syncing the device with the mobile app.
 A step by step unboxing guide to initialize a new device/wallet, or import an existing one from a recovery phrase, can be found here: [https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet](https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet).
 
-Once your S1 device is set up and synced with the mobile app you will need to add `$SGB` and `$FLR` to your listed assets:
+## Adding Flare Tokens
+
+After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wrapped token `$WFLR` to your listed assets.
+
+!!! Important
+    SafePal currently does not support the addition of wrapped Songbird (`$WSGB`) to wallets.
 
 1. Ensure the SafePal S1 is updated with the latest firmware, **version V1.0.32** or later.
 2. Login to your SafePal mobile app and have your S1 device turned on and unlocked.
-3. Scroll to the bottom of your listed assets in the mobile app and click **Add**.
-4. Search for Songbird (`$SGB`) or Flare (`$FLR`) and click the gray button on the right which will then turn blue.
-5. Click the **Add Coin** box also in blue at the bottom of the screen.
-6. Follow the series of prompts which require scanning QR codes from both your S1 wallet and mobile app to finalize adding the asset.
+3. Scroll to the bottom of your listed assets in the mobile app, and click **Manage Coins**.
+4. Click the **Enter token or token contract address** field.
+   The **Search** window is displayed.
+5. Complete the following steps to add Flare and Songbird tokens to your wallet:
+
+    === "Flare"
+
+         1. Scroll through the list of networks, and select **Flare**.
+         2. In the **Enter token or token contract address** field, search for `Flare`.
+         3. Click the plus sign (+) displayed beside **FLR (Flare)**.
+            FLR (Flare) added to your list of assets, and the homepage is displayed.
+         4. Scroll to the bottom of your listed assets in the mobile app, and click **Manage Coins**.
+         5. Select **Flare**  from the list of networks again, and search for `Wrapped Flare`.
+         6. Click the plus sign (+) displayed beside **WFLR (Flare)**.
+            WFLR (Flare) is added to your list of assets on the homepage.
+
+    === "Songbird"
+
+         1. In the **Enter token or token contract address** field, search for `Songbird`.
+            A list of Songbird tokens on various blockchains is displayed.
+
+            !!! Important
+                Ignore all Songbird tokens categorized as BEP-20 and ERC-20.
+         2. Click the plus sign (+) for this **SGB (Songbird)** token with the logo:
+
+            ![SGB Songbird token](../../assets/safepal-songbird-logo.png)
+
+            SGB (Songbird) is added to your list of assets on the homepage.
 
 ## Wrap and Delegate
 
-SafePal users can access existing decentralized applications (dapps) created by independent FTSO data providers to wrap and delegate their `$SGB` and`$FLR` tokens:
+SafePal users can access existing decentralized applications (dapps) created by independent FTSO data providers to wrap and delegate their `$FLR` and `$SGB` tokens:
 
 1. Open the SafePal mobile app and navigate to the built-in web browser by clicking the four squares at the bottom middle of the screen.
 2. Enter the address of the website or dapp you wish to use to wrap and delegate in the search bar at the top of the screen.
@@ -31,7 +60,7 @@ SafePal users can access existing decentralized applications (dapps) created by 
          Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 3. After copying and pasting the address, click the drop-down menu to the right of the search tab.
-4. Scroll down, select the **Songbird** or **Flare** networks, and click **Go**.
+4. Scroll down, select the **Flare** or **Songbird** networks, and click **Go**.
 5. A pop up will appear notifying that you are being redirected to a third party dapp. Press **Confirm**.
 
 Other data providers host similar websites or dapps for wrapping and delegation.
