@@ -15,7 +15,7 @@ As an added security measure, individual validators can also define **local atte
   <figcaption>The State Connector.</figcaption>
 </figure>
 
-The State Connector can, for instance, **check whether a deposit has been made on another blockchain**, opening the door to more advanced mechanisms like the FAsset or the LayerCake bridges.
+The State Connector can, for instance, **check whether a deposit has been made on another blockchain**, opening the door to more advanced mechanisms like the FAsset or the Layer Cake bridges.
 
 This page gives technical details about the whole procedure, the different security and scalability measures that have been taken into account in its design and the kind of queries that can be performed.
 
@@ -67,7 +67,7 @@ Anybody can listen to the request events and provide answers using any combinati
 
 ### 4. Attestation
 
-To prevent attestation providers from peeking at each other's answers, these are submitted in a "Commit and Reveal" fashion called [the RCR protocol](#overlapped-rcr-protocol) and detailed below.
+To prevent attestation providers from peeking at each other's answers, these are submitted in a "Commit and Reveal" fashion called [the CCCR protocol](#overlapped-cccr-protocol) and detailed below.
 
 ??? example "Submitting an attestation (For attestation provider developers)"
 
@@ -107,39 +107,42 @@ Otherwise, **no consensus is achieved**: requests remain **unanswered** and must
 For simplicity, the above description omitted **two very important mechanisms**, reviewed here.
 
 The main one is **Attestation packing**, which decouples the number of requests from the number of answers, effectively providing unbounded scalability.
-It requires requests to be first **collected** and then **answered all at once**, so a protocol called **RCR** is used.
+It requires requests to be first **collected** and then **answered all at once**, so a protocol called **CCCR** is used.
 
-### Overlapped RCR Protocol
+### Overlapped CCCR Protocol
 
 Requests and answers are submitted sequentially in **attestation rounds**.
-Each attestation round has 3 **90-second** consecutive phases, called Request, Commit and Reveal (A whole round therefore takes 4.5 minutes).
+Each attestation round has 4 consecutive phases, called Collect, Choose, Commit and Reveal.
+
+Phases happen in 90-second windows, and the Choose and Commit phases share the same window, so a whole attestation round takes 4.5 minutes.
 
 <figure markdown>
-  ![Request-Commit-Reveal protocol](SC-RCR.png){ loading=lazy .allow-zoom }
-  <figcaption>The Request-Commit-Reveal (RCR) protocol.</figcaption>
+  ![Collect-Choose-Commit-Reveal protocol](SC-CCCR.png){ loading=lazy .allow-zoom }
+  <figcaption>The Collect-Choose-Commit-Reveal (CCCR) protocol.</figcaption>
 </figure>
 
-- **Request phase**: Users send their requests to the State Connector contract which forwards them to every attestation provider.
+- **Collect phase**: Users send their requests to the State Connector contract which forwards them to every attestation provider.
+- **Choose phase**: Attestation Providers vote on which requests they will be able to answer in the current round.
 - **Commit phase**: Attestation providers send **obfuscated** answers to the State Connector, so they cannot cheat by peeking at each other's submissions.
 - **Reveal phase**: Attestation providers send the **deobfuscation key** so their previous answers are revealed.
   When all data is available, answers are made public if there is enough consensus.
 
-The RCR protocol is akin to making submissions in a closed envelope which is not opened until all submissions are received.
+The CCCR protocol is akin to making submissions in a closed envelope which is not opened until all submissions are received.
 
-Results are available at the end of the Reveal phase, so the answer to a particular request can take anywhere **from 3 to 4.5 minutes**, depending on the time in which the request was made inside the Request phase.
+Results are available at the end of the Reveal phase, so the answer to a particular request can take anywhere **from 3 to 4.5 minutes**, depending on the time in which the request was made inside the Collect phase.
 
-Furthermore, the phases of the RCR protocol are actually **overlapped**, so when requests are being **requested** for round $n+2$, answers are being simultaneously **committed** for the previous round $(n+1)$, and **revealed** for the round prior to that $(n)$.
+Furthermore, the phases of the CCCR protocol are actually **overlapped**, so while requests are being **collected** for round $(n+2)$, answers are being simultaneously **committed** for the previous round $(n+1)$, and **revealed** for the round prior to that $(n)$.
 
 <figure markdown>
-  ![Overlapped RCR protocol](SC-RCR-overlapped.png){ loading=lazy .allow-zoom }
-  <figcaption>The RCR protocol with overlapped phases.</figcaption>
+  ![Overlapped CCCR protocol](SC-CCCR-overlapped.png){ loading=lazy .allow-zoom }
+  <figcaption>The CCCR protocol with overlapped phases.</figcaption>
 </figure>
 
 This means that new requests can be made without waiting for the previous ones to be completed.
 
 ### Attestation Packing
 
-Each round, attestation providers build a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) with the hashes of **all valid answers** for the round.
+Each round, attestation providers build a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) with the hashes of **all valid answers** to the requests that were agreed upon during [the "Choose" phase](https://gitlab.com/flarenetwork/attestation-client/-/blob/main/docs/attestation-protocol/bit-voting.md).
 The obtained **Merkle root** is then called the **Attestation Proof**, since it is proof of the presence of each individual answer.
 Finally, the attestation proof is submitted to the State Connector for consensus evaluation.
 
@@ -169,7 +172,7 @@ Additional points worth noting:
 
 - If two attestation providers observe a different validity for _any_ of the requests in the round, they will submit a completely different Attestation Proof.
 
-- Attestation providers **must answer all queries** in the round **or abstain from participating in the round**, otherwise, their Merkle tree root will not match other providers and will probably be discarded by consensus.
+- Attestation providers **must answer all agreed-upon queries** in the round **or abstain from participating in the round**, otherwise, their Merkle tree root will not match other providers and will probably be discarded by consensus.
 
 - **Hashes are sorted** before being added to the tree, just to have a **consistent ordering** (albeit arbitrary).
 
