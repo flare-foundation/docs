@@ -176,7 +176,7 @@ Additional points worth noting:
 
 - **Hashes are sorted** before being added to the tree, just to have a **consistent ordering** (albeit arbitrary).
 
-- The Merkle tree can later be swapped by more efficient algorithms without impacting the State Connector contract, which will continue to vote only on the root hash.
+- The exact way in which the root hash is calculated can be changed without impacting the State Connector contract, which will continue to vote only on the hash value.
 
 ??? example "Proof Unpacking (for App developers)"
 
@@ -193,7 +193,7 @@ Additional points worth noting:
     1. In the attestation round after you made the request (3 attestation phases, so from 3 to 4.5 minutes) the **Attestation Proof** for the round should be available in the State Connector.
         Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract).
 
-    2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md) path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
+    2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/apis.md#proof-api-on-attestation-provider-server) path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
 
     3. **Rebuild the Merkle tree** for the retrieved data.
     There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/lib/utils/MerkleTree.ts) library.
@@ -201,6 +201,9 @@ Additional points worth noting:
     4. **Check** that the tree's root matches the Attestation Proof from step 1.
     If it does not match, this provider did not submit the answer agreed by the majority.
     Choose another provider in step 2.
+
+        Conversely, you can use the `api/proof/get-specific-proof` API in step 2 which does steps 2, 3 and 4 for you.
+        This API returns the JSON response data, including the attestation proof, if the attestation request was successfully verified in the given round.
 
     5. Now that you know that the retrieved data has been agreed upon by the consensus, you can use it.
     **Look for your request inside the returned data**.
