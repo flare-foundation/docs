@@ -15,3 +15,4 @@ Select one of the topics below:
 * [Governance](./governance/index.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
 * [Wallets](./wallets/index.md)
+* [Wrapping Tokens](./wrapping-tokens.md)
