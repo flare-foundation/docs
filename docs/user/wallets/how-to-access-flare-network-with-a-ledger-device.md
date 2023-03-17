@@ -3,84 +3,78 @@
 Hardware wallets are considered among the more secure options to manage crypto assets and store private keys.
 Your crypto assets can remain safe, even if your computer or phone is compromised, as long as you keep your recovery phrase safe and review all transaction details before confirming transactions.
 
-## Getting Started
+This guide explains how to configure your Ledger device to use it through the MetaMask wallet.
 
-To use your Ledger device with Flare or Songbird, first make sure that you have:
+## One-Time Setup
 
-1. Initialized your Ledger device with a recovery phrase.
-2. Protected your Ledger device with a PIN code.
-3. Ledger Live is installed, open and ready to use.
-4. Installed the latest Ledger device firmware.
-5. Installed the latest version of the Ledger Ethereum app.
-6. Installed the latest version of [Google Chrome](https://www.google.com/chrome/).
-7. Installed the [MetaMask browser extension](https://metamask.io/download.html) **version 10.5.0 or later**.
+You only need to perform the steps in this section once.
 
-## Install the Ethereum App
+### Installing MetaMask
 
-After meeting the requirements, you can install the Ethereum app by following these steps:
+Follow the [MetaMask guide](./how-to-access-flare-network-with-metamask.md) to install and configure the MetaMask wallet.
+Make sure MetaMask can show `$FLR` and `$SGB` tokens, and their wrapped `$WFLR` and `$WSGB` versions.
+
+### Installing Ledger
+
+Follow the [Ledger](https://www.ledger.com/start) instructions to:
+
+1. Install Ledger Live and open it.
+2. Initialize your Ledger device with a recovery phrase.
+3. Protect your Ledger device with a PIN code.
+4. Install the latest Ledger device firmware.
+
+### Installing the Ethereum App
+
+Flare is [EVM](glossary.md#evm)-compatible, so it uses the Ethereum app on Ledger.
+After meeting the requirements above, install the Ethereum app on the device with the following steps:
 
 1. Open the **Manager** in Ledger Live.
 2. Connect and unlock your Ledger device.
-3. Allow the manager on your Ledger device by pressing both buttons.
+3. Enable the manager on your Ledger device by pressing both buttons.
 4. Find **Ethereum (ETH)** in the app catalog.
 5. Click the **Install** button of the app.
+
 Your Ledger device displays _Processing…_.
 The app installation is complete.
 
-## Use Ledger Device with MetaMask
+### Creating Accounts
 
-You can access Songbird by using your Ledger device with the MetaMask browser extension.
+After enabling access to Songbird and Flare in MetaMask, create one or more accounts.
 
-1. Open the MetaMask browser extension and login.
-2. Click **Custom RPC** in the networks dropdown.
+In MetaMask:
 
-    === "Songbird"
+1. Select **Songbird** or **Flare** in the network dropdown.
+2. Connect your Ledger device using USB.
+3. Open the Ethereum app on your Ledger device.
+4. If Ledger Live is still running on your computer, you must quit the app.
+5. Locate MetaMask's **Settings** and then **Advanced** settings.
+6. Ensure that the **Preferred Ledger Connection Type** is set to **WebHID** in the drop-down menu (it should be the case by default).
+7. Click your account image and **Connect Hardware Wallet**.
+A pop up box opens listing paired Human Interface Devices (HID).
+8. Highlight your **Ledger S** or **Ledger X** and click **Connect**.
+A random set of addresses opens that are available for your use.
+9. To create one or more accounts (for example, for different tokens or different purposes), select any account number or multiple account numbers and click **Unlock**.
 
-        | Field                  | Value                                          |
-        | ---------------------  | ---------------------------------------------- |
-        | **Network Name**       | Songbird                                       |
-        | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
-        | **Chain ID**           | 19                                             |
-        | **Currency Symbol**    | SGB                                            |
-        | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
+You have created one or more Ledger accounts to which you can send `$SGB` or `$FLR` tokens.
 
-    === "Flare"
+Your `$SGB` or `$FLR` balance is displayed on the MetaMask overview.
 
-        | Field                  | Value                                       |
-        | ---------------------- | ------------------------------------------- |
-        | **Network Name**       | Flare                                       |
-        | **New RPC URL**        | <https://flare-api.flare.network/ext/C/rpc> |
-        | **Chain ID**           | 14                                          |
-        | **Currency Symbol**    | FLR                                         |
-        | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
+## Using Ledger with MetaMask
 
-3. Click **Save**.
-4. Select **Songbird** or **Flare** in the network dropdown.
-5. Connect your Ledger device using USB.
-6. Open the Ethereum app on your Ledger device.
-7. If Ledger Live is still running, you must now quit the app on your computer.
-8. In MetaMask's Advanced Settings ensure that the **Preferred Ledger Connection Type** is set to **WebHID** in the drop-down menu (it should be the case by default).
-9. Click your account image and **Connect Hardware Wallet**.
-10. A pop up box opens listing paired Human Interface Devices (HID). Highlight your Ledger S or Ledger X and click **Connect**.
-11. Select your Account and click **Unlock**.
+Now that you have the one-time setup complete, here are a few things you can do to get started using your new accounts.
 
-You will see your `$SGB` or `$FLR` balance on the overview.
+* **Receive tokens**.
 To receive tokens, copy your account address and share it with the sender.
-To send tokens, click **Send** and enter the recipient address, enter the desired amount, and click **Next**.
-When prompted, allow MetaMask to open Ledger Live and open the device bridge.
-Follow the on screen instructions to confirm or reject the transaction on your Ledger device.
+
+* **Send tokens**.
+To send tokens, click **Send** and enter the recipient address.
+Then enter the desired amount and click **Next**.
+MetaMask will ask you to confirm the transaction from the Ledger device.
+
+* **Confirm transactions**.
+To confirm or reject a transaction, follow the on-screen instructions on your Ledger device.
 
 !!! warning
     Always review all transaction details on your Ledger device before confirming any transaction!
 
-## Wrap and Delegate
-
-Once connected to the Songbird or Flare networks, enter the address of the website or dapp you wish to use to wrap and delegate in the MetaMask browser.
-A few of the data providers have developed dapps integrated with their websites that allow users to wrap, delegate, and claim rewards.
-Delegating using this method is not exclusive to one specific provider, as these dapps allow you to choose from a number of different providers.
-
-Many data providers have developed dapps for wrapping and delegation.
-Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
-
-Other providers have their own websites and are developing similar dapps.
-See the full list of active signal providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso).
+To learn how to use Ledger, including signing transactions, go to [Ledger.com](https://www.ledger.com/).
