@@ -43,7 +43,7 @@ After enabling access to Songbird and Flare in MetaMask, create one or more acco
 
 In MetaMask:
 
-1. Select **Songbird** or **Flare** in the network dropdown.
+1. Select **Flare** or **Songbird** in the network dropdown.
 2. Connect your Ledger device using USB.
 3. Open the Ethereum app on your Ledger device.
 4. If Ledger Live is still running on your computer, you must quit the app.
@@ -55,9 +55,16 @@ A pop up box opens listing paired Human Interface Devices (HID).
 A random set of addresses opens that are available for your use.
 9. To create one or more accounts (for example, for different tokens or different purposes), select any account number or multiple account numbers and click **Unlock**.
 
-You have created one or more Ledger accounts to which you can send `$SGB` or `$FLR` tokens.
+You have created one or more Ledger accounts to which you can send `$FLR` or `$SGB` tokens.
 
-Your `$SGB` or `$FLR` balance is displayed on the MetaMask overview.
+Your `$FLR` and `$SGB` balance will be displayed on the MetaMask overview.
+Once the accounts contain `$WFLR` or `$WSGB` their balances will be shown too if you followed the [Wrapping Flare Tokens](../wrapping-tokens.md) guide.
+
+!!! note
+
+    The [Ledger Live](https://www.ledger.com/ledger-live) desktop application, as of version 2.55, can show your `$FLR` and `$SGB` balances but NOT the wrapped `$WFLR` and `$WSGB` versions.
+
+    The tokens are still in the account, but Ledger Live does not show them.
 
 ## Using Ledger with MetaMask
 
