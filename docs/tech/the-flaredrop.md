@@ -3,6 +3,9 @@
 The Flaredrop, previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](./flare-launch-process.md#definitions).
 It will last for 36 months and is destined for any holder of wrapped `$FLR` (`$WFLR`) that participates in the network as per the FIP.01.
 
+If you enabled your [PDA](./personal-delegation-account.md) and it contains `$WFLR`, it is also eligible to receive the Flaredrop distribution.
+Make sure to check both your **Main Account** and your **Delegation Account** for Flaredrop to claim.
+
 ## How Is the Flaredrop Distributed?
 
 The Flaredrop is distributed monthly over 36 30-day bank months to those that wrap their `$FLR` tokens.
@@ -20,8 +23,8 @@ Users then receive an amount equal to their month's sampled `$WFLR` holdings div
     <figcaption>3-week average of wrapped `$FLR`.</figcaption>
     </figure>
 
-Upon claiming, the `$FLR` entitlement is sent directly to the claiming address or to its [Personal Delegation Account (PDA)](./personal-delegation-account.md), if it is enabled.
-When claiming to the PDA, tokens are automatically wrapped into `$WFLR`.
+Upon claiming, the entitlement is sent directly to the account you claimed from.
+It is sent as `$FLR` to your **Main Account** and as `$WFLR` to your **[Personal Delegation Account (PDA)](./personal-delegation-account.md)**.
 Each distribution expires two bank months and a week (67 days) after it becomes claimable and expired tokens are burned.
 
 To ensure having no effect on the amount of `$FLR` that each claiming address receives, Flare Foundation and team addresses opt out of the Flaredrop distribution.
@@ -37,3 +40,4 @@ To ensure having no effect on the amount of `$FLR` that each claiming address re
     After the distribution becomes claimable, it expires in two bank months and a week (67 days).
 
 You can also enable [automatic claiming](./automatic-claiming.md) to make sure you don't miss any Flaredrop!
+Autoclaiming will claim for both your main account and your PDA if you enabled it.
