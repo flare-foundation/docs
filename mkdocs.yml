@@ -149,6 +149,7 @@ nav:
     - user/index.md
     - user/automatic-claiming.md
     - user/block-explorer.md
+    - user/claiming-the-flaredrop.md
     - FTSO Delegation:
       - user/delegation/index.md
       - user/delegation/managing-delegations.md

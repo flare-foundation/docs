@@ -11,6 +11,7 @@ Select one of the topics below:
 
 * [Automatic Claiming](./automatic-claiming.md)
 * [Block Explorer](./block-explorer.md)
+* [Claiming the Flaredrop](./claiming-the-flaredrop.md)
 * [FTSO Delegation](./delegation/index.md)
 * [Governance](./governance/index.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
