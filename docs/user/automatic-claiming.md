@@ -44,25 +44,38 @@ Now that you have your desired executor's address, you can set it as the executo
 1. Open the [Flare Portal](https://portal.flare.network/).
 2. Click **Connect to Wallet** and log into your wallet.
    The interface to your **Main Account** opens.
-3. In the **Executor** section, click **Add**.<!--Add an image when the UI is updated.-->
+    <figure markdown>
+    ![Flare Portal Main Account](executor-portal-main.png){ loading=lazy .allow-zoom }
+    <figcaption>Flare Portal Main Account interface.</figcaption>
+    </figure>
+3. In the **Executor** section, click **Add** or **Change**.
 4. Paste the executor's address.
     A message confirms the executor's fee, whether it is a registered executor, and whether rewards go to your Main Account or your [Personal Delegation Account (PDA)](../tech/personal-delegation-account.md).
-5. To set this executor, click **Confirm**.
     <figure markdown>
-    ![Set an executor](executor-portal-set.png){ loading=lazy .allow-zoom width=500px }
+    ![Set an executor](executor-portal-preset.png){ loading=lazy .allow-zoom width=400px }
     <figcaption>Set an executor.</figcaption>
     </figure>
-    <!--Add a new image when they change the name "automatic" to "registered."-->
+5. To set this executor, click **Confirm**.
    Your wallet opens with the details of the transaction.
 6. Review the transaction and confirm it.
 
-If you confirm the executor, the Flare Portal displays the executor address you have selected, whether it is registered, and it's fee.
-There is also a **Change** button that enables you to remove or change the executor any time you choose.
+If you confirm the executor, the Flare Portal displays the executor address you have selected, whether it is registered, and its fee.
+Note also that the **Add** button now reads **Change**, enabling you to remove or change the executor any time you choose.
 <figure markdown>
 ![The executor is confirmed](executor-portal-confirmed.png){ loading=lazy .allow-zoom }
 <figcaption>The executor is confirmed.</figcaption>
 </figure>
-<!--Needs a new image when they change the name "automatic" to "registered."-->
+
+!!! note "Reward must be high enough to pay the executor's fee"
+
+    If the reward amount is too low to accommodate the fee, automatic claims won't occur, so you may see small amounts of unclaimed rewards even if you have autoclaiming set up.
+
+## Disabling Automatic Claiming
+
+To disable automatic claiming and stop paying the executor fees, go through the above process again and clear the Executor address field in Step 4.
+This is, confirm an empty address.
+
+Once you confirm the transaction in your wallet, automatic claiming will be disabled.
 
 ## Checking for Accrued Rewards
 
@@ -70,8 +83,8 @@ To check if you have accrued rewards, go to the [Flare Portal](https://portal.fl
 
 1. Click **Connect to Wallet** and log into your wallet.
 2. Select your **Main Account** or **Delegation Account**, if you have enabled a PDA.
-3. At the bottom of the screen, see the **Claim _x_ FLR** button, where _x_ is the number of `$FLR` rewards you have.
+3. At the bottom of the screen, see the **Claim _x_ FLR** button, where _x_ is the number of `$FLR` rewards you can claim.
 
-!!! note "Reward must be high enough to pay the executor's fee"
+!!! note
 
-    If the reward amount is too low to accommodate the fee, automatic claims won't occur, so you may see small amounts of unclaimed rewards even if you have autoclaiming set up.
+    If the configured executor is doing its job correctly, you should never see any pending rewards.
