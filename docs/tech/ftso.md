@@ -174,11 +174,34 @@ If you are an advanced user, you can [delegate manually](../user/delegation/mana
 ## Rewards
 
 A percentage of the annual network **inflation** is reserved to reward FTSO data providers and distributed uniformly among the year's reward epochs.
-On Flare, reward epochs are 3.5 days, and on Songbird, reward epochs are 7 days.
+The mechanism that distributes rewards to data providers consists of several bands:
 
-In each reward epoch, rewards are distributed among all data providers whose submission fell [within 50% range of the calculated median](#how-results-are-calculated).
+* **Primary reward band**: This band rewards [50% of submitted data, weighted by vote power and centered around the median price](#how-results-are-calculated).
+That is, the primary reward band fixes the rewarded vote power at 50%, which makes the width of the primary reward band in each epoch variable.
+* **Secondary reward band**: This band rewards [submitted data that falls within a fixed percentage around the calculated median](https://proposals.flare.network/STP/STP_2.html#annex-a).
+That is, the width of the secondary reward band is fixed, which makes the rewarded vote power in each epoch variable.
 
-Then, each provider takes a **configurable fee**, which is set to 20% by default, and distributes the rest of the reward among **all contributors to its vote power**, i.e., itself and all its delegators, according to the delegated amounts.
+Submitted data in each reward epoch belongs to one of the following:
+
+* Primary reward band
+* Primary and secondary reward band
+* Neither reward band
+
+On Flare, only the primary reward band is enabled, and reward epochs are 3.5 days.
+
+!!! note "Important"
+    Support for the secondary reward band on Flare is planned and will be managed by a [governance vote](governance.md) on a proposal similar to [STP.02](https://proposals.flare.network/STP/STP_2.html).
+
+On Songbird, both the primary reward band and secondary reward band are enabled, and reward epochs are 7 days.
+In each reward epoch, rewards are distributed to providers whose submission falls within the primary or secondary reward bands.
+
+Because the secondary reward band is wider, it rewards more data providers than the primary band. However, submissions still must be close enough to the median to be included.
+If a submission falls within both bands, it receives both rewards because each reward band is independent.
+
+The secondary reward band receives 30% of all FTSO rewards, and the primary reward band receives the remaining 70%.
+As the FTSO system evolves, these reward percentages might be revised later, in accordance with an accepted proposal that requests changes to the secondary reward band.
+
+After the band rewards are distributed, each provider can take an **optional, configurable fee**, which is set to 20% by default, and distributes the rest of the reward among **all contributors to its vote power**, i.e., itself and all its delegators, according to the delegated amounts.
 
 If you delegated to a data provider, the amount of your rewards depends on multiple factors:
 
