@@ -49,7 +49,9 @@ After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wr
 
 ## Wrap and Delegate
 
-SafePal users can access existing decentralized applications (dapps) created by independent FTSO data providers to wrap and delegate their `$FLR` and `$SGB` tokens:
+When you delegate your vote power to FTSO data providers, you not only support the Flare ecosystem but also earn monetary rewards.
+
+You can use the SafePal mobile app to wrap and delegate your tokens:
 
 1. Open the SafePal mobile app and navigate to the built-in web browser by clicking the four squares at the bottom middle of the screen.
 2. Enter the address of the website or dapp you wish to use to wrap and delegate in the search bar at the top of the screen.
@@ -61,7 +63,9 @@ SafePal users can access existing decentralized applications (dapps) created by 
 
 3. After copying and pasting the address, click the drop-down menu to the right of the search tab.
 4. Scroll down, select the **Flare** or **Songbird** networks, and click **Go**.
-5. A pop up will appear notifying that you are being redirected to a third party dapp. Press **Confirm**.
+5. A pop-up will appear notifying that you are being redirected to a third-party dapp. Press **Confirm**.
 
 Other data providers host similar websites or dapps for wrapping and delegation.
 See the full list of signal providers on Songbird at [https://flaremetrics.io/ftso](https://flaremetrics.io/ftso).
+
+Alternatively, wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).

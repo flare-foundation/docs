@@ -76,7 +76,6 @@ After you set up your wallet, connect to Flare's networks, which will add each n
 
 ## Wrap and Delegate
 
-Once connected to the Flare or Songbird network, enter the address of the website or dapp you wish to use to wrap and delegate in any web3 browser.
-A few of the [FTSO](glossary.md#ftso) data providers have developed dapps integrated with their websites that allow users to wrap, delegate and claim `$FLR` and `$SGB` rewards.
-Delegating using this method is not exclusive to one specific provider, as these dapps allow you to choose from a number of different providers.
-Take a look at [flaremetrics.io](https://flaremetrics.io/ftso) and pick the one you prefer.
+When you delegate your vote power to FTSO data providers, you not only support the Flare ecosystem but also earn monetary rewards.
+
+Wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).

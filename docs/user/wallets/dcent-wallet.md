@@ -30,9 +30,11 @@ After your device is set up and synced with the mobile app, complete the followi
 
 ## Wrap and Delegate
 
-Users can wrap and delegate their `$SGB`/`$WSGB` using D'CENT's native FTSO Portal:
+When you delegate your vote power to FTSO data providers, you not only support the Flare ecosystem but also earn monetary rewards.
 
-!!! note "Delegation instructions for the Flare network are awaiting confirmation"
+You can wrap and delegate your `$SGB` using D'CENT's native FTSO Portal:
+
+!!! note "Delegation instructions for the Flare network are awaiting confirmation."
 
 1. Click the **Discovery** tab at the bottom middle of the screen.
 2. Select the **FTSO Portal** from the menu then click **Go**.
@@ -49,3 +51,5 @@ Users can wrap and delegate their `$SGB`/`$WSGB` using D'CENT's native FTSO Port
 
 9. Click **Confirm** and follow the prompts to sign the transaction with your hardware device.
 10. To add a second provider (up to two), repeat steps 7 through 9.
+
+Alternatively, wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).

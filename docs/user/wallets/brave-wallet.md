@@ -70,17 +70,6 @@ With the previous steps completed, you now have access to the Flare network and 
 
 ## Wrap and Delegate
 
-Brave users can access existing decentralized applications (dapps) created by independent organizations to wrap and delegate their `$FLR` and `$SGB` tokens, via the following steps ([Read more about delegation](../delegation/index.md)):
+When you delegate your vote power to FTSO data providers, you not only support the Flare ecosystem but also earn monetary rewards.
 
-1. Open Brave Browser and login to your wallet (make sure you are connected to Flare or Songbird).
-2. Open a second search tab within Brave.
-3. Enter the address of the website or dapp you wish to use to wrap and delegate in the search bar at the top of the screen.
-
-    !!! info
-
-         These dapps are usually created by FTSO [data providers](glossary.md#data_provider), but some of them allow you to choose a different data provider to delegate to.
-         Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
-
-4. Follow the prompts to connect your Brave wallet and sign transactions when wrapping, delegating, or claiming rewards.
-
-See the full list of data providers at [flaremetrics.io](https://flaremetrics.io/ftso).
+Wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).
