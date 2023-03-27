@@ -143,3 +143,7 @@ Once a proposal is accepted, Flare's governance contracts allow for its automati
 
 However, some proposals might require changes that are not implementable through a smart contract and therefore automatic execution is disabled for them.
 Both FIPs and STPs are manually executed by the Flare Foundation.
+
+## Related User Guides
+
+* [Voting](../user/governance/voting.md)

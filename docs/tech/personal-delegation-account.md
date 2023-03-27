@@ -24,3 +24,11 @@ Here are some of the differences from a regular account:
 !!! example "Developing PDA functionality"
 
     For information on how to develop a PDA, or how to write an application that supports a PDA, see [Personal Delegation Accounts](../dev/personal-delegation-account.md) in the Developer section.
+
+## Related User Guides
+
+* [Managing your PDA](../user/personal-delegation-account.md)
+
+## Related Developer Docs
+
+* [Managing PDAs in applications](../dev/personal-delegation-account.md)

@@ -418,3 +418,9 @@ That is, the actual price is  `_price` * 10 ^-`_assetPriceUsdDecimals`^.
 For example, a return value of `2603` with `_assetPriceUsdDecimals` of `5` means a price of `0.02603 USD` (There are only **5** significant decimal places).
 
 A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last price update is also returned.
+
+## Related User Guides
+
+* [Managing delegations](../user/delegation/managing-delegations.md)
+* [Managing rewards](../user/delegation/managing-rewards.md)
+* [Wrapping tokens](../user/wrapping-tokens.md)

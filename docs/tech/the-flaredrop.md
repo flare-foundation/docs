@@ -39,5 +39,13 @@ To ensure having no effect on the amount of `$FLR` that each claiming address re
     2. **Claim before the distribution expires.**
     After the distribution becomes claimable, it expires in two bank months and a week (67 days).
 
-You can also enable [automatic claiming](./automatic-claiming.md) to make sure you don't miss any Flaredrop!
-Autoclaiming will claim for both your main account and your PDA if you enabled it.
+You can also enable [automatic claiming](./automatic-claiming.md) to make sure you don't miss any Flaredrop! Autoclaiming will claim for both your main account and your PDA if you enabled it.
+
+## Related User Guides
+
+* [Claiming the Flaredrop](../user/claiming-the-flaredrop.md)
+* [Wrapping tokens](../user/wrapping-tokens.md)
+
+## Related Developer Docs
+
+* [The Flaredrop](../dev/the-flaredrop.md)
