@@ -142,7 +142,7 @@ This means that new requests can be made without waiting for the previous ones t
 
 ### Attestation Packing
 
-Each round, attestation providers build a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) with the hashes of **all valid answers** to the requests that were agreed upon during [the "Choose" phase](https://gitlab.com/flarenetwork/attestation-client/-/blob/main/docs/attestation-protocol/bit-voting.md).
+Each round, attestation providers build a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) with the hashes of **all valid answers** to the requests that were agreed upon during [the "Choose" phase](https://github.com/flare-foundation/attestation-client/blob/main/docs/attestation-protocol/bit-voting.md).
 The obtained **Merkle root** is then called the **Attestation Proof**, since it is proof of the presence of each individual answer.
 Finally, the attestation proof is submitted to the State Connector for consensus evaluation.
 
@@ -161,7 +161,7 @@ Additionally, the allowed request types are **carefully designed to minimize the
 For example, requiring some time for **transactions to settle** before inquiring about them, and forcing requests to include the hash of a later block that confirms the transaction.
 
 Attestation providers keep the actual retrieved data for a week, in case it contains additional information beyond the yes/no result.
-Users can request this data directly from the providers through the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/proof-api.md).
+Users can request this data directly from the providers through the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/apis.md#proof-api-on-attestation-provider-server).
 
 !!! note
     Please note that this data is **safe to use** even though it is obtained directly from the provider, because **its hash is consistent with the Attestation Proof** agreed upon by the State Connector's consensus.
@@ -180,7 +180,7 @@ Additional points worth noting:
 
 ??? example "Proof Unpacking (for App developers)"
 
-    The procedure for apps to check whether the State Connector answered yes or no to their request is detailed in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/verfication/verification-workflow.md). What follows is an illustrative summary.
+    The procedure for apps to check whether the State Connector answered yes or no to their request is detailed in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/verification-workflow.md). What follows is an illustrative summary.
 
     The basic idea is that you must **retrieve all data** (both requests and answers) for the round from an attestation provider.
     You then **rebuild the Merkle tree** with this data and check that it matches the Attestation Proof provided by the State Connector.
@@ -196,7 +196,7 @@ Additional points worth noting:
     2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/apis.md#proof-api-on-attestation-provider-server) path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
 
     3. **Rebuild the Merkle tree** for the retrieved data.
-    There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/lib/utils/MerkleTree.ts) library.
+    There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/src/utils/data-structures/MerkleTree.ts) library.
 
     4. **Check** that the tree's root matches the Attestation Proof from step 1.
     If it does not match, this provider did not submit the answer agreed by the majority.

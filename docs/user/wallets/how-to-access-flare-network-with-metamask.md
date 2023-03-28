@@ -13,7 +13,7 @@ Make sure that you have securely backed up your recovery phrase before proceedin
 To use MetaMask with Songbird or Flare, ensure you have:
 
 1. Installed the latest version of [Google Chrome](https://www.google.com/chrome/).
-2. Installed the [MetaMask browser extension](https://metamask.io/download.html).
+2. Installed the [MetaMask browser extension](https://metamask.io/download).
 3. Created a new wallet or imported an existing wallet to MetaMask.
 4. Securely backed up your recovery phrase offline.
 5. Protected your MetaMask with a password.

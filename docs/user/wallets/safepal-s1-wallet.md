@@ -4,8 +4,6 @@ SafePal S1 is a **noncustodial hardware wallet** that is considered one of the m
 
 ## Getting Started
 
-Purchase a SafePal S1 hardware device from the [official SafePal website](https://shop.safepal.io) in the products section and download their mobile app from either the [Apple App Store](https://apps.apple.com/us/app/safepal-wallet/id1548297139) or [Google Play Store](https://play.google.com/store/apps/details?id=io.safepal.wallet).
-
 Use of a SafePal S1 hardware wallet requires syncing the device with the mobile app.
 A step by step unboxing guide to initialize a new device/wallet, or import an existing one from a recovery phrase, can be found here: [https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet](https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet).
 
@@ -66,6 +64,6 @@ You can use the SafePal mobile app to wrap and delegate your tokens:
 5. A pop-up will appear notifying that you are being redirected to a third-party dapp. Press **Confirm**.
 
 Other data providers host similar websites or dapps for wrapping and delegation.
-See the full list of signal providers on Songbird at [https://flaremetrics.io/ftso](https://flaremetrics.io/ftso).
+See the full list of signal providers on Songbird at [https://flaremetrics.io/](https://flaremetrics.io).
 
 Alternatively, wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).

@@ -149,7 +149,7 @@ module.exports = {
 
 Then, create a file called `.env` at the root of you project (where the `hardhat.config.js` file resides) to store the private key for the account to use for testing.
 [`.env` files](https://www.npmjs.com/package/dotenv) are useful to store local information which should not be committed into the source repository.
-In this tutorial, you need to store your test account's [private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) in this format:
+In this tutorial, you need to store your test account's [private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) in this format:
 
 ```ini
 PRIVATE_KEY="0x0000000000000000000000000000000000000000000000000000000000000000"

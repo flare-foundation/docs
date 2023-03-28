@@ -13,7 +13,7 @@ To use your Trezor device with Flare (`$FLR`) or Songbird (`$SGB`), first make s
 4. Enabled Ethereum under the **Crypto** tab in Trezor Suite.
 5. Installed the latest Trezor device firmware.
 6. Installed the latest version of [Google Chrome](https://www.google.com/chrome/).
-7. Installed the [MetaMask browser extension](https://metamask.io/download.html).
+7. Installed the [MetaMask browser extension](https://metamask.io/download).
 
 ## Use Trezor T Device with MetaMask
 
@@ -71,4 +71,4 @@ A few [FTSO](glossary.md#ftso) data providers have developed dApps integrated wi
 Delegating using this method is not exclusive to one specific provider, as these dapps allow you to choose from a number of different providers.
 
 Other providers have their own websites and are developing similar dapps.
-See the full list of active data providers on [flaremetrics.io/ftso](https://flaremetrics.io/ftso).
+See the full list of active data providers on [flaremetrics.io](https://flaremetrics.io).

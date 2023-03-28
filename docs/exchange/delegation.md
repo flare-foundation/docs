@@ -29,7 +29,7 @@ It is the Exchange that must select the FTSO [data provider](glossary.md#data_pr
 Anyone can become an FTSO data provider, but only the ones that had the most [voting power](glossary.md#voting-power) during the previous reward epoch are available for delegation.
 
 The list of **available data providers** for the current reward epoch can be retrieved from the `VoterWhitelister` smart contract, method `getFtsoWhitelistedPriceProviders`.
-There exist a number of websites like [flaremetrics.io](https://flaremetrics.io/ftso) or [ftso-signal-providers](https://github.com/TowoLabs/ftso-signal-providers) that display this information in a far more convenient way.
+There exist a number of websites like [flaremetrics.io](https://flaremetrics.io/) or [ftso-signal-providers](https://github.com/TowoLabs/ftso-signal-providers) that display this information in a far more convenient way.
 
 !!! note
     Data providers [take a fee](../tech/ftso.md#rewards) before sharing their rewards with their delegators.
