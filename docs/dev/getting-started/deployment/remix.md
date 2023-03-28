@@ -13,7 +13,7 @@ This article shows you how to deploy a Hello World contract to the Flare blockch
 * Drag and drop it to the **contracts** folder.
 
 <figure markdown>
-  ![New file in the Remix IDE](remix.png){ loading=lazy .allow-zoom width=500px }
+  ![New file in the Remix IDE](remix1.png){ loading=lazy .allow-zoom width=500px }
   <figcaption>New file in the Remix IDE.</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ contract HelloWorld {
 After successful compilation, it will show a **Green tick mark** on the **Compiler** tab button.
 
 <figure markdown>
-  ![Compilation successful](compile.png){ loading=lazy .allow-zoom }
+  ![Compilation successful](remix2.png){ loading=lazy .allow-zoom }
   <figcaption>Compilation successful.</figcaption>
 </figure>
 
@@ -78,14 +78,14 @@ Therefore, deploying your smart contracts first on the test network is highly re
   Accept the connection request received in MetaMask if necessary.
 
 <figure markdown>
-  ![Environment selection on Remix](deploy1.png){ loading=lazy .allow-zoom }
+  ![Environment selection on Remix](remix3.png){ loading=lazy .allow-zoom }
   <figcaption>Environment selection on Remix.</figcaption>
 </figure>
 
 * Click the **Deploy** button and confirm the **CONTRACT DEPLOYMENT** transaction in MetaMask.
 
 <figure markdown>
-  ![Contract deployment transaction](deploy2.png){ loading=lazy .allow-zoom }
+  ![Contract deployment transaction](remix4.png){ loading=lazy .allow-zoom }
   <figcaption>Contract deployment transaction.</figcaption>
 </figure>
 
@@ -105,6 +105,6 @@ You can now interact with the contract to verify that it is working as intended.
 * Check that the contract has been updated by clicking the **message** button and verifying you get back the message you typed before.
 
 <figure markdown>
-  ![Interact with the contract](deploy3.png){ loading=lazy .allow-zoom }
+  ![Interact with the contract](remix5.png){ loading=lazy .allow-zoom }
   <figcaption>Interact with the contract</figcaption>
 </figure>
