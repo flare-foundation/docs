@@ -108,7 +108,7 @@ extra_javascript:
 extra:
   social:
     - icon: fontawesome/solid/house
-      link: https://flare.xyz
+      link: https://flare.network
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/FlareNetworks
     - icon: fontawesome/brands/github
