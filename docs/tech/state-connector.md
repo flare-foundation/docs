@@ -2,9 +2,10 @@
 
 ## Introduction
 
-The **State Connector** is a smart contract running on the Flare network that allows anyone to **query information from outside the Flare network**.
-It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
+The **State Connector** is a smart contract running on the Flare network that allows anyone to query **non-changing, verifiable information** (such as blockchain or geographic data) from **outside the Flare network**.
+Data that changes, such as the latest BTC to USD conversion rate, and non-verifiable data, such as data behind a paywall, are not available through the State Connector.
 
+The State Connector accesses data in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 This is accomplished by using a set of **independent attestation providers** which fetch the required information from the world and deliver it to the Flare network.
 The State Connector smart contract then checks if there is **enough consensus** among the received answers and **publishes the results** if so.
 
@@ -59,11 +60,10 @@ Therefore, the request is **not** stored on the blockchain and **its gas cost is
 
 ### 3. Data retrieval
 
-Attestation providers **fetch the requested data** by means that depend on the type of attestation.
-E.g., retrieving data from another blockchain or public API.
+Attestation providers **fetch the requested data** by means that depend on the type of attestation, for example, retrieving data from another blockchain or public API.
 
 Keep in mind that attestation providers are **not controlled by Flare** in any way.
-Anybody can listen to the request events and provide answers using any combination of hardware, software and code they see fit.
+Anybody can listen to the request events and provide answers using any combination of hardware, software, and code they see fit.
 
 ### 4. Attestation
 
@@ -207,7 +207,7 @@ Additional points worth noting:
 
     5. Now that you know that the retrieved data has been agreed upon by the consensus, you can use it.
     **Look for your request inside the returned data**.
-    If it is not present, your request was deemed **invalid** (e.g. the queried transaction was not present).
+    If it is not present, your request was deemed **invalid** (for example, the queried transaction was not present).
 
         Otherwise, your request is valid and you can find any extra information about it in the data array.
 
