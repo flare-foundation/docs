@@ -85,6 +85,9 @@ These are currently false positives which can be safely ignored:
 ### Technical Writing
 
 * Use American English (`organize` instead of `organise`, `behavior` instead of `behaviour`, etc.)
+* Use the American format for dates with long month names: `January 9, 2023`.
+  3-letter short month names can be used when space is at a premium, for example on narrow table columns.
+  In this case, use the Day-Month-Year format: `9-Jan-2023`.
 * Do not use gendered pronouns when talking about users/consumers/whatever but always `they/their` instead.
 * Avoid talking about *us*, or *we*, even if it means resorting to passive voice.
 * Use active voice when there is no specific need to use passive.
