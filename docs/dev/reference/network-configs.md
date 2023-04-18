@@ -76,6 +76,18 @@ Along with the endpoints listed above to interact with its own networks, Flare o
         https://bitcoin-api.flare.network | jq
         ```
 
+=== "BNB-BSC"
+
+    **RPC endpoint**: [https://bnb-bsc-api.flare.network/](https://bnb-bsc-api.flare.network/)
+
+    !!! Example "Sample query"
+
+        ```bash
+        curl -s -X POST -m 10 -H "Content-Type: application/json" \
+        -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
+        https://bnb-bsc-api.flare.network | jq
+        ```
+
 === "Litecoin"
 
     **RPC endpoint**: [https://litecoin-api.flare.network](https://litecoin-api.flare.network)
@@ -136,17 +148,6 @@ Along with the endpoints listed above to interact with its own networks, Flare o
         curl -s -X POST -m 10 -H "Content-Type: application/json" \
         -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
         https://ethereum-api.flare.network | jq
-        ```
-=== "BNB"
-
-    **RPC endpoint**: [https://bnb-bsc-api.flare.network/](https://bnb-bsc-api.flare.network/)
-
-    !!! Example "Sample query"
-
-        ```bash
-        curl -s -X POST -m 10 -H "Content-Type: application/json" \
-        -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
-        https://bnb-bsc-api.flare.network | jq
         ```
 
 [flrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-14.json>
