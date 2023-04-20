@@ -6,7 +6,7 @@
 
 1. Open a [block explorer](./index.md) for the appropriate network.
    [The block explorer dashboard](./user-interface.md) is displayed.
-2. From the block explorer, follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `FtsoManager` contract.
+2. From the block explorer, follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `FtsoManager` contract.
    The **Contract Address Details** page is displayed.
 3. Click the **Read Contract** tab, and locate the `getCurrentRewardEpoch` method.
    The current reward epoch number is already displayed beside the function, as shown in the following example:

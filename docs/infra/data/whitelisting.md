@@ -11,7 +11,7 @@ Increased vote power on a different block will not enable your address to be whi
 Vote power is only read and whitelists updated once per reward epoch.
 Reward epochs start roughly on Saturdays at 8:40AM UTC on Songbird, and on Monday at 7:00 UTC and Thursday at 19:00 UTC on Flare.
 Whitelisting a data provider is a fully decentralized process facilitated by the `VoterWhitelister` contract.
-To retrieve this contract, see [Contract Addresses](../../dev/reference/contracts.md).
+To retrieve this contract, see [Contract Addresses](../../dev/getting-started/contract-addresses.md).
 
 To be added to the whitelist, submit a request for your address by using one of the functions listed in the next section.
 When the whitelist is not full, your address is immediately added to it.

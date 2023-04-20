@@ -114,7 +114,7 @@ Additionally, this avoids the fee that a public executor will typically charge.
 
 !!! example "Developing autoclaiming functionality"
 
-    For information on how to develop an executor, or how to write an application that supports autoclaiming, see [Automatic Claiming](../dev/automatic-claiming.md) in the Developer section.
+    For information on how to develop an executor, or how to write an application that supports autoclaiming, see [Automatic Claiming](../dev/reference/automatic-claiming.md) in the Developer section.
 
 ## Related User Guides
 
@@ -122,4 +122,4 @@ Additionally, this avoids the fee that a public executor will typically charge.
 
 ## Related Developer Docs
 
-* [Automatic claiming](../dev/automatic-claiming.md)
+* [Automatic claiming](../dev/reference/automatic-claiming.md)

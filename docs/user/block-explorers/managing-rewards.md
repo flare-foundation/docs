@@ -11,7 +11,7 @@ Alternatively, if you prefer a simple interface, use the [Flare Portal](https://
 
 1. Open a [block explorer](./index.md) for the appropriate network.
    [The block explorer dashboard](./user-interface.md) is displayed.
-2. Follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
+2. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
    The **Contract Address Details** page is displayed.
 3. Click the **Read Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 
@@ -38,7 +38,7 @@ Alternatively, if you prefer a simple interface, use the [Flare Portal](https://
 
 1. Open a [block explorer](./index.md) for the appropriate network.
    [The block explorer dashboard](./user-interface.md) is displayed.
-2. Follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
+2. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
    The **Contract Address Details** page is displayed.
 3. Click the **Read Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 

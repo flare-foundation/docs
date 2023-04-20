@@ -1,4 +1,4 @@
-# Contract Deployment Using Foundry
+# Setting Up Your Environment Using Foundry
 
 [Foundry](https://book.getfoundry.sh/) is a fast, portable and modular testing and deployment tool for developing EVM smart contracts.
 Tests are written in Solidity to keep the workflow consistent with smart contract development and testing before deployments.
@@ -72,7 +72,7 @@ The URL can be stored in an environment variable named `FOUNDRY_ETH_RPC_URL)` so
 
 !!! Important
 
-    You are going to deploy the contract on the [Coston 2 network](../../reference/network-configs.md).
+    You are going to deploy the contract on the [Coston 2 network](../../reference/network-config.md).
     Make sure you have enough `C2FLR` in the account that will deploy the contract to pay the gas fees!
 
     You can add `C2FLR` to any account using the [Coston 2 Faucet](https://coston2-faucet.towolabs.com/).

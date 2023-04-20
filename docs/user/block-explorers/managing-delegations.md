@@ -27,7 +27,7 @@ Before you delegate your vote power, you must:
 
 3. Open a [block explorer](./index.md) for the appropriate network.
    The [block explorer dashboard](./user-interface.md) is displayed.
-4. Follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
+4. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `WNat` contract.
    The **Contract Address Details** page is displayed.
 5. Click the **Write Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 
@@ -53,7 +53,7 @@ Before you delegate your vote power, you must:
 
 1. Open a [block explorer](./index.md) for the appropriate network.
    The [block explorer dashboard](./user-interface.md) is displayed.
-2. Follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
+2. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `WNat` contract.
    The **Contract Address Details** page is displayed.
 3. Click the **Write Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 
@@ -70,7 +70,7 @@ Before you delegate your vote power, you must:
 
 1. Open a [block explorer](./index.md) for the appropriate network.
    The [block explorer dashboard](./user-interface.md) is displayed.
-2. Follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
+2. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `WNat` contract.
    The **Contract Address Details** page is displayed.
 3. Click the **Write Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 
@@ -91,7 +91,7 @@ You can [immediately revoke your vote power](../../tech/ftso.md#immediate-delega
 
 1. Open a [block explorer](./index.md) for the appropriate network.
    The [block explorer dashboard](./user-interface.md) is displayed.
-2. Follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
+2. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `WNat` contract.
    The **Contract Address Details** page is displayed.
 3. Click the **Write Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 

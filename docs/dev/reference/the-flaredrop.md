@@ -1,6 +1,6 @@
 # The Flaredrop
 
-[The Flaredrop](../tech/the-flaredrop.md), previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](../tech/flare-launch-process.md#definitions).
+[The Flaredrop](../../tech/the-flaredrop.md), previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](../../tech/flare-launch-process.md#definitions).
 
 This page explains how to manage Flaredrop functionality in applications.
 
@@ -13,7 +13,7 @@ Working with the Flaredrop requires interacting with these contracts:
 * [`ClaimSetupManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/claiming/implementation/ClaimSetupManager.sol) (CSM).
     Needed to configure autoclaiming.
 
-To find their addresses, read the [Contract Addresses](../dev/reference/contracts.md) page.
+To find their addresses, read the [Contract Addresses](../getting-started/contract-addresses.md) page.
 
 ## Operations
 
@@ -50,12 +50,12 @@ Two modes of operation are supported: Self-claiming and claiming on behalf of an
 
 * **Claiming on behalf of another account**:
 
-    When `msg.sender` does not match `_rewardOwner`, the caller must be a [claim executor](../tech/automatic-claiming.md), claiming on behalf of `_rewardOwner`.
+    When `msg.sender` does not match `_rewardOwner`, the caller must be a [claim executor](../../tech/automatic-claiming.md), claiming on behalf of `_rewardOwner`.
 
     If `_msg.sender` is not in the authorized list of executors for `_rewardOwner`, the call will revert.
     Authorized executors must be set beforehand by `_rewardOwner` using `CSM.setClaimExecutors()`.
 
-    The `_recipient` must either be `_rewardOwner`, its [PDA](../tech/personal-delegation-account.md), or any of the authorized recipients previously set by `_rewardOwner` using `CSM.setAllowedClaimRecipients()`.
+    The `_recipient` must either be `_rewardOwner`, its [PDA](../../tech/personal-delegation-account.md), or any of the authorized recipients previously set by `_rewardOwner` using `CSM.setAllowedClaimRecipients()`.
     The call will revert otherwise.
 
 ### Batched Claiming
@@ -71,14 +71,14 @@ function autoClaim(
 
 It claims the rewards accrued by all the accounts in the `_rewardOwners` array during the specified `_month`.
 
-If an account does not have an enabled [PDA](../tech/personal-delegation-account.md), the rewards are sent to the same account.
+If an account does not have an enabled [PDA](../../tech/personal-delegation-account.md), the rewards are sent to the same account.
 
 However, if an account does have an enabled PDA, the rewards are sent to the PDA account.
 Any rewards accrued by the PDA account are also claimed and sent to the PDA.
 
 Rewards claimed with this method are always wrapped.
 
-If the executor is a [registered executor](../tech/automatic-claiming.md#registered-claiming-process) with a nonzero fee, the fee is automatically deducted from each claimed reward and sent to the executor account (unwrapped).
+If the executor is a [registered executor](../../tech/automatic-claiming.md#registered-claiming-process) with a nonzero fee, the fee is automatically deducted from each claimed reward and sent to the executor account (unwrapped).
 If rewards are claimed for both an address and its PDA, the fee is deducted only once.
 
 The call reverts if:

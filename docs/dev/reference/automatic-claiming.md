@@ -1,6 +1,6 @@
 # Automatic Claiming
 
-Users who do not want to claim rewards themselves can enlist [executors](../tech/automatic-claiming.md) to claim on their behalf.
+Users who do not want to claim rewards themselves can enlist [executors](../../tech/automatic-claiming.md) to claim on their behalf.
 Executors can then initiate the claiming process, and rewards are sent directly to the user's account.
 
 !!! info
@@ -27,7 +27,7 @@ Setting up automatic claiming requires interacting with these contracts:
 * [`ClaimSetupManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IClaimSetupManager.sol) (CSM).
 * [`FTSORewardManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IFtsoRewardManager.sol) (FTSO).
 
-To find the addresses of these contracts, see the [Contract Addresses](../dev/reference/contracts.md) page.
+To find the addresses of these contracts, see the [Contract Addresses](../getting-started/contract-addresses.md) page.
 
 ## User Operations
 
@@ -37,7 +37,7 @@ Then other operations are explained, such as changing the executor and disabling
 
 ### Setting Claim Executors
 
-There are two ways to set up automatic claiming: [Manual and Registered](../tech/automatic-claiming.md#how-automatic-claiming-works).
+There are two ways to set up automatic claiming: [Manual and Registered](../../tech/automatic-claiming.md#how-automatic-claiming-works).
 
 #### Manual Claiming
 
@@ -87,7 +87,7 @@ Other operations like changing the fee, unregistering as an executor, and learni
 
 ### Becoming an Executor
 
-There are two ways to become an executor: [Manual and Registered](../tech/automatic-claiming.md#how-automatic-claiming-works).
+There are two ways to become an executor: [Manual and Registered](../../tech/automatic-claiming.md#how-automatic-claiming-works).
 
 #### Manual Executor
 
@@ -108,7 +108,7 @@ This transaction must include a registration fee equal to `CSM.registerExecutorF
 
 #### How to Claim
 
-Executors can now only claim [FTSO delegation rewards](../tech/ftso.md#delegation) on behalf of users.
+Executors can now only claim [FTSO delegation rewards](../../tech/ftso.md#delegation) on behalf of users.
 As other rewards become available, they will also be claimable by executors without any user intervention.
 
 Manual and registered executors use the same function, the only difference being that unregistered executors do not receive a fee automatically.

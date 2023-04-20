@@ -261,7 +261,8 @@ figure img.side-by-side {
 .filled-svg svg path,
 .filled-svg svg line,
 .filled-svg svg circle,
-.filled-svg svg ellipse {
+.filled-svg svg ellipse,
+.filled-svg svg rect {
     fill: var(--md-primary-bg-color);
 }
 
@@ -346,9 +347,11 @@ figure img.side-by-side {
 }
 
 /* Important tables */
-.md-typeset .important-table table {
-    font-size: large !important;
+.md-typeset .important-table table:not([class]) th,
+.md-typeset .important-table table:not([class]) td {
+    font-size: large;
     background: var(--md-code-bg-color);
+    vertical-align: middle;
 }
 
 .important-table .md-typeset__scrollwrap {

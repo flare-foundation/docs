@@ -48,4 +48,4 @@ You can also enable [automatic claiming](./automatic-claiming.md) to make sure y
 
 ## Related Developer Docs
 
-* [The Flaredrop](../dev/the-flaredrop.md)
+* [The Flaredrop](../dev/reference/the-flaredrop.md)

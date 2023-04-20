@@ -1,5 +1,8 @@
-# Getting Started Docs
+# Getting Started
 
-Select one of the categories below:
+The following guides provide information to quickly start developing on the Flare networks.
 
-* [Contract Deployment](./deployment/index.md)
+## Guides
+
+* [Setting Up Your Environment](./setup/index.md)
+* [Retrieving Contract Addresses](./contract-addresses.md)

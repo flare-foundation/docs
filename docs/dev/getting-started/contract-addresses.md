@@ -1,4 +1,4 @@
-# Contract Addresses
+# Retrieving Contract Addresses
 
 !!! attention
 

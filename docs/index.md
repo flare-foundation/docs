@@ -36,6 +36,13 @@ hide:
 
     Programming tutorials to help you build your app using Flare's tech.</a>
 
+* <a href="apis" markdown class="filled-svg">
+    --8<-- "docs/assets/overrides/api-icon.svg"
+
+    **API Reference Guides**
+
+    API documentation and access RPC nodes.</a>
+
 * <a href="exchange" markdown class="stroked-svg">
     --8<-- "docs/assets/overrides/exchange-icon.svg"
 

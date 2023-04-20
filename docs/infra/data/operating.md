@@ -2,6 +2,11 @@
 
 ## Introduction
 
+!!! info inline end "Quick links"
+
+    * [NPM Kickoff package](https://www.npmjs.com/package/@flarenetwork/ftso_price_provider_kick_off_package)
+    * [Reference implementation](https://github.com/flare-foundation/FTSO-price-provider)
+
 [Data providers](../../tech/glossary.md#data_provider) play an essential role in the decentralized oracle system by submitting data to on-chain contracts deployed on the Flare and Songbird networks.
 Operating a data provider generates rewards in `$FLR`, `$SGB`, or both for you and the people who delegate tokens to you.
 To maximize your rewards, your data provider needs to be constantly available and operating.
@@ -65,7 +70,7 @@ It has links to the following contracts:
 * `FtsoManager`: Holds epoch and voting-related configuration data, oversees all FTSOs, and gives access to additional useful contracts, such as the `Inflation` and `Supply` contracts.
 * `VoterWhitelister`: Accepts the names of data providers that list themselves to submit data.
 
-Find more information, including the contract addresses, in the [Contract Addresses](../../dev/reference/contracts.md) page.
+Find more information, including the contract addresses, in the [Contract Addresses](../../dev/getting-started/contract-addresses.md) page.
 
 ## Generating Random Numbers
 

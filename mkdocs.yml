@@ -53,8 +53,8 @@ plugins:
           'en/state-connector.md':  'tech/state-connector.md'
           'technology/glossary.md': 'tech/glossary.md'
           'technology/state-connector.md': 'tech/state-connector.md'
-          'networks/songbird.md': 'dev/reference/network-configs.md'
-          'networks/coston-testnet.md': 'dev/reference/network-configs.md'
+          'networks/songbird.md': 'dev/reference/network-config.md'
+          'networks/coston-testnet.md': 'dev/reference/network-config.md'
           'tutorials/wallets/index.md': 'user/wallets/index.md'
           'tutorials/wallets/bifrost-wallet.md': 'user/wallets/bifrost-wallet.md'
           'tutorials/wallets/dcent-wallet.md': 'user/wallets/dcent-wallet.md'
@@ -85,9 +85,10 @@ plugins:
           'infra/data/deploying.md':  'infra/data/operating.md'
           'tutorials/price-provider/troubleshooting/observation-node.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
-          'dev/reference/flare.md': 'dev/reference/network-configs.md'
-          'dev/reference/songbird.md': 'dev/reference/network-configs.md'
-          'dev/reference/coston-testnet.md': 'dev/reference/network-configs.md'
+          'dev/reference/flare.md': 'dev/reference/network-config.md'
+          'dev/reference/songbird.md': 'dev/reference/network-config.md'
+          'dev/reference/coston-testnet.md': 'dev/reference/network-config.md'
+          'dev/contracts.md': 'dev/getting-started/contract-addresses.md'
           'user/delegation/delegation-overview.md': 'tech/ftso.md'
           'user/delegation/delegation-faq.md': 'tech/ftso.md'
           'user/delegation/delegation-in-detail.md': 'tech/ftso.md'
@@ -135,6 +136,7 @@ nav:
     - index.md
   - Concepts:
     - tech/index.md
+    - tech/flare.md
     - tech/automatic-claiming.md
     - tech/the-flaredrop.md
     - tech/flare-launch-process.md
@@ -178,7 +180,6 @@ nav:
       - user/wallets/how-to-access-flare-network-with-metamask.md
       - user/wallets/safepal-s1-wallet.md
       - user/wallets/how-to-access-flare-network-with-a-trezor-device.md
-
     - user/wrapping-tokens.md
   - Infrastructure Guides:
     - infra/index.md
@@ -195,25 +196,33 @@ nav:
       - infra/validation/deploying.md
   - Developer Docs:
     - dev/index.md
-    - dev/automatic-claiming.md
-    - dev/explorers-and-indexers.md
-    - dev/the-flaredrop.md
-    - dev/personal-delegation-account.md
-    - dev/summary.md
-    - Getting Started Docs:
+    - Getting Started:
       - dev/getting-started/index.md
-      - Contract Deployment:
-        - dev/getting-started/deployment/index.md
-        - Using Remix: dev/getting-started/deployment/remix.md
-        - Using Hardhat: dev/getting-started/deployment/hardhat.md
-        - Using Truffle: dev/getting-started/deployment/truffle.md
-        - Using Foundry: dev/getting-started/deployment/foundry.md
-    - dev/faq.md
+      - Setting Up Your Environment:
+        - dev/getting-started/setup/index.md
+        - Using Remix: dev/getting-started/setup/remix.md
+        - Using Hardhat: dev/getting-started/setup/hardhat.md
+        - Using Truffle: dev/getting-started/setup/truffle.md
+        - Using Foundry: dev/getting-started/setup/foundry.md
+      - dev/getting-started/contract-addresses.md
+    - Tutorials:
+      - dev/tutorials/index.md
+      - Accessing the Network:
+        - dev/tutorials/network-access/index.md
+        - dev/tutorials/network-access/transaction-finalization.md
+        - dev/tutorials/network-access/reliable-event-reading.md
+        - dev/tutorials/network-access/obtaining-revert-reason.md
     - Reference Guides:
       - dev/reference/index.md
-      - dev/reference/contracts.md
-      - dev/reference/api-portal.md
-      - dev/reference/network-configs.md
+      - dev/reference/network-config.md
+      - dev/reference/automatic-claiming.md
+      - dev/reference/explorers-and-indexers.md
+      - dev/reference/the-flaredrop.md
+      - dev/reference/personal-delegation-account.md
+      - dev/reference/wallets.md
+    - dev/tools.md
+  - APIs:
+    - apis/index.md
   - Exchange Guides:
     - exchange/index.md
     - exchange/architecture.md

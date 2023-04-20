@@ -1,6 +1,6 @@
 # Personal Delegation Accounts
 
-Personal Delegation Accounts (PDAs) temporarily store rewards, such as FTSO delegation rewards, that users do not want to claim to their main accounts as explained in [the Concept page](../tech/personal-delegation-account.md).
+Personal Delegation Accounts (PDAs) temporarily store rewards, such as FTSO delegation rewards, that users do not want to claim to their main accounts as explained in [the Concept page](../../tech/personal-delegation-account.md).
 
 This page explains how to manage PDA functionality in applications.
 
@@ -11,7 +11,7 @@ Working with the PDAs requires interacting with these contracts:
 * [`ClaimSetupManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IClaimSetupManager.sol) (CSM).
 * [`FTSORewardManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IFtsoRewardManager.sol) (FTSO).
 
-To find the addresses of these contracts read the [Contract Addresses](../dev/reference/contracts.md) page.
+To find the addresses of these contracts read the [Contract Addresses](../getting-started/contract-addresses.md) page.
 
 ## Enabling a PDA
 
@@ -54,21 +54,21 @@ A PDA is a regular account for which there are no private keys and which must be
 
 Conveniently, the method signatures to delegate on the CSM are the same as on the `WNat` contract where delegation is usually performed, for instance `CSM.batchDelegate()`.
 FTSO reward claiming, though, is still performed through the `FTSORewardManager`, for example using `claimReward(address recipient, ...)` where `recipient` allows sending to any address, including a PDA.
-For information on how to delegate and claim FTSO rewards, see [Delegation](../tech/ftso.md#delegation) and [Rewards](../tech/ftso.md#rewards).
+For information on how to delegate and claim FTSO rewards, see [Delegation](../../tech/ftso.md#delegation) and [Rewards](../../tech/ftso.md#rewards).
 
 In addition to the methods used for regular accounts, `FTSO.autoClaim()` automatically claims for both the main account and the PDA, to the PDA or the main account depending on whether the PDA is enabled or not.
 If users disable their PDA, `autoClaim()` claims rewards for only their main account and to only their main account.
 
 !!! note
 
-    The `autoClaim()` method is unrelated to [Automatic Claiming](../tech/automatic-claiming.md) performed by executors.
+    The `autoClaim()` method is unrelated to [Automatic Claiming](../../tech/automatic-claiming.md) performed by executors.
 
 ## Governance Voting
 
-Flare network users have a right to [vote on proposals](../tech/governance.md) that can change the behavior of the network or add new features.
+Flare network users have a right to [vote on proposals](../../tech/governance.md) that can change the behavior of the network or add new features.
 The number of votes an address has is equal to the amount of wrapped Flare tokens (`$WFLR`) that the address holds.
 
-PDA addresses cannot vote directly, but their owners can [transfer](../tech/governance.md#vote-transfer) all their votes to another address (e.g., the owner's address) by calling `CSM.delegateGovernance(address recipient)`.
+PDA addresses cannot vote directly, but their owners can [transfer](../../tech/governance.md#vote-transfer) all their votes to another address (e.g., the owner's address) by calling `CSM.delegateGovernance(address recipient)`.
 The recipient of the votes can then vote with its own votes as well as with the votes received from other addresses.
 
 ## Transferring Funds

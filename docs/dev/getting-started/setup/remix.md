@@ -1,4 +1,4 @@
-# Contract Deployment Using Remix
+# Setting Up Your Environment Using Remix
 
 The [Remix IDE](https://remix.ethereum.org/) is a powerful, open-source tool that helps you write [Solidity](https://docs.soliditylang.org/) smart contracts straight from the browser, without requiring any download, account creation, or login.
 
@@ -60,7 +60,7 @@ After successful compilation, it will show a **Green tick mark** on the **Compil
 
 ### 4. Deploying on Flare Testnet
 
-You will now deploy the smart contract on the [Coston2 network](../../reference/network-configs.md), Flare's test network.
+You will now deploy the smart contract on the [Coston2 network](../../reference/network-config.md), Flare's test network.
 
 When a smart contract is deployed on Flare's main network, it not only costs money (such as gas fees), but it also becomes immutable and cannot be modified.
 Therefore, deploying your smart contracts first on the test network is highly recommended.
@@ -70,7 +70,7 @@ Therefore, deploying your smart contracts first on the test network is highly re
 
     - Make sure that you have added and selected the Coston2 test network to your MetaMask Wallet.
       The [MetaMask Wallet guide](../../../user/wallets/how-to-access-flare-network-with-metamask.md) shows how to do it.
-      Use the values for Coston2 that you will find in the [Network Configurations](network-configs.md) page.
+      Use the values for Coston2 that you will find in the [Network Configurations](../../reference/network-config.md) page.
     - Ensure that you have enough Coston2 native tokens `$C2FLR` to pay for gas.
       Visit the [Coston2 Faucet](https://coston2-faucet.towolabs.com/) to request some `$C2FLR`.
 

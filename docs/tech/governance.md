@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Flare governance gives everyone in the ecosystem the opportunity to collaborate on decision-making on the [Flare and Songbird](network-configs.md) networks, making governance an important element of decentralization.
+Flare governance gives everyone in the ecosystem the opportunity to collaborate on decision-making on the [Flare and Songbird](./flare.md#the-flare-networks) networks, making governance an important element of decentralization.
 
 This process enables the Flare Foundation and Flare and Songbird community members to:
 

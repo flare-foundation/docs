@@ -273,7 +273,7 @@ The following list describes the most relevant contracts and their purposes:
 
 !!! note
 
-    The [Contract Addresses](../dev/reference/contracts.md) page explains how to securely retrieve each contract's address.
+    The [Contract Addresses](../dev/getting-started/contract-addresses.md) page explains how to securely retrieve each contract's address.
 
 Other contracts, like the FTSO Manager or the FTSO Daemon, are only meant for internal use by the FTSO system.
 

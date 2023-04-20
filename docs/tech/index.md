@@ -9,6 +9,7 @@ This section contains in-depth descriptions of Flare's key concepts and tools.
 
 Select one of the topics below:
 
+* [What is Flare](./flare.md)
 * [Automatic Claiming](./automatic-claiming.md)
 * [The Flaredrop](./the-flaredrop.md)
 * [Flare Launch Process](./flare-launch-process.md)

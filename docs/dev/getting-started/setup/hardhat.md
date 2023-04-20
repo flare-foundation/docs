@@ -1,4 +1,4 @@
-# Contract Deployment Using Hardhat
+# Setting Up Your Environment Using Hardhat
 
 [Hardhat](https://hardhat.org/) is an environment developers use to test, compile, deploy and debug dapps based on any blockchain compatible Ethereum's [EVM](glossary.md#evm).
 Hardhat is a flexible and extensible task runner that helps you manage and automate the recurring tasks inherent to developing smart contracts and dapps.
@@ -109,7 +109,7 @@ Upon successful compilation it will print `Compiled 1 Solidity file successfully
 
 ### 4. Configure the Project
 
-In order to be deployed on any of the [Flare networks](../../reference/network-configs.md), the project needs to be configured.
+In order to be deployed on any of the [Flare networks](../../reference/network-config.md), the project needs to be configured.
 Edit the `hardhat.config.js` file and replace its contents with the following:
 
 ```javascript
@@ -182,7 +182,7 @@ You should get:
 
 ### 6. Deploy the Contract
 
-Finally, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-configs.md), using a Hardhat script from the `scripts` folder.
+Finally, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using a Hardhat script from the `scripts` folder.
 
 Run this command in the root of the project:
 

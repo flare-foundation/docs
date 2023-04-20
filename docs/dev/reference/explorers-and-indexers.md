@@ -14,4 +14,4 @@ API documentation for each network's explorer:
 
 ## Related User Guides
 
-* [Block Explorers](../user/block-explorers/index.md)
+* [Block Explorers](../../user/block-explorers/index.md)

@@ -14,32 +14,33 @@ The first thing you should know is that:
     Even though the node code is different, Flare offers the same API as Ethereum so you can integrate with it in the same way.
 
     * [Deploy a Flare Observer node](../infra/observation/deploying.md) to access the network.
-    * [Use the appropriate Chain ID](../dev/reference/network-configs.md).
+    * [Use the appropriate Chain ID](../dev/reference/network-config.md).
     * Use standard Ethereum libraries like [web3.js](https://web3js.readthedocs.io/) if you want.
 
 ## Quick Information about Flare
 
-|                                     |                                                                                 |
-| ----------------------------------- | ------------------------------------------------------------------------------- |
-| **Website address**                 | [flare.xyz](https://flare.xyz)                                                  |
-| **Brand assets**                    | [Google Drive][brand-assets]                                                    |
-| **Node source code**                | [github.com/flare-foundation/flare][github]                                     |
-| **Node installation documentation** | [docs.flare.xyz/infra/observation/deploying](../infra/observation/deploying.md) |
-| **Node requirements**               | 8 CPU, 16 GB RAM, 2 TB disk space                                               |
-| **Maximum block rate**              | 1 block/second.                                                                 |
-| **Token names**                     | `FLARE`, `SONGBIRD`                                                             |
-| **Tickers**                         | `FLR`, `SGB`                                                                    |
-| **Tokens precision**                | 18 decimal places                                                               |
-| **Supported wallets**               | [docs.flare.xyz/user/wallets](../user/wallets/index.md)                         |
+|                                         |                                                                                     |
+| --------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Website address**                     | [flare.network](https://flare.network)                                              |
+| **Brand assets**                        | [Google Drive][brand-assets]                                                        |
+| **[Rosetta][rosetta-api] API endpoint** | `https://flare-rosetta-api.flare.network/`                                          |
+| **Node source code**                    | [github.com/flare-foundation/flare][github]                                         |
+| **Node installation documentation**     | [docs.flare.network/infra/observation/deploying](../infra/observation/deploying.md) |
+| **Node requirements**                   | 8 CPU, 16 GB RAM, 2 TB disk space                                                   |
+| **Maximum block rate**                  | 1 block/second.                                                                     |
+| **Token names**                         | `FLARE`, `SONGBIRD`                                                                 |
+| **Tickers**                             | `FLR`, `SGB`                                                                        |
+| **Tokens precision**                    | 18 decimal places                                                                   |
+| **Supported wallets**                   | [docs.flare.network/user/wallets](../user/wallets/index.md)                         |
 
 [brand-assets]: https://drive.google.com/drive/folders/1mPrtIBb2k88E4f1fguEm3eAXLW74xOry?usp=sharing
 [github]: https://github.com/flare-foundation/flare
+[rosetta-api]: <https://www.rosetta-api.org/>
 
 Network configuration information, including:
 
-* [Different Flare networks](../dev/reference/network-configs.md)
-* [Configuration Values](../dev/reference/network-configs.md#configuration-values)
-* [RPC Nodes for Connected Chains](../dev/reference/network-configs.md#rpc-nodes-for-connected-chains)
+* [Flare Networks Configuration Values](../dev/reference/network-config.md#flare-networks)
+* [RPC Nodes for Connected Chains](../dev/reference/network-config.md#connected-networks)
 
 !!! note
 

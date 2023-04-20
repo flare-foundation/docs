@@ -1,4 +1,4 @@
-# Contract Deployment Using Truffle
+# Setting Up Your Environment Using Truffle
 
 [Truffle](https://trufflesuite.com/) is a blockchain development environment, which you can use to create and test smart contracts by leveraging the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier.
 
@@ -87,7 +87,7 @@ When successful, the output should look like this:
 
 ### 5. Configure the Project
 
-In order to be deployed on any of the [Flare networks](../../reference/network-configs.md), the project needs to be configured.
+In order to be deployed on any of the [Flare networks](../../reference/network-config.md), the project needs to be configured.
 Edit the `truffle-config.js` file and replace its contents with the following:
 
 ```javascript
@@ -150,7 +150,7 @@ PRIVATE_KEY="d8936f6eae35c73a14ea7c1aabb8d068e16889a7f516c8abc482ba4e1489f4cd"
 
 !!! Important
 
-    You are going to deploy the contract on the [Coston 2 network](../../reference/network-configs.md).
+    You are going to deploy the contract on the [Coston 2 network](../../reference/network-config.md).
     Make sure you have enough `C2FLR` in the account that will deploy the contract to pay the gas fees!
 
     You can add `C2FLR` to any account using the [Coston 2 Faucet](https://coston2-faucet.towolabs.com/).

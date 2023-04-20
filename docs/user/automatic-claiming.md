@@ -27,7 +27,7 @@ The list of registered executors has not been added yet to the Flare Portal, but
 ??? example "Find a registered executor (using the Block Explorer)"
 
     To find an executor you will need to use the `ClaimSetupManager` contract.
-    See the [Contract Addresses](../dev/reference/contracts.md) page to learn how to find the address of this contract.
+    See the [Contract Addresses](../dev/getting-started/contract-addresses.md) page to learn how to find the address of this contract.
 
     1. In the [Block Explorer](https://flare-explorer.flare.network/), paste the address of the `ClaimSetupManager` contract and scroll down to select the **Read Contract** tab.
     2. To get the available executors' addresses, scroll down to `getRegisteredExecutors` and enter a range of how many addresses to check, for example, `0` in the **_start** field and `10` in the **_end** field.
