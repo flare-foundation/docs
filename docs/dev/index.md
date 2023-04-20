@@ -8,6 +8,7 @@ section_icon_type: stroked-svg
 Select one of the topics below:
 
 * [Automatic Claiming](./automatic-claiming.md)
+* [Explorers and Indexers](./explorers-and-indexers.md)
 * [The Flaredrop](./the-flaredrop.md)
 * [Flare and the EVM](./summary.md)
 * [FAQ](./faq.md)

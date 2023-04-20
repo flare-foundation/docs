@@ -1,12 +1,8 @@
-# Managing Rewards
+# Managing Rewards Using the Flare Portal
 
-Use this information to manage [FTSO delegation rewards](../../tech/ftso.md#rewards) by using the Flare Portal or the block explorer. Rewards are accrued from your delegations to FTSO data providers whose submitted data is close to the calculated median value in a price epoch.
+[Rewards](../../tech/ftso.md#rewards) are accrued from your delegations to FTSO data providers whose submitted data is close to the calculated median value in a price epoch.
 
-## Using the Flare Portal
-
-This information explains how to manage your rewards using the [Flare Portal](https://portal.flare.network).
-
-### Claiming Rewards
+Use this information to claim FTSO delegation rewards by using the Flare Portal. Alternatively, if you have used block explorers for other networks and are competent interacting with smart contracts without a user interface, you can [use the block explorer](../block-explorers/managing-rewards.md), which provides more options but can be more complex. Using it is intended for advanced users.
 
 1. Open the [Flare Portal](https://portal.flare.network). The home page is displayed.
 
@@ -53,39 +49,3 @@ This information explains how to manage your rewards using the [Flare Portal](ht
     To send your rewards to the address that you connected to the Portal instead, deselect the option.
 7. Click **Claim All Rewards** to claim all available rewards for the listed epochs.
 8. Follow the steps to confirm the transaction in your wallet. Your rewards are claimed, and your updated balance of native tokens is displayed.
-
-## Using the Block Explorer
-
-!!! example "This section is for advanced users."
-
-This information explains how to manage your rewards using the [block explorer](../block-explorer.md).
-
-### Claiming Rewards
-
-1. Open a [block explorer](../block-explorer.md).
-2. From the block explorer, follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
-3. Click **Connect Wallet**, and complete the steps to connect your wallet.
-4. On the **Read Contract** tab, run the `getEpochsWithUnclaimedRewards(beneficiary_address)` method by clicking **Query**. A list of previous epochs with pending rewards to be claimed is returned.
-5. On the **Write Contract** tab, locate the `claimReward` method, and specify values for the following parameters:
-
-    * **_recipient(address)**: The address to which you want claimed rewards to be sent.
-    * **_rewardEpochs(uint256[])**: One or more epochs from which you want to claim rewards. Specify the epoch numbers in a comma-separated list enclosed by square brackets, such as `[59,60]`.
-
-6. Click **Write** to run the `claimReward` method. One of the following results occurs:
-
-    * The `claimReward` method prompts you to confirm the transaction. Go to Step 7.
-    * The `claimReward` method fails. For security reasons, the `FtsoRewardManager` contract contains a **limited amount of tokens** and is replenished periodically. Sometimes, all delegators claim their rewards in a short period of time immediately after the reward epoch ends, and the contract becomes empty. If you are unable to claim your rewards because the contract is empty, **try again the next day**.
-
-7. Follow the steps to confirm the transaction in your wallet. Your rewards are claimed, and your updated balance of native tokens is displayed.
-
-### Viewing Your Reward Balance
-
-1. Open a [block explorer](../block-explorer.md).
-2. From the block explorer, follow the [Retrieval from Blockchain procedure](../../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `FtsoRewardManager` contract.
-3. Click **Connect Wallet**, and complete the steps to connect your wallet.
-4. On the **Read Contract** tab, locate the `getStateOfRewards` method, and specify values for the following parameters:
-
-    * **_beneficiary(address)**: The address to check for rewards.
-    * **_rewardEpoch(uint256)**: The epoch in which you want to check the address for rewards.
-
-5. Click **Query** to run the `getStateOfRewards` method. The amount of rewards due from each data provider and whether they have already been claimed is returned.

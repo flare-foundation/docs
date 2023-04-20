@@ -11,7 +11,7 @@ However, the Flare Portal does not help you find executor addresses, so you must
 
 * [Manual executors](../tech/automatic-claiming.md#manual-claiming-process) are ones that you locate yourself.
     Whether they charge a fee or not and how you pay it is between you and the executor.
-* [Registered executors](../tech/automatic-claiming.md#registered-claiming-process) are listed in a smart contract and can be retrieved, for instance, using the [Block Explorer](./block-explorer.md) or third-party applications.
+* [Registered executors](../tech/automatic-claiming.md#registered-claiming-process) are listed in a smart contract and can be retrieved, for instance, using the [block explorer](./block-explorers/index.md) or third-party applications.
     These executors charge a fee when you set them up and every time they claim for you.
 
 !!! note "Overview of autoclaiming functionality"
@@ -22,7 +22,7 @@ However, the Flare Portal does not help you find executor addresses, so you must
 
 To enable an executor, obtain its address off-chain or, for registered executors, on-chain.
 
-The list of registered executors has not been added yet to the Flare Portal, but a manual method is given below using the [Block Explorer](./block-explorer.md) (recommended for advanced users).
+The list of registered executors has not been added yet to the Flare Portal, but a manual method is given below using the [block explorer](./block-explorers/index.md) (recommended for advanced users).
 
 ??? example "Find a registered executor (using the Block Explorer)"
 

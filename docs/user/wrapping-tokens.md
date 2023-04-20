@@ -49,7 +49,7 @@ If your wrapped token balance is not displayed in your wallet, you must manually
 
 !!! example "This section is for advanced users."
 
-1. Open a [block explorer](./block-explorer.md).
+1. Open a [block explorer](./block-explorers/index.md).
 2. From the block explorer, follow the [Retrieval from Blockchain procedure](../dev/reference/contracts.md#retrieval-from-blockchain) to find and open the `WNat` contract.
 3. Click **Connect Wallet**, and complete the steps to connect your wallet, ensuring you are on the network on which you will wrap tokens.
 4. Click the **Write Contract** tab, and use the following methods to wrap and unwrap tokens:

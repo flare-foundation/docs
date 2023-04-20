@@ -60,6 +60,7 @@ Using price data as an example, the procedure in the following diagram runs cont
 4. For each price epoch in which the submitted data is close enough to the median value, data providers and their [delegators](#delegation) are **rewarded**.
 
     Rewards are accumulated in **reward epochs**, which last **3.5 days** on the Flare network and **7 days** on Songbird, and you can claim them after the epoch finishes.
+{#reward-epoch}
 
     See [Rewards](#rewards) below.
 
@@ -165,11 +166,11 @@ The following table shows when new, changed, and revoked delegations take effect
 
 ### Delegation Procedure
 
-You can [delegate your tokens](../user/delegation/managing-delegations.md) using the [Flare Portal](../user/delegation/managing-delegations.md#using-the-flare-portal), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
+You can [delegate your tokens using the Flare Portal](../user/delegation/managing-delegations.md), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Some FTSO data providers have already started providing these dapps as a convenience.
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
-If you are an advanced user, you can [delegate manually](../user/delegation/managing-delegations.md#using-the-block-explorer) by interacting directly with the FTSO smart contracts.
+If you are an advanced user, you can [delegate manually](../user/block-explorers/managing-delegations.md) by interacting directly with the FTSO smart contracts.
 
 ## Rewards
 
@@ -221,8 +222,10 @@ After 90 days, unclaimed rewards on Flare are burned, and on Songbird, they are 
 FTSO rewards are not automatically transferred to their recipients.
 Instead, the amounts are accumulated in a contract, as described in the [System Architecture](#system-architecture), and must be claimed **once the reward epoch is finished**.
 
-You can [claim your rewards](../user/delegation/managing-rewards.md) using the [Flare Portal](../user/delegation/managing-rewards.md#using-the-flare-portal), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
+You can [claim your rewards using the Flare Portal](../user/delegation/managing-rewards.md), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
+
+If you are an advanced user, you can [claim manually](../user/block-explorers/managing-rewards.md) by interacting directly with the FTSO smart contracts.
 
 To save on gas costs, rewards from multiple reward epochs are claimed simultaneously when you use the Portal. However, be aware that **rewards expire after 90 days**.
 Moreover, you probably want to claim soon, to redelegate the received amount and obtain compounded rewards.
@@ -231,8 +234,6 @@ It is also worth noting that:
 
 * Rewards are paid in the network's native currency. On Flare, the native token is `$FLR`, and on Songbird, the native token is `$SGB`.
 * Data providers and their delegators must claim independently.
-
-If you are an advanced user, you can [claim manually](../user/delegation/managing-rewards.md#using-the-block-explorer) by interacting directly with the FTSO smart contracts.
 
 ## Technical Details
 

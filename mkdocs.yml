@@ -63,8 +63,8 @@ plugins:
           'tutorials/wallets/how-to-access-flare-network-with-metamask.md': 'user/wallets/how-to-access-flare-network-with-metamask.md'
           'tutorials/wallets/safepal-s1-wallet.md': 'user/wallets/safepal-s1-wallet.md'
           'tutorials/wallets/brave-wallet.md': 'user/wallets/brave-wallet.md'
-          'tutorials/explorer/songbird-explorer.md': 'user/block-explorer.md'
-          'tutorials/explorer/coston-explorer.md': 'user/block-explorer.md'
+          'tutorials/explorer/songbird-explorer.md': 'user/block-explorers/index.md'
+          'tutorials/explorer/coston-explorer.md': 'user/block-explorers/index.md'
           'tutorials/developing-on-top-of-flare/README.md': 'dev/index.md'
           'tutorials/developing-on-top-of-flare/important-links.md': 'dev/index.md'
           'tutorials/delegation/README.md': 'user/delegation/index.md'
@@ -148,12 +148,22 @@ nav:
   - User Guides:
     - user/index.md
     - user/automatic-claiming.md
-    - user/block-explorer.md
+    - Block Explorers:
+      - user/block-explorers/index.md
+      - user/block-explorers/finding-reward-epoch.md
+      - Managing Delegations: user/block-explorers/managing-delegations.md
+      - Managing Rewards: user/block-explorers/managing-rewards.md
+      - user/block-explorers/verifying-vote-power-block.md
+      - user/block-explorers/viewing-nfts.md
+      - user/block-explorers/viewing-token-balances.md
+      - user/block-explorers/viewing-token-transfers.md
+      - user/block-explorers/viewing-transactions.md
+      - user/block-explorers/user-interface.md
     - user/claiming-the-flaredrop.md
     - FTSO Delegation:
       - user/delegation/index.md
-      - user/delegation/managing-delegations.md
-      - user/delegation/managing-rewards.md
+      - Managing Delegations: user/delegation/managing-delegations.md
+      - Managing Rewards: user/delegation/managing-rewards.md
     - Governance:
       - user/governance/index.md
       - user/governance/voting.md
@@ -186,6 +196,7 @@ nav:
   - Developer Docs:
     - dev/index.md
     - dev/automatic-claiming.md
+    - dev/explorers-and-indexers.md
     - dev/the-flaredrop.md
     - dev/personal-delegation-account.md
     - dev/summary.md

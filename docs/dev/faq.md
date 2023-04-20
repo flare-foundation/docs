@@ -4,7 +4,7 @@
 
 You can interact with Flare and Songbird through:
 
-* The [block explorers](../user/block-explorer.md).
+* The [block explorer](../user/block-explorers/index.md).
 * [MetaMask](https://metamask.io) and other [wallets](../user/wallets/index.md).
 * Local development tools such as [hardhat](https://hardhat.org).
 
@@ -17,7 +17,7 @@ Ethereum style contracts are supported by both Flare and Songbird.
 ## Does Flare support NFTs?
 
 Flare and Songbird networks support NFTs and many have already been created on Songbird.
-The [block explorers](../user/block-explorer.md) support displaying NFTs.
+The [block explorers](../user/block-explorers/index.md) support displaying NFTs.
 
 ## How do I verify if a transaction is finalized using web3?
 
