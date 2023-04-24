@@ -194,6 +194,11 @@ nav:
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
+  - Exchange Guides:
+    - exchange/index.md
+    - exchange/architecture.md
+    - exchange/delegation.md
+    - exchange/troubleshooting.md
   - Developer Docs:
     - dev/index.md
     - Getting Started:
@@ -223,8 +228,3 @@ nav:
     - dev/tools.md
   - APIs:
     - apis/index.md
-  - Exchange Guides:
-    - exchange/index.md
-    - exchange/architecture.md
-    - exchange/delegation.md
-    - exchange/troubleshooting.md

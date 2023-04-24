@@ -29,6 +29,13 @@ hide:
 
     Step-by-step guides to deploy your own Flare network components.</a>
 
+* <a href="exchange" markdown class="stroked-svg">
+    --8<-- "docs/assets/overrides/exchange-icon.svg"
+
+    **Exchange Guides**
+
+    Advice for exchanges willing to support the Flare blockchain.</a>
+
 * <a href="dev" markdown class="stroked-svg">
     --8<-- "docs/assets/overrides/dev-icon.svg"
 
@@ -42,13 +49,6 @@ hide:
     **API Reference Guides**
 
     API documentation and access RPC nodes.</a>
-
-* <a href="exchange" markdown class="stroked-svg">
-    --8<-- "docs/assets/overrides/exchange-icon.svg"
-
-    **Exchange Guides**
-
-    Advice for exchanges willing to support the Flare blockchain.</a>
 
 </div>
 
