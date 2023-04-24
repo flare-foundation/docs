@@ -11,9 +11,9 @@ hide:
 * <a href="tech" markdown class="filled-svg">
     --8<-- "docs/assets/overrides/tech-icon.svg"
 
-    **Concepts**
+    **Flare Fundamentals**
 
-    Descriptions of Flare's key concepts and tools.</a>
+    Descriptions of Flare's key concepts, technology and tools.</a>
 
 * <a href="user" markdown class="filled-svg">
     --8<-- "docs/assets/overrides/user-icon.svg"

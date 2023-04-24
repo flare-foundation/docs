@@ -3,9 +3,9 @@ section_icon: tech-icon.svg
 section_icon_type: filled-svg
 ---
 
-# Concepts
+# Flare Fundamentals
 
-This section contains in-depth descriptions of Flare's key concepts and tools.
+This section contains in-depth descriptions of Flare's key concepts, technology and tools.
 
 Select one of the topics below:
 

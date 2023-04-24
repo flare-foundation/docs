@@ -16,7 +16,7 @@ However, the Flare Portal does not help you find executor addresses, so you must
 
 !!! note "Overview of autoclaiming functionality"
 
-    For an overview of what is available for the entire autoclaiming feature, see [Automatic Claiming](../tech/automatic-claiming.md) in the Concepts section.
+    For an overview of what is available for the entire autoclaiming feature, see [Automatic Claiming](../tech/automatic-claiming.md) in the Flare Fundamentals section.
 
 ## Prerequisite
 
