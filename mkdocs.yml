@@ -88,6 +88,7 @@ plugins:
           'dev/reference/flare.md': 'dev/reference/network-config.md'
           'dev/reference/songbird.md': 'dev/reference/network-config.md'
           'dev/reference/coston-testnet.md': 'dev/reference/network-config.md'
+          'dev/reference/network-configs.md': 'dev/reference/network-config.md'
           'dev/contracts.md': 'dev/getting-started/contract-addresses.md'
           'user/delegation/delegation-overview.md': 'tech/ftso.md'
           'user/delegation/delegation-faq.md': 'tech/ftso.md'
