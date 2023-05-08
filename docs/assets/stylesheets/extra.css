@@ -294,6 +294,10 @@ figure img.side-by-side {
     max-width: 100%;
 }
 
+.md-content figure figcaption p {
+    margin: 0;
+}
+
 .md-content figure:hover {
     border-color: var(--md-accent-fg-color);
 }
