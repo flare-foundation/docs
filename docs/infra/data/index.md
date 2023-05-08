@@ -2,5 +2,6 @@
 
 Select one of the topics below:
 
+* [Managing the Ecosystem](./managing-ecosystem.md)
 * [Operating a Data Provider](./operating.md)
-* [Whitelisting a Data Provider](./whitelisting.md)
+* [Working with Whitelists](./whitelisting.md)

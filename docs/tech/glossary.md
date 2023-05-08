@@ -69,6 +69,9 @@ FTSO { #ftso }
 Governance { #governance }
 : Mechanism to propose, vote and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.
 
+Know Your Customer { #kyc }
+: The process an entity completes to verify the identities of its users to comply with global requirements.
+
 Ledger { #ledger }
 : Historically, a book where financial transactions are recorded. In [blockchain](#blockchain) technology a ledger can contain any kind of information and it has multiple copies distributed among several computers, which are kept in sync by a [consensus](#consensus) algorithm.
 
@@ -149,6 +152,9 @@ Voting Power { #voting-power }
 
 Wen flare { #wen_flare }
 : The war cry of all the impatient that would like to see the Flare network launch before it is fully tested. Pay no heed to them.
+
+Zero address { #zero-address }
+: A special address represented as `0x0000000000000000000000000000`. Also known as the null address, it is typically used as a return value from functions to indicate an error condition.
 
 <style>
     /*Glossary links from within the glossary page*/
