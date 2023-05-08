@@ -7,6 +7,6 @@ The following guides provide in-depth information about the Flare networks and t
 * [Network Configuration](./network-config.md)
 * [Automatic Claiming](./automatic-claiming.md)
 * [Block Explorers and Indexers](./explorers-and-indexers.md)
-* [The Flaredrop](./the-flaredrop.md)
+* [The FlareDrop](./the-flaredrop.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
 * [Wallets](./wallets.md)

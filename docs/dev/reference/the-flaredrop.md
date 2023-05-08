@@ -1,12 +1,12 @@
-# The Flaredrop
+# The FlareDrop
 
-[The Flaredrop](../../tech/the-flaredrop.md), previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](../../tech/flare-launch-process.md#definitions).
+[The FlareDrop](../../tech/the-flaredrop.md), previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](../../tech/flare-launch-process.md#definitions).
 
-This page explains how to manage Flaredrop functionality in applications.
+This page explains how to manage FlareDrop functionality in applications.
 
 ## Required Contracts
 
-Working with the Flaredrop requires interacting with these contracts:
+Working with the FlareDrop requires interacting with these contracts:
 
 * [`DistributionToDelegators`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/tokenPools/implementation/DistributionToDelegators.sol) (Dist).
     Manages all claims.
@@ -19,7 +19,7 @@ To find their addresses, read the [Contract Addresses](../getting-started/contra
 
 ### Basic Claiming
 
-The `Dist.claim` method allows claiming the Flaredrop one account at a time.
+The `Dist.claim` method allows claiming the FlareDrop one account at a time.
 
 ```solidity
 function claim(
@@ -32,7 +32,7 @@ function claim(
 );
 ```
 
-It transfers the Flaredrop rewards accrued by account `_rewardOwner` during the specified `_month` to the specified `_recipient`.
+It transfers the FlareDrop rewards accrued by account `_rewardOwner` during the specified `_month` to the specified `_recipient`.
 
 `_wrap` controls whether the reward is transferred in native `$FLR` tokens or wrapped in `$WFLR` tokens.
 
@@ -60,7 +60,7 @@ Two modes of operation are supported: Self-claiming and claiming on behalf of an
 
 ### Batched Claiming
 
-The `Dist.autoClaim()` method allows claiming the Flaredrop for an arbitrary amount of accounts in a single call, with convenient default values.
+The `Dist.autoClaim()` method allows claiming the FlareDrop for an arbitrary amount of accounts in a single call, with convenient default values.
 
 ```solidity
 function autoClaim(

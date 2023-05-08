@@ -11,7 +11,7 @@ Select one of the topics below:
 
 * [What is Flare](./flare.md)
 * [Automatic Claiming](./automatic-claiming.md)
-* [The Flaredrop](./the-flaredrop.md)
+* [The FlareDrop](./the-flaredrop.md)
 * [Flare Launch Process](./flare-launch-process.md)
 * [Flare API Portal](./api-portal.md)
 * [FTSO](./ftso.md)

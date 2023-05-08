@@ -1,6 +1,6 @@
 # Tokenomics
 
-Flare’s token economics support Flare’s ambition to connect the decentralized economy and drive broader adoption of web3 by helping to create a more balanced playing field where multiple connected ecosystems will have an incentive to grow and participate with Flare.
+Flare’s token economics support Flare’s ambition to connect the decentralized economy and drive broader adoption of web3 by helping to create a more balanced playing field where multiple connected ecosystems have an incentive to grow and participate with Flare.
 The adoption of [FIP.01](https://flare.network/fip01/) on [January 27, 2023](https://portal.flare.network/proposal/view/31313223399225215467886651717691514407244212421129328237186875197531473335173) enabled this approach by changing the mechanism of the public token distribution.
 
 ## Token Allocation

@@ -1,13 +1,13 @@
-# Claiming the Flaredrop
+# Claiming the FlareDrop
 
-Claiming the Flaredrop is available every 30 days and is based on the average balance from the last 23 days of each 30-day month.
+Claiming the FlareDrop is available every 30 days and is based on the average balance from the last 23 days of each 30-day month.
 Therefore, it is advised that each address claim its funds during the first 7 days of each 30-day round.
 
-See [The Flaredrop concept page](../tech/the-flaredrop.md) for further explanation.
+See [The FlareDrop concept page](../tech/the-flaredrop.md) for further explanation.
 
 <figure markdown>
-![Flaredrop Distribution Dates](flaredrop-distribution-dates.png){ loading=lazy .allow-zoom  width=500px }
-<figcaption>Flaredrop distribution dates.</figcaption>
+![FlareDrop Distribution Dates](flaredrop-distribution-dates.png){ loading=lazy .allow-zoom  width=500px }
+<figcaption>FlareDrop distribution dates.</figcaption>
 </figure>
 
 There are several ways to claim.
@@ -49,11 +49,11 @@ From there, you can see how many `$FLR` tokens you have to claim and you can cla
     <figcaption>FlareDrop claiming confirmation.</figcaption>
     </figure>
     As a convenience, you have the choice to wrap your tokens after claiming them.
-    In this way they are ready for the next Flaredrop or to be [delegated to the FTSO system](../tech/ftso.md#delegation), for example.
+    In this way they are ready for the next FlareDrop or to be [delegated to the FTSO system](../tech/ftso.md#delegation), for example.
 6. Click on the **Claim All Distribution** button and confirm the transaction on your wallet.
 
 ## Nominating Executors
 
-Alternatively, you can assign an [executor](../tech/automatic-claiming.md) to claim the Flaredrop for you.
+Alternatively, you can assign an [executor](../tech/automatic-claiming.md) to claim the FlareDrop for you.
 This is useful for cold wallets but also for any users wishing to reduce their operational burden.
 See [Automatic Claiming](./automatic-claiming.md) to learn how.
