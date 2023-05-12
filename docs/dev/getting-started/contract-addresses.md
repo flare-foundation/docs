@@ -58,7 +58,7 @@ function getAllContracts(
     address[] memory _addresses);
 ```
 
-[Retrieve current list](.){ .md-button #contract-list-button }
+[Retrieve current list](#){ .md-button #contract-list-button }
 <div id="contract-list-results"></div>
 
 ## Retrieval from Source Code
