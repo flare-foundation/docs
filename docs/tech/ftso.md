@@ -305,7 +305,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 === "Flare"
 
-    FTSO data providers submit data through the [PriceSubmitter contract](https://flare-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
+    FTSO data providers submit data through the [PriceSubmitter contract](../dev/getting-started/contract-addresses.md).
 
     - **Commit**: A single hash is needed for each submission.
 
@@ -330,7 +330,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 === "Songbird"
 
-    FTSO data providers submit data through the [PriceSubmitter contract](https://songbird-explorer.flare.network/address/0x1000000000000000000000000000000000000003).
+    FTSO data providers submit data through the [PriceSubmitter contract](../dev/getting-started/contract-addresses.md).
 
     - **Commit**: A separate hash is needed for each submission.
 

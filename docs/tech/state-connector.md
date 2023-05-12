@@ -42,7 +42,7 @@ Section [Adding New Attestation Types](#adding-new-attestation-types) below cont
 
 ??? example "Making a request (for App developers)"
 
-    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/write-contract):
+    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](../dev/getting-started/contract-addresses.md):
 
     ```solidity
     function requestAttestations(
@@ -96,7 +96,7 @@ Otherwise, **no consensus is achieved**: requests remain **unanswered** and must
 
 ??? example "Retrieving your request's answer (for App developers)"
 
-    To retrieve the stored answers just read the `merkleRoots` public array (#8) in the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract).
+    To retrieve the stored answers just read the `merkleRoots` public array (#8) in the [StateConnector contract](../dev/getting-started/contract-addresses.md).
 
     More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L59).
 
@@ -191,7 +191,7 @@ Additional points worth noting:
     </figure>
 
     1. In the attestation round after you made the request (3 attestation phases, so from 3 to 4.5 minutes) the **Attestation Proof** for the round should be available in the State Connector.
-        Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](https://songbird-explorer.flare.network/address/0x3A1b3220527aBA427d1e13e4b4c48c31460B4d91/read-contract).
+        Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](../dev/getting-started/contract-addresses.md).
 
     2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/apis.md#proof-api-on-attestation-provider-server) path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
 

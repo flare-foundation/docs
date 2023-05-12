@@ -61,8 +61,7 @@ To earn rewards, you must write your own data algorithm.
 ## Interacting with Smart Contracts
 
 Data providers interact primarily with the `PriceSubmitter` contract and the different `FTSO` contracts.
-The `PriceSubmitter` contract, with which you submit data, is deployed at the fixed address `0x1000000000000000000000000000000000000003`.
-It has links to the following contracts:
+Other useful contracts are:
 
 * `FtsoRegistry`: Holds information about specific FTSOs, their symbols, indices, and addresses.
   To see supported tickers, query the `getSupportedSymbols` method.
@@ -70,7 +69,7 @@ It has links to the following contracts:
 * `FtsoManager`: Holds epoch and voting-related configuration data, oversees all FTSOs, and gives access to additional useful contracts, such as the `Inflation` and `Supply` contracts.
 * `VoterWhitelister`: Accepts the names of data providers that list themselves to submit data.
 
-Find more information, including the contract addresses, in the [Contract Addresses](../../dev/getting-started/contract-addresses.md) page.
+Find these contract's addresses in the [Contract Addresses](../../dev/getting-started/contract-addresses.md) page.
 
 ## Generating Random Numbers
 
