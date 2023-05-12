@@ -368,3 +368,17 @@ figure img.side-by-side {
 .md-footer-meta.md-typeset a:hover {
     color: var(--md-accent-fg-color) !important;
 }
+
+/* Contract lists */
+#contract-list-results ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    list-style: none;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    padding: 5px;
+    margin: 0;
+}
+
+#contract-list-results ul li {
+    margin: 0;
+}

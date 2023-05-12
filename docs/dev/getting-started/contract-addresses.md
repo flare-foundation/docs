@@ -25,6 +25,8 @@ This is the only contract address given in this documentation.
 
 !!! important "This contract is available at the same address in all Flare networks: Flare, Songbird, Coston and Coston2."
 
+Copy the above address into the [Block Explorer](../../user/block-explorers/index.md) to see the available contract's methods.
+
 You can retrieve the current address on the blockchain of any Flare smart contract from its name by using these methods, for example:
 
 ```solidity
@@ -40,7 +42,7 @@ function getContractAddressesByName(
     address[] memory);
 ```
 
-The name search is **case-sensitive** so you should use the proper capitalization.
+The name search is **case-sensitive**, so you should use the proper capitalization.
 For example:
 
 * `WNat`
@@ -55,6 +57,9 @@ function getAllContracts(
     string[] memory _names,
     address[] memory _addresses);
 ```
+
+[Retrieve current list](.){ .md-button #contract-list-button }
+<div id="contract-list-results"></div>
 
 ## Retrieval from Source Code
 
@@ -79,3 +84,30 @@ You can find this file in the `deployment/deploys` folder, and parse it to retri
 [s-json]: https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/songbird_network_deployed_code/deployment/deploys/songbird.json
 [c-json]: https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/coston_network_deployed_code/deployment/deploys/coston.json
 [c2-json]: https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/coston2_network_deployed_code/deployment/deploys/coston2.json
+
+<script type="module">
+    const button = document.getElementById("contract-list-button");
+    const list = document.getElementById("contract-list-results");
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        button.style.display = "none";
+        list.innerHTML = "Retrieving...";
+        import("/assets/javascripts/ethers-5.2.esm.min.js").then(ethers => {
+            const provider = new ethers.providers.JsonRpcProvider("https://flare-api.flare.network/ext/C/rpc");
+            const flareContractRegistry = new ethers.Contract(
+                "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+                ["function getAllContracts() external view returns(string[] memory, address[] memory)"],
+                provider);
+            const res = flareContractRegistry.getAllContracts().then(res => {
+                list.innerHTML = "Current smart contract list:";
+                var ul=document.createElement('ul');
+                for (var i = 0; i < res[0].length; ++i) {
+                    var li = document.createElement('li');
+                    li.innerHTML = `<code>${res[0][i]}</code>`;
+                    ul.appendChild(li);
+                }
+                list.appendChild(ul);
+            });
+        });
+    });
+</script>
