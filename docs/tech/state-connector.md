@@ -92,7 +92,7 @@ To prevent attestation providers from peeking at each other's answers, these are
 If **at least 50%** of the attestation providers submitted the same answer, it is made public.
 Otherwise, **no consensus is achieved**: requests remain **unanswered** and must be issued again.
 
-**The answers are stored in the State Connector smart contract for a week**, where anybody can read them.
+**The answers are stored in the State Connector smart contract for a week**, where anybody can read them, including the original requester.
 
 ??? example "Retrieving your request's answer (for App developers)"
 
