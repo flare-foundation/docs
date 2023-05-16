@@ -187,9 +187,9 @@ nav:
     - infra/index.md
     - FTSO Data Providers:
       - infra/data/index.md
-      - infra/data/managing-ecosystem.md
       - infra/data/operating.md
       - infra/data/whitelisting.md
+      - infra/data/managing-ecosystem.md
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md

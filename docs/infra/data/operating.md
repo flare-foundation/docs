@@ -31,14 +31,14 @@ While none of the listed prerequisites are required, you will be more successful
 * Familiarity with smart contracts, signal processing, game theory, and prompt data submission on blockchains
 * Experience with a coding language that has a web3 library, for example:
 
-    | Language   | Web3 Library                                                               |
-    | ---------- | -------------------------------------------------------------------------- |
-    | Go         | [go-web3](https://github.com/chenzhijie/go-web3)                           |
-    | Java       | [web3.j](https://docs.web3j.io/)                                           |
-    | JavaScript | [ethers.js](https://docs.ethers.org/v5/), [web3.j](https://docs.web3j.io/) |
-    | Node.js    | [ethers.js](https://docs.ethers.org/v5/), [web3.j](https://docs.web3j.io/) |
-    | Python     | [web3.py](https://web3py.readthedocs.io/en/v5/)                            |
-    | Rust       | [rust-web3](https://docs.rs/web3/latest/web3/)                             |
+    | Language   | Web3 Library                                                                     |
+    | ---------- | -------------------------------------------------------------------------------- |
+    | Go         | [go-web3](https://github.com/chenzhijie/go-web3)                                 |
+    | Java       | [web3.j](https://docs.web3j.io/)                                                 |
+    | JavaScript | [ethers.js](https://docs.ethers.org/), [web3.js](https://web3js.readthedocs.io/) |
+    | Node.js    | [ethers.js](https://docs.ethers.org/), [web3.js](https://web3js.readthedocs.io/) |
+    | Python     | [web3.py](https://web3py.readthedocs.io/)                                        |
+    | Rust       | [rust-web3](https://docs.rs/web3/latest/web3/)                                   |
 
 ## Getting Started
 
