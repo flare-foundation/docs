@@ -92,8 +92,8 @@ You can find this file in the `deployment/deploys` folder, and parse it to retri
         e.preventDefault();
         button.style.display = "none";
         list.innerHTML = "Retrieving...";
-        import("/assets/javascripts/ethers-5.2.esm.min.js").then(ethers => {
-            const provider = new ethers.providers.JsonRpcProvider("https://flare-api.flare.network/ext/C/rpc");
+        import("/assets/javascripts/ethers-6.3.esm.min.js").then(ethers => {
+            const provider = new ethers.JsonRpcProvider("https://flare-api.flare.network/ext/C/rpc");
             const flareContractRegistry = new ethers.Contract(
                 "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
                 ["function getAllContracts() external view returns(string[] memory, address[] memory)"],
