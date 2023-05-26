@@ -124,6 +124,7 @@ Pay special attention to the capitalization and spacing of the following words:
 * Flare Time Series Oracle
 * Layer Cake
 * Merit-Based Consensus
+* P-Chain, C-Chain and X-Chain (this is how Avalanche calls them)
 * Relay (when talking about Flare's cross-chain data relay protocol)
 * smart contracts
 * State Connector
