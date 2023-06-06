@@ -189,7 +189,10 @@ nav:
       - infra/data/index.md
       - infra/data/operating.md
       - infra/data/whitelisting.md
-      - infra/data/managing-ecosystem.md
+      - Managing the Ecosystem:
+        - infra/data/managing-ecosystem/index.md
+        - infra/data/managing-ecosystem/exploring-collusion.md
+        - infra/data/managing-ecosystem/monitoring-price-history.md
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md

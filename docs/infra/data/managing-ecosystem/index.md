@@ -4,7 +4,7 @@ The following information explains how to manage the FTSO ecosystem by participa
 
 To prevent malicious behaviors that impair the FTSO ecosystem, the FTSO Management Group reports [possible infractions](https://proposals.flare.network/FIP/FIP_2.html#1-brief-description) committed by FTSO data providers and determines whether to [punish them](https://proposals.flare.network/FIP/FIP_2.html#22-process-for-chill-proposals).
 
-Punished data providers are [chilled](https://proposals.flare.network/FIP/FIP_2.html#23-chill-effects), which means they are removed from the [whitelist](../data/whitelisting.md), either temporarily or permanently, depending on the quantity of infractions they have committed.
+Punished data providers are [chilled](https://proposals.flare.network/FIP/FIP_2.html#23-chill-effects), which means they are removed from the [whitelist](../whitelisting.md), either temporarily or permanently, depending on the quantity of infractions they have committed.
 
 Any address can request to be a member of the group, but only [upstanding FTSO data providers](https://proposals.flare.network/FIP/FIP_2.html#21-management-group-members) are accepted.
 
@@ -33,8 +33,8 @@ The `PollingFtso` contract handles interactions such as managing group members, 
 The following procedure explains how to interact directly with this contract.
 However, if you prefer a simpler interface, the Flare community is developing front-ends to facilitate the interactions, such as [Flaremetrics](https://flaremetrics.io/ftso/proposals).
 
-1. Open a [block explorer](../../user/block-explorers/index.md) for the appropriate network.
-2. Follow the [Retrieval from Blockchain procedure](../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `PollingFtso` contract.
+1. Open a [block explorer](../../../user/block-explorers/index.md) for the appropriate network.
+2. Follow the [Retrieval from Blockchain procedure](../../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `PollingFtso` contract.
     The **Contract Address Details** page is displayed.
 3. Optional: If you need to call a method in the **Write** tab, click the **Write Contract** tab, click **Connect Wallet**, and complete the steps to connect your wallet.
 
@@ -207,3 +207,8 @@ Your proxy can submit proposals and vote on them.
 
     A boolean value indicating whether the member has voted is returned.
     If you specified a nonexistent ID for the `proposalId` parameter, `false` is returned.
+
+## Related Guides
+
+* [Exploring Collusion](exploring-collusion.md)
+* [Monitoring Price History](monitoring-price-history.md)
