@@ -9,9 +9,9 @@ Validator nodes are **online servers** running a blockchain's client software. T
 
 The fact that the ledger is not under control of a single entity but **distributed among a network of independent validators** is what makes blockchains:
 
-- Require less trust than traditional options.
-- Censorship resistant.
-- [Byzantine fault tolerant](glossary.md#byzantine_fault_tolerance).
+* Require less trust than traditional options.
+* Censorship resistant.
+* [Byzantine fault tolerant](glossary.md#byzantine_fault_tolerance).
 
 Validators agree on the state of the ledger using a [consensus algorithm](glossary.md#consensus) that varies for each blockchain. While the implementation of the groundbreaking [FCP protocol](glossary.md#fcp) is being completed, Flare is currently using a variant of [Avalanche](glossary.md#avalanche)'s **Snowman++** algorithm.
 
@@ -29,8 +29,8 @@ And then normalized so the probabilities for all nodes add up to $1.0$.
 
 As it can be seen:
 
-- The logarithm (which might be replaced by a square root or similar compressing function) reduces the importance of large stakes.
-- Multiplying by the $RewardRate$ benefits the nodes that consistently provide good FTSO data.
+* The logarithm (which might be replaced by a square root or similar compressing function) reduces the importance of large stakes.
+* Multiplying by the $RewardRate$ benefits the nodes that consistently provide good FTSO data.
 
 Both the $VotePower$ and the $RewardRate$ are evaluated once a week based on the previous week's results.
 
@@ -38,7 +38,11 @@ The plots below show the equalizing effect of this formula on actual data taken 
 
 <figure markdown>
   ![Validator vote power](validator-vote-power.png){ loading=lazy .allow-zoom .side-by-side }![Validator log vote power](validator-log-vote-power.png){ loading=lazy .allow-zoom .side-by-side }
-  <figcaption>Left: Probabilities based solely on stake.<br/>Right: Probablities based on diminished stake and FTSO performance.</figcaption>
+  <figcaption>Left: Probabilities based solely on stake.<br/>Right: Probabilities based on diminished stake and FTSO performance.</figcaption>
 </figure>
 
 As it is readily apparent, the distribution to the right is far more egalitarian, while still rewarding high stakes and FTSO performance.
+
+## Related Infrastructure Guides
+
+* [Deploying a Validator Node](../infra/validation/deploying.md)

@@ -425,3 +425,9 @@ A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last
 * [Managing delegations](../user/delegation/managing-delegations.md)
 * [Managing rewards](../user/delegation/managing-rewards.md)
 * [Wrapping tokens](../user/wrapping-tokens.md)
+
+## Related Infrastructure Guides
+
+* [Operating a Data Provider](../infra/data/operating.md)
+* [Working with Whitelists](../infra/data/whitelisting.md)
+* [Managing the Ecosystem](../infra/data/managing-ecosystem/index.md)
