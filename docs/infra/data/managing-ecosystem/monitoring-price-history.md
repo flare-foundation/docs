@@ -10,14 +10,14 @@ The data on the graph includes:
 
 * Median prices.
 * Quantity of votes.
-  This information helps you locate outage periods in which a large-enough number of providers did not submit enough data to impact the graph.
+  This information helps you locate outage periods in which a large-enough number of providers failed to submit data to impact the graph.
 * Reward bands.
   This information indicates the dispersion of the submitted values.
 
 Additionally, if the price history is displayed because you [selected data providers by using the collusion tool](./exploring-collusion.md), the graph includes submissions by those providers, enabling you to see:
 
 * Whether a submission is inside or outside of the reward band and by how much.
-* Whether multiple providers were chasing each other instead of the median, which implies collusion.
+* Whether multiple providers were chasing each other instead of the median, which could imply collusion.
 
 ## Price-History Dashboard
 
