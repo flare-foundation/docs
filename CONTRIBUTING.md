@@ -123,12 +123,14 @@ Pay special attention to the capitalization and spacing of the following words:
 * Flare Networks (The company)
 * Flare Time Series Oracle
 * Layer Cake
+* mainnet (or main network)
 * Merit-Based Consensus
 * P-Chain, C-Chain and X-Chain (this is how Avalanche calls them)
 * Relay (when talking about Flare's cross-chain data relay protocol)
 * smart contracts
 * State Connector
 * `$FLR`, `$SGB`, `$WFLR` and `$WSGB` (the wrapped tokens)
+* testnet (or test network)
 * web3
 
 ### Images
