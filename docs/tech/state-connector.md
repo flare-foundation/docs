@@ -36,7 +36,7 @@ Anybody, be it a smart contract running on Flare or an application, can **reques
 Requests are **yes/no questions** regarding things that happened outside the Flare network, for example, "Has transaction 0xABC been confirmed on the Bitcoin network enough times?".
 The answers, though, might contain any kind of additional data attached, like the content of transaction 0xABC, for example.
 
-Requests must adhere to one of the **available request types**, which have been designed to be **strictly decidable**, i.e., the answers are objective and cannot be argued.
+Requests must adhere to one of the [**available request types**](#attestation-types), which have been designed to be **strictly decidable**, i.e., the answers are objective and cannot be argued.
 Otherwise, queries like "What is the weather like in Paris?" would have a hard time reaching consensus among the different attestation providers.
 Section [Adding New Attestation Types](#adding-new-attestation-types) below contains more details.
 
@@ -121,10 +121,10 @@ Phases happen in 90-second windows, and the Choose and Commit phases share the s
   <figcaption>The Collect-Choose-Commit-Reveal (CCCR) protocol.</figcaption>
 </figure>
 
-- **Collect phase**: Users send their requests to the State Connector contract which forwards them to every attestation provider.
-- **Choose phase**: Attestation Providers vote on which requests they will be able to answer in the current round.
-- **Commit phase**: Attestation providers send **obfuscated** answers to the State Connector, so they cannot cheat by peeking at each other's submissions.
-- **Reveal phase**: Attestation providers send the **deobfuscation key** so their previous answers are revealed.
+* **Collect phase**: Users send their requests to the State Connector contract which forwards them to every attestation provider.
+* **Choose phase**: Attestation Providers vote on which requests they will be able to answer in the current round.
+* **Commit phase**: Attestation providers send **obfuscated** answers to the State Connector, so they cannot cheat by peeking at each other's submissions.
+* **Reveal phase**: Attestation providers send the **deobfuscation key** so their previous answers are revealed.
   When all data is available, answers are made public if there is enough consensus.
 
 The CCCR protocol is akin to making submissions in a closed envelope which is not opened until all submissions are received.
@@ -170,13 +170,13 @@ Users can request this data directly from the providers through the [Proof API](
 
 Additional points worth noting:
 
-- If two attestation providers observe a different validity for _any_ of the requests in the round, they will submit a completely different Attestation Proof.
+* If two attestation providers observe a different validity for _any_ of the requests in the round, they will submit a completely different Attestation Proof.
 
-- Attestation providers **must answer all agreed-upon queries** in the round **or abstain from participating in the round**, otherwise, their Merkle tree root will not match other providers and will probably be discarded by consensus.
+* Attestation providers **must answer all agreed-upon queries** in the round **or abstain from participating in the round**, otherwise, their Merkle tree root will not match other providers and will probably be discarded by consensus.
 
-- **Hashes are sorted** before being added to the tree, just to have a **consistent ordering** (albeit arbitrary).
+* **Hashes are sorted** before being added to the tree, just to have a **consistent ordering** (albeit arbitrary).
 
-- The exact way in which the root hash is calculated can be changed without impacting the State Connector contract, which will continue to vote only on the hash value.
+* The exact way in which the root hash is calculated can be changed without impacting the State Connector contract, which will continue to vote only on the hash value.
 
 ??? example "Proof Unpacking (for App developers)"
 
@@ -220,15 +220,12 @@ the ability of any individual validator node to **fork and halt execution** if a
 
 To achieve this, two **sets** of attestation providers are defined:
 
-- **Default attestation providers set**
+* **Default attestation providers set**
 
-    Anybody can submit attestations to the State Connector, but the contract will only accept submissions from attestation providers in the **default set**.
-
-    This list was managed by Flare at launch and later became completely decentralized (see the section [Becoming an Attestation Provider](#becoming-an-attestation-provider) for more information).
-
+    Anybody can submit attestations to the State Connector, but the contract will only accept submissions from attestation providers in the [**default set**](../infra/attestation/operating.md).
     **Every validator node** in the Flare network relies on this set.
 
-- **Local attestation providers set**
+* **Local attestation providers set**
 
     Additionally, each node operator can provide a list of **local** attestation providers to be accepted besides the ones from the default set.
 
@@ -244,11 +241,11 @@ To achieve this, two **sets** of attestation providers are defined:
 
     Then, for an attestation round to succeed these three conditions must be met:
 
-    - **The default set must agree on a result** (50% consensus inside the set).
+    * **The default set must agree on a result** (50% consensus inside the set).
 
-    - **The local set must agree on a result too** (50% consensus inside the set).
+    * **The local set must agree on a result too** (50% consensus inside the set).
 
-    - **Both results must match**.
+    * **Both results must match**.
 
     Otherwise, the round is **undecided** and no answer is made public.
 
@@ -331,12 +328,24 @@ There are therefore only two ways to resolve a fork:
 
 In summary, validators using at least one reliable local attestation provider do not have to worry about rollbacks, **even in the face of 51% attacks**.
 
-## Becoming an Attestation Provider
+## Attestation Types
 
-Anyone may operate an attestation provider without any capital requirement (see the [attestation-client repository](https://github.com/flare-foundation/attestation-client) for deployment information), which can readily be used as a **local provider** on validators that trust it.
+Some attestation types are already defined. Attestation providers provide attestations for these types of defined requests:
 
-To be included in the [default set](#attestation-provider-sets), though, the same operator must run one of the **top-performing [FTSO](glossary.md#ftso) data providers** to prove its commitment to the network's well-being.
-More details will be added soon.
+* [**Payment**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00001-payment.md): Whether a payment transaction occurred in which funds were sent from one address to another address.
+* [**Balance-decreasing transaction**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00002-balance-decreasing-transaction.md): Whether a transaction that might have decreased a balance occurred. This type allows for several possibilities:
+
+    * During a transaction, funds, including fees, were deducted from the balance at an address.
+    As a result, the final balance at the address is less than the balance was before the transaction.
+    * During a transaction, funds to pay for fees were deducted from the balance at an address at the same time as more funds arrived.
+    As a result, the balance at the address experienced a decrease, but the final balance is more than the balance was before the transaction.
+
+* [**Confirmed block height**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00003-confirmed-block-height-exists.md): Whether a block on a certain height exists and was confirmed.
+* [**Referenced payment nonexistence**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00004-referenced-payment-nonexistence.md): Whether an account did not receive funds from a different account by a specific deadline.
+This type can serve as proof that a user's payment obligations to a DeFi protocol have been breached, considering the following cases:
+
+    * The required transaction was not confirmed on time.
+    * The required transaction was confirmed on time but failed because of an error made by the sender.
 
 ## Adding New Attestation Types
 

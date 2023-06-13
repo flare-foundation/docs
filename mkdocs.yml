@@ -185,6 +185,9 @@ nav:
     - user/wrapping-tokens.md
   - Infrastructure Guides:
     - infra/index.md
+    - Attestation Providers:
+      - infra/attestation/index.md
+      - infra/attestation/operating.md
     - FTSO Data Providers:
       - infra/data/index.md
       - infra/data/operating.md
