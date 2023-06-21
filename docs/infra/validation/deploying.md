@@ -159,7 +159,7 @@ After taking the above considerations into account, you can now start up your no
 
     Some users have received **preregistered validator keys**, this is, the keys required to deploy a node which has already been registered as a validator.
 
-    If that is your case, you just need to add these parameters to the launch command line, and jump to step 6.
+    If that is your case, you just need to add these parameters to the launch command line:
 
     ```bash
     --staking-tls-cert-file=<NODE_CRT_PATH> \
