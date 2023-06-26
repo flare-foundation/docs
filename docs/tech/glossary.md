@@ -12,8 +12,14 @@ Avalanche { #avalanche }
 Block { #block }
 : For performance reasons, [blockchains](#blockchain) do not process transactions one by one. Instead, transactions are grouped together in blocks which are then validated by the [consensus](#consensus) algorithm.
 
+Block Explorer { #block_explorer }
+: A tool that enables its users to analyze transactions and interact with addresses on blockchains. [Read more...](../user/block-explorers/index.md)
+
 Blockchain { #blockchain }
 : Digital [ledger](#ledger) storing data and transactions on a distributed network of computers to make it more robust. Cryptography protects against information tampering, and a [consensus](#consensus) algorithm ensures that the majority of the network agrees on the stored data even if some of its nodes act maliciously.
+
+Bootstrapping Node { #bootstrapping_node }
+: An observation node associated with a [validator node](#validator) and acting as its bastion: the bootstrapping node exposes a minimum RPC interface, so the validator does not have to. The nodeID and nodeIP returned by the bootstrapping node's RPC allow an external node to connect and peer with the core network of validators. The bootstrapping node also [gossips](https://en.wikipedia.org/wiki/Gossip_protocol) the core network's validators nodeIDs and nodeIPs to the external node to peer to. The main purpose of a bootstrapping node is to allow new nodes to connect to the network (hence the name "bootstrapping") while reducing its associated validator node attack surface. [Flare offers some public bootstrapping nodes](../dev/reference/network-config.md#flare-networks).
 
 Byzantine Fault Tolerance { #byzantine_fault_tolerance }
 : Property of a distributed system that is capable of continuous operation even when some of its participants are unreliable. Participants acting against the interest of the whole system, by accident or on purpose, are said to have “gone Byzantine”.
@@ -115,7 +121,7 @@ Quorum Slice { #quorum_slice }
 : In [FBA](#fba) consensus each node has multiple lists of other nodes which it voluntarily decides to trust, forming its quorum slices. All nodes in a quorum slice agreeing on a result are enough to convince the node of that result. If the quorum slices are correctly built, global quorum emerges from these local quorum slices.
 
 RPC { #rpc }
-: Remote Procedure Call is a protocol that allows a program executing on a computer to request a service from another program, typically running on a different computer.
+: Remote Procedure Call is a protocol that allows a program executing on a computer to request a service from another program, typically running on a different computer. [Flare offers some public and private nodes with RPC capabilities](../apis/index.md#access-nodes).
 
 Smart Contract { #smart_contract }
 : Computer program running on a blockchain, typically one based on the [EVM](#evm). The blockchain’s immutability ensures that the contract is not tampered with, and running it on several machines bound together by a consensus algorithm ensures faithful execution. Smart contracts are said to be self-enforcing.

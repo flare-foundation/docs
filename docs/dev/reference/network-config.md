@@ -7,13 +7,14 @@ These are the values required to configure [the different Flare networks](../../
 <div class="important-table" markdown>
 === "Flare"
 
-    | ![logo-FLR.png](logo-FLR.png){width=64px} | Flare                                       |
-    | ----------------------------------------- | ------------------------------------------- |
-    | **Chain ID**                              | [14][flrId]                                 |
-    | **Asset Ticker**                          | `FLR`                                       |
-    | **RPC endpoint** `BETA`{.beta}            | `https://flare-api.flare.network/ext/C/rpc` |
-    | [**Rosetta API**][rosetta-api]            | `https://flare-rosetta-api.flare.network/`  |
-    | **Block Explorer**                        | <https://flare-explorer.flare.network>      |
+    | ![logo-FLR.png](logo-FLR.png){width=64px}                | Flare                                       |
+    | -------------------------------------------------------- | ------------------------------------------- |
+    | **Chain ID**                                             | [14][flrId]                                 |
+    | **Asset Ticker**                                         | `FLR`                                       |
+    | [**RPC endpoint**](glossary.md#rpc)                      | `https://flare-api.flare.network/ext/C/rpc` |
+    | [**Rosetta API**][rosetta-api]                           | `https://flare-rosetta-api.flare.network/`  |
+    | [**Block Explorer**](glossary.md#block_explorer)         | <https://flare-explorer.flare.network>      |
+    | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | <ul><li>`https://flare.flare.network`</li><li>`http://mainnet.flare.bdnodes.net`</li><li>`http://flare-bootstrap-1.staking.production.figment.io`</li><li>`http://flare.senseinode.com`</li><li>`http://flare-mainnet.staked.cloud`</li></ul> |
 
     ??? example "Sample query"
 
@@ -38,12 +39,13 @@ These are the values required to configure [the different Flare networks](../../
 
 === "Songbird"
 
-    | ![logo-SGB.png](logo-SGB.png){width=64px} | Songbird                                       |
-    | ----------------------------------------- | ---------------------------------------------- |
-    | **Chain ID**                              | [19][sgbId]                                    |
-    | **Asset Ticker**                          | `SGB`                                          |
-    | **RPC endpoint** `BETA`{.beta}            | `https://songbird-api.flare.network/ext/C/rpc` |
-    | **Block Explorer**                        | <https://songbird-explorer.flare.network>      |
+    | ![logo-SGB.png](logo-SGB.png){width=64px}                | Songbird                                       |
+    | -------------------------------------------------------- | ---------------------------------------------- |
+    | **Chain ID**                                             | [19][sgbId]                                    |
+    | **Asset Ticker**                                         | `SGB`                                          |
+    | [**RPC endpoint**](glossary.md#rpc)                      | `https://songbird-api.flare.network/ext/C/rpc` |
+    | [**Block Explorer**](glossary.md#block_explorer)         | <https://songbird-explorer.flare.network>      |
+    | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://songbird.flare.network`               |
 
     ??? example "Sample query"
 
@@ -68,13 +70,14 @@ These are the values required to configure [the different Flare networks](../../
 
 === "Coston"
 
-    | ![logo-CST.png](logo-CFLR.png){width=64px} | Coston                                       |
-    | ------------------------------------------ | -------------------------------------------- |
-    | **Chain ID**                               | [16][cflrId]                                 |
-    | **Asset Ticker**                           | `CFLR`                                       |
-    | **RPC endpoint** `BETA`{.beta}             | `https://coston-api.flare.network/ext/C/rpc` |
-    | **Block Explorer**                         | <https://coston-explorer.flare.network>      |
-    | **Test Faucet**                            | <https://faucet.towolabs.com>                |
+    | ![logo-CST.png](logo-CFLR.png){width=64px}               | Coston                                       |
+    | -------------------------------------------------------- | -------------------------------------------- |
+    | **Chain ID**                                             | [16][cflrId]                                 |
+    | **Asset Ticker**                                         | `CFLR`                                       |
+    | [**RPC endpoint**](glossary.md#rpc)                      | `https://coston-api.flare.network/ext/C/rpc` |
+    | [**Block Explorer**](glossary.md#block_explorer)         | <https://coston-explorer.flare.network>      |
+    | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://coston.flare.network`               |
+    | **Test Faucet**                                          | <https://faucet.towolabs.com>                |
 
     ??? example "Sample query"
 
@@ -99,13 +102,14 @@ These are the values required to configure [the different Flare networks](../../
 
 === "Coston2"
 
-    | ![logo-CST2.png](logo-C2FLR.png){width=64px} | Coston2                                       |
-    | -------------------------------------------- | --------------------------------------------- |
-    | **Chain ID**                                 | [114][c2flrId]                                |
-    | **Asset Ticker**                             | `C2FLR`                                       |
-    | **RPC endpoint** `BETA`{.beta}               | `https://coston2-api.flare.network/ext/C/rpc` |
-    | **Block Explorer**                           | <https://coston2-explorer.flare.network>      |
-    | **Test Faucet**                              | <https://coston2-faucet.towolabs.com>         |
+    | ![logo-CST2.png](logo-C2FLR.png){width=64px}             | Coston2                                       |
+    | -------------------------------------------------------- | --------------------------------------------- |
+    | **Chain ID**                                             | [114][c2flrId]                                |
+    | **Asset Ticker**                                         | `C2FLR`                                       |
+    | [**RPC endpoint**](glossary.md#rpc)                      | `https://coston2-api.flare.network/ext/C/rpc` |
+    | [**Block Explorer**](glossary.md#block_explorer)         | <https://coston2-explorer.flare.network>      |
+    | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://coston2.flare.network`               |
+    | **Test Faucet**                                          | <https://coston2-faucet.towolabs.com>         |
 
     ??? example "Sample query"
 
@@ -144,7 +148,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
     |                                |                                     |
     | ------------------------------ | ----------------------------------- |
-    | **RPC endpoint** `BETA`{.beta} | `https://bitcoin-api.flare.network` |
+    | **RPC endpoint**               | `https://bitcoin-api.flare.network` |
 
     ??? Example "Sample query"
 
@@ -157,9 +161,9 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
 === "BNB-BSC"
 
-    |                                |                                       |
-    | ------------------------------ | ------------------------------------- |
-    | **RPC endpoint** `BETA`{.beta} | `https://bnb-bsc-api.flare.network/`  |
+    |                                |                                      |
+    | ------------------------------ | ------------------------------------ |
+    | **RPC endpoint**               | `https://bnb-bsc-api.flare.network/` |
 
     ??? Example "Sample query"
 
@@ -173,7 +177,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
     |                                |                                      |
     | ------------------------------ | ------------------------------------ |
-    | **RPC endpoint** `BETA`{.beta} | `https://litecoin-api.flare.network` |
+    | **RPC endpoint**               | `https://litecoin-api.flare.network` |
 
     ??? Example "Sample query"
 
@@ -188,7 +192,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
     |                                |                                      |
     | ------------------------------ | ------------------------------------ |
-    | **RPC endpoint** `BETA`{.beta} | `https://dogecoin-api.flare.network` |
+    | **RPC endpoint**               | `https://dogecoin-api.flare.network` |
 
     ??? Example "Sample query"
 
@@ -203,7 +207,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
     |                                |                                  |
     | ------------------------------ | -------------------------------- |
-    | **RPC endpoint** `BETA`{.beta} | `https://xrpl-api.flare.network` |
+    | **RPC endpoint**               | `https://xrpl-api.flare.network` |
 
     ??? Example "Sample query"
 
@@ -217,7 +221,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
     |                                |                                      |
     | ------------------------------ | ------------------------------------ |
-    | **RPC endpoint** `BETA`{.beta} | `https://algorand-api.flare.network` |
+    | **RPC endpoint**               | `https://algorand-api.flare.network` |
 
     ??? Example "Sample query"
 
@@ -231,7 +235,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
     |                                |                                       |
     | ------------------------------ | ------------------------------------- |
-    | **RPC endpoint** `BETA`{.beta} | `https://ethereum-api.flare.network/` |
+    | **RPC endpoint**               | `https://ethereum-api.flare.network/` |
 
     ??? Example "Sample query"
 
