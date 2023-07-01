@@ -18,6 +18,5 @@ Select one of the topics below:
 * [Governance](./governance.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
 * [State Connector](./state-connector.md)
-* [Tokenomics](./tokenomics.md)
 * [Validator Nodes](./validators.md)
 * [Glossary](./glossary.md)
