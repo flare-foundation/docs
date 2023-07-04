@@ -67,7 +67,7 @@ Using price data as an example, the procedure in the following diagram runs cont
 ## How Results are Calculated
 
 The following example uses price pairs to show the filtering process that turns all submitted data into a single estimate.
-See all details [in the Flare whitepaper](https://flare.xyz/whitepapers/).
+See all details [in the Flare whitepaper](https://flare.network/whitepapers/).
 
 <figure markdown>
   ![FTSO price calculation](ftso-price.png){ loading=lazy .allow-zoom }

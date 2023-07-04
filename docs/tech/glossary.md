@@ -64,7 +64,7 @@ FBA { #fba }
 : Federated Byzantine Agreement is a form of [Byzantine fault tolerance](#byzantine_fault_tolerance) where each node keeps its own list of trusted nodes. It does not require nodes to invest stake or computing power as [Proof of Stake](#proof_of_stake) or [Proof of Work](#proof_of_work) protocols do.
 
 FCP { #fcp }
-: The Flare Consensus Protocol is an asynchronous, ordered and leaderless version of Federated Byzantine Agreement ([FBA](#fba)) consensus. The whitepaper is already available and it is currently in the process of being implemented. [Read more...](https://flare.xyz/whitepapers)
+: The Flare Consensus Protocol is an asynchronous, ordered and leaderless version of Federated Byzantine Agreement ([FBA](#fba)) consensus. The whitepaper is already available and it is currently in the process of being implemented. [Read more...](https://flare.network/whitepapers)
 
 Flare Token (FLR) { #flare_token_(flr) }
 : The native currency of the Flare's [main network](#main_network).
