@@ -55,6 +55,7 @@ plugins:
           'technology/state-connector.md': 'tech/state-connector.md'
           'networks/songbird.md': 'dev/reference/network-config.md'
           'networks/coston-testnet.md': 'dev/reference/network-config.md'
+          'tech/flare-launch-process.md': 'tech/archive/flare-launch-process.md'
           'tutorials/wallets/index.md': 'user/wallets/index.md'
           'tutorials/wallets/bifrost-wallet.md': 'user/wallets/bifrost-wallet.md'
           'tutorials/wallets/dcent-wallet.md': 'user/wallets/dcent-wallet.md'
@@ -140,7 +141,7 @@ nav:
     - tech/flare.md
     - tech/automatic-claiming.md
     - tech/the-flaredrop.md
-    - tech/flare-launch-process.md
+    - tech/flare-beta.md
     - tech/api-portal.md
     - tech/ftso.md
     - tech/governance.md
@@ -148,6 +149,9 @@ nav:
     - tech/state-connector.md
     - tech/validators.md
     - tech/glossary.md
+    - Archive:
+      - tech/archive/index.md
+      - tech/archive/flare-launch-process.md
   - User Guides:
     - user/index.md
     - user/automatic-claiming.md

@@ -12,7 +12,7 @@ Select one of the topics below:
 * [What is Flare](./flare.md)
 * [Automatic Claiming](./automatic-claiming.md)
 * [The FlareDrop](./the-flaredrop.md)
-* [Flare Launch Process](./flare-launch-process.md)
+* [Flare Beta](./flare-beta.md)
 * [Flare API Portal](./api-portal.md)
 * [FTSO](./ftso.md)
 * [Governance](./governance.md)
@@ -20,3 +20,4 @@ Select one of the topics below:
 * [State Connector](./state-connector.md)
 * [Validator Nodes](./validators.md)
 * [Glossary](./glossary.md)
+* [Archive](./archive/index.md)
