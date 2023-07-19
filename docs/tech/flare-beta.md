@@ -21,6 +21,6 @@ During this period:
 
 * Each FTSO running an observation node will be a candidate to become a validator node later. These nodes are regularly scanned to ensure they meet security standards. If they meet the security standards, they enable the node operators to receive rewards.
 
-* Validator rewards (20% of inflation) are split 50% for the professional validators and 50% for the FTSOs running observation nodes.
+* Validator rewards are split 50% for the professional validators and 50% for the FTSOs running observation nodes.
 
 * Estimated duration: 6 - 9 months, depending on the evolution of the network.
