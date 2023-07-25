@@ -1,6 +1,6 @@
 # The FlareDrop
 
-The FlareDrop, previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](./flare-launch-process.md#definitions).
+The FlareDrop, previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](./archive/flare-launch-process.md#definitions).
 It will last for 36 months and is destined for any holder of wrapped `$FLR` (`$WFLR`) that participates in the network as per the FIP.01.
 
 If you enabled your [PDA](./personal-delegation-account.md) and it contains `$WFLR`, it is also eligible to receive the FlareDrop distribution.

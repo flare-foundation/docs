@@ -75,7 +75,7 @@ The following distribution plans were offered. The FIP.01 Distribution Plan was 
 
     * The new airdrop was sent to those who registered for the `$FLR` distribution upon the TDE, and the DIP was distributed to all `$FLR` token holders (actually, wrapped `$FLR` holders) over 36 months. Flare employees and companies were excluded.
     * Inflation is 10% of available supply in the first year, then 7% the following year, 5% the year after and in perpetuity, except that from year 3 onwards inflation is capped at 5bn `$FLR` per year.
-    * Inflation distribution: 70% to [FTSO](./ftso.md) rewards, 20% to [validator](./validators.md) rewards and 10% to the default Attestation Provider Set of the [state connector](./state-connector.md).
+    * Inflation distribution: 70% to [FTSO](../ftso.md) rewards, 20% to [validator](../validators.md) rewards and 10% to the default Attestation Provider Set of the [state connector](../state-connector.md).
 
 ## Launch Phases
 
@@ -124,7 +124,7 @@ FTSO data providers:
 
 * Could deploy their own **validator** nodes.
 
-* Acted as validators and their voting power [depended on their FTSO performance and stake](./validators.md).
+* Acted as validators and their voting power [depended on their FTSO performance and stake](../validators.md).
 
 FTSO and validator rewards were enabled.
 Inflation was not burned anymore.
@@ -173,4 +173,4 @@ The **DIP** will be distributed to ALL holders of FLR during 37 months.
 
 [Flare Beta](#flare-beta) will end.
 
-FTSO validators's validation power is not artificially reduced anymore and validator rewards (20% of inflation) will be distributed equally among all validators according to their performance and stake.
+FTSO validators' validation power is not artificially reduced anymore and validator rewards (20% of inflation) will be distributed equally among all validators according to their performance and stake.
