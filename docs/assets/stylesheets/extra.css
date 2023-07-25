@@ -284,6 +284,7 @@ figure img.side-by-side {
 
 .md-content figure img {
     padding: 8px;
+    margin: auto;
 }
 
 .md-content figure figcaption {
