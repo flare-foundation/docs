@@ -2,9 +2,6 @@
 
 Automatic claiming enables users to appoint an executor to claim rewards on their behalf.
 
-!!! info
-    This feature is only available on the Flare network.
-
 ## Introduction
 
 The Flare network **rewards** users that contribute to it, for example, by [delegating to an FTSO data provider](./ftso.md#delegation).

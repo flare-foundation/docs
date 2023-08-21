@@ -3,9 +3,6 @@
 Users who do not want to claim rewards themselves can enlist [executors](../../tech/automatic-claiming.md) to claim on their behalf.
 Executors can then initiate the claiming process, and rewards are sent directly to the user's account.
 
-!!! info
-    This feature is only available on the Flare network.
-
 ## Introduction
 
 Building an executor requires two parts:
