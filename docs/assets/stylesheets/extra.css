@@ -383,3 +383,19 @@ figure img.side-by-side {
 #contract-list-results ul li {
     margin: 0;
 }
+
+/* Boolean tables */
+.md-typeset .boolean-table .boolean-false {
+    color: red;
+    padding: 0;
+    font-size: x-large;
+    vertical-align: middle;
+}
+
+
+.md-typeset .boolean-table .boolean-true {
+    color: green;
+    padding: 0;
+    font-size: x-large;
+    vertical-align: middle;
+}
