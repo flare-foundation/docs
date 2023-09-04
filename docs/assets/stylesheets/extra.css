@@ -161,8 +161,9 @@ figure img.side-by-side {
     border-radius: 0.3rem;
 }
 
-/* Separating line for the glossary nav link */
-.md-nav__item [href*="glossary/"] {
+/* Separating line for some nav links */
+.md-nav__item [href*="glossary/"],
+.md-nav__item [href*="external-resources/"] {
     border-top: solid 1px var(--md-default-fg-color--lightest);
     padding-top: 8px;
 }

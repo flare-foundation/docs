@@ -237,6 +237,7 @@ nav:
       - dev/reference/the-flaredrop.md
       - dev/reference/personal-delegation-account.md
       - dev/reference/wallets.md
+    - dev/external-resources.md
     - dev/tools.md
   - APIs:
     - apis/index.md
