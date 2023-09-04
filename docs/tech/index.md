@@ -9,7 +9,7 @@ This section contains in-depth descriptions of Flare's key concepts, technology 
 
 Select one of the topics below:
 
-* [What is Flare](./flare.md)
+* [What Is Flare?](./flare.md)
 * [Automatic Claiming](./automatic-claiming.md)
 * [The FlareDrop](./the-flaredrop.md)
 * [Flare Beta](./flare-beta.md)

@@ -215,6 +215,7 @@ figure img.side-by-side {
     flex-wrap: wrap;
     justify-content: space-around;
     margin-left: 0;
+    margin-top: 40px;
 }
 
 .md-typeset .cards ul li {
@@ -391,11 +392,14 @@ figure img.side-by-side {
     font-size: x-large;
     vertical-align: middle;
 }
-
-
 .md-typeset .boolean-table .boolean-true {
     color: green;
     padding: 0;
     font-size: x-large;
     vertical-align: middle;
+}
+
+/* Generic horizontally-centered text */
+.center {
+    text-align: center;
 }

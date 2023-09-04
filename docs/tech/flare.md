@@ -1,7 +1,7 @@
-# What is Flare?
+# What Is Flare?
 
 !!! image inline end ""
-    ![Flare logo](logo-FLR.png){ loading=lazy .allow-zoom }
+    ![Flare logo](logo-FLR.png){ .allow-zoom }
 
 Flare is the blockchain for data.
 It is a [layer 1](glossary.md#layer1), EVM smart contract platform designed to expand the utility of blockchain.

@@ -6,6 +6,9 @@ hide:
 
 # Welcome to the Flare Network Technical Documentation
 
+New here? Start with [What Is Flare?](./tech/flare.md)
+{ .center }
+
 <div class="cards" markdown>
 
 * <a href="tech" markdown class="filled-svg">
@@ -54,7 +57,7 @@ hide:
 
 These pages are a **Work In Progress**.
 Use the contact buttons at the bottom of the page if there is anything you cannot find here!
-{ style="text-align:center;" }
+{ .center }
 
 <style>
     /*Special centered title for the Home page*/
