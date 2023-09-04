@@ -39,7 +39,7 @@ Cross-chain (or inter-ecosystem) interoperability { #cross_chain }
 DAO { #dao }
 : A Decentralized Autonomous Organization is an entity with no central authority. Its governance is mandated by rules encoded on a blockchain so it is tamper-proof.
 
-dApp { #dapp }
+Dapp { #dapp }
 : A Decentralized Application is a computer program that makes use of blockchain technology and therefore the information it uses or stores has the same benefits (trustlessness, censorship resistance, geographical redundancy, etc). The dapp itself may or may not be hosted on a blockchain.
 
 Data Provider { #data_provider }
@@ -50,6 +50,9 @@ DeFi { #defi }
 
 Delegate { #delegate }
 : To assign a duty to someone else, so they do it for you. On the Flare network, an address can delegate any fraction of the votes associated with the tokens it holds to another address, for the purpose of [FTSO](#ftso) weighting or governance participation. Note that no tokens are transferred.
+
+ERC-20 { #erc20 }
+: The Ethereum Request for Comments 20, proposed in November 2015, is an Ethereum token standard that implements an API for tokens within smart contracts. It is a standard for fungible (exchangeable) tokens, which have a property that makes each token exactly the same (in type and value) as another token. For example, an ERC-20 token acts just like Ethereum's ETH token, meaning that 1 token is and will always be equal to all the other tokens. [Read more...](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
 
 EVM { #evm }
 : The Ethereum Virtual Machine allows executing smart contracts on the Ethereum network, regardless of the kind of computer that executes it. Multiple blockchain networks, including Flare, support EVM contracts. [Read more...](https://ethereum.org/en/developers/docs/evm/)
@@ -78,8 +81,14 @@ Governance { #governance }
 Know Your Customer { #kyc }
 : The process an entity completes to verify the identities of its users to comply with global requirements.
 
+Layer 1 { #layer1 }
+: An L1 is a blockchain in the classical sense, in that it comprises a network of nodes that exchange information to guarantee the integrity of a shared ledger and offer functionality like token exchange and programmability. Compare it to an L2, which is built on top of an existing L1.
+
+Layer 2 { #layer2 }
+: An L2 is a blockchain built on top of an existing L1 making use of its programmability. L2 chains add extra functionality to the L1, like scalability.
+
 Ledger { #ledger }
-: Historically, a book where financial transactions are recorded. In [blockchain](#blockchain) technology a ledger can contain any kind of information and it has multiple copies distributed among several computers, which are kept in sync by a [consensus](#consensus) algorithm.
+: Historically, a book where financial transactions are recorded. In [blockchain](#blockchain) technology, a ledger can contain any kind of information, which has multiple copies distributed among several computers, kept in sync by a [consensus](#consensus) algorithm.
 
 Light Client Relay { #light_client_relay }
 : A simplified communication mechanism built for speed that only queries the header data of any transaction and therefore lacks the security that comes from querying a full node with full history (e.g. [SPV](https://en.wikipedia.org/wiki/Bitcoin_network#Payment_verification)).
