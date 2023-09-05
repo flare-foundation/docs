@@ -39,7 +39,8 @@ Using price data as an example, the procedure in the following diagram runs cont
     During each epoch, only submissions from the **100** data providers with the most **vote power** are considered.
     An account's vote power is based on its wrapped `$FLR` or `$SGB` balance and the delegations made to it (see [Vote Power](#vote-power) below).
 
-    In this example, submitted data must be the current price (in `$USD`) for one or more of the supported price pairs, currently: `$XRP`, `$LTC`, `$XLM`, `$DOGE`, `$ADA`, `$ALGO`, `$BCH`, `$DGB`, `$BTC`, `$ETH`, and `$FIL`. On Songbird, additionally, you have `$SGB`.
+    Submitted data must be the current price (in `$USD`) for one or more of the supported price pairs, currently: `$ADA`, `$ALGO`, `$ARB`, `$AVAX`, `$BNB`, `$BTC`, `$DOGE`, `$ETH`, `$FIL`, `$FLR`, `$LTC`, `$MATIC`, `$SOL`, `$USDC`, `$USDT`, `$XDC`, `$XLM`, and `$XRP`.
+    On Songbird, replace `$FLR` with `$SGB`.
 
     More general data types might be added in the future.
 
