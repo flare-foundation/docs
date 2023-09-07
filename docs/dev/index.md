@@ -35,4 +35,5 @@ These are Flare's main source repositories, both on [GitHub](https://github.com/
 * [Getting Started](./getting-started/index.md)
 * [Tutorials](./tutorials/index.md)
 * [Reference Guides](./reference/index.md)
+* [External Learning Resources](./external-resources.md)
 * [Tools and Projects](./tools.md)
