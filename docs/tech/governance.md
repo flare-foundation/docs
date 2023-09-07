@@ -53,7 +53,7 @@ The Flare Foundation announces proposals in advance, so that users can read them
 
     Votes can be transferred to another account while the wrapped tokens remain in your possession.
     Being able to transfer votes is useful, for example, if you have wrapped tokens in multiple self-custody wallets, because voting can then be simplified by transferring all the votes to a single wallet and voting from there.
-    {#vote-transfer}
+    { #vote-transfer }
 
     Votes can only be transferred to one address, but it can receive votes from multiple addresses.
     Received votes cannot be transferred again to a third address.

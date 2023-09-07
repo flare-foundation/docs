@@ -61,7 +61,7 @@ Using price data as an example, the procedure in the following diagram runs cont
 4. For each price epoch in which the submitted data is close enough to the median value, data providers and their [delegators](#delegation) are **rewarded**.
 
     Rewards are accumulated in **reward epochs**, which last **3.5 days** on the Flare network and **7 days** on Songbird, and you can claim them after the epoch finishes.
-{#reward-epoch}
+{ #reward-epoch }
 
     See [Rewards](#rewards) below.
 
