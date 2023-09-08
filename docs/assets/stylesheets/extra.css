@@ -63,6 +63,28 @@
     background: var(--md-default-fg-color--lightest);
 }
 
+/* Run-me admonition type */
+:root {
+    --md-admonition-icon--run-me: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M68.2,936.1c0-45.3,0-839.6,0-870.8c0-40.5,41.9-70.6,83.3-46.9c33.2,19,696.1,401.8,752.7,434.5c37.2,21.5,36.5,72.8,0,94.3C863.4,571.3,198,956,149.8,982.8C114.5,1002.3,68.2,980.7,68.2,936.1z" /></svg>')
+}
+
+.md-typeset .admonition.run-me,
+.md-typeset details.run-me {
+    border-color: #d3385b;
+}
+
+.md-typeset .run-me>.admonition-title,
+.md-typeset .run-me>summary {
+    background-color: #d3385b55;
+}
+
+.md-typeset .run-me>.admonition-title::before,
+.md-typeset .run-me>summary::before {
+    background-color: #d3385b;
+    -webkit-mask-image: var(--md-admonition-icon--run-me);
+    mask-image: var(--md-admonition-icon--run-me);
+}
+
 /* Restore admonition and details text size and colors */
 .md-typeset :is(.admonition, details) {
     font-size: initial;

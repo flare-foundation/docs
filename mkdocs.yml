@@ -47,7 +47,8 @@ markdown_extensions:
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
-  - macros                      # Jinja2 macros
+  - macros:                     # Jinja2 macros
+      include_dir: samples
   - autolinks                   # Use just filenames instead of full or relative paths
   - redirects:                  # Allow creating redirects for moved pages
       redirect_maps:
