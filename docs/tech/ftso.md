@@ -189,12 +189,8 @@ Submitted data in each reward epoch belongs to one of the following:
 * Primary and secondary reward band
 * Neither reward band
 
-On Flare, only the primary reward band is enabled, and reward epochs are 3.5 days.
-
-!!! note "Important"
-    Support for the secondary reward band on Flare is planned and will be managed by a [governance vote](governance.md) on a proposal similar to [STP.02](https://proposals.flare.network/STP/STP_2.html).
-
-On Songbird, both the primary reward band and secondary reward band are enabled, and reward epochs are 7 days.
+On Flare, reward epochs are 3.5 days.
+On Songbird, reward epochs are 7 days.
 In each reward epoch, rewards are distributed to providers whose submission falls within the primary or secondary reward bands.
 
 Because the secondary reward band is wider, it rewards more data providers than the primary band. However, submissions still must be close enough to the median to be included.
