@@ -4,7 +4,7 @@ Curated list of resources you can use to extend your knowledge of the Flare netw
 
 ## Tutorials
 
-* [Filip Koprivec's Flare Tutorials on Medium](https://medium.com/@j0-0sko)
+* [Filip Koprivec's Flare Tutorials on Medium](https://j0-0sko.medium.com/flare-blogposts-toc-8dc9d862f743)
 
 ## Videos
 
