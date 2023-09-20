@@ -175,6 +175,35 @@ figure img.side-by-side {
     width: 49%;
 }
 
+/* API reference guide */
+.api-node {
+    margin-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: solid 1px var(--md-default-fg-color--lightest);
+}
+.api-node-type h2 {
+    border-top: solid 4px var(--md-default-fg-color--lighter);
+    padding-top: 20px
+}
+.api-node h3 {
+    font-size: x-large;
+    margin: 0;
+    padding-top: 10px;
+}
+.api-node-internal td:first-child {
+    white-space: nowrap;
+}
+.api-node-source p {
+    text-align: right;
+    font-size: smaller;
+    color: var(--md-default-fg-color--lighter);
+    margin: 0;
+}
+.api-node-source a {
+    color: var(--md-default-fg-color--lighter);
+}
+
 /* BETA tags
  * Use as: `BETA`{.beta} */
 .md-typeset code.beta {
