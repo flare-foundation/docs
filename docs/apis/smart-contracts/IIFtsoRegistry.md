@@ -22,7 +22,7 @@ Internal interface for the [`FtsoRegistry`](./FtsoRegistry.md) contract.
 
 <div class="api-node" markdown>
 
-### `addFtso` { #fn_addftso }
+### `addFtso` { #fn_addftso_2663f1b4 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRegistry` ([Docs](./IIFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIFtsoRegistry.sol)).
@@ -51,7 +51,7 @@ Add a new FTSO contract to the registry.
 
 <div class="api-node" markdown>
 
-### `getAllCurrentPrices` { #fn_getallcurrentprices }
+### `getAllCurrentPrices` { #fn_getallcurrentprices_58f9296f }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -75,7 +75,7 @@ Returns the current price of all supported assets.
 
 <div class="api-node" markdown>
 
-### `getCurrentPrice` { #fn_getcurrentprice }
+### `getCurrentPrice` { #fn_getcurrentprice_c55d0f56 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -107,7 +107,39 @@ Reverts if the index is not supported.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals }
+### `getCurrentPrice` { #fn_getcurrentprice_42a0f243 }
+
+<div class="api-node-source" markdown>
+Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+function getCurrentPrice(
+    string _symbol
+) external view returns (
+    uint256 _price,
+    uint256 _timestamp);
+```
+
+Public view function to get the current price of a given active asset symbol.
+Reverts if the symbol is not supported.
+
+| Parameters | Type | Description |
+| ---------- | ---- | ----------- |
+| `_symbol` | `string` | Symbol to query. |
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+| `_price` | `uint256` | Current price of the asset in USD multiplied by 10^`ASSET_PRICE_USD_DECIMALS`. |
+| `_timestamp` | `uint256` | Timestamp for when this price was updated, in seconds since UNIX epoch. |
+</div>
+</div>
+
+<div class="api-node" markdown>
+
+### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals_257cbd3a }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -141,7 +173,41 @@ Reverts if the index is not supported.
 
 <div class="api-node" markdown>
 
-### `getCurrentPricesByIndices` { #fn_getcurrentpricesbyindices }
+### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals_a69afdc6 }
+
+<div class="api-node-source" markdown>
+Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+function getCurrentPriceWithDecimals(
+    string _symbol
+) external view returns (
+    uint256 _price,
+    uint256 _timestamp,
+    uint256 _assetPriceUsdDecimals);
+```
+
+Public view function to get the current price and decimals of a given active asset symbol.
+Reverts if the symbol is not supported.
+
+| Parameters | Type | Description |
+| ---------- | ---- | ----------- |
+| `_symbol` | `string` | Symbol to query. |
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+| `_price` | `uint256` | Current price of the asset in USD multiplied by 10^`_assetPriceUsdDecimals`. |
+| `_timestamp` | `uint256` | Timestamp for when this price was updated, in seconds since UNIX epoch. |
+| `_assetPriceUsdDecimals` | `uint256` | Number of decimals used to return the `_price`. |
+</div>
+</div>
+
+<div class="api-node" markdown>
+
+### `getCurrentPricesByIndices` { #fn_getcurrentpricesbyindices_6ba31fa1 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -171,7 +237,7 @@ Reverts if any of the indices is not supported.
 
 <div class="api-node" markdown>
 
-### `getCurrentPricesBySymbols` { #fn_getcurrentpricesbysymbols }
+### `getCurrentPricesBySymbols` { #fn_getcurrentpricesbysymbols_79d5ea4b }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -201,7 +267,7 @@ Reverts if any of the symbols is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtso` { #fn_getftso }
+### `getFtso` { #fn_getftso_d75f6d81 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -231,7 +297,7 @@ Reverts if unsupported index is passed.
 
 <div class="api-node" markdown>
 
-### `getFtsoBySymbol` { #fn_getftsobysymbol }
+### `getFtsoBySymbol` { #fn_getftsobysymbol_97da6af4 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -261,7 +327,7 @@ Reverts if unsupported symbol is passed.
 
 <div class="api-node" markdown>
 
-### `getFtsoIndex` { #fn_getftsoindex }
+### `getFtsoIndex` { #fn_getftsoindex_e848da30 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -291,7 +357,7 @@ Reverts if the symbol is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtsoSymbol` { #fn_getftsosymbol }
+### `getFtsoSymbol` { #fn_getftsosymbol_136d3f64 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -321,7 +387,7 @@ Reverts if the index is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtsos` { #fn_getftsos }
+### `getFtsos` { #fn_getftsos_9cb47538 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistryGenesis` ([Docs](./IFtsoRegistryGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoRegistryGenesis.sol)).
@@ -351,7 +417,7 @@ Reverts if any of the provided indices is non-existing or inactive.
 
 <div class="api-node" markdown>
 
-### `getSupportedFtsos` { #fn_getsupportedftsos }
+### `getSupportedFtsos` { #fn_getsupportedftsos_a40060ba }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -369,7 +435,7 @@ Get array of all FTSO contracts for all supported asset indices.
 The index of FTSO in returned array does not necessarily correspond to the asset's index.
 Due to deletion, some indices might be unsupported.
 
-Use [`getSupportedIndicesAndFtsos`](#fn_getsupportedindicesandftsos) to retrieve pairs of correct indices and FTSOs,
+Use [`getSupportedIndicesAndFtsos`](#fn_getsupportedindicesandftsos_06a2ba29) to retrieve pairs of correct indices and FTSOs,
 where possible "null" holes are readily apparent.
 
 | Returns | Type | Description |
@@ -380,7 +446,7 @@ where possible "null" holes are readily apparent.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndices` { #fn_getsupportedindices }
+### `getSupportedIndices` { #fn_getsupportedindices_798aac5b }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -405,7 +471,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndicesAndFtsos` { #fn_getsupportedindicesandftsos }
+### `getSupportedIndicesAndFtsos` { #fn_getsupportedindicesandftsos_06a2ba29 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -432,7 +498,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndicesAndSymbols` { #fn_getsupportedindicesandsymbols }
+### `getSupportedIndicesAndSymbols` { #fn_getsupportedindicesandsymbols_e68f283b }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -459,7 +525,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndicesSymbolsAndFtsos` { #fn_getsupportedindicessymbolsandftsos }
+### `getSupportedIndicesSymbolsAndFtsos` { #fn_getsupportedindicessymbolsandftsos_7687542c }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -488,7 +554,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedSymbols` { #fn_getsupportedsymbols }
+### `getSupportedSymbols` { #fn_getsupportedsymbols_ce1c0e4d }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -513,7 +579,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedSymbolsAndFtsos` { #fn_getsupportedsymbolsandftsos }
+### `getSupportedSymbolsAndFtsos` { #fn_getsupportedsymbolsandftsos_0cf48497 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistry` ([Docs](./IFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRegistry.sol)).
@@ -540,7 +606,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `removeFtso` { #fn_removeftso }
+### `removeFtso` { #fn_removeftso_a670ff87 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRegistry` ([Docs](./IIFtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIFtsoRegistry.sol)).

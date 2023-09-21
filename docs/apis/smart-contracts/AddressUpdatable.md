@@ -29,7 +29,7 @@ to keep up to date with the latest address for all dependencies.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -53,7 +53,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).

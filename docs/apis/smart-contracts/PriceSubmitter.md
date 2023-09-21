@@ -26,7 +26,7 @@ per price epoch.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -40,9 +40,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -53,7 +53,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -66,7 +66,7 @@ constructor(
 ) public;
 ```
 
-This [`constructor`](#fn_constructor) should contain no code as this contract is pre-loaded into the genesis block.
+This [`constructor`](#fn_constructor_undefined) should contain no code as this contract is pre-loaded into the genesis block.
   The super constructors are called for testing convenience.
 
 </div>
@@ -74,7 +74,7 @@ This [`constructor`](#fn_constructor) should contain no code as this contract is
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -88,7 +88,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -101,7 +101,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -125,7 +125,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `getCurrentRandom` { #fn_getcurrentrandom }
+### `getCurrentRandom` { #fn_getcurrentrandom_d89601fd }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -153,7 +153,7 @@ It never reverts.
 
 <div class="api-node" markdown>
 
-### `getFtsoManager` { #fn_getftsomanager }
+### `getFtsoManager` { #fn_getftsomanager_b39c6858 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -174,7 +174,7 @@ Returns the address of the [`FtsoManager`](./FtsoManager.md) contract.
 
 <div class="api-node" markdown>
 
-### `getFtsoRegistry` { #fn_getftsoregistry }
+### `getFtsoRegistry` { #fn_getftsoregistry_8c9d28b6 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -195,7 +195,7 @@ Returns the address of the [`FtsoRegistry`](./FtsoRegistry.md) contract.
 
 <div class="api-node" markdown>
 
-### `getRandom` { #fn_getrandom }
+### `getRandom` { #fn_getrandom_cd4b6914 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -225,7 +225,7 @@ provided by all data providers along with their data submissions.
 
 <div class="api-node" markdown>
 
-### `getTrustedAddresses` { #fn_gettrustedaddresses }
+### `getTrustedAddresses` { #fn_gettrustedaddresses_ffacb84e }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -249,7 +249,7 @@ Returns the list of trusted addresses that are always allowed to submit and reve
 
 <div class="api-node" markdown>
 
-### `getVoterWhitelister` { #fn_getvoterwhitelister }
+### `getVoterWhitelister` { #fn_getvoterwhitelister_71e1fad9 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -270,7 +270,7 @@ Returns the address of the [`VoterWhitelister`](./VoterWhitelister.md) contract 
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -284,14 +284,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `initialise` { #fn_initialise }
+### `initialise` { #fn_initialise_9d6a890f }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedAtGenesis` ([Docs](./GovernedAtGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedAtGenesis.sol)).
@@ -305,7 +305,7 @@ function initialise(
 ) public pure;
 ```
 
-Disallow [`initialise`](#fn_initialise) to be called.
+Disallow [`initialise`](#fn_initialise_9d6a890f) to be called.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -316,7 +316,7 @@ Disallow [`initialise`](#fn_initialise) to be called.
 
 <div class="api-node" markdown>
 
-### `revealPrices` { #fn_revealprices }
+### `revealPrices` { #fn_revealprices_e2db5a52 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -335,7 +335,7 @@ function revealPrices(
 
 Reveals submitted prices during the epoch reveal period.
 The hash of FTSO indices, prices, random number, and voter address must be equal
-to the hash previously submitted with [`submitHash`](#fn_submithash).
+to the hash previously submitted with [`submitHash`](#fn_submithash_8fc6f667).
 Emits a [`PricesRevealed`](#ev_pricesrevealed) event.
 
 | Parameters | Type | Description |
@@ -350,7 +350,7 @@ Emits a [`PricesRevealed`](#ev_pricesrevealed) event.
 
 <div class="api-node" markdown>
 
-### `setAddressUpdater` { #fn_setaddressupdater }
+### `setAddressUpdater` { #fn_setaddressupdater_aea36b53 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -365,7 +365,7 @@ function setAddressUpdater(
 ```
 
 Sets the address updater contract.
-Only [`governance`](#fn_governance) cal call this method.
+Only [`governance`](#fn_governance_5aa6e675) cal call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -376,7 +376,7 @@ Only [`governance`](#fn_governance) cal call this method.
 
 <div class="api-node" markdown>
 
-### `setTrustedAddresses` { #fn_settrustedaddresses }
+### `setTrustedAddresses` { #fn_settrustedaddresses_9ec2b581 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -403,7 +403,7 @@ Only FTSO Manager can call this method.
 
 <div class="api-node" markdown>
 
-### `submitHash` { #fn_submithash }
+### `submitHash` { #fn_submithash_8fc6f667 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -432,7 +432,7 @@ Emits the [`HashSubmitted`](#ev_hashsubmitted) event.
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -445,8 +445,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -455,7 +455,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -477,7 +477,7 @@ External method called from [`AddressUpdater`](./AddressUpdater.md) only.
 
 <div class="api-node" markdown>
 
-### `voterWhitelistBitmap` { #fn_voterwhitelistbitmap }
+### `voterWhitelistBitmap` { #fn_voterwhitelistbitmap_7ac420ad }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -506,7 +506,7 @@ Returns a bitmap of all FTSOs for which a data provider is allowed to submit pri
 
 <div class="api-node" markdown>
 
-### `voterWhitelisted` { #fn_voterwhitelisted }
+### `voterWhitelisted` { #fn_voterwhitelisted_9d986f91 }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -535,7 +535,7 @@ Only the [`VoterWhitelister`](./VoterWhitelister.md) contract can call this meth
 
 <div class="api-node" markdown>
 
-### `votersRemovedFromWhitelist` { #fn_votersremovedfromwhitelist }
+### `votersRemovedFromWhitelist` { #fn_votersremovedfromwhitelist_76794efb }
 
 <div class="api-node-source" markdown>
 Defined in `PriceSubmitter` ([Docs](./PriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/PriceSubmitter.sol)).
@@ -738,7 +738,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -757,7 +757,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

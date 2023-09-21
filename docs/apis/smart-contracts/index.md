@@ -4,12 +4,6 @@
 
 List of Flare smart contracts.
 
-!!! warning "Work in progress"
-
-    Only the following Flare protocols are fully documented:
-
-    * [FTSO](../../tech/ftso.md)
-
 ## Contracts
 
 | Name | Description |

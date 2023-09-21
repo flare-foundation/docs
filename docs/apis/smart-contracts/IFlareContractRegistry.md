@@ -24,7 +24,7 @@ Entry point for all external dapps that need the latest contract addresses deplo
 
 <div class="api-node" markdown>
 
-### `getAllContracts` { #fn_getallcontracts }
+### `getAllContracts` { #fn_getallcontracts_18d3ce96 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareContractRegistry` ([Docs](./IFlareContractRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFlareContractRegistry.sol)).
@@ -50,7 +50,7 @@ Returns all contract names and their corresponding addresses.
 
 <div class="api-node" markdown>
 
-### `getContractAddressByHash` { #fn_getcontractaddressbyhash }
+### `getContractAddressByHash` { #fn_getcontractaddressbyhash_159354a2 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareContractRegistry` ([Docs](./IFlareContractRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFlareContractRegistry.sol)).
@@ -79,7 +79,7 @@ Returns the address of a given contract hash.
 
 <div class="api-node" markdown>
 
-### `getContractAddressByName` { #fn_getcontractaddressbyname }
+### `getContractAddressByName` { #fn_getcontractaddressbyname_82760fca }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareContractRegistry` ([Docs](./IFlareContractRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFlareContractRegistry.sol)).
@@ -108,7 +108,7 @@ Returns the address of a given contract name.
 
 <div class="api-node" markdown>
 
-### `getContractAddressesByHash` { #fn_getcontractaddressesbyhash }
+### `getContractAddressesByHash` { #fn_getcontractaddressesbyhash_5e11e2d1 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareContractRegistry` ([Docs](./IFlareContractRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFlareContractRegistry.sol)).
@@ -137,7 +137,7 @@ Returns the addresses of a list of contract hashes.
 
 <div class="api-node" markdown>
 
-### `getContractAddressesByName` { #fn_getcontractaddressesbyname }
+### `getContractAddressesByName` { #fn_getcontractaddressesbyname_76d2b1af }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareContractRegistry` ([Docs](./IFlareContractRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFlareContractRegistry.sol)).

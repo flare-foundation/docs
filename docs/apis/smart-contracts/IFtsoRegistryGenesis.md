@@ -22,7 +22,7 @@ Portion of the [`IFtsoRegistry`](./IFtsoRegistry.md) interface that is available
 
 <div class="api-node" markdown>
 
-### `getFtsos` { #fn_getftsos }
+### `getFtsos` { #fn_getftsos_9cb47538 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRegistryGenesis` ([Docs](./IFtsoRegistryGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoRegistryGenesis.sol)).

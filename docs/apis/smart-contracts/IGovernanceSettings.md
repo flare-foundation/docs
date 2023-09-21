@@ -27,7 +27,7 @@ by hard-forking the network, meaning only by updating validator code.
 
 <div class="api-node" markdown>
 
-### `getExecutors` { #fn_getexecutors }
+### `getExecutors` { #fn_getexecutors_ef09e78f }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceSettings` ([Docs](./IGovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceSettings.sol)).
@@ -53,7 +53,7 @@ Executors can be changed without a hard fork, via a normal governance call.
 
 <div class="api-node" markdown>
 
-### `getGovernanceAddress` { #fn_getgovernanceaddress }
+### `getGovernanceAddress` { #fn_getgovernanceaddress_73252494 }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceSettings` ([Docs](./IGovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceSettings.sol)).
@@ -78,7 +78,7 @@ The governance address can only be changed by a hard fork.
 
 <div class="api-node" markdown>
 
-### `getTimelock` { #fn_gettimelock }
+### `getTimelock` { #fn_gettimelock_6221a54b }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceSettings` ([Docs](./IGovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceSettings.sol)).
@@ -103,7 +103,7 @@ The timelock value can only be changed by a hard fork.
 
 <div class="api-node" markdown>
 
-### `isExecutor` { #fn_isexecutor }
+### `isExecutor` { #fn_isexecutor_debfda30 }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceSettings` ([Docs](./IGovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceSettings.sol)).
@@ -118,7 +118,7 @@ function isExecutor(
     bool);
 ```
 
-Checks whether an address is one of the allowed executors. See [`getExecutors`](#fn_getexecutors).
+Checks whether an address is one of the allowed executors. See [`getExecutors`](#fn_getexecutors_ef09e78f).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |

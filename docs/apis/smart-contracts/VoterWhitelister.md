@@ -24,7 +24,7 @@ Only addresses registered in this contract can submit data to the FTSO system.
 
 <div class="api-node" markdown>
 
-### `addFtso` { #fn_addftso }
+### `addFtso` { #fn_addftso_345705a4 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -51,7 +51,7 @@ Only [`ftsoManager`](#va_ftsomanager) can call this method.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -65,9 +65,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -78,7 +78,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `chillVoter` { #fn_chillvoter }
+### `chillVoter` { #fn_chillvoter_2b4faebb }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -99,7 +99,7 @@ function chillVoter(
 Used to chill a data provider, this is, remove it from the whitelist for a
 specified number of reward epochs.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -112,7 +112,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `chilledUntilRewardEpoch` { #fn_chilleduntilrewardepoch }
+### `chilledUntilRewardEpoch` { #fn_chilleduntilrewardepoch_46538074 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -142,7 +142,7 @@ A voter can whitelist again from a returned reward epoch onwards.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -165,7 +165,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `Governed` ([Docs](./Governed.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/Governed.sol)).
@@ -188,7 +188,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `copyWhitelist` { #fn_copywhitelist }
+### `copyWhitelist` { #fn_copywhitelist_8e15c883 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -203,7 +203,7 @@ function copyWhitelist(
 ```
 
 Copy whitelist data from [`oldVoterWhitelister`](#va_oldvoterwhitelister) for a specific FTSO.
-Can only be called by [`governance`](#fn_governance).
+Can only be called by [`governance`](#fn_governance_5aa6e675).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -214,7 +214,7 @@ Can only be called by [`governance`](#fn_governance).
 
 <div class="api-node" markdown>
 
-### `defaultMaxVotersForFtso` { #fn_defaultmaxvotersforftso }
+### `defaultMaxVotersForFtso` { #fn_defaultmaxvotersforftso_47ed51b1 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -238,7 +238,7 @@ Maximum number of voters in the whitelist for a new FTSO.
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -252,7 +252,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -265,7 +265,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -289,7 +289,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `getFtsoWhitelistedPriceProviders` { #fn_getftsowhitelistedpriceproviders }
+### `getFtsoWhitelistedPriceProviders` { #fn_getftsowhitelistedpriceproviders_09fcb400 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -318,7 +318,7 @@ Gets whitelisted price providers for the FTSO at a given index.
 
 <div class="api-node" markdown>
 
-### `getFtsoWhitelistedPriceProvidersBySymbol` { #fn_getftsowhitelistedpriceprovidersbysymbol }
+### `getFtsoWhitelistedPriceProvidersBySymbol` { #fn_getftsowhitelistedpriceprovidersbysymbol_aa89dfd4 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -347,7 +347,7 @@ Gets whitelisted price providers for the FTSO with a specified symbol.
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -361,14 +361,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `maxVotersForFtso` { #fn_maxvotersforftso }
+### `maxVotersForFtso` { #fn_maxvotersforftso_98dccfc2 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -398,7 +398,7 @@ Adjustable separately for each index.
 
 <div class="api-node" markdown>
 
-### `removeFtso` { #fn_removeftso }
+### `removeFtso` { #fn_removeftso_d8736171 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -425,7 +425,7 @@ Only [`ftsoManager`](#va_ftsomanager) can call this method.
 
 <div class="api-node" markdown>
 
-### `removeTrustedAddressFromWhitelist` { #fn_removetrustedaddressfromwhitelist }
+### `removeTrustedAddressFromWhitelist` { #fn_removetrustedaddressfromwhitelist_9dc950ab }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -452,7 +452,7 @@ Remove a trusted address from whitelist.
 
 <div class="api-node" markdown>
 
-### `requestFullVoterWhitelisting` { #fn_requestfullvoterwhitelisting }
+### `requestFullVoterWhitelisting` { #fn_requestfullvoterwhitelisting_b06cbaf7 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -484,7 +484,7 @@ May be called by any address, including the voter itself.
 
 <div class="api-node" markdown>
 
-### `requestWhitelistingVoter` { #fn_requestwhitelistingvoter }
+### `requestWhitelistingVoter` { #fn_requestwhitelistingvoter_3de2cb1c }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -513,7 +513,7 @@ May be called by any address, including the voter itself.
 
 <div class="api-node" markdown>
 
-### `setDefaultMaxVotersForFtso` { #fn_setdefaultmaxvotersforftso }
+### `setDefaultMaxVotersForFtso` { #fn_setdefaultmaxvotersforftso_2ee96140 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -529,7 +529,7 @@ function setDefaultMaxVotersForFtso(
 
 Set the maximum number of voters in the whitelist for a new FTSOs.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -540,7 +540,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setMaxVotersForFtso` { #fn_setmaxvotersforftso }
+### `setMaxVotersForFtso` { #fn_setmaxvotersforftso_7ecfcfa3 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -558,7 +558,7 @@ function setMaxVotersForFtso(
 Set the maximum number of voters in the whitelist for a specific FTSO.
 Can remove voters with the least votepower from the whitelist.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -570,7 +570,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -583,8 +583,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -593,7 +593,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `turnOffCopyMode` { #fn_turnoffcopymode }
+### `turnOffCopyMode` { #fn_turnoffcopymode_3a65d7b6 }
 
 <div class="api-node-source" markdown>
 Defined in `VoterWhitelister` ([Docs](./VoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/VoterWhitelister.sol)).
@@ -607,14 +607,14 @@ function turnOffCopyMode(
 ```
 
 Turn off copy mode.
-Can only be called by [`governance`](#fn_governance).
+Can only be called by [`governance`](#fn_governance_5aa6e675).
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -947,7 +947,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -966,7 +966,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

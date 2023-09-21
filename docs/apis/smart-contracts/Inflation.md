@@ -41,7 +41,7 @@ event GovernanceCallTimelocked(
 )
 ```
 
-Emitted when a new [`governance`](#fn_governance) call has been recorded and is now waiting for the time lock to expire.
+Emitted when a new [`governance`](#fn_governance_5aa6e675) call has been recorded and is now waiting for the time lock to expire.
 
 </div>
 </div>
@@ -62,9 +62,9 @@ event GovernanceInitialised(
 )
 ```
 
-Emitted when the [`governance`](#fn_governance) address is initialized.
+Emitted when the [`governance`](#fn_governance_5aa6e675) address is initialized.
 This address will be used until production mode is entered (see [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered)).
-At that point the [`governance`](#fn_governance) address is taken from [`GovernanceSettings`](./GovernanceSettings.md).
+At that point the [`governance`](#fn_governance_5aa6e675) address is taken from [`GovernanceSettings`](./GovernanceSettings.md).
 
 </div>
 </div>
@@ -85,7 +85,7 @@ event GovernedProductionModeEntered(
 )
 ```
 
-Emitted when [`governance`](#fn_governance) is enabled and the [`governance`](#fn_governance) address cannot be changed anymore
+Emitted when [`governance`](#fn_governance_5aa6e675) is enabled and the [`governance`](#fn_governance_5aa6e675) address cannot be changed anymore
 (only through a network fork).
 
 </div>
@@ -268,7 +268,7 @@ event TimelockedGovernanceCallCanceled(
 )
 ```
 
-Emitted when a timelocked [`governance`](#fn_governance) call is canceled before execution.
+Emitted when a timelocked [`governance`](#fn_governance_5aa6e675) call is canceled before execution.
 
 </div>
 </div>
@@ -290,7 +290,7 @@ event TimelockedGovernanceCallExecuted(
 )
 ```
 
-Emitted when a timelocked [`governance`](#fn_governance) call is executed.
+Emitted when a timelocked [`governance`](#fn_governance_5aa6e675) call is executed.
 
 </div>
 </div>
@@ -342,7 +342,7 @@ event TopupRequested(
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -356,9 +356,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -369,7 +369,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -391,7 +391,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedAndFlareDaemonized` ([Docs](./GovernedAndFlareDaemonized.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/GovernedAndFlareDaemonized.sol)).
@@ -411,7 +411,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `Governed` ([Docs](./Governed.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/Governed.sol)).
@@ -434,7 +434,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `daemonize` { #fn_daemonize }
+### `daemonize` { #fn_daemonize_6d0e8c34 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -459,7 +459,7 @@ The trigger method is called by the validator right at the end of block state tr
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -473,7 +473,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -486,7 +486,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -510,7 +510,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `getContractName` { #fn_getcontractname }
+### `getContractName` { #fn_getcontractname_f5f5ba72 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -534,7 +534,7 @@ Implement this function to allow updating daemonized contracts through the [`Add
 
 <div class="api-node" markdown>
 
-### `getCurrentTimeSlot` { #fn_getcurrenttimeslot }
+### `getCurrentTimeSlot` { #fn_getcurrenttimeslot_5f61a576 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -560,7 +560,7 @@ Expect library to revert if there is no current time slot.
 
 <div class="api-node" markdown>
 
-### `getCurrentTimeSlotId` { #fn_getcurrenttimeslotid }
+### `getCurrentTimeSlotId` { #fn_getcurrenttimeslotid_7292d727 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -586,7 +586,7 @@ Expect library to revert if there is no current time slot.
 
 <div class="api-node" markdown>
 
-### `getNextExpectedTopupTs` { #fn_getnextexpectedtopupts }
+### `getNextExpectedTopupTs` { #fn_getnextexpectedtopupts_f639c12c }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -610,7 +610,7 @@ Expected diff is up to a few seconds (max is less then a minute).
 
 <div class="api-node" markdown>
 
-### `getRewardServices` { #fn_getrewardservices }
+### `getRewardServices` { #fn_getrewardservices_aa5b5eca }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -634,7 +634,7 @@ Return the structure of reward services.
 
 <div class="api-node" markdown>
 
-### `getTimeSlot` { #fn_gettimeslot }
+### `getTimeSlot` { #fn_gettimeslot_2b85dcc9 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -665,7 +665,7 @@ Expect library to revert if index not found.
 
 <div class="api-node" markdown>
 
-### `getTopupConfiguration` { #fn_gettopupconfiguration }
+### `getTopupConfiguration` { #fn_gettopupconfiguration_4b13e872 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -694,7 +694,7 @@ Given an inflation receiver, get the topup configuration.
 
 <div class="api-node" markdown>
 
-### `getTotals` { #fn_gettotals }
+### `getTotals` { #fn_gettotals_84e10a90 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -724,7 +724,7 @@ Get a tuple of totals across inflation time slots.
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -738,14 +738,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `receiveMinting` { #fn_receiveminting }
+### `receiveMinting` { #fn_receiveminting_c611c2c5 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -770,7 +770,7 @@ came from self-destructor sending a balance to this contract.
 
 <div class="api-node" markdown>
 
-### `setInitialData` { #fn_setinitialdata }
+### `setInitialData` { #fn_setinitialdata_b6f1f749 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -787,7 +787,7 @@ function setInitialData(
 
 Used to copy data from old inflation contract.
 
-Only [`governance`](#fn_governance) can call.
+Only [`governance`](#fn_governance_5aa6e675) can call.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -799,7 +799,7 @@ Only [`governance`](#fn_governance) can call.
 
 <div class="api-node" markdown>
 
-### `setPreInflationCalculation` { #fn_setpreinflationcalculation }
+### `setPreInflationCalculation` { #fn_setpreinflationcalculation_095bfd5a }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -815,14 +815,14 @@ function setPreInflationCalculation(
 
 Set contract that should be triggered before new inflation is calculated (it can be address(0))
 
-Only [`governance`](#fn_governance) can call.
+Only [`governance`](#fn_governance_5aa6e675) can call.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `setTopupConfiguration` { #fn_settopupconfiguration }
+### `setTopupConfiguration` { #fn_settopupconfiguration_6e61ab96 }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -840,7 +840,7 @@ function setTopupConfiguration(
 
 Set the topup configuration for a reward service.
 
-Only [`governance`](#fn_governance) can call.
+Only [`governance`](#fn_governance_5aa6e675) can call.
 
 Topup factor, if _topupType == FACTOROFDAILYAUTHORIZED, must be greater than 100.
 
@@ -855,7 +855,7 @@ Topup factor, if _topupType == FACTOROFDAILYAUTHORIZED, must be greater than 100
 
 <div class="api-node" markdown>
 
-### `switchToFallbackMode` { #fn_switchtofallbackmode }
+### `switchToFallbackMode` { #fn_switchtofallbackmode_e22fdece }
 
 <div class="api-node-source" markdown>
 Defined in `Inflation` ([Docs](./Inflation.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/implementation/Inflation.sol)).
@@ -869,7 +869,7 @@ function switchToFallbackMode(
     bool);
 ```
 
-This function will be called after an error is caught in [`daemonize`](#fn_daemonize).
+This function will be called after an error is caught in [`daemonize`](#fn_daemonize_6d0e8c34).
 It will switch the contract to a simpler fallback mode, which hopefully works when full mode doesn't.
 Not every contract needs to support fallback mode ([`FtsoManager`](./FtsoManager.md) does), so this method may be empty.
 Switching back to normal mode is left to the contract (typically a governed method call).
@@ -883,7 +883,7 @@ This function may be called due to low-gas error, so it shouldn't use more than 
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -896,8 +896,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -906,7 +906,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -1133,7 +1133,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -1207,7 +1207,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

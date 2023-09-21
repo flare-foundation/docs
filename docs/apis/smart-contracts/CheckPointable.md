@@ -52,7 +52,7 @@ Allows history cleaners to track total supply cache cleanup opportunities off-ch
 
 <div class="api-node" markdown>
 
-### `balanceHistoryCleanup` { #fn_balancehistorycleanup }
+### `balanceHistoryCleanup` { #fn_balancehistorycleanup_f0e292c9 }
 
 <div class="api-node-source" markdown>
 Defined in `CheckPointable` ([Docs](./CheckPointable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/CheckPointable.sol)).
@@ -84,7 +84,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `totalSupplyCacheCleanup` { #fn_totalsupplycachecleanup }
+### `totalSupplyCacheCleanup` { #fn_totalsupplycachecleanup_43ea370b }
 
 <div class="api-node-source" markdown>
 Defined in `CheckPointable` ([Docs](./CheckPointable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/CheckPointable.sol)).
@@ -114,7 +114,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `totalSupplyHistoryCleanup` { #fn_totalsupplyhistorycleanup }
+### `totalSupplyHistoryCleanup` { #fn_totalsupplyhistorycleanup_f62f8f3a }
 
 <div class="api-node-source" markdown>
 Defined in `CheckPointable` ([Docs](./CheckPointable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/CheckPointable.sol)).

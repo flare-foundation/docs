@@ -22,7 +22,7 @@ Portion of the [`Inflation`](./Inflation.md) contract that is available to contr
 
 <div class="api-node" markdown>
 
-### `receiveMinting` { #fn_receiveminting }
+### `receiveMinting` { #fn_receiveminting_c611c2c5 }
 
 <div class="api-node-source" markdown>
 Defined in `IInflationGenesis` ([Docs](./IInflationGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IInflationGenesis.sol)).

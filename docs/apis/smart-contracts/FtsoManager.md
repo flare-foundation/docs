@@ -32,7 +32,7 @@ It is in charge of:
 
 <div class="api-node" markdown>
 
-### `activate` { #fn_activate }
+### `activate` { #fn_activate_0f15f4c0 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -45,16 +45,16 @@ function activate(
 ) external;
 ```
 
-Activates FTSO manager ([`daemonize`](#fn_daemonize) will run jobs).
+Activates FTSO manager ([`daemonize`](#fn_daemonize_6d0e8c34) will run jobs).
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `active` { #fn_active }
+### `active` { #fn_active_02fb0c5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -68,7 +68,7 @@ function active(
     bool);
 ```
 
-Returns whether the FTSO Manager is [`active`](#fn_active) or not.
+Returns whether the FTSO Manager is [`active`](#fn_active_02fb0c5e) or not.
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -78,7 +78,7 @@ Returns whether the FTSO Manager is [`active`](#fn_active) or not.
 
 <div class="api-node" markdown>
 
-### `addFtso` { #fn_addftso }
+### `addFtso` { #fn_addftso_2663f1b4 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -95,7 +95,7 @@ function addFtso(
 Adds FTSO to the list of managed FTSOs, to support a new price pair.
 All FTSOs in a multi-asset FTSO must be managed by the same FTSO manager.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -106,7 +106,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `addFtsosBulk` { #fn_addftsosbulk }
+### `addFtsosBulk` { #fn_addftsosbulk_d429cfe5 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -123,7 +123,7 @@ function addFtsosBulk(
 Adds a list of FTSOs to the list of managed FTSOs, to support new price pairs.
 All FTSOs in a multi-asset FTSO must be managed by the same FTSO manager.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -134,7 +134,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -148,9 +148,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -161,7 +161,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -189,7 +189,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedAndFlareDaemonized` ([Docs](./GovernedAndFlareDaemonized.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/GovernedAndFlareDaemonized.sol)).
@@ -209,7 +209,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `Governed` ([Docs](./Governed.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/Governed.sol)).
@@ -232,7 +232,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `currentRewardEpochEnds` { #fn_currentrewardepochends }
+### `currentRewardEpochEnds` { #fn_currentrewardepochends_d89c39e6 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -256,7 +256,7 @@ Returns when the current reward epoch finishes.
 
 <div class="api-node" markdown>
 
-### `daemonize` { #fn_daemonize }
+### `daemonize` { #fn_daemonize_6d0e8c34 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -283,7 +283,7 @@ Only [`flareDaemon`](#va_flaredaemon) can call this method.
 
 <div class="api-node" markdown>
 
-### `deactivateFtsos` { #fn_deactivateftsos }
+### `deactivateFtsos` { #fn_deactivateftsos_8de306b1 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -298,7 +298,7 @@ function deactivateFtsos(
 ```
 
 Deactivates FTSOs that are no longer used on FTSO registry.
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -309,7 +309,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -323,7 +323,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -336,7 +336,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `ftsoRegistry` { #fn_ftsoregistry }
+### `ftsoRegistry` { #fn_ftsoregistry_38b5f869 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -357,7 +357,7 @@ Returns the [`FtsoRegistry`](./FtsoRegistry.md) contract address.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -381,7 +381,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `getContractName` { #fn_getcontractname }
+### `getContractName` { #fn_getcontractname_f5f5ba72 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -405,7 +405,7 @@ Implement this function to allow updating daemonized contracts through the [`Add
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochData` { #fn_getcurrentpriceepochdata }
+### `getCurrentPriceEpochData` { #fn_getcurrentpriceepochdata_93a79025 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -442,7 +442,7 @@ for information about the different submission phases.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid }
+### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid_08a7f402 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -466,7 +466,7 @@ Returns current price epoch ID.
 
 <div class="api-node" markdown>
 
-### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch }
+### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch_e7c830d4 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -490,7 +490,7 @@ Returns current reward epoch ID (the one currently running).
 
 <div class="api-node" markdown>
 
-### `getElasticBandWidthPPMFtso` { #fn_getelasticbandwidthppmftso }
+### `getElasticBandWidthPPMFtso` { #fn_getelasticbandwidthppmftso_5bb44e9a }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -520,7 +520,7 @@ for a given FTSO.
 
 <div class="api-node" markdown>
 
-### `getFallbackMode` { #fn_getfallbackmode }
+### `getFallbackMode` { #fn_getfallbackmode_4b48dd5e }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -550,7 +550,7 @@ In this mode only submissions from trusted providers are used.
 
 <div class="api-node" markdown>
 
-### `getFtsos` { #fn_getftsos }
+### `getFtsos` { #fn_getftsos_ce69f833 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -574,7 +574,7 @@ Returns the list of currently [`active`](#va_active) FTSOs.
 
 <div class="api-node" markdown>
 
-### `getGovernanceParameters` { #fn_getgovernanceparameters }
+### `getGovernanceParameters` { #fn_getgovernanceparameters_5835cf30 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -598,7 +598,7 @@ function getGovernanceParameters(
     bool _changed);
 ```
 
-Returns [`governance`](#fn_governance) parameters for FTSOs.
+Returns [`governance`](#fn_governance_5aa6e675) parameters for FTSOs.
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -618,7 +618,7 @@ Returns [`governance`](#fn_governance) parameters for FTSOs.
 
 <div class="api-node" markdown>
 
-### `getLastUnprocessedPriceEpochData` { #fn_getlastunprocessedpriceepochdata }
+### `getLastUnprocessedPriceEpochData` { #fn_getlastunprocessedpriceepochdata_6ca051e6 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -648,7 +648,7 @@ time due to validator node problems, for example.
 
 <div class="api-node" markdown>
 
-### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration }
+### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration_144e1591 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -679,7 +679,7 @@ for information about the different submission phases.
 
 <div class="api-node" markdown>
 
-### `getPriceSubmitter` { #fn_getpricesubmitter }
+### `getPriceSubmitter` { #fn_getpricesubmitter_0e063d7d }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -700,7 +700,7 @@ Returns the [`PriceSubmitter`](./PriceSubmitter.md) contract.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochConfiguration` { #fn_getrewardepochconfiguration }
+### `getRewardEpochConfiguration` { #fn_getrewardepochconfiguration_1cb513f7 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -728,7 +728,7 @@ See the [Reward epochs](https://docs.flare.network/tech/ftso/#vote-power) box.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochData` { #fn_getrewardepochdata }
+### `getRewardEpochData` { #fn_getrewardepochdata_e5399da3 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -757,7 +757,7 @@ Returns data regarding a specific reward epoch ID.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext }
+### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext_3e7ff857 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -784,7 +784,7 @@ inaccessible.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock }
+### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock_f2edab5a }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -814,7 +814,7 @@ that was used for a past reward epoch.
 
 <div class="api-node" markdown>
 
-### `getRewardExpiryOffsetSeconds` { #fn_getrewardexpiryoffsetseconds }
+### `getRewardExpiryOffsetSeconds` { #fn_getrewardexpiryoffsetseconds_ec31db0c }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -838,7 +838,7 @@ Returns the currently configured reward expiration time.
 
 <div class="api-node" markdown>
 
-### `getUpdateGovernanceParametersTs` { #fn_getupdategovernanceparametersts }
+### `getUpdateGovernanceParametersTs` { #fn_getupdategovernanceparametersts_a157713b }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -860,7 +860,7 @@ will take effect.
 
 <div class="api-node" markdown>
 
-### `getVotePowerIntervalFraction` { #fn_getvotepowerintervalfraction }
+### `getVotePowerIntervalFraction` { #fn_getvotepowerintervalfraction_60f2c5b2 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -879,7 +879,7 @@ function getVotePowerIntervalFraction(
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -893,14 +893,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `notInitializedFtsos` { #fn_notinitializedftsos }
+### `notInitializedFtsos` { #fn_notinitializedftsos_823033a9 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -925,7 +925,7 @@ Returns whether an FTSO has been initialized.
 
 <div class="api-node" markdown>
 
-### `removeFtso` { #fn_removeftso }
+### `removeFtso` { #fn_removeftso_a670ff87 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -943,7 +943,7 @@ Removes an FTSO from the list of managed FTSOs.
 Reverts if FTSO is used in a multi-asset FTSO.
 Deactivates the `_ftso`.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -954,7 +954,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `replaceFtso` { #fn_replaceftso }
+### `replaceFtso` { #fn_replaceftso_3758e679 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -974,7 +974,7 @@ Replaces one FTSO with another with the same symbol.
 All FTSOs in a multi-asset FTSO must be managed by the same FTSO manager.
 Deactivates the old FTSO.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -987,7 +987,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `replaceFtsosBulk` { #fn_replaceftsosbulk }
+### `replaceFtsosBulk` { #fn_replaceftsosbulk_758ff1da }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1007,7 +1007,7 @@ Replaces a list of FTSOs with other FTSOs with the same symbol.
 All FTSOs in a multi-asset FTSO must be managed by the same FTSO manager.
 Deactivates the old FTSOs.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1020,7 +1020,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `rewardEpochDurationSeconds` { #fn_rewardepochdurationseconds }
+### `rewardEpochDurationSeconds` { #fn_rewardepochdurationseconds_85f3c9c9 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1044,7 +1044,7 @@ Currently configured reward epoch duration.
 
 <div class="api-node" markdown>
 
-### `rewardEpochs` { #fn_rewardepochs }
+### `rewardEpochs` { #fn_rewardepochs_a795f409 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1077,7 +1077,7 @@ Returns information about a reward epoch.
 
 <div class="api-node" markdown>
 
-### `rewardEpochsStartTs` { #fn_rewardepochsstartts }
+### `rewardEpochsStartTs` { #fn_rewardepochsstartts_a578f55b }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1101,7 +1101,7 @@ Time when the current reward epoch started.
 
 <div class="api-node" markdown>
 
-### `setElasticBandWidthPPMFtsos` { #fn_setelasticbandwidthppmftsos }
+### `setElasticBandWidthPPMFtsos` { #fn_setelasticbandwidthppmftsos_882376c3 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1118,7 +1118,7 @@ function setElasticBandWidthPPMFtsos(
 ```
 
 Sets elastic band widths in PPM (parts-per-million) for given FTSOs.
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1131,7 +1131,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setFallbackMode` { #fn_setfallbackmode }
+### `setFallbackMode` { #fn_setfallbackmode_ff882fbb }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1148,7 +1148,7 @@ function setFallbackMode(
 Sets whether the FTSO Manager is currently in fallback mode.
 In this mode only submissions from trusted providers are used.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1159,7 +1159,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setFtsoAsset` { #fn_setftsoasset }
+### `setFtsoAsset` { #fn_setftsoasset_6b65cc34 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1176,7 +1176,7 @@ function setFtsoAsset(
 
 Sets the asset tracked by an FTSO.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1188,7 +1188,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setFtsoAssetFtsos` { #fn_setftsoassetftsos }
+### `setFtsoAssetFtsos` { #fn_setftsoassetftsos_a93a6f42 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1206,7 +1206,7 @@ function setFtsoAssetFtsos(
 Sets an array of FTSOs to be tracked by a multi-asset FTSO.
 FTSOs implicitly determine the FTSO assets.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1218,7 +1218,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setFtsoFallbackMode` { #fn_setftsofallbackmode }
+### `setFtsoFallbackMode` { #fn_setftsofallbackmode_af946af7 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1236,7 +1236,7 @@ function setFtsoFallbackMode(
 Sets whether an FTSO is currently in fallback mode.
 In this mode only submissions from trusted providers are used.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1248,7 +1248,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setGovernanceParameters` { #fn_setgovernanceparameters }
+### `setGovernanceParameters` { #fn_setgovernanceparameters_13226793 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1271,9 +1271,9 @@ function setGovernanceParameters(
 ) external;
 ```
 
-Sets [`governance`](#fn_governance) parameters for FTSOs
+Sets [`governance`](#fn_governance_5aa6e675) parameters for FTSOs
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1293,7 +1293,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setInitialRewardData` { #fn_setinitialrewarddata }
+### `setInitialRewardData` { #fn_setinitialrewarddata_e080a970 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1312,7 +1312,7 @@ function setInitialRewardData(
 Set reward data to values from old ftso manager.
 Can only be called before activation.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1325,7 +1325,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `setRewardEpochDurationSeconds` { #fn_setrewardepochdurationseconds }
+### `setRewardEpochDurationSeconds` { #fn_setrewardepochdurationseconds_132c7e1f }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1340,7 +1340,7 @@ function setRewardEpochDurationSeconds(
 ```
 
 Sets the reward epoch duration.
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 If the reward epoch is very short and the expiry offset is very long, the list of reward epochs
 to be checked becomes very long. Therefore reward epoch time has to be capped to expiry offset.
@@ -1350,7 +1350,7 @@ to be checked becomes very long. Therefore reward epoch time has to be capped to
 
 <div class="api-node" markdown>
 
-### `setUpdateOnRewardEpochSwitchover` { #fn_setupdateonrewardepochswitchover }
+### `setUpdateOnRewardEpochSwitchover` { #fn_setupdateonrewardepochswitchover_3fdeb7e1 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1371,7 +1371,7 @@ Unused.
 
 <div class="api-node" markdown>
 
-### `setUseGoodRandom` { #fn_setusegoodrandom }
+### `setUseGoodRandom` { #fn_setusegoodrandom_a90a38e1 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1386,8 +1386,8 @@ function setUseGoodRandom(
 ) external;
 ```
 
-Allow [`governance`](#fn_governance) to switch to good random numbers only.
-Only [`governance`](#fn_governance) can call this method.
+Allow [`governance`](#fn_governance_5aa6e675) to switch to good random numbers only.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 See [`IFtsoManager`](./IFtsoManager.md).[`UseGoodRandomSet`](#ev_usegoodrandomset).
 
@@ -1401,7 +1401,7 @@ See [`IFtsoManager`](./IFtsoManager.md).[`UseGoodRandomSet`](#ev_usegoodrandomse
 
 <div class="api-node" markdown>
 
-### `setVotePowerIntervalFraction` { #fn_setvotepowerintervalfraction }
+### `setVotePowerIntervalFraction` { #fn_setvotepowerintervalfraction_361b5459 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1420,7 +1420,7 @@ function setVotePowerIntervalFraction(
 
 <div class="api-node" markdown>
 
-### `showLastRevertedError` { #fn_showlastrevertederror }
+### `showLastRevertedError` { #fn_showlastrevertederror_2b3c41a4 }
 
 <div class="api-node-source" markdown>
 Defined in `RevertErrorTracking` ([Docs](./RevertErrorTracking.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/RevertErrorTracking.sol)).
@@ -1452,7 +1452,7 @@ Returns latest error information. All arrays will contain only one entry.
 
 <div class="api-node" markdown>
 
-### `showRevertedErrors` { #fn_showrevertederrors }
+### `showRevertedErrors` { #fn_showrevertederrors_6ea0aa31 }
 
 <div class="api-node-source" markdown>
 Defined in `RevertErrorTracking` ([Docs](./RevertErrorTracking.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/RevertErrorTracking.sol)).
@@ -1491,7 +1491,7 @@ Returns latest errors.
 
 <div class="api-node" markdown>
 
-### `switchToFallbackMode` { #fn_switchtofallbackmode }
+### `switchToFallbackMode` { #fn_switchtofallbackmode_e22fdece }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1505,7 +1505,7 @@ function switchToFallbackMode(
     bool);
 ```
 
-This function will be called after an error is caught in [`daemonize`](#fn_daemonize).
+This function will be called after an error is caught in [`daemonize`](#fn_daemonize_6d0e8c34).
 It will switch the contract to a simpler fallback mode, which hopefully works when full mode doesn't.
 Not every contract needs to support fallback mode ([`FtsoManager`](./FtsoManager.md) does), so this method may be empty.
 Switching back to normal mode is left to the contract (typically a governed method call).
@@ -1521,7 +1521,7 @@ Only [`flareDaemon`](#va_flaredaemon) can call this method.
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -1534,8 +1534,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -1544,7 +1544,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -1566,7 +1566,7 @@ External method called from [`AddressUpdater`](./AddressUpdater.md) only.
 
 <div class="api-node" markdown>
 
-### `voterWhitelister` { #fn_voterwhitelister }
+### `voterWhitelister` { #fn_voterwhitelister_c2b0d47b }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoManager` ([Docs](./FtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/implementation/FtsoManager.sol)).
@@ -1814,7 +1814,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -1907,7 +1907,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

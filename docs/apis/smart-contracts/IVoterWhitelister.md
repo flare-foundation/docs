@@ -111,7 +111,7 @@ Emitted when an account is added to the voter whitelist.
 
 <div class="api-node" markdown>
 
-### `chilledUntilRewardEpoch` { #fn_chilleduntilrewardepoch }
+### `chilledUntilRewardEpoch` { #fn_chilleduntilrewardepoch_46538074 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -141,7 +141,7 @@ A voter can whitelist again from a returned reward epoch onwards.
 
 <div class="api-node" markdown>
 
-### `defaultMaxVotersForFtso` { #fn_defaultmaxvotersforftso }
+### `defaultMaxVotersForFtso` { #fn_defaultmaxvotersforftso_47ed51b1 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -165,7 +165,7 @@ Maximum number of voters in the whitelist for a new FTSO.
 
 <div class="api-node" markdown>
 
-### `getFtsoWhitelistedPriceProviders` { #fn_getftsowhitelistedpriceproviders }
+### `getFtsoWhitelistedPriceProviders` { #fn_getftsowhitelistedpriceproviders_09fcb400 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -194,7 +194,7 @@ Gets whitelisted price providers for the FTSO at a given index.
 
 <div class="api-node" markdown>
 
-### `getFtsoWhitelistedPriceProvidersBySymbol` { #fn_getftsowhitelistedpriceprovidersbysymbol }
+### `getFtsoWhitelistedPriceProvidersBySymbol` { #fn_getftsowhitelistedpriceprovidersbysymbol_aa89dfd4 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -223,7 +223,7 @@ Gets whitelisted price providers for the FTSO with a specified symbol.
 
 <div class="api-node" markdown>
 
-### `maxVotersForFtso` { #fn_maxvotersforftso }
+### `maxVotersForFtso` { #fn_maxvotersforftso_98dccfc2 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -253,7 +253,7 @@ Adjustable separately for each index.
 
 <div class="api-node" markdown>
 
-### `requestFullVoterWhitelisting` { #fn_requestfullvoterwhitelisting }
+### `requestFullVoterWhitelisting` { #fn_requestfullvoterwhitelisting_b06cbaf7 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -285,7 +285,7 @@ May be called by any address, including the voter itself.
 
 <div class="api-node" markdown>
 
-### `requestWhitelistingVoter` { #fn_requestwhitelistingvoter }
+### `requestWhitelistingVoter` { #fn_requestwhitelistingvoter_3de2cb1c }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).

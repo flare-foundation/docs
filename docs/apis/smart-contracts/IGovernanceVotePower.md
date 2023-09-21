@@ -22,7 +22,7 @@ Interface for contracts delegating their governance vote power.
 
 <div class="api-node" markdown>
 
-### `delegate` { #fn_delegate }
+### `delegate` { #fn_delegate_5c19a95c }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceVotePower` ([Docs](./IGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceVotePower.sol)).
@@ -47,7 +47,7 @@ Delegates all governance vote power of `msg.sender` to address `_to`.
 
 <div class="api-node" markdown>
 
-### `getDelegateOfAt` { #fn_getdelegateofat }
+### `getDelegateOfAt` { #fn_getdelegateofat_3c028e9d }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceVotePower` ([Docs](./IGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceVotePower.sol)).
@@ -78,7 +78,7 @@ Gets the address an account is delegating its governance vote power to, at a giv
 
 <div class="api-node" markdown>
 
-### `getDelegateOfAtNow` { #fn_getdelegateofatnow }
+### `getDelegateOfAtNow` { #fn_getdelegateofatnow_b3e871ee }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceVotePower` ([Docs](./IGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceVotePower.sol)).
@@ -107,7 +107,7 @@ Gets the address an account is delegating its governance vote power to, at the l
 
 <div class="api-node" markdown>
 
-### `getVotes` { #fn_getvotes }
+### `getVotes` { #fn_getvotes_9ab24eb0 }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceVotePower` ([Docs](./IGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceVotePower.sol)).
@@ -137,7 +137,7 @@ all delegations made to it.
 
 <div class="api-node" markdown>
 
-### `undelegate` { #fn_undelegate }
+### `undelegate` { #fn_undelegate_92ab89bb }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceVotePower` ([Docs](./IGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceVotePower.sol)).
@@ -157,7 +157,7 @@ Undelegates all governance vote power of `msg.sender`.
 
 <div class="api-node" markdown>
 
-### `votePowerOfAt` { #fn_votepowerofat }
+### `votePowerOfAt` { #fn_votepowerofat_92bfe6d8 }
 
 <div class="api-node-source" markdown>
 Defined in `IGovernanceVotePower` ([Docs](./IGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IGovernanceVotePower.sol)).

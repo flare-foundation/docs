@@ -22,7 +22,7 @@ Portion of the [`IFtsoManager`](./IFtsoManager.md) interface that is available t
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid }
+### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid_08a7f402 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManagerGenesis` ([Docs](./IFtsoManagerGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoManagerGenesis.sol)).

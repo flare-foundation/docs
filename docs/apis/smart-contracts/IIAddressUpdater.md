@@ -22,7 +22,7 @@ Internal interface for [`AddressUpdater`](./AddressUpdater.md).
 
 <div class="api-node" markdown>
 
-### `getContractAddress` { #fn_getcontractaddress }
+### `getContractAddress` { #fn_getcontractaddress_04433bbc }
 
 <div class="api-node-source" markdown>
 Defined in `IIAddressUpdater` ([Docs](./IIAddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/interface/IIAddressUpdater.sol)).
@@ -51,7 +51,7 @@ Returns contract address for the given name, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractAddressByHash` { #fn_getcontractaddressbyhash }
+### `getContractAddressByHash` { #fn_getcontractaddressbyhash_159354a2 }
 
 <div class="api-node-source" markdown>
 Defined in `IIAddressUpdater` ([Docs](./IIAddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/interface/IIAddressUpdater.sol)).
@@ -80,7 +80,7 @@ Returns contract address for the given name hash, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractAddresses` { #fn_getcontractaddresses }
+### `getContractAddresses` { #fn_getcontractaddresses_ee6f63c3 }
 
 <div class="api-node-source" markdown>
 Defined in `IIAddressUpdater` ([Docs](./IIAddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/interface/IIAddressUpdater.sol)).
@@ -109,7 +109,7 @@ Returns contract addresses for the given names, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractAddressesByHash` { #fn_getcontractaddressesbyhash }
+### `getContractAddressesByHash` { #fn_getcontractaddressesbyhash_5e11e2d1 }
 
 <div class="api-node-source" markdown>
 Defined in `IIAddressUpdater` ([Docs](./IIAddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/interface/IIAddressUpdater.sol)).
@@ -138,7 +138,7 @@ Returns contract addresses for the given name hashes, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractNamesAndAddresses` { #fn_getcontractnamesandaddresses }
+### `getContractNamesAndAddresses` { #fn_getcontractnamesandaddresses_2f26c5c3 }
 
 <div class="api-node-source" markdown>
 Defined in `IIAddressUpdater` ([Docs](./IIAddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/interface/IIAddressUpdater.sol)).

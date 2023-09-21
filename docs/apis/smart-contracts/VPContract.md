@@ -22,7 +22,7 @@ Helper contract handling all the vote power and delegation functionality for an 
 
 <div class="api-node" markdown>
 
-### `batchVotePowerOfAt` { #fn_batchvotepowerofat }
+### `batchVotePowerOfAt` { #fn_batchvotepowerofat_49e3c7e5 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -53,7 +53,7 @@ Get the vote power of a set of addresses at a given block number.
 
 <div class="api-node" markdown>
 
-### `cleanupBlockNumber` { #fn_cleanupblocknumber }
+### `cleanupBlockNumber` { #fn_cleanupblocknumber_deea13e7 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -67,7 +67,7 @@ function cleanupBlockNumber(
     uint256);
 ```
 
-Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber).
+Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber_13de97f5).
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -77,7 +77,7 @@ Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setc
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -99,7 +99,7 @@ Construct [`VPContract`](./VPContract.md) for given [`VPToken`](./VPToken.md).
 
 <div class="api-node" markdown>
 
-### `delegate` { #fn_delegate }
+### `delegate` { #fn_delegate_6230001a }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -130,7 +130,7 @@ function delegate(
 
 <div class="api-node" markdown>
 
-### `delegateExplicit` { #fn_delegateexplicit }
+### `delegateExplicit` { #fn_delegateexplicit_404d9e82 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -147,7 +147,7 @@ function delegateExplicit(
 ) external;
 ```
 
-Explicitly [`delegate`](#fn_delegate) `_amount` tokens of voting power from a delegator address to a delegatee address.
+Explicitly [`delegate`](#fn_delegate_6230001a) `_amount` tokens of voting power from a delegator address to a delegatee address.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -161,7 +161,7 @@ Explicitly [`delegate`](#fn_delegate) `_amount` tokens of voting power from a de
 
 <div class="api-node" markdown>
 
-### `delegatesOf` { #fn_delegatesof }
+### `delegatesOf` { #fn_delegatesof_7de5b8ed }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -196,7 +196,7 @@ Get the percentages and addresses being delegated to by a vote power delegator.
 
 <div class="api-node" markdown>
 
-### `delegatesOfAt` { #fn_delegatesofat }
+### `delegatesOfAt` { #fn_delegatesofat_ed475a79 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -234,7 +234,7 @@ at a given block.
 
 <div class="api-node" markdown>
 
-### `delegationModeOf` { #fn_delegationmodeof }
+### `delegationModeOf` { #fn_delegationmodeof_f6837767 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -251,7 +251,7 @@ function delegationModeOf(
 
 Get the delegation mode of an address. This mode determines whether vote power is
 allocated by percentage or by explicit value and cannot be changed once set with
-[`delegate`](#fn_delegate) or [`delegateExplicit`](#fn_delegateexplicit).
+[`delegate`](#fn_delegate_6230001a) or [`delegateExplicit`](#fn_delegateexplicit_404d9e82).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -265,7 +265,7 @@ allocated by percentage or by explicit value and cannot be changed once set with
 
 <div class="api-node" markdown>
 
-### `explicitDelegationHistoryCleanup` { #fn_explicitdelegationhistorycleanup }
+### `explicitDelegationHistoryCleanup` { #fn_explicitdelegationhistorycleanup_cabc4528 }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -299,7 +299,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `isReplacement` { #fn_isreplacement }
+### `isReplacement` { #fn_isreplacement_aa94d3f2 }
 
 <div class="api-node-source" markdown>
 Defined in `IIVPContract` ([Docs](./IIVPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IIVPContract.sol)).
@@ -322,7 +322,7 @@ every method that reads vote power must check whether it is initialized for that
 
 <div class="api-node" markdown>
 
-### `ownerToken` { #fn_ownertoken }
+### `ownerToken` { #fn_ownertoken_65371883 }
 
 <div class="api-node-source" markdown>
 Defined in `IIVPContract` ([Docs](./IIVPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IIVPContract.sol)).
@@ -348,7 +348,7 @@ Owner token is also used in case of replacement to recover vote powers from bala
 
 <div class="api-node" markdown>
 
-### `percentageDelegationHistoryCleanup` { #fn_percentagedelegationhistorycleanup }
+### `percentageDelegationHistoryCleanup` { #fn_percentagedelegationhistorycleanup_7f57d58f }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -380,7 +380,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `revocationCleanup` { #fn_revocationcleanup }
+### `revocationCleanup` { #fn_revocationcleanup_8c0b6b40 }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -414,7 +414,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `revokeDelegationAt` { #fn_revokedelegationat }
+### `revokeDelegationAt` { #fn_revokedelegationat_c7c62fab }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -432,10 +432,10 @@ function revokeDelegationAt(
 ```
 
 [`Revoke`](#ev_revoke) all vote power delegation from a delegator address to a delegatee address at a given block.
-Only affects the reads via [`votePowerOfAtCached`](#fn_votepowerofatcached) in the block `_blockNumber`.
-This method should be used only to prevent rogue [`delegate`](#fn_delegate) voting in the current voting block.
-To stop delegating use [`delegate`](#fn_delegate) or [`delegateExplicit`](#fn_delegateexplicit) with value of 0,
-or [`undelegateAll`](#fn_undelegateall)/ [`undelegateAllExplicit`](#fn_undelegateallexplicit).
+Only affects the reads via [`votePowerOfAtCached`](#fn_votepowerofatcached_e587497e) in the block `_blockNumber`.
+This method should be used only to prevent rogue [`delegate`](#fn_delegate_6230001a) voting in the current voting block.
+To stop delegating use [`delegate`](#fn_delegate_6230001a) or [`delegateExplicit`](#fn_delegateexplicit_404d9e82) with value of 0,
+or [`undelegateAll`](#fn_undelegateall_05109ecf)/ [`undelegateAllExplicit`](#fn_undelegateallexplicit_0f8b8af7).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -449,7 +449,7 @@ or [`undelegateAll`](#fn_undelegateall)/ [`undelegateAllExplicit`](#fn_undelegat
 
 <div class="api-node" markdown>
 
-### `setCleanerContract` { #fn_setcleanercontract }
+### `setCleanerContract` { #fn_setcleanercontract_f6a494af }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -474,7 +474,7 @@ Set the contract that is allowed to call history cleaning methods.
 
 <div class="api-node" markdown>
 
-### `setCleanupBlockNumber` { #fn_setcleanupblocknumber }
+### `setCleanupBlockNumber` { #fn_setcleanupblocknumber_13de97f5 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -489,7 +489,7 @@ function setCleanupBlockNumber(
 ```
 
 Set the cleanup block number.
-Historic data for the blocks before [`cleanupBlockNumber`](#fn_cleanupblocknumber) can be erased.
+Historic data for the blocks before [`cleanupBlockNumber`](#fn_cleanupblocknumber_deea13e7) can be erased.
 History before that block should never be used since it can be inconsistent.
 In particular, cleanup block number must be lower than the current vote power block.
 
@@ -504,7 +504,7 @@ The method can be called only by the owner token.
 
 <div class="api-node" markdown>
 
-### `undelegateAll` { #fn_undelegateall }
+### `undelegateAll` { #fn_undelegateall_05109ecf }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -533,7 +533,7 @@ Does not reset delegation mode back to `NOTSET`.
 
 <div class="api-node" markdown>
 
-### `undelegateAllExplicit` { #fn_undelegateallexplicit }
+### `undelegateAllExplicit` { #fn_undelegateallexplicit_0f8b8af7 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -566,7 +566,7 @@ Does not reset delegation mode back to `NOTSET`.
 
 <div class="api-node" markdown>
 
-### `undelegatedVotePowerOf` { #fn_undelegatedvotepowerof }
+### `undelegatedVotePowerOf` { #fn_undelegatedvotepowerof_4a03d556 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -597,7 +597,7 @@ Compute the current undelegated vote power of an address.
 
 <div class="api-node" markdown>
 
-### `undelegatedVotePowerOfAt` { #fn_undelegatedvotepowerofat }
+### `undelegatedVotePowerOfAt` { #fn_undelegatedvotepowerofat_31503927 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -630,7 +630,7 @@ Compute the undelegated vote power of an address at a given block.
 
 <div class="api-node" markdown>
 
-### `updateAtTokenTransfer` { #fn_updateattokentransfer }
+### `updateAtTokenTransfer` { #fn_updateattokentransfer_eadb4362 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -665,7 +665,7 @@ and check for enough funds for explicit delegations.
 
 <div class="api-node" markdown>
 
-### `votePowerCacheCleanup` { #fn_votepowercachecleanup }
+### `votePowerCacheCleanup` { #fn_votepowercachecleanup_891339a8 }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -697,7 +697,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `votePowerFromTo` { #fn_votepowerfromto }
+### `votePowerFromTo` { #fn_votepowerfromto_9dc6b9f2 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -730,7 +730,7 @@ Get current delegated vote power from a delegator to a delegatee.
 
 <div class="api-node" markdown>
 
-### `votePowerFromToAt` { #fn_votepowerfromtoat }
+### `votePowerFromToAt` { #fn_votepowerfromtoat_833aca92 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -765,7 +765,7 @@ Get delegated the vote power from a delegator to a delegatee at a given block nu
 
 <div class="api-node" markdown>
 
-### `votePowerHistoryCleanup` { #fn_votepowerhistorycleanup }
+### `votePowerHistoryCleanup` { #fn_votepowerhistorycleanup_1a05274c }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -797,7 +797,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `votePowerOf` { #fn_votepowerof }
+### `votePowerOf` { #fn_votepowerof_142d1018 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -826,7 +826,7 @@ Get the current vote power of an address.
 
 <div class="api-node" markdown>
 
-### `votePowerOfAt` { #fn_votepowerofat }
+### `votePowerOfAt` { #fn_votepowerofat_92bfe6d8 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -857,7 +857,7 @@ Get the vote power of an address at a given block number
 
 <div class="api-node" markdown>
 
-### `votePowerOfAtCached` { #fn_votepowerofatcached }
+### `votePowerOfAtCached` { #fn_votepowerofatcached_e587497e }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -889,7 +889,7 @@ Reads/updates cache and upholds revocations.
 
 <div class="api-node" markdown>
 
-### `votePowerOfAtIgnoringRevocation` { #fn_votepowerofatignoringrevocation }
+### `votePowerOfAtIgnoringRevocation` { #fn_votepowerofatignoringrevocation_04bb4e43 }
 
 <div class="api-node-source" markdown>
 Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPContract.sol)).
@@ -981,7 +981,7 @@ Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/fl
 modifier onlyExplicit(    address sender)
 ```
 
-If a [`delegate`](#fn_delegate) cannot be added by explicit amount, revert.
+If a [`delegate`](#fn_delegate_6230001a) cannot be added by explicit amount, revert.
 
 </div>
 </div>
@@ -1019,7 +1019,7 @@ Defined in `VPContract` ([Docs](./VPContract.md), [Source](https://gitlab.com/fl
 modifier onlyPercent(    address sender)
 ```
 
-If a [`delegate`](#fn_delegate) cannot be added by percentage, revert.
+If a [`delegate`](#fn_delegate_6230001a) cannot be added by percentage, revert.
 
 </div>
 </div>

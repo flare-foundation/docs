@@ -22,7 +22,7 @@ Handles registration of assets to the [FTSO system](https://docs.flare.network/t
 
 <div class="api-node" markdown>
 
-### `addFtso` { #fn_addftso }
+### `addFtso` { #fn_addftso_2663f1b4 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -53,7 +53,7 @@ Only the [`ftsoManager`](#va_ftsomanager) can call this method.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -67,9 +67,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -80,7 +80,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -98,7 +98,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -112,7 +112,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -125,7 +125,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -149,7 +149,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `getAllCurrentPrices` { #fn_getallcurrentprices }
+### `getAllCurrentPrices` { #fn_getallcurrentprices_58f9296f }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -173,7 +173,7 @@ Returns the current price of all supported assets.
 
 <div class="api-node" markdown>
 
-### `getAllFtsos` { #fn_getallftsos }
+### `getAllFtsos` { #fn_getallftsos_2bcdd6ab }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -197,7 +197,7 @@ Return all currently supported FTSO contracts.
 
 <div class="api-node" markdown>
 
-### `getCurrentPrice` { #fn_getcurrentprice }
+### `getCurrentPrice` { #fn_getcurrentprice_c55d0f56 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -229,7 +229,39 @@ Reverts if the index is not supported.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals }
+### `getCurrentPrice` { #fn_getcurrentprice_42a0f243 }
+
+<div class="api-node-source" markdown>
+Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+function getCurrentPrice(
+    string _symbol
+) external view returns (
+    uint256 _price,
+    uint256 _timestamp);
+```
+
+Public view function to get the current price of a given active asset symbol.
+Reverts if the symbol is not supported.
+
+| Parameters | Type | Description |
+| ---------- | ---- | ----------- |
+| `_symbol` | `string` | Symbol to query. |
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+| `_price` | `uint256` | Current price of the asset in USD multiplied by 10^`ASSET_PRICE_USD_DECIMALS`. |
+| `_timestamp` | `uint256` | Timestamp for when this price was updated, in seconds since UNIX epoch. |
+</div>
+</div>
+
+<div class="api-node" markdown>
+
+### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals_257cbd3a }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -263,7 +295,41 @@ Reverts if the index is not supported.
 
 <div class="api-node" markdown>
 
-### `getCurrentPricesByIndices` { #fn_getcurrentpricesbyindices }
+### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals_a69afdc6 }
+
+<div class="api-node-source" markdown>
+Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+function getCurrentPriceWithDecimals(
+    string _symbol
+) external view returns (
+    uint256 _price,
+    uint256 _timestamp,
+    uint256 _assetPriceUsdDecimals);
+```
+
+Public view function to get the current price and decimals of a given active asset symbol.
+Reverts if the symbol is not supported.
+
+| Parameters | Type | Description |
+| ---------- | ---- | ----------- |
+| `_symbol` | `string` | Symbol to query. |
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+| `_price` | `uint256` | Current price of the asset in USD multiplied by 10^`_assetPriceUsdDecimals`. |
+| `_timestamp` | `uint256` | Timestamp for when this price was updated, in seconds since UNIX epoch. |
+| `_assetPriceUsdDecimals` | `uint256` | Number of decimals used to return the `_price`. |
+</div>
+</div>
+
+<div class="api-node" markdown>
+
+### `getCurrentPricesByIndices` { #fn_getcurrentpricesbyindices_6ba31fa1 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -293,7 +359,7 @@ Reverts if any of the indices is not supported.
 
 <div class="api-node" markdown>
 
-### `getCurrentPricesBySymbols` { #fn_getcurrentpricesbysymbols }
+### `getCurrentPricesBySymbols` { #fn_getcurrentpricesbysymbols_79d5ea4b }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -323,7 +389,7 @@ Reverts if any of the symbols is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtso` { #fn_getftso }
+### `getFtso` { #fn_getftso_d75f6d81 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -353,7 +419,7 @@ Reverts if unsupported index is passed.
 
 <div class="api-node" markdown>
 
-### `getFtsoBySymbol` { #fn_getftsobysymbol }
+### `getFtsoBySymbol` { #fn_getftsobysymbol_97da6af4 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -383,7 +449,7 @@ Reverts if unsupported symbol is passed.
 
 <div class="api-node" markdown>
 
-### `getFtsoHistory` { #fn_getftsohistory }
+### `getFtsoHistory` { #fn_getftsohistory_c71a1b20 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -414,7 +480,7 @@ Reverts if index is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtsoIndex` { #fn_getftsoindex }
+### `getFtsoIndex` { #fn_getftsoindex_e848da30 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -444,7 +510,7 @@ Reverts if the symbol is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtsoSymbol` { #fn_getftsosymbol }
+### `getFtsoSymbol` { #fn_getftsosymbol_136d3f64 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -474,7 +540,7 @@ Reverts if the index is not supported.
 
 <div class="api-node" markdown>
 
-### `getFtsos` { #fn_getftsos }
+### `getFtsos` { #fn_getftsos_9cb47538 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -504,7 +570,7 @@ Reverts if any of the provided indices is non-existing or inactive.
 
 <div class="api-node" markdown>
 
-### `getSupportedFtsos` { #fn_getsupportedftsos }
+### `getSupportedFtsos` { #fn_getsupportedftsos_a40060ba }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -522,7 +588,7 @@ Get array of all FTSO contracts for all supported asset indices.
 The index of FTSO in returned array does not necessarily correspond to the asset's index.
 Due to deletion, some indices might be unsupported.
 
-Use [`getSupportedIndicesAndFtsos`](#fn_getsupportedindicesandftsos) to retrieve pairs of correct indices and FTSOs,
+Use [`getSupportedIndicesAndFtsos`](#fn_getsupportedindicesandftsos_06a2ba29) to retrieve pairs of correct indices and FTSOs,
 where possible "null" holes are readily apparent.
 
 | Returns | Type | Description |
@@ -533,7 +599,7 @@ where possible "null" holes are readily apparent.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndices` { #fn_getsupportedindices }
+### `getSupportedIndices` { #fn_getsupportedindices_798aac5b }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -558,7 +624,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndicesAndFtsos` { #fn_getsupportedindicesandftsos }
+### `getSupportedIndicesAndFtsos` { #fn_getsupportedindicesandftsos_06a2ba29 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -585,7 +651,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndicesAndSymbols` { #fn_getsupportedindicesandsymbols }
+### `getSupportedIndicesAndSymbols` { #fn_getsupportedindicesandsymbols_e68f283b }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -612,7 +678,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedIndicesSymbolsAndFtsos` { #fn_getsupportedindicessymbolsandftsos }
+### `getSupportedIndicesSymbolsAndFtsos` { #fn_getsupportedindicessymbolsandftsos_7687542c }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -641,7 +707,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedSymbols` { #fn_getsupportedsymbols }
+### `getSupportedSymbols` { #fn_getsupportedsymbols_ce1c0e4d }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -666,7 +732,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `getSupportedSymbolsAndFtsos` { #fn_getsupportedsymbolsandftsos }
+### `getSupportedSymbolsAndFtsos` { #fn_getsupportedsymbolsandftsos_0cf48497 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -693,7 +759,7 @@ Active FTSOs are ones that currently receive price feeds.
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -707,14 +773,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `initialiseRegistry` { #fn_initialiseregistry }
+### `initialiseRegistry` { #fn_initialiseregistry_ffc880fd }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -733,7 +799,7 @@ function initialiseRegistry(
 
 <div class="api-node" markdown>
 
-### `removeFtso` { #fn_removeftso }
+### `removeFtso` { #fn_removeftso_a670ff87 }
 
 <div class="api-node-source" markdown>
 Defined in `FtsoRegistry` ([Docs](./FtsoRegistry.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/FtsoRegistry.sol)).
@@ -764,7 +830,7 @@ Only the [`ftsoManager`](#va_ftsomanager) can call this method.
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -777,8 +843,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -787,7 +853,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -944,7 +1010,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -963,7 +1029,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

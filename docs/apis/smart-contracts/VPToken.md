@@ -14,7 +14,7 @@ title: VPToken
 
 Vote power token.
 
-An ERC20 token that enables the holder to [`delegate`](#fn_delegate) a voting power
+An ERC20 token that enables the holder to [`delegate`](#fn_delegate_026e402b) a voting power
 equal to their balance, with history tracking by block height.
 Actual vote power and delegation functionality is implemented in an associated [`VPContract`](./VPContract.md).
 
@@ -42,8 +42,8 @@ event Approval(
 )
 ```
 
-Emitted when the [`allowance`](#fn_allowance) of a `spender` for an `owner` is set by
-a call to [`approve`](#fn_approve). `value` is the new [`allowance`](#fn_allowance).
+Emitted when the [`allowance`](#fn_allowance_dd62ed3e) of a `spender` for an `owner` is set by
+a call to [`approve`](#fn_approve_095ea7b3). `value` is the new [`allowance`](#fn_allowance_dd62ed3e).
 
 </div>
 </div>
@@ -88,7 +88,7 @@ event GovernanceCallTimelocked(
 )
 ```
 
-Emitted when a new [`governance`](#fn_governance) call has been recorded and is now waiting for the time lock to expire.
+Emitted when a new [`governance`](#fn_governance_5aa6e675) call has been recorded and is now waiting for the time lock to expire.
 
 </div>
 </div>
@@ -109,9 +109,9 @@ event GovernanceInitialised(
 )
 ```
 
-Emitted when the [`governance`](#fn_governance) address is initialized.
+Emitted when the [`governance`](#fn_governance_5aa6e675) address is initialized.
 This address will be used until production mode is entered (see [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered)).
-At that point the [`governance`](#fn_governance) address is taken from [`GovernanceSettings`](./GovernanceSettings.md).
+At that point the [`governance`](#fn_governance_5aa6e675) address is taken from [`GovernanceSettings`](./GovernanceSettings.md).
 
 </div>
 </div>
@@ -132,7 +132,7 @@ event GovernedProductionModeEntered(
 )
 ```
 
-Emitted when [`governance`](#fn_governance) is enabled and the [`governance`](#fn_governance) address cannot be changed anymore
+Emitted when [`governance`](#fn_governance_5aa6e675) is enabled and the [`governance`](#fn_governance_5aa6e675) address cannot be changed anymore
 (only through a network fork).
 
 </div>
@@ -155,7 +155,7 @@ event TimelockedGovernanceCallCanceled(
 )
 ```
 
-Emitted when a timelocked [`governance`](#fn_governance) call is canceled before execution.
+Emitted when a timelocked [`governance`](#fn_governance_5aa6e675) call is canceled before execution.
 
 </div>
 </div>
@@ -177,7 +177,7 @@ event TimelockedGovernanceCallExecuted(
 )
 ```
 
-Emitted when a timelocked [`governance`](#fn_governance) call is executed.
+Emitted when a timelocked [`governance`](#fn_governance_5aa6e675) call is executed.
 
 </div>
 </div>
@@ -248,7 +248,7 @@ associations (e.g. by external cleaners).
 
 <div class="api-node" markdown>
 
-### `allowance` { #fn_allowance }
+### `allowance` { #fn_allowance_dd62ed3e }
 
 <div class="api-node-source" markdown>
 Defined in `IERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/IERC20.sol)).
@@ -265,17 +265,17 @@ function allowance(
 ```
 
 Returns the remaining number of tokens that `spender` will be
-allowed to spend on behalf of `owner` through [`transferFrom`](#fn_transferfrom). This is
+allowed to spend on behalf of `owner` through [`transferFrom`](#fn_transferfrom_23b872dd). This is
 zero by default.
 
-This value changes when [`approve`](#fn_approve) or [`transferFrom`](#fn_transferfrom) are called.
+This value changes when [`approve`](#fn_approve_095ea7b3) or [`transferFrom`](#fn_transferfrom_23b872dd) are called.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `approve` { #fn_approve }
+### `approve` { #fn_approve_095ea7b3 }
 
 <div class="api-node-source" markdown>
 Defined in `IERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/IERC20.sol)).
@@ -291,14 +291,14 @@ function approve(
     bool);
 ```
 
-Sets `amount` as the [`allowance`](#fn_allowance) of `spender` over the caller's tokens.
+Sets `amount` as the [`allowance`](#fn_allowance_dd62ed3e) of `spender` over the caller's tokens.
 
 Returns a boolean value indicating whether the operation succeeded.
 
-IMPORTANT: Beware that changing an [`allowance`](#fn_allowance) with this method brings the risk
-that someone may use both the old and the new [`allowance`](#fn_allowance) by unfortunate
+IMPORTANT: Beware that changing an [`allowance`](#fn_allowance_dd62ed3e) with this method brings the risk
+that someone may use both the old and the new [`allowance`](#fn_allowance_dd62ed3e) by unfortunate
 transaction ordering. One possible solution to mitigate this race
-condition is to first reduce the spender's [`allowance`](#fn_allowance) to 0 and set the
+condition is to first reduce the spender's [`allowance`](#fn_allowance_dd62ed3e) to 0 and set the
 desired value afterwards:
 https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
 
@@ -309,7 +309,7 @@ Emits an [`Approval`](#ev_approval) event.
 
 <div class="api-node" markdown>
 
-### `balanceHistoryCleanup` { #fn_balancehistorycleanup }
+### `balanceHistoryCleanup` { #fn_balancehistorycleanup_f0e292c9 }
 
 <div class="api-node-source" markdown>
 Defined in `CheckPointable` ([Docs](./CheckPointable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/CheckPointable.sol)).
@@ -341,7 +341,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `balanceOf` { #fn_balanceof }
+### `balanceOf` { #fn_balanceof_70a08231 }
 
 <div class="api-node-source" markdown>
 Defined in `IERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/IERC20.sol)).
@@ -363,7 +363,7 @@ Returns the amount of tokens owned by `account`.
 
 <div class="api-node" markdown>
 
-### `balanceOfAt` { #fn_balanceofat }
+### `balanceOfAt` { #fn_balanceofat_4ee2cd7e }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -394,7 +394,7 @@ Queries the token balance of `_owner` at a specific `_blockNumber`.
 
 <div class="api-node" markdown>
 
-### `batchDelegate` { #fn_batchdelegate }
+### `batchDelegate` { #fn_batchdelegate_dc4fcda7 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -409,7 +409,7 @@ function batchDelegate(
 ) external;
 ```
 
-Undelegate all percentage delegations from the sender and then [`delegate`](#fn_delegate) corresponding
+Undelegate all percentage delegations from the sender and then [`delegate`](#fn_delegate_026e402b) corresponding
   `_bips` percentage of voting power from the sender to each member of the `_delegatees` array.
 
 | Parameters | Type | Description |
@@ -422,7 +422,7 @@ Undelegate all percentage delegations from the sender and then [`delegate`](#fn_
 
 <div class="api-node" markdown>
 
-### `batchVotePowerOfAt` { #fn_batchvotepowerofat }
+### `batchVotePowerOfAt` { #fn_batchvotepowerofat_49e3c7e5 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -453,7 +453,7 @@ Return the vote power for several addresses.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -467,9 +467,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -480,7 +480,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `cleanupBlockNumber` { #fn_cleanupblocknumber }
+### `cleanupBlockNumber` { #fn_cleanupblocknumber_deea13e7 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -494,7 +494,7 @@ function cleanupBlockNumber(
     uint256);
 ```
 
-Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber).
+Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber_13de97f5).
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -504,7 +504,7 @@ Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setc
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -525,7 +525,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `Governed` ([Docs](./Governed.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/Governed.sol)).
@@ -548,7 +548,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `ERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/ERC20.sol)).
@@ -563,10 +563,10 @@ constructor(
 ) public;
 ```
 
-Sets the values for [`name`](#fn_name) and [`symbol`](#fn_symbol), initializes [`decimals`](#fn_decimals) with
+Sets the values for [`name`](#fn_name_06fdde03) and [`symbol`](#fn_symbol_95d89b41), initializes [`decimals`](#fn_decimals_313ce567) with
 a default value of 18.
 
-To select a different value for [`decimals`](#fn_decimals), use _setupDecimals.
+To select a different value for [`decimals`](#fn_decimals_313ce567), use _setupDecimals.
 
 All three of these values are immutable: they can only be set once during
 construction.
@@ -576,7 +576,7 @@ construction.
 
 <div class="api-node" markdown>
 
-### `decimals` { #fn_decimals }
+### `decimals` { #fn_decimals_313ce567 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -590,8 +590,8 @@ function decimals(
     uint8);
 ```
 
-Returns the number of [`decimals`](#fn_decimals) used to get its user representation.
-For example, if [`decimals`](#fn_decimals) equals 2, a balance of 505 tokens should
+Returns the number of [`decimals`](#fn_decimals_313ce567) used to get its user representation.
+For example, if [`decimals`](#fn_decimals_313ce567) equals 2, a balance of 505 tokens should
 be displayed to a user as 5.05 (505 / 10<sup>2</sup>).
 
 Tokens usually opt for a value of 18, imitating the relationship between
@@ -600,7 +600,7 @@ it's overridden.
 
 NOTE: This information is only used for _display_ purposes: it in
 no way affects any of the arithmetic of the contract, including
-[`balanceOf`](#fn_balanceof) and [`transfer`](#fn_transfer).
+[`balanceOf`](#fn_balanceof_70a08231) and [`transfer`](#fn_transfer_a9059cbb).
 
 Should be compatible with ERC20 method.
 
@@ -609,7 +609,7 @@ Should be compatible with ERC20 method.
 
 <div class="api-node" markdown>
 
-### `delegate` { #fn_delegate }
+### `delegate` { #fn_delegate_026e402b }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -636,7 +636,7 @@ Delegate voting power to account `_to` from `msg.sender`, by percentage.
 
 <div class="api-node" markdown>
 
-### `delegateExplicit` { #fn_delegateexplicit }
+### `delegateExplicit` { #fn_delegateexplicit_d06dc3ad }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -651,8 +651,8 @@ function delegateExplicit(
 ) external;
 ```
 
-Explicitly [`delegate`](#fn_delegate) `_amount` voting power to account `_to` from `msg.sender`.
-Compare with [`delegate`](#fn_delegate) which delegates by percentage.
+Explicitly [`delegate`](#fn_delegate_026e402b) `_amount` voting power to account `_to` from `msg.sender`.
+Compare with [`delegate`](#fn_delegate_026e402b) which delegates by percentage.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -664,7 +664,7 @@ Compare with [`delegate`](#fn_delegate) which delegates by percentage.
 
 <div class="api-node" markdown>
 
-### `delegatesOf` { #fn_delegatesof }
+### `delegatesOf` { #fn_delegatesof_7de5b8ed }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -699,7 +699,7 @@ Get the list of addresses to which `_who` is delegating, and their percentages.
 
 <div class="api-node" markdown>
 
-### `delegatesOfAt` { #fn_delegatesofat }
+### `delegatesOfAt` { #fn_delegatesofat_ed475a79 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -736,7 +736,7 @@ Get the list of addresses to which `_who` is delegating, and their percentages, 
 
 <div class="api-node" markdown>
 
-### `delegationModeOf` { #fn_delegationmodeof }
+### `delegationModeOf` { #fn_delegationmodeof_f6837767 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -767,7 +767,7 @@ it can never be changed, even if all delegations are removed.
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -781,7 +781,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -794,7 +794,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -808,14 +808,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `governanceVotePower` { #fn_governancevotepower }
+### `governanceVotePower` { #fn_governancevotepower_8c2b8ae1 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -829,15 +829,15 @@ function governanceVotePower(
     contract IGovernanceVotePower);
 ```
 
-When set, allows token owners to participate in [`governance`](#fn_governance) voting
-and [`delegate`](#fn_delegate) [`governance`](#fn_governance) vote power.
+When set, allows token owners to participate in [`governance`](#fn_governance_5aa6e675) voting
+and [`delegate`](#fn_delegate_026e402b) [`governance`](#fn_governance_5aa6e675) vote power.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `name` { #fn_name }
+### `name` { #fn_name_06fdde03 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -851,7 +851,7 @@ function name(
     string);
 ```
 
-Returns the [`name`](#fn_name) of the token.
+Returns the [`name`](#fn_name_06fdde03) of the token.
 
 Should be compatible with ERC20 method.
 
@@ -860,7 +860,7 @@ Should be compatible with ERC20 method.
 
 <div class="api-node" markdown>
 
-### `readVotePowerContract` { #fn_readvotepowercontract }
+### `readVotePowerContract` { #fn_readvotepowercontract_9b3baa0e }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -875,9 +875,9 @@ function readVotePowerContract(
 ```
 
 Returns [`VPContract`](./VPContract.md) event interface used for read-only operations (view methods).
-The only non-view method that might be called on it is [`revokeDelegationAt`](#fn_revokedelegationat).
+The only non-view method that might be called on it is [`revokeDelegationAt`](#fn_revokedelegationat_bbd6fbf8).
 
-[`readVotePowerContract`](#fn_readvotepowercontract) is almost always equal to [`writeVotePowerContract`](#fn_writevotepowercontract)
+[`readVotePowerContract`](#fn_readvotepowercontract_9b3baa0e) is almost always equal to [`writeVotePowerContract`](#fn_writevotepowercontract_1fec092a)
 except during an upgrade from one [`VPContract`](./VPContract.md) to a new version (which should happen
 rarely or never and will be announced beforehand).
 
@@ -892,7 +892,7 @@ Use it only for listening to events and revoking.
 
 <div class="api-node" markdown>
 
-### `revokeDelegationAt` { #fn_revokedelegationat }
+### `revokeDelegationAt` { #fn_revokedelegationat_bbd6fbf8 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -908,10 +908,10 @@ function revokeDelegationAt(
 ```
 
 Revoke all delegation from sender to `_who` at given block.
-Only affects the reads via [`votePowerOfAtCached`](#fn_votepowerofatcached) in the block `_blockNumber`.
+Only affects the reads via [`votePowerOfAtCached`](#fn_votepowerofatcached_e587497e) in the block `_blockNumber`.
 Block `_blockNumber` must be in the past.
-This method should be used only to prevent rogue [`delegate`](#fn_delegate) voting in the current voting block.
-To stop delegating use [`delegate`](#fn_delegate) / [`delegateExplicit`](#fn_delegateexplicit) with value of 0 or [`undelegateAll`](#fn_undelegateall) / [`undelegateAllExplicit`](#fn_undelegateallexplicit).
+This method should be used only to prevent rogue [`delegate`](#fn_delegate_026e402b) voting in the current voting block.
+To stop delegating use [`delegate`](#fn_delegate_026e402b) / [`delegateExplicit`](#fn_delegateexplicit_d06dc3ad) with value of 0 or [`undelegateAll`](#fn_undelegateall_b302f393) / [`undelegateAllExplicit`](#fn_undelegateallexplicit_5d6d11eb).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -923,7 +923,7 @@ To stop delegating use [`delegate`](#fn_delegate) / [`delegateExplicit`](#fn_del
 
 <div class="api-node" markdown>
 
-### `setCleanerContract` { #fn_setcleanercontract }
+### `setCleanerContract` { #fn_setcleanercontract_f6a494af }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -948,7 +948,7 @@ Set the contract that is allowed to call history cleaning methods.
 
 <div class="api-node" markdown>
 
-### `setCleanupBlockNumber` { #fn_setcleanupblocknumber }
+### `setCleanupBlockNumber` { #fn_setcleanupblocknumber_13de97f5 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -963,7 +963,7 @@ function setCleanupBlockNumber(
 ```
 
 Set the cleanup block number.
-Historic data for the blocks before [`cleanupBlockNumber`](#fn_cleanupblocknumber) can be erased.
+Historic data for the blocks before [`cleanupBlockNumber`](#fn_cleanupblocknumber_deea13e7) can be erased.
 History before that block should never be used since it can be inconsistent.
 In particular, cleanup block number must be lower than the current vote power block.
 
@@ -976,7 +976,7 @@ In particular, cleanup block number must be lower than the current vote power bl
 
 <div class="api-node" markdown>
 
-### `setCleanupBlockNumberManager` { #fn_setcleanupblocknumbermanager }
+### `setCleanupBlockNumberManager` { #fn_setcleanupblocknumbermanager_7f4fcaa9 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -990,7 +990,7 @@ function setCleanupBlockNumberManager(
 ) external;
 ```
 
-Set the contract that is allowed to set [`cleanupBlockNumber`](#fn_cleanupblocknumber).
+Set the contract that is allowed to set [`cleanupBlockNumber`](#fn_cleanupblocknumber_deea13e7).
 Usually this will be an instance of [`CleanupBlockNumberManager`](./CleanupBlockNumberManager.md).
 
 </div>
@@ -998,7 +998,7 @@ Usually this will be an instance of [`CleanupBlockNumberManager`](./CleanupBlock
 
 <div class="api-node" markdown>
 
-### `setGovernanceVotePower` { #fn_setgovernancevotepower }
+### `setGovernanceVotePower` { #fn_setgovernancevotepower_9ca2231a }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1012,15 +1012,15 @@ function setGovernanceVotePower(
 ) external;
 ```
 
-Sets new [`governance`](#fn_governance) vote power contract that allows token owners to participate in [`governance`](#fn_governance) voting
-and [`delegate`](#fn_delegate) [`governance`](#fn_governance) vote power.
+Sets new [`governance`](#fn_governance_5aa6e675) vote power contract that allows token owners to participate in [`governance`](#fn_governance_5aa6e675) voting
+and [`delegate`](#fn_delegate_026e402b) [`governance`](#fn_governance_5aa6e675) vote power.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `setReadVpContract` { #fn_setreadvpcontract }
+### `setReadVpContract` { #fn_setreadvpcontract_31d12a16 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1034,8 +1034,8 @@ function setReadVpContract(
 ) external;
 ```
 
-Call from [`governance`](#fn_governance) to set read VpContract on token, e.g.
-vpToken.[`setReadVpContract`](#fn_setreadvpcontract)(new [`VPContract`](./VPContract.md)(vpToken)).
+Call from [`governance`](#fn_governance_5aa6e675) to set read VpContract on token, e.g.
+vpToken.[`setReadVpContract`](#fn_setreadvpcontract_31d12a16)(new [`VPContract`](./VPContract.md)(vpToken)).
 
 Read [`VPContract`](./VPContract.md) must be set before any of the [`VPToken`](./VPToken.md) delegation or vote power reading methods are called,
 otherwise they will revert.
@@ -1052,7 +1052,7 @@ changes (not even revokes; they may or may not reflect balance transfers).
 
 <div class="api-node" markdown>
 
-### `setWriteVpContract` { #fn_setwritevpcontract }
+### `setWriteVpContract` { #fn_setwritevpcontract_755d10a4 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1066,8 +1066,8 @@ function setWriteVpContract(
 ) external;
 ```
 
-Call from [`governance`](#fn_governance) to set write VpContract on token, e.g.
-vpToken.[`setWriteVpContract`](#fn_setwritevpcontract)(new [`VPContract`](./VPContract.md)(vpToken)).
+Call from [`governance`](#fn_governance_5aa6e675) to set write VpContract on token, e.g.
+vpToken.[`setWriteVpContract`](#fn_setwritevpcontract_755d10a4)(new [`VPContract`](./VPContract.md)(vpToken)).
 
 Write [`VPContract`](./VPContract.md) must be set before any of the [`VPToken`](./VPToken.md) delegation modifying methods are called,
 otherwise they will revert.
@@ -1081,7 +1081,7 @@ otherwise they will revert.
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -1094,8 +1094,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -1104,7 +1104,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `symbol` { #fn_symbol }
+### `symbol` { #fn_symbol_95d89b41 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1118,7 +1118,7 @@ function symbol(
     string);
 ```
 
-Returns the [`symbol`](#fn_symbol) of the token, usually a shorter version of the [`name`](#fn_name).
+Returns the [`symbol`](#fn_symbol_95d89b41) of the token, usually a shorter version of the [`name`](#fn_name_06fdde03).
 
 Should be compatible with ERC20 method.
 
@@ -1127,7 +1127,7 @@ Should be compatible with ERC20 method.
 
 <div class="api-node" markdown>
 
-### `totalSupply` { #fn_totalsupply }
+### `totalSupply` { #fn_totalsupply_18160ddd }
 
 <div class="api-node-source" markdown>
 Defined in `IERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/IERC20.sol)).
@@ -1148,7 +1148,7 @@ Returns the amount of tokens in existence.
 
 <div class="api-node" markdown>
 
-### `totalSupplyAt` { #fn_totalsupplyat }
+### `totalSupplyAt` { #fn_totalsupplyat_981b24d0 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1177,7 +1177,7 @@ Total amount of tokens at a specific `_blockNumber`.
 
 <div class="api-node" markdown>
 
-### `totalSupplyCacheCleanup` { #fn_totalsupplycachecleanup }
+### `totalSupplyCacheCleanup` { #fn_totalsupplycachecleanup_43ea370b }
 
 <div class="api-node-source" markdown>
 Defined in `CheckPointable` ([Docs](./CheckPointable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/CheckPointable.sol)).
@@ -1207,7 +1207,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `totalSupplyHistoryCleanup` { #fn_totalsupplyhistorycleanup }
+### `totalSupplyHistoryCleanup` { #fn_totalsupplyhistorycleanup_f62f8f3a }
 
 <div class="api-node-source" markdown>
 Defined in `CheckPointable` ([Docs](./CheckPointable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/CheckPointable.sol)).
@@ -1237,7 +1237,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `totalVotePower` { #fn_totalvotepower }
+### `totalVotePower` { #fn_totalvotepower_f5f3d4f7 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1261,7 +1261,7 @@ Get the current total vote power.
 
 <div class="api-node" markdown>
 
-### `totalVotePowerAt` { #fn_totalvotepowerat }
+### `totalVotePowerAt` { #fn_totalvotepowerat_3e5aa26a }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1290,7 +1290,7 @@ Get the total vote power at block `_blockNumber`.
 
 <div class="api-node" markdown>
 
-### `totalVotePowerAtCached` { #fn_totalvotepoweratcached }
+### `totalVotePowerAtCached` { #fn_totalvotepoweratcached_caeb942b }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1321,7 +1321,7 @@ Get the total vote power at block `_blockNumber` using cache.
 
 <div class="api-node" markdown>
 
-### `transfer` { #fn_transfer }
+### `transfer` { #fn_transfer_a9059cbb }
 
 <div class="api-node-source" markdown>
 Defined in `IERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/IERC20.sol)).
@@ -1348,7 +1348,7 @@ Emits a [`Transfer`](#ev_transfer) event.
 
 <div class="api-node" markdown>
 
-### `transferFrom` { #fn_transferfrom }
+### `transferFrom` { #fn_transferfrom_23b872dd }
 
 <div class="api-node-source" markdown>
 Defined in `IERC20` ([Source](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v3.4/contracts/token/ERC20/IERC20.sol)).
@@ -1366,8 +1366,8 @@ function transferFrom(
 ```
 
 Moves `amount` tokens from `sender` to `recipient` using the
-[`allowance`](#fn_allowance) mechanism. `amount` is then deducted from the caller's
-[`allowance`](#fn_allowance).
+[`allowance`](#fn_allowance_dd62ed3e) mechanism. `amount` is then deducted from the caller's
+[`allowance`](#fn_allowance_dd62ed3e).
 
 Returns a boolean value indicating whether the operation succeeded.
 
@@ -1378,7 +1378,7 @@ Emits a [`Transfer`](#ev_transfer) event.
 
 <div class="api-node" markdown>
 
-### `undelegateAll` { #fn_undelegateall }
+### `undelegateAll` { #fn_undelegateall_b302f393 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1400,7 +1400,7 @@ Does not reset delegation mode back to NOT SET.
 
 <div class="api-node" markdown>
 
-### `undelegateAllExplicit` { #fn_undelegateallexplicit }
+### `undelegateAllExplicit` { #fn_undelegateallexplicit_5d6d11eb }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1431,7 +1431,7 @@ Does not reset delegation mode back to NOT SET.
 
 <div class="api-node" markdown>
 
-### `undelegatedVotePowerOf` { #fn_undelegatedvotepowerof }
+### `undelegatedVotePowerOf` { #fn_undelegatedvotepowerof_d6aa0b77 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1460,7 +1460,7 @@ Compute the current undelegated vote power of the `_owner` account.
 
 <div class="api-node" markdown>
 
-### `undelegatedVotePowerOfAt` { #fn_undelegatedvotepowerofat }
+### `undelegatedVotePowerOfAt` { #fn_undelegatedvotepowerofat_83035a82 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1491,7 +1491,7 @@ Get the undelegated vote power of the `_owner` account at a given block number.
 
 <div class="api-node" markdown>
 
-### `votePowerFromTo` { #fn_votepowerfromto }
+### `votePowerFromTo` { #fn_votepowerfromto_be0ca747 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1522,7 +1522,7 @@ Get current delegated vote power from delegator `_from` to delegatee `_to`.
 
 <div class="api-node" markdown>
 
-### `votePowerFromToAt` { #fn_votepowerfromtoat }
+### `votePowerFromToAt` { #fn_votepowerfromtoat_e64767aa }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1555,7 +1555,7 @@ Get delegated vote power from delegator `_from` to delegatee `_to` at `_blockNum
 
 <div class="api-node" markdown>
 
-### `votePowerOf` { #fn_votepowerof }
+### `votePowerOf` { #fn_votepowerof_142d1018 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1584,7 +1584,7 @@ Get the current vote power of `_owner`.
 
 <div class="api-node" markdown>
 
-### `votePowerOfAt` { #fn_votepowerofat }
+### `votePowerOfAt` { #fn_votepowerofat_92bfe6d8 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1615,7 +1615,7 @@ Get the vote power of `_owner` at block `_blockNumber`
 
 <div class="api-node" markdown>
 
-### `votePowerOfAtCached` { #fn_votepowerofatcached }
+### `votePowerOfAtCached` { #fn_votepowerofatcached_e587497e }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1648,7 +1648,7 @@ Get the vote power of `_owner` at block `_blockNumber` using cache.
 
 <div class="api-node" markdown>
 
-### `votePowerOfAtIgnoringRevocation` { #fn_votepowerofatignoringrevocation }
+### `votePowerOfAtIgnoringRevocation` { #fn_votepowerofatignoringrevocation_04bb4e43 }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1679,7 +1679,7 @@ Get the vote power of `_owner` at block `_blockNumber`, ignoring revocation info
 
 <div class="api-node" markdown>
 
-### `writeVotePowerContract` { #fn_writevotepowercontract }
+### `writeVotePowerContract` { #fn_writevotepowercontract_1fec092a }
 
 <div class="api-node-source" markdown>
 Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/VPToken.sol)).
@@ -1694,13 +1694,13 @@ function writeVotePowerContract(
 ```
 
 Returns [`VPContract`](./VPContract.md) event interface used for state-changing operations (non-view methods).
-The only non-view method that might be called on it is [`revokeDelegationAt`](#fn_revokedelegationat).
+The only non-view method that might be called on it is [`revokeDelegationAt`](#fn_revokedelegationat_bbd6fbf8).
 
-[`writeVotePowerContract`](#fn_writevotepowercontract) is almost always equal to [`readVotePowerContract`](#fn_readvotepowercontract),
+[`writeVotePowerContract`](#fn_writevotepowercontract_1fec092a) is almost always equal to [`readVotePowerContract`](#fn_readvotepowercontract_9b3baa0e),
 except during upgrade from one [`VPContract`](./VPContract.md) to a new version (which should happen
 rarely or never and will be announced beforehand).
-In the case of an upgrade, [`writeVotePowerContract`](#fn_writevotepowercontract) is replaced first to establish delegations.
-After some period (e.g., after a reward epoch ends), [`readVotePowerContract`](#fn_readvotepowercontract) is set equal to it.
+In the case of an upgrade, [`writeVotePowerContract`](#fn_writevotepowercontract_1fec092a) is replaced first to establish delegations.
+After some period (e.g., after a reward epoch ends), [`readVotePowerContract`](#fn_readvotepowercontract_9b3baa0e) is set equal to it.
 
 Do not call any methods on [`VPContract`](./VPContract.md) directly.
 State changing methods are forbidden from direct calls.
@@ -1750,7 +1750,7 @@ Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenet
     address cleanupBlockNumberManager
 ```
 
-The contract that is allowed to set [`cleanupBlockNumber`](#fn_cleanupblocknumber).
+The contract that is allowed to set [`cleanupBlockNumber`](#fn_cleanupblocknumber_deea13e7).
 Usually this will be an instance of [`CleanupBlockNumberManager`](./CleanupBlockNumberManager.md).
 
 </div>
@@ -1789,7 +1789,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -1808,7 +1808,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>
@@ -1827,7 +1827,7 @@ Defined in `VPToken` ([Docs](./VPToken.md), [Source](https://gitlab.com/flarenet
     bool vpContractInitialized
 ```
 
-When true, the argument to [`setWriteVpContract`](#fn_setwritevpcontract) must be a vpContract
+When true, the argument to [`setWriteVpContract`](#fn_setwritevpcontract_755d10a4) must be a vpContract
 with `isReplacement` set to `true`. To be used for creating the correct [`VPContract`](./VPContract.md).
 
 </div>

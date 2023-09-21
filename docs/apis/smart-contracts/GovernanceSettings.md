@@ -120,7 +120,7 @@ Emitted when the timelock has been changed.
 
 <div class="api-node" markdown>
 
-### `getExecutors` { #fn_getexecutors }
+### `getExecutors` { #fn_getexecutors_ef09e78f }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -146,7 +146,7 @@ Executors can be changed without a hard fork, via a normal governance call.
 
 <div class="api-node" markdown>
 
-### `getGovernanceAddress` { #fn_getgovernanceaddress }
+### `getGovernanceAddress` { #fn_getgovernanceaddress_73252494 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -171,7 +171,7 @@ The governance address can only be changed by a hard fork.
 
 <div class="api-node" markdown>
 
-### `getTimelock` { #fn_gettimelock }
+### `getTimelock` { #fn_gettimelock_6221a54b }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -196,7 +196,7 @@ The timelock value can only be changed by a hard fork.
 
 <div class="api-node" markdown>
 
-### `initialise` { #fn_initialise }
+### `initialise` { #fn_initialise_cf0ea268 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -226,7 +226,7 @@ Can only be called once.
 
 <div class="api-node" markdown>
 
-### `isExecutor` { #fn_isexecutor }
+### `isExecutor` { #fn_isexecutor_debfda30 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -241,7 +241,7 @@ function isExecutor(
     bool);
 ```
 
-Checks whether an address is one of the allowed executors. See [`getExecutors`](#fn_getexecutors).
+Checks whether an address is one of the allowed executors. See [`getExecutors`](#fn_getexecutors_ef09e78f).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -255,7 +255,7 @@ Checks whether an address is one of the allowed executors. See [`getExecutors`](
 
 <div class="api-node" markdown>
 
-### `setExecutors` { #fn_setexecutors }
+### `setExecutors` { #fn_setexecutors_1d452e46 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -284,7 +284,7 @@ Can only be called by the governance.
 
 <div class="api-node" markdown>
 
-### `setGovernanceAddress` { #fn_setgovernanceaddress }
+### `setGovernanceAddress` { #fn_setgovernanceaddress_cfc16254 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).
@@ -310,7 +310,7 @@ Can only be called by validators via fork.
 
 <div class="api-node" markdown>
 
-### `setTimelock` { #fn_settimelock }
+### `setTimelock` { #fn_settimelock_1e891c0a }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceSettings` ([Docs](./GovernanceSettings.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/GovernanceSettings.sol)).

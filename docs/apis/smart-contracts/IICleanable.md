@@ -22,7 +22,7 @@ Internal interface for entities that can have their block history cleaned.
 
 <div class="api-node" markdown>
 
-### `cleanupBlockNumber` { #fn_cleanupblocknumber }
+### `cleanupBlockNumber` { #fn_cleanupblocknumber_deea13e7 }
 
 <div class="api-node-source" markdown>
 Defined in `IICleanable` ([Docs](./IICleanable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IICleanable.sol)).
@@ -36,7 +36,7 @@ function cleanupBlockNumber(
     uint256);
 ```
 
-Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber).
+Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber_13de97f5).
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -46,7 +46,7 @@ Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setc
 
 <div class="api-node" markdown>
 
-### `setCleanerContract` { #fn_setcleanercontract }
+### `setCleanerContract` { #fn_setcleanercontract_f6a494af }
 
 <div class="api-node-source" markdown>
 Defined in `IICleanable` ([Docs](./IICleanable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IICleanable.sol)).
@@ -71,7 +71,7 @@ Set the contract that is allowed to call history cleaning methods.
 
 <div class="api-node" markdown>
 
-### `setCleanupBlockNumber` { #fn_setcleanupblocknumber }
+### `setCleanupBlockNumber` { #fn_setcleanupblocknumber_13de97f5 }
 
 <div class="api-node-source" markdown>
 Defined in `IICleanable` ([Docs](./IICleanable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IICleanable.sol)).
@@ -86,7 +86,7 @@ function setCleanupBlockNumber(
 ```
 
 Set the cleanup block number.
-Historic data for the blocks before [`cleanupBlockNumber`](#fn_cleanupblocknumber) can be erased.
+Historic data for the blocks before [`cleanupBlockNumber`](#fn_cleanupblocknumber_deea13e7) can be erased.
 History before that block should never be used since it can be inconsistent.
 In particular, cleanup block number must be lower than the current vote power block.
 

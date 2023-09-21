@@ -59,7 +59,7 @@ Emitted when a contract reverts.
 
 <div class="api-node" markdown>
 
-### `showLastRevertedError` { #fn_showlastrevertederror }
+### `showLastRevertedError` { #fn_showlastrevertederror_2b3c41a4 }
 
 <div class="api-node-source" markdown>
 Defined in `RevertErrorTracking` ([Docs](./RevertErrorTracking.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/RevertErrorTracking.sol)).
@@ -91,7 +91,7 @@ Returns latest error information. All arrays will contain only one entry.
 
 <div class="api-node" markdown>
 
-### `showRevertedErrors` { #fn_showrevertederrors }
+### `showRevertedErrors` { #fn_showrevertederrors_6ea0aa31 }
 
 <div class="api-node-source" markdown>
 Defined in `RevertErrorTracking` ([Docs](./RevertErrorTracking.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/implementation/RevertErrorTracking.sol)).

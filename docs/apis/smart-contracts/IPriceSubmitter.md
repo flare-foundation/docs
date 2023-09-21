@@ -42,7 +42,7 @@ event HashSubmitted(
 )
 ```
 
-Emitted when a hash is submitted through [`submitHash`](#fn_submithash).
+Emitted when a hash is submitted through [`submitHash`](#fn_submithash_8fc6f667).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -97,7 +97,7 @@ Emitted when prices are revealed through `revealPrice`.
 
 <div class="api-node" markdown>
 
-### `getCurrentRandom` { #fn_getcurrentrandom }
+### `getCurrentRandom` { #fn_getcurrentrandom_d89601fd }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -123,7 +123,7 @@ Note that the random number for the previous epoch keeps updating as new submiss
 
 <div class="api-node" markdown>
 
-### `getFtsoManager` { #fn_getftsomanager }
+### `getFtsoManager` { #fn_getftsomanager_b39c6858 }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -144,7 +144,7 @@ Returns the address of the [`FtsoManager`](./FtsoManager.md) contract.
 
 <div class="api-node" markdown>
 
-### `getFtsoRegistry` { #fn_getftsoregistry }
+### `getFtsoRegistry` { #fn_getftsoregistry_8c9d28b6 }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -165,7 +165,7 @@ Returns the address of the [`FtsoRegistry`](./FtsoRegistry.md) contract.
 
 <div class="api-node" markdown>
 
-### `getRandom` { #fn_getrandom }
+### `getRandom` { #fn_getrandom_cd4b6914 }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -195,7 +195,7 @@ provided by all data providers along with their data submissions.
 
 <div class="api-node" markdown>
 
-### `getVoterWhitelister` { #fn_getvoterwhitelister }
+### `getVoterWhitelister` { #fn_getvoterwhitelister_71e1fad9 }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -216,7 +216,7 @@ Returns the address of the [`VoterWhitelister`](./VoterWhitelister.md) contract 
 
 <div class="api-node" markdown>
 
-### `revealPrices` { #fn_revealprices }
+### `revealPrices` { #fn_revealprices_e2db5a52 }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -235,7 +235,7 @@ function revealPrices(
 
 Reveals submitted prices during the epoch reveal period.
 The hash of FTSO indices, prices, random number, and voter address must be equal
-to the hash previously submitted with [`submitHash`](#fn_submithash).
+to the hash previously submitted with [`submitHash`](#fn_submithash_8fc6f667).
 Emits a [`PricesRevealed`](#ev_pricesrevealed) event.
 
 | Parameters | Type | Description |
@@ -250,7 +250,7 @@ Emits a [`PricesRevealed`](#ev_pricesrevealed) event.
 
 <div class="api-node" markdown>
 
-### `submitHash` { #fn_submithash }
+### `submitHash` { #fn_submithash_8fc6f667 }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).
@@ -279,7 +279,7 @@ Emits the [`HashSubmitted`](#ev_hashsubmitted) event.
 
 <div class="api-node" markdown>
 
-### `voterWhitelistBitmap` { #fn_voterwhitelistbitmap }
+### `voterWhitelistBitmap` { #fn_voterwhitelistbitmap_7ac420ad }
 
 <div class="api-node-source" markdown>
 Defined in `IPriceSubmitter` ([Docs](./IPriceSubmitter.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IPriceSubmitter.sol)).

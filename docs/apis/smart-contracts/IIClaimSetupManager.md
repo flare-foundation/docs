@@ -267,7 +267,7 @@ Emitted when the `libraryAddress` has been set.
 
 <div class="api-node" markdown>
 
-### `accountToDelegationAccount` { #fn_accounttodelegationaccount }
+### `accountToDelegationAccount` { #fn_accounttodelegationaccount_69ea2387 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -296,7 +296,7 @@ Gets the [PDA](https://docs.flare.network/tech/personal-delegation-account) of a
 
 <div class="api-node" markdown>
 
-### `allowedClaimRecipients` { #fn_allowedclaimrecipients }
+### `allowedClaimRecipients` { #fn_allowedclaimrecipients_dfd14c34 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -313,7 +313,7 @@ function allowedClaimRecipients(
 
 Gets the addresses of recipients allowed to receive rewards on behalf of an account.
 Beside these, the owner of the rewards is always authorized.
-See [`setAllowedClaimRecipients`](#fn_setallowedclaimrecipients).
+See [`setAllowedClaimRecipients`](#fn_setallowedclaimrecipients_d2a4ac61).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -327,7 +327,7 @@ See [`setAllowedClaimRecipients`](#fn_setallowedclaimrecipients).
 
 <div class="api-node" markdown>
 
-### `batchDelegate` { #fn_batchdelegate }
+### `batchDelegate` { #fn_batchdelegate_dc4fcda7 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -343,9 +343,9 @@ function batchDelegate(
 ```
 
 Undelegates all percentage delegations from the caller's
-[PDA](https://docs.flare.network/tech/personal-delegation-account) and then [`delegate`](#fn_delegate) to a list of accounts.
+[PDA](https://docs.flare.network/tech/personal-delegation-account) and then [`delegate`](#fn_delegate_026e402b) to a list of accounts.
 
-See [`delegate`](#fn_delegate).
+See [`delegate`](#fn_delegate_026e402b).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -357,7 +357,7 @@ See [`delegate`](#fn_delegate).
 
 <div class="api-node" markdown>
 
-### `checkExecutorAndAllowedRecipient` { #fn_checkexecutorandallowedrecipient }
+### `checkExecutorAndAllowedRecipient` { #fn_checkexecutorandallowedrecipient_ce2caa57 }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -388,7 +388,7 @@ Reverts if claiming is not possible, does nothing otherwise.
 
 <div class="api-node" markdown>
 
-### `claimExecutors` { #fn_claimexecutors }
+### `claimExecutors` { #fn_claimexecutors_3f317fe1 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -404,7 +404,7 @@ function claimExecutors(
 ```
 
 Gets the addresses of executors authorized to claim for an account.
-See [`setClaimExecutors`](#fn_setclaimexecutors).
+See [`setClaimExecutors`](#fn_setclaimexecutors_9119c494).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -418,7 +418,7 @@ See [`setClaimExecutors`](#fn_setclaimexecutors).
 
 <div class="api-node" markdown>
 
-### `delegate` { #fn_delegate }
+### `delegate` { #fn_delegate_026e402b }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -446,7 +446,7 @@ Delegates a percentage of the caller's
 
 <div class="api-node" markdown>
 
-### `delegateGovernance` { #fn_delegategovernance }
+### `delegateGovernance` { #fn_delegategovernance_7a68a508 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -472,7 +472,7 @@ Delegates all the [governance](https://docs.flare.network/tech/governance/) vote
 
 <div class="api-node" markdown>
 
-### `disableDelegationAccount` { #fn_disabledelegationaccount }
+### `disableDelegationAccount` { #fn_disabledelegationaccount_2394deb1 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -498,7 +498,7 @@ Reverts if there is no PDA.
 
 <div class="api-node" markdown>
 
-### `enableDelegationAccount` { #fn_enabledelegationaccount }
+### `enableDelegationAccount` { #fn_enabledelegationaccount_f0977215 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -526,7 +526,7 @@ accrued by the PDA will be claimed too.
 
 <div class="api-node" markdown>
 
-### `getAutoClaimAddressesAndExecutorFee` { #fn_getautoclaimaddressesandexecutorfee }
+### `getAutoClaimAddressesAndExecutorFee` { #fn_getautoclaimaddressesandexecutorfee_e24883b2 }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -561,7 +561,7 @@ Returns owner address instead if the PDA is not created yet or not enabled.
 
 <div class="api-node" markdown>
 
-### `getDelegationAccountData` { #fn_getdelegationaccountdata }
+### `getDelegationAccountData` { #fn_getdelegationaccountdata_17a1e3fc }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -592,7 +592,7 @@ Gets [PDA](https://docs.flare.network/tech/personal-delegation-account) data for
 
 <div class="api-node" markdown>
 
-### `getExecutorCurrentFeeValue` { #fn_getexecutorcurrentfeevalue }
+### `getExecutorCurrentFeeValue` { #fn_getexecutorcurrentfeevalue_e25547f8 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -622,7 +622,7 @@ Reverts if the executor is not registered.
 
 <div class="api-node" markdown>
 
-### `getExecutorFeeValue` { #fn_getexecutorfeevalue }
+### `getExecutorFeeValue` { #fn_getexecutorfeevalue_3f8f784c }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -653,7 +653,7 @@ Returns the fee of an executor at a given reward epoch.
 
 <div class="api-node" markdown>
 
-### `getExecutorInfo` { #fn_getexecutorinfo }
+### `getExecutorInfo` { #fn_getexecutorinfo_8e28b923 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -684,7 +684,7 @@ Returns information about an executor.
 
 <div class="api-node" markdown>
 
-### `getExecutorScheduledFeeValueChanges` { #fn_getexecutorscheduledfeevaluechanges }
+### `getExecutorScheduledFeeValueChanges` { #fn_getexecutorscheduledfeevaluechanges_950b028c }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -717,7 +717,7 @@ Returns the currently scheduled fee changes of an executor.
 
 <div class="api-node" markdown>
 
-### `getRegisteredExecutors` { #fn_getregisteredexecutors }
+### `getRegisteredExecutors` { #fn_getregisteredexecutors_6e927e61 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -734,7 +734,7 @@ function getRegisteredExecutors(
     uint256 _totalLength);
 ```
 
-Returns the list of executors registered through [`registerExecutor`](#fn_registerexecutor).
+Returns the list of executors registered through [`registerExecutor`](#fn_registerexecutor_ccce7e86).
 Supports paging.
 
 | Parameters | Type | Description |
@@ -751,7 +751,7 @@ Supports paging.
 
 <div class="api-node" markdown>
 
-### `isClaimExecutor` { #fn_isclaimexecutor }
+### `isClaimExecutor` { #fn_isclaimexecutor_87962abe }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -768,7 +768,7 @@ function isClaimExecutor(
 ```
 
 Returns whether an executor is authorized to claim on behalf of a reward owner.
-See [`setClaimExecutors`](#fn_setclaimexecutors).
+See [`setClaimExecutors`](#fn_setclaimexecutors_9119c494).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -780,7 +780,7 @@ See [`setClaimExecutors`](#fn_setclaimexecutors).
 
 <div class="api-node" markdown>
 
-### `registerExecutor` { #fn_registerexecutor }
+### `registerExecutor` { #fn_registerexecutor_ccce7e86 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -814,7 +814,7 @@ Executor must pay a fee in order to register. See `registerExecutorFeeValueWei`.
 
 <div class="api-node" markdown>
 
-### `revokeDelegationAt` { #fn_revokedelegationat }
+### `revokeDelegationAt` { #fn_revokedelegationat_bbd6fbf8 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -834,8 +834,8 @@ to a given account at a given block.
 
 Only affects the reads via `votePowerOfAtCached()` in the specified block.
 
-This method should be used only to prevent rogue [`delegate`](#fn_delegate) voting in the current voting block.
-To stop delegating use [`delegate`](#fn_delegate) with percentage of 0 or [`undelegateAll`](#fn_undelegateall).
+This method should be used only to prevent rogue [`delegate`](#fn_delegate_026e402b) voting in the current voting block.
+To stop delegating use [`delegate`](#fn_delegate_026e402b) with percentage of 0 or [`undelegateAll`](#fn_undelegateall_b302f393).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -847,7 +847,7 @@ To stop delegating use [`delegate`](#fn_delegate) with percentage of 0 or [`unde
 
 <div class="api-node" markdown>
 
-### `setAllowedClaimRecipients` { #fn_setallowedclaimrecipients }
+### `setAllowedClaimRecipients` { #fn_setallowedclaimrecipients_d2a4ac61 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -873,7 +873,7 @@ The reward owner is always an allowed recipient.
 
 <div class="api-node" markdown>
 
-### `setAutoClaiming` { #fn_setautoclaiming }
+### `setAutoClaiming` { #fn_setautoclaiming_e72dcdbb }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -903,7 +903,7 @@ If any of the executors is a registered executor, some fee needs to be paid.
 
 <div class="api-node" markdown>
 
-### `setClaimExecutors` { #fn_setclaimexecutors }
+### `setClaimExecutors` { #fn_setclaimexecutors_9119c494 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -930,7 +930,7 @@ If any of the executors is a registered executor, some fee needs to be paid.
 
 <div class="api-node" markdown>
 
-### `setLibraryAddress` { #fn_setlibraryaddress }
+### `setLibraryAddress` { #fn_setlibraryaddress_4863ba17 }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -951,7 +951,7 @@ Sets new library address.
 
 <div class="api-node" markdown>
 
-### `setMaxFeeValueWei` { #fn_setmaxfeevaluewei }
+### `setMaxFeeValueWei` { #fn_setmaxfeevaluewei_2e9b6afa }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -972,7 +972,7 @@ Sets maximum fee allowed for executors, in wei.
 
 <div class="api-node" markdown>
 
-### `setMinFeeValueWei` { #fn_setminfeevaluewei }
+### `setMinFeeValueWei` { #fn_setminfeevaluewei_d8343550 }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -993,7 +993,7 @@ Sets minimum fee allowed for executors, in wei.
 
 <div class="api-node" markdown>
 
-### `setRegisterExecutorFeeValueWei` { #fn_setregisterexecutorfeevaluewei }
+### `setRegisterExecutorFeeValueWei` { #fn_setregisterexecutorfeevaluewei_869d90a5 }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -1014,7 +1014,7 @@ Sets the fee required to register an executor, which must be higher than 0.
 
 <div class="api-node" markdown>
 
-### `transferExternalToken` { #fn_transferexternaltoken }
+### `transferExternalToken` { #fn_transferexternaltoken_489a8a47 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -1035,7 +1035,7 @@ Allows the caller to transfer ERC-20 tokens from their
 The main use case is to move ERC-20 tokes received by mistake (by an airdrop, for example) out of the PDA
 and into the main account, where they can be more easily managed.
 
-Reverts if the target token is the [`WNat`](./WNat.md) contract: use method [`withdraw`](#fn_withdraw) for that.
+Reverts if the target token is the [`WNat`](./WNat.md) contract: use method [`withdraw`](#fn_withdraw_2e1a7d4d) for that.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -1047,7 +1047,7 @@ Reverts if the target token is the [`WNat`](./WNat.md) contract: use method [`wi
 
 <div class="api-node" markdown>
 
-### `undelegateAll` { #fn_undelegateall }
+### `undelegateAll` { #fn_undelegateall_b302f393 }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -1067,7 +1067,7 @@ Removes all delegations from the caller's [PDA](https://docs.flare.network/tech/
 
 <div class="api-node" markdown>
 
-### `undelegateGovernance` { #fn_undelegategovernance }
+### `undelegateGovernance` { #fn_undelegategovernance_87a2a0dc }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -1088,7 +1088,7 @@ the caller's [PDA](https://docs.flare.network/tech/personal-delegation-account).
 
 <div class="api-node" markdown>
 
-### `unregisterExecutor` { #fn_unregisterexecutor }
+### `unregisterExecutor` { #fn_unregisterexecutor_868a660f }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -1112,7 +1112,7 @@ Unregisters the caller as an executor.
 
 <div class="api-node" markdown>
 
-### `updateExecutorFeeValue` { #fn_updateexecutorfeevalue }
+### `updateExecutorFeeValue` { #fn_updateexecutorfeevalue_831f16af }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).
@@ -1127,7 +1127,7 @@ function updateExecutorFeeValue(
     uint256);
 ```
 
-Sets the caller's executor fee. The caller must be an executor registered through [`registerExecutor`](#fn_registerexecutor).
+Sets the caller's executor fee. The caller must be an executor registered through [`registerExecutor`](#fn_registerexecutor_ccce7e86).
 
 When called multiple times inside the same reward epoch, only the last value remains.
 
@@ -1143,7 +1143,7 @@ When called multiple times inside the same reward epoch, only the last value rem
 
 <div class="api-node" markdown>
 
-### `wNat` { #fn_wnat }
+### `wNat` { #fn_wnat_9edbf007 }
 
 <div class="api-node-source" markdown>
 Defined in `IIClaimSetupManager` ([Docs](./IIClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/claiming/interface/IIClaimSetupManager.sol)).
@@ -1164,7 +1164,7 @@ Returns the [`WNat`](./WNat.md) contract.
 
 <div class="api-node" markdown>
 
-### `withdraw` { #fn_withdraw }
+### `withdraw` { #fn_withdraw_2e1a7d4d }
 
 <div class="api-node-source" markdown>
 Defined in `IClaimSetupManager` ([Docs](./IClaimSetupManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IClaimSetupManager.sol)).

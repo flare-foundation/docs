@@ -14,11 +14,11 @@ title: GovernedAtGenesis
 
 Defines behaviors for governed contracts that have their governor set at genesis.
 
-This contract enforces a fixed [`governance`](#fn_governance) address when the [`constructor`](#fn_constructor)
+This contract enforces a fixed [`governance`](#fn_governance_5aa6e675) address when the [`constructor`](#fn_constructor_undefined)
 is not executed on a contract (for instance when directly loaded to the genesis block).
-This is required to fix [`governance`](#fn_governance) on a contract when the network starts, at such point
+This is required to fix [`governance`](#fn_governance_5aa6e675) on a contract when the network starts, at such point
 where theoretically no accounts yet exist, and leaving it ungoverned could result in a race
-to claim [`governance`](#fn_governance) by an unauthorized address.
+to claim [`governance`](#fn_governance_5aa6e675) by an unauthorized address.
 
 </div>
 
@@ -28,7 +28,7 @@ to claim [`governance`](#fn_governance) by an unauthorized address.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -42,9 +42,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -55,7 +55,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedAtGenesis` ([Docs](./GovernedAtGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedAtGenesis.sol)).
@@ -74,7 +74,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -88,7 +88,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -101,7 +101,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -115,14 +115,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `initialise` { #fn_initialise }
+### `initialise` { #fn_initialise_9d6a890f }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedAtGenesis` ([Docs](./GovernedAtGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedAtGenesis.sol)).
@@ -136,7 +136,7 @@ function initialise(
 ) public pure;
 ```
 
-Disallow [`initialise`](#fn_initialise) to be called.
+Disallow [`initialise`](#fn_initialise_9d6a890f) to be called.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -147,7 +147,7 @@ Disallow [`initialise`](#fn_initialise) to be called.
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -160,8 +160,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 

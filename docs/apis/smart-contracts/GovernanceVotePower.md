@@ -22,7 +22,7 @@ Contract managing governance vote power and its delegation.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -43,7 +43,7 @@ Construct [`GovernanceVotePower`](./GovernanceVotePower.md) for given [`VPToken`
 
 <div class="api-node" markdown>
 
-### `delegate` { #fn_delegate }
+### `delegate` { #fn_delegate_5c19a95c }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -68,7 +68,7 @@ Delegates all governance vote power of `msg.sender` to address `_to`.
 
 <div class="api-node" markdown>
 
-### `delegatedGovernanceVotePowerHistoryCleanup` { #fn_delegatedgovernancevotepowerhistorycleanup }
+### `delegatedGovernanceVotePowerHistoryCleanup` { #fn_delegatedgovernancevotepowerhistorycleanup_29a59ff2 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -100,7 +100,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `delegatesHistoryCleanup` { #fn_delegateshistorycleanup }
+### `delegatesHistoryCleanup` { #fn_delegateshistorycleanup_f7ce0ddf }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -132,7 +132,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `getCleanupBlockNumber` { #fn_getcleanupblocknumber }
+### `getCleanupBlockNumber` { #fn_getcleanupblocknumber_a72ec4b6 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -146,7 +146,7 @@ function getCleanupBlockNumber(
     uint256);
 ```
 
-Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber).
+Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setcleanupblocknumber_13de97f5).
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -156,7 +156,7 @@ Get the current cleanup block number set with [`setCleanupBlockNumber`](#fn_setc
 
 <div class="api-node" markdown>
 
-### `getDelegateOfAt` { #fn_getdelegateofat }
+### `getDelegateOfAt` { #fn_getdelegateofat_3c028e9d }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -187,7 +187,7 @@ Gets the address an account is delegating its governance vote power to, at a giv
 
 <div class="api-node" markdown>
 
-### `getDelegateOfAtNow` { #fn_getdelegateofatnow }
+### `getDelegateOfAtNow` { #fn_getdelegateofatnow_b3e871ee }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -216,7 +216,7 @@ Gets the address an account is delegating its governance vote power to, at the l
 
 <div class="api-node" markdown>
 
-### `getVotes` { #fn_getvotes }
+### `getVotes` { #fn_getvotes_9ab24eb0 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -246,7 +246,7 @@ all delegations made to it.
 
 <div class="api-node" markdown>
 
-### `ownerToken` { #fn_ownertoken }
+### `ownerToken` { #fn_ownertoken_65371883 }
 
 <div class="api-node-source" markdown>
 Defined in `IIGovernanceVotePower` ([Docs](./IIGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IIGovernanceVotePower.sol)).
@@ -270,7 +270,7 @@ Get the token that this governance vote power contract belongs to.
 
 <div class="api-node" markdown>
 
-### `setCleanerContract` { #fn_setcleanercontract }
+### `setCleanerContract` { #fn_setcleanercontract_f6a494af }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -297,7 +297,7 @@ This method can be called by the [`ownerToken`](#va_ownertoken) only.
 
 <div class="api-node" markdown>
 
-### `setCleanupBlockNumber` { #fn_setcleanupblocknumber }
+### `setCleanupBlockNumber` { #fn_setcleanupblocknumber_13de97f5 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -327,7 +327,7 @@ This method can be called by the [`ownerToken`](#va_ownertoken) only.
 
 <div class="api-node" markdown>
 
-### `undelegate` { #fn_undelegate }
+### `undelegate` { #fn_undelegate_92ab89bb }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -347,7 +347,7 @@ Undelegates all governance vote power of `msg.sender`.
 
 <div class="api-node" markdown>
 
-### `updateAtTokenTransfer` { #fn_updateattokentransfer }
+### `updateAtTokenTransfer` { #fn_updateattokentransfer_eadb4362 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -383,7 +383,7 @@ delegates to reflect the correct balance.
 
 <div class="api-node" markdown>
 
-### `votePowerOfAt` { #fn_votepowerofat }
+### `votePowerOfAt` { #fn_votepowerofat_92bfe6d8 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
@@ -478,7 +478,7 @@ Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](htt
 ```
 
 Address of the contract that is allowed to call methods for history cleaning.
-Set with [`setCleanerContract`](#fn_setcleanercontract).
+Set with [`setCleanerContract`](#fn_setcleanercontract_f6a494af).
 
 </div>
 </div>

@@ -161,7 +161,7 @@ See `revokeDelegationAt` in [`IVPToken`](./IVPToken.md).
 
 <div class="api-node" markdown>
 
-### `explicitDelegationHistoryCleanup` { #fn_explicitdelegationhistorycleanup }
+### `explicitDelegationHistoryCleanup` { #fn_explicitdelegationhistorycleanup_cabc4528 }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -195,7 +195,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `percentageDelegationHistoryCleanup` { #fn_percentagedelegationhistorycleanup }
+### `percentageDelegationHistoryCleanup` { #fn_percentagedelegationhistorycleanup_7f57d58f }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -227,7 +227,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `revocationCleanup` { #fn_revocationcleanup }
+### `revocationCleanup` { #fn_revocationcleanup_8c0b6b40 }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -261,7 +261,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `votePowerCacheCleanup` { #fn_votepowercachecleanup }
+### `votePowerCacheCleanup` { #fn_votepowercachecleanup_891339a8 }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).
@@ -293,7 +293,7 @@ Method can only be called from the [`cleanerContract`](#va_cleanercontract) (whi
 
 <div class="api-node" markdown>
 
-### `votePowerHistoryCleanup` { #fn_votepowerhistorycleanup }
+### `votePowerHistoryCleanup` { #fn_votepowerhistorycleanup_1a05274c }
 
 <div class="api-node-source" markdown>
 Defined in `Delegatable` ([Docs](./Delegatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/Delegatable.sol)).

@@ -22,7 +22,7 @@ Internal interface for token pools.
 
 <div class="api-node" markdown>
 
-### `getTokenPoolSupplyData` { #fn_gettokenpoolsupplydata }
+### `getTokenPoolSupplyData` { #fn_gettokenpoolsupplydata_2dafdbbf }
 
 <div class="api-node-source" markdown>
 Defined in `IITokenPool` ([Docs](./IITokenPool.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IITokenPool.sol)).

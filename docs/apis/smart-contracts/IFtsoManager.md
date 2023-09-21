@@ -312,7 +312,7 @@ This is a measure against random number manipulation.
 
 <div class="api-node" markdown>
 
-### `active` { #fn_active }
+### `active` { #fn_active_02fb0c5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -326,7 +326,7 @@ function active(
     bool);
 ```
 
-Returns whether the FTSO Manager is [`active`](#fn_active) or not.
+Returns whether the FTSO Manager is [`active`](#fn_active_02fb0c5e) or not.
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -336,7 +336,7 @@ Returns whether the FTSO Manager is [`active`](#fn_active) or not.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochData` { #fn_getcurrentpriceepochdata }
+### `getCurrentPriceEpochData` { #fn_getcurrentpriceepochdata_93a79025 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -373,7 +373,7 @@ for information about the different submission phases.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid }
+### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid_08a7f402 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManagerGenesis` ([Docs](./IFtsoManagerGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoManagerGenesis.sol)).
@@ -397,7 +397,7 @@ Returns current price epoch ID.
 
 <div class="api-node" markdown>
 
-### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch }
+### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch_e7c830d4 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -421,7 +421,7 @@ Returns current reward epoch ID (the one currently running).
 
 <div class="api-node" markdown>
 
-### `getFallbackMode` { #fn_getfallbackmode }
+### `getFallbackMode` { #fn_getfallbackmode_4b48dd5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -451,7 +451,7 @@ In this mode only submissions from trusted providers are used.
 
 <div class="api-node" markdown>
 
-### `getFtsos` { #fn_getftsos }
+### `getFtsos` { #fn_getftsos_ce69f833 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -465,7 +465,7 @@ function getFtsos(
     contract IIFtso[] _ftsos);
 ```
 
-Returns the list of currently [`active`](#fn_active) FTSOs.
+Returns the list of currently [`active`](#fn_active_02fb0c5e) FTSOs.
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -475,7 +475,7 @@ Returns the list of currently [`active`](#fn_active) FTSOs.
 
 <div class="api-node" markdown>
 
-### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration }
+### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration_144e1591 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -506,7 +506,7 @@ for information about the different submission phases.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochConfiguration` { #fn_getrewardepochconfiguration }
+### `getRewardEpochConfiguration` { #fn_getrewardepochconfiguration_1cb513f7 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -534,7 +534,7 @@ See the [Reward epochs](https://docs.flare.network/tech/ftso/#vote-power) box.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext }
+### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext_3e7ff857 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -561,7 +561,7 @@ inaccessible.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock }
+### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock_f2edab5a }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).

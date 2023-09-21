@@ -328,7 +328,7 @@ for later burning.
 
 <div class="api-node" markdown>
 
-### `accrueUnearnedRewards` { #fn_accrueunearnedrewards }
+### `accrueUnearnedRewards` { #fn_accrueunearnedrewards_67dcac53 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -348,7 +348,7 @@ Accrue unearned rewards for a given price epoch.
 Typically done when the FTSO is in fallback mode or because of insufficient vote power.
 Simply accrue them so they will not be distributed and will be burned later.
 
-The amount of rewards that will be burned is calculated in the same way as in [`distributeRewards`](#fn_distributerewards).
+The amount of rewards that will be burned is calculated in the same way as in [`distributeRewards`](#fn_distributerewards_a9b79e17).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -361,7 +361,7 @@ The amount of rewards that will be burned is calculated in the same way as in [`
 
 <div class="api-node" markdown>
 
-### `activate` { #fn_activate }
+### `activate` { #fn_activate_0f15f4c0 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -381,7 +381,7 @@ Activates reward manager (allows claiming rewards).
 
 <div class="api-node" markdown>
 
-### `active` { #fn_active }
+### `active` { #fn_active_02fb0c5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -402,7 +402,7 @@ Whether rewards can be claimed from this reward manager.
 
 <div class="api-node" markdown>
 
-### `autoClaim` { #fn_autoclaim }
+### `autoClaim` { #fn_autoclaim_8dc305fa }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -444,7 +444,7 @@ address.
 
 <div class="api-node" markdown>
 
-### `claim` { #fn_claim }
+### `claim` { #fn_claim_b2c12192 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -462,11 +462,11 @@ function claim(
     uint256 _rewardAmount);
 ```
 
-Allows the caller to [`claim`](#fn_claim) rewards for a reward owner.
-The caller does not have to be the owner of the rewards, but must be approved by the owner to [`claim`](#fn_claim) on his
+Allows the caller to [`claim`](#fn_claim_b2c12192) rewards for a reward owner.
+The caller does not have to be the owner of the rewards, but must be approved by the owner to [`claim`](#fn_claim_b2c12192) on his
 behalf by using `setClaimExecutors` on the `claimSetupManager`.
 
-This function is intended to be used to [`claim`](#fn_claim) rewards in case of delegation by percentage.
+This function is intended to be used to [`claim`](#fn_claim_b2c12192) rewards in case of delegation by percentage.
 Reverts if `msg.sender` is delegating by amount.
 
 Anybody can call this method, but rewards can only be sent to the reward owner, therefore no funds can be
@@ -492,7 +492,7 @@ is always an authorized recipient.
 
 <div class="api-node" markdown>
 
-### `claimFromDataProviders` { #fn_claimfromdataproviders }
+### `claimFromDataProviders` { #fn_claimfromdataproviders_21bb25af }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -511,11 +511,11 @@ function claimFromDataProviders(
     uint256 _rewardAmount);
 ```
 
-Allows the caller to [`claim`](#fn_claim) rewards for a reward owner from specific data providers.
-The caller does not have to be the owner of the rewards, but must be approved by the owner to [`claim`](#fn_claim) on his
+Allows the caller to [`claim`](#fn_claim_b2c12192) rewards for a reward owner from specific data providers.
+The caller does not have to be the owner of the rewards, but must be approved by the owner to [`claim`](#fn_claim_b2c12192) on his
 behalf by using `setClaimExecutors` on the `claimSetupManager`.
 
-This function is intended to be used to [`claim`](#fn_claim) rewards in case of delegation by amount (explicit delegation).
+This function is intended to be used to [`claim`](#fn_claim_b2c12192) rewards in case of delegation by amount (explicit delegation).
 Reverts if `msg.sender` is delegating by percentage.
 
 Anybody can call this method, but rewards can only be sent to the reward owner, therefore no funds can be
@@ -542,7 +542,7 @@ is always an authorized recipient.
 
 <div class="api-node" markdown>
 
-### `claimReward` { #fn_claimreward }
+### `claimReward` { #fn_claimreward_b2af870a }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -558,10 +558,10 @@ function claimReward(
     uint256 _rewardAmount);
 ```
 
-Allows a percentage delegator to [`claim`](#fn_claim) rewards.
-This function is intended to be used to [`claim`](#fn_claim) rewards in case of delegation by percentage.
+Allows a percentage delegator to [`claim`](#fn_claim_b2c12192) rewards.
+This function is intended to be used to [`claim`](#fn_claim_b2c12192) rewards in case of delegation by percentage.
 
-**This function is deprecated**: use [`claim`](#fn_claim) instead.
+**This function is deprecated**: use [`claim`](#fn_claim_b2c12192) instead.
 
 Reverts if `msg.sender` is delegating by amount.
 Claims for all unclaimed reward epochs to the 'max(_rewardEpochs)'.
@@ -580,7 +580,7 @@ Retained for backward compatibility.
 
 <div class="api-node" markdown>
 
-### `claimRewardFromDataProviders` { #fn_claimrewardfromdataproviders }
+### `claimRewardFromDataProviders` { #fn_claimrewardfromdataproviders_d20bb542 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -597,10 +597,10 @@ function claimRewardFromDataProviders(
     uint256 _rewardAmount);
 ```
 
-Allows the caller to [`claim`](#fn_claim) rewards from specific data providers.
-This function is intended to be used to [`claim`](#fn_claim) rewards in case of delegation by amount.
+Allows the caller to [`claim`](#fn_claim_b2c12192) rewards from specific data providers.
+This function is intended to be used to [`claim`](#fn_claim_b2c12192) rewards in case of delegation by amount.
 
-**This function is deprecated**: use [`claimFromDataProviders`](#fn_claimfromdataproviders) instead.
+**This function is deprecated**: use [`claimFromDataProviders`](#fn_claimfromdataproviders_21bb25af) instead.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -616,7 +616,7 @@ This function is intended to be used to [`claim`](#fn_claim) rewards in case of 
 
 <div class="api-node" markdown>
 
-### `closeExpiredRewardEpoch` { #fn_closeexpiredrewardepoch }
+### `closeExpiredRewardEpoch` { #fn_closeexpiredrewardepoch_d6c1dbee }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -646,7 +646,7 @@ allow it, because `nextRewardEpochToExpire` in ftsoManager never decreases.
 
 <div class="api-node" markdown>
 
-### `deactivate` { #fn_deactivate }
+### `deactivate` { #fn_deactivate_51b42b00 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -666,7 +666,7 @@ Deactivates reward manager (prevents claiming rewards).
 
 <div class="api-node" markdown>
 
-### `distributeRewards` { #fn_distributerewards }
+### `distributeRewards` { #fn_distributerewards_a9b79e17 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -716,7 +716,7 @@ Parameters `epochId` and `ftso` are only needed so they can be passed onto the e
 
 <div class="api-node" markdown>
 
-### `enableClaims` { #fn_enableclaims }
+### `enableClaims` { #fn_enableclaims_ea28edad }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -736,7 +736,7 @@ Enable claiming for current and all future reward epochs.
 
 <div class="api-node" markdown>
 
-### `firstClaimableRewardEpoch` { #fn_firstclaimablerewardepoch }
+### `firstClaimableRewardEpoch` { #fn_firstclaimablerewardepoch_7b6b2c0a }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -761,7 +761,7 @@ Use this method to know the first reward epoch that was claimable.
 
 <div class="api-node" markdown>
 
-### `getClaimedReward` { #fn_getclaimedreward }
+### `getClaimedReward` { #fn_getclaimedreward_85b4c538 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -797,7 +797,7 @@ reward epoch.
 
 <div class="api-node" markdown>
 
-### `getContractName` { #fn_getcontractname }
+### `getContractName` { #fn_getcontractname_f5f5ba72 }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -821,7 +821,7 @@ Implement this function to allow updating inflation receiver contracts through [
 
 <div class="api-node" markdown>
 
-### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch }
+### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch_e7c830d4 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -842,7 +842,7 @@ Returns the current reward epoch ID.
 
 <div class="api-node" markdown>
 
-### `getDataProviderCurrentFeePercentage` { #fn_getdataprovidercurrentfeepercentage }
+### `getDataProviderCurrentFeePercentage` { #fn_getdataprovidercurrentfeepercentage_cfbcd25f }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -871,7 +871,7 @@ Returns the current [fee](https://docs.flare.network/tech/ftso/#rewards) percent
 
 <div class="api-node" markdown>
 
-### `getDataProviderFeePercentage` { #fn_getdataproviderfeepercentage }
+### `getDataProviderFeePercentage` { #fn_getdataproviderfeepercentage_961c00ed }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -903,7 +903,7 @@ given reward epoch.
 
 <div class="api-node" markdown>
 
-### `getDataProviderPerformanceInfo` { #fn_getdataproviderperformanceinfo }
+### `getDataProviderPerformanceInfo` { #fn_getdataproviderperformanceinfo_eb82dd7f }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -936,7 +936,7 @@ Returns information on rewards and vote power of a data provider at a given rewa
 
 <div class="api-node" markdown>
 
-### `getDataProviderScheduledFeePercentageChanges` { #fn_getdataproviderscheduledfeepercentagechanges }
+### `getDataProviderScheduledFeePercentageChanges` { #fn_getdataproviderscheduledfeepercentagechanges_33b7971e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -970,7 +970,7 @@ provider.
 
 <div class="api-node" markdown>
 
-### `getEpochReward` { #fn_getepochreward }
+### `getEpochReward` { #fn_getepochreward_d418634a }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1001,7 +1001,7 @@ Returns information on an epoch's rewards.
 
 <div class="api-node" markdown>
 
-### `getEpochsWithClaimableRewards` { #fn_getepochswithclaimablerewards }
+### `getEpochsWithClaimableRewards` { #fn_getepochswithclaimablerewards_0441218e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1029,7 +1029,7 @@ still ongoing.
 
 <div class="api-node" markdown>
 
-### `getEpochsWithUnclaimedRewards` { #fn_getepochswithunclaimedrewards }
+### `getEpochsWithUnclaimedRewards` { #fn_getepochswithunclaimedrewards_b4a2043d }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1058,7 +1058,7 @@ Returns the array of claimable epoch IDs for which the rewards of a reward owner
 
 <div class="api-node" markdown>
 
-### `getExpectedBalance` { #fn_getexpectedbalance }
+### `getExpectedBalance` { #fn_getexpectedbalance_af04cd3b }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -1083,7 +1083,7 @@ Returns the contract's expected balance
 
 <div class="api-node" markdown>
 
-### `getInflationAddress` { #fn_getinflationaddress }
+### `getInflationAddress` { #fn_getinflationaddress_ed39d3f8 }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -1104,7 +1104,7 @@ Returns the address of the [`Inflation`](./Inflation.md) contract.
 
 <div class="api-node" markdown>
 
-### `getInitialRewardEpoch` { #fn_getinitialrewardepoch }
+### `getInitialRewardEpoch` { #fn_getinitialrewardepoch_3123b7d8 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1128,7 +1128,7 @@ Set by governance through `setInitialRewardData`.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext }
+### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext_3e7ff857 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1149,7 +1149,7 @@ Returns the reward epoch that will expire next once a new reward epoch starts.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock }
+### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock_f2edab5a }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1175,7 +1175,7 @@ Returns the [vote power block](https://docs.flare.network/tech/ftso/#vote-power)
 
 <div class="api-node" markdown>
 
-### `getStateOfRewards` { #fn_getstateofrewards }
+### `getStateOfRewards` { #fn_getstateofrewards_a4472c10 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1212,7 +1212,7 @@ Returns the state of rewards for a given address at a specific reward epoch.
 
 <div class="api-node" markdown>
 
-### `getStateOfRewardsFromDataProviders` { #fn_getstateofrewardsfromdataproviders }
+### `getStateOfRewardsFromDataProviders` { #fn_getstateofrewardsfromdataproviders_e416b7e1 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1250,7 +1250,7 @@ reward epoch.
 
 <div class="api-node" markdown>
 
-### `getTokenPoolSupplyData` { #fn_gettokenpoolsupplydata }
+### `getTokenPoolSupplyData` { #fn_gettokenpoolsupplydata_2dafdbbf }
 
 <div class="api-node-source" markdown>
 Defined in `IITokenPool` ([Docs](./IITokenPool.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IITokenPool.sol)).
@@ -1278,7 +1278,7 @@ Returns token pool supply data.
 
 <div class="api-node" markdown>
 
-### `getUnclaimedReward` { #fn_getunclaimedreward }
+### `getUnclaimedReward` { #fn_getunclaimedreward_657d9695 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoRewardManager` ([Docs](./IIFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/tokenPools/interface/IIFtsoRewardManager.sol)).
@@ -1311,7 +1311,7 @@ Returns information on unclaimed rewards for a given data provider and epoch.
 
 <div class="api-node" markdown>
 
-### `nextClaimableRewardEpoch` { #fn_nextclaimablerewardepoch }
+### `nextClaimableRewardEpoch` { #fn_nextclaimablerewardepoch_69b91b59 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).
@@ -1337,7 +1337,7 @@ Returns the next claimable reward epoch for a reward owner.
 
 <div class="api-node" markdown>
 
-### `receiveInflation` { #fn_receiveinflation }
+### `receiveInflation` { #fn_receiveinflation_06201f1d }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -1357,7 +1357,7 @@ Receive native tokens from inflation.
 
 <div class="api-node" markdown>
 
-### `setDailyAuthorizedInflation` { #fn_setdailyauthorizedinflation }
+### `setDailyAuthorizedInflation` { #fn_setdailyauthorizedinflation_e2739563 }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -1382,7 +1382,7 @@ Notify the receiver that it is entitled to receive a new inflation amount.
 
 <div class="api-node" markdown>
 
-### `setDataProviderFeePercentage` { #fn_setdataproviderfeepercentage }
+### `setDataProviderFeePercentage` { #fn_setdataproviderfeepercentage_16e69328 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoRewardManager` ([Docs](./IFtsoRewardManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoRewardManager.sol)).

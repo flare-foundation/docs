@@ -15,7 +15,7 @@ title: FlareDaemon
 Flare Daemon contract.
 
 This contract exists to coordinate regular daemon-like polling of contracts
-that are registered to receive said polling. The [`trigger`](#fn_trigger) method is called by the
+that are registered to receive said polling. The [`trigger`](#fn_trigger_7fec8d38) method is called by the
 validator right at the end of block state transition.
 
 </div>
@@ -123,7 +123,7 @@ event GovernanceCallTimelocked(
 )
 ```
 
-Emitted when a new [`governance`](#fn_governance) call has been recorded and is now waiting for the time lock to expire.
+Emitted when a new [`governance`](#fn_governance_5aa6e675) call has been recorded and is now waiting for the time lock to expire.
 
 </div>
 </div>
@@ -144,9 +144,9 @@ event GovernanceInitialised(
 )
 ```
 
-Emitted when the [`governance`](#fn_governance) address is initialized.
+Emitted when the [`governance`](#fn_governance_5aa6e675) address is initialized.
 This address will be used until production mode is entered (see [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered)).
-At that point the [`governance`](#fn_governance) address is taken from [`GovernanceSettings`](./GovernanceSettings.md).
+At that point the [`governance`](#fn_governance_5aa6e675) address is taken from [`GovernanceSettings`](./GovernanceSettings.md).
 
 </div>
 </div>
@@ -167,7 +167,7 @@ event GovernedProductionModeEntered(
 )
 ```
 
-Emitted when [`governance`](#fn_governance) is enabled and the [`governance`](#fn_governance) address cannot be changed anymore
+Emitted when [`governance`](#fn_governance_5aa6e675) is enabled and the [`governance`](#fn_governance_5aa6e675) address cannot be changed anymore
 (only through a network fork).
 
 </div>
@@ -325,7 +325,7 @@ event TimelockedGovernanceCallCanceled(
 )
 ```
 
-Emitted when a timelocked [`governance`](#fn_governance) call is canceled before execution.
+Emitted when a timelocked [`governance`](#fn_governance_5aa6e675) call is canceled before execution.
 
 </div>
 </div>
@@ -347,7 +347,7 @@ event TimelockedGovernanceCallExecuted(
 )
 ```
 
-Emitted when a timelocked [`governance`](#fn_governance) call is executed.
+Emitted when a timelocked [`governance`](#fn_governance_5aa6e675) call is executed.
 
 </div>
 </div>
@@ -360,7 +360,7 @@ Emitted when a timelocked [`governance`](#fn_governance) call is executed.
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -374,9 +374,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -387,7 +387,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -400,15 +400,15 @@ constructor(
 ) public;
 ```
 
-This [`constructor`](#fn_constructor) should contain no code as this contract is pre-loaded into the genesis block.
-  The super [`constructor`](#fn_constructor) is called for testing convenience.
+This [`constructor`](#fn_constructor_undefined) should contain no code as this contract is pre-loaded into the genesis block.
+  The super [`constructor`](#fn_constructor_undefined) is called for testing convenience.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -422,7 +422,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -435,7 +435,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `getAddressUpdater` { #fn_getaddressupdater }
+### `getAddressUpdater` { #fn_getaddressupdater_5267a15d }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -459,7 +459,7 @@ Returns the configured address updater.
 
 <div class="api-node" markdown>
 
-### `getDaemonizedContractsData` { #fn_getdaemonizedcontractsdata }
+### `getDaemonizedContractsData` { #fn_getdaemonizedcontractsdata_ed21b6e4 }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -480,7 +480,7 @@ function getDaemonizedContractsData(
 
 <div class="api-node" markdown>
 
-### `getNextMintRequestAllowedTs` { #fn_getnextmintrequestallowedts }
+### `getNextMintRequestAllowedTs` { #fn_getnextmintrequestallowedts_63903143 }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -499,7 +499,7 @@ function getNextMintRequestAllowedTs(
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -513,14 +513,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `initialise` { #fn_initialise }
+### `initialise` { #fn_initialise_9d6a890f }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedAtGenesis` ([Docs](./GovernedAtGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedAtGenesis.sol)).
@@ -534,7 +534,7 @@ function initialise(
 ) public pure;
 ```
 
-Disallow [`initialise`](#fn_initialise) to be called.
+Disallow [`initialise`](#fn_initialise_9d6a890f) to be called.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -545,7 +545,7 @@ Disallow [`initialise`](#fn_initialise) to be called.
 
 <div class="api-node" markdown>
 
-### `initialiseFixedAddress` { #fn_initialisefixedaddress }
+### `initialiseFixedAddress` { #fn_initialisefixedaddress_c9f960eb }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -559,7 +559,7 @@ function initialiseFixedAddress(
     address);
 ```
 
-Set the [`governance`](#fn_governance) address to a hard-coded known address.
+Set the [`governance`](#fn_governance_5aa6e675) address to a hard-coded known address.
 
 This should be done at contract deployment time.
 
@@ -571,7 +571,7 @@ This should be done at contract deployment time.
 
 <div class="api-node" markdown>
 
-### `registerToDaemonize` { #fn_registertodaemonize }
+### `registerToDaemonize` { #fn_registertodaemonize_689c4999 }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -588,7 +588,7 @@ function registerToDaemonize(
 Register contracts to be polled by the daemon process.
 
 A gas limit of zero will set no limit for the contract but the validator has an overall
-  limit for the [`trigger`](#fn_trigger) method.
+  limit for the [`trigger`](#fn_trigger_7fec8d38) method.
 If any registrations already exist, they will be unregistered.
 Contracts will be daemonized in the order in which presented via the _registrations array.
 
@@ -601,7 +601,7 @@ Contracts will be daemonized in the order in which presented via the _registrati
 
 <div class="api-node" markdown>
 
-### `requestMinting` { #fn_requestminting }
+### `requestMinting` { #fn_requestminting_e9de7d60 }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -615,7 +615,7 @@ function requestMinting(
 ) external;
 ```
 
-Queue up a minting request to send to the validator at next [`trigger`](#fn_trigger).
+Queue up a minting request to send to the validator at next [`trigger`](#fn_trigger_7fec8d38).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -626,7 +626,7 @@ Queue up a minting request to send to the validator at next [`trigger`](#fn_trig
 
 <div class="api-node" markdown>
 
-### `setAddressUpdater` { #fn_setaddressupdater }
+### `setAddressUpdater` { #fn_setaddressupdater_aea36b53 }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -651,7 +651,7 @@ Sets the address udpater contract.
 
 <div class="api-node" markdown>
 
-### `setBlockHoldoff` { #fn_setblockholdoff }
+### `setBlockHoldoff` { #fn_setblockholdoff_5042916c }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -677,7 +677,7 @@ Set number of blocks that must elapse before a daemonized contract exceeding gas
 
 <div class="api-node" markdown>
 
-### `setMaxMintingRequest` { #fn_setmaxmintingrequest }
+### `setMaxMintingRequest` { #fn_setmaxmintingrequest_870196b8 }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -703,7 +703,7 @@ this number can't be udated too often
 
 <div class="api-node" markdown>
 
-### `showDaemonizedErrors` { #fn_showdaemonizederrors }
+### `showDaemonizedErrors` { #fn_showdaemonizederrors_ecdda0dd }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -728,7 +728,7 @@ function showDaemonizedErrors(
 
 <div class="api-node" markdown>
 
-### `showLastDaemonizedError` { #fn_showlastdaemonizederror }
+### `showLastDaemonizedError` { #fn_showlastdaemonizederror_63d4a53a }
 
 <div class="api-node-source" markdown>
 Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/implementation/FlareDaemon.sol)).
@@ -751,7 +751,7 @@ function showLastDaemonizedError(
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -764,8 +764,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -774,7 +774,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdatable` ([Docs](./AddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdatable.sol)).
@@ -814,7 +814,7 @@ Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/
 modifier inflationSet()
 ```
 
-As there is not a [`constructor`](#fn_constructor), this modifier exists to make sure the [`inflation`](#va_inflation)
+As there is not a [`constructor`](#fn_constructor_undefined), this modifier exists to make sure the [`inflation`](#va_inflation)
   contract is set for methods that require it.
 
 </div>
@@ -908,7 +908,7 @@ Defined in `FlareDaemon` ([Docs](./FlareDaemon.md), [Source](https://gitlab.com/
 modifier onlySystemTrigger()
 ```
 
-Access control to protect [`trigger`](#fn_trigger) method. 
+Access control to protect [`trigger`](#fn_trigger_7fec8d38) method. 
 Please note that the sender address is the same as deployed [`FlareDaemon`](./FlareDaemon.md) address in this case.
 
 </div>
@@ -1144,7 +1144,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -1180,7 +1180,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

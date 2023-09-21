@@ -416,7 +416,7 @@ This is a measure against random number manipulation.
 
 <div class="api-node" markdown>
 
-### `activate` { #fn_activate }
+### `activate` { #fn_activate_0f15f4c0 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -429,14 +429,14 @@ function activate(
 ) external;
 ```
 
-Activates FTSO manager ([`daemonize`](#fn_daemonize) will run jobs).
+Activates FTSO manager ([`daemonize`](#fn_daemonize_6d0e8c34) will run jobs).
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `active` { #fn_active }
+### `active` { #fn_active_02fb0c5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -450,7 +450,7 @@ function active(
     bool);
 ```
 
-Returns whether the FTSO Manager is [`active`](#fn_active) or not.
+Returns whether the FTSO Manager is [`active`](#fn_active_02fb0c5e) or not.
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -460,7 +460,7 @@ Returns whether the FTSO Manager is [`active`](#fn_active) or not.
 
 <div class="api-node" markdown>
 
-### `addFtso` { #fn_addftso }
+### `addFtso` { #fn_addftso_2663f1b4 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -486,7 +486,7 @@ All FTSOs in a multi-asset FTSO must be managed by the same FTSO manager.
 
 <div class="api-node" markdown>
 
-### `addFtsosBulk` { #fn_addftsosbulk }
+### `addFtsosBulk` { #fn_addftsosbulk_d429cfe5 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -512,7 +512,7 @@ All FTSOs in a multi-asset FTSO must be managed by the same FTSO manager.
 
 <div class="api-node" markdown>
 
-### `currentRewardEpochEnds` { #fn_currentrewardepochends }
+### `currentRewardEpochEnds` { #fn_currentrewardepochends_d89c39e6 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -536,7 +536,7 @@ Returns when the current reward epoch finishes.
 
 <div class="api-node" markdown>
 
-### `daemonize` { #fn_daemonize }
+### `daemonize` { #fn_daemonize_6d0e8c34 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -561,7 +561,7 @@ The trigger method is called by the validator right at the end of block state tr
 
 <div class="api-node" markdown>
 
-### `getContractName` { #fn_getcontractname }
+### `getContractName` { #fn_getcontractname_f5f5ba72 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -585,7 +585,7 @@ Implement this function to allow updating daemonized contracts through the [`Add
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochData` { #fn_getcurrentpriceepochdata }
+### `getCurrentPriceEpochData` { #fn_getcurrentpriceepochdata_93a79025 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -622,7 +622,7 @@ for information about the different submission phases.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid }
+### `getCurrentPriceEpochId` { #fn_getcurrentpriceepochid_08a7f402 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManagerGenesis` ([Docs](./IFtsoManagerGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoManagerGenesis.sol)).
@@ -646,7 +646,7 @@ Returns current price epoch ID.
 
 <div class="api-node" markdown>
 
-### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch }
+### `getCurrentRewardEpoch` { #fn_getcurrentrewardepoch_e7c830d4 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -670,7 +670,7 @@ Returns current reward epoch ID (the one currently running).
 
 <div class="api-node" markdown>
 
-### `getElasticBandWidthPPMFtso` { #fn_getelasticbandwidthppmftso }
+### `getElasticBandWidthPPMFtso` { #fn_getelasticbandwidthppmftso_5bb44e9a }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -700,7 +700,7 @@ for a given FTSO.
 
 <div class="api-node" markdown>
 
-### `getFallbackMode` { #fn_getfallbackmode }
+### `getFallbackMode` { #fn_getfallbackmode_4b48dd5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -730,7 +730,7 @@ In this mode only submissions from trusted providers are used.
 
 <div class="api-node" markdown>
 
-### `getFtsos` { #fn_getftsos }
+### `getFtsos` { #fn_getftsos_ce69f833 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -744,7 +744,7 @@ function getFtsos(
     contract IIFtso[] _ftsos);
 ```
 
-Returns the list of currently [`active`](#fn_active) FTSOs.
+Returns the list of currently [`active`](#fn_active_02fb0c5e) FTSOs.
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
@@ -754,7 +754,7 @@ Returns the list of currently [`active`](#fn_active) FTSOs.
 
 <div class="api-node" markdown>
 
-### `getLastUnprocessedPriceEpochData` { #fn_getlastunprocessedpriceepochdata }
+### `getLastUnprocessedPriceEpochData` { #fn_getlastunprocessedpriceepochdata_6ca051e6 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -784,7 +784,7 @@ time due to validator node problems, for example.
 
 <div class="api-node" markdown>
 
-### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration }
+### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration_144e1591 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -815,7 +815,7 @@ for information about the different submission phases.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochConfiguration` { #fn_getrewardepochconfiguration }
+### `getRewardEpochConfiguration` { #fn_getrewardepochconfiguration_1cb513f7 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -843,7 +843,7 @@ See the [Reward epochs](https://docs.flare.network/tech/ftso/#vote-power) box.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochData` { #fn_getrewardepochdata }
+### `getRewardEpochData` { #fn_getrewardepochdata_e5399da3 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -872,7 +872,7 @@ Returns data regarding a specific reward epoch ID.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext }
+### `getRewardEpochToExpireNext` { #fn_getrewardepochtoexpirenext_3e7ff857 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -899,7 +899,7 @@ inaccessible.
 
 <div class="api-node" markdown>
 
-### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock }
+### `getRewardEpochVotePowerBlock` { #fn_getrewardepochvotepowerblock_f2edab5a }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoManager` ([Docs](./IFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtsoManager.sol)).
@@ -929,7 +929,7 @@ that was used for a past reward epoch.
 
 <div class="api-node" markdown>
 
-### `getRewardExpiryOffsetSeconds` { #fn_getrewardexpiryoffsetseconds }
+### `getRewardExpiryOffsetSeconds` { #fn_getrewardexpiryoffsetseconds_ec31db0c }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -953,7 +953,7 @@ Returns the currently configured reward expiration time.
 
 <div class="api-node" markdown>
 
-### `notInitializedFtsos` { #fn_notinitializedftsos }
+### `notInitializedFtsos` { #fn_notinitializedftsos_823033a9 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -978,7 +978,7 @@ Returns whether an FTSO has been initialized.
 
 <div class="api-node" markdown>
 
-### `removeFtso` { #fn_removeftso }
+### `removeFtso` { #fn_removeftso_a670ff87 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1005,7 +1005,7 @@ Deactivates the `_ftso`.
 
 <div class="api-node" markdown>
 
-### `replaceFtso` { #fn_replaceftso }
+### `replaceFtso` { #fn_replaceftso_3758e679 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1036,7 +1036,7 @@ Deactivates the old FTSO.
 
 <div class="api-node" markdown>
 
-### `replaceFtsosBulk` { #fn_replaceftsosbulk }
+### `replaceFtsosBulk` { #fn_replaceftsosbulk_758ff1da }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1067,7 +1067,7 @@ Deactivates the old FTSOs.
 
 <div class="api-node" markdown>
 
-### `rewardEpochDurationSeconds` { #fn_rewardepochdurationseconds }
+### `rewardEpochDurationSeconds` { #fn_rewardepochdurationseconds_85f3c9c9 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1091,7 +1091,7 @@ Currently configured reward epoch duration.
 
 <div class="api-node" markdown>
 
-### `rewardEpochs` { #fn_rewardepochs }
+### `rewardEpochs` { #fn_rewardepochs_a795f409 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1124,7 +1124,7 @@ Returns information about a reward epoch.
 
 <div class="api-node" markdown>
 
-### `rewardEpochsStartTs` { #fn_rewardepochsstartts }
+### `rewardEpochsStartTs` { #fn_rewardepochsstartts_a578f55b }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1148,7 +1148,7 @@ Time when the current reward epoch started.
 
 <div class="api-node" markdown>
 
-### `setFallbackMode` { #fn_setfallbackmode }
+### `setFallbackMode` { #fn_setfallbackmode_ff882fbb }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1174,7 +1174,7 @@ In this mode only submissions from trusted providers are used.
 
 <div class="api-node" markdown>
 
-### `setFtsoAsset` { #fn_setftsoasset }
+### `setFtsoAsset` { #fn_setftsoasset_6b65cc34 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1201,7 +1201,7 @@ Sets the asset tracked by an FTSO.
 
 <div class="api-node" markdown>
 
-### `setFtsoAssetFtsos` { #fn_setftsoassetftsos }
+### `setFtsoAssetFtsos` { #fn_setftsoassetftsos_a93a6f42 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1229,7 +1229,7 @@ FTSOs implicitly determine the FTSO assets.
 
 <div class="api-node" markdown>
 
-### `setFtsoFallbackMode` { #fn_setftsofallbackmode }
+### `setFtsoFallbackMode` { #fn_setftsofallbackmode_af946af7 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1257,7 +1257,7 @@ In this mode only submissions from trusted providers are used.
 
 <div class="api-node" markdown>
 
-### `setGovernanceParameters` { #fn_setgovernanceparameters }
+### `setGovernanceParameters` { #fn_setgovernanceparameters_13226793 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1300,7 +1300,7 @@ Sets governance parameters for FTSOs
 
 <div class="api-node" markdown>
 
-### `setInitialRewardData` { #fn_setinitialrewarddata }
+### `setInitialRewardData` { #fn_setinitialrewarddata_e080a970 }
 
 <div class="api-node-source" markdown>
 Defined in `IIFtsoManager` ([Docs](./IIFtsoManager.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtsoManager.sol)).
@@ -1330,7 +1330,7 @@ Can only be called before activation.
 
 <div class="api-node" markdown>
 
-### `switchToFallbackMode` { #fn_switchtofallbackmode }
+### `switchToFallbackMode` { #fn_switchtofallbackmode_e22fdece }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -1344,7 +1344,7 @@ function switchToFallbackMode(
     bool);
 ```
 
-This function will be called after an error is caught in [`daemonize`](#fn_daemonize).
+This function will be called after an error is caught in [`daemonize`](#fn_daemonize_6d0e8c34).
 It will switch the contract to a simpler fallback mode, which hopefully works when full mode doesn't.
 Not every contract needs to support fallback mode ([`FtsoManager`](./FtsoManager.md) does), so this method may be empty.
 Switching back to normal mode is left to the contract (typically a governed method call).

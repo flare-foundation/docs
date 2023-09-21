@@ -22,7 +22,7 @@ Internal interface for contracts that can receive inflation.
 
 <div class="api-node" markdown>
 
-### `getContractName` { #fn_getcontractname }
+### `getContractName` { #fn_getcontractname_f5f5ba72 }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -46,7 +46,7 @@ Implement this function to allow updating inflation receiver contracts through [
 
 <div class="api-node" markdown>
 
-### `getExpectedBalance` { #fn_getexpectedbalance }
+### `getExpectedBalance` { #fn_getexpectedbalance_af04cd3b }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -71,7 +71,7 @@ Returns the contract's expected balance
 
 <div class="api-node" markdown>
 
-### `getInflationAddress` { #fn_getinflationaddress }
+### `getInflationAddress` { #fn_getinflationaddress_ed39d3f8 }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -92,7 +92,7 @@ Returns the address of the [`Inflation`](./Inflation.md) contract.
 
 <div class="api-node" markdown>
 
-### `receiveInflation` { #fn_receiveinflation }
+### `receiveInflation` { #fn_receiveinflation_06201f1d }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).
@@ -112,7 +112,7 @@ Receive native tokens from inflation.
 
 <div class="api-node" markdown>
 
-### `setDailyAuthorizedInflation` { #fn_setdailyauthorizedinflation }
+### `setDailyAuthorizedInflation` { #fn_setdailyauthorizedinflation_e2739563 }
 
 <div class="api-node-source" markdown>
 Defined in `IIInflationReceiver` ([Docs](./IIInflationReceiver.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/inflation/interface/IIInflationReceiver.sol)).

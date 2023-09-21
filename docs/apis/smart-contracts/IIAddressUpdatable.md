@@ -24,7 +24,7 @@ See [`AddressUpdatable`](./AddressUpdatable.md).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_b00c0b76 }
 
 <div class="api-node-source" markdown>
 Defined in `IIAddressUpdatable` ([Docs](./IIAddressUpdatable.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/interface/IIAddressUpdatable.sol)).

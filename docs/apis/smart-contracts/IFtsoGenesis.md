@@ -22,7 +22,7 @@ Portion of the [`IFtso`](./IFtso.md) interface that is available to contracts de
 
 <div class="api-node" markdown>
 
-### `revealPriceSubmitter` { #fn_revealpricesubmitter }
+### `revealPriceSubmitter` { #fn_revealpricesubmitter_c1f6c36e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoGenesis` ([Docs](./IFtsoGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoGenesis.sol)).
@@ -54,7 +54,7 @@ The hash of _price and _random must be equal to the submitted hash
 
 <div class="api-node" markdown>
 
-### `wNatVotePowerCached` { #fn_wnatvotepowercached }
+### `wNatVotePowerCached` { #fn_wnatvotepowercached_f72cab28 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtsoGenesis` ([Docs](./IFtsoGenesis.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoGenesis.sol)).

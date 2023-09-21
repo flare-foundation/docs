@@ -118,7 +118,7 @@ event PriceEpochInitializedOnFtso(
 All necessary parameters have been set for an epoch and prices can start being _revealed_.
 Note that prices can already be _submitted_ immediately after the previous price epoch submit end time is over.
 
-This event is not emitted in fallback mode (see [`getPriceEpochData`](#fn_getpriceepochdata)).
+This event is not emitted in fallback mode (see [`getPriceEpochData`](#fn_getpriceepochdata_e3b3a3b3)).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -213,7 +213,7 @@ A voter has revealed its price.
 
 <div class="api-node" markdown>
 
-### `active` { #fn_active }
+### `active` { #fn_active_02fb0c5e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -227,14 +227,14 @@ function active(
     bool);
 ```
 
-Returns whether FTSO is [`active`](#fn_active) or not.
+Returns whether FTSO is [`active`](#fn_active_02fb0c5e) or not.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `getCurrentEpochId` { #fn_getcurrentepochid }
+### `getCurrentEpochId` { #fn_getcurrentepochid_a29a839f }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -258,7 +258,7 @@ Returns the current epoch ID.
 
 <div class="api-node" markdown>
 
-### `getCurrentPrice` { #fn_getcurrentprice }
+### `getCurrentPrice` { #fn_getcurrentprice_eb91d37e }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -284,7 +284,7 @@ Returns the current asset price.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceDetails` { #fn_getcurrentpricedetails }
+### `getCurrentPriceDetails` { #fn_getcurrentpricedetails_040d73b8 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -317,7 +317,7 @@ All timestamps are in seconds from UNIX epoch.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceFromTrustedProviders` { #fn_getcurrentpricefromtrustedproviders }
+### `getCurrentPriceFromTrustedProviders` { #fn_getcurrentpricefromtrustedproviders_af52df08 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -343,7 +343,7 @@ Returns current asset price calculated only using input from trusted providers.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals }
+### `getCurrentPriceWithDecimals` { #fn_getcurrentpricewithdecimals_65f5cd86 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -371,7 +371,7 @@ Returns current asset price and number of decimals.
 
 <div class="api-node" markdown>
 
-### `getCurrentPriceWithDecimalsFromTrustedProviders` { #fn_getcurrentpricewithdecimalsfromtrustedproviders }
+### `getCurrentPriceWithDecimalsFromTrustedProviders` { #fn_getcurrentpricewithdecimalsfromtrustedproviders_3cacb3ae }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -399,7 +399,7 @@ Returns current asset price calculated only using input from trusted providers a
 
 <div class="api-node" markdown>
 
-### `getCurrentRandom` { #fn_getcurrentrandom }
+### `getCurrentRandom` { #fn_getcurrentrandom_d89601fd }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -421,7 +421,7 @@ provided by all data providers along with their data submissions.
 
 <div class="api-node" markdown>
 
-### `getEpochId` { #fn_getepochid }
+### `getEpochId` { #fn_getepochid_5303548b }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -450,7 +450,7 @@ Returns the ID of the epoch that was opened for price submission at the specifie
 
 <div class="api-node" markdown>
 
-### `getEpochPrice` { #fn_getepochprice }
+### `getEpochPrice` { #fn_getepochprice_7d1d6f12 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -479,7 +479,7 @@ Returns agreed asset price in the specified epoch.
 
 <div class="api-node" markdown>
 
-### `getEpochPriceForVoter` { #fn_getepochpriceforvoter }
+### `getEpochPriceForVoter` { #fn_getepochpriceforvoter_c5d8b9e7 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -510,7 +510,7 @@ Returns asset price submitted by a voter in the specified epoch.
 
 <div class="api-node" markdown>
 
-### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration }
+### `getPriceEpochConfiguration` { #fn_getpriceepochconfiguration_144e1591 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -538,7 +538,7 @@ Returns current epoch's configuration.
 
 <div class="api-node" markdown>
 
-### `getPriceEpochData` { #fn_getpriceepochdata }
+### `getPriceEpochData` { #fn_getpriceepochdata_e3b3a3b3 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -571,7 +571,7 @@ Intervals are open on the right: End times are not included.
 
 <div class="api-node" markdown>
 
-### `getRandom` { #fn_getrandom }
+### `getRandom` { #fn_getrandom_cd4b6914 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -601,7 +601,7 @@ provided by all data providers along with their data submissions.
 
 <div class="api-node" markdown>
 
-### `symbol` { #fn_symbol }
+### `symbol` { #fn_symbol_95d89b41 }
 
 <div class="api-node-source" markdown>
 Defined in `IFtso` ([Docs](./IFtso.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol)).
@@ -615,7 +615,7 @@ function symbol(
     string);
 ```
 
-Returns the FTSO [`symbol`](#fn_symbol).
+Returns the FTSO [`symbol`](#fn_symbol_95d89b41).
 
 </div>
 </div>

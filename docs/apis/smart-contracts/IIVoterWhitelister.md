@@ -24,7 +24,7 @@ Only addresses registered in this contract can submit data to the FTSO system.
 
 <div class="api-node" markdown>
 
-### `addFtso` { #fn_addftso }
+### `addFtso` { #fn_addftso_345705a4 }
 
 <div class="api-node-source" markdown>
 Defined in `IIVoterWhitelister` ([Docs](./IIVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIVoterWhitelister.sol)).
@@ -49,7 +49,7 @@ Create an empty whitelist with default size for a new FTSO.
 
 <div class="api-node" markdown>
 
-### `chillVoter` { #fn_chillvoter }
+### `chillVoter` { #fn_chillvoter_2b4faebb }
 
 <div class="api-node-source" markdown>
 Defined in `IIVoterWhitelister` ([Docs](./IIVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIVoterWhitelister.sol)).
@@ -81,7 +81,7 @@ specified number of reward epochs.
 
 <div class="api-node" markdown>
 
-### `chilledUntilRewardEpoch` { #fn_chilleduntilrewardepoch }
+### `chilledUntilRewardEpoch` { #fn_chilleduntilrewardepoch_46538074 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -111,7 +111,7 @@ A voter can whitelist again from a returned reward epoch onwards.
 
 <div class="api-node" markdown>
 
-### `defaultMaxVotersForFtso` { #fn_defaultmaxvotersforftso }
+### `defaultMaxVotersForFtso` { #fn_defaultmaxvotersforftso_47ed51b1 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -135,7 +135,7 @@ Maximum number of voters in the whitelist for a new FTSO.
 
 <div class="api-node" markdown>
 
-### `getFtsoWhitelistedPriceProviders` { #fn_getftsowhitelistedpriceproviders }
+### `getFtsoWhitelistedPriceProviders` { #fn_getftsowhitelistedpriceproviders_09fcb400 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -164,7 +164,7 @@ Gets whitelisted price providers for the FTSO at a given index.
 
 <div class="api-node" markdown>
 
-### `getFtsoWhitelistedPriceProvidersBySymbol` { #fn_getftsowhitelistedpriceprovidersbysymbol }
+### `getFtsoWhitelistedPriceProvidersBySymbol` { #fn_getftsowhitelistedpriceprovidersbysymbol_aa89dfd4 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -193,7 +193,7 @@ Gets whitelisted price providers for the FTSO with a specified symbol.
 
 <div class="api-node" markdown>
 
-### `maxVotersForFtso` { #fn_maxvotersforftso }
+### `maxVotersForFtso` { #fn_maxvotersforftso_98dccfc2 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -223,7 +223,7 @@ Adjustable separately for each index.
 
 <div class="api-node" markdown>
 
-### `removeFtso` { #fn_removeftso }
+### `removeFtso` { #fn_removeftso_d8736171 }
 
 <div class="api-node-source" markdown>
 Defined in `IIVoterWhitelister` ([Docs](./IIVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIVoterWhitelister.sol)).
@@ -248,7 +248,7 @@ Clear whitelist for a removed FTSO.
 
 <div class="api-node" markdown>
 
-### `removeTrustedAddressFromWhitelist` { #fn_removetrustedaddressfromwhitelist }
+### `removeTrustedAddressFromWhitelist` { #fn_removetrustedaddressfromwhitelist_9dc950ab }
 
 <div class="api-node-source" markdown>
 Defined in `IIVoterWhitelister` ([Docs](./IIVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIVoterWhitelister.sol)).
@@ -275,7 +275,7 @@ Remove a trusted address from whitelist.
 
 <div class="api-node" markdown>
 
-### `requestFullVoterWhitelisting` { #fn_requestfullvoterwhitelisting }
+### `requestFullVoterWhitelisting` { #fn_requestfullvoterwhitelisting_b06cbaf7 }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -307,7 +307,7 @@ May be called by any address, including the voter itself.
 
 <div class="api-node" markdown>
 
-### `requestWhitelistingVoter` { #fn_requestwhitelistingvoter }
+### `requestWhitelistingVoter` { #fn_requestwhitelistingvoter_3de2cb1c }
 
 <div class="api-node-source" markdown>
 Defined in `IVoterWhitelister` ([Docs](./IVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IVoterWhitelister.sol)).
@@ -336,7 +336,7 @@ May be called by any address, including the voter itself.
 
 <div class="api-node" markdown>
 
-### `setDefaultMaxVotersForFtso` { #fn_setdefaultmaxvotersforftso }
+### `setDefaultMaxVotersForFtso` { #fn_setdefaultmaxvotersforftso_2ee96140 }
 
 <div class="api-node-source" markdown>
 Defined in `IIVoterWhitelister` ([Docs](./IIVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIVoterWhitelister.sol)).
@@ -361,7 +361,7 @@ Set the maximum number of voters in the whitelist for a new FTSOs.
 
 <div class="api-node" markdown>
 
-### `setMaxVotersForFtso` { #fn_setmaxvotersforftso }
+### `setMaxVotersForFtso` { #fn_setmaxvotersforftso_7ecfcfa3 }
 
 <div class="api-node-source" markdown>
 Defined in `IIVoterWhitelister` ([Docs](./IIVoterWhitelister.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/utils/interface/IIVoterWhitelister.sol)).

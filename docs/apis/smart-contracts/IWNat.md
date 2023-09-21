@@ -30,7 +30,7 @@ Code attribution: WETH9.
 
 <div class="api-node" markdown>
 
-### `deposit` { #fn_deposit }
+### `deposit` { #fn_deposit_d0e30db0 }
 
 <div class="api-node-source" markdown>
 Defined in `IWNat` ([Docs](./IWNat.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IWNat.sol)).
@@ -52,7 +52,7 @@ This operation is commonly known as "wrapping".
 
 <div class="api-node" markdown>
 
-### `depositTo` { #fn_depositto }
+### `depositTo` { #fn_depositto_b760faf9 }
 
 <div class="api-node-source" markdown>
 Defined in `IWNat` ([Docs](./IWNat.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IWNat.sol)).
@@ -70,7 +70,7 @@ Deposits native tokens and mints the same amount of `WNAT` tokens,
 which are added to `_recipient`'s balance.
 This operation is commonly known as "wrapping".
 
-This is equivalent to using [`deposit`](#fn_deposit) followed by `transfer`.
+This is equivalent to using [`deposit`](#fn_deposit_d0e30db0) followed by `transfer`.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -81,7 +81,7 @@ This is equivalent to using [`deposit`](#fn_deposit) followed by `transfer`.
 
 <div class="api-node" markdown>
 
-### `withdraw` { #fn_withdraw }
+### `withdraw` { #fn_withdraw_2e1a7d4d }
 
 <div class="api-node-source" markdown>
 Defined in `IWNat` ([Docs](./IWNat.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IWNat.sol)).
@@ -110,7 +110,7 @@ Reverts if `_amount` is higher than `msg.sender`'s `WNAT` balance.
 
 <div class="api-node" markdown>
 
-### `withdrawFrom` { #fn_withdrawfrom }
+### `withdrawFrom` { #fn_withdrawfrom_9470b0bd }
 
 <div class="api-node-source" markdown>
 Defined in `IWNat` ([Docs](./IWNat.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IWNat.sol)).
@@ -129,7 +129,7 @@ Burns `_amount` of `WNAT` tokens from `_owner`'s `WNAT` balance and
 transfers the same amount of native tokens to `msg.sender`.
 This operation is commonly known as "unwrapping".
 
-`msg.sender` must have been authorized to [`withdraw`](#fn_withdraw) from `_owner`'s account
+`msg.sender` must have been authorized to [`withdraw`](#fn_withdraw_2e1a7d4d) from `_owner`'s account
 through ERC-20's approve mechanism.
 
 Reverts if `_amount` is higher than `_owners`'s `WNAT` balance or than

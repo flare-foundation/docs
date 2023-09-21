@@ -14,7 +14,7 @@ title: AddressUpdater
 
 Keeps track of the current address for all unique and special platform contracts.
 
-This contract keeps a list of addresses that gets updated by [`governance`](#fn_governance) every time
+This contract keeps a list of addresses that gets updated by [`governance`](#fn_governance_5aa6e675) every time
 any of the tracked contracts is redeployed.
 This list is then used by the [`FlareContractRegistry`](./FlareContractRegistry.md), and also by [`AddressUpdatable`](./AddressUpdatable.md)
 to inform all dependent contracts of any address change.
@@ -27,7 +27,7 @@ to inform all dependent contracts of any address change.
 
 <div class="api-node" markdown>
 
-### `addOrUpdateContractNamesAndAddresses` { #fn_addorupdatecontractnamesandaddresses }
+### `addOrUpdateContractNamesAndAddresses` { #fn_addorupdatecontractnamesandaddresses_8246e467 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -42,9 +42,9 @@ function addOrUpdateContractNamesAndAddresses(
 ) external;
 ```
 
-Add or [`update`](#fn_update) contract names and addresses that are later used in [`updateContractAddresses`](#fn_updatecontractaddresses) calls.
+Add or [`update`](#fn_update_9933dba6) contract names and addresses that are later used in [`updateContractAddresses`](#fn_updatecontractaddresses_1b0e2960) calls.
 
-Can only be called by [`governance`](#fn_governance).
+Can only be called by [`governance`](#fn_governance_5aa6e675).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -56,7 +56,7 @@ Can only be called by [`governance`](#fn_governance).
 
 <div class="api-node" markdown>
 
-### `cancelGovernanceCall` { #fn_cancelgovernancecall }
+### `cancelGovernanceCall` { #fn_cancelgovernancecall_67fc4029 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -70,9 +70,9 @@ function cancelGovernanceCall(
 ) external;
 ```
 
-Cancel a timelocked [`governance`](#fn_governance) call before it has been executed.
+Cancel a timelocked [`governance`](#fn_governance_5aa6e675) call before it has been executed.
 
-Only [`governance`](#fn_governance) can call this method.
+Only [`governance`](#fn_governance_5aa6e675) can call this method.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -83,7 +83,7 @@ Only [`governance`](#fn_governance) can call this method.
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -102,7 +102,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `constructor` { #fn_constructor }
+### `constructor` { #fn_constructor_undefined }
 
 <div class="api-node-source" markdown>
 Defined in `Governed` ([Docs](./Governed.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/Governed.sol)).
@@ -125,7 +125,7 @@ constructor(
 
 <div class="api-node" markdown>
 
-### `executeGovernanceCall` { #fn_executegovernancecall }
+### `executeGovernanceCall` { #fn_executegovernancecall_5ff27079 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -139,7 +139,7 @@ function executeGovernanceCall(
 ) external;
 ```
 
-Execute the timelocked [`governance`](#fn_governance) calls once the timelock period expires.
+Execute the timelocked [`governance`](#fn_governance_5aa6e675) calls once the timelock period expires.
 
 Only executor can call this method.
 
@@ -152,7 +152,7 @@ Only executor can call this method.
 
 <div class="api-node" markdown>
 
-### `getContractAddress` { #fn_getcontractaddress }
+### `getContractAddress` { #fn_getcontractaddress_04433bbc }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -181,7 +181,7 @@ Returns contract address for the given name, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractAddressByHash` { #fn_getcontractaddressbyhash }
+### `getContractAddressByHash` { #fn_getcontractaddressbyhash_159354a2 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -210,7 +210,7 @@ Returns contract address for the given name hash, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractAddresses` { #fn_getcontractaddresses }
+### `getContractAddresses` { #fn_getcontractaddresses_ee6f63c3 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -239,7 +239,7 @@ Returns contract addresses for the given names, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractAddressesByHash` { #fn_getcontractaddressesbyhash }
+### `getContractAddressesByHash` { #fn_getcontractaddressesbyhash_5e11e2d1 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -268,7 +268,7 @@ Returns contract addresses for the given name hashes, which might be address(0).
 
 <div class="api-node" markdown>
 
-### `getContractNamesAndAddresses` { #fn_getcontractnamesandaddresses }
+### `getContractNamesAndAddresses` { #fn_getcontractnamesandaddresses_2f26c5c3 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -294,7 +294,7 @@ Returns all contract names and corresponding addresses currently being tracked.
 
 <div class="api-node" markdown>
 
-### `governance` { #fn_governance }
+### `governance` { #fn_governance_5aa6e675 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -308,14 +308,14 @@ function governance(
     address);
 ```
 
-Returns the current effective [`governance`](#fn_governance) address.
+Returns the current effective [`governance`](#fn_governance_5aa6e675) address.
 
 </div>
 </div>
 
 <div class="api-node" markdown>
 
-### `removeContracts` { #fn_removecontracts }
+### `removeContracts` { #fn_removecontracts_70d44f28 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -331,7 +331,7 @@ function removeContracts(
 
 Remove contracts with given names.
 
-Can only be called by [`governance`](#fn_governance).
+Can only be called by [`governance`](#fn_governance_5aa6e675).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -342,7 +342,7 @@ Can only be called by [`governance`](#fn_governance).
 
 <div class="api-node" markdown>
 
-### `switchToProductionMode` { #fn_switchtoproductionmode }
+### `switchToProductionMode` { #fn_switchtoproductionmode_f5a98383 }
 
 <div class="api-node-source" markdown>
 Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/governance/implementation/GovernedBase.sol)).
@@ -355,8 +355,8 @@ function switchToProductionMode(
 ) external;
 ```
 
-Enter the production mode after all the initial [`governance`](#fn_governance) settings have been set.
-This enables timelocks and the [`governance`](#fn_governance) can be obtained afterward by calling
+Enter the production mode after all the initial [`governance`](#fn_governance_5aa6e675) settings have been set.
+This enables timelocks and the [`governance`](#fn_governance_5aa6e675) can be obtained afterward by calling
 [`governanceSettings`](#va_governancesettings).getGovernanceAddress().
 Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
@@ -365,7 +365,7 @@ Emits [`GovernedProductionModeEntered`](#ev_governedproductionmodeentered).
 
 <div class="api-node" markdown>
 
-### `update` { #fn_update }
+### `update` { #fn_update_9933dba6 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -381,10 +381,10 @@ function update(
 ) external;
 ```
 
-Set or [`update`](#fn_update) contract names and addresses, and then apply changes to specific contracts.
+Set or [`update`](#fn_update_9933dba6) contract names and addresses, and then apply changes to specific contracts.
 
-This is a combination of [`addOrUpdateContractNamesAndAddresses`](#fn_addorupdatecontractnamesandaddresses) and [`updateContractAddresses`](#fn_updatecontractaddresses).
-Can only be called by [`governance`](#fn_governance).
+This is a combination of [`addOrUpdateContractNamesAndAddresses`](#fn_addorupdatecontractnamesandaddresses_8246e467) and [`updateContractAddresses`](#fn_updatecontractaddresses_1b0e2960).
+Can only be called by [`governance`](#fn_governance_5aa6e675).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -397,7 +397,7 @@ Can only be called by [`governance`](#fn_governance).
 
 <div class="api-node" markdown>
 
-### `updateContractAddresses` { #fn_updatecontractaddresses }
+### `updateContractAddresses` { #fn_updatecontractaddresses_1b0e2960 }
 
 <div class="api-node-source" markdown>
 Defined in `AddressUpdater` ([Docs](./AddressUpdater.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/addressUpdater/implementation/AddressUpdater.sol)).
@@ -413,7 +413,7 @@ function updateContractAddresses(
 
 Updates contract addresses on specific contracts.
 
-Can only be called by [`governance`](#fn_governance).
+Can only be called by [`governance`](#fn_governance_5aa6e675).
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
@@ -461,7 +461,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     bool productionMode
 ```
 
-When true, [`governance`](#fn_governance) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode).
+When true, [`governance`](#fn_governance_5aa6e675) is enabled and cannot be disabled. See [`switchToProductionMode`](#fn_switchtoproductionmode_f5a98383).
 
 </div>
 </div>
@@ -480,7 +480,7 @@ Defined in `GovernedBase` ([Docs](./GovernedBase.md), [Source](https://gitlab.co
     mapping(bytes4 => struct GovernedBase.TimelockedCall) timelockedCalls
 ```
 
-List of pending timelocked [`governance`](#fn_governance) calls.
+List of pending timelocked [`governance`](#fn_governance_5aa6e675) calls.
 
 </div>
 </div>

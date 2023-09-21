@@ -22,7 +22,7 @@ Interface for contracts that receive triggers from the [`FlareDaemon`](./FlareDa
 
 <div class="api-node" markdown>
 
-### `daemonize` { #fn_daemonize }
+### `daemonize` { #fn_daemonize_6d0e8c34 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -47,7 +47,7 @@ The trigger method is called by the validator right at the end of block state tr
 
 <div class="api-node" markdown>
 
-### `getContractName` { #fn_getcontractname }
+### `getContractName` { #fn_getcontractname_f5f5ba72 }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -71,7 +71,7 @@ Implement this function to allow updating daemonized contracts through the [`Add
 
 <div class="api-node" markdown>
 
-### `switchToFallbackMode` { #fn_switchtofallbackmode }
+### `switchToFallbackMode` { #fn_switchtofallbackmode_e22fdece }
 
 <div class="api-node-source" markdown>
 Defined in `IFlareDaemonize` ([Docs](./IFlareDaemonize.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFlareDaemonize.sol)).
@@ -85,7 +85,7 @@ function switchToFallbackMode(
     bool);
 ```
 
-This function will be called after an error is caught in [`daemonize`](#fn_daemonize).
+This function will be called after an error is caught in [`daemonize`](#fn_daemonize_6d0e8c34).
 It will switch the contract to a simpler fallback mode, which hopefully works when full mode doesn't.
 Not every contract needs to support fallback mode ([`FtsoManager`](./FtsoManager.md) does), so this method may be empty.
 Switching back to normal mode is left to the contract (typically a governed method call).
