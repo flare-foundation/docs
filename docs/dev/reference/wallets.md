@@ -20,3 +20,5 @@ See the [Integration with a Personal Delegation Account](./personal-delegation-a
 Address derivation and format validation on Flare are the same as on Ethereum.
 In particular, Flare uses the same coin type as Ethereum, this is, 60.
 The [BIP-44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) paths are therefore `m/44’/60’/x’/0/0` (hardened) and `m/44’/60’/0’/0/x`.
+
+The same path is used on both [the C-chain and the P-chain](../../tech/flare.md#flare-chains).
