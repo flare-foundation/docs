@@ -9,6 +9,7 @@
     --md-footer-fg-color--lighter: var(--md-primary-bg-color--light);
     --md-typeset-a-color: var(--md-primary-bg-color);
     --md-code-bg-color--transparent: var(--md-code-bg-color);
+    --md-code-hl-color: var(--md-accent-fg-color--transparent);
 }
 
 [data-md-color-scheme="flaredark"] {
@@ -37,7 +38,6 @@
     --md-code-hl-comment-color: var(--md-default-fg-color--light);
     --md-code-hl-generic-color: var(--md-default-fg-color--light);
     --md-code-hl-variable-color: var(--md-default-fg-color--light);
-    --md-code-hl-color: var(--md-accent-fg-color--transparent);
 }
 
 /* Remove shadow under header */

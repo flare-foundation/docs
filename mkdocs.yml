@@ -208,6 +208,7 @@ nav:
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
+      - infra/validation/staking-cli.md
   - Exchange Guides:
     - exchange/index.md
     - exchange/architecture.md
