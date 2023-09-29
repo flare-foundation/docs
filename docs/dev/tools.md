@@ -13,7 +13,8 @@ The companies below offer nodes-as-a-service, greatly simplifying deployment and
 * [Flare API Portal](https://api-portal.flare.network/)
 * [Blockdaemon](https://blockdaemon.com/documentation/guides/flare/how-to-connect-to-flare/)
 * [Ankr](https://www.ankr.com/blog/flare-ankr-s-next-blockchain-connection/)
-
+* [NOWNodes](https://nownodes.io/nodes)
+  
 ## Storage
 
 Storing large amounts of data on-chain is typically very expensive.
