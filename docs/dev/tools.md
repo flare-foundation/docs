@@ -2,6 +2,22 @@
 
 The following tools and projects already support the Flare network.
 
+## Indexing and Querying
+
+Blockchains typically store the history of all transactions but not the latest, consolidated state of individual accounts.
+The companies below provide fast access to this information
+
+* [Covalent](https://www.covalenthq.com/docs/networks/flare/)
+* [SubQuery](https://academy.subquery.network/quickstart/quickstart_chains/flare.html)
+
+## Monitoring Tools
+
+These tools report information about Flare networks:
+
+* [Flare Builders](https://www.flare.builders/)
+* [FlareMetrics](https://flaremetrics.io/)
+* [Validators, presented by Towo Labs](https://validators.towolabs.com/)
+
 ## Node Providers
 
 [Validator nodes](../tech/validators.md) are online servers running a blockchain's client software.
@@ -25,14 +41,6 @@ These are some decentralized storage alternatives.
 * [Pinata](https://www.pinata.cloud)
 * [Lighthouse](https://www.lighthouse.storage)
 * [Arweave](https://www.arweave.org)
-
-## Indexing and Querying
-
-Blockchains typically store the history of all transactions but not the latest, consolidated state of individual accounts.
-The companies below provide fast access to this information
-
-* [Covalent](https://www.covalenthq.com/docs/networks/flare/)
-* [SubQuery](https://academy.subquery.network/quickstart/quickstart_chains/flare.html)
 
 ## Wallets
 
