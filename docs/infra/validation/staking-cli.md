@@ -633,3 +633,19 @@ Finished execution
         ```bash
         flare-stake-tool transaction importPC --ledger --blind
         ```
+
+??? example "Unsupported digital routines"
+
+    If you get the following error message:
+
+    ```text
+    E: Error: error:0308010C:digital envelope routines::unsupported
+    ```
+
+    Make sure you are using the correct Node.js version, as advised in the [Prerequisites section](#prerequisites).
+
+    You can find out the version of Node.js you are running with the following command:
+
+    ```bash
+    node --version
+    ```
