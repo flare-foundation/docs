@@ -232,6 +232,9 @@ nav:
         - dev/tutorials/network-access/transaction-finalization.md
         - dev/tutorials/network-access/reliable-event-reading.md
         - dev/tutorials/network-access/obtaining-revert-reason.md
+      - FTSO:
+        - dev/tutorials/ftso/index.md
+        - dev/tutorials/ftso/getting-data-feeds.md
     - Reference Guides:
       - dev/reference/index.md
       - dev/reference/network-config.md

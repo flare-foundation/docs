@@ -10,6 +10,7 @@
     --md-typeset-a-color: var(--md-primary-bg-color);
     --md-code-bg-color--transparent: var(--md-code-bg-color);
     --md-code-hl-color: var(--md-accent-fg-color--transparent);
+    --md-code-hl-comment-color: darkseagreen;
 }
 
 [data-md-color-scheme="flaredark"] {
@@ -31,11 +32,7 @@
     --md-code-fg-color: var(--md-primary-bg-color--light);
     --md-code-hl-operator-color: var(--md-default-fg-color--light);
     --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-    --md-code-hl-comment-color: var(--md-default-fg-color--lighter);
     --md-code-hl-name-color: var(--md-code-fg-color);
-    --md-code-hl-operator-color: var(--md-default-fg-color--light);
-    --md-code-hl-punctuation-color: var(--md-default-fg-color--light);
-    --md-code-hl-comment-color: var(--md-default-fg-color--light);
     --md-code-hl-generic-color: var(--md-default-fg-color--light);
     --md-code-hl-variable-color: var(--md-default-fg-color--light);
 }
@@ -135,6 +132,7 @@
  * to the regular text color and links are invisible. */
 .md-typeset a {
     text-decoration: underline;
+    text-decoration-color: var(--md-default-fg-color--lighter);
 }
 
 /* Do not underline the permalinks in the headers */
@@ -454,4 +452,29 @@ figure img.side-by-side {
 /* Generic horizontally-centered text */
 .center {
     text-align: center;
+}
+
+/* Source code license link after example code blocks */
+.source-code-license,
+.source-code-license a {
+    text-align: right;
+    font-size: small;
+    color: var(--md-default-fg-color--lighter);
+    line-height: 0;
+}
+
+/* More discreet line numbers in code blocks */
+.linenos span {
+    color: var(--md-primary-bg-color--light);
+}
+
+/* Special format for tutorial steps */
+.tutorial h3 {
+    color: var(--md-code-hl-comment-color);
+}
+.tutorial h3:before {
+    content: "// ";
+}
+.highlight a .c1:hover {
+    color: var(--md-accent-fg-color);
 }
