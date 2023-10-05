@@ -14,7 +14,7 @@ These are the values required to configure [the different Flare networks](../../
     | [**RPC endpoint**](glossary.md#rpc)                      | `https://flare-api.flare.network/ext/C/rpc` |
     | [**Rosetta API**][rosetta-api]                           | `https://flare-rosetta-api.flare.network/`  |
     | [**Block Explorer**](glossary.md#block_explorer)         | <https://flare-explorer.flare.network>      |
-    | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | <ul><li>`https://flare.flare.network`</li><li>`http://mainnet.flare.bdnodes.net`</li><li>`http://flare-bootstrap-1.staking.production.figment.io`</li><li>`http://flare.senseinode.com`</li><li>`http://flare-mainnet.staked.cloud`</li></ul> |
+    | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | <ul><li>`https://flare.flare.network`</li><li>`https://flare-bootstrap-1.staking.production.figment.io`</li><li>`https://flare.senseinode.com`</li></ul> |
 
     ??? example "Sample query"
 
