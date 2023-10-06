@@ -4,7 +4,7 @@ The following tools already support the Flare network.
 
 ## API Providers
 
-These companies provide API services through their own [RPC nodes](glossary.md#rpc).
+These companies provide API services like [RPC endpoints](glossary.md#rpc), for example.
 Unlike [Flare's public RPC endpoints](./reference/network-config.md), paid services are typically not rate-limited.
 
 * [Flare API Portal](https://api-portal.flare.network/)
