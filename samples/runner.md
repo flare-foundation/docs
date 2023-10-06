@@ -61,19 +61,49 @@ async function {{filename | replace('-', '_')}}_runner() {
 ??? info "Building with Hardhat"
 
     1. Create a new folder and move into it.
-    2. Follow [any of the setup guides](/dev/getting-started/setup) to create a new project.
-        For example:
+    2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat)):
         ```bash
         npm init
         npm install hardhat @nomicfoundation/hardhat-toolbox
-        npx hardhat
+        npx hardhat init
         ```
-    3. Add Flare's Periphery Package as a dependency with:
+    3. You will not be using the sample project, therefore:
+        * Remove `contracts/Lock.sol`
+        * Remove `test/Lock.js`
+    4. Add Flare's Periphery Package as a dependency with:
         ```bash
         npm install @flarenetwork/flare-periphery-contracts
         ```
-    4. Copy the code above into a new file called `{{filename}}.sol` in the `contracts` folder.
-    5. Compile with `npx hardhat compile`.
+    5. Copy the Solidity code above into a new file called `{{filename}}.sol` in the `contracts` folder.
+    6. Compile with `npx hardhat compile`.
+
+??? info "Testing with Hardhat"
+
+    Testing smart contracts before deploying them is typically performed by [forking the network](https://hardhat.org/hardhat-network/docs/guides/forking-other-networks) or by [using mock contracts](https://ethereum.org/nl/developers/tutorials/how-to-mock-solidity-contracts-for-testing/).
+    These instructions quickly show you how to use the former.
+
+    1. Build the Hardhat project following the previous instructions.
+    2. Modify your `hardhat.config.js` to look like this:
+        ```js title="hardhat.config.js"
+        require("@nomicfoundation/hardhat-toolbox");
+
+        /** @type import('hardhat/config').HardhatUserConfig */
+        module.exports = {
+            solidity: "0.8.19",
+            networks: {
+                hardhat: {
+                    forking: {
+                        url: 'https://flare-api.flare.network/ext/C/rpc',
+                    },
+                },
+            },
+        };
+        ```
+    3. Copy the code below into a new file called `Test{{filename}}.js` in the `test` folder.
+        ```js title="Test{{filename}}.js"
+        --8<-- "samples/{{folder}}Test{{filename}}.js"
+        ```
+    4. Run the test with `npx hardhat test`.
 
 {% endmacro %}
 
