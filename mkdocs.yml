@@ -121,7 +121,7 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/XqNa7Rq
   analytics:
-    provider: google
+    provider: gtm # Custom Google Tag Manager integration
     property: GTM-WX2D2TR
   consent:
     title: Cookie consent
