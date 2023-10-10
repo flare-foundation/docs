@@ -122,7 +122,7 @@ extra:
       link: https://discord.gg/XqNa7Rq
   analytics:
     provider: google
-    property: G-3WZ2CSGYV1
+    property: GTM-WX2D2TR
   consent:
     title: Cookie consent
     description: >-
