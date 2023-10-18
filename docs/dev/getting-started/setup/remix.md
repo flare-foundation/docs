@@ -68,10 +68,10 @@ Therefore, deploying your smart contracts first on the test network is highly re
 !!! important
     Before jumping onto Remix Deployment:
 
-    - Make sure that you have added and selected the Coston2 test network to your MetaMask Wallet.
+    * Make sure that you have added and selected the Coston2 test network to your MetaMask Wallet.
       The [MetaMask Wallet guide](../../../user/wallets/how-to-access-flare-network-with-metamask.md) shows how to do it.
       Use the values for Coston2 that you will find in the [Network Configurations](../../reference/network-config.md) page.
-    - Ensure that you have enough Coston2 native tokens `$C2FLR` to pay for gas.
+    * Ensure that you have enough Coston2 native tokens `$C2FLR` to pay for gas.
       Visit the [Coston2 Faucet](https://coston2-faucet.towolabs.com/) to request some `$C2FLR`.
 
 * Go to the **Deploy & Run Transactions** tab (the last one) and select **Injected Provider - Metamask** from the **ENVIRONMENT** dropdown.

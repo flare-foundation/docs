@@ -304,7 +304,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
     FTSO data providers submit data through the [PriceSubmitter contract](../dev/getting-started/contract-addresses.md).
 
-    - **Commit**: A single hash is needed for each submission.
+    * **Commit**: A single hash is needed for each submission.
 
         ```solidity
         function submitHash(
@@ -314,7 +314,7 @@ The submission API is slightly different for the Flare and Songbird networks:
          
         ```
 
-    - **Reveal**: After all data is submitted, a single random number must be submitted.
+    * **Reveal**: After all data is submitted, a single random number must be submitted.
 
         ```solidity
         function revealPrices(
@@ -329,7 +329,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
     FTSO data providers submit data through the [PriceSubmitter contract](../dev/getting-started/contract-addresses.md).
 
-    - **Commit**: A separate hash is needed for each submission.
+    * **Commit**: A separate hash is needed for each submission.
 
         ```solidity
         function submitPriceHashes(
@@ -339,7 +339,7 @@ The submission API is slightly different for the Flare and Songbird networks:
         ) external;
         ```
 
-    - **Reveal**: Along with each data submission, a random number must be submitted too.
+    * **Reveal**: Along with each data submission, a random number must be submitted too.
 
         ```solidity
         function revealPrices(
