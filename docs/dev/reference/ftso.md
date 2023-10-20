@@ -38,11 +38,11 @@ The following list describes the most relevant contracts and their purposes:
 
 !!! note
 
-    The [Contract Addresses](../dev/getting-started/contract-addresses.md) page explains how to securely retrieve each contract's address.
+    The [Contract Addresses](../getting-started/contract-addresses.md) page explains how to securely retrieve each contract's address.
 
 ## Manual Delegation and Claiming
 
-The following graphic shows the delegation process. You can call methods in several different smart contracts to manually [delegate vote power](../user/delegation/managing-delegations.md#using-the-block-explorer) and [claim rewards](../user/delegation/managing-rewards.md#using-the-block-explorer).
+The following graphic shows the delegation process. You can call methods in several different smart contracts to manually [delegate vote power](../../user/delegation/managing-delegations.md#using-the-block-explorer) and [claim rewards](../../user/delegation/managing-rewards.md#using-the-block-explorer).
 
 <figure markdown>
   ![Delegation process summary](ftso-delegation.png){ loading=lazy .allow-zoom }
@@ -68,7 +68,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 === "Flare"
 
-    FTSO data providers submit data through the [PriceSubmitter contract](../dev/getting-started/contract-addresses.md).
+    FTSO data providers submit data through the [PriceSubmitter contract](../getting-started/contract-addresses.md).
 
     - **Commit**: A single hash is needed for each submission.
 
@@ -92,7 +92,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 === "Songbird"
 
-    FTSO data providers submit data through the [PriceSubmitter contract](../dev/getting-started/contract-addresses.md).
+    FTSO data providers submit data through the [PriceSubmitter contract](../getting-started/contract-addresses.md).
 
     - **Commit**: A separate hash is needed for each submission.
 
@@ -184,4 +184,4 @@ A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last
 
 ## Related Tutorials
 
-* [FTSO](/dev/tutorials/ftso/)
+* [FTSO](../tutorials/ftso/)
