@@ -16,7 +16,7 @@ Alternatively, if you prefer a simple interface, use the [Flare Portal](https://
 3. Click the **Read Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 
     <figure markdown>
-    ![Read Contract Tab and Connect Your Wallet](../../assets/block-explorer-read-wallet.png){ loading=lazy .allow-zoom}
+    ![Read Contract Tab and Connect Your Wallet](block-explorer-read-wallet.png){ loading=lazy .allow-zoom}
     <figcaption>Read Contract Tab and Connect Your Wallet.</figcaption>
     </figure>
 
@@ -43,7 +43,7 @@ Alternatively, if you prefer a simple interface, use the [Flare Portal](https://
 3. Click the **Read Contract** tab, and then click **Connect Wallet**, as shown in the following image:
 
     <figure markdown>
-    ![Read Contract Tab and Connect Your Wallet](../../assets/block-explorer-read-wallet.png){ loading=lazy .allow-zoom}
+    ![Read Contract Tab and Connect Your Wallet](block-explorer-read-wallet.png){ loading=lazy .allow-zoom}
     <figcaption>Read Contract Tab and Connect Your Wallet.</figcaption>
     </figure>
 

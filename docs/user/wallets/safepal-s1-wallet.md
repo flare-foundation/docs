@@ -41,7 +41,7 @@ After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wr
                 Ignore all Songbird tokens categorized as BEP-20 and ERC-20.
          2. Click the plus sign (+) for this **SGB (Songbird)** token with the logo:
 
-            ![SGB Songbird token](../../assets/safepal-songbird-logo.png)
+            ![SGB Songbird token](safepal-songbird-logo.png)
 
             SGB (Songbird) is added to your list of assets on the homepage.
 

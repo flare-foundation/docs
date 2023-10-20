@@ -1,5 +1,5 @@
 ---
-og_image: assets/launch-process-thumb.png
+og_image: assets/thumbnails/launch-process-thumb.png
 og_description: The goal of this page is to remove any confusion around Flare's launch process.
 ---
 
@@ -12,7 +12,7 @@ The following information was intended to **remove any confusion around the laun
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 viewBox="0 0 895 1844" style="background: white; padding: 8px;">
-  <image width="895" height="1844" xlink:href="../../../assets/launch-process.png"></image>
+  <image width="895" height="1844" xlink:href="../../../assets/images/tech/archive/launch-process.png"></image>
   <title>Click on a phase to navigate to its description.</title>
   <a href="#private-observation-mode">
     <rect x="262" y="111" fill="#fff" opacity="0" width="189" height="87"></rect>

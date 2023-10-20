@@ -11,7 +11,7 @@ Use the block explorer to view the list of token balances at an address.
 5. Click the **Tokens** tab, as shown in the following image:
 
     <figure markdown>
-    ![Tokens](../../assets/block-explorer-tokens.png){ loading=lazy .allow-zoom}
+    ![Tokens](block-explorer-tokens.png){ loading=lazy .allow-zoom}
     <figcaption>Tokens.</figcaption>
     </figure>
 
@@ -30,13 +30,13 @@ Use the block explorer to view a historical chart of the native-token balance at
 5. Click the **Coin Balance History** tab, as shown in the following image:
 
     <figure markdown>
-    ![Coin Balance History](../../assets/block-explorer-history.png){ loading=lazy .allow-zoom}
+    ![Coin Balance History](block-explorer-history.png){ loading=lazy .allow-zoom}
     <figcaption>Coin Balance History.</figcaption>
     </figure>
 
     A chart that shows the history of the native token at the address and a list of associated blocks is displayed, as shown in the following image:
 
     <figure markdown>
-    ![Coin Balance Chart](../../assets/block-explorer-balance.png){ loading=lazy .allow-zoom}
+    ![Coin Balance Chart](block-explorer-balance.png){ loading=lazy .allow-zoom}
     <figcaption>Coin Balance Chart.</figcaption>
     </figure>

@@ -13,7 +13,7 @@ Use the block explorer to view token transfers to and from an address.
 5. Click the **Token Transfers** tab, as shown in the following image:
 
     <figure markdown>
-    ![Token Transfers](../../assets/block-explorer-transfers.png){ loading=lazy .allow-zoom}
+    ![Token Transfers](block-explorer-transfers.png){ loading=lazy .allow-zoom}
     <figcaption>Token Transfers.</figcaption>
     </figure>
 

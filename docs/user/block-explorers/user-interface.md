@@ -3,7 +3,7 @@
 Each block explorer provides a dashboard that includes the following elements:
 
 <figure markdown>
-![Block Explorer Dashboard](../../assets/block-explorer-dashboard.png){ loading=lazy }
+![Block Explorer Dashboard](block-explorer-dashboard.png){ loading=lazy }
 <figcaption>Block Explorer Dashboard.</figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ To view details about a block and the transactions it contains, click the block 
 Alternatively, view a continuous list of confirmed blocks as they occur by clicking **View All Blocks**.
 
 <figure markdown>
-![Blocks](../../assets/block-explorer-blocks.png){ loading=lazy .allow-zoom}
+![Blocks](block-explorer-blocks.png){ loading=lazy .allow-zoom}
 <figcaption>Blocks.</figcaption>
 </figure>
 
@@ -57,6 +57,6 @@ They are categorized by the following types:
   Interactions between two smart contracts are [internal transactions](./viewing-transactions.md#internal-transactions).
 
 <figure markdown>
-![Transaction Types](../../assets/block-explorer-transaction-types.png){ loading=lazy .allow-zoom}
+![Transaction Types](block-explorer-transaction-types.png){ loading=lazy .allow-zoom}
 <figcaption>Transaction Types.</figcaption>
 </figure>

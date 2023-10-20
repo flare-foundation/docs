@@ -18,7 +18,7 @@ The snapshot indicates when your delegations are enacted.
    The timestamp is displayed, as shown in the following image:
 
     <figure markdown>
-    ![Vote-Power Block Snapshot](../../assets/block-explorer-vp-snapshot.png){ loading=lazy .allow-zoom}
+    ![Vote-Power Block Snapshot](block-explorer-vp-snapshot.png){ loading=lazy .allow-zoom}
     <figcaption>Vote-Power Block Snapshot.</figcaption>
     </figure>
 

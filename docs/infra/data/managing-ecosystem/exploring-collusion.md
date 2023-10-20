@@ -14,7 +14,7 @@ To explore possible collusion between data providers in the ecosystem, use the [
 The following image shows the dashboard of [the collusion tool](https://flare-ftso-monitor.flare.network/collusion):
 
 <figure markdown>
-![FTSO Monitor Collusion Tool](../../../assets/collusion-tool-dashboard.png){ loading=lazy .allow-zoom}
+![FTSO Monitor Collusion Tool](collusion-tool-dashboard.png){ loading=lazy .allow-zoom}
 <figcaption>FTSO Monitor Collusion Tool.</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Heavier weights suggest more potential for collusion than lighter weights.
 For example, the following image of part of the cluster map shows a pair of data providers weighted heavily enough to suggest a case of collusion.
 
 <figure markdown>
-![Heavily Weighted Data Providers](../../../assets/collusion-tool-weighted.png){ loading=lazy .allow-zoom}
+![Heavily Weighted Data Providers](collusion-tool-weighted.png){ loading=lazy .allow-zoom}
 <figcaption>Heavily Weighted Data Providers.</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ For example, the following image of part of the cluster map shows a pair of data
    { #price-history }
 
 <figure markdown>
-![Price History](../../../assets/price-history.png){ loading=lazy .allow-zoom}
+![Price History](price-history.png){ loading=lazy .allow-zoom}
 <figcaption>Price History.</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ Use these details to more deeply explore the similarities between the data submi
 === "Flare"
 
       <figure markdown>
-      ![Details About Specified Data Providers](../../../assets/price-history-providers.png){.allow-zoom}
+      ![Details About Specified Data Providers](price-history-providers.png){.allow-zoom}
       <figcaption>Details About Specified Data Providers.</figcaption>
       </figure>
 
@@ -106,7 +106,7 @@ Use these details to more deeply explore the similarities between the data submi
       * **Pct reward band**: Percentage range percentages are red.
 
       <figure markdown>
-      ![Details About Specified Data Providers](../../../assets/price-history-sgb-providers.png){.allow-zoom}
+      ![Details About Specified Data Providers](price-history-sgb-providers.png){.allow-zoom}
       <figcaption>Details About Specified Data Providers.</figcaption>
       </figure>
 

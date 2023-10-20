@@ -14,26 +14,34 @@ Once a PR is merged, its changes are automatically published via a GitHub Action
 
 If using [Visual Studio Code](https://code.visualstudio.com/), install the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one), the [Markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) and the [nbsp-vscode](https://marketplace.visualstudio.com/items?itemName=possan.nbsp-vscode) extensions.
 
-Then add these settings to your `settings.json` file:
+Then make sure these settings are present in your `.vscode/settings.json` file:
 
 ```json
     "markdownlint.config": {
+        "MD004": {      // All lists should use asterisks
+            "style": "asterisk"
+        },
         "MD007": {
             "indent": 4 // Unordered lists indented by 4, as per the standard
         },
-        "MD013": false,
-        "MD033": false,
-        "MD026": {
+        "MD013": false, // We allow long lines
+        "MD033": false, // We allow inline HTML
+        "MD026": {      // We do not allow this specific trailing punctuation in headers
             "punctuation": ".,;:"
         },
         "MD024": {
             "siblings_only": true // Allow headers with same name if they are not siblings
         },
+        "MD025": false, // We allow both H1 and front matter titles, to have shorter TOCs but full page titles
+        "MD042": false, // We sometimes use empty links to create buttons
         "MD046": false, // Because Admonition indentation looks like an indented code block
     },
 ```
 
 ### Link Checking
+
+> **NOTE:**
+> The procedure below currently does not work because of the huge amount of links to GitLab and GitHub that we have.
 
 Install [linkchecker-markdown](https://github.com/scivision/linkchecker-markdown):
 
@@ -106,10 +114,14 @@ These are currently false positives which can be safely ignored:
 
 * Use informative link titles. For example, instead of naming your links "link" or "here", wrap part of the sentence that is meant to be linked as a title.
 * Links to external sources should be:
-    * Clear, concise, factual (not tips & tricks-type articles, or blog posts)
-    * Reliable to stand the test of time (will not start to 404 because it's a personal blog and the person decided to get rid of it for example)
-    * From reliable sources (this is where Wikipedia isn't always perfect, but fine for technical subjects)
-* Whenever possible, use internal links instead of external ones (if something has been described in our documents somewhere, link to it instead of externally)
+    * Clear, concise, factual (not tips & tricks-type articles, or blog posts).
+    * Reliable to stand the test of time (will not start to 404 because it's a personal blog and the person decided to get rid of it for .example)
+    * From reliable sources (this is where Wikipedia isn't always perfect, but fine for technical subjects).
+* Whenever possible, use internal links instead of external ones (if something has been described in our documents somewhere, link to it instead of externally).
+* Links to pages should be relative to the current page, so start them with `./` or `../` if needed.
+* Links to images should use no path, the Autolink plugin will search for them.
+  Images are expected to be moved around when used from more than one page, so it's good to have this flexibility.
+  Be careful to give images unique names.
 
 ### Official Spellings
 

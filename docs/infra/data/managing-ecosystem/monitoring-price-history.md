@@ -22,7 +22,7 @@ Additionally, if the price history is displayed because you [selected data provi
 ## Price-History Dashboard
 
 <figure markdown>
-![Price-History Dashboard](../../../assets/price-history-dashboard.png){ loading=lazy .allow-zoom}
+![Price-History Dashboard](price-history-dashboard.png){ loading=lazy .allow-zoom}
 <figcaption>Price-History Dashboard.</figcaption>
 </figure>
 

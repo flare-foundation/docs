@@ -18,7 +18,7 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   logo: logo.svg                # Put it in the overrides folder!
-  favicon: assets/favicon.png
+  favicon: /favicon.png
   features:
     - navigation.tabs           # Top-level pages are shown as tabs on the header
     - navigation.tabs.sticky    # Navigation tabs are always visible

@@ -13,7 +13,7 @@ Use the block explorer to view transaction details that explain where the transa
    The **Address Details** page is displayed, as shown in the following image. The preselected **Transactions** tab lists the transactions associated with the address.
 
     <figure markdown>
-    ![Transactions](../../assets/block-explorer-transactions.png){ loading=lazy .allow-zoom}
+    ![Transactions](block-explorer-transactions.png){ loading=lazy .allow-zoom}
     <figcaption>Transactions.</figcaption>
     </figure>
 
@@ -21,14 +21,14 @@ Use the block explorer to view transaction details that explain where the transa
    The listed transactions were made by the address you specified. Details about a transaction are displayed when you click a transaction hash.
 
     <figure markdown>
-    ![Transaction Hash](../../assets/block-explorer-tx-hash.png){ loading=lazy .allow-zoom}
+    ![Transaction Hash](block-explorer-tx-hash.png){ loading=lazy .allow-zoom}
     <figcaption>Transaction Hash.</figcaption>
     </figure>
 
     The **Transaction Details** page is displayed, as shown in the following image:
 
     <figure markdown>
-    ![Transaction Details](../../assets/block-explorer-tx-details.png){ loading=lazy .allow-zoom}
+    ![Transaction Details](block-explorer-tx-details.png){ loading=lazy .allow-zoom}
     <figcaption>Transaction Details.</figcaption>
     </figure>
 
@@ -81,14 +81,14 @@ In some cases, tokens are transferred to a smart contract during an internal tra
 1. Locate the **Internal Transactions** tab, as shown in the following image:
 
     <figure markdown>
-    ![Internal Transactions](../../assets/block-explorer-internal-tx.png){ loading=lazy .allow-zoom}
+    ![Internal Transactions](block-explorer-internal-tx.png){ loading=lazy .allow-zoom}
     <figcaption>Internal Transactions.</figcaption>
     </figure>
 
 2. Click the transaction hash, as shown in the following image:
 
     <figure markdown>
-    ![Transaction Hash](../../assets/block-explorer-tx-hash.png){ loading=lazy .allow-zoom}
+    ![Transaction Hash](block-explorer-tx-hash.png){ loading=lazy .allow-zoom}
     <figcaption>Transaction Hash.</figcaption>
     </figure>
 
@@ -101,7 +101,7 @@ Transaction logs show events that were trigged by smart contracts during a trans
 Click the **Logs** tab, as shown in the following image:
 
 <figure markdown>
-![Logs](../../assets/block-explorer-logs.png){ loading=lazy .allow-zoom}
+![Logs](block-explorer-logs.png){ loading=lazy .allow-zoom}
 <figcaption>Logs.</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ If errors occurred during the transaction, this information can be used to debug
 Click the **Raw Trace** tab, as shown in the following image:
 
 <figure markdown>
-![Raw Trace](../../assets/block-explorer-raw-trace.png){ loading=lazy .allow-zoom}
+![Raw Trace](block-explorer-raw-trace.png){ loading=lazy .allow-zoom}
 <figcaption>Raw Trace.</figcaption>
 </figure>
 

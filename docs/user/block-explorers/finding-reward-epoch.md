@@ -12,7 +12,7 @@
    The current reward epoch number is already displayed beside the function, as shown in the following example:
 
     <figure markdown>
-    ![Current Reward Epoch](../../assets/block-explorer-current-epoch.png){ loading=lazy .allow-zoom}
+    ![Current Reward Epoch](block-explorer-current-epoch.png){ loading=lazy .allow-zoom}
     <figcaption>Current Reward Epoch.</figcaption>
     </figure>
 
