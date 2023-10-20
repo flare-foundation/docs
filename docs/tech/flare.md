@@ -29,7 +29,7 @@ See [Developer Docs](../dev/index.md).
 
 The Flare native currency, `$FLR`, works the same as `$ETH` on the Ethereum blockchain.
 For those contracts that can only work with [ERC-20](glossary.md#erc20) tokens, `$FLR` can be easily [wrapped](../user/wrapping-tokens.md) as `$WFLR`, which is an ERC-20 representation of `$FLR`.
-Flare's [FTSO delegation](ftso.md#delegation) and Flare [governance](./governance.md) are examples of such apps.
+Flare's [FTSO delegation](./ftso.md#delegation) and Flare [governance](./governance.md) are examples of such apps.
 
 Common blockchain tools like [wallets](../user/wallets/index.md), a [token management portal](https://portal.flare.network/), and [block explorers](../user/block-explorers/index.md) are available on Flare.
 

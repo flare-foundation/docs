@@ -23,7 +23,6 @@ The following information describes:
 * [How results are calculated](#how-results-are-calculated)
 * [Vote power](#vote-power)
 * [Delegation](#delegation)
-* How developers can [submit data](#data-submission-process), [claim rewards](#reward-claiming-procedure), and [use the data in an app](#technical-details)
 
 ## Procedure Overview
 
@@ -51,7 +50,7 @@ Using price data as an example, the procedure in the following diagram runs cont
     During a **3-minute** price epoch, providers fetch the information, run their algorithms, and **submit a hash** of the data (_commit_).
     Then, during the first half of the following price epoch (**1.5 minutes**), providers submit the actual data (_reveal_).
 
-    See technical details about the [data-submission process](#data-submission-process) below.
+    See technical details about the [data-submission process](../dev/reference/ftso.md#data-submission-process) in the developer reference section.
 
 3. The FTSO system calculates the **resulting median**, taking into account each provider's vote power (see [How Results are Calculated](#how-results-are-calculated) below).
 
@@ -217,7 +216,7 @@ After 90 days, unclaimed rewards on Flare are burned, and on Songbird, they are 
 ### Reward-Claiming Procedure
 
 FTSO rewards are not automatically transferred to their recipients.
-Instead, the amounts are accumulated in a contract, as described in the [System Architecture](#system-architecture), and must be claimed **once the reward epoch is finished**.
+Instead, the amounts are accumulated in a smart contract and must be claimed **once the reward epoch is finished**.
 
 You can [claim your rewards using the Flare Portal](../user/delegation/managing-rewards.md), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
