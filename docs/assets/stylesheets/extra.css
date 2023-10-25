@@ -132,7 +132,10 @@
  * to the regular text color and links are invisible. */
 .md-typeset a {
     text-decoration: underline;
-    text-decoration-color: var(--md-default-fg-color--lighter);
+    text-decoration-color: var(--md-primary-bg-color--light);
+}
+.md-typeset a:hover {
+    text-decoration-color: var(--md-accent-fg-color);
 }
 
 /* Do not underline the permalinks in the headers */
