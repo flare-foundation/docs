@@ -179,8 +179,8 @@ nav:
     - user/personal-delegation-account.md
     - Staking:
       - user/staking/index.md
-      - user/staking/flarestake/staking-assets.md
-      - user/staking/cli/staking-cli.md
+      - user/staking/staking-flarestake.md
+      - user/staking/staking-cli.md
     - Wallets:
       - user/wallets/index.md
       - user/wallets/bifrost-wallet.md

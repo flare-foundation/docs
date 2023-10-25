@@ -481,3 +481,10 @@ figure img.side-by-side {
 .highlight a .c1:hover {
     color: var(--md-accent-fg-color);
 }
+
+/* Inline images */
+img.inline-image {
+    height: 1em;
+    background: white;
+    padding: 2px;
+}

@@ -15,5 +15,6 @@ Select one of the topics below:
 * [FTSO Delegation](./delegation/index.md)
 * [Governance](./governance/index.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
+* [Staking on Validators](./staking/index.md)
 * [Wallets](./wallets/index.md)
 * [Wrapping Tokens](./wrapping-tokens.md)

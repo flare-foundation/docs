@@ -1,6 +1,6 @@
-# Staking
+# Staking on Validators
 
-This section contains information about staking Flare assets on validators and receiving rewards earned from your stake.
+This section contains information about staking Flare assets on [validators](../../tech/validators.md) and receiving rewards earned from your stake.
 
-* [Using FlareStake](flarestake/staking-assets.md)
-* [Using the CLI](cli/staking-cli.md)
+* [Using FlareStake to Stake](./staking-flarestake.md)
+* [Using the Command Line to Stake](./staking-cli.md)
