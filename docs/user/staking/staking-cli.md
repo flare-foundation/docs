@@ -543,9 +543,9 @@ If you encounter any problem, see the [Troubleshooting](#troubleshooting) sectio
 
 ## Reward Claiming Guide
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period, but these rewards are not claimable yet.
 
-Rewards are accumulated in a dedicated smart contract and can be claimed from the Flare Stake CLI tool:
+Every 4 reward epochs, rewards are accumulated in a dedicated smart contract and can then be claimed from the Flare Stake CLI tool:
 
 Execute `flare-stake-tool interactive` and select the **Claim Rewards** option.
 Press the down key a few times for this option to show.

@@ -45,7 +45,20 @@ See the [Using the CLI to Stake](./staking-cli.md) guide to learn about it.
 2. Click **Access Wallet**.
 3. Click **Ledger**.
 
-    If your device needs setting up, FlareStake provides on-screen instructions.
+    Make sure your Ledger device is plugged in, it is unlocked with your PIN, and the Avalanche app is running
+
+    ??? info "Installing the Avalanche application"
+
+        1. Connect the device to your computer and unlock it using your PIN code.
+        2. Open the [Ledger Live](https://www.ledger.com/ledger-live) application.
+            Go to the **My Ledger** tab and make sure the device is using the latest firmware.
+        3. In the **App catalog** tab, search for "Avalanche" and click on the **Install** button.
+
+            Version should be at least v0.6.5.
+
+            Note that this app requires all available space on a **Ledger Nano S** device (138 KB).
+            You might need to remove other apps first to free up space.
+        4. Exit the Ledger Live application and make sure the device is not connected to any other application like MetaMask.
 
 4. Click the top dropdown menu to select whether the account containing the funds you want to stake was created using Ledger Live or some other wallet like MetaMask.
 
@@ -107,8 +120,10 @@ Your P-chain address and your C-chain address are now bound to each other.
 
 ### 2. Move Funds to the P-Chain
 
-To stake, your P-chain address must contain funds.
-If your P-chain address is already funded, skip this step.
+To stake, your P-chain address must contain at least 50.000 native `$FLR` tokens.
+If your P-chain address is already properly funded, skip this step.
+
+Keep in mind that wrapped `$WFLR` tokens must be [unwrapped](../wrapping-tokens.md) before they can be transferred to the P-chain.
 
 1. On the FlareStake dashboard, click ![Cross chain menu](flarestake-menu-cross-chain.png){.inline-image} **Cross Chain**.
 2. Ensure the **Source Chain** field says C-chain and the **Destination Chain** field says P-chain.
@@ -164,9 +179,9 @@ When the selected end time arrives, the funds will be automatically unlocked.
 
 ## Reward Claiming Guide
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period, but these rewards are not claimable yet.
 
-Rewards are accumulated in a dedicated smart contract and can be claimed from the FlareStake tool:
+Every 4 reward epochs, rewards are accumulated in a dedicated smart contract and can then be claimed from the FlareStake tool:
 
 1. On the FlareStake dashboard, click ![Staking menu](flarestake-menu-staking.png){.inline-image} **Staking**.
 
