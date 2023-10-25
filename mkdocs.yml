@@ -177,6 +177,10 @@ nav:
       - user/governance/index.md
       - user/governance/voting.md
     - user/personal-delegation-account.md
+    - Staking:
+      - user/staking/index.md
+      - user/staking/flarestake/staking-assets.md
+      - user/staking/cli/staking-cli.md
     - Wallets:
       - user/wallets/index.md
       - user/wallets/bifrost-wallet.md
@@ -208,7 +212,6 @@ nav:
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
-      - infra/validation/staking-cli.md
   - Exchange Guides:
     - exchange/index.md
     - exchange/architecture.md

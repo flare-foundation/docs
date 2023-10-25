@@ -1,6 +1,6 @@
-# Staking on a Validator
+# Using the CLI to Stake
 
-Flare has a command-line interface (CLI) tool called Flare Stake CLI, which allows performing stake operations on validator nodes from a terminal.
+Flare has a command-line interface (CLI) tool called FlareStake CLI, which allows performing stake operations on validator nodes from a terminal.
 
 A staking app with a graphical user interface (GUI) is also being developed to simplify the staking process.
 Still, a CLI tool has other advantages, like allowing it to be part of automated processes.
@@ -20,9 +20,9 @@ If you already know how staking on validators works on the Flare network, skip t
 !!! note
 
     Proof of stake is being implemented in phases.
-    Ensure that you have read the [Validators page](../../tech/validators.md#deployment-phases) to learn about them.
+    Ensure that you have read the [Validators page](../../../tech/validators.md#deployment-phases) to learn about them.
 
-Staking works by locking funds for a period of time to support a specific [network validator](../../tech/validators.md).
+Staking works by locking funds for a period of time to support a specific [network validator](../../../tech/validators.md).
 When validator owners stake to their own nodes they _self-bond_, whereas all other participants are said to _delegate_ their stake to that validator.
 
 Participants choose how much to stake and for how long their stake will be locked.
@@ -34,10 +34,10 @@ The minimum values are:
 | Minimum amount   | 1M `$FLR` | 50K `$FLR` |
 | Minimum duration |   60 days |    14 days |
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
-The [deployment phases summary](../../tech/validators.md#summary) shows other rewards that staked funds can still earn while they are locked.
+At the end of every [reward epoch](../../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+The [deployment phases summary](../../../tech/validators.md#summary) shows other rewards that staked funds can still earn while they are locked.
 
-Given that the Flare network uses two [independent underlying chains](../../tech/flare.md#flare-chains), there is one extra step that must be considered.
+Given that the Flare network uses two [independent underlying chains](../../../tech/flare.md#flare-chains), there is one extra step that must be considered.
 Funds must be transferred from the C-chain, where smart contracts run, to the P-chain, where staking happens.
 After the staking period expires and funds are unlocked, they can be transferred back to the C-chain.
 
@@ -275,7 +275,7 @@ To stake on a validator node, you need to:
 
     * The **node ID** of the validator you want to stake to.
 
-        If you created the validator, its `nodeID` was shown to you during the [deployment process](../observation/deploying.md).
+        If you created the validator, its `nodeID` was shown to you during the [deployment process](../../../infra/observation/deploying.md).
 
         If you want to stake to somebody else's validator, you can:
 
@@ -406,8 +406,8 @@ Press the down key a few times for this last option to show.
             secp256k1 public key: 0x●●●●●●●●●●●●●●●●
             ```
 
-        2. You need to interact with the `AddressBinder` smart contract, so you must retrieve its address from the `FlareContractRegistry` as explained in the [retrieving Contract Addresses page](../../dev/getting-started/contract-addresses.md).
-        3. Enter the address of the `AddressBinder` contract in the [Block Explorer](../../user/block-explorers/index.md), and go to the **Write Contract** tab.
+        2. You need to interact with the `AddressBinder` smart contract, so you must retrieve its address from the `FlareContractRegistry` as explained in the [retrieving Contract Addresses page](../../../dev/getting-started/contract-addresses.md).
+        3. Enter the address of the `AddressBinder` contract in the [Block Explorer](../../block-explorers/index.md), and go to the **Write Contract** tab.
         4. Click on **Connect Wallet**.
             You do not need to use the same account as the one you are binding.
         5. Locate the `registerPublicKey` method and paste the public key from step 1 into the `_publicKey` field.
@@ -537,7 +537,7 @@ If you encounter any problem, see the [Troubleshooting](#troubleshooting) sectio
 
 ## Claiming Guide
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+At the end of every [reward epoch](../../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
 
 Rewards are accumulated in a dedicated smart contract and can be claimed from the Flare Stake CLI tool:
 
@@ -574,8 +574,8 @@ Finished execution
 
     Rewards can also be claimed directly from the `ValidatorRewardManager` contract that accumulates them:
 
-    1. You need to interact with the `ValidatorRewardManager` smart contract, so you must retrieve its address from the `FlareContractRegistry` as explained in the [retrieving Contract Addresses page](../../dev/getting-started/contract-addresses.md).
-    2. Enter the address of the `ValidatorRewardManager` contract in the [Block Explorer](../../user/block-explorers/index.md), and go to the **Write Contract** tab.
+    1. You need to interact with the `ValidatorRewardManager` smart contract, so you must retrieve its address from the `FlareContractRegistry` as explained in the [retrieving Contract Addresses page](../../../dev/getting-started/contract-addresses.md).
+    2. Enter the address of the `ValidatorRewardManager` contract in the [Block Explorer](../../block-explorers/index.md), and go to the **Write Contract** tab.
     3. Click on **Connect Wallet**.
         You need to connect the account for which you are claiming.
     4. Locate the `claim` method and enter the following information:
