@@ -101,6 +101,7 @@ plugins:
           'user/delegation/reward-claiming.md': 'tech/ftso.md'
           'user/delegation/reward-claiming-faq.md': 'tech/ftso.md'
           'user/delegation/reward-claiming-in-detail.md': 'tech/ftso.md'
+          'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
 
 extra_css:
   - assets/stylesheets/extra.css
