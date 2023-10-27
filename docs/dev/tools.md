@@ -32,6 +32,7 @@ These tools report information about Flare networks:
 * [Flare Builders](https://www.flare.builders/)
 * [FlareMetrics](https://flaremetrics.io/)
 * [Validators, presented by Towo Labs](https://validators.towolabs.com/)
+* [SolidiFi](https://solidifi.app/validators)
 
 ## Storage
 

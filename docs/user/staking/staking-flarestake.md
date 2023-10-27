@@ -36,8 +36,9 @@ See the [Using the CLI to Stake](./staking-cli.md) guide to learn about it.
 
 ## Prerequisites
 
-* A [Ledger hardware wallet set up to manage Flare assets](../wallets/how-to-access-flare-network-with-a-ledger-device.md)
-* Knowledge of the [available validators](https://flaremetrics.io/validators) to which you want to delegate your funds.
+* A [Ledger hardware wallet set up to manage Flare assets](../wallets/how-to-access-flare-network-with-a-ledger-device.md).
+* Knowledge of the available validators to which you want to delegate your funds.
+    Obtain a list of current validators from any of the tools listed in [the Staking page](./index.md).
 
 ## Accessing Your Wallet
 

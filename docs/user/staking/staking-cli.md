@@ -284,14 +284,14 @@ To stake on a validator node, you need to:
 
         If you want to stake to somebody else's validator, you can:
 
-        * See the list of current validators on [flaremetrics.io](https://flaremetrics.io/validators).
-            Remember to add `NodeID-` before the ID shown on the page.
+        * Obtain a list of current validators from any of the tools listed in [the Staking page](./index.md).
+            Remember to add the `NodeID-` prefix if it is missing from the listed ID.
         * Use `flare-stake-tool info validators` to get a JSON list of all validators.
 
     * The desired staking **start time** and **end time**.
 
         When staking to an existing validator, both these times must be inside the period when the validator is active,
-        which you can find on [flaremetrics.io](https://flaremetrics.io/validators) or again using `flare-stake-tool info validators`.
+        which you can find in the lists of any of the above tools, or using `flare-stake-tool info validators`.
 
         You need to provide these times as a [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time),
         so you might need to use an online conversion tool like [Epoch Converter](https://epochconverter.com) or the Linux `date` command.
