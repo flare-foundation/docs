@@ -1,5 +1,7 @@
 # Glossary
 
+A set of flashcards to learn and revise the terms in this glossary can be found [here](https://github.com/darigovresearch/Flare-Glossary-Flashcards).
+
 Attestation { #attestation }
 : A data proof provided to the [State Connector](#state_connector) by a decentralized set of Attestation Providers that confirms the validity or otherwise of any request.
 
