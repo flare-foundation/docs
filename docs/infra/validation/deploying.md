@@ -126,7 +126,7 @@ Please consider the following items carefully:
             "rpc-gas-cap": 50000000,
             "rpc-tx-fee-cap": 100,
             "preimages-enabled": false,
-            "pruning-enabled": false,
+            "pruning-enabled": true,
             "snapshot-async": true,
             "snapshot-verification-enabled": false,
             "metrics-enabled": true,
