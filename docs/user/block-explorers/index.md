@@ -2,12 +2,17 @@
 
 Block explorers enable you to analyze transactions and interact with addresses on blockchains.
 
-Flare provides a block explorer for each of the networks in its ecosystem:
+Flare provides two versions of its block explorer to examine the network activities in the Flare ecosystem.
 
-* [Flare Explorer](https://flare-explorer.flare.network)
-* [Songbird Explorer](https://songbird-explorer.flare.network)
-* [Coston Explorer](https://coston-explorer.flare.network)
-* [Coston2 Explorer](https://coston2-explorer.flare.network/)
+* **Flarescan block explorers**: Provide full support for the [C-chain](../../tech/flare.md#flare-chains), basic support for the [P-chain](../../tech/flare.md#flare-chains), and analytics.
+* **Original Flare block explorers**: Provide analytics plus full support for the [C-chain](../../tech/flare.md#flare-chains), but they do not provide support for the P-chain.
+
+| [Network](../../tech/flare.md#flare-networks) | Flarescan Block Explorers | Original Flare Block Explorers |
+| --------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Flare Mainnet   | [Flare Mainnet Explorer](https://mainnet.flarescan.com)                 | [Original Flare Mainnet Explorer](https://flare-explorer.flare.network) |
+| Songbird        | [Songbird Canary Explorer](https://songbird.flarescan.com)              | [Original Songbird Explorer](https://songbird-explorer.flare.network)   |
+| Coston          | [Coston Canary Explorer](https://coston.testnet.flarescan.com)          | [Original Coston Explorer](https://coston-explorer.flare.network)       |
+| Coston2         | [Coston2 Testnet Explorer](https://coston2.testnet.flarescan.com)       | [Original Coston2 Explorer](https://coston2-explorer.flare.network)     |
 
 ## Topics
 
