@@ -24,6 +24,11 @@ The minimum values are:
 | Minimum duration |   60 days |    14 days |
 
 At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+
+!!! info "Staking amounts and rewards are limited"
+
+    When you choose your validator and amount to stake, consider the [delegation factor and the staking cap](./index.md#limits).
+
 The [deployment phases summary](../../tech/validators.md#summary) shows other rewards that staked funds can still earn while they are locked.
 
 Given that the Flare network uses two [independent underlying chains](../../tech/flare.md#flare-chains), there is one extra step that must be considered.
