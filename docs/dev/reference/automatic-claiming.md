@@ -21,8 +21,8 @@ This page contains the following information:
 
 Setting up automatic claiming requires interacting with these contracts:
 
-* [`ClaimSetupManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IClaimSetupManager.sol) (CSM).
-* [`FTSORewardManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IFtsoRewardManager.sol) (FTSO).
+* [`ClaimSetupManager`](ClaimSetupManager.md) (CSM).
+* [`FTSORewardManager`](FtsoRewardManager.md) (FTSO).
 
 To find the addresses of these contracts, see the [Contract Addresses](../getting-started/contract-addresses.md) page.
 
@@ -43,7 +43,7 @@ Fees are not paid automatically.
 
 To set one or more executors to claim rewards for a user:
 
-1. Set a specific executor by calling `CSM.setClaimExecutors()` and providing the executor's address.
+1. Set a specific executor by calling [`CSM.setClaimExecutors()`](ClaimSetupManager.md#fn_setclaimexecutors_9119c494) and providing the executor's address.
 
     This method must be called from the user's account, since they are the only ones that can authorize claiming on their behalf.
 
@@ -51,30 +51,30 @@ To set one or more executors to claim rewards for a user:
 
 #### Registered Claiming
 
-With **Registered Claiming**, a purpose-built `ClaimSetupManager` contract handles the on-chain agreement between users and executors, greatly simplifying the process.
+With **Registered Claiming**, a purpose-built [`ClaimSetupManager`](ClaimSetupManager.md) contract handles the on-chain agreement between users and executors, greatly simplifying the process.
 
 To set one or more registered executors to claim rewards for a user:
 
-1. Get a list of executors and their fees by calling `CSM.getRegisteredExecutors()`.
+1. Get a list of executors and their fees by calling [`CSM.getRegisteredExecutors()`](ClaimSetupManager.md#fn_getregisteredexecutors_6e927e61).
 
-    To find the fee of a specific executor, call `CSM.getExecutorCurrentFeeValue()`.
+    To find the fee of a specific executor, call [`CSM.getExecutorCurrentFeeValue()`](ClaimSetupManager.md#fn_getexecutorcurrentfeevalue_e25547f8).
     This fee is deducted from the user’s reward after each claim and sent to the executor.
 
     You can show this information to the user and let them select which executor to use.
 
-2. Set the selected executors by calling `CSM.setClaimExecutors()` as shown for [Manual Claiming](#manual-claiming).
+2. Set the selected executors by calling [`CSM.setClaimExecutors()`](ClaimSetupManager.md#fn_setclaimexecutors_9119c494) as shown for [Manual Claiming](#manual-claiming).
 
     However, when setting registered executors, the call must include a value equal to the executor’s fee (in FLR), which is sent to the executor as an enrollment fee.
     If more than one executor is set, the value must equal the sum of all the executor's fees.
 
 ### Changing Registered Executors
 
-To change registered executors, call `CSM.setClaimExecutors()` with the new list of executors.
+To change registered executors, call [`CSM.setClaimExecutors()`](ClaimSetupManager.md#fn_setclaimexecutors_9119c494) with the new list of executors.
 This new list overwrites the current list.
 
 ### Disabling Automatic Claiming
 
-To disable automatic claiming, remove all executors by sending an empty array of executors with `CSM.setClaimExecutors()`.
+To disable automatic claiming, remove all executors by sending an empty array of executors with [`CSM.setClaimExecutors()`](ClaimSetupManager.md#fn_setclaimexecutors_9119c494).
 
 ## Executor Operations
 
@@ -93,13 +93,13 @@ Therefore, there is no operation required for executors, besides communicating t
 
 #### Registered Executor
 
-The `ClaimSetupManager` contract contains a list of self-registered executors that users can use to discover executors and their service fees, avoiding the need for off-chain operations as in manual claiming.
+The [`ClaimSetupManager`](ClaimSetupManager.md) contract contains a list of self-registered executors that users can use to discover executors and their service fees, avoiding the need for off-chain operations as in manual claiming.
 
 To automatically receive fees for claiming, an executor address must register, set the fee for claiming rewards, and pay the registration fee.
 
-Register an executor by calling `CSM.registerExecutor(uint256 feeValue)`, where `feeValue` is the fee in wei that the executor requires to perform this service.
-The fee value must be at least `CSM.minFeeValueWei`, currently 0.1 FLR, and no greater than `CSM.maxFeeValueWei`, currently 100 FLR.
-This transaction must include a registration fee equal to `CSM.registerExecutorFeeValueWei`, currently 1000 FLR, which is burned.
+Register an executor by calling [`CSM.registerExecutor(uint256 feeValue)`](ClaimSetupManager.md#fn_registerexecutor_ccce7e86), where `feeValue` is the fee in wei that the executor requires to perform this service.
+The fee value must be at least [`CSM.minFeeValueWei`](ClaimSetupManager.md#va_minfeevaluewei), currently 0.1 FLR, and no greater than [`CSM.maxFeeValueWei`](ClaimSetupManager.md#va_maxfeevaluewei), currently 100 FLR.
+This transaction must include a registration fee equal to [`CSM.registerExecutorFeeValueWei`](ClaimSetupManager.md#va_registerexecutorfeevaluewei), currently 1000 FLR, which is burned.
 
 ### Claiming Rewards
 
@@ -110,7 +110,7 @@ As other rewards become available, they will also be claimable by executors with
 
 Manual and registered executors use the same function, the only difference being that unregistered executors do not receive a fee automatically.
 
-To claim FTSO rewards for all of a user's unclaimed epochs, call `FTSO.autoClaim(address[] rewardOwners, uint256 rewardEpoch)`.
+To claim FTSO rewards for all of a user's unclaimed epochs, call [`FtsoRewardManager.autoClaim()`](FtsoRewardManager.md#fn_autoclaim_8dc305fa).
 
 * This method can be used to claim for multiple users, since `rewardOwners` is an array.
 * The `rewardEpoch` is the most current one that the executor wants to claim for, typically the one before the current epoch.
@@ -126,18 +126,18 @@ However, he only gets paid one fee per user regardless of whether he claims for 
 The fee is paid in native `$FLR` tokens.
 
 If the claimed reward for a user is lower than the executor fee, the transaction is reverted.
-To see which users have enough rewards to complete and which would revert, call `FTSO.autoClaim` with a specific user address.
+To see which users have enough rewards to complete and which would revert, call [`FtsoRewardManager.autoClaim()`](FtsoRewardManager.md#fn_autoclaim_8dc305fa) with a specific user address.
 
 ### Changing the Fee
 
 Registered executors can change the fee they charge for the successful execution of claims.
-To change the fee, call `CSM.updateExecutorFeeValue()`.
-The new fee value will be in effect after `CSM.feeValueUpdateOffset` reward epochs have elapsed (currently 3 epochs), where the first epoch is the one that is currently active.
+To change the fee, call [`CSM.updateExecutorFeeValue()`](ClaimSetupManager.md#fn_updateexecutorfeevalue_831f16af).
+The new fee value will be in effect after [`CSM.feeValueUpdateOffset`](ClaimSetupManager.md#va_feevalueupdateoffset) reward epochs have elapsed (currently 3 epochs), where the first epoch is the one that is currently active.
 This function returns the reward epoch number when the setting will become effective.
 
 ### Unregistering an Executor
 
-Registered executors can unregister by calling `CSM.unregisterExecutor()` and they will be removed from the list of executors.
+Registered executors can unregister by calling [`CSM.unregisterExecutor()`](ClaimSetupManager.md#fn_unregisterexecutor_868a660f) and they will be removed from the list of executors.
 To help the users adjust to the change, executors will retain the current fee and continue claiming for the next 3 reward epochs (`feeValueUpdateOffset`).
 An executor's best practice is to notify users when unregistering.
 
@@ -146,9 +146,9 @@ An executor's best practice is to notify users when unregistering.
 Executors should keep a list of users to claim for, there is no mechanism to retrieve this list from the chain.
 There are two ways to keep this list updated:
 
-* Listen to the `CSM.ClaimExecutorsChanged` event which is emitted every time a user sets its executors.
+* Listen to the [`CSM.ClaimExecutorsChanged`](ClaimSetupManager.md#fn_claimexecutors_3f317fe1) event which is emitted every time a user sets its executors.
   This method is suitable for registered executors which might be selected at any time.
-* If the executor is only interested in a closed list of users, e.g., the ones that enlisted on an application, it can call `CSM.isClaimExecutor(address user, address executor)` for each user to verify the executor's address is properly configured.
+* If the executor is only interested in a closed list of users, e.g., the ones that enlisted on an application, it can call [`CSM.isClaimExecutor(address user, address executor)`](ClaimSetupManager.md#fn_isclaimexecutor_87962abe) for each user to verify the executor's address is properly configured.
 
 ## User and Executor Reports
 
@@ -156,16 +156,16 @@ This section shows how to access information that can help you perform both user
 
 ### Executor Fees
 
-Get the current fee for each executor on the Registered Executors list by calling `CSM.getExecutorCurrentFeeValue(address executor)`.
-For upcoming fee changes, call `CSM.getExecutorScheduledFeeValueChanges(address executor)`.
+Get the current fee for each executor on the Registered Executors list by calling [`CSM.getExecutorCurrentFeeValue(address executor)`](ClaimSetupManager.md#fn_getexecutorcurrentfeevalue_e25547f8).
+For upcoming fee changes, call [`CSM.getExecutorScheduledFeeValueChanges(address executor)`](ClaimSetupManager.md#fn_getexecutorscheduledfeevaluechanges_950b028c).
 
 ### Executors by User
 
 A user can set more than one executor.
-To see a list of current executors for a user, call `CSM.claimExecutors(address user)`, which returns an array of executor addresses.
+To see a list of current executors for a user, call [`CSM.claimExecutors(address user)`](ClaimSetupManager.md#fn_claimexecutors_3f317fe1), which returns an array of executor addresses.
 It is a best practice for users to check this report periodically (at least every 90 days) to make sure their selected executors have not unregistered without notice.
 
 ### Executor Status
 
-To check if an executor is registered, call `CSM.getExecutorInfo(address executor)`.
+To check if an executor is registered, call [`CSM.getExecutorInfo(address executor)`](ClaimSetupManager.md#fn_getexecutorinfo_8e28b923).
 It returns whether an executor is registered and its fee.

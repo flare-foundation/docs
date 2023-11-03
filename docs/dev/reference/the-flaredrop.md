@@ -10,7 +10,7 @@ Working with the FlareDrop requires interacting with these contracts:
 
 * [`DistributionToDelegators`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/tokenPools/implementation/DistributionToDelegators.sol) (Dist).
     Manages all claims.
-* [`ClaimSetupManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/claiming/implementation/ClaimSetupManager.sol) (CSM).
+* [`ClaimSetupManager`](ClaimSetupManager.md) (CSM).
     Needed to configure autoclaiming.
 
 To find their addresses, read the [Contract Addresses](../getting-started/contract-addresses.md) page.

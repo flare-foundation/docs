@@ -26,11 +26,11 @@ The following list describes the most relevant contracts and their purposes:
         If an FTSO contract is **redeployed** (for example, to fix a bug), **its address will change** and apps using it will need to be updated.
         The FTSO Registry contract below tracks this change for you.
 
-    You can retrieve the addresses of all FTSO contracts using the `getAllFtsos` method in the FTSO Registry.
+    You can retrieve the addresses of all FTSO contracts using the [`getAllFtsos`](FtsoRegistry.md#fn_getallftsos_2bcdd6ab) method in the FTSO Registry.
 
 * **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
 
-* **Price Submitter**: This contract is used by the FTSO data providers to submit their data. Although the contract is called `PriceSubmitter`, data is not limited to prices.
+* **Price Submitter**: This contract is used by the FTSO data providers to submit their data. Although the contract is called [`PriceSubmitter`](PriceSubmitter.md), data is not limited to prices.
 
 * **Reward Manager**: Use this contract to claim your [rewards](../../tech//ftso.md#rewards), whether you are a data provider or a [delegator](../../tech//ftso.md#delegation).
 
@@ -119,8 +119,8 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 Data produced by the FTSO is **publicly available** on the Flare and Songbird networks.
 
-All data can be retrieved either through the `FtsoRegistry` contract or directly through one of the `Ftso` contracts.
-In any case, using the `getCurrentPriceWithDecimals` method is recommended.
+All data can be retrieved either through the [`FtsoRegistry`](FtsoRegistry.md) contract or directly through one of the [`Ftso`](Ftso.md) contracts.
+In any case, using the [`getCurrentPriceWithDecimals`](FtsoRegistry.md#fn_getcurrentpricewithdecimals_257cbd3a) method is recommended.
 The following examples show how to use this method to retrieve price data.
 
 === "Retrieve by pair index"

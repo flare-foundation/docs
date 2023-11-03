@@ -14,7 +14,7 @@ To emphasize: Applications are strongly encouraged to retrieve any contract addr
 
 ## Retrieval from Blockchain
 
-All of Flare's smart contract addresses can be retrieved from the `FlareContractRegistry` contract.
+All of Flare's smart contract addresses can be retrieved from the [`FlareContractRegistry`](FlareContractRegistry.md) contract.
 This is the only contract address given in this documentation.
 
 <div class="important-table" markdown>
@@ -45,9 +45,9 @@ function getContractAddressesByName(
 The name search is **case-sensitive**, so you should use the proper capitalization.
 For example:
 
-* `WNat`
-* `FtsoRewardManager`
-* `PriceSubmitter`
+* [`WNat`](WNat.md)
+* [`FtsoRewardManager`](FtsoRewardManager.md)
+* [`PriceSubmitter`](PriceSubmitter.md)
 
 Applications can also retrieve all smart contract names and addresses at once using:
 

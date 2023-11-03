@@ -8,14 +8,14 @@ This page explains how to manage PDA functionality in applications.
 
 Working with the PDAs requires interacting with these contracts:
 
-* [`ClaimSetupManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IClaimSetupManager.sol) (CSM).
-* [`FTSORewardManager`](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/userInterfaces/IFtsoRewardManager.sol) (FTSO).
+* [`ClaimSetupManager`](ClaimSetupManager.md) (CSM).
+* [`FTSORewardManager`](FtsoRewardManager.md) (FTSO).
 
 To find the addresses of these contracts read the [Contract Addresses](../getting-started/contract-addresses.md) page.
 
 ## Enabling a PDA
 
-`CSM.enableDelegationAccount()` returns the address of the PDA associated with the caller's address, creating the PDA in the process if it didn't exist.
+[`CSM.enableDelegationAccount()`](ClaimSetupManager.md#fn_enabledelegationaccount_f0977215) returns the address of the PDA associated with the caller's address, creating the PDA in the process if it didn't exist.
 A single PDA can be associated with each address and it cannot be destroyed once created, only disabled (see below).
 
 There exist no private keys to the PDA account so it cannot sign any transactions.
@@ -23,21 +23,21 @@ All interaction with the PDA happens through the CSM contract, and is usually tr
 
 Note that this means that a PDA cannot have its own PDA, since no calls to the CSM can be made from the PDA account.
 
-Once a PDA is created, certain functions like `FTSO.autoClaim()` automatically send claimed rewards to the PDA account instead of the main account.
+Once a PDA is created, certain functions like [`FtsoRewardManager.autoClaim()`](FtsoRewardManager.md#fn_autoclaim_8dc305fa) automatically send claimed rewards to the PDA account instead of the main account.
 See [Delegation and Rewards](#delegation-and-rewards) below.
 
 ## Disabling a PDA
 
-To disable the use of a PDA, call `CSM.disableDelegationAccount()`.
+To disable the use of a PDA, call [`CSM.disableDelegationAccount()`](ClaimSetupManager.md#fn_disabledelegationaccount_2394deb1).
 Any `$WFLR` tokens that are on the PDA address are transferred back to the user's main account.
 
-When users disable their PDA, `FTSO.autoClaim()` claims only the rewards for their main account and to their main account.
+When users disable their PDA, [`FtsoRewardManager.autoClaim()`](FtsoRewardManager.md#fn_autoclaim_8dc305fa) claims only the rewards for their main account and to their main account.
 
-`CSM.disableDelegationAccount()` disables the PDA contract but does not destroy it: its address is still returned by `CSM.getDelegationAccountData()`, but the `enabled` boolean will be `false`.
+[`CSM.disableDelegationAccount()`](ClaimSetupManager.md#fn_disabledelegationaccount_2394deb1) disables the PDA contract but does not destroy it: its address is still returned by [`CSM.getDelegationAccountData()`](ClaimSetupManager.md#fn_getdelegationaccountdata_17a1e3fc), but the `enabled` boolean will be `false`.
 
 ## Checking PDA State
 
-To check if a user's PDA is enabled, call `CSM.getDelegationAccountData()`.
+To check if a user's PDA is enabled, call [`CSM.getDelegationAccountData()`](ClaimSetupManager.md#fn_getdelegationaccountdata_17a1e3fc).
 It returns both the PDA address and its state:
 
 | Condition                  | Address       | State   |
@@ -52,12 +52,12 @@ It returns both the PDA address and its state:
 
 A PDA is a regular account for which there are no private keys and which must be managed through the CSM contract instead.
 
-Conveniently, the method signatures to delegate on the CSM are the same as on the `WNat` contract where delegation is usually performed, for instance `CSM.batchDelegate()`.
-FTSO reward claiming, though, is still performed through the `FTSORewardManager`, for example using `claimReward(address recipient, ...)` where `recipient` allows sending to any address, including a PDA.
+Conveniently, the method signatures to delegate on the CSM are the same as on the [`WNat`](WNat.md) contract where delegation is usually performed, for instance [`CSM.batchDelegate()`](ClaimSetupManager.md#fn_batchdelegate_dc4fcda7).
+FTSO reward claiming, though, is still performed through the [`FTSORewardManager`](FtsoRewardManager.md), for example using `claimReward(address recipient, ...)` where `recipient` allows sending to any address, including a PDA.
 For information on how to delegate and claim FTSO rewards, see [Delegation](../../tech/ftso.md#delegation) and [Rewards](../../tech/ftso.md#rewards).
 
-In addition to the methods used for regular accounts, `FTSO.autoClaim()` automatically claims for both the main account and the PDA, to the PDA or the main account depending on whether the PDA is enabled or not.
-If users disable their PDA, `autoClaim()` claims rewards for only their main account and to only their main account.
+In addition to the methods used for regular accounts, [`FtsoRewardManager.autoClaim()`](FtsoRewardManager.md#fn_autoclaim_8dc305fa) automatically claims for both the main account and the PDA, to the PDA or the main account depending on whether the PDA is enabled or not.
+If users disable their PDA, [`autoClaim()`](FtsoRewardManager.md#fn_autoclaim_8dc305fa) claims rewards for only their main account and to only their main account.
 
 !!! note
 
@@ -77,10 +77,10 @@ Because a PDA is a regular account, anyone can send funds to it.
 However, FLR tokens transferred to a PDA are automatically converted to `$WFLR`, making them convenient for delegation.
 
 Only the owner of the main account and its PDA can transfer funds from the PDA and only to its main account.
-To transfer tokens, the owner calls `CSM.withdraw()` and states the amount to withdraw.
+To transfer tokens, the owner calls [`CSM.withdraw()`](ClaimSetupManager.md#fn_withdraw_2e1a7d4d) and states the amount to withdraw.
 
 Since it has no private keys, any token other than `$FLR` or `$WFLR` transferred to the PDA cannot be moved out by conventional means.
-Instead, `CSM.transferExternalToken()` must be used to transfer them to another account.
+Instead, [`CSM.transferExternalToken()`](ClaimSetupManager.md#fn_transferexternaltoken_489a8a47) must be used to transfer them to another account.
 This is useful, for example, to recover airdropped tokens accidentally sent to the PDA.
 
 !!! note
