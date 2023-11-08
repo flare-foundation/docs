@@ -184,4 +184,4 @@ A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last
 
 ## Related Tutorials
 
-* [FTSO](../tutorials/ftso/)
+* [FTSO](../tutorials/ftso/index.md)
