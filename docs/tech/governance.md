@@ -41,7 +41,7 @@ To vote on a proposal on a network, you must have the valid wrapped token:
 | Flare    | FIP           | `$FLR` | `$WFLR`       |
 | Songbird | STP           | `$SGB` | `$WSGB`       |
 
-!!! tip
+!!! warning
 
     * Available votes depend on the amount of valid wrapped tokens you have, not the native tokens. Therefore, **remember to wrap your tokens**.
     * Don't wrap all your tokens. **Keep some of them to pay for transaction fees**.

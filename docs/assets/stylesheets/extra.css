@@ -35,6 +35,7 @@
     --md-code-hl-name-color: var(--md-code-fg-color);
     --md-code-hl-generic-color: var(--md-default-fg-color--light);
     --md-code-hl-variable-color: var(--md-default-fg-color--light);
+    --md-typeset-mark-color: yellow;
 }
 
 /* Remove shadow under header */
@@ -230,12 +231,12 @@ figure img.side-by-side {
 /* Bold text for current page in TOC and TABS*/
 .md-nav--primary .md-nav__item .md-nav__link--active,
 .md-nav--secondary .md-nav__item .md-nav__link--active,
-.md-tabs__link--active {
+.md-tabs__item--active {
     font-weight: bold;
     color: var(--md-default-fg-color);
 }
 
-.md-tabs__item:has(.md-tabs__link--active) {
+.md-tabs__item--active {
     background: var(--md-default-bg-color);
     border-radius: 10px 10px 0 0;
 }

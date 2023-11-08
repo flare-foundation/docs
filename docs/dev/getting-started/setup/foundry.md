@@ -70,7 +70,7 @@ To do so, you must provide the **URL of the RPC node** to access the network, an
 
 The URL can be stored in an environment variable named `FOUNDRY_ETH_RPC_URL)` so you do not need to supply it every time.
 
-!!! tip
+!!! warning
 
     You are going to deploy the contract on the [Coston 2 network](../../reference/network-config.md).
     Make sure you have enough `C2FLR` in the account that will deploy the contract to pay the gas fees!
