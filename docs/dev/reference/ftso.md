@@ -17,7 +17,7 @@ Using prices as an example, the following diagram shows the flow of data, querie
 
 The following list describes the most relevant contracts and their purposes:
 
-* **FTSO**: Each data type is handled by its own FTSO contract, including calculation of the filtered feed.
+* **[FTSO](Ftso.md)**: Each data type is handled by its own FTSO contract, including calculation of the filtered feed.
 
     To retrieve information about a data type, access this contract.
 
@@ -28,13 +28,13 @@ The following list describes the most relevant contracts and their purposes:
 
     You can retrieve the addresses of all FTSO contracts using the [`getAllFtsos`](FtsoRegistry.md#fn_getallftsos_2bcdd6ab) method in the FTSO Registry.
 
-* **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
+* **[FTSO Registry](FtsoRegistry)**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
 
-* **Price Submitter**: This contract is used by the FTSO data providers to submit their data. Although the contract is called [`PriceSubmitter`](PriceSubmitter.md), data is not limited to prices.
+* **[Price Submitter](PriceSubmitter.md)**: This contract is used by the FTSO data providers to submit their data. Although the contract is called [`PriceSubmitter`](PriceSubmitter.md), data is not limited to prices.
 
-* **Reward Manager**: Use this contract to claim your [rewards](../../tech//ftso.md#rewards), whether you are a data provider or a [delegator](../../tech//ftso.md#delegation).
+* **[Reward Manager](FtsoRewardManager.md)**: Use this contract to claim your [rewards](../../tech//ftso.md#rewards), whether you are a data provider or a [delegator](../../tech//ftso.md#delegation).
 
-* **Wrapped Native (WNat)**: This contract is not exclusively related to the FTSO system, but it is required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
+* **[Wrapped Native (WNat)](WNat.md)**: This contract is not exclusively related to the FTSO system, but it is required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
 
 !!! note
 
