@@ -28,7 +28,7 @@ The following list describes the most relevant contracts and their purposes:
 
     You can retrieve the addresses of all FTSO contracts using the [`getAllFtsos`](FtsoRegistry.md#fn_getallftsos_2bcdd6ab) method in the FTSO Registry.
 
-* **[FTSO Registry](FtsoRegistry)**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
+* **[FTSO Registry](FtsoRegistry.md)**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
 
 * **[Price Submitter](PriceSubmitter.md)**: This contract is used by the FTSO data providers to submit their data. Although the contract is called [`PriceSubmitter`](PriceSubmitter.md), data is not limited to prices.
 
