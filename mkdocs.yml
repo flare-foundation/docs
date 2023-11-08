@@ -1,4 +1,5 @@
 site_name: Technical Documentation
+strict: true
 theme:
   name: material
   custom_dir: docs/assets/overrides
