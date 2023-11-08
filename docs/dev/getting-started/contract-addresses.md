@@ -1,6 +1,6 @@
 # Retrieving Contract Addresses
 
-!!! attention
+!!! warning
 
     Developers should never rely on contract addresses gathered from off-chain sources like direct messages, social media, or even websites, as these addresses could easily lead to malicious contracts.
 
@@ -23,7 +23,7 @@ This is the only contract address given in this documentation.
 | <pre><code style="padding-right: 3em;">0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019</code></pre> |
 </div>
 
-!!! important "This contract is available at the same address in all Flare networks: Flare, Songbird, Coston and Coston2."
+!!! tip "This contract is available at the same address in all Flare networks: Flare, Songbird, Coston and Coston2."
 
 Copy the above address into the [Block Explorer](../../user/block-explorers/index.md) to see the available contract's methods.
 
@@ -67,7 +67,7 @@ The [Flare Smart Contracts repository](https://gitlab.com/flarenetwork/flare-sma
 
 You can find this file in the `deployment/deploys` folder, and parse it to retrieve the addresses of any Flare contract.
 
-!!! attention
+!!! warning
 
     As stated at the beginning, applications should NOT have Flare contract addresses in their source code.
 

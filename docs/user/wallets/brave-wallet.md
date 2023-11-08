@@ -45,7 +45,7 @@ After your wallet is set up, you need to connect to Flare's networks, which will
 
          1. In the **Search network field**, select `0x13(19) Songbird Canary-Network`, and verify that the displayed values match the values in the following table.
 
-            !!! Important
+            !!! tip
                 Make sure the RPC node URL is `https://songbird-api.flare.network/ext/C/rpc`.
 
             | Network Setting               | Value                                          |

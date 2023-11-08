@@ -20,12 +20,18 @@ theme:
         name: Switch to light mode
   logo: logo.svg                # Put it in the overrides folder!
   favicon: /favicon.png
+  icon:
+    edit: material/pencil
   features:
     - navigation.tabs           # Top-level pages are shown as tabs on the header
     - navigation.tabs.sticky    # Navigation tabs are always visible
     - navigation.top            # "Back to top" button appears upon upward scrolling
     - navigation.indexes        # Allow section headers to have a page (see tech/index.md)
     - content.tabs.link
+    - search.suggest            # Search will display the likeliest completion for the last word
+    - search.highlight          # Highlight all occurrences after following the link
+    - content.code.copy         # Code blocks render a button to allow the user to copy a code
+    - content.action.edit       # Edit icon
 markdown_extensions:
   - admonition                  # Info boxes (in different colors)
   - pymdownx.details            # "

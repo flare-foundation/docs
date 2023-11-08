@@ -37,7 +37,7 @@ This is the origin of deposits made to the Exchange and the receiver of withdraw
 
 This is an online server, part of the Exchange's infrastructure, that receives withdrawal requests from users and monitors the reception wallets to detect incoming deposits. It holds the private keys to the [hot wallet](#exchanges-central-wallet-hot) and to all the [reception wallets](#users-reception-wallets) so it can move funds from them in response to user's requests.
 
-!!! caution
+!!! warning
     This server must be available 24/7 so it is a clear target for malicious actors.
 
 ### Balances DB
@@ -112,7 +112,7 @@ The [Exchange server](#exchange-server) must be continuously monitoring transfer
     }).on("error", console.error);
     ```
 
-    !!! caution
+    !!! warning
         Note that all transactions from a block are retrieved **simultaneously** and this can easily trigger a rate limit on the node. A proper implementation should avoid this by **serializing requests** or **managing the request rate manually**.
 
 3. The server then **checks the wallet address** to find which user account it belongs to, and **adds the received amount to the user's balance**.
@@ -140,7 +140,7 @@ Users must request withdrawals directly to the [Exchange server](#exchange-serve
 
     [See a JavaScript example in the Ethereum documentation](https://ethereum.org/en/developers/tutorials/sending-transactions-using-web3-and-alchemy/). Since you will be using your own node, you can skip the Alchemy part and directly use the `web3` package as in the example above.
 
-    !!! caution
+    !!! warning
         Please make sure you **sign the transaction** before submitting it, as shown in the example.
         Unsigned transactions are ignored by the network.
 

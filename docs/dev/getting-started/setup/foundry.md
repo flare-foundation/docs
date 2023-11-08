@@ -59,7 +59,7 @@ forge test
 
 When finished, it should print something similar to `Test result: ok. 2 passed; 0 failed; finished in 24.43ms`.
 
-!!! Info
+!!! info
 
     Learn more about [Advanced Testing using Foundry](https://book.getfoundry.sh/forge/advanced-testing).
 
@@ -70,7 +70,7 @@ To do so, you must provide the **URL of the RPC node** to access the network, an
 
 The URL can be stored in an environment variable named `FOUNDRY_ETH_RPC_URL)` so you do not need to supply it every time.
 
-!!! Important
+!!! tip
 
     You are going to deploy the contract on the [Coston 2 network](../../reference/network-config.md).
     Make sure you have enough `C2FLR` in the account that will deploy the contract to pay the gas fees!
@@ -107,6 +107,6 @@ Execution should look similar to this:
 
 You can check the status of the contract by copy and pasting the `Deployed to:` address into the [Coston 2 Block Explorer](https://coston2-explorer.flare.network/).
 
-!!! Info
+!!! info
 
     Learn more about [Deploying and Verifying Smart Contracts using Foundry](https://book.getfoundry.sh/forge/deploying)!

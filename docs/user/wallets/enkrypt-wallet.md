@@ -36,7 +36,7 @@ After you set up your wallet, connect to Flare's networks, which will add each n
          6. Locate Flare Mainnet at the bottom of the list, and toggle the switch to enable your wallet to display your balance of `$FLR`.
          7. Follow [these instructions for manually adding tokens](../wrapping-tokens.md#manually) to retrieve the `WNat` contract address, and copy it.
 
-            !!! Important
+            !!! tip
                 The WNat contract address is different on each network. Ensure you copy the `WNat` contract address on the Flare network.
 
          8. With Flare Mainnet selected on the main menu in your Enkrypt wallet, click **Add custom token**.
@@ -65,7 +65,7 @@ After you set up your wallet, connect to Flare's networks, which will add each n
          6. Locate Songbird Canary-Network at the bottom of the list, and toggle the switch to enable your wallet to display your balance of `$SGB`.
          7. Follow [these instructions for manually adding tokens](../wrapping-tokens.md#manually) to retrieve the `WNat` contract address, and copy it.
 
-            !!! Important
+            !!! tip
                 The WNat contract address is different on each network. Ensure you copy the `WNat` contract address on the Songbird network.
 
          8. With Songbird Canary-Network selected on the main menu in your Enkrypt wallet, click **Add custom token**.

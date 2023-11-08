@@ -10,7 +10,7 @@ A staking app with a graphical user interface (GUI) is also available to simplif
 See the [Using FlareStake to Stake](./staking-flarestake.md) guide to learn about it.
 Still, a CLI tool has other advantages, like allowing it to be part of automated processes.
 
-!!! help "Table of Contents"
+!!! question "Table of Contents"
 
     * [Staking Overview](#staking-overview): What you need to know about staking.
     * [Installing the Flare Stake CLI](#installing-the-flare-stake-cli): Install required tools.
@@ -377,7 +377,7 @@ Otherwise, if you are going to stake to another node (delegation), select **Dele
 Press the down key a few times for this last option to show.
 { #address-binding }
 
-!!! important "First-time Address Registration"
+!!! tip "First-time Address Registration"
 
     The first time you use the **Add a validator node** or **Delegate to a validator node** options you are asked to sign an additional transaction.
 

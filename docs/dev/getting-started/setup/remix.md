@@ -65,7 +65,7 @@ You will now deploy the smart contract on the [Coston2 network](../../reference/
 When a smart contract is deployed on Flare's main network, it not only costs money (such as gas fees), but it also becomes immutable and cannot be modified.
 Therefore, deploying your smart contracts first on the test network is highly recommended.
 
-!!! important
+!!! tip
     Before jumping onto Remix Deployment:
 
     * Make sure that you have added and selected the Coston2 test network to your MetaMask Wallet.

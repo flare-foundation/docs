@@ -157,7 +157,7 @@ PRIVATE_KEY="0x0000000000000000000000000000000000000000000000000000000000000000"
 
 That is, 64 hexadecimal characters after the `0x`.
 
-!!! Caution
+!!! warning
 
     Make sure you never upload your `.env` file to a remote repository.
 

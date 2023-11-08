@@ -237,7 +237,7 @@ To achieve this, two **sets** of attestation providers are defined:
   <figcaption>Default and Local attestation providers.</figcaption>
 </figure>
 
-!!! important ""
+!!! tip ""
 
     Then, for an attestation round to succeed these three conditions must be met:
 

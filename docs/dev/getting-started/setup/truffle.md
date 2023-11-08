@@ -140,7 +140,7 @@ PRIVATE_KEY="d8936f6eae35c73a14ea7c1aabb8d068e16889a7f516c8abc482ba4e1489f4cd"
 
 [`.env` files](https://www.npmjs.com/package/dotenv) are useful to store local information which should not be committed into the source repository.
 
-!!! Caution
+!!! warning
 
     Make sure you never upload your `.env` file to a remote repository.
 
@@ -148,7 +148,7 @@ PRIVATE_KEY="d8936f6eae35c73a14ea7c1aabb8d068e16889a7f516c8abc482ba4e1489f4cd"
 
 ### 6. Deploy the Contract
 
-!!! Important
+!!! tip
 
     You are going to deploy the contract on the [Coston 2 network](../../reference/network-config.md).
     Make sure you have enough `C2FLR` in the account that will deploy the contract to pay the gas fees!

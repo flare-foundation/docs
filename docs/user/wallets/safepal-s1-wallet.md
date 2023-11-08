@@ -11,7 +11,7 @@ A step by step unboxing guide to initialize a new device/wallet, or import an ex
 
 After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wrapped token `$WFLR` to your listed assets.
 
-!!! Important
+!!! tip
     SafePal currently does not support the addition of wrapped Songbird (`$WSGB`) to wallets.
 
 1. Ensure the SafePal S1 is updated with the latest firmware, **version V1.0.32** or later.
@@ -37,7 +37,7 @@ After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wr
          1. In the **Enter token or token contract address** field, search for `Songbird`.
             A list of Songbird tokens on various blockchains is displayed.
 
-            !!! Important
+            !!! tip
                 Ignore all Songbird tokens categorized as BEP-20 and ERC-20.
          2. Click the plus sign (+) for this **SGB (Songbird)** token with the logo:
 

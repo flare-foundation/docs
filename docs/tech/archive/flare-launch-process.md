@@ -113,7 +113,7 @@ FTSO data providers:
 
 !!! danger "Trigger: 66% of validator power is independent of Flare,<br/>AND <br/>Exchanges agree to distribute the `$FLR` token to their customers within a few days of the TDE"
 
-!!! important "Token Distribution Event (TDE) happens"
+!!! tip "Token Distribution Event (TDE) happens"
     The **new airdrop** was sent to the Flare addresses provided by `$XRP` token holders when they claimed.
 
     Part of the airdrop went to Exchange accounts, which distributed it to the users that originally claimed (the **intended recipients**).

@@ -105,7 +105,7 @@ Remember to wrap your tokens before voting starts, as explained in the [Governan
 
 ### 3. Casting Your Vote
 
-!!! important
+!!! tip
 
     Wrapped tokens are required to vote.
     Depending on the network, ensure you have either `$FLR` or `$SGB` in the wallet you will use to vote.
