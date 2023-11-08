@@ -1,5 +1,9 @@
 site_name: Technical Documentation
 strict: true
+validation:
+  omitted_files: warn
+  absolute_links: ignore
+  unrecognized_links: warn
 theme:
   name: material
   custom_dir: docs/assets/overrides

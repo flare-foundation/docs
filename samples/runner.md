@@ -61,7 +61,7 @@ async function {{filename | replace('-', '_')}}_runner() {
 ??? info "Building with Hardhat"
 
     1. Create a new folder and move into it.
-    2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat)):
+    2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/index.md)):
         ```bash
         npm init
         npm install hardhat @nomicfoundation/hardhat-toolbox

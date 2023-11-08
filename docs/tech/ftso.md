@@ -246,4 +246,4 @@ It is also worth noting that:
 ## Related Developer Docs
 
 * [FTSO Reference](../dev/reference/ftso.md)
-* [FTSO Tutorials](/dev/tutorials/ftso/)
+* [FTSO Tutorials](../dev/tutorials/ftso/index.md)
