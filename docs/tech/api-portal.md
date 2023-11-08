@@ -8,4 +8,4 @@ This is one more step towards Flare's goal to **connect all blockchains**.
 
 !!! info "Visit [Flare's API Portal website](https://api-portal.flare.network/)"
 
-!!! question "Visit the [API Portal's FAQ](https://api-portal.flare.network/faq) if you are having authentication issues!"
+!!! question "Visit the [API Portal's FAQ](https://api-portal.flare.network/support) if you are having authentication issues!"
