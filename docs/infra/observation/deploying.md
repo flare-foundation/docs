@@ -1,7 +1,5 @@
 # Deploying an Observer Node
 
-## Introduction
-
 Observer nodes enable anyone to observe the network and submit transactions.
 Unlike [validator nodes](../../tech/validators.md), which provide state consensus and add blocks, observer nodes remain outside the network and have no effect on consensus or blocks.
 
@@ -13,7 +11,7 @@ However, submitting transactions through your own node offers a number of benefi
   Your own node does not have such restriction.
 * The time savings described above allow [FTSO data providers](glossary.md#data_provider) to submit their data a few seconds later, thus having more time to gather data before submitting.
 
-This guide explains how to deploy your own observer node so you can reap these benefits.
+This guide explains how to deploy your own observer node so you can reap the benefits.
 
 ## Prerequisites
 
@@ -49,7 +47,7 @@ This guide contains different instructions depending on which Flare network you 
     | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                          |
     |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
 
-=== "Coston 2"
+=== "Coston2"
 
     |                 | Hardware    |                      | Software                                             |
     | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
@@ -67,7 +65,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 ### 1. Installation
 
-=== "Flare & Coston 2"
+=== "Flare & Coston2"
 
     Clone the [go-flare](https://github.com/flare-foundation/go-flare) repository and run the `build.sh` script:
 
@@ -115,9 +113,10 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 ### 2. Songbird Node Whitelisting
 
-While **Songbird** network is being tested, all nodes wanting to peer with it (including observer nodes) need to have their IP address **whitelisted**.
+While the **Songbird** network is being tested, all nodes wanting to peer with it, including observer nodes, need to have their IP address **whitelisted**.
 
-To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@TampaBay7`) or email ([tom@flare.network](mailto:tom@flare.network)) and request to be whitelisted.
+To do this, please **contact Tom T.** over Discord (`Tom T#7603`), Telegram (`@TampaBay7`), or email ([tom@flare.network](mailto:tom@flare.network)), and request to be whitelisted.
+To have greater redundancy, you can whitelist multiple nodes per single provider.
 
 ??? tip "Checking the status of your Songbird whitelisting request"
 
@@ -180,7 +179,7 @@ To understand each parameter read the following step before launching the node.
         | jq -r ".result.nodeID")"
     ```
 
-=== "Coston 2"
+=== "Coston2"
 
     ``` bash
     ./build/avalanchego --network-id=costwo --http-host= \
@@ -283,7 +282,7 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
         https://coston.flare.network/ext/info | jq -r ".result.nodeID"
         ```
 
-    === "Coston 2"
+    === "Coston2"
 
         Peer's IP address:
 
@@ -321,9 +320,10 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
 * [`--db-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--db-dir-string-file-path):
     Directory where the database is stored.
     Make sure to use a disk with enough space as recommended in the [Hardware prerequisites](#prerequisites) section.
-    It defaults to `~/.avalanchego/db` on Flare and Coston 2, and to `~/.flare/db` on Songbird and Coston.
+    It defaults to `~/.avalanchego/db` on Flare and Coston2, and to `~/.flare/db` on Songbird and Coston.
+{ #database-location }
 
-    You can use this option to store the database on an external drive, for example.
+    For example, you can use this option to store the database on an external drive.
 
 * [`--chain-config-dir`](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#--chain-config-dir-string):
     Optional JSON configuration file, in case you want to use lots of non-default values.
@@ -362,3 +362,34 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
 **Archival nodes**: An archival node keeps the whole history of the blockchain, instead of [pruning](glossary.md#pruning) old transactions which is the default setting.
 Use the [`pruning-enabled`](https://docs.avax.network/nodes/maintain/chain-config-flags#pruning-enabled-boolean) configuration setting to control whether your node performs pruning or not.
 Archival nodes have significantly increased disk requirements.
+
+### 5. Maintaining a Healthy Node
+
+In some cases, your node might not work correctly or you might receive unusual messages that appear difficult to troubleshoot.
+Use the following solutions to ensure your node stays healthy:
+
+* Remember that when your node has less than 16 peers, your node will not work correctly.
+  To retrieve the number of connected peers, run the following command and find the line that contains `connectedPeers`:
+
+    ```bash
+    curl http://127.0.0.1:9650/ext/health | jq
+    ```
+
+    To automate the process, use:
+
+    ```bash
+    curl -s http://127.0.0.1:9650/ext/health | \
+        jq -r ".checks.network.message.connectedPeers"
+    ```
+
+* If your node does not sync after a long time and abruptly stops working, ensure the [database location](#database-location) has sufficient disk space, and remember the database size might change a lot during bootstrapping.
+* If you receive unusual messages after you make submissions or when transactions are reverted, your node might not be connected correctly.
+  First, ensure the database location has sufficient disk space, and then restart the node.
+* If you receive this error related to `GetAcceptedFrontier` during bootstrapping, your node was disconnected during bootstrapping.
+   Restart the node.
+
+    ```text
+    failed to send GetAcceptedFrontier(MtF8bVH241hetCQJgsKEdKyJBs8vhp1BC, 11111111111111111111111111111111LpoYY, NUMBER)
+    ```
+
+* If you sync your node, but it stays unhealthy for no discernible reason, restart the node.

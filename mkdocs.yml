@@ -113,6 +113,7 @@ plugins:
           'user/delegation/reward-claiming-faq.md': 'tech/ftso.md'
           'user/delegation/reward-claiming-in-detail.md': 'tech/ftso.md'
           'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
+          'infra/observation/faq.md': 'infra/observation/deploying.md'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -220,7 +221,6 @@ nav:
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md
-      - infra/observation/faq.md
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
