@@ -115,13 +115,15 @@ These are currently false positives which can be safely ignored:
 * Use informative link titles. For example, instead of naming your links "link" or "here", wrap part of the sentence that is meant to be linked as a title.
 * Links to external sources should be:
     * Clear, concise, factual (not tips & tricks-type articles, or blog posts).
-    * Reliable to stand the test of time (will not start to 404 because it's a personal blog and the person decided to get rid of it for .example)
+    * Reliable to stand the test of time (will not start to 404 because it's a personal blog and the person decided to get rid of it, for example).
     * From reliable sources (this is where Wikipedia isn't always perfect, but fine for technical subjects).
 * Whenever possible, use internal links instead of external ones (if something has been described in our documents somewhere, link to it instead of externally).
-* Links to pages should be relative to the current page, so start them with `./` or `../` if needed.
-* Links to images should use no path, the Autolink plugin will search for them.
-  Images are expected to be moved around when used from more than one page, so it's good to have this flexibility.
-  Be careful to give images unique names.
+* Shortened links: thanks to the `Autolink` plugin we can use only the file name, without path, and mkdocs will search for the file.
+    This only works for files with unique names, so its usage is restricted to images, contract names, and the glossary, for convenience:
+    * `![This is an image](block-explorer-balance.png)`
+    * `[FtsoRegistry](FtsoRegistry.md)`
+    * `[FBA](glossary.md#fba)`
+* All other links to internal pages should be relative to the current page, so always start them with `./` or `../`.
 
 ### Official Spellings
 
