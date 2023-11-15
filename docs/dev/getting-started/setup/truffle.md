@@ -104,13 +104,13 @@ module.exports = {
       network_id: "*",       // Any network (default: none)
     },
     flare: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://flare-api.flare.network/ext/C/rpc`),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://flare-api.flare.network/ext/bc/C/rpc`),
       network_id: 14,
       timeoutBlocks: 200,
       skipDryRun: true
     },
     coston2: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://coston2-api.flare.network/ext/C/rpc`),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://coston2-api.flare.network/ext/bc/C/rpc`),
       network_id: 114,
       timeoutBlocks: 200,
       skipDryRun: true

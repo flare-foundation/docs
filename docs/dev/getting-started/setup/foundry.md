@@ -91,7 +91,7 @@ Learn more about [Deploying and Verifying Smart Contracts using Foundry](https:/
 To deploy the sample `Counter` contract to Flare's Coston 2 Network, run:
 
 ```bash
-forge create --rpc-url https://coston2-api.flare.network/ext/C/rpc \
+forge create --rpc-url https://coston2-api.flare.network/ext/bc/C/rpc \
   --private-key d8936f6eae35c73a14ea7c1aabb8d068e16889a7f516c8abc482ba4e1489f4cd \
   src/Counter.sol:Counter
 ```

@@ -1,5 +1,5 @@
 const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
-const FLARE_RPC = "https://flare-api.flare.network/ext/C/rpc";
+const FLARE_RPC = "https://flare-api.flare.network/ext/bc/C/rpc";
 
 async function GettingDataFeeds_run(_symbol) {
     console.log(`Retrieving current price of ${_symbol}...`);

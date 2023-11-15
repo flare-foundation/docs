@@ -15,18 +15,18 @@ If your wallet is not in the list, you might be able to configure it to connect 
 
 === "Flare"
 
-    | Configuration Parameter                   | Value                                       |
-    | ----------------------------------------- | ------------------------------------------- |
-    | **Chain ID**                              | 14                                          |
-    | **Asset Ticker**                          | `FLR`                                       |
-    | **RPC endpoint**                          | `https://flare-api.flare.network/ext/C/rpc` |
-    | **Block Explorer**                        | <https://flare-explorer.flare.network>      |
+    | Configuration Parameter | Value                                          |
+    | ----------------------- | ---------------------------------------------- |
+    | **Chain ID**            | 14                                             |
+    | **Asset Ticker**        | `FLR`                                          |
+    | **RPC endpoint**        | `https://flare-api.flare.network/ext/bc/C/rpc` |
+    | **Block Explorer**      | <https://flare-explorer.flare.network>         |
 
 === "Songbird"
 
-    | Configuration Parameter                   | Value                                          |
-    | ----------------------------------------- | ---------------------------------------------- |
-    | **Chain ID**                              | 19                                             |
-    | **Asset Ticker**                          | `SGB`                                          |
-    | **RPC endpoint**                          | `https://songbird-api.flare.network/ext/C/rpc` |
-    | **Block Explorer**                        | <https://songbird-explorer.flare.network>      |
+    | Configuration Parameter | Value                                             |
+    | ----------------------- | ------------------------------------------------- |
+    | **Chain ID**            | 19                                                |
+    | **Asset Ticker**        | `SGB`                                             |
+    | **RPC endpoint**        | `https://songbird-api.flare.network/ext/bc/C/rpc` |
+    | **Block Explorer**      | <https://songbird-explorer.flare.network>         |

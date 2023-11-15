@@ -32,13 +32,13 @@ After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wr
 
         1. Specify the values from the following table to set up the Flare network, which will add the native `$FLR` token to your list of assets.
 
-            | Field                  | Value                                       |
-            | ---------------------- | ------------------------------------------- |
-            | **Network Name**       | Flare                                       |
-            | **New RPC URL**        | <https://flare-api.flare.network/ext/C/rpc> |
-            | **Chain ID**           | 14                                          |
-            | **Currency Symbol**    | FLR                                         |
-            | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
+            | Field                  | Value                                          |
+            | ---------------------- | ---------------------------------------------- |
+            | **Network Name**       | Flare                                          |
+            | **New RPC URL**        | <https://flare-api.flare.network/ext/bc/C/rpc> |
+            | **Chain ID**           | 14                                             |
+            | **Currency Symbol**    | FLR                                            |
+            | **Block Explorer URL** | <https://flare-explorer.flare.network>         |
 
         2. Click **Save**.
         3. [Follow these instructions to automatically add `$WFLR`](../wrapping-tokens.md#automatically) to your listed assets.
@@ -47,13 +47,13 @@ After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wr
 
         1. Specify the values from the following table to set up the Songbird network, which will add the native `$SGB` token to your list of assets.
 
-            | Field                  | Value                                          |
-            | ---------------------- | ---------------------------------------------- |
-            | **Network Name**       | Songbird                                       |
-            | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
-            | **Chain ID**           | 19                                             |
-            | **Currency Symbol**    | SGB                                            |
-            | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
+            | Field                  | Value                                             |
+            | ---------------------- | ------------------------------------------------- |
+            | **Network Name**       | Songbird                                          |
+            | **New RPC URL**        | <https://songbird-api.flare.network/ext/bc/C/rpc> |
+            | **Chain ID**           | 19                                                |
+            | **Currency Symbol**    | SGB                                               |
+            | **Block Explorer URL** | <https://songbird-explorer.flare.network>         |
 
         2. Click **Save**.
         3. [Follow these instructions to automatically add `$WSGB`](../wrapping-tokens.md#automatically) to your listed assets.

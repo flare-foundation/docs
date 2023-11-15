@@ -93,7 +93,7 @@ async function {{filename | replace('-', '_')}}_runner() {
             networks: {
                 hardhat: {
                     forking: {
-                        url: 'https://flare-api.flare.network/ext/C/rpc',
+                        url: 'https://flare-api.flare.network/ext/bc/C/rpc',
                     },
                 },
             },

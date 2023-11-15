@@ -28,16 +28,16 @@ After your wallet is set up, you need to connect to Flare's networks, which will
 
          1. In the **Search network field**, select `0xe(14) Flare Mainnet`, and verify that the displayed values match the values in this table:
 
-            | Network Setting               | Value                                       |
-            | ----------------------------- | ------------------------------------------- |
-            | **The id of chain**           | 0xe                                         |
-            | **The name of chain**         | Flare Mainnet                               |
-            | **Chain's currency name**     | Flare                                       |
-            | **Chain's currency symbol**   | FLR                                         |
-            | **Chain's currency decimals** | 18                                          |
-            | **RPC URLs**                  | <https://flare-api.flare.network/ext/C/rpc> |
-            | **Icon URLs**                 | _(leave blank)_                             |
-            | **Block explorer URLs**       | <https://flare-explorer.flare.network>      |
+            | Network Setting               | Value                                          |
+            | ----------------------------- | ---------------------------------------------- |
+            | **The id of chain**           | 0xe                                            |
+            | **The name of chain**         | Flare Mainnet                                  |
+            | **Chain's currency name**     | Flare                                          |
+            | **Chain's currency symbol**   | FLR                                            |
+            | **Chain's currency decimals** | 18                                             |
+            | **RPC URLs**                  | <https://flare-api.flare.network/ext/bc/C/rpc> |
+            | **Icon URLs**                 | _(leave blank)_                                |
+            | **Block explorer URLs**       | <https://flare-explorer.flare.network>         |
 
          2. Click **Submit**.
 
@@ -46,18 +46,18 @@ After your wallet is set up, you need to connect to Flare's networks, which will
          1. In the **Search network field**, select `0x13(19) Songbird Canary-Network`, and verify that the displayed values match the values in the following table.
 
             !!! tip
-                Make sure the RPC node URL is `https://songbird-api.flare.network/ext/C/rpc`.
+                Make sure the RPC node URL is `https://songbird-api.flare.network/ext/bc/C/rpc`.
 
-            | Network Setting               | Value                                          |
-            | ----------------------------- | ---------------------------------------------- |
-            | **The id of chain**           | 0x13                                           |
-            | **The name of chain**         | Songbird Canary-Network                        |
-            | **Chain's currency name**     | Songbird                                       |
-            | **Chain's currency symbol**   | SGB                                            |
-            | **Chain's currency decimals** | 18                                             |
-            | **RPC URLs**                  | <https://songbird-api.flare.network/ext/C/rpc> |
-            | **Icon URLs**                 | _(leave blank)_                                |
-            | **Block explorer URLs**       | <https://songbird-explorer.flare.network>      |
+            | Network Setting               | Value                                             |
+            | ----------------------------- | ------------------------------------------------- |
+            | **The id of chain**           | 0x13                                              |
+            | **The name of chain**         | Songbird Canary-Network                           |
+            | **Chain's currency name**     | Songbird                                          |
+            | **Chain's currency symbol**   | SGB                                               |
+            | **Chain's currency decimals** | 18                                                |
+            | **RPC URLs**                  | <https://songbird-api.flare.network/ext/bc/C/rpc> |
+            | **Icon URLs**                 | _(leave blank)_                                   |
+            | **Block explorer URLs**       | <https://songbird-explorer.flare.network>         |
 
          2. Click **Submit**.
 

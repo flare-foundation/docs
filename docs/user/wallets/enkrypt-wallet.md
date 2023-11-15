@@ -24,13 +24,13 @@ After you set up your wallet, connect to Flare's networks, which will add each n
             The **Custom network** window is displayed.
          4. Specify the following values:
 
-            | Network Setting         | Value                                       |
-            | ----------------------- | ------------------------------------------- |
-            | **Network Name**        | Flare                                       |
-            | **New RPC URL**         | <https://flare-api.flare.network/ext/C/rpc> |
-            | **Chain ID**            | 14                                          |
-            | **Currency Symbol**     | FLR                                         |
-            | **Block Explorer URL**  | <https://flare-explorer.flare.network>      |
+            | Network Setting        | Value                                          |
+            | ---------------------- | ---------------------------------------------- |
+            | **Network Name**       | Flare                                          |
+            | **New RPC URL**        | <https://flare-api.flare.network/ext/bc/C/rpc> |
+            | **Chain ID**           | 14                                             |
+            | **Currency Symbol**    | FLR                                            |
+            | **Block Explorer URL** | <https://flare-explorer.flare.network>         |
 
          5. Click **Add network**.
          6. Locate Flare Mainnet at the bottom of the list, and toggle the switch to enable your wallet to display your balance of `$FLR`.
@@ -53,13 +53,13 @@ After you set up your wallet, connect to Flare's networks, which will add each n
          3. Click **Custom network**. The **Custom network** window is displayed.
          4. Specify the following values:
 
-            | Network Setting        | Value                                          |
-            | ---------------------- | ---------------------------------------------- |
-            | **Network Name**       | Songbird                                       |
-            | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
-            | **Chain ID**           | 19                                             |
-            | **Currency Symbol**    | SGB                                            |
-            | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
+            | Network Setting        | Value                                             |
+            | ---------------------- | ------------------------------------------------- |
+            | **Network Name**       | Songbird                                          |
+            | **New RPC URL**        | <https://songbird-api.flare.network/ext/bc/C/rpc> |
+            | **Chain ID**           | 19                                                |
+            | **Currency Symbol**    | SGB                                               |
+            | **Block Explorer URL** | <https://songbird-explorer.flare.network>         |
 
          5. Click **Add network**.
          6. Locate Songbird Canary-Network at the bottom of the list, and toggle the switch to enable your wallet to display your balance of `$SGB`.

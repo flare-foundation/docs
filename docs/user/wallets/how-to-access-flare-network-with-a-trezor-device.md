@@ -24,23 +24,23 @@ You can access Flare and Songbird by using your Trezor T with the MetaMask brows
 
     === "Songbird"
 
-        | Field                  | Value                                          |
-        | ---------------------- | ---------------------------------------------- |
-        | **Network Name**       | Songbird                                       |
-        | **New RPC URL**        | <https://songbird-api.flare.network/ext/C/rpc> |
-        | **Chain ID**           | 19                                             |
-        | **Currency Symbol**    | SGB                                            |
-        | **Block Explorer URL** | <https://songbird-explorer.flare.network>      |
+        | Field                  | Value                                             |
+        | ---------------------- | ------------------------------------------------- |
+        | **Network Name**       | Songbird                                          |
+        | **New RPC URL**        | <https://songbird-api.flare.network/ext/bc/C/rpc> |
+        | **Chain ID**           | 19                                                |
+        | **Currency Symbol**    | SGB                                               |
+        | **Block Explorer URL** | <https://songbird-explorer.flare.network>         |
 
     === "Flare"
 
-        | Field                  | Value                                       |
-        | ---------------------- | ------------------------------------------- |
-        | **Network Name**       | Flare                                       |
-        | **New RPC URL**        | <https://flare-api.flare.network/ext/C/rpc> |
-        | **Chain ID**           | 14                                          |
-        | **Currency Symbol**    | FLR                                         |
-        | **Block Explorer URL** | <https://flare-explorer.flare.network>      |
+        | Field                  | Value                                          |
+        | ---------------------- | ---------------------------------------------- |
+        | **Network Name**       | Flare                                          |
+        | **New RPC URL**        | <https://flare-api.flare.network/ext/bc/C/rpc> |
+        | **Chain ID**           | 14                                             |
+        | **Currency Symbol**    | FLR                                            |
+        | **Block Explorer URL** | <https://flare-explorer.flare.network>         |
 
 3. Click **Save**.
 4. Select **Flare** or **Songbird** in the network dropdown.
