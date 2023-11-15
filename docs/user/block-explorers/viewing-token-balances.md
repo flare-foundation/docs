@@ -4,6 +4,8 @@
 
 Use the block explorer to view the list of token balances at an address.
 
+The following guide refers to the [original Flare block explorers](./index.md).
+
 1. Retrieve the address whose tokens you want to view.
 2. Open the [block explorer](./index.md) for the appropriate network. [The block explorer dashboard](./user-interface.md) is displayed.
 3. Insert the address from Step 1 into the **Search** field. If the address exists, it is highlighted in the results list.

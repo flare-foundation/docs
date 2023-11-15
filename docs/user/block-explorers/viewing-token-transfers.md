@@ -2,6 +2,8 @@
 
 !!! example "This page is for advanced users."
 
+The following guide refers to the [original Flare block explorers](./index.md).
+
 Use the block explorer to view token transfers to and from an address.
 
 1. Retrieve the address whose token transfers you want to view.

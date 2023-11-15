@@ -18,6 +18,8 @@ Before you delegate your vote power, you must:
   As you browse the lists, consider the [factors that affect the potential for rewards](../../tech/ftso.md#rewards).
 * [Understand how the timing of delegations affects rewards](../../tech/ftso.md#effects-of-the-vote-power-block-snapshot-on-delegations), and consider the implications about the vote-power snapshot that will affect your rewards.
 
+The following guide refers to the [original Flare block explorers](./index.md).
+
 ## Delegating Your Vote Power
 
 1. After you choose your data provider from the [list of data providers](https://flaremetrics.io/), locate its address beneath its name, and copy it.

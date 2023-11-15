@@ -5,6 +5,10 @@ Block explorers enable you to analyze transactions and interact with addresses o
 Flare provides two versions of its block explorer to examine the network activities in the Flare ecosystem.
 
 * **Flarescan block explorers**: Provide full support for the [C-chain](../../tech/flare.md#flare-chains), basic support for the [P-chain](../../tech/flare.md#flare-chains), and analytics.
+
+    !!! warning
+        Some [proxy contracts](https://ethereum.org/en/developers/docs/smart-contracts/upgrading/#proxy-patterns), such as [`FtsoRegistry`](FtsoRegistry.md), are not fully supported yet so they currently cannot be accessed with the Flarescan explorers.
+
 * **Original Flare block explorers**: Provide analytics plus full support for the [C-chain](../../tech/flare.md#flare-chains), but they do not provide support for the P-chain.
 
 | [Network](../../tech/flare.md#flare-networks) | Flarescan Block Explorers | Original Flare Block Explorers |
@@ -14,7 +18,9 @@ Flare provides two versions of its block explorer to examine the network activit
 | Coston          | [Coston Canary Explorer](https://coston.testnet.flarescan.com)          | [Original Coston Explorer](https://coston-explorer.flare.network)       |
 | Coston2         | [Coston2 Testnet Explorer](https://coston2.testnet.flarescan.com)       | [Original Coston2 Explorer](https://coston2-explorer.flare.network)     |
 
-## Topics
+## Guides
+
+These guides refer to the original Flare block explorers.
 
 * [Finding the Reward Epoch](./finding-reward-epoch.md)
 * [Managing Delegations](./managing-delegations.md)

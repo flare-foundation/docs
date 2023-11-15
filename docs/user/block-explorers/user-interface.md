@@ -1,6 +1,6 @@
 # Block Explorer Dashboard
 
-Each block explorer provides a dashboard that includes the following elements:
+Each block explorer provides this dashboard, which includes:
 
 <figure markdown>
 ![Block Explorer Dashboard](block-explorer-dashboard.png){ loading=lazy }
@@ -11,6 +11,8 @@ Each block explorer provides a dashboard that includes the following elements:
 * [Metrics](#metrics)
 * [Blocks](#blocks)
 * [Transactions](#transactions)
+
+This dashboard represents the dashboard of the [original Flare block explorers](./index.md).
 
 ## Navigation Bar
 

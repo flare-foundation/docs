@@ -4,6 +4,8 @@
 
 Use the block explorer to view transaction details that explain where the transactions exist on the blockchain, when they were processed, how much gas they consumed, and more.
 
+The following guide refers to the [original Flare block explorers](./index.md).
+
 1. Retrieve the address whose transactions you want to view.
 2. Open the [block explorer](./index.md) for the appropriate network.
    [The block explorer dashboard](./user-interface.md) is displayed.

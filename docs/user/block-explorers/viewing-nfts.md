@@ -5,6 +5,8 @@
 Use the block explorer to view NFTs.
 Before you begin, ensure the status of the transaction to mint the NFT is **Confirmed**.
 
+The following guide refers to the [original Flare block explorers](./index.md).
+
 1. Retrieve the transaction hash for the NFT.
 2. Open a [block explorer](./index.md) for the appropriate network.
    [The block explorer dashboard](./user-interface.md) is displayed.

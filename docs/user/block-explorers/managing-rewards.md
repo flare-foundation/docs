@@ -7,6 +7,8 @@ Rewards are accrued from your delegations to FTSO data providers whose submitted
 Use the following information to [check your reward balance](#checking-your-reward-balance) and [claim your rewards](#claiming-your-rewards) with the block explorer, which provides many options but is more complex.
 Alternatively, if you prefer a simple interface, use the [Flare Portal](https://portal.flare.network/).
 
+The following guide refers to the [original Flare block explorers](./index.md).
+
 ## Checking Your Reward Balance
 
 1. Open a [block explorer](./index.md) for the appropriate network.
