@@ -132,7 +132,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/flare-foundation
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/XqNa7Rq
+      link: https://discord.com/invite/flarenetwork
   analytics:
     provider: gtm # Custom Google Tag Manager integration
     property: GTM-WX2D2TR
