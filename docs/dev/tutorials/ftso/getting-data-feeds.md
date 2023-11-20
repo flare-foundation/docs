@@ -77,6 +77,10 @@ Finally, the asset's price is fetched from the [`FtsoRegistry`](FtsoRegistry.md)
 * The only parameter of this method is the symbol for the asset being queried, like `"FLR"` or `"BTC"`.
     You can use [`getSupportedSymbols()`](FtsoRegistry.md#fn_getsupportedsymbols_ce1c0e4d) to retrieve the list of all supported symbols.
 
+    !!! warning
+        On Coston and Coston2, the symbol names are prefixed with "test", such as `"testBTC"`.
+        When you use the [`getSupportedSymbols()`](FtsoRegistry.md#fn_getsupportedsymbols_ce1c0e4d) function to retrieve the list of supported symbols, the symbol names will already contain the prefix.
+
 * Given that Solidity does not support numbers with decimals, this method returns the requested price as an integer and the number of decimal places by which the comma must be shifted.
 
     For example, if it returns **1234** for the price and **2** for the decimals, the actual price of the asset in USD is **12.34**.
