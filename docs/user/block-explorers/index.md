@@ -6,9 +6,6 @@ Flare provides two versions of its block explorer to examine the network activit
 
 * **Flarescan block explorers**: Provide full support for the [C-chain](../../tech/flare.md#flare-chains), basic support for the [P-chain](../../tech/flare.md#flare-chains), and analytics.
 
-    !!! warning
-        Some [proxy contracts](https://ethereum.org/en/developers/docs/smart-contracts/upgrading/#proxy-patterns), such as [`FtsoRegistry`](FtsoRegistry.md), are not fully supported yet so they currently cannot be accessed with the Flarescan explorers.
-
 * **Original Flare block explorers**: Provide analytics plus full support for the [C-chain](../../tech/flare.md#flare-chains), but they do not provide support for the P-chain.
 
 | [Network](../../tech/flare.md#flare-networks) | Flarescan Block Explorers | Original Flare Block Explorers |
