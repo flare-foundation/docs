@@ -9,9 +9,13 @@ This article, partially based on the [Hardhat documentation](https://hardhat.org
 
 ### 1. Set up the Environment
 
+!!! warning
+    
+    If you are using Windows, Hardhat strongly [recommends](https://hardhat.org/tutorial/setting-up-the-environment#windows) to use [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/about).
+
 Install the following dependencies:
 
-* [NodeJSv12+ LTS and npm/Yarn Package Installer](https://nodejs.org/en/).
+* [NodeJSv16+ LTS and npm Package Installer](https://nodejs.org/en/).
 
 !!! tip
     Check the [Official Guide by Hardhat](https://hardhat.org/tutorial/setting-up-the-environment) if you have issues installing this package.
@@ -31,8 +35,6 @@ Finally, add Hardhat and a few dependencies to the project, since you will use t
 ```bash
 npm install --save-dev \
   hardhat \
-  @nomicfoundation/hardhat-toolbox \
-  @nomiclabs/hardhat-ethers \
   dotenv
 ```
 
@@ -42,7 +44,7 @@ Hardhat can quick-start your development by providing a sample project.
 Just run:
 
 ```bash
-npx hardhat
+npx hardhat init
 ```
 
 You should see the following prompt:
@@ -57,8 +59,11 @@ Then press **Y** for rest of the prompts.
 
 When done, it should print `Project created`.
 
+!!! tip
+    If you use the Windows command prompt, Hardhat might warn you that you need to install some dependencies manually. Do it using the command that the Hardhat setup guide provides.
+
 If you take a look in the `contracts` folder, you should find a sample source file called `Lock.sol`.
-It is a Solidity smart contract implementing a simple digital lock, where users can only withdraw funds after a given period of time:
+It is a Solidity smart contract implementing a digital lock, where users can only withdraw funds after a given period of time:
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -99,7 +104,7 @@ contract Lock {
 
 ### 3. Compile the Contracts
 
-To compile the sample project, simply run:
+To compile the sample project, run:
 
 ```bash
 npx hardhat compile
@@ -115,9 +120,7 @@ Edit the `hardhat.config.js` file and replace its contents with the following:
 ```javascript
 require('dotenv').config();
 require("@nomicfoundation/hardhat-toolbox");
-require('@nomiclabs/hardhat-ethers');
 
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
   networks: {
@@ -151,11 +154,9 @@ Then, create a file called `.env` at the root of you project (where the `hardhat
 [`.env` files](https://www.npmjs.com/package/dotenv) are useful to store local information which should not be committed into the source repository.
 In this tutorial, you need to store your test account's [private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) in this format:
 
-```ini
-PRIVATE_KEY="0x0000000000000000000000000000000000000000000000000000000000000000"
+```bash
+PRIVATE_KEY="0000000000000000000000000000000000000000000000000000000000000000"
 ```
-
-That is, 64 hexadecimal characters after the `0x`.
 
 !!! warning
 
@@ -184,7 +185,7 @@ You should get:
 
 Finally, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using a Hardhat script from the `scripts` folder.
 
-Run this command in the root of the project:
+Run this command at the root of the project:
 
 ```bash
 npx hardhat run scripts/deploy.js --network coston2
@@ -197,4 +198,4 @@ Lock with 1 ETH and unlock timestamp 1705592309 deployed to 0xdC7781FA9fA7e2d031
 ```
 
 The last part is the address where the contract has been deployed.
-You can check the status of the contract by copy and pasting this address in the [Block Explorer](https://coston2-explorer.flare.network/).
+You can check the status of the contract by copying and pasting this address in the [Block Explorer](../../../user/block-explorers/index.md)
