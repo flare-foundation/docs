@@ -15,7 +15,7 @@ Still, a CLI tool has other advantages, like allowing it to be part of automated
     * [Staking Overview](#staking-overview): What you need to know about staking.
     * [Installing the Flare Stake CLI](#installing-the-flare-stake-cli): Install required tools.
     * [Staking Guide](#staking-guide): How to perform staking.
-    * [Claiming Guide](#claiming-guide): How to claim staking rewards.
+    * [Claiming Guide](#reward-claiming-guide): How to claim staking rewards.
     * [Troubleshooting](#troubleshooting): Addressing common issues.
 
 ## Staking Overview
