@@ -1,0 +1,15 @@
+services:
+  mkdocs:
+    restart: unless-stopped
+    build: .
+    develop:
+      watch:
+        - action: sync
+          path: docs
+          target: /docs
+        - action: rebuild
+          path: requirements.txt
+    ports:
+      - "8000:8000"
+    environment:
+      LIVE_RELOAD_SUPPORT: 'true'
