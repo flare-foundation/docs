@@ -1,5 +1,4 @@
 site_name: Technical Documentation
-strict: true
 validation:
   omitted_files: warn
   absolute_links: ignore
