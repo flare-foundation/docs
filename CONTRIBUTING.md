@@ -136,7 +136,7 @@ Pay special attention to the capitalization and spacing of the following words:
 * Flare network (the blockchain, sibling to the Songbird network)
 * Flare Networks (The company)
 * Flare Time Series Oracle
-* Layer Cake
+* LayerCake
 * mainnet (or main network)
 * Merit-Based Consensus
 * P-Chain, C-Chain and X-Chain (this is how Avalanche calls them)
