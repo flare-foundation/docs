@@ -275,9 +275,10 @@ figure img.side-by-side {
 .md-typeset .cards ul li {
     border: 1px solid var(--md-default-fg-color--lightest);
     border-radius: 16px;
-    width: 550px;
+    min-height: 130px;
     padding: 8px;
     margin-left: 0;
+    margin-bottom: 16px;
     transition: background 0.25s;
     padding: 16px;
 }
@@ -296,6 +297,7 @@ figure img.side-by-side {
 }
 
 .md-typeset .cards a {
+    width: 550px;
     text-decoration: none;
     color: var(--md-primary-bg-color);
 }
