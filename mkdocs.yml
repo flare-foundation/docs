@@ -157,6 +157,12 @@ nav:
     - tech/the-flaredrop.md
     - tech/flare-beta.md
     - tech/api-portal.md
+    - FAssets:
+      - tech/fassets/index.md
+      - tech/fassets/collateral.md
+      - tech/fassets/minting.md
+      - tech/fassets/redemption.md
+      - tech/fassets/liquidation.md
     - tech/ftso.md
     - tech/governance.md
     - tech/personal-delegation-account.md

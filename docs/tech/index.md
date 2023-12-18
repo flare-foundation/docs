@@ -14,6 +14,7 @@ Select one of the topics below:
 * [The FlareDrop](./the-flaredrop.md)
 * [Flare Beta](./flare-beta.md)
 * [Flare API Portal](./api-portal.md)
+* [FAssets](./fassets/index.md)
 * [FTSO](./ftso.md)
 * [Governance](./governance.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)

@@ -415,11 +415,38 @@ figure img.side-by-side {
     background: var(--md-code-bg-color);
     vertical-align: middle;
 }
-
 .important-table .md-typeset__scrollwrap {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+}
+
+/* Tables with divider lines */
+.md-typeset .table-with-dividers table:not([class]) {
+    border-collapse: collapse;
+    border-style: none;
+}
+.md-typeset .table-with-dividers table:not([class]) th,
+.md-typeset .table-with-dividers table:not([class]) td {
+    border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Tables listing steps: Maximum width is given to the second column
+ * where the bulk of the text is expected. */
+.md-typeset .steps-table table:not([class]) td,
+.md-typeset .steps-table table:not([class]) th {
+    min-width: fit-content;
+}
+.md-typeset .steps-table table:not([class]) th code {
+    white-space: nowrap;
+}
+.md-typeset .steps-table table:not([class]) td:nth-child(2),
+.md-typeset .steps-table table:not([class]) th:nth-child(2) {
+    width: 100%;
+    padding-left: 0;
+}
+.md-typeset .steps-table table:not([class]) td strong {
+    color: var(--md-default-fg-color);
 }
 
 /* Footer links */
