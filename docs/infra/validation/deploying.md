@@ -1,45 +1,28 @@
 # Deploying a Validator Node
 
-## Introduction
+Deploy validator nodes to participate in consensus and collect rewards that the network provides to those who help secure it.
 
-As explained in the [Validator Nodes](../../tech/validators.md) page, these servers fulfill a critical role in securing the network:
+As explained in the [Validator Nodes](../../tech/validators.md) page, they are servers that fulfill a critical role in securing the network.
+They:
 
-* They check that all received [transactions](glossary.md#transaction) are valid.
-* They run a [consensus](glossary.md#consensus) algorithm so that all validators in the network agree on the transactions to add to the blockchain.
-* Finally, they add the agreed-upon transactions to their copy of the [ledger](glossary.md#ledger).
+* Check that all received [transactions](glossary.md#transaction) are valid.
+* Run a [consensus](glossary.md#consensus) algorithm so that all validators in the network agree on the transactions to add to the blockchain.
+* Finally, add the agreed-upon transactions to their copy of the [ledger](glossary.md#ledger).
 
-Additionally, all blockchains must employ measures against [Sybil attacks](glossary.md#sybil_resistance) and the Flare network is planning two such measures:
+Additionally, all blockchains employ certain measures against [Sybil attacks](glossary.md#sybil_resistance).
+In this regard, Flare validators must:
 
-* Validators will need to stake native tokens, just like in regular [Proof of Stake](glossary.md#proof_of_stake).
-* Validators will also need to be [FTSO Data Providers](glossary.md#data_provider), and their performance in this role will have an impact on their validation rewards, leading to a meritocratic system.
+* Be associated with an [FTSO Data Provider](glossary.md#data_provider).
+    The performance of the data provider has an impact on the validation rewards.
+* Stake native tokens, as in [Proof of Stake](glossary.md#proof_of_stake).
 
-However, given the importance of the validator role and the novelty of the meritocratic approach, these measures are being implemented in phases:
+To maintain decentralization, these limits apply:
 
-!!! tool "Implementation phases"
+* A single FTSO data provider can be associated with up to 4 validators, each with its own stake and each claiming their own rewards.
+    Each validator can be associated with only one FTSO provider.
+* The [staking cap](../../user/staking/index.md#limits) on each validators' rewards is 5% of the total staked funds on the network.
 
-    * **Phase 0**:
-
-        Only validators with preregistered keys can be deployed.
-
-        Some users will receive **preregistered validator keys**, this is, the keys required to launch a node which **has already been registered as a validator**.
-        This is the only way to deploy a validator node during this phase.
-
-    * **Phase 1**:
-
-        Candidate FTSO validators.
-
-        FTSO data providers that wish to become validators need to undergo a [KYC process](https://en.wikipedia.org/wiki/Know_your_customer) (Contact Tom T. over Discord (`Tom T#7603`), Telegram (`@TampaBay7`) or [email](mailto:tom@flare.network)) and operate an [Observer node](../observation/deploying.md).
-
-        Random security scans will be performed on the node, and if all of them are successful (see [Mandatory security measures](#mandatory-security-measures) below) validator rewards will be accrued.
-        Validator rewards are split evenly among all candidate validators that passed the security scans.
-
-    More phases will be added as the process is refined.
-
-    Information affecting only specific phases is indicated in this guide with colored boxes like this one.
-
-This guide explains how to deploy your own validator node so you can participate in the consensus and collect the rewards that the network provides to those who help secure it.
-
-!!! info "The following instructions apply to the Flare network only."
+!!! info "The following instructions apply to the Flare network only. Validators on Songbird are managed by the Flare Foundation."
 
 ## Prerequisites
 
@@ -58,14 +41,15 @@ The requirements to deploy a validator node are the same as for observer nodes, 
 
 ## Guide
 
-### 1. Configure the Node
-
 A validator node is deployed like an observer node, but there are some additional considerations.
 
 Firstly, validators do more work than plain observer nodes so please consider the recommended **hardware specifications** above.
 
-And secondly, validator **security** impacts the whole network.
-Please consider the following items carefully:
+And secondly, validator **security** impacts the whole network, so configure the node for security, as follows, before running it.
+
+### 1. Configure the Node
+
+Please consider the following security items carefully:
 
 #### Mandatory security measures
 
@@ -80,11 +64,6 @@ Please consider the following items carefully:
     A monitoring tool run by Flare periodically checks that the above measures are followed by all validators.
 
     Failure to comply impacts the validator's rewards.
-
-!!! tool "Phase 1 exemption"
-    To ease the deployment of candidate validators during phase 1 port 9650, used to answer API requests, might be left open.
-
-    This allows running the candidate validator on the same machine currently running the observer node used to submit FTSO data.
 
 #### Suggested security measures
 

@@ -1,7 +1,5 @@
 # Validator Nodes
 
-The following guides explain how to set up and manage [validators](../../tech/validators.md).
-
-Select the guides below:
+The following guide explains how to set up and manage [validators](../../tech/validators.md).
 
 * [Deploying a Validator Node](./deploying.md)
