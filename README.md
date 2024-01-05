@@ -13,7 +13,7 @@ To get started, you have two main options for setting up your development enviro
 
 1. [Download](https://www.docker.com/products/docker-desktop/) and install Docker Desktop
 
-2. In the command line, build the docker container.
+2. In the command line navigate to the repository folder and build the docker container with the command:
 
    ```bash
    docker compose up --no-start

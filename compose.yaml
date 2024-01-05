@@ -1,5 +1,7 @@
 services:
   mkdocs:
+    volumes:
+      - .:/docs
     restart: unless-stopped
     build: .
     develop:
