@@ -168,6 +168,7 @@ To stake funds, you delegate them to an existing validator.
    Information about the validator is displayed.
 
 5. In the **Staking End Date** field, specify the date and time when you want to stop staking your funds.
+   If you specify a date and time that occurs after the validator's self-bond has ended, your transaction on the P-chain will revert.
 
 6. In the **Staking Amount** field, specify the amount of `$FLR` you want to delegate to stake.
 

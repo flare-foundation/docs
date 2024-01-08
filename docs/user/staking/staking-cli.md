@@ -297,6 +297,7 @@ To stake on a validator node, you need to:
 
         When staking to an existing validator, both these times must be inside the period when the validator is active,
         which you can find in the lists of any of the above tools, or using `flare-stake-tool info validators`.
+        If you specify a period when the validator is inactive, your transaction on the P-chain reverts.
 
         You need to provide these times as a [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time),
         so you might need to use an online conversion tool like [Epoch Converter](https://epochconverter.com) or the Linux `date` command.
