@@ -173,6 +173,30 @@ The redemption tickets are ordered in a queue that determines the next agent to 
 In other words, the first redemption ticket created will be the first redemption ticket processed.
 The FIFO queue impartially ensures that all agents have the opportunity to fulfill the duties of their role.
 
+!!! example "Example: Redemption Queue"
+    The following example shows how the redemption queue works.
+
+    1. Bob mints 10 `$FXRP` with Agent 1.
+    2. Alice mints 20 `$FXRP` with Agent 2.
+    3. Charlie mints 5 `$FXRP` with Agent 1.
+
+        After Bob, Alice, and Charlie have minted their FAssets, the redemption queue according to the FIFO method is:
+
+         1. Agent 1 with 10 `$FXRP`.
+         2. Agent 2 with 20 `$FXRP`.
+         3. Agent 1 with 5 `$FXRP`.
+
+    4. Dana redeems 25 `$FXRP`.
+       To redeem 25 `$FXRP`:
+
+        1. Agent 1 pays 10 `$FXRP`.
+        2. Agent 2 pays 15 `$FXPR`.
+
+        Now, the redemption queue according to the FIFO method is:
+
+        1. Agent 2 with 5 `$FXRP`.
+        2. Agent 1 with 5 `$FXRP`.
+
 ## Lots
 
 Every minting and redemption must be made in a whole number of lots.
