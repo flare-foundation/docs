@@ -49,3 +49,9 @@ These are some decentralized storage alternatives.
 ## Wallets
 
 Please see the [Wallet user guides](../user/wallets/index.md) for a list of wallets currently supporting the Flare network.
+
+For some common ways of integrating wallets into dapps, see:
+
+* [WalletConnect Documentation](https://docs.walletconnect.com/) and the [Web3Modal](https://docs.walletconnect.com/web3modal/about) SDK.
+
+* [MetaMask Documentation](https://docs.metamask.io/wallet/how-to/get-started-building/).
