@@ -366,7 +366,7 @@ The following thresholds are set by each agent according to their own preference
     If the pool CR is already below the exit CR, redemption cannot occur.
     The exit CR is for the collateral pool only.
 
-* **Top-up CR**: To incentivize healthy collateral pools, when the pool CR reaches the top-up CR, anyone can add collateral to the pool and receive [CPTs](#pool-collateral) at a reduced price.
+* **Top-up CR**: To incentivize healthy collateral pools, if the pool CR falls below the top-up CR, anyone can add collateral to the pool and receive [CPTs](#pool-collateral) at a reduced price.
     [This top-up mechanism](#top-up) decreases the likelihood of liquidations because of a low amount of pool collateral.
 
 ## Redemption of CPTs
