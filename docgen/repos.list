@@ -1,0 +1,2 @@
+git@gitlab.com:flarenetwork/flare-smart-contracts.git hardhatSetup.config.ts yarn compile
+git@gitlab.com:flarenetwork/state-connector-protocol.git hardhat.config.ts yarn hardhat compile

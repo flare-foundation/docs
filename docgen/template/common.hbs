@@ -1,0 +1,41 @@
+{{h}} `{{name}}` { #{{anchor}} }
+
+<div class="api-node-source" markdown>
+{{#ifIsNodeType "ContractDefinition"}}
+[Source]({{sourceFile}})
+{{~#ifHasParents}} | Inherits from {{parents}}{{/ifHasParents}}
+{{else}}
+Defined in `{{parentContractName}}` ({{parentContractLinks}}).
+{{/ifIsNodeType}}
+</div>
+
+<div class="api-node-internal" markdown>
+
+{{#if signature}}
+```solidity
+{{{pretty_signature}}}
+```
+{{/if}}
+
+{{{linkify natspec.notice false}}}
+
+{{#if natspec.dev}}
+{{{linkify natspec.dev false}}}
+{{/if}}
+
+{{#if natspec.params}}
+| Parameters | Type | Description |
+| ---------- | ---- | ----------- |
+{{#each params}}
+| `{{name}}` | `{{type}}` | {{{linkify natspec true}}} |
+{{/each}}
+{{/if}}
+
+{{#if natspec.returns}}
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+{{#each returns}}
+| {{#if name}}`{{name}}`{{else}}[{{@index}}]{{/if}} | `{{type}}` | {{{linkify natspec true}}} |
+{{/each}}
+{{/if}}
+</div>

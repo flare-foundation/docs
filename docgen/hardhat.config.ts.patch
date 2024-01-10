@@ -1,0 +1,9 @@
+  docgen: {
+    outputDir: 'docs/api',
+    pages: 'files',
+    exclude: [],
+    templates: './template',
+    theme: 'markdown',
+    collapseNewlines: true,
+    pageExtension: '.md',
+  },
