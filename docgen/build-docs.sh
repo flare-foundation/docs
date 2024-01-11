@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # See README.md for usage instructions.
 
 set -e
