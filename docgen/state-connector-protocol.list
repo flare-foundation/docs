@@ -1,1 +1,8 @@
 interface/external/IStateConnector.md
+interface/external/IMerkleRootStorage.md
+interface/types/AddressValidity.md
+interface/types/BalanceDecreasingTransaction.md
+interface/types/ConfirmedBlockHeightExists.md
+interface/types/EVMTransaction.md
+interface/types/Payment.md
+interface/types/ReferencedPaymentNonexistence.md
