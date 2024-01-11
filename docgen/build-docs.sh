@@ -25,7 +25,7 @@ do
     cp -r ../template .
 
     echo -e "\n${YELLOW}Compiling $repo_name:${NORMAL}"
-    ${build_command}
+    eval ${build_command}
 
     echo -e "\n${YELLOW}Building docs for $repo_name:${NORMAL}"
     yarn hardhat docgen
