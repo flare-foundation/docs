@@ -1,5 +1,7 @@
 # See README.md for usage instructions.
 
+set -e
+
 YELLOW="\e[93m"
 NORMAL="\e[0m"
 
@@ -19,7 +21,7 @@ do
     echo -e "\n${YELLOW}Adding docgen to $repo_name:${NORMAL}"
     yarn add solidity-docgen
     sed -i -E "1s/^/import 'solidity-docgen';\n/" $hardhat_config_file
-    sed -i -E "/HardhatUserConfig = \{/ r ../hardhat.config.ts.patch" $hardhat_config_file
+    sed -i -E "/HardhatUserConfig = / r ../hardhat.config.ts.patch" $hardhat_config_file
     cp -r ../template .
 
     echo -e "\n${YELLOW}Compiling $repo_name:${NORMAL}"
