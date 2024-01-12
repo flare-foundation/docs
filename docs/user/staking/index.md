@@ -29,3 +29,7 @@ If you stake your funds on a validator with more than 5% of the total staked amo
 To maximize your reward, delegate your staking funds to a validator with less than 5% of the total staked amount of `$FLR`.
 
     To determine whether a validator exceeds the staking cap, open the [FlareMetrics list of validators](https://flaremetrics.io/validators) and look for an exclamation mark beside the amount of `$FLR` staked in the **Total Stake** column and hover over it.
+
+* **Maximum number of validators**: You can stake to any number of validators, but [rewards](./staking-flarestake.md#reward-claiming-guide), [FlareDrops](../../tech/the-flaredrop.md), and [governance vote power](../../tech/governance.md#the-vote-count-block) only apply for up to 3 different validators.
+
+    For more information about validators, see [Validator Nodes](../../tech/validators.md).

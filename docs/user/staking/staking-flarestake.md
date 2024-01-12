@@ -25,9 +25,11 @@ The minimum values are:
 
 At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
 
-!!! info "Staking amounts and rewards are limited"
+!!! info "Staking limits"
 
     When you choose your validator and amount to stake, consider the [delegation factor and the staking cap](./index.md#limits).
+
+    You can stake to any number of validators, but [rewards](./staking-flarestake.md#reward-claiming-guide), [FlareDrops](../../tech/the-flaredrop.md), and [governance vote power](../../tech/governance.md#the-vote-count-block) only apply for up to 3 different validators.
 
 The [deployment phases summary](../../tech/validators.md#summary) shows other rewards that staked funds can still earn while they are locked.
 
@@ -150,7 +152,7 @@ The amount of funds you specified in step 3 is now at your P-chain address.
 
 ### 3. Stake Your Funds
 
-To stake funds, you delegate them to an existing validator.
+To stake funds, delegate them to an existing validator.
 
 1. On the FlareStake dashboard, click ![Staking menu](flarestake-menu-staking.png){.inline-image} **Staking**.
 2. In the **Add a Delegation** section, click **Add Delegation**.
