@@ -34,16 +34,18 @@ See [Voting Outcomes](#voting-outcomes) below for more details.
 
 ### Who Votes
 
-To vote on a proposal on a network, you must have the valid wrapped token:
+To vote on a proposal on a network, you must have wrapped tokens:
 
 | Network  | Proposal Type | Token  | Wrapped Token |
 | -------- | ------------- | ------ | ------------- |
 | Flare    | FIP           | `$FLR` | `$WFLR`       |
 | Songbird | STP           | `$SGB` | `$WSGB`       |
 
+The number of votes you can cast constitute your _vote power_, which is equal to the number of wrapped tokens (`$WFLR` or `$WSGB`) you hold.
+
 !!! warning
 
-    * Available votes depend on the amount of valid wrapped tokens you have, not the native tokens. Therefore, **remember to wrap your tokens**.
+    * The native tokens you hold (`$FLR` or `$SGB`) do not contribute to your vote power. Therefore, **remember to [wrap your tokens](../user/wrapping-tokens.md)**.
     * Don't wrap all your tokens. **Keep some of them to pay for transaction fees**.
     * To vote with your tokens, they must be wrapped before the proposal is submitted.
 
@@ -77,7 +79,7 @@ The Flare Foundation announces proposals in advance, so that users can read them
 #### The Vote Count Block
 
 Since the amount of wrapped tokens an account holds varies over time, a snapshot of all accounts is taken before each voting period starts.
-The amount of wrapped tokens held by an account at the snapshot then dictates the number of votes available later.
+The amount of wrapped tokens held by an account at the snapshot then dictates the number of votes it can cast later, its _vote power_.
 
 The block at which the snapshot is taken is called the **vote count block**.
 

@@ -91,7 +91,7 @@ FTSO { #ftso }
 : The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information. [Read more...](./ftso.md)
 
 Governance { #governance }
-: Mechanism to propose, vote and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.
+: Mechanism to propose, vote, and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.
 
 Hot Wallet { #hot_wallet }
 : A [wallet](#wallet) whose private key is stored on a server connected permanently to the internet. This makes the key convenient to use by automated programs, but makes it more vulnerable to theft than an offline key (see [cold wallet](#cold_wallet)), as unauthorized access to the server could steal the key.
@@ -190,8 +190,8 @@ Turing-completeness { #turing-completeness }
 Validator { #validator }
 : A validator node is a machine connected to a blockchain network that verifies transactions and emits a vote. When there is a [quorum](#quorum) among all validators regarding a given [block](#block) of transactions, they are accepted into the blockchain.
 
-Voting Power { #voting-power }
-: Weight proportional to the tokens held by an address plus the tokens [delegated](#delegate) to it. This weight is used during [FTSO](#ftso) operation and governance votes, for example.
+Vote Power { #vote-power }
+: Weight proportional to the amount of [wrapped](../user/wrapping-tokens.md) tokens (`$WFLR`) held by an address plus the amount of tokens [delegated](#delegate) to it. This weight is used during [FTSO](#ftso) operation and [governance](#governance) votes, for example.
 
 Wallet { #wallet }
 : In blockchain, a wallet is a synonym for [account](#account) and address.
