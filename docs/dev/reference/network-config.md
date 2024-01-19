@@ -134,38 +134,42 @@ These are the values required to configure [the different Flare networks](../../
 </div>
 
 All public [RPC](glossary.md#rpc) endpoints are experimental and rate-limited to avoid spamming attacks.
-For a production-grade option check out Flare's [API Portal](../../tech/api-portal.md)
+For a production-grade option check out Flare's [API Portal](../../tech/api-portal.md) and the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/flare-public/api-portal-flare-network).
 
 ## Connected Networks
 
 Along with the endpoints listed above to interact with its own networks, Flare offers public [RPC](glossary.md#rpc) nodes for a series of other blockchain networks, to bootstrap development of connected services like [attestation providers](glossary.md#attestation).
 
 All public [RPC](glossary.md#rpc) endpoints are experimental and rate-limited to avoid spamming attacks.
-For a production-grade option check out Flare's [API Portal](../../tech/api-portal.md)
+For a production-grade option check out Flare's [API Portal](../../tech/api-portal.md) and the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/flare-public/api-portal-flare-network).
 
-<div class="important-table" markdown>
-=== "Bitcoin"
+??? info "Algorand"
 
-    |                  |                                     |
-    | ---------------- | ----------------------------------- |
-    | **RPC endpoint** | `https://bitcoin-api.flare.network` |
-
-    ??? Example "Sample query"
+    * **RPC endpoint**: `https://algorand-api.flare.network`
+    * **Sample query**:
 
         ```bash
-        curl -s -X POST -m 10 -H "Content-type: application/json" \
-        -d '{"jsonrpc": "1.0", "id":"hc", "method": "getblockchaininfo", "params":[]}' \
-        -u public:d681co1pe2l3wcj9adrm2orlk0j5r5gr3wghgxt58tvge594co0k1ciljxq9glei \
-        https://bitcoin-api.flare.network | jq
+        curl -s -m 10 \
+        -H "X-Algo-API-Token: zl748k3wddvld8cvn64utnslbf7otorkijp84se0f58pmuu0shgm27gttpcjpmuq" \
+        https://algorand-api.flare.network/v2/status | jq
         ```
 
-=== "BNB-BSC"
+??? info "Bitcoin"
 
-    |                  |                                      |
-    | ---------------- | ------------------------------------ |
-    | **RPC endpoint** | `https://bnb-bsc-api.flare.network/` |
+    * **RPC endpoint**: `https://bitcoin-api.flare.network`
+    * **Sample query**:
 
-    ??? Example "Sample query"
+    ```bash
+    curl -s -X POST -m 10 -H "Content-type: application/json" \
+    -d '{"jsonrpc": "1.0", "id":"hc", "method": "getblockchaininfo", "params":[]}' \
+    -u public:d681co1pe2l3wcj9adrm2orlk0j5r5gr3wghgxt58tvge594co0k1ciljxq9glei \
+    https://bitcoin-api.flare.network | jq
+    ```
+
+??? info "BNB-BSC"
+
+    * **RPC endpoint**: `https://bnb-bsc-api.flare.network`
+    * **Sample query**:
 
         ```bash
         curl -s -X POST -m 10 -H "Content-Type: application/json" \
@@ -173,28 +177,10 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         https://bnb-bsc-api.flare.network | jq
         ```
 
-=== "Litecoin"
+??? info "Dogecoin"
 
-    |                  |                                      |
-    | ---------------- | ------------------------------------ |
-    | **RPC endpoint** | `https://litecoin-api.flare.network` |
-
-    ??? Example "Sample query"
-
-        ```bash
-        curl -s -X POST -m 10 -H "Content-type: application/json" \
-        -d '{"jsonrpc": "1.0", "id":"hc", "method": "getblockchaininfo", "params":[]}' \
-        -u public:ntvzi4i1yne499t7vcdjqhhp92m3jvm0bb6dkpr406gkndvuns9sg6th3jd393uc \
-        https://litecoin-api.flare.network | jq
-        ```
-
-=== "Dogecoin"
-
-    |                  |                                      |
-    | ---------------- | ------------------------------------ |
-    | **RPC endpoint** | `https://dogecoin-api.flare.network` |
-
-    ??? Example "Sample query"
+    * **RPC endpoint**: `https://dogecoin-api.flare.network`
+    * **Sample query**:
 
         ```bash
         curl -s -X POST -m 10 -H "Content-type: application/json" \
@@ -203,48 +189,70 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         https://dogecoin-api.flare.network | jq
         ```
 
-=== "XRPL"
+??? info "Ethereum"
 
-    |                  |                                  |
-    | ---------------- | -------------------------------- |
-    | **RPC endpoint** | `https://xrpl-api.flare.network` |
-
-    ??? Example "Sample query"
-
-        ```bash
-        curl -s -X POST -m 10 -H "Content-type: application/json" \
-        -d '{"method": "server_info", "params":[{"api_version": 1}]}' \
-        https://xrpl-api.flare.network | jq
-        ```
-
-=== "Algorand"
-
-    |                  |                                      |
-    | ---------------- | ------------------------------------ |
-    | **RPC endpoint** | `https://algorand-api.flare.network` |
-
-    ??? Example "Sample query"
-
-        ```bash
-        curl -s -m 10 \
-        -H "X-Algo-API-Token: zl748k3wddvld8cvn64utnslbf7otorkijp84se0f58pmuu0shgm27gttpcjpmuq" \
-        https://algorand-api.flare.network/v2/status | jq
-        ```
-
-=== "Ethereum"
-
-    |                  |                                       |
-    | ---------------- | ------------------------------------- |
-    | **RPC endpoint** | `https://ethereum-api.flare.network/` |
-
-    ??? Example "Sample query"
+    * **RPC endpoint**: `https://ethereum-api.flare.network`
+    * **Sample query**:
 
         ```bash
         curl -s -X POST -m 10 -H "Content-Type: application/json" \
         -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
         https://ethereum-api.flare.network | jq
         ```
-</div>
+
+??? info "Filecoin"
+
+    * **RPC endpoint**: `https://filecoin-api.flare.network/rpc/v1`
+    * **Sample query**:
+
+        ```bash
+        curl -X POST -H "Content-type: application/json" \
+        -d '{"jsonrpc": "2.0", "id": "1", "method": "Filecoin.NodeStatus", "params": [true]}' \
+        "https://filecoin-api.flare.network/rpc/v1" | jq
+        ```
+
+??? info "Goerli"
+
+    * **RPC endpoint**: `https://goerli-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -X GET -H "Content-type: application/json" \
+        https://goerli-api.flare.network/eth/v1/beacon/pool/attestations | jq
+        ```
+
+??? info "Litecoin"
+
+    * **RPC endpoint**: `https://litecoin-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -s -X POST -m 10 -H "Content-type: application/json" \
+        -d '{"jsonrpc": "1.0", "id":"hc", "method": "getblockchaininfo", "params":[]}' \
+        -u public:ntvzi4i1yne499t7vcdjqhhp92m3jvm0bb6dkpr406gkndvuns9sg6th3jd393uc \
+        https://litecoin-api.flare.network | jq
+        ```
+
+??? info "Polygon"
+
+    * **RPC endpoint**: `https://polygon-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -X GET -H "Content-type: application/json" \
+        https://polygon-api.flare.network/block?height=1000 | jq
+        ```
+
+??? info "XRPL"
+
+    * **RPC endpoint**: `https://xrpl-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -s -X POST -m 10 -H "Content-type: application/json" \
+        -d '{"method": "server_info", "params":[{"api_version": 1}]}' \
+        https://xrpl-api.flare.network | jq
+        ```
 
 [flrId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-14.json>
 [sgbId]: <https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-19.json>

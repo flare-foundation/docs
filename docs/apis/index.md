@@ -19,5 +19,6 @@ Select one of the topics below:
 !!! info "Access Nodes"
 
     * [Public RPC nodes](../dev/reference/network-config.md) for Flare, Songbird and Coston.
-    * [Public RPC nodes for connected chains](../dev/reference/network-config.md#connected-networks)
-    * [Flare API Portal](../tech/api-portal.md) (private nodes)
+    * [Public RPC nodes for connected chains](../dev/reference/network-config.md#connected-networks).
+    * [Flare API Portal](../tech/api-portal.md) (private nodes).
+    * [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/flare-public/api-portal-flare-network) (private nodes).
