@@ -140,13 +140,21 @@ Keep in mind that wrapped `$WFLR` tokens must be [unwrapped](../wrapping-tokens.
 5. Click **Transfer**.
 6. Confirm the action on your Ledger.
 
-    !!! warning "Transaction Fees"
-
-        When transferring from the C-chain to the P-chain, transaction fees are wholly paid from the C-chain.
-        Make sure you leave enough funds on the C-chain after the transfer, or it will fail.
-
     Transfers between chains are made of two operations: an **export** from the C-chain followed by an **import** to the P-chain.
     Therefore, you are asked to confirm TWO transactions on your hardware wallet.
+
+    !!! warning "Transaction Caveats"
+
+        * When transferring from the C-chain to the P-chain, transaction fees are wholly paid from the C-chain.
+        Make sure you leave enough funds on the C-chain after the transfer, or it will fail.
+        * Sometimes, when you transfer funds between the chains, your funds seem to disappear.
+        Rest assured that your funds are not lost.
+        You just need to repeat the import operation.
+        If your funds are not visible on FlareStake, complete these steps:
+
+            1. On the FlareStake dashboard, click **Advanced**.
+            2. In the **Chain Import** section, click the appropriate **Import** button, depending on the chain from which you imported.
+            For example, if you're moving funds from the C-chain to the P-chain, click **Import P (From C)**.
 
 The amount of funds you specified in step 3 is now at your P-chain address.
 
