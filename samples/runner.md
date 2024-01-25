@@ -1,10 +1,14 @@
-{% macro js(folder, filename, params) %}
+{% macro js(folder, filename, requiresWallet, params) %}
 
 ```js title="{{filename}}.js" linenums="1"
 --8<-- "samples/{{folder}}{{filename}}.js"
 ```
 
-[Source code license](https://github.com/flare-foundation/docs/blob/main/LICENSE.md)
+{% if requiresWallet is true -%}
+`tutorialData` provided by the [`connect_wallet.js`](/assets/javascripts/connect_wallet.js) script. 
+{% endif -%}
+
+[Source code license](https://github.com/flare-foundation/docs/blob/main/LICENSE.md).
 { .source-code-license }
 
 <script>
@@ -16,16 +20,16 @@ async function {{filename | replace('-', '_')}}_runner() {
   }
   console.old_log = console.log;
   output = document.getElementById('{{filename}}-output').getElementsByTagName('code')[0];
-  output.innerHTML = "";
+  output.textContent = "";
   console.log = function(message) {
-    output.innerHTML += (typeof message == 'object' ? JSON.stringify(message, null, 2) : message) + "\n";
+    output.textContent += (typeof message == 'object' ? JSON.stringify(message, null, 2) : message) + "\n";
   };
   try {
     await {{filename | replace('-', '_') }}_run(
 {% for param in params %}document.getElementById('{{param.name}}').value,{% endfor %}
-        );
+    );
   } catch(error) {
-    console.log (error.message)
+    console.log (error.message);
   }
   console.log = console.old_log;
 }
@@ -53,7 +57,13 @@ async function {{filename | replace('-', '_')}}_runner() {
 <label for="{{param.name}}">{{param.name}}:</label>
 <input type="text" id="{{param.name}}" name="{{param.name}}" value="{{param.value}}">
 {% endfor %}
-<button class="md-button" id="run" onclick="{{filename | replace('-', '_')}}_runner();">Run</button>
+{% if requiresWallet is true -%}
+<script src="/assets/javascripts/connect_wallet.js"></script>
+<p>This tutorial requires an account to sign transactions.
+Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet</a> and click on <b>Connect Wallet</b> before clicking on <b>Run</b>.</p>
+<button class="md-button" id="{{filename}}-connect" onclick="connect_wallet('{{filename}}')">Connect Wallet</button>
+{%- endif -%}
+<button class="md-button" id="{{filename}}-run" onclick="{{filename | replace('-', '_')}}_runner();">Run</button>
 ``` { #{{filename}}-output }
 ```
 </details>

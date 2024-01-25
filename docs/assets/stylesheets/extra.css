@@ -2,6 +2,7 @@
 :root>* {
     --md-accent-fg-color: #d3385b;
     --md-accent-fg-color--transparent: #d3385b40;
+    --md-accent-bg-color: #000;
     --md-default-fg-color--light: #222;
     --md-default-fg-color--lightest: #eee;
     --md-footer-bg-color--dark: var(--md-default-fg-color--lightest);
@@ -14,6 +15,7 @@
 }
 
 [data-md-color-scheme="flaredark"] {
+    --md-accent-bg-color: #fff;
     --md-default-bg-color: #222;
     --md-default-fg-color: white;
     --md-default-fg-color--light: white;
@@ -56,6 +58,15 @@
     color: var(--md-default-bg-color);
 }
 
+/* Connect to Wallet button */
+.md-typeset .md-button.wallet-connected {
+    background-color: green;
+}
+.md-typeset .md-button.wallet-connected:hover,
+.md-typeset .md-button.wallet-connected:focus {
+    border-color: green;
+}
+
 /* Back to top button */
 .md-top {
     background: var(--md-default-fg-color--lightest);
@@ -86,6 +97,9 @@
     padding: 8px;
     font-size: medium;
     width: 100%;
+}
+.md-typeset .run-me button {
+    margin-right: 1em;
 }
 
 .md-typeset .run-me>.admonition-title::before,
