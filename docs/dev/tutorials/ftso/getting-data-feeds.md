@@ -26,7 +26,7 @@ For easy navigation, numbered comments in the source code link to the tutorial s
 
 === "JavaScript"
 
-    {{ runner.js("ftso/", "GettingDataFeeds", "'BTC'") | indent(4) }}
+    {{ runner.js("ftso/", "GettingDataFeeds", [{"name":"Symbol", "value":"BTC"}]) | indent(4) }}
 
 <script>
 --8<-- "samples/ftso/GettingDataFeeds.js::43"

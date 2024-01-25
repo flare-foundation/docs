@@ -10,7 +10,7 @@
 <script>
 async function {{filename | replace('-', '_')}}_runner() {
   console.old_log = console.log;
-  if (!document.getElementById('{{filename}}-run-me-button').hasAttribute('open')) {
+  if (!document.getElementById('{{filename}}-run-me-box').hasAttribute('open')) {
     console.log = console.old_log;
     return;
   }
@@ -20,7 +20,13 @@ async function {{filename | replace('-', '_')}}_runner() {
   console.log = function(message) {
     output.innerHTML += (typeof message == 'object' ? JSON.stringify(message, null, 2) : message) + "\n";
   };
-  await {{filename | replace('-', '_') }}_run({{params}});
+  try {
+    await {{filename | replace('-', '_') }}_run(
+{% for param in params %}document.getElementById('{{param.name}}').value,{% endfor %}
+        );
+  } catch(error) {
+    console.log (error.message)
+  }
   console.log = console.old_log;
 }
 </script>
@@ -41,8 +47,13 @@ async function {{filename | replace('-', '_')}}_runner() {
         node {{filename}}.js
         ```
 
-<details class="run-me" id="{{filename}}-run-me-button" ontoggle="{{filename | replace('-', '_')}}_runner();">
+<details class="run-me" id="{{filename}}-run-me-box">
 <summary>Run in browser</summary>
+{% for param in params -%}
+<label for="{{param.name}}">{{param.name}}:</label>
+<input type="text" id="{{param.name}}" name="{{param.name}}" value="{{param.value}}">
+{% endfor %}
+<button class="md-button" id="run" onclick="{{filename | replace('-', '_')}}_runner();">Run</button>
 ``` { #{{filename}}-output }
 ```
 </details>

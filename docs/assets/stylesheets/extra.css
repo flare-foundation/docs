@@ -76,6 +76,18 @@
     background-color: #d3385b55;
 }
 
+.md-typeset .run-me[open]>summary {
+    margin-bottom: 16px;
+}
+
+.md-typeset .run-me input {
+    color: var(--md-default-fg-color);
+    background-color: var(--md-accent-fg-color--transparent);
+    padding: 8px;
+    font-size: medium;
+    width: 100%;
+}
+
 .md-typeset .run-me>.admonition-title::before,
 .md-typeset .run-me>summary::before {
     background-color: #d3385b;
