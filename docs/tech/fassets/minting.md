@@ -205,8 +205,9 @@ Lots serve the following purposes:
 * They prevent underlying transaction fees from exceeding minting or redemption fees.
 * They restrict large numbers of very small redemption tickets from being submitted, which would increase gas costs.
 
-The initial lot size is equivalent to \$1,000 USD.
-According to this initial size, no less than 1 lot ($1,000 USD) of the underlying token can be minted as an FAsset.
+Therefore, the amount of tokens in a lot (the _lot size_) varies for each underlying chain.
+For example, on the XRPL chain, a lot can be as small as 10 `$XRP` because transaction fees are low.
+On the other hand, on the Bitcoin chain, lots might need to be as big as 0.25 `$BTC` or more because transactions are far more expensive.
 
 Over time, the lot size can be updated to reflect price fluctuations of the underlying asset.
 Only a governance call can update the lot size, and it can be updated only by a limited amount per day.
