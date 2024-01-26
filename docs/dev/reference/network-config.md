@@ -154,6 +154,21 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         https://algorand-api.flare.network/v2/status | jq
         ```
 
+??? info "Avalanche"
+
+    * **RPC endpoint**: `https://avalanche-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -X POST \
+        -H 'content-type:application/json' \
+        --data '{
+            "jsonrpc": "2.0",
+            "id": 1,
+            "method": "info.getNodeVersion"
+        }' https://avalanche-api.flare.network/ext/info | jq
+        ```
+
 ??? info "Bitcoin"
 
     * **RPC endpoint**: `https://bitcoin-api.flare.network`
