@@ -55,3 +55,11 @@ For some common ways of integrating wallets into dapps, see:
 * [WalletConnect Documentation](https://docs.walletconnect.com/) and the [Web3Modal](https://docs.walletconnect.com/web3modal/about) SDK.
 
 * [MetaMask Documentation](https://docs.metamask.io/wallet/how-to/get-started-building/).
+
+* [RainbowKit](https://www.rainbowkit.com/)
+
+## Blockchain Interaction Tools
+
+Enhancing EVM-compatible blockchain interactions, these tools streamline dapp development by simplifying wallet integration and smart-contract connectivity.
+
+* [Wagmi](https://wagmi.sh/core/api/chains)
