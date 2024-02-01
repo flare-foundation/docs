@@ -44,7 +44,7 @@ async function {{filename | replace('-', '_')}}_runner() {
     3. Install dependencies with:
         ```bash
         npm init
-        npm install ethers @flarenetwork/flare-periphery-contract-artifacts
+        npm install ethers@6.3 @flarenetwork/flare-periphery-contract-artifacts
         ```
     4. Run the program with:
         ```bash
@@ -67,7 +67,12 @@ Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet
 ``` { #{{filename}}-output }
 ```
 </details>
-
+<script type="importmap">
+  { "imports": {
+      "ethers": "/assets/javascripts/ethers-6.3.esm.min.js",
+      "@flarenetwork/flare-periphery-contract-artifacts": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts"
+  } }
+</script>
 {% endmacro %}
 
 {% macro sol(folder, filename) %}

@@ -9,31 +9,28 @@ const FLARE_RPC = "https://coston2-api.flare.network/ext/bc/C/rpc";
 
 // Get private keys from an external sources.
 // DO NOT embed them in source code!
-const TEST_PRIVATE_KEY = "";
+const TEST_PRIVATE_KEY = "6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
 
 async function Wrap_run(amount) {
 
-    // 1. Import dependencies
-    var ethers, flare, provider, account, signer;
+    // 1. Setup
+    const ethers = await import("ethers");
+    const flare = await import(FLARE_PACKAGE);
+    var provider, signer;
     if (typeof window === "undefined") {
         // Node.js
-        ethers = await import("ethers");
-        flare = await import(FLARE_PACKAGE);
         provider = new ethers.JsonRpcProvider(FLARE_RPC);
         signer = new ethers.Wallet(TEST_PRIVATE_KEY, provider);
-        account = signer.address;
     } else {
         // Browser
         if (typeof window.tutorialData === "undefined") {
-            console.log("Wallet is not connected.\n");
+            console.log("Wallet is not connected.");
             return;
         }
-        ethers = await import("https://esm.run/ethers@6.3");
-        flare = await import(`https://esm.run/${FLARE_PACKAGE}`);
-        account = window.tutorialData.account;
         provider = new ethers.BrowserProvider(window.tutorialData.provider);
         signer = await provider.getSigner();
     }
+    const account = signer.address;
 
     // 2. Access the Contract Registry
     const flareContractRegistry = new ethers.Contract(
