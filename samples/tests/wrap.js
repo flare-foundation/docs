@@ -7,9 +7,9 @@
 const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
 const FLARE_RPC = "https://coston2-api.flare.network/ext/bc/C/rpc";
 
-// Get private keys from an external sources.
+// Get private keys from an external source.
 // DO NOT embed them in source code!
-const TEST_PRIVATE_KEY = "6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
+const TEST_PRIVATE_KEY = "";
 
 async function Wrap_run(amount) {
 
