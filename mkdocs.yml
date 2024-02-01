@@ -257,6 +257,9 @@ nav:
       - FTSO:
         - dev/tutorials/ftso/index.md
         - dev/tutorials/ftso/getting-data-feeds.md
+      - State Connector:
+        - dev/tutorials/sc/index.md
+        - dev/tutorials/sc/address-validity.md
     - Reference Guides:
       - dev/reference/index.md
       - dev/reference/automatic-claiming.md

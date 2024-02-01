@@ -1,16 +1,33 @@
-{% macro js(folder, filename, requiresWallet, params) %}
+{% macro js(folder, filename, runFromBrowser='false', requiresWallet='false', params=[]) %}
 
 ```js title="{{filename}}.js" linenums="1"
 --8<-- "samples/{{folder}}{{filename}}.js"
 ```
 
-{% if requiresWallet is true -%}
+{% if requiresWallet == 'true' -%}
 `tutorialData` provided by the [`connect_wallet.js`](/assets/javascripts/connect_wallet.js) script. 
 {% endif -%}
 
 [Source code license](https://github.com/flare-foundation/docs/blob/main/LICENSE.md).
 { .source-code-license }
 
+??? info "Run with Node.js"
+
+    This tutorial has been tested with **[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) v9.5** and **Node.js v18.16**.
+
+    1. Create a new folder and move into it.
+    2. Copy & paste the code above into a new file called `{{filename}}.js`.
+    3. Install dependencies with:
+        ```bash
+        npm init
+        npm install ethers@6.3 @flarenetwork/flare-periphery-contract-artifacts
+        ```
+    4. Run the program with:
+        ```bash
+        node {{filename}}.js
+        ```
+
+{% if runFromBrowser == 'true' -%}
 <script>
 async function {{filename | replace('-', '_')}}_runner() {
   console.old_log = console.log;
@@ -35,29 +52,13 @@ async function {{filename | replace('-', '_')}}_runner() {
 }
 </script>
 
-??? info "Run with Node.js"
-
-    This tutorial has been tested with **[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) v9.5** and **Node.js v18.16**.
-
-    1. Create a new folder and move into it.
-    2. Copy & paste the code above into a new file called `{{filename}}.js`.
-    3. Install dependencies with:
-        ```bash
-        npm init
-        npm install ethers@6.3 @flarenetwork/flare-periphery-contract-artifacts
-        ```
-    4. Run the program with:
-        ```bash
-        node {{filename}}.js
-        ```
-
 <details class="run-me" id="{{filename}}-run-me-box">
 <summary>Run in browser</summary>
 {% for param in params -%}
 <label for="{{param.name}}">{{param.name}}:</label>
 <input type="text" id="{{param.name}}" name="{{param.name}}" value="{{param.value}}">
 {% endfor %}
-{% if requiresWallet is true -%}
+{% if requiresWallet == 'true' -%}
 <script src="/assets/javascripts/connect_wallet.js"></script>
 <p>This tutorial requires an account to sign transactions.
 Get test currency from <a href="https://faucet.flare.network/">the faucet</a> and click on <b>Connect Wallet</b> before clicking on <b>Run</b>.</p>
@@ -70,9 +71,11 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
 <script type="importmap">
   { "imports": {
       "ethers": "/assets/javascripts/ethers-6.3.esm.min.js",
-      "@flarenetwork/flare-periphery-contract-artifacts": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts"
+      "@flarenetwork/flare-periphery-contract-artifacts": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts@0.1.7",
+      "@flarenetwork/flare-periphery-contract-artifacts/dist/coston/StateConnector/libs/ts/utils.js": "/assets/javascripts/utils.js"
   } }
 </script>
+{% endif %}
 {% endmacro %}
 
 {% macro sol(folder, filename) %}
