@@ -70,7 +70,8 @@ Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet
 <script type="importmap">
   { "imports": {
       "ethers": "/assets/javascripts/ethers-6.3.esm.min.js",
-      "@flarenetwork/flare-periphery-contract-artifacts": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts"
+      "@flarenetwork/flare-periphery-contract-artifacts": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts",
+      "@flarenetwork/flare-periphery-contract-artifacts/dist/coston/StateConnector/typescript/AddressValidity.js": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts/dist/coston/StateConnector/typescript/AddressValidity.js"
   } }
 </script>
 {% endmacro %}
