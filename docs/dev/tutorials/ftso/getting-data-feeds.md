@@ -29,7 +29,7 @@ For easy navigation, numbered comments in the source code link to the tutorial s
     {{ runner.js("ftso/", "GettingDataFeeds", false, [{"name":"Symbol", "value":"BTC"}]) | indent(4) }}
 
 <script>
---8<-- "samples/ftso/GettingDataFeeds.js::43"
+--8<-- "samples/ftso/GettingDataFeeds.js::34"
 </script>
 
 <div class="tutorial" markdown>
@@ -44,7 +44,7 @@ The tutorial uses the following dependencies:
 
 * If you use JavaScript, the [ethers](https://www.npmjs.com/package/ethers) package is also needed to work with smart contracts.
 
-{{ runner.multisnippet("ftso/GettingDataFeeds", 6, 7, 8, 17) }}
+{{ runner.multisnippet("ftso/GettingDataFeeds", 6, 7, 8, 9) }}
 
 The Periphery Packages simplify working with the Flare smart contracts significantly.
 If you remove this dependency, you must manually provide the signatures for all the methods you want to use.
@@ -55,7 +55,7 @@ The [`FlareContractRegistry`](FlareContractRegistry.md) contains the current add
 
 Its address is the same on all of [Flare's networks](../../../tech/flare.md#flare-networks), and it is the only Flare address that needs to be hard-coded into any program.
 
-{{ runner.multisnippet("ftso/GettingDataFeeds", 20, 21, 23, 26) }}
+{{ runner.multisnippet("ftso/GettingDataFeeds", 20, 21, 15, 18) }}
 
 ### 3. Retrieve the FTSO Registry
 
@@ -63,7 +63,7 @@ Prices for all assets tracked by the FTSO system are recovered through the [`Fts
 
 Use the [`getContractAddressByName()`](FlareContractRegistry.md#fn_getcontractaddressbyname_82760fca) method from the [`FlareContractRegistry`](FlareContractRegistry.md) to retrieve the address of the [`FtsoRegistry`](FtsoRegistry.md).
 
-{{ runner.multisnippet("ftso/GettingDataFeeds", 24, 25, 29, 34) }}
+{{ runner.multisnippet("ftso/GettingDataFeeds", 24, 25, 21, 26) }}
 
 This address can be retrieved in the initialization phase of your program and used afterward.
 There is no need to fetch it every time it must be used.
@@ -72,7 +72,7 @@ There is no need to fetch it every time it must be used.
 
 Finally, the asset's price is fetched from the [`FtsoRegistry`](FtsoRegistry.md) using [`getCurrentPriceWithDecimals`](FtsoRegistry.md#fn_getcurrentpricewithdecimals_a69afdc6).
 
-{{ runner.multisnippet("ftso/GettingDataFeeds", 28, 29, 37, 41) }}
+{{ runner.multisnippet("ftso/GettingDataFeeds", 28, 29, 29, 33) }}
 
 * The only parameter of this method is the symbol for the asset being queried, like `"FLR"` or `"BTC"`.
     You can use [`getSupportedSymbols()`](FtsoRegistry.md#fn_getsupportedsymbols_ce1c0e4d) to retrieve the list of all supported symbols.
@@ -94,7 +94,7 @@ Finally, the asset's price is fetched from the [`FtsoRegistry`](FtsoRegistry.md)
     The call to the `getCurrentPriceWithDecimals` method is a bit cumbersome in JavaScript:
 
     ```js linenums="37"
-    --8<-- "samples/ftso/GettingDataFeeds.js:37:38"
+    --8<-- "samples/ftso/GettingDataFeeds.js:29:30"
     ```
 
     The call needs to be like this because this method is overloaded.

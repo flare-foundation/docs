@@ -5,16 +5,8 @@ async function GettingDataFeeds_run(_symbol) {
     console.log(`Retrieving current price of ${_symbol}...`);
 
     // 1. Import dependencies
-    var ethers, flare;
-    if (typeof window === "undefined") {
-        // Node.js
-        ethers = await import("ethers");
-        flare = await import(FLARE_PACKAGE);
-    } else {
-        // Browser
-        ethers = await import("https://esm.run/ethers@6.3");
-        flare = await import(`https://esm.run/${FLARE_PACKAGE}`);
-    }
+    const ethers = await import("ethers");
+    const flare = await import(FLARE_PACKAGE);
 
     // Node to submit queries to.
     const provider = new ethers.JsonRpcProvider(FLARE_RPC);
