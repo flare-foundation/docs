@@ -6,5 +6,4 @@ The following guides provide information to quickly set up a smart contract deve
 
 * [Using Remix](./remix.md)
 * [Using Hardhat](./hardhat.md)
-* [Using Truffle](./truffle.md)
 * [Using Foundry](./foundry.md)

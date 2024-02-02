@@ -77,7 +77,7 @@ These are the values required to configure [the different Flare networks](../../
     | [**RPC endpoint**](glossary.md#rpc)                      | `https://coston-api.flare.network/ext/bc/C/rpc` |
     | [**Block Explorer**](glossary.md#block_explorer)         | <https://coston-explorer.flare.network>         |
     | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://coston.flare.network`                  |
-    | **Test Faucet**                                          | <https://faucet.towolabs.com>                   |
+    | **Test Faucet**                                          | <https://faucet.flare.network>                  |
 
     ??? example "Sample query"
 
@@ -109,7 +109,7 @@ These are the values required to configure [the different Flare networks](../../
     | [**RPC endpoint**](glossary.md#rpc)                      | `https://coston2-api.flare.network/ext/bc/C/rpc` |
     | [**Block Explorer**](glossary.md#block_explorer)         | <https://coston2-explorer.flare.network>         |
     | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://coston2.flare.network`                  |
-    | **Test Faucet**                                          | <https://coston2-faucet.towolabs.com>            |
+    | **Test Faucet**                                          | <https://faucet.flare.network>                   |
 
     ??? example "Sample query"
 
@@ -206,15 +206,69 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
 
 ??? info "Ethereum"
 
-    * **RPC endpoint**: `https://ethereum-api.flare.network`
-    * **Sample query**:
+    Ethereum has two layers: the execution layer and consensus layer, which work in tandem.
 
-        ```bash
-        curl -s -X POST -m 10 -H "Content-Type: application/json" \
-        -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
-        https://ethereum-api.flare.network | jq
-        ```
+    * The execution layer creates blocks with transactions and executes smart contracts.
+    * The consensus layer, sometimes referred to as the beacon chain, governs consensus and was the extra layer required for the Ethereum 2.0 proof-of-stake (PoS) merge.
 
+    These two layers have their own API, which can be called from the provided nodes. When querying the Ethereum network nodes, specifying only the root path `/` will target the execution layer API. Prefixing your path with `/eth` will target the consensus layer API. 
+    
+    Official API specifications for each layer:
+
+    * [Consensus Layer - API Spec](https://ethereum.github.io/beacon-APIs/#/)
+    * [Execution Layer - API Spec](https://ethereum.github.io/execution-apis/api-documentation/)
+
+    === "Mainnet"
+
+        * **RPC endpoint**: `https://ethereum-api.flare.network`
+        * **Sample query - consensus layer**:
+
+            ```bash
+            curl -s -X GET -m 10 -H "Content-type: application/json" \
+            https://ethereum-api.flare.network/eth/v1/beacon/pool/attestations | jq
+            ```
+        * **Sample query - execution layer**:
+
+            ```bash
+            curl -s -X POST -m 10 -H "Content-Type: application/json" \
+            -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
+            https://ethereum-api.flare.network | jq
+            ```
+
+    === "Goerli"
+
+        * **RPC endpoint**: `https://goerli-api.flare.network`
+        * **Sample query - consensus layer**:
+
+            ```bash
+            curl -s -X GET -m 10 -H "Content-type: application/json" \
+            https://goerli-api.flare.network/eth/v1/beacon/pool/attestations | jq
+            ```
+        * **Sample query - execution layer**:
+
+            ```bash
+            curl -s -X POST -m 10 -H "Content-Type: application/json" \
+            -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
+            https://goerli-api.flare.network | jq
+            ```
+
+    === "Sepolia"
+
+        * **RPC endpoint**: `https://sepolia-api.flare.network`
+        * **Sample query - consensus layer**:
+
+            ```bash
+            curl -s -X GET -m 10 -H "Content-type: application/json" \
+            https://sepolia-api.flare.network/eth/v1/beacon/pool/attestations | jq
+            ```
+        * **Sample query - execution layer**:
+
+            ```bash
+            curl -s -X POST -m 10 -H "Content-Type: application/json" \
+            -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
+            https://sepolia-api.flare.network | jq
+            ```
+        
 ??? info "Filecoin"
 
     * **RPC endpoint**: `https://filecoin-api.flare.network/rpc/v1`
@@ -224,16 +278,6 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         curl -X POST -H "Content-type: application/json" \
         -d '{"jsonrpc": "2.0", "id": "1", "method": "Filecoin.NodeStatus", "params": [true]}' \
         "https://filecoin-api.flare.network/rpc/v1" | jq
-        ```
-
-??? info "Goerli"
-
-    * **RPC endpoint**: `https://goerli-api.flare.network`
-    * **Sample query**:
-
-        ```bash
-        curl -X GET -H "Content-type: application/json" \
-        https://goerli-api.flare.network/eth/v1/beacon/pool/attestations | jq
         ```
 
 ??? info "Litecoin"
