@@ -57,6 +57,9 @@ markdown_extensions:
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
+  - swagger-ui-tag:             # Renders OpenApi Spec
+      extra_css:
+        - assets/stylesheets/extra.css
   - macros:                     # Jinja2 macros
       include_dir: samples
   - autolinks                   # Use just filenames instead of full or relative paths
@@ -328,3 +331,18 @@ nav:
       - apis/smart-contracts/IIVoterWhitelister.md
       - apis/smart-contracts/IIVPContract.md
       - apis/smart-contracts/IIVPToken.md
+    - OpenAPI REST API:
+      - apis/REST/index.md
+      - apis/REST/attestation-client.md
+      - apis/REST/btcverifier.md
+      - apis/REST/dogeverifier.md
+      - apis/REST/evmverifier.md
+      - apis/REST/xrpverifier.md
+    - Attestation Types:
+      - apis/attestation-types/index.md
+      - apis/attestation-types/AddressValidity.md
+      - apis/attestation-types/BalanceDecreasingTransaction.md
+      - apis/attestation-types/ConfirmedBlockHeightExists.md
+      - apis/attestation-types/EVMTransaction.md
+      - apis/attestation-types/Payment.md
+      - apis/attestation-types/ReferencedPaymentNonexistence.md

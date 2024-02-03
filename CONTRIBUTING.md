@@ -147,6 +147,9 @@ Pay special attention to the capitalization and spacing of the following words:
 * testnet (or test network)
 * web3
 
+**Products** are capitalized: State Connector, LayerCake, and FAssets.
+**Roles** are not capitalized: FTSO data providers, State Connector attestation providers, FAsset agents, minters, redeemers, liquidators, and challengers.
+
 ### Images
 
 * In the screenshots, no partner should be prioritized over others.
