@@ -242,7 +242,6 @@ nav:
         - dev/getting-started/setup/index.md
         - Using Remix: dev/getting-started/setup/remix.md
         - Using Hardhat: dev/getting-started/setup/hardhat.md
-        - Using Truffle: dev/getting-started/setup/truffle.md
         - Using Foundry: dev/getting-started/setup/foundry.md
       - dev/getting-started/contract-addresses.md
     - Tutorials:
