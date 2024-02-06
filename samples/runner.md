@@ -89,7 +89,7 @@ Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet
     ??? info "Building with Hardhat"
 
         1. Create a new folder and move into it.
-        2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/index.md)):
+        2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/)):
             ```bash
             npm init
             npm install hardhat @nomicfoundation/hardhat-toolbox
