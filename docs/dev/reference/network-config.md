@@ -77,7 +77,7 @@ These are the values required to configure [the different Flare networks](../../
     | [**RPC endpoint**](glossary.md#rpc)                      | `https://coston-api.flare.network/ext/bc/C/rpc` |
     | [**Block Explorer**](glossary.md#block_explorer)         | <https://coston-explorer.flare.network>         |
     | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://coston.flare.network`                  |
-    | **Test Faucet**                                          | <https://faucet.towolabs.com>                   |
+    | **Test Faucet**                                          | <https://faucet.flare.network>                  |
 
     ??? example "Sample query"
 
@@ -109,7 +109,7 @@ These are the values required to configure [the different Flare networks](../../
     | [**RPC endpoint**](glossary.md#rpc)                      | `https://coston2-api.flare.network/ext/bc/C/rpc` |
     | [**Block Explorer**](glossary.md#block_explorer)         | <https://coston2-explorer.flare.network>         |
     | [**Bootstraping nodes**](glossary.md#bootstrapping_node) | `https://coston2.flare.network`                  |
-    | **Test Faucet**                                          | <https://coston2-faucet.towolabs.com>            |
+    | **Test Faucet**                                          | <https://faucet.flare.network>                   |
 
     ??? example "Sample query"
 

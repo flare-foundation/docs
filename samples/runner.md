@@ -60,7 +60,7 @@ async function {{filename | replace('-', '_')}}_runner() {
 {% if requiresWallet is true -%}
 <script src="/assets/javascripts/connect_wallet.js"></script>
 <p>This tutorial requires an account to sign transactions.
-Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet</a> and click on <b>Connect Wallet</b> before clicking on <b>Run</b>.</p>
+Get test currency from <a href="https://faucet.flare.network/">the faucet</a> and click on <b>Connect Wallet</b> before clicking on <b>Run</b>.</p>
 <button class="md-button" id="{{filename}}-connect" onclick="connect_wallet('{{filename}}')">Connect Wallet</button>
 {%- endif -%}
 <button class="md-button" id="{{filename}}-run" onclick="{{filename | replace('-', '_')}}_runner();">Run</button>
