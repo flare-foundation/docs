@@ -53,6 +53,8 @@ Flare has 4 networks with different purposes:
 <figcaption>General feature adoption flow.</figcaption>
 </figure>
 
+For technical details about each network see [Network Configuration](../dev/reference/network-config.md).
+
 ## Flare Chains
 
 Flare uses two chains and is developing a built-in interoperability mechanism between them.
