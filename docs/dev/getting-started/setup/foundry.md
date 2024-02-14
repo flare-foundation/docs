@@ -75,7 +75,7 @@ The URL can be stored in an environment variable named `FOUNDRY_ETH_RPC_URL)` so
     You are going to deploy the contract on the [Coston 2 network](../../reference/network-config.md).
     Make sure you have enough `C2FLR` in the account that will deploy the contract to pay the gas fees!
 
-    You can add `C2FLR` to any account using the [Coston 2 Faucet](https://coston2-faucet.towolabs.com/).
+    You can add `C2FLR` to any account using the [Coston 2 Faucet](https://faucet.flare.network/).
 
 The general Foundry command to deploy a contract is:
 

@@ -60,7 +60,7 @@ async function {{filename | replace('-', '_')}}_runner() {
 {% if requiresWallet is true -%}
 <script src="/assets/javascripts/connect_wallet.js"></script>
 <p>This tutorial requires an account to sign transactions.
-Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet</a> and click on <b>Connect Wallet</b> before clicking on <b>Run</b>.</p>
+Get test currency from <a href="https://faucet.flare.network/">the faucet</a> and click on <b>Connect Wallet</b> before clicking on <b>Run</b>.</p>
 <button class="md-button" id="{{filename}}-connect" onclick="connect_wallet('{{filename}}')">Connect Wallet</button>
 {%- endif -%}
 <button class="md-button" id="{{filename}}-run" onclick="{{filename | replace('-', '_')}}_runner();">Run</button>
@@ -70,8 +70,8 @@ Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet
 <script type="importmap">
   { "imports": {
       "ethers": "/assets/javascripts/ethers-6.3.esm.min.js",
-      "@flarenetwork/flare-periphery-contract-artifacts": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts",
-      "@flarenetwork/flare-periphery-contract-artifacts/dist/coston/StateConnector/typescript/AddressValidity.js": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts/dist/coston/StateConnector/typescript/AddressValidity.js"
+      "@flarenetwork/flare-periphery-contract-artifacts@0.1.7": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts@0.1.7",
+      "@flarenetwork/flare-periphery-contract-artifacts@0.1.7/dist/coston/StateConnector/libs/ts/utils.js": "https://esm.run/@flarenetwork/flare-periphery-contract-artifacts@0.1.7/dist/coston/StateConnector/libs/ts/utils.js"
   } }
 </script>
 {% endmacro %}
@@ -90,7 +90,7 @@ Get test currency from <a href="https://coston2-faucet.towolabs.com/">the faucet
     ??? info "Building with Hardhat"
 
         1. Create a new folder and move into it.
-        2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/index.md)):
+        2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/)):
             ```bash
             npm init
             npm install hardhat @nomicfoundation/hardhat-toolbox

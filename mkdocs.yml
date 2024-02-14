@@ -195,7 +195,7 @@ nav:
       - user/governance/index.md
       - user/governance/voting.md
     - user/personal-delegation-account.md
-    - Staking:
+    - Staking on Validators:
       - user/staking/index.md
       - user/staking/staking-flarestake.md
       - user/staking/staking-cli.md
@@ -242,7 +242,6 @@ nav:
         - dev/getting-started/setup/index.md
         - Using Remix: dev/getting-started/setup/remix.md
         - Using Hardhat: dev/getting-started/setup/hardhat.md
-        - Using Truffle: dev/getting-started/setup/truffle.md
         - Using Foundry: dev/getting-started/setup/foundry.md
       - dev/getting-started/contract-addresses.md
     - Tutorials:

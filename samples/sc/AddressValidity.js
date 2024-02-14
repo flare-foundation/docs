@@ -1,10 +1,5 @@
-/*
-import AddressValidityVerificationABI from "../artifacts/@flarenetwork/state-connector-protocol/contracts/generated/verification/AddressValidityVerification.sol/AddressValidityVerification.json" assert {type: 'json'};
-*/
-
-const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
+const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts@0.1.7";
 const FLARE_RPC = "https://coston-api.flare.network/ext/C/rpc";
-const VALIDITY_ADDRESS = "0x67743178E5386c2f33b7f84249EcDDe5e15483BB";
 const ATTESTATION_PROVIDER_URL = "https://attestation-coston.aflabs.net";
 const ATTESTATION_PROVIDER_API_KEY = "123456";
 const ATTESTATION_WAIT_SECONDS = 340;
@@ -25,16 +20,14 @@ async function AddressValidity_run(network, addressToValidate) {
     // 1. Setup
     const ethers = await import("ethers");
     const flare = await import(FLARE_PACKAGE);
-    ({ AddressValidity } = await import(`${FLARE_PACKAGE}/dist/coston/StateConnector/typescript/AddressValidity.js`));
-    var utils, provider, signer;
+    const utils = await import(`${FLARE_PACKAGE}/dist/coston/StateConnector/libs/ts/utils.js`);
+    var provider, signer;
     if (typeof window === "undefined") {
         // Node.js
-        utils = await import(`${FLARE_PACKAGE}/dist/coston/StateConnector/libs/ts/utils.js`);
         provider = new ethers.JsonRpcProvider(FLARE_RPC);
         signer = new ethers.Wallet(TEST_PRIVATE_KEY, provider);
     } else {
         // Browser
-        utils = await import(`https://esm.run/${FLARE_PACKAGE}/dist/coston/StateConnector/libs/ts/utils.js`);
         provider = new ethers.BrowserProvider(window.tutorialData.provider);
         signer = await provider.getSigner();
     }
@@ -43,7 +36,7 @@ async function AddressValidity_run(network, addressToValidate) {
     // First the raw request:
     // It is not encoded and contains no Message Integrity Code (MIC).
     const rawAttestationRequest = {
-        "attestationType": AddressValidity.TYPE,
+        "attestationType": utils.encodeAttestationName('AddressValidity'),
         "sourceId": utils.encodeAttestationName(`test${network.toUpperCase()}`),
         "requestBody": {
             "addressStr": addressToValidate
@@ -85,14 +78,14 @@ async function AddressValidity_run(network, addressToValidate) {
         flare.nameToAbi("StateConnector", "coston").data,
         signer);
 
-    // 5. Request Attestation from the State Connector Contract.
+    // 5. Request Attestation from the State Connector Contract
     console.log ("Submitting attestation to State Connector...");
     const attestationTx = await stateConnector.requestAttestations(
         encodedAttestationRequest.abiEncodedRequest);
     const receipt = await attestationTx.wait();
     const block = await provider.getBlock(receipt.blockNumber);
 
-    // 6. Calculate Round ID.
+    // 6. Calculate Round ID
     // These constants should be cached.
     const BUFFER_TS_OFFSET = await stateConnector.BUFFER_TIMESTAMP_OFFSET();
     const BUFFER_WINDOW = await stateConnector.BUFFER_WINDOW();
@@ -151,8 +144,10 @@ async function AddressValidity_run(network, addressToValidate) {
         };
 
         console.log("Sending the proof for verification...");
-        const addressVerifier = new ethers.Contract(VALIDITY_ADDRESS,
-            AddressValidityVerificationABI.abi, signer);
+        const addressVerifier = new ethers.Contract(
+            flare.nameToAddress("IAddressValidityVerification", "coston"),
+            flare.nameToAbi("IAddressValidityVerification", "coston").data,
+            signer);
         const tx = await addressVerifier.verifyAddressValidity(fullProof);
         console.log("  Attestation result:", tx);
 

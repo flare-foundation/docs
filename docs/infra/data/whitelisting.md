@@ -3,10 +3,10 @@
 ## Introduction
 
 To be a data provider, you must be **whitelisted**.
-Only the top 100 data providers with the most vote power per FTSO can submit data.
-No minimum amount of [vote power](../../tech/ftso.md#vote-power) is required.
+Only the top 100 data providers with the most [vote power](../../tech/ftso.md#vote-power) per FTSO can submit data.
+Therefore, to enter the whitelist you must have higher vote power than the lowest provider currently in the list.
 Per FTSO, a data provider's vote power is based on its balance of `$WFLR` or `$WSGB`.
-When a data provider tries to whitelist itself, its [vote power](../../tech/ftso.md#vote-power) is calculated by the vote-power block of the current reward epoch.
+When a data provider tries to whitelist itself, its vote power is calculated by the vote-power block of the current reward epoch.
 Increased vote power on a different block will not enable your address to be whitelisted.
 Vote power is only read and whitelists updated once per reward epoch.
 Reward epochs start roughly on Saturdays at 8:40AM UTC on Songbird, and on Monday at 7:00 UTC and Thursday at 19:00 UTC on Flare.
