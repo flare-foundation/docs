@@ -54,7 +54,7 @@ Retrieve the State Connector's address from the registry.
 We need to find out the attestation round ID where our request was accepted, based on the timestamp of the block where the tx was included.
 BUFFER_TIMESTAMP_OFFSET and BUFFER_WINDOW should be cached instead of retrieved from the blockchain every time.
 
-### 7. Wait for the Attestation Round to Finish
+### 7. Wait for the Attestation Round to Finalize
 
 CODE NEEDS UPDATING!
 Instead of waiting a fix amount, poll `StateConnector.lastFinalizedRoundId` until it matches our round ID.
@@ -63,6 +63,11 @@ Talk also about how proofs are only kept on chain for a week.
 ### 8. Retrieve Proof
 
 Retrieve proof from Attestation Provider.
+
+Retrieve full proof from attestation provider for the round where
+we made the request. This should be available now.
+The proof will include our request and all other requests made
+during that round, encoded in a single Merkle root.
 
 ### 9. Send Proof to Verifier Contract
 
