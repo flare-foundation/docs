@@ -2,7 +2,6 @@ const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
 const FLARE_RPC = "https://coston-api.flare.network/ext/C/rpc";
 const ATTESTATION_PROVIDER_URL = "https://attestation-coston.aflabs.net";
 const ATTESTATION_PROVIDER_API_KEY = "123456";
-const ATTESTATION_WAIT_SECONDS = 340;
 
 // Get private keys from an external source.
 // DO NOT embed them in source code!
@@ -21,20 +20,10 @@ async function AddressValidity_run(network, addressToValidate) {
     const ethers = await import("ethers");
     const flare = await import(FLARE_PACKAGE);
     const utils = await import(`${FLARE_PACKAGE}/dist/coston/StateConnector/libs/ts/utils.js`);
-    var provider, signer;
-    if (typeof window === "undefined") {
-        // Node.js
-        provider = new ethers.JsonRpcProvider(FLARE_RPC);
-        signer = new ethers.Wallet(TEST_PRIVATE_KEY, provider);
-    } else {
-        // Browser
-        provider = new ethers.BrowserProvider(window.tutorialData.provider);
-        signer = await provider.getSigner();
-    }
+    const provider = new ethers.JsonRpcProvider(FLARE_RPC);
+    const signer = new ethers.Wallet(TEST_PRIVATE_KEY, provider);
 
     // 2. Prepare Attestation Request
-    // First the raw request:
-    // It is not encoded and contains no Message Integrity Code (MIC).
     const rawAttestationRequest = {
         "attestationType": utils.encodeAttestationName('AddressValidity'),
         "sourceId": utils.encodeAttestationName(`test${network.toUpperCase()}`),
@@ -46,8 +35,6 @@ async function AddressValidity_run(network, addressToValidate) {
         ATTESTATION_PROVIDER_URL, "...");
     console.log("Request:", rawAttestationRequest);
 
-    // Then we obtain an encoded attestation request from a verifier,
-    // including MIC.
     const verifierResponse = await fetch(VERIFICATION_ENDPOINT, {
         method: "POST",
         headers: {
@@ -86,28 +73,33 @@ async function AddressValidity_run(network, addressToValidate) {
     const block = await provider.getBlock(receipt.blockNumber);
 
     // 6. Calculate Round ID
-    // These constants should be cached.
     const BUFFER_TS_OFFSET = await stateConnector.BUFFER_TIMESTAMP_OFFSET();
     const BUFFER_WINDOW = await stateConnector.BUFFER_WINDOW();
-    const roundID = Number(
+    const submissionRoundID = Number(
         (BigInt(block.timestamp) - BUFFER_TS_OFFSET) / BUFFER_WINDOW);
 
-    console.log("  Attestation submitted in round", roundID);
+    console.log("  Attestation submitted in round", submissionRoundID);
 
-    // 7. Wait for the Attestation Round to Finish
-    // Providers must reach consensus before the proof is available.
-    console.log("Waiting", ATTESTATION_WAIT_SECONDS, "seconds...");
-    setTimeout(async () => {
-        // Retrieve full proof from attestation provider for the round where
-        // we made the request. This should be available now.
-        // The proof will include our request and all other requests made
-        // during that round, encoded in a single Merkle root.
+    // 7. Wait for the Attestation Round to Finalize
+    var prevFinalizedRoundID = 0;
+    setTimeout(async function poll() {
+        const lastFinalizedRoundID = Number(
+            await stateConnector.lastFinalizedRoundId());
+        if (prevFinalizedRoundID != lastFinalizedRoundID) {
+            console.log("  Last finalized round is", lastFinalizedRoundID);
+            prevFinalizedRoundID = lastFinalizedRoundID;
+        }
+        if (lastFinalizedRoundID < submissionRoundID) {
+            setTimeout(poll, 10000);
+            return;
+        }
+
+        // 8. Retrieve Proof
         const proofRequest = {
-            "roundId": roundID,
+            "roundId": submissionRoundID,
             "requestBytes": encodedAttestationRequest.abiEncodedRequest
         };
 
-        // 8. Retrieve Proof
         console.log("Retrieving proof from attestation provider...");
         const providerResponse = await fetch(ATTESTATION_ENDPOINT, {
             method: "POST",
@@ -151,7 +143,7 @@ async function AddressValidity_run(network, addressToValidate) {
         const tx = await addressVerifier.verifyAddressValidity(fullProof);
         console.log("  Attestation result:", tx);
 
-    }, ATTESTATION_WAIT_SECONDS * 1000);
+    }, 10000);
 }
 
 AddressValidity_run(
