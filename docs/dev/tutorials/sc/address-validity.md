@@ -9,7 +9,7 @@ Use diagram from https://docs.google.com/presentation/d/1BM1OurenafpbId5SPR35tLo
 
 {% import "runner.md" as runner %}
 
-{{ runner.js("sc/", "AddressValidity", true, [
+{{ runner.js(folder="sc/", filename="AddressValidity", requiresWallet='true', params=[
   {"name": "Network (e.g. btc, eth)", "value": "btc"},
   {"name": "Address to Verify", "value":"tb1p4mdyx3dvgk4dhvv8yv2dtuymf00wxhgkkjheqm7526fu7znnd6msw3qxvj"}
   ]) }}
@@ -58,6 +58,7 @@ BUFFER_TIMESTAMP_OFFSET and BUFFER_WINDOW should be cached instead of retrieved 
 
 CODE NEEDS UPDATING!
 Instead of waiting a fix amount, poll `StateConnector.lastFinalizedRoundId` until it matches our round ID.
+Talk also about how proofs are only kept on chain for a week.
 
 ### 8. Retrieve Proof
 

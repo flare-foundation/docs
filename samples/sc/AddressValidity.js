@@ -1,4 +1,4 @@
-const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts@0.1.7";
+const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
 const FLARE_RPC = "https://coston-api.flare.network/ext/C/rpc";
 const ATTESTATION_PROVIDER_URL = "https://attestation-coston.aflabs.net";
 const ATTESTATION_PROVIDER_API_KEY = "123456";
