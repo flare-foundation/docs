@@ -1,0 +1,13 @@
+{
+    "ignorePatterns": [
+        { "_docsfile": "how-to-access-flare-network-with-a-ledger-device.md", "pattern": "^https://metamask.io/download.html$" },
+        { "_docsfile": "how-to-access-flare-network-with-metamask.md", "pattern": "^https://metamask.io/download.html$" },
+        { "_docsfile": "how-to-access-flare-network-with-a-trezor-device.md", "pattern": "^https://metamask.io/download.html$" },
+        { "_docsfile": "network-configs.md", "pattern": "^https://bitcoin-api.flare.network$" },
+        { "_docsfile": "network-configs.md", "pattern": "^https://litecoin-api.flare.network$" },
+        { "_docsfile": "network-configs.md", "pattern": "^https://dogecoin-api.flare.network$" },
+        { "_docsfile": "network-configs.md", "pattern": "^https://xrpl-api.flare.network$" },
+        { "_docsfile": "network-configs.md", "pattern": "^https://algorand-api.flare.network$" },
+        { "_docsfile": "safepal-s1-wallet.md", "pattern": "^https://safepalsupport.zendesk.com/hc/en-us/articles/360046051752-How-to-Set-Up-a-S1-Hardware-Wallet$" }
+    ]
+}
