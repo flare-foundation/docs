@@ -15,6 +15,7 @@ In this regard, Flare validators must:
 * Be associated with an [FTSO Data Provider](glossary.md#data_provider).
     The performance of the data provider has an impact on the validation rewards.
 * Stake native tokens, as in [Proof of Stake](glossary.md#proof_of_stake).
+    See any of the [staking guides](../../user/staking/index.md) to learn how to do it and the minimum amount required.
 
 To maintain decentralization, these limits apply:
 
