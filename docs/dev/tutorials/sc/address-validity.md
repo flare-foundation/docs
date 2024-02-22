@@ -89,16 +89,16 @@ The [`FlareContractRegistry`](FlareContractRegistry.md) contains the current add
 
 Its address is the same on all of [Flare's networks](../../../tech/flare.md#flare-networks), and it is the only Flare address that needs to be hard-coded into any program.
 
-```javascript linenums="56"
---8<-- "samples/sc/AddressValidity.js:56:59"
+```javascript linenums="61"
+--8<-- "samples/sc/AddressValidity.js:61:67"
 ```
 
 ### 4. Retrieve the State Connector Contract Address
 
 Retrieve the State Connector's address from the `FlareContractRegistry`.
 
-```javascript linenums="61"
---8<-- "samples/sc/AddressValidity.js:62:67"
+```javascript linenums="69"
+--8<-- "samples/sc/AddressValidity.js:69:76"
 ```
 
 Note that we are using the Coston testnet here rather than the main Flare Network.
@@ -109,8 +109,8 @@ Now we request an attestation from the SC.
 
 We retrieve the result of the transaction to the `result` object and store info regarding the relevant block in `block`.
 
-```javascript linenums="70"
---8<-- "samples/sc/AddressValidity.js:71:74"
+```javascript linenums="78"
+--8<-- "samples/sc/AddressValidity.js:78:84"
 ```
 
 ### 6. Calculate Round ID
@@ -118,8 +118,8 @@ We retrieve the result of the transaction to the `result` object and store info 
 Now we need to determine the attestation round ID where our request was accepted (`submissionRoundID`). This calculation is based on the timestamp of the block where the transaction was included and ensures that our proof is anchored to a confirmed round.
 This is needed to maintain the validity of our proof.
 
-```javascript linenums="77"
---8<-- "samples/sc/AddressValidity.js:77:82"
+```javascript linenums="86"
+--8<-- "samples/sc/AddressValidity.js:86:93"
 ```
 
 !!! tip
@@ -135,8 +135,8 @@ This is done to sync our process with Flare Network's round finalization, mainta
 
 To this end, after submitting the attestation request, we monitor the network until our request is confirmed. This is done by continuously polling and comparing the State Connector's last finalized round (`StateConnector.lastFinalizedRoundID`) with our submission round (`submissionRoundID`) until there's a match, indicating that our proof has been included in a finalized block.
 
-```javascript linenums="85"
---8<-- "samples/sc/AddressValidity.js:85:96"
+```javascript linenums="95"
+--8<-- "samples/sc/AddressValidity.js:95:108"
 ```
 
 !!! warning
@@ -155,8 +155,8 @@ Now we obtain the full proof (which should now be available) from the attestatio
 
 After constructing our `proofRequest` and making a `POST` request to our `ATTESTATION_ENDPOINT`, we receive our proof as a response. Notably, the proof object's Merkle proof (`proof.data.merkleProof`) property consists of one or more Merkle nodes (hashes) that collectively prove the inclusion of our request in the attestation round.
 
-```javascript linenums="99"
---8<-- "samples/sc/AddressValidity.js:99:118"
+```javascript linenums="110"
+--8<-- "samples/sc/AddressValidity.js:110:130"
 ```
 
 ### 9. Send Proof to Verifier Contract
@@ -165,16 +165,16 @@ Now we send the proof to an `addressVerifier` smart contract for verification. T
 
 In this tutorial, we used the [`IAddressValidityVerification`](https://coston-explorer.flare.network/address/0x6493D7c0e4d81a73873067d14dfBFfaade072c5a/contracts#address-tabs) smart contract but most apps use their own smart contracts for this verification.
 
-```javascript linenums="122"
---8<-- "samples/sc/AddressValidity.js:122:136"
+```javascript linenums="132"
+--8<-- "samples/sc/AddressValidity.js:132:153"
 ```
 
 ### 10. Check if the Address is Valid
 
 Finally, we check if our address is valid or invalid according to the attestation providers, given that our request was found to be valid. Meaning if our attestation request is found to be valid by our `addressVerifier` smart contract, we then check whether or not the address provided is a valid one (represented by `isValid`).
 
-```javascript linenums="139"
---8<-- "samples/sc/AddressValidity.js:139:143"
+```javascript linenums="155"
+--8<-- "samples/sc/AddressValidity.js:155:168"
 ```
 
 </div>
