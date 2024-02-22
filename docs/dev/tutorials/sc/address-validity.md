@@ -55,7 +55,7 @@ The [Getting Started](../../getting-started/setup/index.md) guides explain how t
     --8<-- "samples/sc/AddressValidity.js:8:8"
     ```
 
-    In a production setting, the private key should be retrieved from an external source (such as a [`.env` file]((https://www.npmjs.com/package/dotenv))) and NOT embedded directly in the code.
+    In a production setting, the private key should be retrieved from an external source (such as a `.env` file) and NOT embedded directly in the code.
 
 ### 2. Prepare Attestation Request
 
