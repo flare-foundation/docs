@@ -6,3 +6,15 @@ interface/types/ConfirmedBlockHeightExists.md
 interface/types/EVMTransaction.md
 interface/types/Payment.md
 interface/types/ReferencedPaymentNonexistence.md
+generated/verification/BalanceDecreasingTransactionVerification.md
+generated/verification/ReferencedPaymentNonexistenceVerification.md
+generated/verification/AddressValidityVerification.md
+generated/verification/ConfirmedBlockHeightExistsVerification.md
+generated/verification/EVMTransactionVerification.md
+generated/verification/PaymentVerification.md
+generated/verification/interface/IEVMTransactionVerification.md
+generated/verification/interface/IPaymentVerification.md
+generated/verification/interface/IConfirmedBlockHeightExistsVerification.md
+generated/verification/interface/IAddressValidityVerification.md
+generated/verification/interface/IBalanceDecreasingTransactionVerification.md
+generated/verification/interface/IReferencedPaymentNonexistenceVerification.md
