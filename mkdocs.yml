@@ -274,11 +274,19 @@ nav:
       - apis/smart-contracts/index.md
       - apis/smart-contracts/AddressUpdatable.md
       - apis/smart-contracts/AddressUpdater.md
+      - apis/smart-contracts/AddressValidity.md
+      - apis/smart-contracts/AddressValidityVerification.md
+      - apis/smart-contracts/BalanceDecreasingTransaction.md
+      - apis/smart-contracts/BalanceDecreasingTransactionVerification.md
       - apis/smart-contracts/CheckPointable.md
       - apis/smart-contracts/ClaimSetupManager.md
       - apis/smart-contracts/CleanupBlockNumberManager.md
       - apis/smart-contracts/CloneFactory.md
+      - apis/smart-contracts/ConfirmedBlockHeightExists.md
+      - apis/smart-contracts/ConfirmedBlockHeightExistsVerification.md
       - apis/smart-contracts/Delegatable.md
+      - apis/smart-contracts/EVMTransaction.md
+      - apis/smart-contracts/EVMTransactionVerification.md
       - apis/smart-contracts/FlareContractRegistry.md
       - apis/smart-contracts/FlareDaemon.md
       - apis/smart-contracts/Ftso.md
@@ -292,13 +300,23 @@ nav:
       - apis/smart-contracts/GovernedAtGenesis.md
       - apis/smart-contracts/GovernedBase.md
       - apis/smart-contracts/Inflation.md
+      - apis/smart-contracts/Payment.md
+      - apis/smart-contracts/PaymentVerification.md
+      - apis/smart-contracts/PChainStake.md
+      - apis/smart-contracts/PChainStakeMirror.md
       - apis/smart-contracts/PriceSubmitter.md
+      - apis/smart-contracts/ReferencedPaymentNonexistence.md
+      - apis/smart-contracts/ReferencedPaymentNonexistenceVerification.md
       - apis/smart-contracts/RevertErrorTracking.md
       - apis/smart-contracts/VoterWhitelister.md
       - apis/smart-contracts/VPContract.md
       - apis/smart-contracts/VPToken.md
       - apis/smart-contracts/WNat.md
+      - apis/smart-contracts/IAddressValidityVerification.md
+      - apis/smart-contracts/IBalanceDecreasingTransactionVerification.md
       - apis/smart-contracts/IClaimSetupManager.md
+      - apis/smart-contracts/IConfirmedBlockHeightExistsVerification.md
+      - apis/smart-contracts/IEVMTransactionVerification.md
       - apis/smart-contracts/IFlareContractRegistry.md
       - apis/smart-contracts/IFlareDaemonize.md
       - apis/smart-contracts/IFtso.md
@@ -311,7 +329,13 @@ nav:
       - apis/smart-contracts/IGovernanceSettings.md
       - apis/smart-contracts/IGovernanceVotePower.md
       - apis/smart-contracts/IInflationGenesis.md
+      - apis/smart-contracts/IMerkleRootStorage.md
+      - apis/smart-contracts/IPaymentVerification.md
+      - apis/smart-contracts/IPChainStakeMirror.md
+      - apis/smart-contracts/IPChainVotePower.md
       - apis/smart-contracts/IPriceSubmitter.md
+      - apis/smart-contracts/IReferencedPaymentNonexistenceVerification.md
+      - apis/smart-contracts/IStateConnector.md
       - apis/smart-contracts/IVoterWhitelister.md
       - apis/smart-contracts/IVPContractEvents.md
       - apis/smart-contracts/IVPToken.md

@@ -32,7 +32,8 @@ Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](htt
 
 ```solidity
 constructor(
-    contract IVPToken _ownerToken
+    contract IVPToken _ownerToken,
+    contract IPChainStakeMirror _pChainStakeMirror
 ) public;
 ```
 
@@ -270,6 +271,30 @@ Get the token that this governance vote power contract belongs to.
 
 <div class="api-node" markdown>
 
+### `pChainStakeMirror` { #fn_pchainstakemirror_62d9c89a }
+
+<div class="api-node-source" markdown>
+Defined in `IIGovernanceVotePower` ([Docs](./IIGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IIGovernanceVotePower.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+function pChainStakeMirror(
+) external view returns (
+    contract IPChainStakeMirror);
+```
+
+Get the stake mirror contract that this governance vote power contract belongs to.
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+| [0] | `contract IPChainStakeMirror` | The [`IPChainStakeMirror`](./IPChainStakeMirror.md) interface owning this contract. |
+</div>
+</div>
+
+<div class="api-node" markdown>
+
 ### `setCleanerContract` { #fn_setcleanercontract_f6a494af }
 
 <div class="api-node-source" markdown>
@@ -440,6 +465,25 @@ History cleaning methods can be called only from the cleaner address.
 
 <div class="api-node" markdown>
 
+### `onlyOwnerContracts` { #md_onlyownercontracts }
+
+<div class="api-node-source" markdown>
+Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+modifier onlyOwnerContracts()
+```
+
+Method [`updateAtTokenTransfer`](#fn_updateattokentransfer_eadb4362) in [`GovernanceVotePower`](./GovernanceVotePower.md) can only be executed by the owner contracts.
+
+</div>
+</div>
+
+<div class="api-node" markdown>
+
 ### `onlyOwnerToken` { #md_onlyownertoken }
 
 <div class="api-node-source" markdown>
@@ -497,12 +541,33 @@ Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](htt
     contract IVPToken ownerToken
 ```
 
-The [`VPToken`](./VPToken.md) (or some other contract) that owns this [`GovernanceVotePower`](./GovernanceVotePower.md).
-All state changing methods may be called only from this address.
+The [`VPToken`](./VPToken.md) and [`IPChainStakeMirror`](./IPChainStakeMirror.md) contracts that own this [`GovernanceVotePower`](./GovernanceVotePower.md).
+All state changing methods may be called only from these addresses.
 This is because original `msg.sender` is typically sent in a parameter
 and we must make sure that it cannot be faked by directly calling
 [`GovernanceVotePower`](./GovernanceVotePower.md) methods.
 
+</div>
+</div>
+
+<div class="api-node" markdown>
+
+### `pChainStakeMirror` { #va_pchainstakemirror }
+
+<div class="api-node-source" markdown>
+Defined in `GovernanceVotePower` ([Docs](./GovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/implementation/GovernanceVotePower.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+    contract IPChainStakeMirror pChainStakeMirror
+```
+
+Get the stake mirror contract that this governance vote power contract belongs to.
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
 </div>
 </div>
 

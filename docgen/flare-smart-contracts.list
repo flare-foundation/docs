@@ -18,6 +18,8 @@ utils/implementation/GovernedAndFlareDaemonized.md
 governance/implementation/GovernedAtGenesis.md
 governance/implementation/GovernedBase.md
 inflation/implementation/Inflation.md
+staking/implementation/PChainStake.md
+staking/implementation/PChainStakeMirror.md
 genesis/implementation/PriceSubmitter.md
 utils/implementation/RevertErrorTracking.md
 utils/implementation/VoterWhitelister.md
@@ -37,6 +39,8 @@ userInterfaces/IFtsoRewardManager.md
 userInterfaces/IGovernanceSettings.md
 userInterfaces/IGovernanceVotePower.md
 genesis/interface/IInflationGenesis.md
+userInterfaces/IPChainStakeMirror.md
+userInterfaces/IPChainVotePower.md
 userInterfaces/IPriceSubmitter.md
 userInterfaces/IVoterWhitelister.md
 userInterfaces/IVPContractEvents.md

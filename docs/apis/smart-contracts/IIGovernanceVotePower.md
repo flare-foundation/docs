@@ -255,6 +255,30 @@ Get the token that this governance vote power contract belongs to.
 
 <div class="api-node" markdown>
 
+### `pChainStakeMirror` { #fn_pchainstakemirror_62d9c89a }
+
+<div class="api-node-source" markdown>
+Defined in `IIGovernanceVotePower` ([Docs](./IIGovernanceVotePower.md), [Source](https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/token/interface/IIGovernanceVotePower.sol)).
+</div>
+
+<div class="api-node-internal" markdown>
+
+```solidity
+function pChainStakeMirror(
+) external view returns (
+    contract IPChainStakeMirror);
+```
+
+Get the stake mirror contract that this governance vote power contract belongs to.
+
+| Returns | Type | Description |
+| ------- | ---- | ----------- |
+| [0] | `contract IPChainStakeMirror` | The [`IPChainStakeMirror`](./IPChainStakeMirror.md) interface owning this contract. |
+</div>
+</div>
+
+<div class="api-node" markdown>
+
 ### `setCleanerContract` { #fn_setcleanercontract_f6a494af }
 
 <div class="api-node-source" markdown>

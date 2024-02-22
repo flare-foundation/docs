@@ -10,11 +10,19 @@ List of Flare smart contracts.
 | ---- | ----------- |
 | [`AddressUpdatable`](./AddressUpdatable.md) | Abstract base class for contracts that depend on other contracts whose addresses can change. |
 | [`AddressUpdater`](./AddressUpdater.md) | Keeps track of the current address for all unique and special platform contracts. |
+| [`AddressValidity`](./AddressValidity.md) | An assertion whether a string represents a valid address on an external chain. |
+| [`AddressValidityVerification`](./AddressValidityVerification.md) | Contract for verifying [`AddressValidity`](./AddressValidity.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
+| [`BalanceDecreasingTransaction`](./BalanceDecreasingTransaction.md) | A detection of a transaction that either decreases the balance for some address or is signed by the source address. |
+| [`BalanceDecreasingTransactionVerification`](./BalanceDecreasingTransactionVerification.md) | Contract for verifying [`BalanceDecreasingTransaction`](./BalanceDecreasingTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`CheckPointable`](./CheckPointable.md) | Check-Pointable ERC20 Behavior. |
 | [`ClaimSetupManager`](./ClaimSetupManager.md) | Manages automation of operations related to reward claiming. |
 | [`CleanupBlockNumberManager`](./CleanupBlockNumberManager.md) | Token history cleanup manager. |
 | [`CloneFactory`](./CloneFactory.md) | Simple clone contract factory. |
+| [`ConfirmedBlockHeightExists`](./ConfirmedBlockHeightExists.md) | An assertion that a block with `blockNumber` is confirmed. |
+| [`ConfirmedBlockHeightExistsVerification`](./ConfirmedBlockHeightExistsVerification.md) | Contract for verifying [`ConfirmedBlockHeightExists`](./ConfirmedBlockHeightExists.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`Delegatable`](./Delegatable.md) | [`Delegatable`](./Delegatable.md) ERC20 behavior. |
+| [`EVMTransaction`](./EVMTransaction.md) | A relay of a transaction from an EVM chain. |
+| [`EVMTransactionVerification`](./EVMTransactionVerification.md) | Contract for verifying [`EVMTransaction`](./EVMTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`FlareContractRegistry`](./FlareContractRegistry.md) | The Flare contract registry. |
 | [`FlareDaemon`](./FlareDaemon.md) | Flare Daemon contract. |
 | [`Ftso`](./Ftso.md) | [Flare Time Series Oracle](https://docs.flare.network/tech/ftso) contract. |
@@ -28,7 +36,13 @@ List of Flare smart contracts.
 | [`GovernedAtGenesis`](./GovernedAtGenesis.md) | Defines behaviors for governed contracts that have their governor set at genesis. |
 | [`GovernedBase`](./GovernedBase.md) | Abstract base class that defines behaviors for governed contracts. |
 | [`Inflation`](./Inflation.md) | Recognizes, authorizes, mints, and funds native tokens to Flare services that are rewardable through inflation. |
+| [`Payment`](./Payment.md) | A relay of a transaction on an external chain that is considered a payment in a native currency. |
+| [`PaymentVerification`](./PaymentVerification.md) | Contract for verifying [`Payment`](./Payment.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
+| [`PChainStake`](./PChainStake.md) | Helper contract handling all the vote power and balance functionality for the [`PChainStakeMirror`](./PChainStakeMirror.md). |
+| [`PChainStakeMirror`](./PChainStakeMirror.md) | Contract used to mirror all stake amounts from P-chain. |
 | [`PriceSubmitter`](./PriceSubmitter.md) | Receives prices from [FTSO data providers](https://docs.flare.network/tech/ftso). |
+| [`ReferencedPaymentNonexistence`](./ReferencedPaymentNonexistence.md) | Assertion that an agreed-upon payment has not been made by a certain deadline. |
+| [`ReferencedPaymentNonexistenceVerification`](./ReferencedPaymentNonexistenceVerification.md) | Contract for verifying [`ReferencedPaymentNonexistence`](./ReferencedPaymentNonexistence.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`RevertErrorTracking`](./RevertErrorTracking.md) | Revert error tracking contract. |
 | [`VoterWhitelister`](./VoterWhitelister.md) | Manager of the [FTSO whitelist](https://docs.flare.network/infra/data/whitelisting/). |
 | [`VPContract`](./VPContract.md) | Helper contract handling all the vote power and delegation functionality for an associated [`VPToken`](./VPToken.md). |
@@ -39,7 +53,11 @@ List of Flare smart contracts.
 
 | Name | Description |
 | ---- | ----------- |
+| [`IAddressValidityVerification`](./IAddressValidityVerification.md) | Interface for verifying [`AddressValidity`](./AddressValidity.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
+| [`IBalanceDecreasingTransactionVerification`](./IBalanceDecreasingTransactionVerification.md) | Interface for verifying [`BalanceDecreasingTransaction`](./BalanceDecreasingTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`IClaimSetupManager`](./IClaimSetupManager.md) | Public interface for the [`ClaimSetupManager`](./ClaimSetupManager.md) contract. |
+| [`IConfirmedBlockHeightExistsVerification`](./IConfirmedBlockHeightExistsVerification.md) | Interface for verifying [`ConfirmedBlockHeightExists`](./ConfirmedBlockHeightExists.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
+| [`IEVMTransactionVerification`](./IEVMTransactionVerification.md) | Interface for verifying [`EVMTransaction`](./EVMTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`IFlareContractRegistry`](./IFlareContractRegistry.md) | Interface for the [`FlareContractRegistry`](./FlareContractRegistry.md). |
 | [`IFlareDaemonize`](./IFlareDaemonize.md) | Interface for contracts that receive triggers from the [`FlareDaemon`](./FlareDaemon.md) contract. |
 | [`IFtso`](./IFtso.md) | Interface for each of the FTSO contracts that handles an asset. |
@@ -52,7 +70,13 @@ List of Flare smart contracts.
 | [`IGovernanceSettings`](./IGovernanceSettings.md) | Interface for the [`GovernanceSettings`](./GovernanceSettings.md) that hold the Flare governance address and its timelock. |
 | [`IGovernanceVotePower`](./IGovernanceVotePower.md) | Interface for contracts delegating their governance vote power. |
 | [`IInflationGenesis`](./IInflationGenesis.md) | Portion of the [`Inflation`](./Inflation.md) contract that is available to contracts deployed at genesis. |
+| [`IMerkleRootStorage`](./IMerkleRootStorage.md) | Interface for accessing [State Connector](https://docs.flare.network/tech/state-connector) Merkle roots. |
+| [`IPaymentVerification`](./IPaymentVerification.md) | Interface for verifying [`Payment`](./Payment.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
+| [`IPChainStakeMirror`](./IPChainStakeMirror.md) | Interface for the [`PChainStakeMirror`](./PChainStakeMirror.md) contract. |
+| [`IPChainVotePower`](./IPChainVotePower.md) | Interface for the vote power part of the [`PChainStakeMirror`](./PChainStakeMirror.md) contract. |
 | [`IPriceSubmitter`](./IPriceSubmitter.md) | Interface for the [`PriceSubmitter`](./PriceSubmitter.md) contract. |
+| [`IReferencedPaymentNonexistenceVerification`](./IReferencedPaymentNonexistenceVerification.md) | Interface for verifying [`ReferencedPaymentNonexistence`](./ReferencedPaymentNonexistence.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
+| [`IStateConnector`](./IStateConnector.md) | Interface for interacting with the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`IVoterWhitelister`](./IVoterWhitelister.md) | Interface for managers of the [FTSO whitelist](https://docs.flare.network/infra/data/whitelisting/). |
 | [`IVPContractEvents`](./IVPContractEvents.md) | Events interface for vote-power related operations. |
 | [`IVPToken`](./IVPToken.md) | Vote power token interface. |
