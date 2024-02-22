@@ -74,11 +74,11 @@ The URL can be stored in an environment variable named `FOUNDRY_ETH_RPC_URL)` so
 
     Before proceeding with Deployment:
 
-    * Make sure that you have added and selected the Coston2 test network to your MetaMask Wallet.
-      The [MetaMask Wallet guide](../../../user/wallets/how-to-access-flare-network-with-metamask.md) shows how to do it.
+    * Make sure that you have added and selected the Coston2 test network to your Wallet.
+      The [Wallets section](../../../user/wallets/index.md) shows how to do it.
       Use the values for Coston2 that you will find in the [Network Configurations](../../reference/network-config.md) page.
     * Ensure that you have enough Coston2 native tokens `$C2FLR` to pay for gas.
-      Visit the [Coston2 Faucet](https://faucet.flare.network/) to request some `$C2FLR`.
+      Visit the [Coston2 Faucet](https://faucet.flare.network/coston2) to request some `$C2FLR`.
 
 The general Foundry command to deploy a contract is:
 
