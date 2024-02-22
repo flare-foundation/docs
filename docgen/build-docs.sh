@@ -12,19 +12,21 @@ interfaces=""
 internal_interfaces=""
 commits=""
 
-while read -r repo_url hardhat_config_file build_command
+while read -r repo_url repo_branch repo_source_path hardhat_config_file build_command
 do
     repo_name=$(basename $repo_url .git)
     echo -e "\n${YELLOW}Clonning $repo_name:${NORMAL}"
     rm -rf $repo_name
-    git clone $repo_url --depth 1
+    git clone $repo_url
     cd $repo_name
+    git checkout $repo_branch
 
     echo -e "\n${YELLOW}Adding docgen to $repo_name:${NORMAL}"
     yarn add solidity-docgen
     sed -i -E "1s/^/import 'solidity-docgen';\n/" $hardhat_config_file
     sed -i -E "/HardhatUserConfig = / r ../hardhat.config.ts.patch" $hardhat_config_file
     cp -r ../template .
+    sed -i "s#^const flareRepoURL =.*#const flareRepoURL = '${repo_source_path}'#g" template/helpers.ts
 
     echo -e "\n${YELLOW}Compiling $repo_name:${NORMAL}"
     eval ${build_command}
