@@ -1,16 +1,21 @@
 # Simple Attestation Request
 
-This tutorial shows basic use of the [State Connector](https://docs.flare.network/tech/state-connector/) (SC) protocol.
+This tutorial shows basic use of the [State Connector](../../../tech/state-connector.md) (SC) protocol.
 
 In this tutorial, you will learn how to:
 
 * Make a query to the State Connector smart contract.
-* Get the result from an Attestation Provider (AP).
+* Get the result from an attestation provider (AP).
 * Use a smart contract to verify that the result returned by the attestation provider matches the result agreed upon by the State Connector.
 
+The diagram below shows the process that this tutorial follows.
+It closely matches the general process given in the
+[State Connector page](../../../tech/state-connector.md#procedure-overview),
+but the numbers have been changed to match the steps in this tutorial.
+
 <figure markdown>
-  ![State Connector schematic diagram.](SC-basic-tutorial.png){ loading=lazy .allow-zoom }
-  <figcaption>State Connector schematic diagram.</figcaption>
+  ![State Connector usage process](SC-basic-tutorial.png){ loading=lazy .allow-zoom }
+  <figcaption>State Connector usage process</figcaption>
 </figure>
 
 ## Code
@@ -45,7 +50,7 @@ The tutorial uses the following dependencies:
 The Periphery Package simplifies working with the Flare smart contracts significantly.
 If you remove this dependency, you must manually provide the signatures for all the methods you want to use.
 
-This tutorial needs to send transactions on the Coston test network, so an account with enough `$CFLR` tokens to pay for gas is required.
+This tutorial needs to send transactions on the Coston2 test network, so an account with enough `$C2FLR` tokens to pay for gas is required.
 The [Getting Started](../../getting-started/setup/index.md) guides explain how to configure your wallet and get test tokens from the [faucet](https://faucet.flare.network/coston2).
 
 !!! warning
@@ -55,7 +60,7 @@ The [Getting Started](../../getting-started/setup/index.md) guides explain how t
     --8<-- "samples/sc/AddressValidity.js:8:8"
     ```
 
-    In a production setting, the private key should be retrieved from an external source (such as a `.env` file) and NOT embedded directly in the code.
+    In a production setting, the private key should be retrieved from an external source (such as a [`.env` file](https://www.npmjs.com/package/dotenv)) and NOT embedded directly in the code.
 
 ### 2. Prepare Attestation Request
 
@@ -89,8 +94,8 @@ The [`FlareContractRegistry`](FlareContractRegistry.md) contains the current add
 
 Its address is the same on all of [Flare's networks](../../../tech/flare.md#flare-networks), and it is the only Flare address that needs to be hard-coded into any program.
 
-```javascript linenums="61"
---8<-- "samples/sc/AddressValidity.js:61:67"
+```javascript linenums="62"
+--8<-- "samples/sc/AddressValidity.js:62:67"
 ```
 
 ### 4. Retrieve the State Connector Contract Address
@@ -119,7 +124,7 @@ Now we need to determine the attestation round ID where our request was accepted
 This is needed to maintain the validity of our proof.
 
 ```javascript linenums="86"
---8<-- "samples/sc/AddressValidity.js:86:93"
+--8<-- "samples/sc/AddressValidity.js:86:91"
 ```
 
 !!! tip
@@ -166,12 +171,12 @@ Now we send the proof to an `addressVerifier` smart contract for verification. T
 In this tutorial, we used the [`IAddressValidityVerification`](https://coston-explorer.flare.network/address/0x6493D7c0e4d81a73873067d14dfBFfaade072c5a/contracts#address-tabs) smart contract but most apps use their own smart contracts for this verification.
 
 ```javascript linenums="132"
---8<-- "samples/sc/AddressValidity.js:132:153"
+--8<-- "samples/sc/AddressValidity.js:132:146"
 ```
 
 ### 10. Check if the Address is Valid
 
-Finally, we check if our address is valid or invalid according to the attestation providers, given that our request was found to be valid. Meaning if our attestation request is found to be valid by our `addressVerifier` smart contract, we then check whether or not the address provided is a valid one (represented by `isValid`).
+Finally, we check if our address is valid or invalid according to the attestation providers, given that our request was found to be valid. Meaning if our attestation request has been verified by our `addressVerifier` smart contract (represented by the `isVerified` variable), we then check whether or not the address provided is a valid one (represented by `isValid`).
 
 ```javascript linenums="155"
 --8<-- "samples/sc/AddressValidity.js:155:168"
@@ -181,17 +186,25 @@ Finally, we check if our address is valid or invalid according to the attestatio
 
 ## Conclusion
 
-In this tutorial, we have learned how to:
+This tutorial has shown how to:
 
-* Check the validity of a wallet address using the SC smart contract and an attestation provider.
-* Verify whether or not the result from the SC matches that from the AP via the use of a smart contract.
+* Make a query to the State Connector smart contract using `stateConnector.requestAttestations()`.
+* Get the result from an attestation provider (AP) by making a `POST` request to the provider's API endpoint (`ATTESTATION_ENDPOINT`).
+* Use a smart contract (`IAddressValidityVerification`) to verify that the result returned by the attestation provider (`proof`) matches the result agreed upon by the State Connector (`isVerified` is true is a match is found).
 
-The State Connector can be used for a host of other things beyond just verifying wallet addresses, such as:
+The State Connector can be used for a host of other things beyond just verifying address correctness.
+The attestation type of the request selects the type of information you want.
 
-* [**Payment**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00001-payment.md): Verifying whether a payment transaction occurred in which funds were sent from one address to another address.
-* [**Balance-decreasing transaction**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00002-balance-decreasing-transaction.md): Verifying whether a transaction that might have decreased a balance occurred.
-* [**Referenced payment nonexistence**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00004-referenced-payment-nonexistence.md): Verifying whether an account did not receive funds from a different account by a specific deadline.
-* [**Confirmed block height**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00003-confirmed-block-height-exists.md): Verifying whether a block on a certain height exists and was confirmed.
+```javascript linenums="31"
+--8<-- "samples/sc/AddressValidity.js:31:31"
+```
+
+Other attestation types include:
+
+* [**Payment**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00001-payment.md): Verifies whether a payment transaction occurred in which funds were sent from one address to another address.
+* [**Balance-decreasing transaction**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00002-balance-decreasing-transaction.md): Verifies whether a transaction that might have decreased a balance occurred.
+* [**Referenced payment nonexistence**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00004-referenced-payment-nonexistence.md): Verifies whether an account did not receive funds from a different account by a specific deadline.
+* [**Confirmed block height**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00003-confirmed-block-height-exists.md): Verifies whether a block on a certain height exists and was confirmed.
 
 More attestation types are to be added in the future, subject to community approval and support.
 
