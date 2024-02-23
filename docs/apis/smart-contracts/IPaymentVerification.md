@@ -12,7 +12,7 @@ title: IPaymentVerification
 
 <div class="api-node-internal" markdown>
 
-Interface for verifying [`Payment`](./Payment.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/).
+Interface for verifying [`Payment`](../attestation-types/Payment.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/).
 This interface can be utilized at the end of the attestation request process to verify that the data
 returned by an attestation provider matches the on-chain Merkle proof.
 
@@ -39,12 +39,12 @@ function verifyPayment(
     bool _proved);
 ```
 
-Verifies the [`Payment`](./Payment.md) attestation using a Merkle proof.
+Verifies the [`Payment`](../attestation-types/Payment.md) attestation using a Merkle proof.
 It checks whether the provided proof corresponds to the on-chain Merkle root for the voting round specified inside the proof.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
-| `_proof` | `struct Payment.Proof` | The [`Payment`](./Payment.md) attestation proof, which includes the Merkle proof and the attestation data.               This proof is obtained directly from attestation providers.               To learn about the format of this data, see [Attestation types](https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/attestation-type-definition.md). |
+| `_proof` | `struct Payment.Proof` | The [`Payment`](../attestation-types/Payment.md) attestation proof, which includes the Merkle proof and the attestation data.               This proof is obtained directly from attestation providers.               To learn about the format of this data, see [Attestation types](https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/attestation-type-definition.md). |
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
