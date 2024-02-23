@@ -12,7 +12,7 @@ title: IEVMTransactionVerification
 
 <div class="api-node-internal" markdown>
 
-Interface for verifying [`EVMTransaction`](./EVMTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/).
+Interface for verifying [`EVMTransaction`](../attestation-types/EVMTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/).
 This interface can be utilized at the end of the attestation request process to verify that the data
 returned by an attestation provider matches the on-chain Merkle proof.
 
@@ -39,12 +39,12 @@ function verifyEVMTransaction(
     bool _proved);
 ```
 
-Verifies the [`EVMTransaction`](./EVMTransaction.md) attestation using a Merkle proof.
+Verifies the [`EVMTransaction`](../attestation-types/EVMTransaction.md) attestation using a Merkle proof.
 It checks whether the provided proof corresponds to the on-chain Merkle root for the voting round specified inside the proof.
 
 | Parameters | Type | Description |
 | ---------- | ---- | ----------- |
-| `_proof` | `struct EVMTransaction.Proof` | The [`EVMTransaction`](./EVMTransaction.md) attestation proof, which includes the Merkle proof and the attestation data.               This proof is obtained directly from attestation providers.               To learn about the format of this data, see [Attestation types](https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/attestation-type-definition.md). |
+| `_proof` | `struct EVMTransaction.Proof` | The [`EVMTransaction`](../attestation-types/EVMTransaction.md) attestation proof, which includes the Merkle proof and the attestation data.               This proof is obtained directly from attestation providers.               To learn about the format of this data, see [Attestation types](https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/attestation-type-definition.md). |
 
 | Returns | Type | Description |
 | ------- | ---- | ----------- |
