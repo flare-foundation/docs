@@ -10,18 +10,14 @@ List of Flare smart contracts.
 | ---- | ----------- |
 | [`AddressUpdatable`](./AddressUpdatable.md) | Abstract base class for contracts that depend on other contracts whose addresses can change. |
 | [`AddressUpdater`](./AddressUpdater.md) | Keeps track of the current address for all unique and special platform contracts. |
-| [`AddressValidity`](./AddressValidity.md) | An assertion whether a string represents a valid address on an external chain. |
 | [`AddressValidityVerification`](./AddressValidityVerification.md) | Contract for verifying [`AddressValidity`](./AddressValidity.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
-| [`BalanceDecreasingTransaction`](./BalanceDecreasingTransaction.md) | A detection of a transaction that either decreases the balance for some address or is signed by the source address. |
 | [`BalanceDecreasingTransactionVerification`](./BalanceDecreasingTransactionVerification.md) | Contract for verifying [`BalanceDecreasingTransaction`](./BalanceDecreasingTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`CheckPointable`](./CheckPointable.md) | Check-Pointable ERC20 Behavior. |
 | [`ClaimSetupManager`](./ClaimSetupManager.md) | Manages automation of operations related to reward claiming. |
 | [`CleanupBlockNumberManager`](./CleanupBlockNumberManager.md) | Token history cleanup manager. |
 | [`CloneFactory`](./CloneFactory.md) | Simple clone contract factory. |
-| [`ConfirmedBlockHeightExists`](./ConfirmedBlockHeightExists.md) | An assertion that a block with `blockNumber` is confirmed. |
 | [`ConfirmedBlockHeightExistsVerification`](./ConfirmedBlockHeightExistsVerification.md) | Contract for verifying [`ConfirmedBlockHeightExists`](./ConfirmedBlockHeightExists.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`Delegatable`](./Delegatable.md) | [`Delegatable`](./Delegatable.md) ERC20 behavior. |
-| [`EVMTransaction`](./EVMTransaction.md) | A relay of a transaction from an EVM chain. |
 | [`EVMTransactionVerification`](./EVMTransactionVerification.md) | Contract for verifying [`EVMTransaction`](./EVMTransaction.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`FlareContractRegistry`](./FlareContractRegistry.md) | The Flare contract registry. |
 | [`FlareDaemon`](./FlareDaemon.md) | Flare Daemon contract. |
@@ -36,12 +32,10 @@ List of Flare smart contracts.
 | [`GovernedAtGenesis`](./GovernedAtGenesis.md) | Defines behaviors for governed contracts that have their governor set at genesis. |
 | [`GovernedBase`](./GovernedBase.md) | Abstract base class that defines behaviors for governed contracts. |
 | [`Inflation`](./Inflation.md) | Recognizes, authorizes, mints, and funds native tokens to Flare services that are rewardable through inflation. |
-| [`Payment`](./Payment.md) | A relay of a transaction on an external chain that is considered a payment in a native currency. |
 | [`PaymentVerification`](./PaymentVerification.md) | Contract for verifying [`Payment`](./Payment.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`PChainStake`](./PChainStake.md) | Helper contract handling all the vote power and balance functionality for the [`PChainStakeMirror`](./PChainStakeMirror.md). |
 | [`PChainStakeMirror`](./PChainStakeMirror.md) | Contract used to mirror all stake amounts from P-chain. |
 | [`PriceSubmitter`](./PriceSubmitter.md) | Receives prices from [FTSO data providers](https://docs.flare.network/tech/ftso). |
-| [`ReferencedPaymentNonexistence`](./ReferencedPaymentNonexistence.md) | Assertion that an agreed-upon payment has not been made by a certain deadline. |
 | [`ReferencedPaymentNonexistenceVerification`](./ReferencedPaymentNonexistenceVerification.md) | Contract for verifying [`ReferencedPaymentNonexistence`](./ReferencedPaymentNonexistence.md) attestations within the [State Connector](https://docs.flare.network/tech/state-connector/). |
 | [`RevertErrorTracking`](./RevertErrorTracking.md) | Revert error tracking contract. |
 | [`VoterWhitelister`](./VoterWhitelister.md) | Manager of the [FTSO whitelist](https://docs.flare.network/infra/data/whitelisting/). |
