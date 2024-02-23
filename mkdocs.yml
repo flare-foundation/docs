@@ -57,6 +57,9 @@ markdown_extensions:
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
+  - swagger-ui-tag:             # Renders OpenApi Spec
+      extra_css:
+        - assets/stylesheets/extra.css
   - macros:                     # Jinja2 macros
       include_dir: samples
   - autolinks                   # Use just filenames instead of full or relative paths
@@ -274,11 +277,15 @@ nav:
       - apis/smart-contracts/index.md
       - apis/smart-contracts/AddressUpdatable.md
       - apis/smart-contracts/AddressUpdater.md
+      - apis/smart-contracts/AddressValidityVerification.md
+      - apis/smart-contracts/BalanceDecreasingTransactionVerification.md
       - apis/smart-contracts/CheckPointable.md
       - apis/smart-contracts/ClaimSetupManager.md
       - apis/smart-contracts/CleanupBlockNumberManager.md
       - apis/smart-contracts/CloneFactory.md
+      - apis/smart-contracts/ConfirmedBlockHeightExistsVerification.md
       - apis/smart-contracts/Delegatable.md
+      - apis/smart-contracts/EVMTransactionVerification.md
       - apis/smart-contracts/FlareContractRegistry.md
       - apis/smart-contracts/FlareDaemon.md
       - apis/smart-contracts/Ftso.md
@@ -292,13 +299,21 @@ nav:
       - apis/smart-contracts/GovernedAtGenesis.md
       - apis/smart-contracts/GovernedBase.md
       - apis/smart-contracts/Inflation.md
+      - apis/smart-contracts/PaymentVerification.md
+      - apis/smart-contracts/PChainStake.md
+      - apis/smart-contracts/PChainStakeMirror.md
       - apis/smart-contracts/PriceSubmitter.md
+      - apis/smart-contracts/ReferencedPaymentNonexistenceVerification.md
       - apis/smart-contracts/RevertErrorTracking.md
       - apis/smart-contracts/VoterWhitelister.md
       - apis/smart-contracts/VPContract.md
       - apis/smart-contracts/VPToken.md
       - apis/smart-contracts/WNat.md
+      - apis/smart-contracts/IAddressValidityVerification.md
+      - apis/smart-contracts/IBalanceDecreasingTransactionVerification.md
       - apis/smart-contracts/IClaimSetupManager.md
+      - apis/smart-contracts/IConfirmedBlockHeightExistsVerification.md
+      - apis/smart-contracts/IEVMTransactionVerification.md
       - apis/smart-contracts/IFlareContractRegistry.md
       - apis/smart-contracts/IFlareDaemonize.md
       - apis/smart-contracts/IFtso.md
@@ -311,7 +326,13 @@ nav:
       - apis/smart-contracts/IGovernanceSettings.md
       - apis/smart-contracts/IGovernanceVotePower.md
       - apis/smart-contracts/IInflationGenesis.md
+      - apis/smart-contracts/IMerkleRootStorage.md
+      - apis/smart-contracts/IPaymentVerification.md
+      - apis/smart-contracts/IPChainStakeMirror.md
+      - apis/smart-contracts/IPChainVotePower.md
       - apis/smart-contracts/IPriceSubmitter.md
+      - apis/smart-contracts/IReferencedPaymentNonexistenceVerification.md
+      - apis/smart-contracts/IStateConnector.md
       - apis/smart-contracts/IVoterWhitelister.md
       - apis/smart-contracts/IVPContractEvents.md
       - apis/smart-contracts/IVPToken.md
@@ -331,3 +352,18 @@ nav:
       - apis/smart-contracts/IIVoterWhitelister.md
       - apis/smart-contracts/IIVPContract.md
       - apis/smart-contracts/IIVPToken.md
+    - OpenAPI REST API:
+      - apis/REST/index.md
+      - apis/REST/attestation-client.md
+      - apis/REST/btcverifier.md
+      - apis/REST/dogeverifier.md
+      - apis/REST/evmverifier.md
+      - apis/REST/xrpverifier.md
+    - Attestation Types:
+      - apis/attestation-types/index.md
+      - apis/attestation-types/AddressValidity.md
+      - apis/attestation-types/BalanceDecreasingTransaction.md
+      - apis/attestation-types/ConfirmedBlockHeightExists.md
+      - apis/attestation-types/EVMTransaction.md
+      - apis/attestation-types/Payment.md
+      - apis/attestation-types/ReferencedPaymentNonexistence.md

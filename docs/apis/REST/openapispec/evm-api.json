@@ -1,0 +1,781 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/verifier/eth/EVMTransaction": {
+      "post": {
+        "operationId": "ETHEVMTransactionVerifierController_verify",
+        "summary": "",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_EVMTransaction_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/eth/EVMTransaction/prepareResponse": {
+      "post": {
+        "operationId": "ETHEVMTransactionVerifierController_prepareResponse",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_EVMTransaction_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/eth/EVMTransaction/mic": {
+      "post": {
+        "operationId": "ETHEVMTransactionVerifierController_mic",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status with message integrity code.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/eth/EVMTransaction/prepareRequest": {
+      "post": {
+        "operationId": "ETHEVMTransactionVerifierController_prepareRequest",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns encoded attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncodedRequestResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/flr/EVMTransaction": {
+      "post": {
+        "operationId": "FLREVMTransactionVerifierController_verify",
+        "summary": "",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_EVMTransaction_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/flr/EVMTransaction/prepareResponse": {
+      "post": {
+        "operationId": "FLREVMTransactionVerifierController_prepareResponse",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_EVMTransaction_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/flr/EVMTransaction/mic": {
+      "post": {
+        "operationId": "FLREVMTransactionVerifierController_mic",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status with message integrity code.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/flr/EVMTransaction/prepareRequest": {
+      "post": {
+        "operationId": "FLREVMTransactionVerifierController_prepareRequest",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns encoded attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncodedRequestResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/sgb/EVMTransaction": {
+      "post": {
+        "operationId": "SGBEVMTransactionVerifierController_verify",
+        "summary": "",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_EVMTransaction_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/sgb/EVMTransaction/prepareResponse": {
+      "post": {
+        "operationId": "SGBEVMTransactionVerifierController_prepareResponse",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_EVMTransaction_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/sgb/EVMTransaction/mic": {
+      "post": {
+        "operationId": "SGBEVMTransactionVerifierController_mic",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Retunrs attestation request status with message integrity code.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/sgb/EVMTransaction/prepareRequest": {
+      "post": {
+        "operationId": "SGBEVMTransactionVerifierController_prepareRequest",
+        "summary": "",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EVMTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns encoded attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncodedRequestResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "EVMTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Verifier server template",
+    "description": "The template to verifier server",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [
+    {
+      "url": "https://attestation-coston.aflabs.net"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "X-API-KEY": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    },
+    "schemas": {
+      "EncodedRequest": {
+        "type": "object",
+        "properties": {
+          "abiEncodedRequest": {
+            "type": "string",
+            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+          }
+        },
+        "required": [
+          "abiEncodedRequest"
+        ]
+      },
+      "EVMTransaction_RequestBody": {
+        "type": "object",
+        "properties": {
+          "transactionHash": {
+            "type": "string",
+            "description": "Hash of the transaction(transactionHash).",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "requiredConfirmations": {
+            "type": "string",
+            "description": "The height at which a block is considered confirmed by the requestor.",
+            "example": "123"
+          },
+          "provideInput": {
+            "type": "boolean",
+            "description": "If true, \"input\" field is included in the response.",
+            "example": true
+          },
+          "listEvents": {
+            "type": "boolean",
+            "description": "If true, events indicated by 'logIndices' are included in the response. Otherwise, no events are included in the response.",
+            "example": true
+          },
+          "logIndices": {
+            "description": "If listEvents is false, this should be an empty list, otherwise, the request is rejected. If listEvents is true, this is the list of indices (logIndex) of the events to be relayed (sorted by the requestor). The array should contain at most 50 indices. If empty, it indicates all events in order capped by 50.",
+            "example": [
+              "123"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "transactionHash",
+          "requiredConfirmations",
+          "provideInput",
+          "listEvents",
+          "logIndices"
+        ]
+      },
+      "EVMTransaction_Event": {
+        "type": "object",
+        "properties": {
+          "logIndex": {
+            "type": "string",
+            "description": "The consecutive number of the event in block.",
+            "example": "123"
+          },
+          "emitterAddress": {
+            "type": "string",
+            "description": "The address of the contract that emitted the event.",
+            "example": "0x5d4BEB38B6b71aaF6e30D0F9FeB6e21a7Ac40b3a"
+          },
+          "topics": {
+            "description": "An array of up to 4 32-byte strings of indexed log arguments. The first string is the signature of the event.",
+            "example": [
+              "0x0000000000000000000000000000000000000000000000000000000000000000"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data": {
+            "type": "string",
+            "description": "Concatenated 32-byte strings of non-indexed log arguments. At least 32 bytes long.",
+            "example": "0x1234abcd"
+          },
+          "removed": {
+            "type": "boolean",
+            "description": "It is true if log was removed due to a chain reorganization and false if it is a valid log.",
+            "example": true
+          }
+        },
+        "required": [
+          "logIndex",
+          "emitterAddress",
+          "topics",
+          "data",
+          "removed"
+        ]
+      },
+      "EVMTransaction_ResponseBody": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "string",
+            "description": "Number of the block in which the transaction is included.",
+            "example": "123"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Timestamp of the block in which the transaction is included.",
+            "example": "123"
+          },
+          "sourceAddress": {
+            "type": "string",
+            "description": "The address (from) that signed the transaction.",
+            "example": "0x5d4BEB38B6b71aaF6e30D0F9FeB6e21a7Ac40b3a"
+          },
+          "isDeployment": {
+            "type": "boolean",
+            "description": "Indicate whether it is a contract creation transaction.",
+            "example": true
+          },
+          "receivingAddress": {
+            "type": "string",
+            "description": "The address (to) of the receiver of the initial transaction. Zero address if 'isDeployment' is true.",
+            "example": "0x5d4BEB38B6b71aaF6e30D0F9FeB6e21a7Ac40b3a"
+          },
+          "value": {
+            "type": "string",
+            "description": "The value transferred by the initial transaction in wei.",
+            "example": "123"
+          },
+          "input": {
+            "type": "string",
+            "description": "If 'provideInput', this is the data send along with the initial transaction. Otherwise it is the default value '0x00'.",
+            "example": "0x1234abcd"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the transaction 1 - success, 0 - failure.",
+            "example": "123"
+          },
+          "events": {
+            "description": "If 'listEvents' is true, an array of the requested events. Sorted by the logIndex in the same order as 'logIndices'. Otherwise, an empty array.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EVMTransaction_Event"
+            }
+          }
+        },
+        "required": [
+          "blockNumber",
+          "timestamp",
+          "sourceAddress",
+          "isDeployment",
+          "receivingAddress",
+          "value",
+          "input",
+          "status",
+          "events"
+        ]
+      },
+      "EVMTransaction_Response": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x45564d5472616e73616374696f6e000000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "votingRound": {
+            "type": "string",
+            "description": "The id of the state connector round in which the request was considered.",
+            "example": "123"
+          },
+          "lowestUsedTimestamp": {
+            "type": "string",
+            "description": "The lowest timestamp used to generate the response.",
+            "example": "123"
+          },
+          "requestBody": {
+            "description": "Extracted from the request.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EVMTransaction_RequestBody"
+              }
+            ]
+          },
+          "responseBody": {
+            "description": "Data defining the response. The verification rules for the construction of the response body and the type are defined per specific 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EVMTransaction_ResponseBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "votingRound",
+          "lowestUsedTimestamp",
+          "requestBody",
+          "responseBody"
+        ]
+      },
+      "AttestationResponseDTO_EVMTransaction_Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/EVMTransaction_Response"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "EVMTransaction_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Attestation type id as defined for each attestation type on [this repo](https://gitlab.com/flarenetwork/state-connector-protocol/)",
+            "example": "0x45564d5472616e73616374696f6e000000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Id of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EVMTransaction_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "MicResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Verification status.",
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "messageIntegrityCode": {
+            "type": "string",
+            "description": "Message integrity code"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "EncodedRequestResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Verification status.",
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "abiEncodedRequest": {
+            "type": "string",
+            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      }
+    }
+  }
+}
