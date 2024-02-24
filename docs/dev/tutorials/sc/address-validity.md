@@ -9,9 +9,7 @@ In this tutorial, you will learn how to:
 * Use a smart contract to verify that the result returned by the attestation provider matches the result agreed upon by the State Connector.
 
 The diagram below shows the process that this tutorial follows.
-It closely matches the general process given in the
-[State Connector page](../../../tech/state-connector.md#procedure-overview),
-but the numbers have been changed to match the steps in this tutorial.
+It's the same process given in the [State Connector page](../../../tech/state-connector.md#procedure-overview), but the numbers have been changed to match the steps in this tutorial.
 
 <figure markdown>
   ![State Connector usage process](SC-basic-tutorial.png){ loading=lazy .allow-zoom }
@@ -43,8 +41,10 @@ The tutorial uses the following dependencies:
 
 * The [ethers](https://www.npmjs.com/package/ethers) package, which is also needed to work with smart contracts.
 
-```javascript linenums="20"
---8<-- "samples/sc/AddressValidity.js:20:24"
+* The `utils.js` file, which provides auxiliary functions that simplify working with the State Connector.
+
+```javascript linenums="19"
+--8<-- "samples/sc/AddressValidity.js:19:23"
 ```
 
 The Periphery Package simplifies working with the Flare smart contracts significantly.
@@ -57,35 +57,36 @@ The [Getting Started](../../getting-started/setup/index.md) guides explain how t
     For simplicity, this tutorial hard-codes the private key of the wallet being used in the `TEST_PRIVATE_KEY` variable.
 
     ```javascript linenums="8"
-    --8<-- "samples/sc/AddressValidity.js:8:8"
+    --8<-- "samples/sc/AddressValidity.js:8:9"
     ```
 
     In a production setting, the private key should be retrieved from an external source (such as a [`.env` file](https://www.npmjs.com/package/dotenv)) and NOT embedded directly in the code.
 
 ### 2. Prepare Attestation Request
 
-Requests to the SC must be extremely specific. For example, to request proof of the existence of a given transaction, the transaction ID is not enough: the block and block timestamp where the transaction was included must also be given.
+Requests to the SC must be extremely specific. For example, to request proof of the existence of a given transaction, the transaction ID is not enough: the block number and block timestamp where the transaction was included must also be given.
 Furthermore, requests must be encoded into a hex string before being submitted to the SC.
 
 You can perform all these operations yourself, but, as a convenience, attestation providers can prepare requests for you, filling in all missing information and taking care of formatting.
 
-The attestation type chosen for this tutorial, `AddressValidity`, is the simplest one and does not require additional information besides the address being validated. However, it is still a good example of the process.
+The attestation type chosen for this tutorial, `AddressValidity`, is the simplest one and does not require additional information besides the address being validated.
+However, it is still a good example of the process.
 
-To prepare a request using an Attestation Provider, we begin with a raw attestation request:
+To prepare a request using an Attestation Provider, begin with a raw attestation request:
 
 ```javascript linenums="28"
---8<-- "samples/sc/AddressValidity.js:28:34"
+--8<-- "samples/sc/AddressValidity.js:28:35"
 ```
 
 Then obtain an encoded attestation request:
 
-```javascript linenums="39"
---8<-- "samples/sc/AddressValidity.js:39:46"
+```javascript linenums="43"
+--8<-- "samples/sc/AddressValidity.js:43:51"
 ```
 
 This encoded request is what will be submitted to the SC.
 
-Note that attestation providers will typically be paid services and require an API key to be used.
+Note that attestation providers are typically paid services and require an API key to be used.
 Flare offers free-to-use APs for testing. These are rate-limited and not suitable for production.
 
 ### 3. Access the Contract Registry
@@ -95,7 +96,7 @@ The [`FlareContractRegistry`](FlareContractRegistry.md) contains the current add
 Its address is the same on all of [Flare's networks](../../../tech/flare.md#flare-networks), and it is the only Flare address that needs to be hard-coded into any program.
 
 ```javascript linenums="62"
---8<-- "samples/sc/AddressValidity.js:62:67"
+--8<-- "samples/sc/AddressValidity.js:62:66"
 ```
 
 ### 4. Retrieve the State Connector Contract Address
@@ -103,28 +104,30 @@ Its address is the same on all of [Flare's networks](../../../tech/flare.md#flar
 Retrieve the State Connector's address from the `FlareContractRegistry`.
 
 ```javascript linenums="69"
---8<-- "samples/sc/AddressValidity.js:69:76"
+--8<-- "samples/sc/AddressValidity.js:69:75"
 ```
 
-Note that we are using the Coston testnet here rather than the main Flare Network.
+Note that this tutorial uses the Coston testnet here rather than the main Flare Network.
 
 ### 5. Request Attestation from the State Connector Contract
 
-Now we request an attestation from the SC.
+Now, request an attestation from the SC contract by sending the encoded attestation request to it and note the returned transaction ID in `attestationTx`.
 
-We retrieve the result of the transaction to the `result` object and store info regarding the relevant block in `block`.
+Wait for the transaction to be confirmed and obtain a receipt in the `receipt` object.
 
-```javascript linenums="78"
---8<-- "samples/sc/AddressValidity.js:78:84"
+Retrieve the block where the transaction was accepted from the confirmation receipt in the `block` object.
+
+```javascript linenums="79"
+--8<-- "samples/sc/AddressValidity.js:79:83"
 ```
 
 ### 6. Calculate Round ID
 
-Now we need to determine the attestation round ID where our request was accepted (`submissionRoundID`). This calculation is based on the timestamp of the block where the transaction was included and ensures that our proof is anchored to a confirmed round.
-This is needed to maintain the validity of our proof.
+Now, determine the attestation round ID where the request was accepted (`submissionRoundID`).
+This calculation is based on the timestamp of the block where the transaction was included and will be reuired later to retrieve the proof, once it is available."
 
 ```javascript linenums="86"
---8<-- "samples/sc/AddressValidity.js:86:91"
+--8<-- "samples/sc/AddressValidity.js:86:90"
 ```
 
 !!! tip
@@ -133,53 +136,65 @@ This is needed to maintain the validity of our proof.
 
 ### 7. Wait for the Attestation Round to Finalize
 
-Here, we wait for the attestation round to be finalized on the Flare Network to ensure that our attestation request is processed and included in a finalized round (i.e. block).
-This is done to sync our process with Flare Network's round finalization, maintaining the validity of our proof.
-
-**Round Finalization** occurs when a round is confirmed and accepted by the network as an immutable part of the blockchain’s history.
-
-To this end, after submitting the attestation request, we monitor the network until our request is confirmed. This is done by continuously polling and comparing the State Connector's last finalized round (`StateConnector.lastFinalizedRoundID`) with our submission round (`submissionRoundID`) until there's a match, indicating that our proof has been included in a finalized block.
+Attestation rounds happen in 4 90-second phases (6 minutes in total), known as the Collect-Choose-Commit-Reveal (CCCR) phases.
+However, the request might have been submitted at any time during the **Collect phase**, so the results might be available earlier than 6 minutes.
+For this reason, the State Connector's last finalized round (`StateConnector.lastFinalizedRoundID`) is continuosly polled so that results are obtained as soon as they are available.
 
 ```javascript linenums="95"
---8<-- "samples/sc/AddressValidity.js:95:108"
+--8<-- "samples/sc/AddressValidity.js:95:107"
 ```
-
-!!! warning
-
-    Proofs are kept on-chain for just a week.
-    After this period, the proofs will no longer be accessible, so timely verification is crucial.
 
 !!! note
 
-    The request usually takes anywhere from 3 minutes (180 seconds) to 6 minutes (360 seconds) to be confirmed, which is why we poll `StateConnector.lastFinalizedRoundID` every 10 seconds.
-    You may choose to get rid of the polling (`setTimeout`) and just wait for the maximum amount of time.
+    Proofs are kept on-chain for just a week.
+    After this period, the proofs will no longer be accessible.
+
+    The amount of time you need to wait depends on the moment within the
+    [Collect phase](../../../tech/state-connector.md#overlapped-cccr-protocol)
+    where the request was performed, and it can range from 3 phases (270s) to 4 phases (360s).
+    Polling every 10 seconds is a good tradeoff to minimize the waiting time, but you can choose to always wait the maximum amount of time (360s), or even wait the minimum amount (270s)
+    and then poll.
 
 ### 8. Retrieve Proof
 
-Now we obtain the full proof (which should now be available) from the attestation provider for our submission round (`submissionRoundID`). This proof (Attestation Proof) includes valid answers to our request and all other requests made during the same attestation round, encoded in a single Merkle root. This is essential for verifying the validity of our attestation.
+Obtain the full proof (which should now be available) from the attestation provider for the submission round (`submissionRoundID`).
+This full proof (Attestation Proof) provides the proofs for a potentially unlimited number of requests (including yours) made during the same attestation round, encoded in a single hash (Merkle root).
+So to check whether this hash validates your request or not, you need to rebuld the Merkle tree.
 
-After constructing our `proofRequest` and making a `POST` request to our `ATTESTATION_ENDPOINT`, we receive our proof as a response. Notably, the proof object's Merkle proof (`proof.data.merkleProof`) property consists of one or more Merkle nodes (hashes) that collectively prove the inclusion of our request in the attestation round.
+After constructing a `proofRequest`, you make a `POST` request to the `ATTESTATION_ENDPOINT` which returns the full proof as a response.
+Notably, the proof object's Merkle proof (`proof.data.merkleProof`) property consists of one or more Merkle nodes (hashes).
+If the tree is rebuilt using these nodes and the root hash matches the agreed upon value stored in the SC, it means that the proof is correct and the answer can be trusted.
+You can use a Verifier smart contract for this instead of handling it by yourself, as shown in the next step.
 
 ```javascript linenums="110"
---8<-- "samples/sc/AddressValidity.js:110:130"
+--8<-- "samples/sc/AddressValidity.js:110:124"
 ```
 
 ### 9. Send Proof to Verifier Contract
 
-Now we send the proof to an `addressVerifier` smart contract for verification. This smart contract verifies whether our request is valid or not by comparing our proof to the Merkle root stored in the SC smart contract.
+Now send the proof to an `addressVerifier` smart contract for verification.
+This smart contract verifies the request by rebuilding the Merkle tree using the hashes returned in the `proof.data.merkleProof` object and comparing them to the Merkle root stored in the SC smart contract.
 
-In this tutorial, we used the [`IAddressValidityVerification`](https://coston-explorer.flare.network/address/0x6493D7c0e4d81a73873067d14dfBFfaade072c5a/contracts#address-tabs) smart contract but most apps use their own smart contracts for this verification.
+In this tutorial, you used the [`IAddressValidityVerification`](IAddressValidityVerification.md) smart contract but Dapps can embed the same logic into their own smart contracts.
 
-```javascript linenums="132"
---8<-- "samples/sc/AddressValidity.js:132:146"
+```javascript linenums="133"
+--8<-- "samples/sc/AddressValidity.js:133:149"
 ```
 
 ### 10. Check if the Address is Valid
 
-Finally, we check if our address is valid or invalid according to the attestation providers, given that our request was found to be valid. Meaning if our attestation request has been verified by our `addressVerifier` smart contract (represented by the `isVerified` variable), we then check whether or not the address provided is a valid one (represented by `isValid`).
+Finally, check if the address is valid or invalid according to the attestation providers, given that your attestation has been verified.
+Here's how this works:
 
-```javascript linenums="155"
---8<-- "samples/sc/AddressValidity.js:155:168"
+* `verified` tells you whether the attestation has been successfully verified.
+    If it is `false`, there is no need to look further, since the attestation provider is
+    probably lying and its results cannot be trusted. You need to perform the request
+    again.
+* If `verified` is `true`, then you can look at the actual result of your request, in the
+    [`isValid`](IAddressValidityVerification.md#response-body?) field of `fullProof.data.responseBody`. If this is `true`, then your address is valid.
+
+```javascript linenums="153"
+--8<-- "samples/sc/AddressValidity.js:153:164"
 ```
 
 </div>
@@ -190,13 +205,13 @@ This tutorial has shown how to:
 
 * Make a query to the State Connector smart contract using `stateConnector.requestAttestations()`.
 * Get the result from an attestation provider (AP) by making a `POST` request to the provider's API endpoint (`ATTESTATION_ENDPOINT`).
-* Use a smart contract (`IAddressValidityVerification`) to verify that the result returned by the attestation provider (`proof`) matches the result agreed upon by the State Connector (`isVerified` is true is a match is found).
+* Use a smart contract ([`IAddressValidityVerification`](IAddressValidityVerification.md)) to verify that the result returned by the attestation provider (`proof`) matches the result agreed upon by the State Connector (`isVerified` is true is a match is found).
 
 The State Connector can be used for a host of other things beyond just verifying address correctness.
 The attestation type of the request selects the type of information you want.
 
-```javascript linenums="31"
---8<-- "samples/sc/AddressValidity.js:31:31"
+```javascript linenums="30"
+--8<-- "samples/sc/AddressValidity.js:30:30"
 ```
 
 Other attestation types include:
