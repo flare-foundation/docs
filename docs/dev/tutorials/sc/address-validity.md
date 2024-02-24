@@ -57,7 +57,7 @@ The [Getting Started](../../getting-started/setup/index.md) guides explain how t
     For simplicity, this tutorial hard-codes the private key of the wallet being used in the `TEST_PRIVATE_KEY` variable.
 
     ```javascript linenums="8"
-    --8<-- "samples/sc/AddressValidity.js:8:9"
+    --8<-- "samples/sc/AddressValidity.js:8:8"
     ```
 
     In a production setting, the private key should be retrieved from an external source (such as a [`.env` file](https://www.npmjs.com/package/dotenv)) and NOT embedded directly in the code.
@@ -175,7 +175,7 @@ You can use a Verifier smart contract for this instead of handling it by yoursel
 Now send the proof to an `addressVerifier` smart contract for verification.
 This smart contract verifies the request by rebuilding the Merkle tree using the hashes returned in the `proof.data.merkleProof` object and comparing them to the Merkle root stored in the SC smart contract.
 
-In this tutorial, you used the [`IAddressValidityVerification`](IAddressValidityVerification.md) smart contract but Dapps can embed the same logic into their own smart contracts.
+In this tutorial, you used the [`IAddressValidityVerification`](IAddressValidityVerification.md) smart contract but dapps can embed the same logic into their own smart contracts.
 
 ```javascript linenums="133"
 --8<-- "samples/sc/AddressValidity.js:133:149"

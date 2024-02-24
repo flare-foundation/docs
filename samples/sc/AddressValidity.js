@@ -5,8 +5,7 @@ const ATTESTATION_PROVIDER_API_KEY = "123456";
 
 // You should get your private keys from an external source.
 // DO NOT embed them in source code in a production environment!
-const TEST_PRIVATE_KEY =
-  "0x6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
+const TEST_PRIVATE_KEY = "0x6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
 
 async function AddressValidity_run(network, addressToValidate) {
   const VERIFICATION_ENDPOINT =
@@ -141,8 +140,6 @@ async function AddressValidity_run(network, addressToValidate) {
         }
     };
 
-    const { isValid } = fullProof.data.responseBody;
-
     console.log("Sending the proof for verification...");
     const addressVerifier = new ethers.Contract(
       flare.nameToAddress("IAddressValidityVerification", "coston"),
@@ -154,7 +151,8 @@ async function AddressValidity_run(network, addressToValidate) {
 
     // 10. Check if Address is Valid
     if (isVerified) {
-      console.log(
+    const { isValid } = fullProof.data.responseBody;
+    console.log(
         isValid
           ? "Attestation providers agree that the address is valid."
           : "Attestation providers agree that the address is invalid."
