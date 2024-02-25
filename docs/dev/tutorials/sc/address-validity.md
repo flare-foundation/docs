@@ -50,8 +50,8 @@ The tutorial uses the following dependencies:
 The Periphery Package simplifies working with the Flare smart contracts significantly.
 If you remove this dependency, you must manually provide the signatures for all the methods you want to use.
 
-This tutorial needs to send transactions on the Coston2 test network, so an account with enough `$C2FLR` tokens to pay for gas is required.
-The [Getting Started](../../getting-started/setup/index.md) guides explain how to configure your wallet and get test tokens from the [faucet](https://faucet.flare.network/coston2).
+This tutorial needs to send transactions on the Coston test network, so an account with enough `$CFLR` tokens to pay for gas is required.
+The [Getting Started](../../getting-started/setup/index.md) guides explain how to configure your wallet and get test tokens from the [faucet](https://faucet.flare.network/coston).
 
 !!! warning
     For simplicity, this tutorial hard-codes the private key of the wallet being used in the `TEST_PRIVATE_KEY` variable.
