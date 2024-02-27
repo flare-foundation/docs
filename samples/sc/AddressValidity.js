@@ -5,13 +5,14 @@ const ATTESTATION_PROVIDER_API_KEY = "123456";
 
 // You should get your private keys from an external source.
 // DO NOT embed them in source code in a production environment!
-const TEST_PRIVATE_KEY = "0x6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
+const TEST_PRIVATE_KEY =
+  "0x6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
 
 async function AddressValidity_run(network, addressToValidate) {
-  const VERIFICATION_ENDPOINT =
+  const PREPARE_REQUEST_ENDPOINT =
     `${ATTESTATION_PROVIDER_URL}/verifier/${network.toLowerCase()}` +
     `/AddressValidity/prepareRequest`;
-  const ATTESTATION_ENDPOINT =
+  const RETRIEVE_PROOF_ENDPOINT =
     `${ATTESTATION_PROVIDER_URL}/attestation-client/api/proof/` +
     `get-specific-proof`;
 
@@ -40,7 +41,7 @@ async function AddressValidity_run(network, addressToValidate) {
   );
   console.log("Request:", rawAttestationRequest);
 
-  const verifierResponse = await fetch(VERIFICATION_ENDPOINT, {
+  const verifierResponse = await fetch(PREPARE_REQUEST_ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -113,7 +114,7 @@ async function AddressValidity_run(network, addressToValidate) {
     };
 
     console.log("Retrieving proof from attestation provider...");
-    const providerResponse = await fetch(ATTESTATION_ENDPOINT, {
+    const providerResponse = await fetch(RETRIEVE_PROOF_ENDPOINT, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -131,13 +132,13 @@ async function AddressValidity_run(network, addressToValidate) {
     // 9. Send Proof to Verifier Contract
     // Unpacked attestation proof to be used in a Solidity contract.
     const fullProof = {
-        merkleProof: proof.data.merkleProof,
-        data: {
-            ...proof.data,
-            ...proof.data.request,
-            ...proof.data.response,
-            status: proof.status,
-        }
+      merkleProof: proof.data.merkleProof,
+      data: {
+        ...proof.data,
+        ...proof.data.request,
+        ...proof.data.response,
+        status: proof.status,
+      },
     };
 
     console.log("Sending the proof for verification...");
@@ -146,13 +147,15 @@ async function AddressValidity_run(network, addressToValidate) {
       flare.nameToAbi("IAddressValidityVerification", "coston").data,
       signer
     );
-    const isVerified = await addressVerifier.verifyAddressValidity(fullProof);
+    const isVerified = await addressVerifier.verifyAddressValidity(
+      fullProof
+    );
     console.log("  Attestation result:", isVerified);
 
     // 10. Check if Address is Valid
     if (isVerified) {
-    const { isValid } = fullProof.data.responseBody;
-    console.log(
+      const { isValid } = fullProof.data.responseBody;
+      console.log(
         isValid
           ? "Attestation providers agree that the address is valid."
           : "Attestation providers agree that the address is invalid."
