@@ -248,4 +248,4 @@ More attestation types are to be added in the future, subject to community appro
 Also, recall that the [`AddressValidity`](../../../apis/attestation-types/AddressValidity.md) attestation type used in this tutorial is the simplest one to use as it does not require accessing any connected networks.
 Other attestation types do, however, and so tend to be more complex to use.
 
-See the [state-connector-attestation-types repository](../../../apis/attestation-types/index.md) for more information on other attestation types.
+See the [state connector attestation types](../../../apis/attestation-types/index.md) for more information on other attestation types.
