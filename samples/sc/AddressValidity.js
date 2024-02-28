@@ -66,7 +66,7 @@ async function AddressValidity_run(network, addressToValidate) {
     provider
   );
 
-  // 4. Retrieve the State Connector Contract Address
+  // 4. Retrieve State Connector Contract Address
   const stateConnectorAddress =
     await flareContractRegistry.getContractAddressByName("StateConnector");
   const stateConnector = new ethers.Contract(
@@ -75,7 +75,7 @@ async function AddressValidity_run(network, addressToValidate) {
     signer
   );
 
-  // 5. Request Attestation from the State Connector Contract
+  // 5. Request Attestation from State Connector Contract
   console.log("Submitting attestation to State Connector...");
   const attestationTx = await stateConnector.requestAttestations(
     encodedAttestationRequest.abiEncodedRequest
@@ -92,7 +92,7 @@ async function AddressValidity_run(network, addressToValidate) {
 
   console.log("  Attestation submitted in round", submissionRoundID);
 
-  // 7. Wait for the Attestation Round to Finalize
+  // 7. Wait for Attestation Round to Finalize
   var prevFinalizedRoundID = 0;
   setTimeout(async function poll() {
     const lastFinalizedRoundID = Number(
