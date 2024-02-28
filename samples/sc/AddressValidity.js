@@ -16,7 +16,7 @@ async function AddressValidity_run(network, addressToValidate) {
     `${ATTESTATION_PROVIDER_URL}/attestation-client/api/proof/` +
     `get-specific-proof`;
 
-  // 1. Setup
+  // 1. Set up
   const ethers = await import("ethers");
   const flare = await import(FLARE_PACKAGE);
   const utils = await import(
@@ -59,7 +59,7 @@ async function AddressValidity_run(network, addressToValidate) {
     encodedAttestationRequest.abiEncodedRequest
   );
 
-  // 3. Access the Contract Registry
+  // 3. Access Contract Registry
   const flareContractRegistry = new ethers.Contract(
     "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
     flare.nameToAbi("FlareContractRegistry", "coston").data,

@@ -1,6 +1,6 @@
 # State Connector Tutorials
 
-These code samples and explanations show how to use the [State Connector](../../../tech/state-connector.md).
+These tutorials contain code samples and explanations that show how to use the [State Connector](../../../tech/state-connector.md).
 
 ## Tutorials
 
