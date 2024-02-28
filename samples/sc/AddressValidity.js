@@ -9,10 +9,10 @@ const TEST_PRIVATE_KEY =
   "0x6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
 
 async function AddressValidity_run(network, addressToValidate) {
-  const PREPARE_REQUEST_ENDPOINT =
+  const VERIFICATION_ENDPOINT =
     `${ATTESTATION_PROVIDER_URL}/verifier/${network.toLowerCase()}` +
     `/AddressValidity/prepareRequest`;
-  const RETRIEVE_PROOF_ENDPOINT =
+  const ATTESTATION_ENDPOINT =
     `${ATTESTATION_PROVIDER_URL}/attestation-client/api/proof/` +
     `get-specific-proof`;
 
@@ -41,7 +41,7 @@ async function AddressValidity_run(network, addressToValidate) {
   );
   console.log("Request:", rawAttestationRequest);
 
-  const verifierResponse = await fetch(PREPARE_REQUEST_ENDPOINT, {
+  const verifierResponse = await fetch(VERIFICATION_ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -66,7 +66,7 @@ async function AddressValidity_run(network, addressToValidate) {
     provider
   );
 
-  // 4. Retrieve State Connector Contract Address
+  // 4. Retrieve the State Connector Contract Address
   const stateConnectorAddress =
     await flareContractRegistry.getContractAddressByName("StateConnector");
   const stateConnector = new ethers.Contract(
@@ -75,7 +75,7 @@ async function AddressValidity_run(network, addressToValidate) {
     signer
   );
 
-  // 5. Request Attestation from State Connector Contract
+  // 5. Request Attestation from the State Connector Contract
   console.log("Submitting attestation to State Connector...");
   const attestationTx = await stateConnector.requestAttestations(
     encodedAttestationRequest.abiEncodedRequest
@@ -92,7 +92,7 @@ async function AddressValidity_run(network, addressToValidate) {
 
   console.log("  Attestation submitted in round", submissionRoundID);
 
-  // 7. Wait for Attestation Round to Finalize
+  // 7. Wait for the Attestation Round to Finalize
   var prevFinalizedRoundID = 0;
   setTimeout(async function poll() {
     const lastFinalizedRoundID = Number(
@@ -114,7 +114,7 @@ async function AddressValidity_run(network, addressToValidate) {
     };
 
     console.log("Retrieving proof from attestation provider...");
-    const providerResponse = await fetch(RETRIEVE_PROOF_ENDPOINT, {
+    const providerResponse = await fetch(ATTESTATION_ENDPOINT, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -132,14 +132,16 @@ async function AddressValidity_run(network, addressToValidate) {
     // 9. Send Proof to Verifier Contract
     // Unpacked attestation proof to be used in a Solidity contract.
     const fullProof = {
-      merkleProof: proof.data.merkleProof,
-      data: {
-        ...proof.data,
-        ...proof.data.request,
-        ...proof.data.response,
-        status: proof.status,
-      },
+        merkleProof: proof.data.merkleProof,
+        data: {
+            ...proof.data,
+            ...proof.data.request,
+            ...proof.data.response,
+            status: proof.status,
+        }
     };
+
+    const { isValid } = fullProof.data.responseBody;
 
     console.log("Sending the proof for verification...");
     const addressVerifier = new ethers.Contract(
@@ -147,14 +149,11 @@ async function AddressValidity_run(network, addressToValidate) {
       flare.nameToAbi("IAddressValidityVerification", "coston").data,
       signer
     );
-    const isVerified = await addressVerifier.verifyAddressValidity(
-      fullProof
-    );
+    const isVerified = await addressVerifier.verifyAddressValidity(fullProof);
     console.log("  Attestation result:", isVerified);
 
     // 10. Check if Address is Valid
     if (isVerified) {
-      const { isValid } = fullProof.data.responseBody;
       console.log(
         isValid
           ? "Attestation providers agree that the address is valid."
