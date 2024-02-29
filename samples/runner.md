@@ -56,8 +56,8 @@ async function {{filename | replace('-', '_')}}_runner() {
 <summary>Run in browser</summary>
 {% for param in params -%}
 <label for="{{param.name}}">{{param.name}}:</label>
-<input type="text" id="{{param.name}}" name="{{param.name}}" value="{{param.value}}">
-{% endfor %}
+<input type="text" id="{{param.name}}" name="{{param.name}}" value="{{param.value}}"/>
+{%- endfor %}
 {% if requiresWallet == 'true' -%}
 <script src="/assets/javascripts/connect_wallet.js"></script>
 <p>This tutorial requires an account to sign transactions.
@@ -67,7 +67,6 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
 <button class="md-button" id="{{filename}}-run" onclick="{{filename | replace('-', '_')}}_runner();">Run</button>
 ``` { #{{filename}}-output }
 ```
-</details>
 <script type="importmap">
   { "imports": {
       "ethers": "/assets/javascripts/ethers-6.3.esm.min.js",
@@ -76,6 +75,7 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
   } }
 </script>
 {% endif %}
+</details>
 {% endmacro %}
 
 {% macro sol(folder, filename) %}
