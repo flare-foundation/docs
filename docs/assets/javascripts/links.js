@@ -33,16 +33,20 @@ async function checkIframeLoaded(path) {
     if (iframe && iframe.contentWindow) {
       if (iframe.contentWindow.document.readyState === "complete") {
         var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        var element = await waitFor(() => iframeDoc.getElementById(path));
+        var element = await waitFor(() => iframeDoc.querySelector(`[id='${path}']`));
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               console.log("Element is visible");
+              // Add class to highlight the element
+              element.classList.add('highlight-swagger-operation');
+              // Attempt to simulate a click to expand the operation, if possible
+              element.querySelector('.opblock-summary-control').click();
               observer.disconnect();
             } else {
               element.scrollIntoView({
-                behavior: "auto",
+                behavior: "smooth",
                 block: "center",
                 inline: "nearest",
               });
@@ -58,6 +62,7 @@ async function checkIframeLoaded(path) {
     console.log(error.message);
   }
 }
+
 
 window.onload = function () {
   const queryString = window.location.search;
