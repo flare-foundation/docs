@@ -149,7 +149,8 @@ async function AddressValidity_run(network, addressToValidate) {
       flare.nameToAbi("IAddressValidityVerification", "coston").data,
       signer
     );
-    const isVerified = await addressVerifier.verifyAddressValidity(fullProof);
+    const isVerified =
+      await addressVerifier.verifyAddressValidity(fullProof);
     console.log("  Attestation result:", isVerified);
 
     // 10. Check if Address is Valid

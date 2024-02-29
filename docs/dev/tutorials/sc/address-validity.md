@@ -5,7 +5,7 @@ This tutorial shows basic use of the [State Connector](../../../tech/state-conne
 In this tutorial, you will learn how to:
 
 * Make a query to the State Connector smart contract.
-* Get the result from an attestation provider (AP).
+* Get the result from an attestation provider.
 * Use a smart contract to verify that the result returned by the attestation provider matches the result agreed upon by the State Connector.
 
 The diagram below shows the process that this tutorial follows.
@@ -18,7 +18,7 @@ Arrows that match one of the steps in the tutorial are numbered.
 
 ## Code
 
-Choose your preferred programming language and ensure you have a working [development environment](../../getting-started/setup/index.md).
+Ensure you have a working [development environment](../../getting-started/setup/index.md).
 
 For easy navigation, numbered comments in the source code (as in `// 1.`) link to the tutorial sections below.
 
@@ -72,7 +72,7 @@ You can perform all these operations yourself, but, as a convenience, attestatio
 The attestation type chosen for this tutorial, [`AddressValidity`](AddressValidity.md), is the simplest one and requires only the address to be validated.
 However, it is still a good example of the process.
 
-To prepare a request using an Attestation Provider, we begin with a raw attestation request:
+To prepare a request using an Attestation Provider, begin with a raw attestation request:
 
 ```javascript linenums="29"
 --8<-- "samples/sc/AddressValidity.js:29:36"
@@ -191,10 +191,10 @@ If your request was valid, i.e., if the provided address was a valid Bitcoin add
 
 You need to construct a `proofRequest` and make a `POST` request to the [`get-specific-proof`](../../../apis/REST/btcverifier.md) endpoint of the attestation provider.
 
-Doing so returns a full proof, containing, among other things, a Merkle proof consisting of one or more nodes (hashes).
+Doing so returns, among other things, a Merkle proof consisting of one or more nodes (hashes).
 If the Merkle tree is rebuilt using these nodes plus the hash of your request, and the resulting root hash matches the agreed-upon value stored in the State Connector, it means that the proof can be trusted.
 
-You can perform these operations yourself or you can use a Verifier smart contract, as shown in the next step.
+You can perform these operations yourself or you can use a verifier smart contract, as shown in the next step.
 
 The received proof already contains a field, `proof.data.responseBody.isValid`, which indicates whether this particular attestation provider believes the queried address to be valid or not.
 But this result cannot be trusted until you verify that it matches what the rest of attestation providers submitted, as explained next.
@@ -205,8 +205,10 @@ Send the proof to the [`AddressValidityVerification`](AddressValidityVerificatio
 This smart contract verifies the request by rebuilding the Merkle root using the hashes contained in the `proof.data.merkleProof` object and comparing it to the Merkle root stored in the State Connector.
 
 ```javascript linenums="134"
---8<-- "samples/sc/AddressValidity.js:134:152"
+--8<-- "samples/sc/AddressValidity.js:134:153"
 ```
+
+`isVerified` contains the result of the verification, analyzed next.
 
 !!! note
     This tutorial uses a verification contract provided by Flare, but dapps can embed the same logic into their own smart contracts if they wish to.
@@ -222,8 +224,8 @@ In this case, you need to make the request again, ideally through a different pr
 If `isVerified` is `true`, then you can look at the actual result of your request in the [`isValid`](AddressValidity.md#response-body) field of `fullProof.data.responseBody` obtained in [step 8](#8-retrieve-proof).
 If this value is `true` too, then the queried address is valid.
 
-```javascript linenums="156"
---8<-- "samples/sc/AddressValidity.js:156:166"
+```javascript linenums="157"
+--8<-- "samples/sc/AddressValidity.js:157:167"
 ```
 
 </div>
