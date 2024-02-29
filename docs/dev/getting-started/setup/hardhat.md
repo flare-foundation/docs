@@ -10,7 +10,7 @@ This article, partially based on the [Hardhat documentation](https://hardhat.org
 ### 1. Set up the Environment
 
 !!! warning
-    
+
     If you are using Windows, Hardhat strongly [recommends](https://hardhat.org/tutorial/setting-up-the-environment#windows) to use [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/about).
 
 Install the following dependencies:
@@ -184,6 +184,16 @@ You should get:
 ### 6. Deploy the Contract
 
 Now, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using a Hardhat script from the `scripts` folder.
+
+!!! warning
+
+    Before proceeding with Deployment:
+
+    * Make sure that you have added and selected the Coston2 test network to your Wallet.
+      The [Wallets section](../../../user/wallets/index.md) shows how to do it.
+      Use the values for Coston2 that you will find in the [Network Configurations](../../reference/network-config.md) page.
+    * Ensure that you have enough Coston2 native tokens `$C2FLR` to pay for gas.
+      Visit the [Coston2 Faucet](https://faucet.flare.network/coston2) to request some `$C2FLR`.
 
 Run this command at the root of the project:
 
