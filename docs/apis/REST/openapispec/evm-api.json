@@ -19,7 +19,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation requests.",
+            "description": "Returns the validity status of the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -57,7 +57,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status.",
+            "description": "Returns <a href=\"https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/active-types/EVMTransaction.md#response-body\"> response body </a>",
             "content": {
               "application/json": {
                 "schema": {
@@ -95,7 +95,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code.",
+            "description": "Returns the validity status and the message integrity code for the submitted attestation request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -133,7 +133,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request.",
+            "description": "Returns the validity status and the request encoded according to the ABI specification.",
             "content": {
               "application/json": {
                 "schema": {
@@ -171,7 +171,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation requests.",
+            "description": "Returns the validity status of the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -209,7 +209,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status.",
+            "description": "Returns the validity status of the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -247,7 +247,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code.",
+            "description": "Validation status and the message integrity code for the submitted attestation request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -285,7 +285,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request.",
+            "description": "Validation status and the request encoded according to the ABI specification.",
             "content": {
               "application/json": {
                 "schema": {
@@ -323,7 +323,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status.",
+            "description": "Returns the validity status of the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -361,7 +361,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status.",
+            "description": "Returns the validity status of the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -399,7 +399,7 @@
         },
         "responses": {
           "200": {
-            "description": "Retunrs attestation request status with message integrity code.",
+            "description": "Returns the validity status and the message integrity code for the submitted attestation request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -437,7 +437,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request.",
+            "description": "Returns the validity status and the request encoded according to the ABI specification.",
             "content": {
               "application/json": {
                 "schema": {
@@ -716,11 +716,11 @@
           },
           "sourceId": {
             "type": "string",
-            "description": "Id of the data source.",
+            "description": "The ID of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/EVMTransaction_RequestBody"
@@ -769,7 +769,7 @@
           },
           "abiEncodedRequest": {
             "type": "string",
-            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+            "description": "ABI-encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
           }
         },
         "required": [

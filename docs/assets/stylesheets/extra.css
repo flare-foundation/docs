@@ -37,7 +37,6 @@
     --md-code-hl-name-color: var(--md-code-fg-color);
     --md-code-hl-generic-color: var(--md-default-fg-color--light);
     --md-code-hl-variable-color: var(--md-default-fg-color--light);
-    --md-typeset-mark-color: yellow;
     iframe {
         filter: invert(1) hue-rotate(180deg);
     }

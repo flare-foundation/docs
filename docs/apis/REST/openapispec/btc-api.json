@@ -3,60 +3,12 @@
   "paths": {
     "/verifier/btc/api/indexer/state": {
       "get": {
-        "description": "Requests for indexer state.",
+        "description": "Gets the state of the Bitcoin indexer.",
         "operationId": "BTCIndexerController_indexerState",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Returns the indexer state.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "description": "Response status.",
-                      "example": "OK"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "indexedBlockRange": {
-                          "type": "object",
-                          "properties": {
-                            "first": {
-                              "type": "number",
-                              "description": "First block number."
-                            },
-                            "last": {
-                              "type": "number",
-                              "description": "Last block number."
-                            }
-                          }
-                        },
-                        "tipHeights": {
-                          "type": "number",
-                          "example": 2578025,
-                          "description": "Height of block number."
-                        },
-                        "lastTipUpdateTimestamp": {
-                          "type": "number",
-                          "example": 1707842143
-                        },
-                        "lastTailUpdateTimestamp": {
-                          "type": "number",
-                          "example": 1707505998
-                        },
-                        "state": {
-                          "type": "string",
-                          "example": "running"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            "description": "The state of the Bitcoin indexer."
           }
         },
         "tags": [
@@ -71,12 +23,12 @@
     },
     "/verifier/btc/api/indexer/block-range": {
       "get": {
-        "description": "Requests for indexer block range.",
+        "description": "Gets the range of available confirmed blocks in the indexer database.",
         "operationId": "BTCIndexerController_blockRange",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Returns indexer block range.",
+            "description": "Range of available confirmed blocks.",
             "content": {
               "application/json": {
                 "schema": {
@@ -84,7 +36,6 @@
                   "properties": {
                     "status": {
                       "type": "string",
-                      "description": "Status of the response.",
                       "example": "OK"
                     },
                     "data": {
@@ -92,12 +43,12 @@
                       "properties": {
                         "first": {
                           "type": "number",
-                          "description": "First block number.",
+                          "description": "The number of the first block in the range.",
                           "example": 5706001
                         },
                         "last": {
                           "type": "number",
-                          "description": "Last block number.",
+                          "description": "The number of the last block in the range.",
                           "example": 5953106
                         }
                       }
@@ -120,12 +71,12 @@
     },
     "/verifier/btc/api/indexer/transaction/{txHash}": {
       "get": {
-        "description": "Requests for processed block transaction entities.",
+        "description": "Gets the transaction for a given transaction ID (hash).",
         "operationId": "BTCIndexerController_transaction",
         "parameters": [
           {
             "name": "txHash",
-            "description": "Transaction hash.",
+            "description": "The identifier of the transaction to be retrieved.",
             "required": true,
             "in": "path",
             "schema": {
@@ -135,7 +86,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns processed block transaction entities."
+            "description": "Transaction information for the specified identifier."
           }
         },
         "tags": [
@@ -150,12 +101,12 @@
     },
     "/verifier/btc/api/indexer/block/{blockHash}": {
       "get": {
-        "description": "Request for processed block entity.",
+        "description": "Gets a block with given hash from the indexer database",
         "operationId": "BTCIndexerController_block",
         "parameters": [
           {
             "name": "blockHash",
-            "description": "Block hash.",
+            "description": "The identifier of the block to be retrieved.",
             "required": true,
             "in": "path",
             "schema": {
@@ -165,7 +116,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns processed block entity."
+            "description": "Block information for the specified identifier."
           }
         },
         "tags": [
@@ -180,12 +131,12 @@
     },
     "/verifier/btc/api/indexer/confirmed-block-at/{blockNumber}": {
       "get": {
-        "description": "Requests for block confirmation.",
+        "description": "Gets confirmed block with the given block number. Blocks that are not confirmed yet cannot be obtained using this route.",
         "operationId": "BTCIndexerController_confirmedBlockAt",
         "parameters": [
           {
             "name": "blockNumber",
-            "description": "Block number.",
+            "description": "The number of the block for which you want to retrieve confirmation status.",
             "required": true,
             "in": "path",
             "schema": {
@@ -195,7 +146,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns block confirmation."
+            "description": "Data about the requested block, if it is confirmed. A `null` object otherwise."
           }
         },
         "tags": [
@@ -210,12 +161,12 @@
     },
     "/verifier/btc/api/indexer/block-height": {
       "get": {
-        "description": "Requests for block height.",
+        "description": "Gets the indexed block height.",
         "operationId": "BTCIndexerController_blockHeight",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Returns block height."
+            "description": "Indexed block height."
           }
         },
         "tags": [
@@ -230,12 +181,12 @@
     },
     "/verifier/btc/api/indexer/transaction-block/{txHash}": {
       "get": {
-        "description": "Requests for transaction block.",
+        "description": "Returns block header data for the transaction with the given transaction ID.",
         "operationId": "BTCIndexerController_transactionBlock",
         "parameters": [
           {
             "name": "txHash",
-            "description": "Transaction hash.",
+            "description": "The identifier of the transaction whose block number is to be retrieved.",
             "required": true,
             "in": "path",
             "schema": {
@@ -245,7 +196,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns transaction block."
+            "description": "Block header data for the block where the given transaction was included."
           }
         },
         "tags": [
@@ -260,12 +211,12 @@
     },
     "/verifier/btc/api/indexer/transactions": {
       "get": {
-        "description": "Requests for processed transactions.",
+        "description": "Paged query for confirmed transactions subject to conditions from query parameters. Transactions are sorted first by block number and then by transaction ID",
         "operationId": "BTCIndexerController_transactionsWithinBlockRange",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Returns processed transactions."
+            "description": "List of processed transactions in the block range."
           }
         },
         "tags": [
@@ -280,7 +231,7 @@
     },
     "/verifier/btc/AddressValidity": {
       "post": {
-        "description": "Requests for address validation.",
+        "description": "Sends a request to verify that a Bitcoin address is valid.",
         "operationId": "BTCAddressValidityVerifierController_verify",
         "parameters": [],
         "requestBody": {
@@ -295,7 +246,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns validated address."
+            "description": "Contains:\n\n* The status of the request.\n* Indication of validity.\n* The validated address.\n * The hash of the validated address."
           }
         },
         "tags": [
@@ -310,7 +261,7 @@
     },
     "/verifier/btc/AddressValidity/prepareResponse": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code.",
         "operationId": "BTCAddressValidityVerifierController_prepareResponse",
         "parameters": [],
         "requestBody": {
@@ -325,7 +276,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status and hash.",
+            "description": "Validation status, the address, and the address hash for the submitted attestation request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -347,7 +298,7 @@
     },
     "/verifier/btc/AddressValidity/mic": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
         "operationId": "BTCAddressValidityVerifierController_mic",
         "parameters": [],
         "requestBody": {
@@ -362,7 +313,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code.",
+            "description": "Validation status and the message integrity code for the submitted attestation request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -393,7 +344,7 @@
     },
     "/verifier/btc/AddressValidity/prepareRequest": {
       "post": {
-        "description": "Encodes attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
         "operationId": "BTCAddressValidityVerifierController_prepareRequest",
         "parameters": [],
         "requestBody": {
@@ -408,7 +359,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request.",
+            "description": "Validation status and the request encoded according to the ABI specification.",
             "content": {
               "application/json": {
                 "schema": {
@@ -430,7 +381,7 @@
     },
     "/verifier/btc/BalanceDecreasingTransaction": {
       "post": {
-        "description": "Requests balance decreasing transactions.",
+        "description": "Sends a request for transactions that decreased the balance of an address.",
         "operationId": "BTCBalanceDecreasingTransactionVerifierController_verify",
         "parameters": [],
         "requestBody": {
@@ -445,7 +396,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns balance decreasing transactions."
+            "description": "Contains:\n\n* The number and the timestamp of the block that contains the transaction.\n* The standard address hash.\n* The amount spent.\n* The standard payment reference."
           }
         },
         "tags": [
@@ -460,7 +411,7 @@
     },
     "/verifier/btc/BalanceDecreasingTransaction/prepareResponse": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code.",
         "operationId": "BTCBalanceDecreasingTransactionVerifierController_prepareResponse",
         "parameters": [],
         "requestBody": {
@@ -475,7 +426,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status."
+            "description": "Indicates attestation request status."
           }
         },
         "tags": [
@@ -490,7 +441,7 @@
     },
     "/verifier/btc/BalanceDecreasingTransaction/mic": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
         "operationId": "BTCBalanceDecreasingTransactionVerifierController_mic",
         "parameters": [],
         "requestBody": {
@@ -505,7 +456,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code."
+            "description": "Validation status and the message integrity code for the submitted attestation request."
           }
         },
         "tags": [
@@ -520,7 +471,7 @@
     },
     "/verifier/btc/BalanceDecreasingTransaction/prepareRequest": {
       "post": {
-        "description": "Encodes attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
         "operationId": "BTCBalanceDecreasingTransactionVerifierController_prepareRequest",
         "parameters": [],
         "requestBody": {
@@ -535,7 +486,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request."
+            "description": "Validation status and the request encoded according to the ABI specification."
           }
         },
         "tags": [
@@ -550,7 +501,7 @@
     },
     "/verifier/btc/ConfirmedBlockHeightExists": {
       "post": {
-        "description": "Requests to confirm block height exists.",
+        "description": "Sends a request to confirm that a block height exists.",
         "operationId": "BTCConfirmedBlockHeightExistsVerifierController_verify",
         "parameters": [],
         "requestBody": {
@@ -565,7 +516,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns confirmed block height."
+            "description": "Contains:\n\n * The timestamp of the block number the request wants to confirm.\n * The number of confirmations required to confirm a block.\n * The number of the latest block that has a timestamp smaller than `blockTimestamp` minus `queryWindow`.\n * The timestamp of `lowestQueryWindowBlockNumber`."
           }
         },
         "tags": [
@@ -580,7 +531,7 @@
     },
     "/verifier/btc/ConfirmedBlockHeightExists/prepareResponse": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code.",
         "operationId": "BTCConfirmedBlockHeightExistsVerifierController_prepareResponse",
         "parameters": [],
         "requestBody": {
@@ -595,7 +546,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status."
+            "description": "Validation status of the request."
           }
         },
         "tags": [
@@ -610,7 +561,7 @@
     },
     "/verifier/btc/ConfirmedBlockHeightExists/mic": {
       "post": {
-        "description": "Verfies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
         "operationId": "BTCConfirmedBlockHeightExistsVerifierController_mic",
         "parameters": [],
         "requestBody": {
@@ -625,7 +576,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code."
+            "description": "Validation status and the message integrity code for the submitted attestation request."
           }
         },
         "tags": [
@@ -640,7 +591,7 @@
     },
     "/verifier/btc/ConfirmedBlockHeightExists/prepareRequest": {
       "post": {
-        "description": "Encodes attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
         "operationId": "BTCConfirmedBlockHeightExistsVerifierController_prepareRequest",
         "parameters": [],
         "requestBody": {
@@ -655,7 +606,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request."
+            "description": "Validation status and the request encoded according to the ABI specification."
           }
         },
         "tags": [
@@ -670,7 +621,7 @@
     },
     "/verifier/btc/Payment": {
       "post": {
-        "description": "Requests payment validaton.",
+        "description": "Sends a request to verify a payment.",
         "operationId": "BTCPaymentVerifierController_verify",
         "parameters": [],
         "requestBody": {
@@ -685,7 +636,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns payment validation."
+            "description": "Status of the request."
           }
         },
         "tags": [
@@ -700,7 +651,7 @@
     },
     "/verifier/btc/Payment/prepareResponse": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code.",
         "operationId": "BTCPaymentVerifierController_prepareResponse",
         "parameters": [],
         "requestBody": {
@@ -715,7 +666,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status."
+            "description": "A <a href=\"https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/active-types/Payment.md\">payment summary </a>."
           }
         },
         "tags": [
@@ -730,7 +681,7 @@
     },
     "/verifier/btc/Payment/mic": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
         "operationId": "BTCPaymentVerifierController_mic",
         "parameters": [],
         "requestBody": {
@@ -745,7 +696,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code."
+            "description": "Validation status and the message integrity code for the submitted attestation request."
           }
         },
         "tags": [
@@ -760,7 +711,7 @@
     },
     "/verifier/btc/Payment/prepareRequest": {
       "post": {
-        "description": "Encodes attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
         "operationId": "BTCPaymentVerifierController_prepareRequest",
         "parameters": [],
         "requestBody": {
@@ -775,7 +726,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request."
+            "description": "Validation status and the request encoded according to the ABI specification."
           }
         },
         "tags": [
@@ -790,7 +741,7 @@
     },
     "/verifier/btc/ReferencedPaymentNonexistence": {
       "post": {
-        "description": "Requests to determine payment.",
+        "description": "Submits a request to verify whether a payment transaction was made.",
         "operationId": "BTCReferencedPaymentNonexistenceVerifierController_verify",
         "parameters": [],
         "requestBody": {
@@ -805,7 +756,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns payment non-eixstence."
+            "description": "Request status."
           }
         },
         "tags": [
@@ -820,7 +771,7 @@
     },
     "/verifier/btc/ReferencedPaymentNonexistence/prepareResponse": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code.",
         "operationId": "BTCReferencedPaymentNonexistenceVerifierController_prepareResponse",
         "parameters": [],
         "requestBody": {
@@ -835,7 +786,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status."
+            "description": "Validation status of the request."
           }
         },
         "tags": [
@@ -850,7 +801,7 @@
     },
     "/verifier/btc/ReferencedPaymentNonexistence/mic": {
       "post": {
-        "description": "Verifies attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
         "operationId": "BTCReferencedPaymentNonexistenceVerifierController_mic",
         "parameters": [],
         "requestBody": {
@@ -865,7 +816,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns attestation request status with message integrity code."
+            "description": "Validation status and the message integrity code for the submitted attestation request."
           }
         },
         "tags": [
@@ -880,7 +831,7 @@
     },
     "/verifier/btc/ReferencedPaymentNonexistence/prepareRequest": {
       "post": {
-        "description": "Encodes attestation request.",
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
         "operationId": "BTCReferencedPaymentNonexistenceVerifierController_prepareRequest",
         "parameters": [],
         "requestBody": {
@@ -895,7 +846,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns encoded attestation request."
+            "description": "Validation status and the request encoded according to the ABI specification."
           }
         },
         "tags": [
@@ -939,7 +890,7 @@
         "properties": {
           "addressStr": {
             "type": "string",
-            "description": "Address to be verified.",
+            "description": "The address to be verified.",
             "example": "Example string"
           }
         },
@@ -952,16 +903,16 @@
         "properties": {
           "attestationType": {
             "type": "string",
-            "description": "ID of the attestation type.",
+            "description": "The ID of the attestation type.",
             "example": "0x4164647265737356616c69646974790000000000000000000000000000000000"
           },
           "sourceId": {
             "type": "string",
-            "description": "Id of the data source.",
+            "description": "The ID of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/AddressValidity_RequestBody"
@@ -980,7 +931,7 @@
         "properties": {
           "transactionId": {
             "type": "string",
-            "description": "ID of the payment transaction.",
+            "description": "The ID of the payment transaction.",
             "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
           },
           "sourceAddressIndicator": {
@@ -999,16 +950,16 @@
         "properties": {
           "attestationType": {
             "type": "string",
-            "description": "ID of the attestation type.",
+            "description": "The ID of the attestation type.",
             "example": "0x42616c616e636544656372656173696e675472616e73616374696f6e00000000"
           },
           "sourceId": {
             "type": "string",
-            "description": "ID of the data source.",
+            "description": "The ID of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestBody"
@@ -1027,7 +978,7 @@
         "properties": {
           "blockNumber": {
             "type": "string",
-            "description": "The number of the block the request wants a confirmation of.",
+            "description": "The block number the request is attempting to confirm.",
             "example": "123"
           },
           "queryWindow": {
@@ -1046,16 +997,16 @@
         "properties": {
           "attestationType": {
             "type": "string",
-            "description": "ID of the attestation type.",
+            "description": "The ID of the attestation type.",
             "example": "0x436f6e6669726d6564426c6f636b486569676874457869737473000000000000"
           },
           "sourceId": {
             "type": "string",
-            "description": "ID of the data source.",
+            "description": "The ID of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestBody"
@@ -1074,17 +1025,17 @@
         "properties": {
           "transactionId": {
             "type": "string",
-            "description": "ID of the payment transaction.",
+            "description": "The ID of the payment transaction.",
             "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
           },
           "inUtxo": {
             "type": "string",
-            "description": "For UTXO chains, this is the index of the transaction input with source address. Always 0 for the non-utxo chains.",
+            "description": "For UTXO chains, the index of the transaction input with the source address. For other chains, this value is always 0.",
             "example": "123"
           },
           "utxo": {
             "type": "string",
-            "description": "For UTXO chains, this is the index of the transaction output with receiving address. Always 0 for the non-utxo chains.",
+            "description": "For UTXO chains, the index of the transaction output with the receiving address. For other chains, this value is always 0.",
             "example": "123"
           }
         },
@@ -1099,16 +1050,16 @@
         "properties": {
           "attestationType": {
             "type": "string",
-            "description": "ID of the attestation type.",
+            "description": "The ID of the attestation type.",
             "example": "0x5061796d656e7400000000000000000000000000000000000000000000000000"
           },
           "sourceId": {
             "type": "string",
-            "description": "ID of the data source.",
+            "description": "The ID of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/Payment_RequestBody"
@@ -1127,32 +1078,32 @@
         "properties": {
           "minimalBlockNumber": {
             "type": "string",
-            "description": "The start block of the search range.",
+            "description": "The first block number to be included in the range to be searched.",
             "example": "123"
           },
           "deadlineBlockNumber": {
             "type": "string",
-            "description": "The blockNumber to be included in the search range.",
+            "description": "The last block number to be included in the range to be searched.",
             "example": "123"
           },
           "deadlineTimestamp": {
             "type": "string",
-            "description": "The timestamp to be included in the search range.",
+            "description": "The last timestamp to be included in the search range.",
             "example": "123"
           },
           "destinationAddressHash": {
             "type": "string",
-            "description": "The standard address hash of the address to which the payment had to be done.",
+            "description": "The standard hash of the address to which the payment was possibly made.",
             "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
           },
           "amount": {
             "type": "string",
-            "description": "The requested amount in minimal units that had to be payed.",
+            "description": "The requested amount that had to be payed, in minimal units (no decimals).",
             "example": "123"
           },
           "standardPaymentReference": {
             "type": "string",
-            "description": "The requested standard payment reference.",
+            "description": "The requested standard payment reference that uniquely identifies this payment.",
             "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
           }
         },
@@ -1170,16 +1121,16 @@
         "properties": {
           "attestationType": {
             "type": "string",
-            "description": "ID of the attestation type.",
+            "description": "The ID of the attestation type.",
             "example": "0x5265666572656e6365645061796d656e744e6f6e6578697374656e6365000000"
           },
           "sourceId": {
             "type": "string",
-            "description": "ID of the data source.",
+            "description": "The ID of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestBody"
