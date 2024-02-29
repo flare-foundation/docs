@@ -1,6 +1,6 @@
 # Simple Attestation Request
 
-This tutorial shows basic use of the [State Connector](../../../tech/state-connector.md) (SC) protocol.
+This tutorial shows basic use of the [State Connector](../../../tech/state-connector.md) protocol.
 
 In this tutorial, you will learn how to:
 
@@ -9,9 +9,7 @@ In this tutorial, you will learn how to:
 * Use a smart contract to verify that the result returned by the attestation provider matches the result agreed upon by the State Connector.
 
 The diagram below shows the process that this tutorial follows.
-It closely matches the general process given in the
-[State Connector page](../../../tech/state-connector.md#procedure-overview),
-but the numbers have been changed to match the steps in this tutorial.
+Arrows that match one of the steps in the tutorial are numbered.
 
 <figure markdown>
   ![State Connector usage process](SC-basic-tutorial.png){ loading=lazy .allow-zoom }
@@ -22,7 +20,7 @@ but the numbers have been changed to match the steps in this tutorial.
 
 Choose your preferred programming language and ensure you have a working [development environment](../../getting-started/setup/index.md).
 
-For easy navigation, numbered comments in the source code link to the tutorial sections below.
+For easy navigation, numbered comments in the source code (as in `// 1.`) link to the tutorial sections below.
 
 {% import "runner.md" as runner %}
 
@@ -35,11 +33,11 @@ For easy navigation, numbered comments in the source code link to the tutorial s
 
 ## Tutorial
 
-### 1. Setup
+### 1. Set up
 
 The tutorial uses the following dependencies:
 
-* The [Flare Periphery Artifacts Package](https://www.npmjs.com/package/@flarenetwork/flare-periphery-contract-artifacts) which provides the API for all Flare smart contracts.
+* The [Flare periphery artifacts package](https://www.npmjs.com/package/@flarenetwork/flare-periphery-contract-artifacts), which provides the API for all Flare smart contracts.
 
 * The [ethers](https://www.npmjs.com/package/ethers) package, which is also needed to work with smart contracts.
 
@@ -47,11 +45,11 @@ The tutorial uses the following dependencies:
 --8<-- "samples/sc/AddressValidity.js:20:24"
 ```
 
-The Periphery Package simplifies working with the Flare smart contracts significantly.
+The periphery package significantly simplifies working with the Flare smart contracts.
 If you remove this dependency, you must manually provide the signatures for all the methods you want to use.
 
-This tutorial needs to send transactions on the Coston2 test network, so an account with enough `$C2FLR` tokens to pay for gas is required.
-The [Getting Started](../../getting-started/setup/index.md) guides explain how to configure your wallet and get test tokens from the [faucet](https://faucet.flare.network/coston2).
+This tutorial needs to send transactions on the Coston test network, so you will need an account with enough `$CFLR` tokens to pay for gas.
+The [Getting Started](../../getting-started/setup/index.md) guides explain how to configure your wallet and get test tokens from the [faucet](https://faucet.flare.network/coston).
 
 !!! warning
     For simplicity, this tutorial hard-codes the private key of the wallet being used in the `TEST_PRIVATE_KEY` variable.
@@ -64,12 +62,15 @@ The [Getting Started](../../getting-started/setup/index.md) guides explain how t
 
 ### 2. Prepare Attestation Request
 
-Requests to the SC must be extremely specific. For example, to request proof of the existence of a given transaction, the transaction ID is not enough: the block and block timestamp where the transaction was included must also be given.
-Furthermore, requests must be encoded into a hex string before being submitted to the SC.
+Requests to the State Connector must be extremely specific.
+For example, to request a proof that a given transaction exists, the transaction ID alone is not enough.
+The block number and block timestamp where the transaction was included must also be provided.
+Furthermore, requests must be encoded into a hex string before being submitted to the State Connector.
 
 You can perform all these operations yourself, but, as a convenience, attestation providers can prepare requests for you, filling in all missing information and taking care of formatting.
 
-The attestation type chosen for this tutorial, `AddressValidity`, is the simplest one and does not require additional information besides the address being validated. However, it is still a good example of the process.
+The attestation type chosen for this tutorial, [`AddressValidity`](AddressValidity.md), is the simplest one and requires only the address to be validated.
+However, it is still a good example of the process.
 
 To prepare a request using an Attestation Provider, we begin with a raw attestation request:
 
@@ -77,18 +78,30 @@ To prepare a request using an Attestation Provider, we begin with a raw attestat
 --8<-- "samples/sc/AddressValidity.js:28:34"
 ```
 
+The raw attestation request contains:
+
+* `attestationType`: A unique identifier for the type of attestation you want, which is just an encoded version of its name.
+    See the list of the currently available [attestation types](../../../apis/attestation-types/index.md).
+* `sourceId`: The network on which you want to make the request.
+    Available networks depend on the attestation type and are listed in the documentation of each one.
+    This example uses the Coston test network, so network names are prepended with `test`.
+* `requestBody`: A JSON object specific to each attestation type.
+    In this example, it is just the address that you want to validate.
+
 Then obtain an encoded attestation request:
 
 ```javascript linenums="39"
 --8<-- "samples/sc/AddressValidity.js:39:46"
 ```
 
-This encoded request is what will be submitted to the SC.
+This code performs a simple `POST` request to the [`prepareRequest`](../../../apis/REST/btcverifier.md) endpoint of the attestation provider, using the standard [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
-Note that attestation providers will typically be paid services and require an API key to be used.
-Flare offers free-to-use APs for testing. These are rate-limited and not suitable for production.
+`ATTESTATION_PROVIDER_API_KEY` is the API key of the chosen attestation provider, if it needs one.
+Attestation providers are typically paid services and require an API key to operate.
 
-### 3. Access the Contract Registry
+Finally, `encodedAttestationRequest` is the returned encoded request ready to be submitted to the State Connector.
+
+### 3. Access Contract Registry
 
 The [`FlareContractRegistry`](FlareContractRegistry.md) contains the current addresses for all Flare smart contracts, and it is [the only recommended way](../../getting-started/contract-addresses.md) to retrieve them.
 
@@ -98,25 +111,25 @@ Its address is the same on all of [Flare's networks](../../../tech/flare.md#flar
 --8<-- "samples/sc/AddressValidity.js:62:67"
 ```
 
-### 4. Retrieve the State Connector Contract Address
+Use the [`getContractAddressByName()`](FlareContractRegistry.md#fn_getcontractaddressbyname_82760fca) method from the [`FlareContractRegistry`](FlareContractRegistry.md) smart contract to retrieve the address of the [`StateConnector`](IStateConnector.md) smart contract.
 
-Retrieve the State Connector's address from the `FlareContractRegistry`.
-
-```javascript linenums="69"
---8<-- "samples/sc/AddressValidity.js:69:76"
-```
-
-Note that we are using the Coston testnet here rather than the main Flare Network.
+Note that this tutorial uses the Coston test network here rather than the main Flare Network.
 
 ### 5. Request Attestation from the State Connector Contract
 
-Now we request an attestation from the SC.
+Now, request an attestation from the State Connector contract by sending the encoded attestation request from [step 2](#2-prepare-attestation-request).
 
-We retrieve the result of the transaction to the `result` object and store info regarding the relevant block in `block`.
+Use the [`requestAttestations()`](IStateConnector.md#fn_requestattestations_f64b6fda) method from the [`StateConnector`](IStateConnector.md) smart contract.
 
 ```javascript linenums="78"
 --8<-- "samples/sc/AddressValidity.js:78:84"
 ```
+
+`attestationTx` contains the [`TransactionResponse`](https://docs.ethers.org/v5/api/providers/types/#providers-TransactionResponse).
+After you `wait` on it and the transaction is added to the blockchain, you obtain a [`TransactionReceipt`](https://docs.ethers.org/v5/api/providers/types/#providers-TransactionReceipt).
+
+From this receipt you finally retrieve the `block` that includes the request transaction.
+This block is needed in the next step.
 
 ### 6. Calculate Round ID
 
@@ -133,18 +146,21 @@ This is needed to maintain the validity of our proof.
 
 ### 7. Wait for the Attestation Round to Finalize
 
-Here, we wait for the attestation round to be finalized on the Flare Network to ensure that our attestation request is processed and included in a finalized round (i.e. block).
-This is done to sync our process with Flare Network's round finalization, maintaining the validity of our proof.
+You need to wait for the attestation round to finalize, because results are only available after finalization.
 
-**Round Finalization** occurs when a round is confirmed and accepted by the network as an immutable part of the blockchain’s history.
-
-To this end, after submitting the attestation request, we monitor the network until our request is confirmed. This is done by continuously polling and comparing the State Connector's last finalized round (`StateConnector.lastFinalizedRoundID`) with our submission round (`submissionRoundID`) until there's a match, indicating that our proof has been included in a finalized block.
-
-```javascript linenums="95"
---8<-- "samples/sc/AddressValidity.js:95:108"
+```javascript linenums="96"
+--8<-- "samples/sc/AddressValidity.js:96:108"
 ```
 
-!!! warning
+Attestation rounds use the [Collect-Choose-Commit-Reveal (CCCR)](../../../tech/state-connector.md#overlapped-cccr-protocol) protocol, which requires 270 - 360 seconds, depending on attestation provider's submissions, and the point inside the **Collect phase** in which the request was submitted.
+
+For this reason, this tutorial polls the State Connector's last finalized round ([`StateConnector.lastFinalizedRoundID`](IStateConnector.md#fn_lastfinalizedroundid_dd862157)) every 10 seconds so that results are obtained as soon as they are available.
+
+!!! note "Polling vs Waiting"
+
+    Polling every 10 seconds is a good tradeoff to minimize the waiting time, but you can choose to always wait the maximum amount of time (360s), or even wait the minimum amount (270s), and then poll.
+
+!!! note "Proof Accessibility Window"
 
     Proofs are kept on-chain for just a week.
     After this period, the proofs will no longer be accessible, so timely verification is crucial.
@@ -156,19 +172,38 @@ To this end, after submitting the attestation request, we monitor the network un
 
 ### 8. Retrieve Proof
 
-Now we obtain the full proof (which should now be available) from the attestation provider for our submission round (`submissionRoundID`). This proof (Attestation Proof) includes valid answers to our request and all other requests made during the same attestation round, encoded in a single Merkle root. This is essential for verifying the validity of our attestation.
+It is time now to fetch from the attestation provider the result for the round ID where the request was submitted (`submissionRoundID`).
 
-After constructing our `proofRequest` and making a `POST` request to our `ATTESTATION_ENDPOINT`, we receive our proof as a response. Notably, the proof object's Merkle proof (`proof.data.merkleProof`) property consists of one or more Merkle nodes (hashes) that collectively prove the inclusion of our request in the attestation round.
+The result is a Merkle root, which is the root of a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree).
+This tree has been constructed with the hashes of all the requests received during that round that were considered valid by a majority of attestation providers.
 
-```javascript linenums="110"
---8<-- "samples/sc/AddressValidity.js:110:130"
+If your request was valid, i.e., if the provided address was a valid Bitcoin address, then its hash will be part of the received Merkle root.
+
+```javascript linenums="111"
+--8<-- "samples/sc/AddressValidity.js:111:125"
 ```
+
+You need to construct a `proofRequest` and make a `POST` request to the [`get-specific-proof`](../../../apis/REST/btcverifier.md) endpoint of the attestation provider.
+
+Doing so returns a full proof, containing, among other things, a Merkle proof consisting of one or more nodes (hashes).
+If the Merkle tree is rebuilt using these nodes plus the hash of your request, and the resulting root hash matches the agreed-upon value stored in the State Connector, it means that the proof can be trusted.
+
+You can perform these operations yourself or you can use a Verifier smart contract, as shown in the next step.
+
+The received proof already contains a field, `proof.data.responseBody.isValid`, which indicates whether this particular attestation provider believes the queried address to be valid or not.
+But this result cannot be trusted until you verify that it matches what the rest of attestation providers submitted, as explained next.
 
 ### 9. Send Proof to Verifier Contract
 
-Now we send the proof to an `addressVerifier` smart contract for verification. This smart contract verifies whether our request is valid or not by comparing our proof to the Merkle root stored in the SC smart contract.
+Send the proof to the [`AddressValidityVerification`](AddressValidityVerification.md) smart contract.
+This smart contract verifies the request by rebuilding the Merkle root using the hashes contained in the `proof.data.merkleProof` object and comparing it to the Merkle root stored in the State Connector.
 
-In this tutorial, we used the [`IAddressValidityVerification`](https://coston-explorer.flare.network/address/0x6493D7c0e4d81a73873067d14dfBFfaade072c5a/contracts#address-tabs) smart contract but most apps use their own smart contracts for this verification.
+```javascript linenums="134"
+--8<-- "samples/sc/AddressValidity.js:134:152"
+```
+
+!!! note
+    This tutorial uses a verification contract provided by Flare, but dapps can embed the same logic into their own smart contracts if they wish to.
 
 ```javascript linenums="132"
 --8<-- "samples/sc/AddressValidity.js:132:146"
@@ -176,7 +211,14 @@ In this tutorial, we used the [`IAddressValidityVerification`](https://coston-ex
 
 ### 10. Check if the Address is Valid
 
-Finally, we check if our address is valid or invalid according to the attestation providers, given that our request was found to be valid. Meaning if our attestation request has been verified by our `addressVerifier` smart contract (represented by the `isVerified` variable), we then check whether or not the address provided is a valid one (represented by `isValid`).
+Finally, check if the address is valid or invalid according to the attestation providers, but only if the attestation has been verified.
+
+`isVerified` indicates whether the attestation you received from the attestation provider matches what the majority of them agreed upon.
+If the value is `false`, you do not need to look further because the attestation provider is probably lying and its results cannot be trusted.
+In this case, you need to make the request again, ideally through a different provider.
+
+If `isVerified` is `true`, then you can look at the actual result of your request in the [`isValid`](AddressValidity.md#response-body) field of `fullProof.data.responseBody` obtained in [step 8](#8-retrieve-proof).
+If this value is `true` too, then the queried address is valid.
 
 ```javascript linenums="155"
 --8<-- "samples/sc/AddressValidity.js:155:168"
@@ -208,7 +250,7 @@ Other attestation types include:
 
 More attestation types are to be added in the future, subject to community approval and support.
 
-Also, recall that the `AddressValidity` attestation type used in this tutorial is the simplest one to use as it does not require accessing any connected networks.
-Other attestation types do, however, and so tend to be more complex to use.
+Also, recall that the [`AddressValidity`](AddressValidity.md) attestation type used in this tutorial is the simplest one to use as it does not require accessing any connected networks.
+Other attestation types do, however, and so they tend to be more complex to use.
 
-See the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types) for more information on other attestation types.
+See the [state connector attestation types](../../../apis/attestation-types/index.md) for more information on other attestation types.

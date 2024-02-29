@@ -10,7 +10,7 @@ This article, partially based on the [Hardhat documentation](https://hardhat.org
 ### 1. Set up the Environment
 
 !!! warning
-    
+
     If you are using Windows, Hardhat strongly [recommends](https://hardhat.org/tutorial/setting-up-the-environment#windows) to use [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/about).
 
 Install the following dependencies:
@@ -183,7 +183,7 @@ You should get:
 
 ### 6. Deploy the Contract
 
-Finally, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using a Hardhat script from the `scripts` folder.
+Now, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using a Hardhat script from the `scripts` folder.
 
 !!! warning
 
@@ -209,3 +209,94 @@ Lock with 1 ETH and unlock timestamp 1705592309 deployed to 0xdC7781FA9fA7e2d031
 
 The last part is the address where the contract has been deployed.
 You can check the status of the contract by copying and pasting this address in the [Block Explorer](../../../user/block-explorers/index.md)
+
+### 7. Verify the Contract
+
+Verifying smart contracts is essential for transparency and security in the blockchain ecosystem.
+
+Verification allows inspecting Solidity source code instead of bytecode, and direct interaction with smart contracts through a block explorer.
+
+To verify a smart contract with Hardhat, you need to install a dedicated plugin with this command:
+
+```bash
+npm install --save-dev @nomicfoundation/hardhat-verify
+```
+
+Next, you should configure the Hardhat project.
+
+In the `hardhat.config.js` file, import the Hardhat verify plugin and add a new section `etherscan` that describes the networks to use when verifying the contracts.
+
+Now the configuration file looks like this:
+
+```javascript hl_lines="31-45"
+require('dotenv').config();
+require("@nomicfoundation/hardhat-toolbox");
+require("@nomicfoundation/hardhat-verify");
+
+module.exports = {
+  solidity: "0.8.17",
+  networks: {
+    hardhat: {
+    },
+    coston: {
+      url: "https://coston-api.flare.network/ext/bc/C/rpc",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 16
+    },
+    songbird: {
+      url: "https://songbird-api.flare.network/ext/bc/C/rpc",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 19
+    },
+    coston2: {
+      url: "https://coston2-api.flare.network/ext/bc/C/rpc",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 114,
+    },
+    flare: {
+      url: "https://flare-api.flare.network/ext/bc/C/rpc",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 14,
+    },
+  },
+  etherscan: {
+    apiKey: {
+      coston2: "flare", // API key is not needed, but we need to provide a value
+    },
+    customChains: [
+      {
+        network: "coston2",
+        chainId: 114,
+        urls: {
+          apiURL: "https://api.routescan.io/v2/network/testnet/evm/114/etherscan",
+          browserURL: "https://coston2.testnet.flarescan.com"
+        }
+      }
+    ]
+  }
+};
+```
+
+Now you can verify the smart contract passing the contract address and value of the timestamp as one of the parameters you saw in the console message when you deployed the smart contract on the Coston2 network [at the end of step 6 above](#6-deploy-the-contract).
+In this example, the parameter is the timestamp. In the case of multiple constructor parameters, values are separated by a blank space.
+
+```bash
+npx hardhat verify ADDRESS PARAMETERS --network coston2
+```
+
+Continuing with the example above, the command would be:
+
+```bash
+npx hardhat verify 0xdC7781FA9fA7e2d0313cd0229a5080B4e30663a5 1705592309 --network coston2
+```
+
+It will take a minute or two to verify the smart contract on the blockchain and you should get an output like this:
+
+```text
+Successfully verified contract Country on the block explorer.
+https://coston2.testnet.flarescan.com/address/0xdC7781FA9fA7e2d0313cd0229a5080B4e30663a5#code
+```
+
+When you follow the link to the block explorer, you will see a green checkbox in the **Contract** tab.
+You can see that the smart contract code is visible to anyone.
+You can now see the Solidity code instead of bytecode and interact with the smart contract from the block explorer.

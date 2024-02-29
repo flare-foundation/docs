@@ -330,9 +330,9 @@ In summary, validators using at least one reliable local attestation provider do
 
 ## Attestation Types
 
-These are the currently available attestation types:
+Attestation providers currently support these attestation types:
 
-* [**AddressValidity**](AddressValidity.md): whether a given address is valid in the specified network.
+* [**AddressValidity**](AddressValidity.md): Whether a given address is valid in the specified network.
 * [**Balance-decreasing transaction**](BalanceDecreasingTransaction.md): Whether a transaction that might have decreased a balance occurred.
     This type allows for several possibilities:
 
@@ -342,7 +342,6 @@ These are the currently available attestation types:
     As a result, the balance at the address experienced a decrease, but the final balance is more than the balance was before the transaction.
 
 * [**Confirmed block height**](ConfirmedBlockHeightExists.md): Whether a block on a certain height exists and was confirmed.
-* [**Payment**](Payment.md): Whether a payment transaction occurred in which funds were sent from one address to another address.
 * [**Referenced payment nonexistence**](ReferencedPaymentNonexistence.md): Whether an account did not receive funds from a different account by a specific deadline.
 This type can serve as proof that a user's payment obligations to a DeFi protocol have been breached, considering the following cases:
 

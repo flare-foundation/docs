@@ -3,12 +3,12 @@
   "paths": {
     "/attestation-client/api/proof/votes-for-round/{roundId}": {
       "get": {
-        "description": "Requests for the result of a voting round.",
+        "description": "Gets the result of a voting round.",
         "operationId": "ProofController_votesForRound",
         "parameters": [
           {
             "name": "roundId",
-            "description": "The buffer number of the window of the collect phase.",
+            "description": "The ID number of the attestation round. It corresponds to the buffer number of the Collect phase of the round.",
             "required": true,
             "in": "path",
             "schema": {
@@ -19,7 +19,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Returns the result of a voting round.",
+            "description": "The result of the specified voting round.",
             "content": {
               "application/json": {
                 "schema": {
@@ -50,7 +50,7 @@
     },
     "/attestation-client/api/proof/get-specific-proof": {
       "post": {
-        "description": "Requests for attestation proof.",
+        "description": "Requests an attestation proof. Attestation request is identified by the request data and the round ID in which it was submitted.",
         "operationId": "ProofController_getSpecificProofController",
         "parameters": [],
         "requestBody": {
@@ -65,7 +65,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns verified attestation proof.",
+            "description": "A verified attestation proof.",
             "content": {
               "application/json": {
                 "schema": {
@@ -93,11 +93,12 @@
     },
     "/attestation-client/api/proof/requests-for-round/{roundId}": {
       "get": {
+        "description": "Gets all requests received by the attestation provider in a voting round. Each request includes its processing status.",
         "operationId": "ProofController_requestsForRound",
         "parameters": [
           {
             "name": "roundId",
-            "description": "The buffer number of the window of the collect phase.",
+            "description": "The ID number of the attestation round. It corresponds to the buffer number of the Collect phase of the round.",
             "required": true,
             "in": "path",
             "schema": {
@@ -108,7 +109,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "Attestation requests received in the specified round.",
             "content": {
               "application/json": {
                 "schema": {
@@ -139,12 +140,12 @@
     },
     "/attestation-client/api/proof/status": {
       "get": {
-        "description": "Requests for an attestation proof status.",
+        "description": "Gets information about the current status of the system, including the current voting round and the last completed round.",
         "operationId": "ProofController_systemStatus",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Returns an attestation proof status.",
+            "description": "System status, ID number for the current round in the Request phase, and ID number for the latest finished round.",
             "content": {
               "application/json": {
                 "schema": {
@@ -173,7 +174,7 @@
   },
   "info": {
     "title": "Attestation Client Public Server",
-    "description": "Public server for attestation client providing data about attestations by round, and attestation status metrics.",
+    "description": "The public attestation client server. It provides data about attestations by voting round and metrics about attestation statuses.",
     "version": "1.0",
     "contact": {}
   },
@@ -239,12 +240,12 @@
         ]
       },
       "SpecificProofRequest": {
-        "description": "An attestation request specific proof.",
+        "description": "The requested attestation proof.",
         "type": "object",
         "properties": {
           "roundId": {
             "type": "number",
-            "description": "The buffer number of the window of the collect phase."
+            "description": "The ID number of the attestation round. It corresponds to the buffer number of the Collect phase of the round."
           },
           "requestBytes": {
             "type": "object",
