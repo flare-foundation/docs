@@ -1,14 +1,16 @@
-const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
+const FLARE_CONTRACTS = "@flarenetwork/flare-periphery-contract-artifacts";
 const FLARE_RPC = "https://coston-api.flare.network/ext/C/rpc";
 const ATTESTATION_PROVIDER_URL = "https://attestation-coston.aflabs.net";
 const ATTESTATION_PROVIDER_API_KEY = "123456";
+const FLARE_CONTRACT_REGISTRY_ADDR =
+  "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019";
 
 // You should get your private keys from an external source.
 // DO NOT embed them in source code in a production environment!
-const TEST_PRIVATE_KEY =
+const PRIVATE_KEY =
   "0x6607fc65548ffe231ce954018b3ee01fedb242281227e42a30a9bffa759557d7";
 
-async function AddressValidity_run(network, addressToValidate) {
+async function runAddressValidity(network, addressToValidate) {
   const VERIFICATION_ENDPOINT =
     `${ATTESTATION_PROVIDER_URL}/verifier/${network.toLowerCase()}` +
     `/AddressValidity/prepareRequest`;
@@ -18,12 +20,12 @@ async function AddressValidity_run(network, addressToValidate) {
 
   // 1. Set up
   const ethers = await import("ethers");
-  const flare = await import(FLARE_PACKAGE);
+  const flare = await import(FLARE_CONTRACTS);
   const utils = await import(
-    `${FLARE_PACKAGE}/dist/coston/StateConnector/libs/ts/utils.js`
+    `${FLARE_CONTRACTS}/dist/coston/StateConnector/libs/ts/utils.js`
   );
   const provider = new ethers.JsonRpcProvider(FLARE_RPC);
-  const signer = new ethers.Wallet(TEST_PRIVATE_KEY, provider);
+  const signer = new ethers.Wallet(PRIVATE_KEY, provider);
 
   // 2. Prepare Attestation Request
   const { encodeAttestationName } = utils;
@@ -61,7 +63,7 @@ async function AddressValidity_run(network, addressToValidate) {
 
   // 3. Access Contract Registry
   const flareContractRegistry = new ethers.Contract(
-    "0xaD67FE66660Fb8dFE9d6b1b4240d8650e30F6019",
+    FLARE_CONTRACT_REGISTRY_ADDR,
     flare.nameToAbi("FlareContractRegistry", "coston").data,
     provider
   );
@@ -168,7 +170,7 @@ async function AddressValidity_run(network, addressToValidate) {
   }, 10000);
 }
 
-AddressValidity_run(
+runAddressValidity(
   "btc",
   "tb1p4mdyx3dvgk4dhvv8yv2dtuymf00wxhgkkjheqm7526fu7znnd6msw3qxvj"
 );

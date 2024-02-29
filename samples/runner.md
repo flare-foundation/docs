@@ -42,7 +42,7 @@ async function {{filename | replace('-', '_')}}_runner() {
     output.textContent += (typeof message == 'object' ? JSON.stringify(message, null, 2) : message) + "\n";
   };
   try {
-    await {{filename | replace('-', '_') }}_run(
+    await run{{filename | replace('-', '_') }}(
 {% for param in params %}document.getElementById('{{param.name}}').value,{% endfor %}
     );
   } catch(error) {
