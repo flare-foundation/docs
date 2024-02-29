@@ -55,7 +55,7 @@ The [Getting Started](../../getting-started/setup/index.md) guides explain how t
     For simplicity, this tutorial hard-codes the private key of the wallet being used in the `TEST_PRIVATE_KEY` variable.
 
     ```javascript linenums="8"
-    --8<-- "samples/sc/AddressValidity.js:8:8"
+    --8<-- "samples/sc/AddressValidity.js:8:9"
     ```
 
     In a production setting, the private key should be retrieved from an external source (such as a [`.env` file](https://www.npmjs.com/package/dotenv)) and NOT embedded directly in the code.
@@ -74,8 +74,8 @@ However, it is still a good example of the process.
 
 To prepare a request using an Attestation Provider, we begin with a raw attestation request:
 
-```javascript linenums="28"
---8<-- "samples/sc/AddressValidity.js:28:34"
+```javascript linenums="29"
+--8<-- "samples/sc/AddressValidity.js:29:36"
 ```
 
 The raw attestation request contains:
@@ -90,8 +90,8 @@ The raw attestation request contains:
 
 Then obtain an encoded attestation request:
 
-```javascript linenums="39"
---8<-- "samples/sc/AddressValidity.js:39:46"
+```javascript linenums="44"
+--8<-- "samples/sc/AddressValidity.js:44:52"
 ```
 
 This code performs a simple `POST` request to the [`prepareRequest`](../../../apis/REST/btcverifier.md) endpoint of the attestation provider, using the standard [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
@@ -107,13 +107,21 @@ The [`FlareContractRegistry`](FlareContractRegistry.md) contains the current add
 
 Its address is the same on all of [Flare's networks](../../../tech/flare.md#flare-networks), and it is the only Flare address that needs to be hard-coded into any program.
 
-```javascript linenums="62"
---8<-- "samples/sc/AddressValidity.js:62:67"
+```javascript linenums="63"
+--8<-- "samples/sc/AddressValidity.js:63:67"
+```
+
+Note that this tutorial uses the Coston test network here rather than the main Flare Network.
+
+### 4. Retrieve the State Connector Contract Address
+
+Retrieve the State Connector's address from the `FlareContractRegistry`.
+
+```javascript linenums="70"
+--8<-- "samples/sc/AddressValidity.js:70:76"
 ```
 
 Use the [`getContractAddressByName()`](FlareContractRegistry.md#fn_getcontractaddressbyname_82760fca) method from the [`FlareContractRegistry`](FlareContractRegistry.md) smart contract to retrieve the address of the [`StateConnector`](IStateConnector.md) smart contract.
-
-Note that this tutorial uses the Coston test network here rather than the main Flare Network.
 
 ### 5. Request Attestation from the State Connector Contract
 
@@ -121,8 +129,8 @@ Now, request an attestation from the State Connector contract by sending the enc
 
 Use the [`requestAttestations()`](IStateConnector.md#fn_requestattestations_f64b6fda) method from the [`StateConnector`](IStateConnector.md) smart contract.
 
-```javascript linenums="78"
---8<-- "samples/sc/AddressValidity.js:78:84"
+```javascript linenums="80"
+--8<-- "samples/sc/AddressValidity.js:80:84"
 ```
 
 `attestationTx` contains the [`TransactionResponse`](https://docs.ethers.org/v5/api/providers/types/#providers-TransactionResponse).
@@ -133,12 +141,15 @@ This block is needed in the next step.
 
 ### 6. Calculate Round ID
 
-Now we need to determine the attestation round ID where our request was accepted (`submissionRoundID`). This calculation is based on the timestamp of the block where the transaction was included and ensures that our proof is anchored to a confirmed round.
-This is needed to maintain the validity of our proof.
+In order to recover the attestation result when it becomes available, you will need the _round ID_ where the request was submitted.
+This is easily calculated from the block timestamp:
 
-```javascript linenums="86"
---8<-- "samples/sc/AddressValidity.js:86:91"
+```javascript linenums="87"
+--8<-- "samples/sc/AddressValidity.js:87:91"
 ```
+
+Attestation rounds last `BUFFER_WINDOW` seconds, starting `BUFFER_TS_OFFSET` seconds after the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time).
+You will use `submissionRoundID` later.
 
 !!! tip
 
@@ -164,11 +175,6 @@ For this reason, this tutorial polls the State Connector's last finalized round 
 
     Proofs are kept on-chain for just a week.
     After this period, the proofs will no longer be accessible, so timely verification is crucial.
-
-!!! note
-
-    The request usually takes anywhere from 3 minutes (180 seconds) to 6 minutes (360 seconds) to be confirmed, which is why we poll `StateConnector.lastFinalizedRoundID` every 10 seconds.
-    You may choose to get rid of the polling (`setTimeout`) and just wait for the maximum amount of time.
 
 ### 8. Retrieve Proof
 
@@ -205,10 +211,6 @@ This smart contract verifies the request by rebuilding the Merkle root using the
 !!! note
     This tutorial uses a verification contract provided by Flare, but dapps can embed the same logic into their own smart contracts if they wish to.
 
-```javascript linenums="132"
---8<-- "samples/sc/AddressValidity.js:132:146"
-```
-
 ### 10. Check if the Address is Valid
 
 Finally, check if the address is valid or invalid according to the attestation providers, but only if the attestation has been verified.
@@ -220,8 +222,8 @@ In this case, you need to make the request again, ideally through a different pr
 If `isVerified` is `true`, then you can look at the actual result of your request in the [`isValid`](AddressValidity.md#response-body) field of `fullProof.data.responseBody` obtained in [step 8](#8-retrieve-proof).
 If this value is `true` too, then the queried address is valid.
 
-```javascript linenums="155"
---8<-- "samples/sc/AddressValidity.js:155:168"
+```javascript linenums="156"
+--8<-- "samples/sc/AddressValidity.js:156:166"
 ```
 
 </div>
@@ -230,9 +232,12 @@ If this value is `true` too, then the queried address is valid.
 
 This tutorial has shown how to:
 
-* Make a query to the State Connector smart contract using `stateConnector.requestAttestations()`.
-* Get the result from an attestation provider (AP) by making a `POST` request to the provider's API endpoint (`ATTESTATION_ENDPOINT`).
-* Use a smart contract (`IAddressValidityVerification`) to verify that the result returned by the attestation provider (`proof`) matches the result agreed upon by the State Connector (`isVerified` is true is a match is found).
+* Prepare a State Connector request using the [`prepareRequest`](../../../apis/REST/btcverifier.md) REST endpoint of an attestation provider.
+* Make a request to the State Connector smart contract using [`requestAttestations()`](IStateConnector.md#fn_requestattestations_f64b6fda).
+* Get the result from an attestation provider by making a `POST` request to the [`get-specific-proof`](../../../apis/REST/btcverifier.md) REST endpoint.
+* Use the [`AddressValidityVerification`](AddressValidityVerification.md) smart contract to verify that the result returned by the attestation provider matches the result agreed upon by the State Connector.
+
+## Next Steps
 
 The State Connector can be used for a host of other things beyond just verifying address correctness.
 The attestation type of the request selects the type of information you want.
@@ -243,10 +248,10 @@ The attestation type of the request selects the type of information you want.
 
 Other attestation types include:
 
-* [**Payment**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00001-payment.md): Verifies whether a payment transaction occurred in which funds were sent from one address to another address.
-* [**Balance-decreasing transaction**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00002-balance-decreasing-transaction.md): Verifies whether a transaction that might have decreased a balance occurred.
-* [**Referenced payment nonexistence**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00004-referenced-payment-nonexistence.md): Verifies whether an account did not receive funds from a different account by a specific deadline.
-* [**Confirmed block height**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00003-confirmed-block-height-exists.md): Verifies whether a block on a certain height exists and was confirmed.
+* [**Payment**](Payment.md): Verifies whether a payment transaction occurred in which funds were sent from one address to another address.
+* [**Balance-decreasing transaction**](BalanceDecreasingTransaction.md): Verifies whether a transaction that might have decreased a balance occurred.
+* [**Referenced payment nonexistence**](ReferencedPaymentNonexistence.md): Verifies whether an account did not receive funds from a different account by a specific deadline.
+* [**Confirmed block height**](ConfirmedBlockHeightExists.md): Verifies whether a block on a certain height exists and was confirmed.
 
 More attestation types are to be added in the future, subject to community approval and support.
 
