@@ -24,10 +24,10 @@ for (var i = 0, l = comments.length; i < l; ++i) {
   }
 }
 
-async function checkIframeLoaded(path) {
+async function scrollToIframeId(iframeSelector, path) {
   try {
     const iframe = await waitFor(() =>
-      document.querySelector(".swagger-ui-iframe")
+      document.querySelector(iframeSelector)
     );
 
     if (iframe && iframe.contentWindow) {
@@ -38,11 +38,11 @@ async function checkIframeLoaded(path) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              console.log("Element is visible");
-              // Add class to highlight the element
-              element.classList.add('highlight-swagger-operation');
               // Attempt to simulate a click to expand the operation, if possible
-              element.querySelector('.opblock-summary-control').click();
+              const control = element.querySelector('.opblock-summary-control');
+              if (control) {
+                control.click();
+              }
               observer.disconnect();
             } else {
               element.scrollIntoView({
@@ -50,7 +50,6 @@ async function checkIframeLoaded(path) {
                 block: "center",
                 inline: "nearest",
               });
-              console.log("Element is NOT visible");
             }
           });
         });
@@ -63,15 +62,15 @@ async function checkIframeLoaded(path) {
   }
 }
 
-
 window.onload = function () {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
+  const iframeSelector = urlParams.get("iframeSelector") || ".swagger-ui-iframe"; // Fallback to default if not provided
   const x = urlParams.get("tag");
   const y = urlParams.get("op");
   const result = `operations-${x}-BTCAddressValidityVerifierController_${y}`;
 
-  checkIframeLoaded(result);
+  scrollToIframeId(iframeSelector, result);
 };
 
 function waitFor(condition, timeout = 30000) {
