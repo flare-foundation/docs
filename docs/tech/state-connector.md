@@ -342,6 +342,8 @@ Attestation providers currently support these attestation types:
     As a result, the balance at the address experienced a decrease, but the final balance is more than the balance was before the transaction.
 
 * [**Confirmed block height**](ConfirmedBlockHeightExists.md): Whether a block on a certain height exists and was confirmed.
+* [**EVMTransaction**](EVMTransaction.md): A relay of a transaction from an EVM chain.
+* [**Payment**](Payment.md): Whether a payment transaction occurred in which funds were sent from one address to another address.
 * [**Referenced payment nonexistence**](ReferencedPaymentNonexistence.md): Whether an account did not receive funds from a different account by a specific deadline.
 This type can serve as proof that a user's payment obligations to a DeFi protocol have been breached, considering the following cases:
 
@@ -353,4 +355,4 @@ This type can serve as proof that a user's payment obligations to a DeFi protoco
 New real-world event-type integrations are introduced to the State Connector via acceptance by the default attestation providers, without requiring any changes to the core voting or branching protocols described above.
 This enables rapid deployment of new use-cases without any validator-level code changes.
 
-See the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types) for more information.
+See the [state-connector-attestation-types repository](https://github.com/flare-foundation/songbird-state-connector-protocol) for more information.
