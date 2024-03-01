@@ -92,7 +92,7 @@ Then obtain an encoded attestation request:
 --8<-- "samples/sc/AddressValidity.js:46:54"
 ```
 
-This code performs a `POST` request to the [`prepareRequest`](../../../apis/REST/btcverifier.md?tag=AddressValidity&op=prepareRequest) endpoint of the attestation provider, using the standard [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+This code performs a `POST` request to the [`prepareRequest`](../../../apis/REST/btcverifier.md?tag=AddressValidity&ctrl=BTCAddressValidityVerifierController&op=prepareRequest) endpoint of the attestation provider, using the standard [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 `ATTESTATION_PROVIDER_API_KEY` is the API key of the chosen attestation provider, if it needs one.
 Attestation providers are typically paid services and require an API key to operate.
@@ -191,7 +191,7 @@ If your request was valid, i.e., if the provided address was a valid Bitcoin add
 --8<-- "samples/sc/AddressValidity.js:113:127"
 ```
 
-You need to construct a `proofRequest` and make a `POST` request to the [`get-specific-proof`](../../../apis/REST/btcverifier.md) endpoint of the attestation provider.
+You need to construct a `proofRequest` and make a `POST` request to the [`get-specific-proof`](../../../apis/REST/attestation-client.md?tag=Proof&ctrl=ProofController&op=getSpecificProofController) endpoint of the attestation provider.
 
 Doing so returns, among other things, a Merkle proof consisting of one or more nodes (hashes).
 If the Merkle tree is rebuilt using these nodes plus the hash of your request, and the resulting root hash matches the agreed-upon value stored in the State Connector, it means that the proof can be trusted.
@@ -236,9 +236,9 @@ If this value is `true` too, then the queried address is valid.
 
 This tutorial has shown how to:
 
-* Prepare a State Connector request using the [`prepareRequest`](../../../apis/REST/btcverifier.md?tag=AddressValidity&op=prepareRequest) REST endpoint of an attestation provider.
+* Prepare a State Connector request using the [`prepareRequest`](../../../apis/REST/btcverifier.md?tag=AddressValidity&ctrl=BTCAddressValidityVerifierController&op=prepareRequest) REST endpoint of an attestation provider.
 * Make a request to the State Connector smart contract using [`requestAttestations()`](IStateConnector.md#fn_requestattestations_f64b6fda).
-* Get the result from an attestation provider by making a `POST` request to the [`get-specific-proof`](../../../apis/REST/btcverifier.md) REST endpoint.
+* Get the result from an attestation provider by making a `POST` request to the [`get-specific-proof`](../../../apis/REST/attestation-client.md?tag=Proof&ctrl=ProofController&op=getSpecificProofController) REST endpoint.
 * Use the [`AddressValidityVerification`](AddressValidityVerification.md) smart contract to verify that the result returned by the attestation provider matches the result agreed upon by the State Connector.
 
 ## Next Steps
