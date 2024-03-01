@@ -1,6 +1,6 @@
 (function() {
   var url = window.location.href;
-  var pattern = /\/apis\/REST\/(attestation-client|btcverifier|dogeverifier|evmverifier)/;
+  var pattern = /\/apis\/REST\/(attestation-client|btcverifier|dogeverifier|evmverifier)/i;
 
   if (!pattern.test(url)) {
     return;
