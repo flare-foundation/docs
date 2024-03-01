@@ -330,18 +330,19 @@ In summary, validators using at least one reliable local attestation provider do
 
 ## Attestation Types
 
-Some attestation types are already defined. Attestation providers provide attestations for these types of defined requests:
+Attestation providers currently support these attestation types:
 
-* [**Payment**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00001-payment.md): Whether a payment transaction occurred in which funds were sent from one address to another address.
-* [**Balance-decreasing transaction**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00002-balance-decreasing-transaction.md): Whether a transaction that might have decreased a balance occurred. This type allows for several possibilities:
+* [**AddressValidity**](AddressValidity.md): Whether a given address is valid in the specified network.
+* [**Balance-decreasing transaction**](BalanceDecreasingTransaction.md): Whether a transaction that might have decreased a balance occurred.
+    This type allows for several possibilities:
 
     * During a transaction, funds, including fees, were deducted from the balance at an address.
     As a result, the final balance at the address is less than the balance was before the transaction.
     * During a transaction, funds to pay for fees were deducted from the balance at an address at the same time as more funds arrived.
     As a result, the balance at the address experienced a decrease, but the final balance is more than the balance was before the transaction.
 
-* [**Confirmed block height**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00003-confirmed-block-height-exists.md): Whether a block on a certain height exists and was confirmed.
-* [**Referenced payment nonexistence**](https://github.com/flare-foundation/state-connector-attestation-types/blob/main/attestation-types/00004-referenced-payment-nonexistence.md): Whether an account did not receive funds from a different account by a specific deadline.
+* [**Confirmed block height**](ConfirmedBlockHeightExists.md): Whether a block on a certain height exists and was confirmed.
+* [**Referenced payment nonexistence**](ReferencedPaymentNonexistence.md): Whether an account did not receive funds from a different account by a specific deadline.
 This type can serve as proof that a user's payment obligations to a DeFi protocol have been breached, considering the following cases:
 
     * The required transaction was not confirmed on time.

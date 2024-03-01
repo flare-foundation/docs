@@ -1,0 +1,1840 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/verifier/btc/api/indexer/state": {
+      "get": {
+        "description": "Gets the state entries from the indexer database.",
+        "operationId": "BTCIndexerController_indexerState",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The state of the Bitcoin indexer."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/block-range": {
+      "get": {
+        "description": "Gets the range of available confirmed blocks in the indexer database.",
+        "operationId": "BTCIndexerController_blockRange",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Range of available confirmed blocks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "OK"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "first": {
+                          "type": "number",
+                          "description": "The number of the first block in the range.",
+                          "example": 5706001
+                        },
+                        "last": {
+                          "type": "number",
+                          "description": "The number of the last block in the range.",
+                          "example": 5953106
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/transaction/{txHash}": {
+      "get": {
+        "description": "Gets the transaction for a given transaction ID (hash).",
+        "operationId": "BTCIndexerController_transaction",
+        "parameters": [
+          {
+            "name": "txHash",
+            "description": "The identifier of the transaction to be retrieved.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Transaction information for the specified identifier."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/block/{blockHash}": {
+      "get": {
+        "description": "Gets a block with given hash from the indexer database",
+        "operationId": "BTCIndexerController_block",
+        "parameters": [
+          {
+            "name": "blockHash",
+            "description": "The identifier of the block to be retrieved.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Block information for the specified identifier."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/confirmed-block-at/{blockNumber}": {
+      "get": {
+        "description": "Gets confirmed block with the given block number. Blocks that are not confirmed yet cannot be obtained using this route.",
+        "operationId": "BTCIndexerController_confirmedBlockAt",
+        "parameters": [
+          {
+            "name": "blockNumber",
+            "description": "The number of the block for which you want to retrieve confirmation status.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data about the requested block, if it is confirmed. A `null` object otherwise."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/block-height": {
+      "get": {
+        "description": "Gets the indexed block height.",
+        "operationId": "BTCIndexerController_blockHeight",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Indexed block height."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/transaction-block/{txHash}": {
+      "get": {
+        "description": "Returns block header data for the transaction with the given transaction ID.",
+        "operationId": "BTCIndexerController_transactionBlock",
+        "parameters": [
+          {
+            "name": "txHash",
+            "description": "The identifier of the transaction whose block number is to be retrieved.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Block header data for the block where the given transaction was included."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/api/indexer/transactions": {
+      "get": {
+        "description": "Paged query for confirmed transactions subject to conditions from query parameters. Transactions are sorted first by block number and then by transaction ID",
+        "operationId": "BTCIndexerController_transactionsWithinBlockRange",
+        "parameters": [
+          {
+            "name": "from",
+            "required": false,
+            "in": "query",
+            "description": "Minimal block number of query range",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "to",
+            "required": false,
+            "in": "query",
+            "description": "Maximal block number of the query range",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "paymentReference",
+            "required": false,
+            "in": "query",
+            "description": "0x-prefixed lowercase hex string representing 32-bytes",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Query limit. Capped by server config settings",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "offset",
+            "required": false,
+            "in": "query",
+            "description": "Query offset",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "returnResponse",
+            "required": false,
+            "in": "query",
+            "description": "Whether response from node stored in the indexer database should be returned",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of processed transactions in the block range."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/AddressValidity": {
+      "post": {
+        "operationId": "BTCAddressValidityVerifierController_verify",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contains:\n\n* The status of the request.\n* Indication of validity.\n* The validated address.\n * The hash of the validated address."
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/AddressValidity/prepareResponse": {
+      "post": {
+        "operationId": "BTCAddressValidityVerifierController_prepareResponse",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressValidity_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status, the address, and the address hash for the submitted attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_AddressValidity_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/AddressValidity/mic": {
+      "post": {
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "operationId": "BTCAddressValidityVerifierController_mic",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressValidity_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "VALID"
+                    },
+                    "messageIntegrityCode": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/AddressValidity/prepareRequest": {
+      "post": {
+        "operationId": "BTCAddressValidityVerifierController_prepareRequest",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressValidity_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncodedRequestResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/BalanceDecreasingTransaction": {
+      "post": {
+        "operationId": "BTCBalanceDecreasingTransactionVerifierController_verify",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contains:\n\n* The number and the timestamp of the block that contains the transaction.\n* The standard address hash.\n* The amount spent.\n* The standard payment reference."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/BalanceDecreasingTransaction/prepareResponse": {
+      "post": {
+        "operationId": "BTCBalanceDecreasingTransactionVerifierController_prepareResponse",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Indicates attestation request status."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/BalanceDecreasingTransaction/mic": {
+      "post": {
+        "operationId": "BTCBalanceDecreasingTransactionVerifierController_mic",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/BalanceDecreasingTransaction/prepareRequest": {
+      "post": {
+        "operationId": "BTCBalanceDecreasingTransactionVerifierController_prepareRequest",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ConfirmedBlockHeightExists": {
+      "post": {
+        "operationId": "BTCConfirmedBlockHeightExistsVerifierController_verify",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contains:\n\n * The timestamp of the block number the request wants to confirm.\n * The number of confirmations required to confirm a block.\n * The number of the latest block that has a timestamp smaller than `blockTimestamp` minus `queryWindow`.\n * The timestamp of `lowestQueryWindowBlockNumber`."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ConfirmedBlockHeightExists/prepareResponse": {
+      "post": {
+        "operationId": "BTCConfirmedBlockHeightExistsVerifierController_prepareResponse",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status of the request."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ConfirmedBlockHeightExists/mic": {
+      "post": {
+        "operationId": "BTCConfirmedBlockHeightExistsVerifierController_mic",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ConfirmedBlockHeightExists/prepareRequest": {
+      "post": {
+        "operationId": "BTCConfirmedBlockHeightExistsVerifierController_prepareRequest",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/Payment": {
+      "post": {
+        "operationId": "BTCPaymentVerifierController_verify",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Status of the request."
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/Payment/prepareResponse": {
+      "post": {
+        "operationId": "BTCPaymentVerifierController_prepareResponse",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payment_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_Payment_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/Payment/mic": {
+      "post": {
+        "operationId": "BTCPaymentVerifierController_mic",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payment_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/Payment/prepareRequest": {
+      "post": {
+        "operationId": "BTCPaymentVerifierController_prepareRequest",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payment_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncodedRequestResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ReferencedPaymentNonexistence": {
+      "post": {
+        "operationId": "BTCReferencedPaymentNonexistenceVerifierController_verify",
+        "description": "Tries to verify encoded attestation request without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns attestation request status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_ReferencedPaymentNonexistence_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ReferencedPaymentNonexistence/prepareResponse": {
+      "post": {
+        "operationId": "BTCReferencedPaymentNonexistenceVerifierController_prepareResponse",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful it returns response.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status of the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttestationResponseDTO_ReferencedPaymentNonexistence_Response"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ReferencedPaymentNonexistence/mic": {
+      "post": {
+        "operationId": "BTCReferencedPaymentNonexistenceVerifierController_mic",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code, and if successful, it returns the correct message integrity code.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/btc/ReferencedPaymentNonexistence/prepareRequest": {
+      "post": {
+        "operationId": "BTCReferencedPaymentNonexistenceVerifierController_prepareRequest",
+        "description": "Tries to verify attestation request (given in JSON) without checking message integrity code.\nIf successful, it returns the encoding of the attestation request with the correct message integrity code, which can be directly submitted to the State Connector contract.",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EncodedRequestResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Verifier and indexer server (testBTC)",
+    "description": "Verifier and indexer server over an indexer database.",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [
+    {
+      "url": "https://attestation-coston.aflabs.net"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "X-API-KEY": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    },
+    "schemas": {
+      "EncodedRequest": {
+        "type": "object",
+        "properties": {
+          "abiEncodedRequest": {
+            "type": "string",
+            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+          }
+        },
+        "required": [
+          "abiEncodedRequest"
+        ]
+      },
+      "AddressValidity_RequestBody": {
+        "type": "object",
+        "properties": {
+          "addressStr": {
+            "type": "string",
+            "description": "Address to be verified.",
+            "example": "Example string"
+          }
+        },
+        "required": [
+          "addressStr"
+        ]
+      },
+      "AddressValidity_ResponseBody": {
+        "type": "object",
+        "properties": {
+          "isValid": {
+            "type": "boolean",
+            "description": "Boolean indicator of the address validity.",
+            "example": true
+          },
+          "standardAddress": {
+            "type": "string",
+            "description": "If 'isValid', standard form of the validated address. Otherwise an empty string.",
+            "example": "Example string"
+          },
+          "standardAddressHash": {
+            "type": "string",
+            "description": "If 'isValid', standard address hash of the validated address. Otherwise a zero bytes32 string.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "required": [
+          "isValid",
+          "standardAddress",
+          "standardAddressHash"
+        ]
+      },
+      "AddressValidity_Response": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4164647265737356616c69646974790000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "votingRound": {
+            "type": "string",
+            "description": "The ID of the State Connector round in which the request was considered.",
+            "example": "123"
+          },
+          "lowestUsedTimestamp": {
+            "type": "string",
+            "description": "The lowest timestamp used to generate the response.",
+            "example": "123"
+          },
+          "requestBody": {
+            "description": "Extracted from the request.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AddressValidity_RequestBody"
+              }
+            ]
+          },
+          "responseBody": {
+            "description": "Data defining the response. The verification rules for the construction of the response body and the type are defined per specific 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AddressValidity_ResponseBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "votingRound",
+          "lowestUsedTimestamp",
+          "requestBody",
+          "responseBody"
+        ]
+      },
+      "AttestationResponseDTO_AddressValidity_Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/AddressValidity_Response"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "AddressValidity_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "ID of the attestation type.",
+            "example": "0x4164647265737356616c69646974790000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Id of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AddressValidity_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "MicResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Verification status.",
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "messageIntegrityCode": {
+            "type": "string",
+            "description": "Message integrity code"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "EncodedRequestResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Verification status.",
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "abiEncodedRequest": {
+            "type": "string",
+            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "BalanceDecreasingTransaction_RequestBody": {
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "description": "ID of the payment transaction.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "sourceAddressIndicator": {
+            "type": "string",
+            "description": "The indicator of the address whose balance has been decreased.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "required": [
+          "transactionId",
+          "sourceAddressIndicator"
+        ]
+      },
+      "BalanceDecreasingTransaction_ResponseBody": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "string",
+            "description": "The number of the block in which the transaction is included.",
+            "example": "123"
+          },
+          "blockTimestamp": {
+            "type": "string",
+            "description": "The timestamp of the block in which the transaction is included.",
+            "example": "123"
+          },
+          "sourceAddressHash": {
+            "type": "string",
+            "description": "Standard address hash of the address indicated by the 'sourceAddressIndicator'.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "spentAmount": {
+            "type": "string",
+            "description": "Amount spent by the source address in minimal units.",
+            "example": "123"
+          },
+          "standardPaymentReference": {
+            "type": "string",
+            "description": "Standard payment reference of the transaction.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "blockTimestamp",
+          "sourceAddressHash",
+          "spentAmount",
+          "standardPaymentReference"
+        ]
+      },
+      "BalanceDecreasingTransaction_Response": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x42616c616e636544656372656173696e675472616e73616374696f6e00000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "votingRound": {
+            "type": "string",
+            "description": "The ID of the State Connector round in which the request was considered. This is a security measure to prevent a collision of attestation hashes.",
+            "example": "123"
+          },
+          "lowestUsedTimestamp": {
+            "type": "string",
+            "description": "The lowest timestamp used to generate the response.",
+            "example": "123"
+          },
+          "requestBody": {
+            "description": "Extracted from the request.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestBody"
+              }
+            ]
+          },
+          "responseBody": {
+            "description": "Data defining the response. The verification rules for the construction of the response body and the type are defined per specific 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_ResponseBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "votingRound",
+          "lowestUsedTimestamp",
+          "requestBody",
+          "responseBody"
+        ]
+      },
+      "AttestationResponseDTO_BalanceDecreasingTransaction_Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/BalanceDecreasingTransaction_Response"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "BalanceDecreasingTransaction_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "ID of the attestation type.",
+            "example": "0x42616c616e636544656372656173696e675472616e73616374696f6e00000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "ConfirmedBlockHeightExists_RequestBody": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "string",
+            "description": "The number of the block the request wants a confirmation of.",
+            "example": "123"
+          },
+          "queryWindow": {
+            "type": "string",
+            "description": "The length of the period in which the block production rate is to be computed.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "queryWindow"
+        ]
+      },
+      "ConfirmedBlockHeightExists_ResponseBody": {
+        "type": "object",
+        "properties": {
+          "blockTimestamp": {
+            "type": "string",
+            "description": "The timestamp of the block with 'blockNumber'.",
+            "example": "123"
+          },
+          "numberOfConfirmations": {
+            "type": "string",
+            "description": "The depth at which a block is considered confirmed depending on the chain. All attestation providers must agree on this number.",
+            "example": "123"
+          },
+          "lowestQueryWindowBlockNumber": {
+            "type": "string",
+            "description": "The block number of the latest block that has a timestamp strictly smaller than 'blockTimestamp' - 'queryWindow'.",
+            "example": "123"
+          },
+          "lowestQueryWindowBlockTimestamp": {
+            "type": "string",
+            "description": "The timestamp of the block at height 'lowestQueryWindowBlockNumber'.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "blockTimestamp",
+          "numberOfConfirmations",
+          "lowestQueryWindowBlockNumber",
+          "lowestQueryWindowBlockTimestamp"
+        ]
+      },
+      "ConfirmedBlockHeightExists_Response": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x436f6e6669726d6564426c6f636b486569676874457869737473000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "votingRound": {
+            "type": "string",
+            "description": "The ID of the State Connector round in which the request was considered.",
+            "example": "123"
+          },
+          "lowestUsedTimestamp": {
+            "type": "string",
+            "description": "The lowest timestamp used to generate the response.",
+            "example": "123"
+          },
+          "requestBody": {
+            "description": "Extracted from the request.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestBody"
+              }
+            ]
+          },
+          "responseBody": {
+            "description": "Data defining the response. The verification rules for the construction of the response body and the type are defined per specific 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_ResponseBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "votingRound",
+          "lowestUsedTimestamp",
+          "requestBody",
+          "responseBody"
+        ]
+      },
+      "AttestationResponseDTO_ConfirmedBlockHeightExists_Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/ConfirmedBlockHeightExists_Response"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "ConfirmedBlockHeightExists_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "ID of the attestation type.",
+            "example": "0x436f6e6669726d6564426c6f636b486569676874457869737473000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "Payment_RequestBody": {
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "description": "ID of the payment transaction.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "inUtxo": {
+            "type": "string",
+            "description": "For UTXO chains, this is the index of the transaction input with source address. Always 0 for the non-utxo chains.",
+            "example": "123"
+          },
+          "utxo": {
+            "type": "string",
+            "description": "For UTXO chains, this is the index of the transaction output with receiving address. Always 0 for the non-utxo chains.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "transactionId",
+          "inUtxo",
+          "utxo"
+        ]
+      },
+      "Payment_ResponseBody": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "string",
+            "description": "Number of the block in which the transaction is included.",
+            "example": "123"
+          },
+          "blockTimestamp": {
+            "type": "string",
+            "description": "The timestamp of the block in which the transaction is included.",
+            "example": "123"
+          },
+          "sourceAddressHash": {
+            "type": "string",
+            "description": "Standard address hash of the source address.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "receivingAddressHash": {
+            "type": "string",
+            "description": "Standard address hash of the receiving address. The zero 32-byte string if there is no receivingAddress (if 'status' is not success).",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "intendedReceivingAddressHash": {
+            "type": "string",
+            "description": "Standard address hash of the intended receiving address. Relevant if the transaction is unsuccessful.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "spentAmount": {
+            "type": "string",
+            "description": "Amount in minimal units spent by the source address.",
+            "example": "123"
+          },
+          "intendedSpentAmount": {
+            "type": "string",
+            "description": "Amount in minimal units to be spent by the source address. Relevant if the transaction status is unsuccessful.",
+            "example": "123"
+          },
+          "receivedAmount": {
+            "type": "string",
+            "description": "Amount in minimal units received by the receiving address.",
+            "example": "123"
+          },
+          "intendedReceivedAmount": {
+            "type": "string",
+            "description": "Amount in minimal units intended to be received by the receiving address. Relevant if the transaction is unsuccessful.",
+            "example": "123"
+          },
+          "standardPaymentReference": {
+            "type": "string",
+            "description": "[Standard payment reference](/specs/attestations/external-chains/standardPaymentReference.md) of the transaction.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "oneToOne": {
+            "type": "boolean",
+            "description": "Indicator whether only one source and one receiver are involved in the transaction.",
+            "example": true
+          },
+          "status": {
+            "type": "string",
+            "description": "[Succes status](/specs/attestations/external-chains/transactions.md#transaction-success-status) of the transaction: 0 - success, 1 - failed by sender's fault,x  2 - failed by receiver's fault.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "blockTimestamp",
+          "sourceAddressHash",
+          "receivingAddressHash",
+          "intendedReceivingAddressHash",
+          "spentAmount",
+          "intendedSpentAmount",
+          "receivedAmount",
+          "intendedReceivedAmount",
+          "standardPaymentReference",
+          "oneToOne",
+          "status"
+        ]
+      },
+      "Payment_Response": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x5061796d656e7400000000000000000000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "votingRound": {
+            "type": "string",
+            "description": "The ID of the State Connector round in which the request was considered.",
+            "example": "123"
+          },
+          "lowestUsedTimestamp": {
+            "type": "string",
+            "description": "The lowest timestamp used to generate the response.",
+            "example": "123"
+          },
+          "requestBody": {
+            "description": "Extracted from the request.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Payment_RequestBody"
+              }
+            ]
+          },
+          "responseBody": {
+            "description": "Data defining the response. The verification rules for the construction of the response body and the type are defined per specific 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Payment_ResponseBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "votingRound",
+          "lowestUsedTimestamp",
+          "requestBody",
+          "responseBody"
+        ]
+      },
+      "AttestationResponseDTO_Payment_Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/Payment_Response"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "Payment_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "ID of the attestation type.",
+            "example": "0x5061796d656e7400000000000000000000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Payment_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "ReferencedPaymentNonexistence_RequestBody": {
+        "type": "object",
+        "properties": {
+          "minimalBlockNumber": {
+            "type": "string",
+            "description": "The start block of the search range.",
+            "example": "123"
+          },
+          "deadlineBlockNumber": {
+            "type": "string",
+            "description": "The blockNumber to be included in the search range.",
+            "example": "123"
+          },
+          "deadlineTimestamp": {
+            "type": "string",
+            "description": "The timestamp to be included in the search range.",
+            "example": "123"
+          },
+          "destinationAddressHash": {
+            "type": "string",
+            "description": "The standard address hash of the address to which the payment had to be done.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "amount": {
+            "type": "string",
+            "description": "The requested amount in minimal units that had to be payed.",
+            "example": "123"
+          },
+          "standardPaymentReference": {
+            "type": "string",
+            "description": "The requested standard payment reference.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "required": [
+          "minimalBlockNumber",
+          "deadlineBlockNumber",
+          "deadlineTimestamp",
+          "destinationAddressHash",
+          "amount",
+          "standardPaymentReference"
+        ]
+      },
+      "ReferencedPaymentNonexistence_ResponseBody": {
+        "type": "object",
+        "properties": {
+          "minimalBlockTimestamp": {
+            "type": "string",
+            "description": "The timestamp of the minimalBlock.",
+            "example": "123"
+          },
+          "firstOverflowBlockNumber": {
+            "type": "string",
+            "description": "The height of the firstOverflowBlock.",
+            "example": "123"
+          },
+          "firstOverflowBlockTimestamp": {
+            "type": "string",
+            "description": "The timestamp of the firstOverflowBlock.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "minimalBlockTimestamp",
+          "firstOverflowBlockNumber",
+          "firstOverflowBlockTimestamp"
+        ]
+      },
+      "ReferencedPaymentNonexistence_Response": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x5265666572656e6365645061796d656e744e6f6e6578697374656e6365000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Extracted from the request.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "votingRound": {
+            "type": "string",
+            "description": "The ID of the State Connector round in which the request was considered.",
+            "example": "123"
+          },
+          "lowestUsedTimestamp": {
+            "type": "string",
+            "description": "The lowest timestamp used to generate the response.",
+            "example": "123"
+          },
+          "requestBody": {
+            "description": "Extracted from the request.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestBody"
+              }
+            ]
+          },
+          "responseBody": {
+            "description": "Data defining the response. The verification rules for the construction of the response body and the type are defined per specific 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_ResponseBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "votingRound",
+          "lowestUsedTimestamp",
+          "requestBody",
+          "responseBody"
+        ]
+      },
+      "AttestationResponseDTO_ReferencedPaymentNonexistence_Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "INDETERMINATE"
+            ],
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/components/schemas/ReferencedPaymentNonexistence_Response"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "ReferencedPaymentNonexistence_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "ID of the attestation type.",
+            "example": "0x5265666572656e6365645061796d656e744e6f6e6578697374656e6365000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      }
+    }
+  }
+}

@@ -83,14 +83,20 @@ The `repos.list` file contains the links to the code repos you wish to generate 
 To add a new repo to `repos.list`, enter the following on one line, separated by whitespace:
 
 * The git URL of the repo.
+* Branch where the documentation resides.
+* URL where the public source code resides.
 * The hardhat config file, typically `hardhat.config.ts` or `hardhatSetup.config.ts`.
 * The command required to build the repo. It can contain spaces since this is the last item in the line.
 
 ### Example
 
 ```bash
-git@gitlab.com:flarenetwork/flare-smart-contracts.git hardhatSetup.config.ts yarn compile
+git@gitlab.com:flarenetwork/state-connector-protocol.git STAT-28 https://github.com/flare-foundation/songbird-state-connector-protocol/tree/main hardhat.config.ts yarn hardhat compile
 ```
+
+This generates docs from the `STAT-28` branch in the gitlab repo.
+But the gitlab repo is private, so a different URL is used to provide links to the source code.
+The Hardhat config file is `hardhat.config.ts` and the command to build the repo is `yarn hardhat compile`.
 
 ## 3. Run `build-docs.sh`
 

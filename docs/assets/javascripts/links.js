@@ -1,26 +1,25 @@
 // External links
-var links = document.getElementsByTagName('a');
+var links = document.getElementsByTagName("a");
 for (var i = 0, l = links.length; i < l; ++i) {
-    const lk = links[i];
-    if (lk.hostname != undefined && lk.hostname !== location.hostname) {
-        lk.setAttribute("target", "_blank");
-        lk.setAttribute("rel", "noopener noreferrer");
-    }
-};
+  const lk = links[i];
+  if (lk.hostname != undefined && lk.hostname !== location.hostname) {
+    lk.setAttribute("target", "_blank");
+    lk.setAttribute("rel", "noopener noreferrer");
+  }
+}
 
 // Tutorial comments in source code
-var comments = document.getElementsByClassName('c1');
-var h3s = document.getElementsByTagName('h3');
+var comments = document.getElementsByClassName("c1");
+var h3s = document.getElementsByTagName("h3");
 const re = /^\/\/ ([0-9]+)\./;
 for (var i = 0, l = comments.length; i < l; ++i) {
-    const c = comments[i];
-    // Find all code comments starting with a number and a dot
-    const r = c.innerText.match(re);
-    if (r) {
-        // Locate target header
-        const target = [...h3s].find((e) => e.id.startsWith(`${r[1]}-`));
-        // Add link
-        if (target)
-            c.outerHTML = `<a href="#${target.id}">` + c.outerHTML + '</a>';
-    }
+  const c = comments[i];
+  // Find all code comments starting with a number and a dot
+  const r = c.innerText.match(re);
+  if (r) {
+    // Locate target header
+    const target = [...h3s].find((e) => e.id.startsWith(`${r[1]}-`));
+    // Add link
+    if (target) c.outerHTML = `<a href="#${target.id}">` + c.outerHTML + "</a>";
+  }
 }

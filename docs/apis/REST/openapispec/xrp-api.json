@@ -1,0 +1,1210 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/verifier/xrp/api/indexer/state": {
+      "get": {
+        "description": "Gets the state of the XRP indexer.",
+        "operationId": "XRPIndexerController_indexerState",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "State of the XRP indexer."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/block-range": {
+      "get": {
+        "description": "Gets the range of indexed block numbers.",
+        "operationId": "XRPIndexerController_blockRange",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns the block range of the XRP indexer.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "OK"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "first": {
+                          "type": "number",
+                          "description": "The number of the first block in the range.",
+                          "example": 5706001
+                        },
+                        "last": {
+                          "type": "number",
+                          "description": "The number of the last block in the range.",
+                          "example": 5953106
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/transaction/{txHash}": {
+      "get": {
+        "description": "Gets information about a XRP transaction.",
+        "operationId": "XRPIndexerController_transaction",
+        "parameters": [
+          {
+            "name": "txHash",
+            "description": "The identifier of the transaction to be retrieve.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Transaction information for the specified identifier."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/block/{blockHash}": {
+      "get": {
+        "description": "Gets information about a XRP block.",
+        "operationId": "XRPIndexerController_block",
+        "parameters": [
+          {
+            "name": "blockHash",
+            "description": "The identifier of the block to be retrieved.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Block information for the specified identifier."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/confirmed-block-at/{blockNumber}": {
+      "get": {
+        "description": "Displays whether a block is confirmed.",
+        "operationId": "XRPIndexerController_confirmedBlockAt",
+        "parameters": [
+          {
+            "name": "blockNumber",
+            "description": "The number of the block for which you want to retrieve confirmation status.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data about the requested block, if it is confirmed. A `null` object otherwise."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/block-height": {
+      "get": {
+        "description": "Gets the XRP block height.",
+        "operationId": "XRPIndexerController_blockHeight",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns the XRP block height."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/transaction-block/{txHash}": {
+      "get": {
+        "description": "Gets the number of a block in which a transaction was included.",
+        "operationId": "XRPIndexerController_transactionBlock",
+        "parameters": [
+          {
+            "name": "txHash",
+            "description": "The identifier of the transaction whose block number is to be retrieved.",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Block header data for the block where the given transaction was included."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/api/indexer/transactions": {
+      "get": {
+        "description": "Gets processed transactions within a range of blocks.",
+        "operationId": "XRPIndexerController_transactionsWithinBlockRange",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Returns the processed transactions in the block range."
+          }
+        },
+        "tags": [
+          "Indexer"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/AddressValidity": {
+      "post": {
+        "description": "Sends a request to verify that a XRP address is valid.",
+        "operationId": "XRPAddressValidityVerifierController_verify",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns \n\n* The status of the request.\n* Indication of validity.\n* The validated address.\n* The hash of the validated address."
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/AddressValidity/prepareResponse": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code.",
+        "operationId": "XRPAddressValidityVerifierController_prepareResponse",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressValidity_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status, the address, and the address hash for the submitted attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddressValidationResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/AddressValidity/mic": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
+        "operationId": "XRPAddressValidityVerifierController_mic",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressValidity_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "VALID"
+                    },
+                    "messageIntegrityCode": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/AddressValidity/prepareRequest": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
+        "operationId": "XRPAddressValidityVerifierController_prepareRequest",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddressValidity_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrepareRequest"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "AddressValidity"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/BalanceDecreasingTransaction": {
+      "post": {
+        "description": "Sends a request for transactions that decreased the balance of an address.",
+        "operationId": "XRPBalanceDecreasingTransactionVerifierController_verify",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the number and the timestamp of the block that contains the transaction, the standard address hash, the amount spent, and the standard payment reference."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/BalanceDecreasingTransaction/prepareResponse": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code.",
+        "operationId": "XRPBalanceDecreasingTransactionVerifierController_prepareResponse",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Indicates attestation request status."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/BalanceDecreasingTransaction/mic": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
+        "operationId": "XRPBalanceDecreasingTransactionVerifierController_mic",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/BalanceDecreasingTransaction/prepareRequest": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
+        "operationId": "XRPBalanceDecreasingTransactionVerifierController_prepareRequest",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification."
+          }
+        },
+        "tags": [
+          "BalanceDecreasingTransaction"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ConfirmedBlockHeightExists": {
+      "post": {
+        "description": "Sends a request to confirm that a block height exists.",
+        "operationId": "XRPConfirmedBlockHeightExistsVerifierController_verify",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns \n\n* The timestamp of the block number the request wants to confirm.\n* The depth at which a block is confirmed.\n* The block number of the latest block that "
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ConfirmedBlockHeightExists/prepareResponse": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code.",
+        "operationId": "XRPConfirmedBlockHeightExistsVerifierController_prepareResponse",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status of the request."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ConfirmedBlockHeightExists/mic": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
+        "operationId": "XRPConfirmedBlockHeightExistsVerifierController_mic",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ConfirmedBlockHeightExists/prepareRequest": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
+        "operationId": "XRPConfirmedBlockHeightExistsVerifierController_prepareRequest",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification."
+          }
+        },
+        "tags": [
+          "ConfirmedBlockHeightExists"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/Payment": {
+      "post": {
+        "description": "Sends a request to verify a payment.",
+        "operationId": "XRPPaymentVerifierController_verify",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Status of the request."
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/Payment/prepareResponse": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code.",
+        "operationId": "XRPPaymentVerifierController_prepareResponse",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payment_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns <a href=\"https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/active-types/Payment.md\"> payment summary </a>.."
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/Payment/mic": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
+        "operationId": "XRPPaymentVerifierController_mic",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payment_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request."
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/Payment/prepareRequest": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
+        "operationId": "XRPPaymentVerifierController_prepareRequest",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Payment_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification."
+          }
+        },
+        "tags": [
+          "Payment"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ReferencedPaymentNonexistence": {
+      "post": {
+        "description": "Submits a request to verify whether a payment transaction was made.",
+        "operationId": "XRPReferencedPaymentNonexistenceVerifierController_verify",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EncodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Request status."
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ReferencedPaymentNonexistence/prepareResponse": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code.",
+        "operationId": "XRPReferencedPaymentNonexistenceVerifierController_prepareResponse",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status of the request."
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ReferencedPaymentNonexistence/mic": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, the message integrity code is computed.",
+        "operationId": "XRPReferencedPaymentNonexistenceVerifierController_mic",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the message integrity code for the submitted attestation request."
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    },
+    "/verifier/xrp/ReferencedPaymentNonexistence/prepareRequest": {
+      "post": {
+        "description": "Verifies an attestation request without checking the message integrity code. If the request is valid, it gets encoded.",
+        "operationId": "XRPReferencedPaymentNonexistenceVerifierController_prepareRequest",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestNoMic"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation status and the request encoded according to the ABI specification."
+          }
+        },
+        "tags": [
+          "ReferencedPaymentNonexistence"
+        ],
+        "security": [
+          {
+            "X-API-KEY": []
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Verifier and indexer server (testXRP)",
+    "description": "Verifier and indexer server over an indexer database.",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [
+    {
+      "url": "https://attestation-coston.aflabs.net"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "X-API-KEY": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    },
+    "schemas": {
+      "EncodedRequest": {
+        "type": "object",
+        "properties": {}
+      },
+      "AddressValidity_RequestBody": {
+        "type": "object",
+        "properties": {
+          "addressStr": {
+            "type": "string",
+            "description": "The address to be verified.",
+            "example": "Example string"
+          }
+        },
+        "required": [
+          "addressStr"
+        ]
+      },
+      "AddressValidity_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "The ID of the attestation type.",
+            "example": "0x4164647265737356616c69646974790000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "The ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AddressValidity_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "BalanceDecreasingTransaction_RequestBody": {
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "description": "The ID of the payment transaction.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "sourceAddressIndicator": {
+            "type": "string",
+            "description": "The indicator of the address whose balance has been decreased.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "required": [
+          "transactionId",
+          "sourceAddressIndicator"
+        ]
+      },
+      "BalanceDecreasingTransaction_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "The ID of the attestation type.",
+            "example": "0x42616c616e636544656372656173696e675472616e73616374696f6e00000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "The ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BalanceDecreasingTransaction_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "ConfirmedBlockHeightExists_RequestBody": {
+        "type": "object",
+        "properties": {
+          "blockNumber": {
+            "type": "string",
+            "description": "The block number the request is attempting to confirm.",
+            "example": "123"
+          },
+          "queryWindow": {
+            "type": "string",
+            "description": "The length of the period in which the block production rate is to be computed.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "blockNumber",
+          "queryWindow"
+        ]
+      },
+      "ConfirmedBlockHeightExists_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "The ID of the attestation type.",
+            "example": "0x436f6e6669726d6564426c6f636b486569676874457869737473000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "The ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConfirmedBlockHeightExists_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "Payment_RequestBody": {
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "description": "The ID of the payment transaction.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "inUtxo": {
+            "type": "string",
+            "description": "For UTXO chains, the index of the transaction input with the source address. For other chains, this value is always 0.",
+            "example": "123"
+          },
+          "utxo": {
+            "type": "string",
+            "description": "For UTXO chains, the index of the transaction output with the receiving address. For other chains, this value is always 0.",
+            "example": "123"
+          }
+        },
+        "required": [
+          "transactionId",
+          "inUtxo",
+          "utxo"
+        ]
+      },
+      "Payment_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "The ID of the attestation type.",
+            "example": "0x5061796d656e7400000000000000000000000000000000000000000000000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "The ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Payment_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "ReferencedPaymentNonexistence_RequestBody": {
+        "type": "object",
+        "properties": {
+          "minimalBlockNumber": {
+            "type": "string",
+            "description": "The first block number to be included in the range to be searched.",
+            "example": "123"
+          },
+          "deadlineBlockNumber": {
+            "type": "string",
+            "description": "The last block number to be included in the range to be searched.",
+            "example": "123"
+          },
+          "deadlineTimestamp": {
+            "type": "string",
+            "description": "The last timestamp to be included in the search range.",
+            "example": "123"
+          },
+          "destinationAddressHash": {
+            "type": "string",
+            "description": "The standard hash of the address to which the payment was possibly made.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "amount": {
+            "type": "string",
+            "description": "The requested amount that had to be payed, in minimal units (no decimals).",
+            "example": "123"
+          },
+          "standardPaymentReference": {
+            "type": "string",
+            "description": "The requested standard payment reference that uniquely identifies this payment.",
+            "example": "0x0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "required": [
+          "minimalBlockNumber",
+          "deadlineBlockNumber",
+          "deadlineTimestamp",
+          "destinationAddressHash",
+          "amount",
+          "standardPaymentReference"
+        ]
+      },
+      "ReferencedPaymentNonexistence_RequestNoMic": {
+        "type": "object",
+        "properties": {
+          "attestationType": {
+            "type": "string",
+            "description": "The ID of the attestation type.",
+            "example": "0x5265666572656e6365645061796d656e744e6f6e6578697374656e6365000000"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "The ID of the data source.",
+            "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
+          },
+          "requestBody": {
+            "description": "Data defining the request. The content depends on the 'attestationType'.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReferencedPaymentNonexistence_RequestBody"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attestationType",
+          "sourceId",
+          "requestBody"
+        ]
+      },
+      "AddressValidationResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "VALID"
+          },
+          "response": {
+            "type": "object",
+            "properties": {
+              "attestationType": {
+                "type": "string"
+              },
+              "sourceId": {
+                "type": "string"
+              },
+              "votingRound": {
+                "type": "number"
+              },
+              "lowestUsedTimestamp": {
+                "type": "string"
+              },
+              "requestBody": {
+                "type": "object",
+                "properties": {
+                  "addressStr": {
+                    "type": "string"
+                  }
+                }
+              },
+              "responseBody": {
+                "type": "object",
+                "properties": {
+                  "isValid": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "standardAddress": {
+                    "type": "string"
+                  },
+                  "standardAddressHash": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "PrepareRequest": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "VALID"
+          },
+          "abiEncodedRequest": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
