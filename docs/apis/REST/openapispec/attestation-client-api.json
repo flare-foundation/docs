@@ -3,8 +3,9 @@
   "paths": {
     "/attestation-client/api/proof/votes-for-round/{roundId}": {
       "get": {
-        "description": "Gets the result of a voting round.",
         "operationId": "ProofController_votesForRound",
+        "summary": "",
+        "description": "Returns all vote data of the attestation provider for the voting round @param roundId\nthat was included into its Merkle tree. The data contains attestation responses, requests, the hash in\nMerkle tree and the Merkle proof. The data can be used to fully assemble the Merkle tree used in the vote.",
         "parameters": [
           {
             "name": "roundId",
@@ -12,14 +13,13 @@
             "required": true,
             "in": "path",
             "schema": {
-              "type": "number",
-              "example": 2345678
+              "type": "number"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "The result of the specified voting round.",
+            "description": "Returns all vote data for the specified voting round",
             "content": {
               "application/json": {
                 "schema": {
@@ -50,8 +50,9 @@
     },
     "/attestation-client/api/proof/get-specific-proof": {
       "post": {
-        "description": "Requests an attestation proof. Attestation request is identified by the request data and the round ID in which it was submitted.",
         "operationId": "ProofController_getSpecificProofController",
+        "summary": "",
+        "description": "Returns proof data for specific attestation request.\nAttestation request is identified by the request data and round id in which it was submitted.",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -93,23 +94,22 @@
     },
     "/attestation-client/api/proof/requests-for-round/{roundId}": {
       "get": {
-        "description": "Gets all requests received by the attestation provider in a voting round. Each request includes its processing status.",
         "operationId": "ProofController_requestsForRound",
+        "summary": "",
+        "description": "Lists all requests received by attestation client.\nEach request includes its processing status.",
         "parameters": [
           {
             "name": "roundId",
-            "description": "The ID number of the attestation round. It corresponds to the buffer number of the Collect phase of the round.",
             "required": true,
             "in": "path",
             "schema": {
-              "type": "number",
-              "example": 2345678
+              "type": "number"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Attestation requests received in the specified round.",
+            "description": "Attestation requests received in the specified round",
             "content": {
               "application/json": {
                 "schema": {
@@ -140,8 +140,9 @@
     },
     "/attestation-client/api/proof/status": {
       "get": {
-        "description": "Gets information about the current status of the system, including the current voting round and the last completed round.",
         "operationId": "ProofController_systemStatus",
+        "summary": "",
+        "description": "Get current status of the system",
         "parameters": [],
         "responses": {
           "200": {
@@ -174,29 +175,47 @@
   },
   "info": {
     "title": "Attestation Client Public Server",
-    "description": "The public attestation client server. It provides data about attestations by voting round and metrics about attestation statuses.",
+    "description": "Public server for attestation client providing data about attestations by round, and attestation status metrics.",
     "version": "1.0",
     "contact": {}
   },
   "tags": [],
-  "servers": [
-    {
-      "url": "https://attestation-coston.aflabs.net"
-    }
-  ],
+  "servers": [],
   "components": {
     "schemas": {
       "VotingRoundResult": {
         "type": "object",
         "properties": {
-          "status": {
-            "type": "string",
-            "example": "OK"
+          "roundId": {
+            "type": "number"
           },
-          "data": {
+          "hash": {
+            "type": "string"
+          },
+          "requestBytes": {
+            "type": "string"
+          },
+          "request": {
             "type": "object"
+          },
+          "response": {
+            "type": "object"
+          },
+          "merkleProof": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
-        }
+        },
+        "required": [
+          "roundId",
+          "hash",
+          "requestBytes",
+          "request",
+          "response",
+          "merkleProof"
+        ]
       },
       "ApiValidationErrorDetails": {
         "type": "object",
@@ -240,51 +259,61 @@
         ]
       },
       "SpecificProofRequest": {
-        "description": "The requested attestation proof.",
         "type": "object",
         "properties": {
           "roundId": {
             "type": "number",
-            "description": "The ID number of the attestation round. It corresponds to the buffer number of the Collect phase of the round."
+            "description": "Round of the attestation request submission"
           },
           "requestBytes": {
-            "type": "object",
-            "description": "Encoded request data."
+            "type": "string",
+            "description": "Attestation request data as submitted to State Connector smart contract"
           }
-        }
+        },
+        "required": [
+          "roundId",
+          "requestBytes"
+        ]
       },
       "VotingRoundRequest": {
         "type": "object",
         "properties": {
-          "status": {
-            "type": "string",
-            "example": "OK"
+          "roundId": {
+            "type": "number"
           },
-          "data": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "requestBytes": {
-                  "type": "string"
-                },
-                "verificationStatus": {
-                  "type": "string"
-                },
-                "attestationStatus": {
-                  "type": "string"
-                },
-                "roundId": {
-                  "type": "number"
-                }
-              }
-            }
+          "requestBytes": {
+            "type": "string"
+          },
+          "verificationStatus": {
+            "type": "string"
+          },
+          "attestationStatus": {
+            "type": "string"
+          },
+          "exceptionError": {
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "roundId",
+          "requestBytes",
+          "verificationStatus"
+        ]
       },
       "SystemStatus": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "currentBufferNumber": {
+            "type": "number"
+          },
+          "latestAvailableRoundId": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "currentBufferNumber",
+          "latestAvailableRoundId"
+        ]
       }
     }
   }
