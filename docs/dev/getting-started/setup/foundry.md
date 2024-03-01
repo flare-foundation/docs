@@ -110,3 +110,38 @@ You can check the status of the contract by copy and pasting the `Deployed to:` 
 !!! info
 
     Learn more about [Deploying and Verifying Smart Contracts using Foundry](https://book.getfoundry.sh/forge/deploying)!
+
+### 6. Verify the Contract
+
+Verifying smart contracts is essential for transparency and security in the blockchain ecosystem.
+
+Verification allows inspecting Solidity source code instead of bytecode and direct interaction with smart contracts through a block explorer.
+
+For the contract verification process, you need to get two values.
+The first is the contract address you got in the [previous step](#5-deploy-the-contract) when you deployed the contract on the blockchain.
+The second value is the chain identifier, which you can find on the [Flare Networks page](../../reference/network-config.md).
+
+Now replace `CONTRACT_ADDRESS` with the deployed contract address and `CHAIN_ID` with the network identifier and run this command:
+
+```bash
+forge verify-contract CONTRACT_ADDRESS \
+  --verifier-url 'https://api.routescan.io/v2/network/testnet/evm/CHAIN_ID/etherscan' \
+  --etherscan-api-key "verifyContract" \
+  src/Counter.sol:Counter
+```
+
+It will take a minute or two to verify the smart contract on the blockchain and you should get an output like this:
+
+```text
+Start verifying contract `0x86d0D7957f0BF3Cee98A60338B19fBf91390A9bA` deployed on mainnet
+
+Submitting verification for [src/Counter.sol:Counter] 0x86d0D7957f0BF3Cee98A60338B19fBf91390A9bA.
+Submitted contract for verification:
+  Response: `OK`
+  GUID: `d9c8ec3f-fc14-5e9b-af03-b264467314bd`
+  URL: https://etherscan.io/address/0x86d0D7957f0BF3Cee98A60338B19fBf91390A9bA
+```
+
+When you open the smart contract on the [block explorer](../../../user/block-explorers/index.md), you will see a green checkbox in the **Contract** tab.
+You can see that the smart contract code is visible to anyone.
+You can now see the Solidity code instead of bytecode and interact with the smart contract from the block explorer.
