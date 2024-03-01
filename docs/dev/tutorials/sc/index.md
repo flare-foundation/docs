@@ -4,4 +4,4 @@ These tutorials contain code samples and explanations that show how to use the [
 
 ## Tutorials
 
-* [Simple Attestation Request](./address-validity.md)
+* [Basic Attestation Request](./address-validity.md)
