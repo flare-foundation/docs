@@ -86,10 +86,10 @@ async function runAddressValidity(network, addressToValidate) {
   const block = await provider.getBlock(receipt.blockNumber);
 
   // 6. Calculate Round ID
-  const BUFFER_TS_OFFSET = await stateConnector.BUFFER_TIMESTAMP_OFFSET();
-  const BUFFER_WINDOW = await stateConnector.BUFFER_WINDOW();
+  const roundOffset = await stateConnector.BUFFER_TIMESTAMP_OFFSET();
+  const roundDuration = await stateConnector.BUFFER_WINDOW();
   const submissionRoundID = Number(
-    (BigInt(block.timestamp) - BUFFER_TS_OFFSET) / BUFFER_WINDOW
+    (BigInt(block.timestamp) - roundOffset) / roundDuration
   );
 
   console.log("  Attestation submitted in round", submissionRoundID);

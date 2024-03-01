@@ -17,7 +17,7 @@
 
     1. Create a new folder and move into it.
     2. Copy & paste the code above into a new file called `{{filename}}.js`.
-    3. Install dependencies with:
+    3. Initialize project and install dependencies with:
         ```bash
         npm init
         npm install ethers@6.3 @flarenetwork/flare-periphery-contract-artifacts

@@ -1,4 +1,4 @@
-# Simple Attestation Request
+# Basic Attestation Request
 
 This tutorial shows basic use of the [State Connector](../../../tech/state-connector.md) protocol.
 
@@ -17,8 +17,6 @@ Arrows that match one of the steps in the tutorial are numbered.
 </figure>
 
 ## Code
-
-Ensure you have a working [development environment](../../getting-started/setup/index.md).
 
 For easy navigation, numbered comments in the source code (as in `// 1.`) link to the tutorial sections below.
 
@@ -48,7 +46,7 @@ The tutorial uses the following dependencies:
 The periphery package significantly simplifies working with the Flare smart contracts.
 If you remove this dependency, you must manually provide the signatures for all the methods you want to use.
 
-This tutorial needs to send transactions on the Coston test network, so you will need an account with enough `$CFLR` tokens to pay for gas.
+This tutorial needs to send transactions on [the Coston test network](../../../tech/flare.md#flare-networks), so you will need an account with enough `$CFLR` tokens to pay for gas.
 The [Getting Started](../../getting-started/setup/index.md) guides explain how to configure your wallet and get test tokens from the [faucet](https://faucet.flare.network/coston).
 
 !!! warning
@@ -94,7 +92,7 @@ Then obtain an encoded attestation request:
 --8<-- "samples/sc/AddressValidity.js:46:54"
 ```
 
-This code performs a simple `POST` request to the [`prepareRequest`](../../../apis/REST/btcverifier.md?tag=AddressValidity&op=prepareRequest) endpoint of the attestation provider, using the standard [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+This code performs a `POST` request to the [`prepareRequest`](../../../apis/REST/btcverifier.md?tag=AddressValidity&op=prepareRequest) endpoint of the attestation provider, using the standard [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 `ATTESTATION_PROVIDER_API_KEY` is the API key of the chosen attestation provider, if it needs one.
 Attestation providers are typically paid services and require an API key to operate.
@@ -146,18 +144,18 @@ This block is needed in the next step.
 ### 6. Calculate Round ID
 
 In order to recover the attestation result when it becomes available, you will need the _round ID_ where the request was submitted.
-This is easily calculated from the block timestamp:
+This is calculated from the block timestamp:
 
 ```javascript linenums="89"
 --8<-- "samples/sc/AddressValidity.js:89:93"
 ```
 
-Attestation rounds last `BUFFER_WINDOW` seconds, starting `BUFFER_TS_OFFSET` seconds after the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time).
+Attestation rounds last `roundDuration` seconds, starting `roundOffset` seconds after the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time).
 You will use `submissionRoundID` later.
 
 !!! tip
 
-    To optimize performance, consider caching the `BUFFER_TS_OFFSET` and `BUFFER_WINDOW` values instead of retrieving them from the blockchain every time.
+    To optimize performance, consider caching the `roundOffset` and `roundDuration` values instead of retrieving them from the blockchain every time.
 
 ### 7. Wait for the Attestation Round to Finalize
 
