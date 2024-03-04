@@ -121,13 +121,17 @@ print_yml $internal_interfaces
 mv ../mkdocs.yml.tmp ../mkdocs.yml
 
 # Copy all pages to the docs repo
-# In the process, special-case links to files that exist in the "attestation-types" folder,
-# and replace them with the correct link.
 attestation_types=$(ls ../docs/apis/attestation-types)
 attestation_types=$(echo $attestation_types | sed "s/ /|/g")
 for f in $contracts $interfaces $internal_interfaces;
 do
+    # In the process, special-case links to files that exist in the "attestation-types" folder,
+    # and replace them with the correct link.
     cat $f | sed -E "s%(\[[^]]*\]\()\./(($attestation_types)\))%\1../attestation-types/\2%g" > $docs/$(basename $f)
+    # And insert a search de-boost, since these pages should not typically be the first result returned by search.
+    sed -i '2 a \
+search:\
+  boost: 0.5' $docs/$(basename $f)
 done
 sed -i -E "s%(\[[^]]*\]\()\./(($attestation_types)\))%\1../attestation-types/\2%g" $docs/index.md
 
