@@ -973,7 +973,7 @@
   "tags": [],
   "servers": [
     {
-      "url": "https://attestation-coston.aflabs.net"
+      "url": "https://attestation-coston.flare.network"
     }
   ],
   "components": {
@@ -990,7 +990,7 @@
         "properties": {
           "abiEncodedRequest": {
             "type": "string",
-            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+            "description": "Abi encoded request object see this for more info: https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/encoding-decoding.md"
           }
         },
         "required": [
@@ -1166,7 +1166,7 @@
           },
           "abiEncodedRequest": {
             "type": "string",
-            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+            "description": "Abi encoded request object see this for more info: https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/encoding-decoding.md"
           }
         },
         "required": [

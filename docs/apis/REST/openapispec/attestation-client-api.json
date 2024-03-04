@@ -180,7 +180,11 @@
     "contact": {}
   },
   "tags": [],
-  "servers": [],
+  "servers": [
+    {
+      "url": "https://attestation-coston.flare.network"
+    }
+  ],
   "components": {
     "schemas": {
       "VotingRoundResult": {

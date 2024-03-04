@@ -57,7 +57,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns <a href=\"https://github.com/flare-foundation/songbird-state-connector-protocol/blob/main/specs/attestations/active-types/EVMTransaction.md#response-body\"> response body </a>",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -465,11 +465,7 @@
     "contact": {}
   },
   "tags": [],
-  "servers": [
-    {
-      "url": "https://attestation-coston.aflabs.net"
-    }
-  ],
+  "servers": [],
   "components": {
     "securitySchemes": {
       "X-API-KEY": {
@@ -716,11 +712,11 @@
           },
           "sourceId": {
             "type": "string",
-            "description": "The ID of the data source.",
+            "description": "Id of the data source.",
             "example": "0x4254430000000000000000000000000000000000000000000000000000000000"
           },
           "requestBody": {
-            "description": "Data defining the request. The content depends on the 'attestationType'.",
+            "description": "Data defining the request. Type (struct) and interpretation is determined by the 'attestationType'.",
             "allOf": [
               {
                 "$ref": "#/components/schemas/EVMTransaction_RequestBody"
@@ -769,7 +765,7 @@
           },
           "abiEncodedRequest": {
             "type": "string",
-            "description": "ABI-encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
+            "description": "Abi encoded request object see this for more info: https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/attestation-objects/request-encoding-decoding.md"
           }
         },
         "required": [
