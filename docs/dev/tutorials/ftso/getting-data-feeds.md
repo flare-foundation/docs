@@ -1,6 +1,8 @@
 ---
 og_image: assets/thumbnails/tutorial-ftso-1.png
 og_description: This tutorial shows the simplest way to use the FTSO system to retrieve a specific data feed, like the price of Bitcoin.
+search:
+  boost: 2
 ---
 
 # Getting FTSO Data Feeds

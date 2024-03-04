@@ -1,6 +1,8 @@
 ---
 og_image: assets/thumbnails/launch-process-thumb.png
 og_description: The goal of this page is to remove any confusion around Flare's launch process.
+search:
+  boost: 0.5
 ---
 
 # Flare Launch Process

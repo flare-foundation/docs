@@ -1,5 +1,7 @@
 ---
 title: Collateral
+search:
+  boost: 2
 ---
 
 # FAssets Collateral

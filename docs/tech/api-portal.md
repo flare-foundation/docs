@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # Flare API Portal
 
 Flare's API Portal is a paid product that gives developers access to a number of **private nodes** running on different blockchains, including Flare, [Songbird](glossary.md#songbird) and [Coston](glossary.md#coston), but also other networks like Bitcoin or XRPL.

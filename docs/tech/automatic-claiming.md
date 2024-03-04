@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # Automatic Claiming
 
 Automatic claiming enables users to appoint an executor to claim rewards on their behalf.

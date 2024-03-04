@@ -56,7 +56,8 @@ markdown_extensions:
   - pymdownx.snippets           # Import files with --8<--
   - footnotes                   # Footnotes with [^1]
 plugins:
-  - search                      # Search box at the top
+  - search:                     # Search box at the top
+      separator: '[$\s\-,:!=\[\]()"/]+'
   - git-revision-date           # Last edit timestamp at the bottom
   - swagger-ui-tag:             # Renders OpenApi Spec
       extra_css:

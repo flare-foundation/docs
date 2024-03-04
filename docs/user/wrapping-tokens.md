@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # Wrapping Flare Tokens
 
 This information explains how to wrap and unwrap native tokens on various Flare networks using the [Flare Portal](https://portal.flare.network) or the block explorer.

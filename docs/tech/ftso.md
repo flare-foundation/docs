@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # FTSO
 
 The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare network that **provides continuous estimations for different types of data**. It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).

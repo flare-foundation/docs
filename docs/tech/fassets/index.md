@@ -1,6 +1,8 @@
 ---
 og_image: assets/thumbnails/fassets-concept.png
 og_description: The FAssets system allows tokens on blockchains that do not support smart contracts to be used trustlessly with smart contracts on the Flare blockchain.
+search:
+  boost: 2
 ---
 
 # FAssets

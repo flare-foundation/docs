@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # What Is Flare?
 
 !!! image inline end ""

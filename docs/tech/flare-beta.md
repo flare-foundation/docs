@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # Flare Beta
 
 Decentralization will be achieved by moving the transaction validation duty **from the Flare Foundation to community-run FTSO** [data providers](glossary.md#data_provider), but this will not happen instantly.

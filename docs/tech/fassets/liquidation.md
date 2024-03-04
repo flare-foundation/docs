@@ -1,5 +1,7 @@
 ---
 title: Liquidation
+search:
+  boost: 2
 ---
 
 # FAssets Liquidation

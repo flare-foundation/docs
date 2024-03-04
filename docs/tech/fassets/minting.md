@@ -1,5 +1,7 @@
 ---
 title: Minting
+search:
+  boost: 2
 ---
 
 # FAssets Minting

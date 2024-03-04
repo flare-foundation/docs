@@ -1,3 +1,8 @@
+---
+search:
+  boost: 1
+---
+
 # The FlareDrop
 
 The FlareDrop, previously called the _Delegation Incentive Pool_ in the [FIP.01](https://flare.network/fip01/), is a distribution method for the 24.25B remaining `$FLR` tokens after the [original airdrop](./archive/flare-launch-process.md#definitions).

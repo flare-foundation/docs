@@ -1,3 +1,8 @@
+---
+search:
+  boost: 2
+---
+
 # Network Configuration
 
 ## Flare Networks
@@ -211,8 +216,8 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
     * The execution layer creates blocks with transactions and executes smart contracts.
     * The consensus layer, sometimes referred to as the beacon chain, governs consensus and was the extra layer required for the Ethereum 2.0 proof-of-stake (PoS) merge.
 
-    These two layers have their own API, which can be called from the provided nodes. When querying the Ethereum network nodes, specifying only the root path `/` will target the execution layer API. Prefixing your path with `/eth` will target the consensus layer API. 
-    
+    These two layers have their own API, which can be called from the provided nodes. When querying the Ethereum network nodes, specifying only the root path `/` will target the execution layer API. Prefixing your path with `/eth` will target the consensus layer API.
+
     Official API specifications for each layer:
 
     * [Consensus Layer - API Spec](https://ethereum.github.io/beacon-APIs/#/)
@@ -268,7 +273,7 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
             -d '{"jsonrpc": "2.0", "id":67, "method":"eth_blockNumber", "params":[]}' \
             https://sepolia-api.flare.network | jq
             ```
-        
+
 ??? info "Filecoin"
 
     * **RPC endpoint**: `https://filecoin-api.flare.network/rpc/v1`

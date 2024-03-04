@@ -1,5 +1,7 @@
 ---
 title: Redemption
+search:
+  boost: 2
 ---
 
 # FAssets Redemption

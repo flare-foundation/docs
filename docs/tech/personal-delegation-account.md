@@ -1,3 +1,8 @@
+---
+search:
+  boost: 1
+---
+
 # Personal Delegation Accounts
 
 Flare token holders are eligible to receive a number of rewards, for example through [FTSO Delegation](./ftso.md#delegation).
