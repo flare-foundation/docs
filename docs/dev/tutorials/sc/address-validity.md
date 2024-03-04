@@ -182,7 +182,7 @@ For this reason, this tutorial polls the State Connector's last finalized round 
 
 It is time now to fetch from the attestation provider the result for the round ID where the request was submitted (`submissionRoundID`).
 
-The result is a Merkle root, which is the root of a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree).
+The result is a [Merkle root](glossary.md#merkle_root), which is the root of a [Merkle tree](glossary.md#merkle_tree).
 This tree has been constructed with the hashes of all the requests received during that round that were considered valid by a majority of attestation providers.
 
 If your request was valid, i.e., if the provided address was a valid Bitcoin address, then its hash will be part of the received Merkle root.

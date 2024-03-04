@@ -124,7 +124,7 @@ Merkle Root { #merkle_root }
 : The single [hash](#hash) that encapsulates the entirety of the data represented in a [Merkle tree](#merkle_tree). For instance, it is used by the [State Connector](#state_connector) to store only the Merkle root and avoid having to store the whole tree.
 
 Merkle Tree { #merkle_tree }
-: A cryptographic data structure that aggregates large sets of data into a single [hash](#hash), enabling fast verification of data integrity and membership. For example, in the [State Connector](#state_connector), Merkle trees play a crucial role in organizing and verifying [attestations](#attestation), which are hashed representations of data records like address validity proofs. For more information, check the [State Connector](./state-connector.md#attestation-packing) protocol.
+: A cryptographic data structure that aggregates large sets of data into a single [hash](#hash), enabling fast verification of data integrity and membership. For example, in the [State Connector](#state_connector), Merkle trees play a crucial role in organizing and verifying [attestations](#attestation), which are hashed representations of data records like address validity proofs. For more information, check the [State Connector](./state-connector.md#attestation-packing) protocol. [Read more...](https://en.wikipedia.org/wiki/Merkle_tree)
 
 Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e. non-physical) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.

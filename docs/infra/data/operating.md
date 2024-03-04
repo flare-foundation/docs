@@ -7,7 +7,7 @@
     * [NPM Kickoff package](https://www.npmjs.com/package/@flarenetwork/ftso_price_provider_kick_off_package)
     * [Reference implementation](https://github.com/flare-foundation/FTSO-price-provider)
 
-[Data providers](../../tech/glossary.md#data_provider) play an essential role in the decentralized oracle system by submitting data to on-chain contracts deployed on the Flare and Songbird networks.
+[Data providers](glossary.md#data_provider) play an essential role in the decentralized oracle system by submitting data to on-chain contracts deployed on the Flare and Songbird networks.
 Operating a data provider generates rewards in `$FLR`, `$SGB`, or both for you and the people who delegate tokens to you.
 To maximize your rewards, your data provider needs to be constantly available and operating.
 If your data provider is unavailable and doesn't send data during a specific epoch, you and your delegators won't earn rewards during that epoch.
