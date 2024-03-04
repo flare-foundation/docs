@@ -18,7 +18,7 @@ Choose your preferred programming language and ensure you have a working [develo
 
 For easy navigation, numbered comments in the source code link to the tutorial sections below.
 
-{% import "runner.md" as runner %}
+{% import "runner.md" as runner with context %}
 
 === "Solidity"
 
@@ -29,7 +29,7 @@ For easy navigation, numbered comments in the source code link to the tutorial s
     {{ runner.js("ftso/", "GettingDataFeeds", runFromBrowser='true', params=[{"name":"Symbol", "value":"BTC"}]) | indent(4) }}
 
 <script>
---8<-- "samples/ftso/GettingDataFeeds.js::34"
+--8<-- "./docs/samples/ftso/GettingDataFeeds.js::34"
 </script>
 
 <div class="tutorial" markdown>
@@ -94,7 +94,7 @@ Finally, the asset's price is fetched from the [`FtsoRegistry`](FtsoRegistry.md)
     The call to the `getCurrentPriceWithDecimals` method is a bit cumbersome in JavaScript:
 
     ```js linenums="37"
-    --8<-- "samples/ftso/GettingDataFeeds.js:29:30"
+    --8<-- "./docs/samples/ftso/GettingDataFeeds.js:29:30"
     ```
 
     The call needs to be like this because this method is overloaded.

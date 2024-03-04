@@ -1,7 +1,7 @@
 {% macro js(folder, filename, runFromBrowser='false', requiresWallet='false', params=[]) %}
 
 ```js title="{{filename}}.js" linenums="1"
---8<-- "samples/{{folder}}{{filename}}.js"
+--8<-- "./docs/samples/{{folder}}{{filename}}.js"
 ```
 
 {% if requiresWallet == 'true' -%}
@@ -81,7 +81,7 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
 {% macro sol(folder, filename) %}
 
 ```solidity title="{{filename}}.sol" linenums="1"
---8<-- "samples/{{folder}}{{filename}}.sol"
+--8<-- "./docs/samples/{{folder}}{{filename}}.sol"
 ```
 
 [Source code license](https://github.com/flare-foundation/docs/blob/main/LICENSE.md)
@@ -135,7 +135,7 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
             ```
         3. Copy the code below into a new file called `Test{{filename}}.js` in the `test` folder.
             ```js title="Test{{filename}}.js"
-            --8<-- "samples/{{folder}}Test{{filename}}.js"
+            --8<-- "./docs/samples/{{folder}}Test{{filename}}.js"
             ```
         4. Run the test with:
             ```bash
@@ -181,12 +181,15 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
         1. Build the Foundry project following the previous instructions.
         2. Copy the code below into a new file called `{{filename}}.t.sol` in the `test` folder.
             ```solidity title="{{filename}}.t.sol"
-            --8<-- "samples/{{folder}}{{filename}}.t.sol"
+            --8<-- "./docs/samples/{{folder}}{{filename}}.t.sol"
             ```
         3. Run the test with:
             ```bash
             forge test -vv
             ```
+=== "Using Remix"
+
+    [Open In Remix](https://remix.ethereum.org/#url={{ config.site_url }}samples/{{folder}}{{filename}}.sol&evmVersion=paris){ .md-button }
 
 {% endmacro %}
 
@@ -195,13 +198,13 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
 === "Solidity"
 
     ```solidity linenums="{{solstart}}"
-    --8<-- "samples/{{pathname}}.sol:{{solstart}}:{{solend}}"
+    --8<-- "./docs/samples/{{pathname}}.sol:{{solstart}}:{{solend}}"
     ```
 
 === "JavaScript"
 
     ```js linenums="{{jsstart}}"
-    --8<-- "samples/{{pathname}}.js:{{jsstart}}:{{jsend}}"
+    --8<-- "./docs/samples/{{pathname}}.js:{{jsstart}}:{{jsend}}"
     ```
 
 {% endmacro %}
