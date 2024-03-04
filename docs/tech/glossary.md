@@ -93,6 +93,9 @@ FTSO { #ftso }
 Governance { #governance }
 : Mechanism to propose, vote, and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them.
 
+Hash { #hash }
+: A hash is an unidirectional mathematical function that converts an input of arbitrary length into an output of a fixed length. Thus, regardless of the original amount of data involved, the hash will always be the same size.
+
 Hot Wallet { #hot_wallet }
 : A [wallet](#wallet) whose private key is stored on a server connected permanently to the internet. This makes the key convenient to use by automated programs, but makes it more vulnerable to theft than an offline key (see [cold wallet](#cold_wallet)), as unauthorized access to the server could steal the key.
 
@@ -116,6 +119,12 @@ Liquidity Pool { #liquidity_pool }
 
 Main Network (MAINNET) { #main_network }
 : The computer network that supports a [blockchain](#blockchain) in its production stage, i.e., the real thing (instead of a [Canary](#canary_network) or [Test](#test_network) network).
+
+Merkle Root { #merkle_root }
+: The single [hash](#hash) that encapsulates the entirety of the data represented in a [Merkle tree](#merkle_tree). For instance, it is used by the [State Connector](#state_connector) to store only the Merkle root and avoid having to store the whole tree.
+
+Merkle Tree { #merkle_tree }
+: A cryptographic data structure that aggregates large sets of data into a single [hash](#hash), enabling fast verification of data integrity and membership. For example, in the [State Connector](#state_connector), Merkle trees play a crucial role in organizing and verifying [attestations](#attestation), which are hashed representations of data records like address validity proofs. For more information, check the [State Connector](./state-connector.md#attestation-packing) protocol.
 
 Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e. non-physical) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.
