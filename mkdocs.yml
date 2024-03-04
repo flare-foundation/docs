@@ -54,6 +54,7 @@ markdown_extensions:
   - md_in_html                  # Markdown inside HTML
   - def_list                    # Definition lists (Glossary)
   - pymdownx.snippets           # Import files with --8<--
+  - footnotes                   # Footnotes with [^1]
 plugins:
   - search                      # Search box at the top
   - git-revision-date           # Last edit timestamp at the bottom
@@ -171,6 +172,7 @@ nav:
     - tech/governance.md
     - tech/personal-delegation-account.md
     - tech/state-connector.md
+    - tech/tokenomics.md
     - tech/validators.md
     - tech/glossary.md
     - Archive:

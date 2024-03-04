@@ -18,7 +18,7 @@
     --md-accent-bg-color: #fff;
     --md-default-bg-color: #222;
     --md-default-fg-color: white;
-    --md-default-fg-color--light: white;
+    --md-default-fg-color--light: #ddd;
     --md-default-fg-color--lighter: #555;
     --md-default-fg-color--lightest: #444;
     --md-primary-fg-color: #222;
@@ -480,6 +480,11 @@ figure img.side-by-side {
 /* Footer links */
 .md-footer-meta.md-typeset a:hover {
     color: var(--md-accent-fg-color) !important;
+}
+
+/* Footnotes */
+.md-typeset .footnote ol li {
+    color: var(--md-default-fg-color--lighter);
 }
 
 /* Contract lists */
