@@ -307,6 +307,17 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         https://polygon-api.flare.network/block?height=1000 | jq
         ```
 
+??? info "Solana"
+
+    * **RPC endpoint**: `https://solana-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -s -X POST -m 10 -H "Content-type: application/json" \
+        -d '{"jsonrpc": "2.0", "id": 1, "method": "getVersion"}' \
+        https://solana-api.flare.network | jq
+        ```
+
 ??? info "XRPL"
 
     * **RPC endpoint**: `https://xrpl-api.flare.network`
