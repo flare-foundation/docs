@@ -5,4 +5,5 @@ hide:
 
 # BTC Verifier
 
-<swagger-ui src="./openapispec/btc-api.json" />
+{% import "openapi.md" as openapi with context %}
+{{ openapi.embed("btc-api.json") }}

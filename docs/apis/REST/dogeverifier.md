@@ -5,4 +5,5 @@ hide:
 
 # DOGE Verifier
 
-<swagger-ui src="./openapispec/doge-api.json" />
+{% import "openapi.md" as openapi with context %}
+{{ openapi.embed("doge-api.json") }}

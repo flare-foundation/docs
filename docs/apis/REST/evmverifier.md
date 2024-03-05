@@ -5,4 +5,5 @@ hide:
 
 # EVM Verifier
 
-<swagger-ui src="./openapispec/evm-api.json" />
+{% import "openapi.md" as openapi with context %}
+{{ openapi.embed("evm-api.json") }}

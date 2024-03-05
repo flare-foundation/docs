@@ -5,4 +5,5 @@ hide:
 
 # Attestation Client
 
-<swagger-ui src="./openapispec/attestation-client-api.json" />
+{% import "openapi.md" as openapi with context %}
+{{ openapi.embed("attestation-client-api.json") }}

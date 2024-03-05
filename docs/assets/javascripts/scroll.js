@@ -1,52 +1,45 @@
 (function() {
-  var url = window.location.href;
-  var pattern = /\/apis\/REST\/(attestation-client|btcverifier|dogeverifier|evmverifier)/i;
-
-  if (!pattern.test(url)) {
-    return;
-  }
-
+  // Trigger when the page is fully loaded
   window.onload = function() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const iframeSelector = urlParams.get("iframeSelector") || ".swagger-ui-iframe"; // Fallback to default if not provided
-    const tag = urlParams.get("tag");
-    const controller = urlParams.get("ctrl");
-    const operationId = urlParams.get("op");
-    const elementSelector = `operations-${tag}-${controller}_${operationId}`;
 
-    scrollToIframeId(iframeSelector, elementSelector);
+    // Check if URL parameters exist
+    if (urlParams.has("tag") && urlParams.has("ctrl") && urlParams.has("op")) {
+      const iframeSelector = urlParams.get("iframeSelector") || ".swagger-ui-iframe";
+      const tag = urlParams.get("tag");
+      const controller = urlParams.get("ctrl");
+      const operationId = urlParams.get("op");
+      const elementSelector = `operations-${tag}-${controller}_${operationId}`;
+
+      scrollToIframeIdAndHighlight(iframeSelector, elementSelector);
+    }
   };
 
-  async function scrollToIframeId(iframeSelector, path) {
+  // Scrolls to and highlights an element within an iframe
+  async function scrollToIframeIdAndHighlight(iframeSelector, elementSelector) {
     try {
       const iframe = await waitFor(() => document.querySelector(iframeSelector));
 
       if (iframe && iframe.contentWindow) {
         if (iframe.contentWindow.document.readyState === "complete") {
-          var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-          var element = await waitFor(() => iframeDoc.querySelector(`[id='${path}']`));
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const element = await waitFor(() => iframeDoc.querySelector(`[id='${elementSelector}']`));
 
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Attempt to simulate a click to expand the operation, if possible
-                const control = element.querySelector(".opblock-summary-control");
-                if (control) {
-                  control.click();
-                }
-                observer.disconnect();
-              } else {
-                element.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                  inline: "nearest",
-                });
-              }
+          if (element) {
+            // Ensure the operation detail is expanded before scrolling
+            const control = element.querySelector(".opblock-summary-control");
+            if (control) {
+              control.click();
+              // Animation is applied directly via CSS to '.opblock.is-open'
+            }
+
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "nearest",
             });
-          });
-
-          observer.observe(element);
+          }
         }
       }
     } catch (error) {
@@ -54,6 +47,7 @@
     }
   }
 
+  // Utility to wait for a condition to be true
   function waitFor(condition, timeout = 30000) {
     return new Promise((resolve, reject) => {
       const startTime = Date.now();
@@ -63,8 +57,7 @@
         if (result) {
           resolve(result);
         } else {
-          const currentTime = Date.now();
-          if (currentTime - startTime >= timeout && timeout != 0) {
+          if (Date.now() - startTime >= timeout) {
             reject(new Error("Timeout exceeded while waiting for condition."));
           } else {
             setTimeout(checkCondition, 100);

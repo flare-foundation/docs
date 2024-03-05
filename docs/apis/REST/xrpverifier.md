@@ -5,4 +5,5 @@ hide:
 
 # XRP Verifier
 
-<swagger-ui src="./openapispec/xrp-api.json" />
+{% import "openapi.md" as openapi with context %}
+{{ openapi.embed("xrp-api.json") }}

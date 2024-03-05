@@ -551,3 +551,13 @@ img.inline-image {
     background: white;
     padding: 2px;
 }
+
+/* Apply visual enhancements to expanded Swagger UI operation blocks */
+.opblock.is-open {
+  animation: highlightAnimation 2s ease-out forwards;
+}
+
+@keyframes highlightAnimation {
+  0% { background-color: var(--md-accent-fg-color--transparent); }
+  100% { background-color: transparent; }
+}
