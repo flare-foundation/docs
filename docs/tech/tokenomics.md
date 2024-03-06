@@ -40,7 +40,7 @@ Note the delegation, claiming, and voting abilities of each, defined here:
 <tr class="no-ceil"><td>4,278,738,206<br>(4.3 billion)</td><td>YES</td><td>YES</td><td>YES</td></tr>
 <tr markdown><td rowspan="2">FlareDrop</td><td colspan="4">Public distribution allocated to incentivize network participation. Can be earned by `$FLR` holders who wrap their tokens over a 36-month distribution period.</td></tr>
 <tr class="no-ceil"><td>24,246,183,166<br>(24.2 billion)</td><td>YES</td><td>YES</td><td>YES</td></tr>
-<tr><td rowspan="2">Cross-chain Incentives</td><td colspan="4">Network participation incentive earned by users bringing cross-chain tokens to Flare.</td></tr>
+<tr><td rowspan="2">Incentive Pool</td><td colspan="4">Network participation incentive earned by users bringing sustainable value to Flare.</td></tr>
 <tr class="no-ceil"><td>20,000,000,000<br>(20 billion)</td><td>YES</td><td>YES</td><td>YES</td></tr>
 <tr markdown><td markdown>**SUBTOTAL**</td><td colspan="4">58.3 billion `$FLR`</td></tr>
 </table>
@@ -167,9 +167,9 @@ Flare tokens are subject to vesting schedules as follows.
 <tr><td>FlareDrop</td>
 <td>26.6 billion</td>
 <td>Subject to a 36-month vesting schedule, with the full amount vesting in 35 monthly amounts of 2.79% of the total and one final amount of 2.35% in month 36.</td></tr>
-<tr><td>Cross-chain Incentives</td>
+<tr><td>Incentive Pool</td>
 <td>20 billion</td>
-<td>The lesser of 3% of circulating supply or 10% of the cross-chain incentive pool, calculated per annum and distributed pro rata per month.</td></tr>
+<td>The lesser of 3% of circulating supply or 10% of the incentive pool, calculated per annum and distributed pro rata per month.</td></tr>
 <tr><td>Founding Team</td><td>7 billion<td rowspan="4">Subject to 36-month vesting schedule, with 15% on token distribution event (TDE) and the remainder vesting in 35 monthly amounts of 2.37% of the total, and one final amount of 2.05% of the total in month 36.<br>
 <br>
 No tokens permitted to be sold within the first 6 months. A maximum of 10% of vested tokens permitted to be sold within months 7-12. A maximum of 25% of total vested tokens (including any already sold) permitted to be sold within months 13-18.</td></tr>
