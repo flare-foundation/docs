@@ -1,7 +1,7 @@
----
+<!-- ---
 section_icon: exchange-icon.svg
 section_icon_type: stroked-svg
----
+--- -->
 
 # Exchange Guides
 

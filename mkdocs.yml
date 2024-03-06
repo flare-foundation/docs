@@ -7,29 +7,33 @@ theme:
   name: material
   custom_dir: docs/assets/overrides
   palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: white
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: flaredark
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+      # toggle:
+      #   icon: material/weather-sunny
+      #   name: Switch to light mode
+
+    # Palette toggle for light mode
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: default
+    #   primary: white
+    #   toggle:
+    #     icon: material/weather-night
+    #     name: Switch to dark mode
+   
   logo: logo.svg                # Put it in the overrides folder!
   favicon: /favicon.png
   icon:
     edit: material/pencil
   features:
-    - navigation.tabs           # Top-level pages are shown as tabs on the header
-    - navigation.tabs.sticky    # Navigation tabs are always visible
+    # - navigation.tabs           # Top-level pages are shown as tabs on the header
+    # - navigation.tabs.sticky    # Navigation tabs are always visible
+    # - navigation.instant
     - navigation.top            # "Back to top" button appears upon upward scrolling
     - navigation.indexes        # Allow section headers to have a page (see tech/index.md)
+    - navigation.sections       # to show first level of sections expanded
+    # - navigation.expand       # expends even child sections
     - content.tabs.link
     - search.suggest            # Search will display the likeliest completion for the last word
     - search.highlight          # Highlight all occurrences after following the link
@@ -48,14 +52,17 @@ markdown_extensions:
       alternate_style: true
   - toc:                        # TOC control
       permalink: "#"            # Add permalinks to headers
+      # toc_depth: 3
   - pymdownx.arithmatex:        # Math blocks
       generic: true
   - attr_list                   # { Annotations }
   - md_in_html                  # Markdown inside HTML
   - def_list                    # Definition lists (Glossary)
   - pymdownx.snippets           # Import files with --8<--
-  - footnotes                   # Footnotes with [^1]
 plugins:
+  # - privacy:                     # Open external links in new tab
+  #     links_attr_map:
+  #       target: _blank
   - search:                     # Search box at the top
       separator: '[$\s\-,:!=\[\]()"/]+'
   - git-revision-date           # Last edit timestamp at the bottom
@@ -129,12 +136,16 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra:
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/flarenetwork/
     - icon: fontawesome/solid/house
       link: https://flare.network
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/FlareNetworks
     - icon: fontawesome/brands/github
       link: https://github.com/flare-foundation
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/FlareNetwork
     - icon: fontawesome/brands/discord
       link: https://discord.com/invite/flarenetwork
   analytics:
@@ -148,63 +159,16 @@ extra:
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
 copyright: >-
-  &copy; 2023 Flare Networks. <a href="#__consent">Cookie settings</a>.
+  &copy; Flare Networks 2024
 site_url: https://docs.flare.network
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 nav:
   - Home:
     - index.md
-  - Flare Fundamentals:
-    - tech/index.md
     - tech/flare.md
-    - tech/automatic-claiming.md
-    - tech/the-flaredrop.md
-    - tech/flare-beta.md
-    - tech/api-portal.md
-    - FAssets:
-      - tech/fassets/index.md
-      - tech/fassets/collateral.md
-      - tech/fassets/minting.md
-      - tech/fassets/redemption.md
-      - tech/fassets/liquidation.md
-    - tech/ftso.md
-    - tech/governance.md
-    - tech/personal-delegation-account.md
-    - tech/state-connector.md
-    - tech/tokenomics.md
-    - tech/validators.md
-    - tech/glossary.md
-    - Archive:
-      - tech/archive/index.md
-      - tech/archive/flare-launch-process.md
   - User Guides:
     - user/index.md
-    - user/automatic-claiming.md
-    - Block Explorers:
-      - user/block-explorers/index.md
-      - user/block-explorers/finding-reward-epoch.md
-      - Managing Delegations: user/block-explorers/managing-delegations.md
-      - Managing Rewards: user/block-explorers/managing-rewards.md
-      - user/block-explorers/verifying-vote-power-block.md
-      - user/block-explorers/viewing-nfts.md
-      - user/block-explorers/viewing-token-balances.md
-      - user/block-explorers/viewing-token-transfers.md
-      - user/block-explorers/viewing-transactions.md
-      - user/block-explorers/user-interface.md
-    - user/claiming-the-flaredrop.md
-    - FTSO Delegation:
-      - user/delegation/index.md
-      - Managing Delegations: user/delegation/managing-delegations.md
-      - Managing Rewards: user/delegation/managing-rewards.md
-    - Governance:
-      - user/governance/index.md
-      - user/governance/voting.md
-    - user/personal-delegation-account.md
-    - Staking on Validators:
-      - user/staking/index.md
-      - user/staking/staking-flarestake.md
-      - user/staking/staking-cli.md
     - Wallets:
       - user/wallets/index.md
       - user/wallets/bifrost-wallet.md
@@ -216,32 +180,38 @@ nav:
       - user/wallets/safepal-s1-wallet.md
       - user/wallets/how-to-access-flare-network-with-a-trezor-device.md
     - user/wrapping-tokens.md
-  - Infrastructure Guides:
-    - infra/index.md
-    - Attestation Providers:
-      - infra/attestation/index.md
-      - infra/attestation/operating.md
-    - FTSO Data Providers:
-      - infra/data/index.md
-      - infra/data/operating.md
-      - infra/data/whitelisting.md
-      - Managing the Ecosystem:
-        - infra/data/managing-ecosystem/index.md
-        - infra/data/managing-ecosystem/exploring-collusion.md
-        - infra/data/managing-ecosystem/monitoring-price-history.md
-    - Observer Nodes:
-      - infra/observation/index.md
-      - infra/observation/deploying.md
-    - Validator Nodes:
-      - infra/validation/index.md
-      - infra/validation/deploying.md
-  - Exchange Guides:
-    - exchange/index.md
-    - exchange/architecture.md
-    - exchange/delegation.md
-    - exchange/troubleshooting.md
-  - Developer Docs:
-    - dev/index.md
+    - FTSO Delegation:
+      - user/delegation/index.md
+      - Managing Delegations: user/delegation/managing-delegations.md
+      - Managing Rewards: user/delegation/managing-rewards.md
+    - user/personal-delegation-account.md
+    - Staking on Validators:
+      - user/staking/index.md
+      - user/staking/staking-flarestake.md
+      - user/staking/staking-cli.md
+    - user/claiming-the-flaredrop.md
+    - user/automatic-claiming.md
+    - Governance:
+      - user/governance/index.md
+      - user/governance/voting.md
+    - Block Explorers:
+      - user/block-explorers/index.md
+      - user/block-explorers/finding-reward-epoch.md
+      - Managing Delegations: user/block-explorers/managing-delegations.md
+      - Managing Rewards: user/block-explorers/managing-rewards.md
+      - user/block-explorers/verifying-vote-power-block.md
+      - user/block-explorers/viewing-nfts.md
+      - user/block-explorers/viewing-token-balances.md
+      - user/block-explorers/viewing-token-transfers.md
+      - user/block-explorers/viewing-transactions.md
+      - user/block-explorers/user-interface.md
+    - Exchange Guides:
+      - exchange/index.md
+      - exchange/architecture.md
+      - exchange/delegation.md
+      - exchange/troubleshooting.md
+  - Get Started Building:
+    - get-started-building/index.md
     - Getting Started:
       - dev/getting-started/index.md
       - Setting Up Your Environment:
@@ -250,31 +220,28 @@ nav:
         - Using Hardhat: dev/getting-started/setup/hardhat.md
         - Using Foundry: dev/getting-started/setup/foundry.md
       - dev/getting-started/contract-addresses.md
-    - Tutorials:
-      - dev/tutorials/index.md
-      - Accessing the Network:
-        - dev/tutorials/network-access/index.md
-        - dev/tutorials/network-access/transaction-finalization.md
-        - dev/tutorials/network-access/reliable-event-reading.md
-        - dev/tutorials/network-access/obtaining-revert-reason.md
-      - FTSO:
-        - dev/tutorials/ftso/index.md
-        - dev/tutorials/ftso/getting-data-feeds.md
-      - State Connector:
-        - dev/tutorials/sc/index.md
-        - dev/tutorials/sc/address-validity.md
-    - Reference Guides:
-      - dev/reference/index.md
-      - dev/reference/automatic-claiming.md
-      - dev/reference/explorers-and-indexers.md
-      - dev/reference/ftso.md
+    - Network Configuration:
+      - dev/tutorials/network-access/index.md
       - dev/reference/network-config.md
-      - dev/reference/personal-delegation-account.md
-      - dev/reference/the-flaredrop.md
-      - dev/reference/wallets.md
+      - dev/tutorials/network-access/transaction-finalization.md
+      - dev/tutorials/network-access/reliable-event-reading.md
+      - dev/tutorials/network-access/obtaining-revert-reason.md
     - dev/external-resources.md
     - dev/tools.md
-    - dev/security.md
+  - Developer Guides:
+    - dev/index.md
+    - FTSO:
+      - dev/tutorials/ftso/index.md
+      - dev/reference/ftso.md
+      - dev/tutorials/ftso/getting-data-feeds.md
+    - State Connector:
+      - dev/tutorials/sc/index.md
+      - dev/tutorials/sc/address-validity.md
+    - dev/reference/automatic-claiming.md
+    - dev/reference/personal-delegation-account.md
+    - dev/reference/explorers-and-indexers.md
+    - dev/reference/the-flaredrop.md
+    - dev/reference/wallets.md
   - APIs:
     - apis/index.md
     - Smart Contracts API:
@@ -371,3 +338,48 @@ nav:
       - apis/attestation-types/EVMTransaction.md
       - apis/attestation-types/Payment.md
       - apis/attestation-types/ReferencedPaymentNonexistence.md
+  - Products:
+    - products/index.md
+    - tech/ftso.md
+    - tech/state-connector.md
+    - FAssets:
+      - tech/fassets/index.md
+      - tech/fassets/collateral.md
+      - tech/fassets/minting.md
+      - tech/fassets/redemption.md
+      - tech/fassets/liquidation.md
+    - tech/validators.md
+    - tech/api-portal.md
+  - Concepts:
+    - tech/index.md
+    - tech/automatic-claiming.md
+    - tech/flare-beta.md
+    - tech/governance.md
+    - tech/personal-delegation-account.md
+    - tech/the-flaredrop.md
+    - tech/tokenomics.md
+    - tech/glossary.md
+    - Archive:
+      - tech/archive/index.md
+      - tech/archive/flare-launch-process.md
+  - Infrastructure:
+    - infra/index.md
+    - Attestation Providers:
+      - infra/attestation/index.md
+      - infra/attestation/operating.md
+    - FTSO Data Providers:
+      - infra/data/index.md
+      - infra/data/operating.md
+      - infra/data/whitelisting.md
+      - Managing the Ecosystem:
+        - infra/data/managing-ecosystem/index.md
+        - infra/data/managing-ecosystem/exploring-collusion.md
+        - infra/data/managing-ecosystem/monitoring-price-history.md
+    - Observer Nodes:
+      - infra/observation/index.md
+      - infra/observation/deploying.md
+    - Validator Nodes:
+      - infra/validation/index.md
+      - infra/validation/deploying.md
+  - Security:
+    - security/index.md

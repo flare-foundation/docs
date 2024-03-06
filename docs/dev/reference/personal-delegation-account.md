@@ -1,4 +1,4 @@
-# Personal Delegation Accounts
+# Integrate Personal Delegation Accounts
 
 Personal Delegation Accounts (PDAs) temporarily store rewards, such as FTSO delegation rewards, that users do not want to claim to their main accounts as explained in [the Concept page](../../tech/personal-delegation-account.md).
 

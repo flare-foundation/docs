@@ -18,7 +18,7 @@
 -->
 
 <!-- Copyright and theme information -->
-<div class="md-copyright">
+<!-- <div class="md-copyright">
   {% if config.copyright %}
     <div class="md-copyright__highlight">
       {{ config.copyright }}
@@ -37,5 +37,38 @@
     >
       Material for MkDocs
     </a>
+  {% endif %}
+</div> -->
+
+
+<div class="md-copyright">
+  {% if config.copyright %}
+    <div>
+      {{ config.copyright }}
+    </div>
+  {% endif %}
+  <div class="md-copyright__highlight">
+    <a href="#__consent">Cookie settings</a>
+  </div>
+
+  <div class="md-copyright__highlight">
+    <a
+      href="https://flare.network/privacy-policy/"
+      target="_blank" rel="noopener"
+    >
+      Terms of Service</a>.
+  </div>
+
+
+  {% if not config.extra.generator == false %}
+    <div>
+      Made with Material for 
+      <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+      >
+      MkDocs
+    </a>
+  </div>
   {% endif %}
 </div>

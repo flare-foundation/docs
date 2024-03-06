@@ -1,9 +1,4 @@
----
-section_icon: dev-icon.svg
-section_icon_type: stroked-svg
----
-
-# Developer Docs
+# Developer Guides
 
 !!! info inline end "Quick links"
 
@@ -30,11 +25,14 @@ These are Flare's main source repositories, both on [GitHub](https://github.com/
 * [Validator node](https://github.com/flare-foundation/flare)
 * [Smart contracts](https://gitlab.com/flarenetwork/flare-smart-contracts)
 
-## Topics
+## Guides
 
-* [Getting Started](./getting-started/index.md)
-* [Tutorials](./tutorials/index.md)
-* [Reference Guides](./reference/index.md)
-* [External Learning Resources](./external-resources.md)
-* [Tools and Projects](./tools.md)
-* [Security](./security.md)
+The following guides provide in-depth information about the Flare networks and the different smart contracts APIs.
+
+* [FTSO](./tutorials/ftso/index.md)
+* [State Connector](./tutorials/sc/index.md)
+* [Automatic Claiming](./reference/automatic-claiming.md)
+* [Personal Delegation Accounts](./reference/personal-delegation-account.md)
+* [Block Explorers and Indexers](./reference/explorers-and-indexers.md)
+* [The FlareDrop](./reference/the-flaredrop.md)
+* [Wallets](./reference/wallets.md)

@@ -4,4 +4,5 @@ These code samples and explanations show how to use the [FTSO system](../../../t
 
 ## Tutorials
 
-* [Getting FTSO Data Feeds](./getting-data-feeds.md)
+* [FTSO Developer Overview](../../../dev/reference/ftso.md)
+* [Getting FTSO Data Feeds](../ftso/getting-data-feeds.md)

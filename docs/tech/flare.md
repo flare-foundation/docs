@@ -70,4 +70,4 @@ Flare uses two chains and is developing a built-in interoperability mechanism be
 ## Security
 
 The Flare source code has been audited and is secure and safe.
-[View the audit reports](../dev/security.md) on Flare clients and smart contracts.
+[View the audit reports](../security/index.md) on Flare clients and smart contracts.

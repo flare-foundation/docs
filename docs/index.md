@@ -1,68 +1,277 @@
----
+<!-- ---
 hide:
-  - navigation
   - toc
----
+--- -->
 
 # Welcome to the Flare Network Technical Documentation
 
-New here? Start with [What Is Flare?](./tech/flare.md)
-{ .center }
+Flare is the blockchain for data. It is a Layer 1, EVM smart contract platform designed to expand the utility of blockchain. Read more in [**What Is Flare?**](./tech/flare.md)
 
-<div class="cards">
-<ul>
+#### For token holders
 
-<a href="tech" class="filled-svg"><li>
---8<-- "docs/assets/overrides/tech-icon.svg"
-<strong>Flare Fundamentals</strong>
-<br/>
-Descriptions of Flare's key concepts, technology and tools.
-</li></a>
+<div class="flr-card has-background1" markdown>
 
-<a href="user" class="filled-svg"><li>
---8<-- "docs/assets/overrides/user-icon.svg"
-<strong>User Guides</strong>
-<br/>
-Step-by-step guides for tools like the Explorer or the different wallets.</li></a>
+## User Guides
 
-<a href="infra" class="stroked-svg"><li>
---8<-- "docs/assets/overrides/infra-icon.svg"
-<strong>Infrastructure Guides</strong>
-<br/>
-Step-by-step guides to deploy your own Flare network components.</li></a>
+Step-by-step guides for tools like the Explorer or the different wallets.
 
-<a href="exchange" class="stroked-svg"><li>
---8<-- "docs/assets/overrides/exchange-icon.svg"
-<strong>Exchange Guides</strong>
-<br/>
-Advice for exchanges willing to support the Flare blockchain.</li></a>
+<div class="flr-card-links" markdown>
 
-<a href="dev" class="stroked-svg"><li>
---8<-- "docs/assets/overrides/dev-icon.svg"
-<strong>Developer Docs</strong>
-<br/>
-Programming tutorials to help you build your app using Flare's tech.</li></a>
+Quick links:
 
-<a href="apis" class="filled-svg"><li>
---8<-- "docs/assets/overrides/api-icon.svg"
-<strong>API Reference Guides</strong>
-<br/>
-API documentation and access RPC nodes.</li></a>
+- [Metamask](./user/wallets/how-to-access-flare-network-with-metamask.md)
+- [Claiming the FlareDrop](./tech/the-flaredrop.md)
+- [Using FlareStake to Stake](./user/staking/staking-flarestake.md)
+</div>   
+</div>
 
-</ul>
+#### For developers
+
+<div class="flr-cards" markdown>
+
+<div class="flr-card has-background2" markdown>
+
+## Get Started Building
+
+Information to quickly start developing on the Flare networks
+
+<div class="flr-card-links is-vertical" markdown>
+
+Quick links:
+
+- [Retrieving Contract Addresses](./dev/getting-started/contract-addresses.md)
+- [Using Remix](./dev/getting-started/setup/remix.md)
+- [Using Hardhat](./dev/getting-started/setup/hardhat.md)
+</div>   
+</div>
+
+<div class="flr-card has-background3" markdown>
+
+## Developer Guides
+
+In-depth information about the Flare networks
+
+<div class="flr-card-links is-vertical" markdown>
+
+Quick links:
+
+- [State Connector Attestation Request](./dev/tutorials/sc/address-validity.md)
+- [Getting FTSO Data Feeds](./dev/tutorials/ftso/getting-data-feeds.md)
+- [Demo examples](https://github.com/flare-foundation/flare-demo-examples)
+</div>   
+</div>
+
+<div class="flr-card has-background4 is-fullwidth" markdown>
+
+## API Reference
+
+in-depth information about the Flare smart contracts APIs
+
+<div class="flr-card-links is-vertical" markdown>
+
+Quick links:
+
+- [Smart Contracts](./apis/smart-contracts/index.md)
+- [State Connector REST Endpoints](./apis/REST/index.md)
+- [Attestation types](./apis/attestation-types/index.md)
+</div>   
+</div>
+
+</div>
+
+#### For everyone
+
+<div class="flr-cards" markdown>
+
+<div class="flr-card has-background5" markdown>
+
+## Flare Products
+
+Descriptions of Flare’s products
+
+<div class="flr-card-links is-vertical" markdown>
+
+Quick links:
+
+- [FTSO](./tech/ftso.md)
+- [State Connector](./tech/state-connector.md)
+- [FAssets](./tech/fassets/index.md)
+</div>   
+</div>
+
+<div class="flr-card has-background6" markdown>
+
+## Flare Concepts
+
+Descriptions of Flare’s key concepts, technology and tools
+
+<div class="flr-card-links is-vertical" markdown>
+
+Quick links:
+
+- [Governance](./user/governance/index.md)
+- [The FlareDrop](./user/claiming-the-flaredrop.md)
+- [Personal Delegation Accounts](./user/personal-delegation-account.md)
+</div>   
+</div>
+
+</div>
+
+#### For infrastructure providers
+
+<div class="flr-card has-background7" markdown>
+
+## Infrastructure Guides
+
+Step-by-step guides on how to deploy the different components that make up the Flare ecosystem
+
+<div class="flr-card-links" markdown>
+
+Quick links:
+
+- [Deploying an Observer Node](./infra/observation/deploying.md)
+- [Deploying a Validator Node](./infra/validation/deploying.md)
+- [Observer Nodes](./infra/observation/index.md)
+</div>   
 </div>
 
 These pages are a **Work In Progress**.
 Use the contact buttons at the bottom of the page if there is anything you cannot find here!
-{ .center }
 
 <style>
-    /*Special centered title for the Home page*/
-    h1 {
-        text-align: center;
-    }
     /*Remove the "Last updated" text at the bottom*/
     .md-source-file {
         display: none;
+    }
+    .md-typeset .flr-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .md-typeset .flr-cards .flr-card { 
+        flex: 1;
+    }
+    .md-typeset .flr-card {
+        background-color: var(--flr-dark);
+        max-width: 900px;
+    }
+    .md-typeset .flr-card.is-fullwidth { 
+        flex-basis: 100%;
+    }
+    /* Content/description */
+    .md-typeset .flr-card > p {
+        padding: 1rem;
+        margin: 0;
+        padding-top: 0;
+    }
+    /* Title */  
+    .md-typeset .flr-card h2 {
+        margin-top: 0;
+        height: 100px;
+        /* background-color: var(--flr-dark); */
+        background-color: #000;
+        background-size: cover;
+        padding: 2rem 1rem;
+        font-weight: 400;
+        background-position: center right;
+    }
+    /* Content/description */
+    .md-typeset .flr-card-links > p {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 0.6rem;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    .md-typeset .flr-card-links > ul {
+        display: flex;
+        flex-direction: column;
+        margin:0;
+        padding:0;
+        list-style: none;
+        border-top:  1px solid var(--flr-dark-border);
+    }
+    .md-typeset .flr-card-links.is-vertical > ul {
+        flex-direction: column;
+    }
+    .md-typeset .flr-card-links > ul li {
+        flex: 1;
+        margin:0;
+        display: flex;
+        align-items: center;
+    } 
+    .md-typeset .flr-card-links > ul li:not(:last-child) {
+        border-bottom: 1px solid var(--flr-dark-border);
+    }
+    .md-typeset .flr-card-links > ul a {
+        text-decoration: none;
+        display: block;
+        flex: 1;
+        position: relative;
+        color: var(--md-accent-fg-color);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        padding-right: 0.75rem;
+    }
+    .md-typeset .flr-card-links > ul a:after {
+        position: absolute;
+        content: "";
+        color: currentColor;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid currentColor;
+        right: 12px;
+        top: calc(50% - 6px);
+    }
+    .flr-card.has-background1 h2 {
+        background-image: url('assets/images/home/user-guide-card-bkg.png');
+    }
+    .flr-card.has-background2 h2 {
+        background-image: url('assets/images/home/get-started-card-bkg.png');
+    }
+    .flr-card.has-background3 h2 {
+        background-image: url('assets/images/home/developer-guides-card-bkg.png');
+    }
+    .flr-card.has-background4 h2 {
+        background-image: url('assets/images/home/api-reference-card-bkg.png');
+    }
+    .flr-card.has-background5 h2 {
+        background-image: url('assets/images/home/flare-products-card-bkg.png');
+    }
+    .flr-card.has-background6 h2 {
+        background-image: url('assets/images/home/flare-concepts-card-bkg.png');
+    }
+    .flr-card.has-background7 h2 {
+        background-image: url('assets/images/home/infrastructure-card-bkg.png');
+    }
+    .md-typeset h1 {
+        margin-bottom: 1.5rem;    
+    }
+    .md-typeset h1 a {
+        text-decoration: none;
+        color: var(--flr-dark);
+    }
+    .md-typeset h4 {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+        margin-top: 2rem;
+    }
+    
+    /* Tablet+ */
+    @media screen and (min-width:60em) { 
+        .md-typeset .flr-card-links > ul {
+            flex-direction: row;
+        }
+        .md-typeset .flr-cards {
+            flex-direction: row;
+            align-items: start;
+        }
+        .md-typeset .flr-card-links:not(.is-vertical) > ul li:not(:last-child) {
+            border-right: 1px solid var(--flr-dark-border);
+            border-bottom: none;
+        }
     }
 </style>

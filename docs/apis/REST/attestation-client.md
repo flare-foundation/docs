@@ -1,7 +1,7 @@
----
+<!-- ---
 hide:
   - toc
----
+--- -->
 
 # Attestation Client
 

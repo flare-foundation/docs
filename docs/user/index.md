@@ -1,7 +1,7 @@
----
+<!-- ---
 section_icon: user-icon.svg
 section_icon_type: filled-svg
----
+--- -->
 
 # User Guides
 

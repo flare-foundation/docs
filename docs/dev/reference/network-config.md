@@ -5,6 +5,12 @@ search:
 
 # Network Configuration
 
+!!! warning "Currently we only support EVM version up to London"
+
+    Currently all of our networks only support EVM version up to London
+
+    You can read more what this means [here](https://docs.soliditylang.org/en/latest/using-the-compiler.html#setting-the-evm-version-to-target)
+
 ## Flare Networks
 
 These are the values required to configure [the different Flare networks](../../tech/flare.md#the-flare-networks):

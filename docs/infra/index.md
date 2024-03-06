@@ -1,7 +1,7 @@
----
+<!-- ---
 section_icon: infra-icon.svg
 section_icon_type: stroked-svg
----
+--- -->
 
 # Infrastructure Guides
 
