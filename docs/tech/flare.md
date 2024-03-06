@@ -66,3 +66,8 @@ Flare uses two chains and is developing a built-in interoperability mechanism be
 
 * **C-Chain:** The contract chain that is used for smart contracts. It is where the Ethereum Virtual Machine operates, and is the chain where the vast bulk of the community currently interact.
 * **P-Chain:** The platform chain that accommodates [staking](../tech/validators.md) and provides rewards to its validators.
+
+## Security
+
+The Flare source code has been audited and is secure and safe.
+[View the audit reports](../dev/security.md) on Flare clients and smart contracts.

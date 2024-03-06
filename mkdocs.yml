@@ -274,6 +274,7 @@ nav:
       - dev/reference/wallets.md
     - dev/external-resources.md
     - dev/tools.md
+    - dev/security.md
   - APIs:
     - apis/index.md
     - Smart Contracts API:
