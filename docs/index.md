@@ -19,10 +19,11 @@ Step-by-step guides for tools like the Explorer or the different wallets.
 
 Quick links:
 
-- [Metamask](./user/wallets/how-to-access-flare-network-with-metamask.md)
-- [Claiming the FlareDrop](./tech/the-flaredrop.md)
-- [Using FlareStake to Stake](./user/staking/staking-flarestake.md)
-</div>   
+* [Metamask](./user/wallets/how-to-access-flare-network-with-metamask.md)
+* [Claiming the FlareDrop](./tech/the-flaredrop.md)
+* [Using FlareStake to Stake](./user/staking/staking-flarestake.md)
+
+</div>
 </div>
 
 #### For developers
@@ -39,10 +40,11 @@ Information to quickly start developing on the Flare networks
 
 Quick links:
 
-- [Retrieving Contract Addresses](./dev/getting-started/contract-addresses.md)
-- [Using Remix](./dev/getting-started/setup/remix.md)
-- [Using Hardhat](./dev/getting-started/setup/hardhat.md)
-</div>   
+* [Retrieving Contract Addresses](./dev/getting-started/contract-addresses.md)
+* [Using Remix](./dev/getting-started/setup/remix.md)
+* [Using Hardhat](./dev/getting-started/setup/hardhat.md)
+
+</div>
 </div>
 
 <div class="flr-card has-background3" markdown>
@@ -55,10 +57,11 @@ In-depth information about the Flare networks
 
 Quick links:
 
-- [State Connector Attestation Request](./dev/tutorials/sc/address-validity.md)
-- [Getting FTSO Data Feeds](./dev/tutorials/ftso/getting-data-feeds.md)
-- [Demo examples](https://github.com/flare-foundation/flare-demo-examples)
-</div>   
+* [State Connector Attestation Request](./dev/tutorials/sc/address-validity.md)
+* [Getting FTSO Data Feeds](./dev/tutorials/ftso/getting-data-feeds.md)
+* [Demo examples](https://github.com/flare-foundation/flare-demo-examples)
+
+</div>
 </div>
 
 <div class="flr-card has-background4 is-fullwidth" markdown>
@@ -71,10 +74,11 @@ in-depth information about the Flare smart contracts APIs
 
 Quick links:
 
-- [Smart Contracts](./apis/smart-contracts/index.md)
-- [State Connector REST Endpoints](./apis/REST/index.md)
-- [Attestation types](./apis/attestation-types/index.md)
-</div>   
+* [Smart Contracts](./apis/smart-contracts/index.md)
+* [State Connector REST Endpoints](./apis/REST/index.md)
+* [Attestation types](./apis/attestation-types/index.md)
+
+</div>
 </div>
 
 </div>
@@ -93,10 +97,11 @@ Descriptions of Flare’s products
 
 Quick links:
 
-- [FTSO](./tech/ftso.md)
-- [State Connector](./tech/state-connector.md)
-- [FAssets](./tech/fassets/index.md)
-</div>   
+* [FTSO](./tech/ftso.md)
+* [State Connector](./tech/state-connector.md)
+* [FAssets](./tech/fassets/index.md)
+
+</div>
 </div>
 
 <div class="flr-card has-background6" markdown>
@@ -109,10 +114,11 @@ Descriptions of Flare’s key concepts, technology and tools
 
 Quick links:
 
-- [Governance](./user/governance/index.md)
-- [The FlareDrop](./user/claiming-the-flaredrop.md)
-- [Personal Delegation Accounts](./user/personal-delegation-account.md)
-</div>   
+* [Governance](./user/governance/index.md)
+* [The FlareDrop](./user/claiming-the-flaredrop.md)
+* [Personal Delegation Accounts](./user/personal-delegation-account.md)
+
+</div>
 </div>
 
 </div>
@@ -129,10 +135,11 @@ Step-by-step guides on how to deploy the different components that make up the F
 
 Quick links:
 
-- [Deploying an Observer Node](./infra/observation/deploying.md)
-- [Deploying a Validator Node](./infra/validation/deploying.md)
-- [Observer Nodes](./infra/observation/index.md)
-</div>   
+* [Deploying an Observer Node](./infra/observation/deploying.md)
+* [Deploying a Validator Node](./infra/validation/deploying.md)
+* [Observer Nodes](./infra/observation/index.md)
+
+</div>
 </div>
 
 These pages are a **Work In Progress**.
@@ -149,14 +156,14 @@ Use the contact buttons at the bottom of the page if there is anything you canno
         gap: 1rem;
         flex-wrap: wrap;
     }
-    .md-typeset .flr-cards .flr-card { 
+    .md-typeset .flr-cards .flr-card {
         flex: 1;
     }
     .md-typeset .flr-card {
         background-color: var(--flr-dark);
         max-width: 900px;
     }
-    .md-typeset .flr-card.is-fullwidth { 
+    .md-typeset .flr-card.is-fullwidth {
         flex-basis: 100%;
     }
     /* Content/description */
@@ -165,7 +172,7 @@ Use the contact buttons at the bottom of the page if there is anything you canno
         margin: 0;
         padding-top: 0;
     }
-    /* Title */  
+    /* Title */
     .md-typeset .flr-card h2 {
         margin-top: 0;
         height: 100px;
@@ -191,7 +198,7 @@ Use the contact buttons at the bottom of the page if there is anything you canno
         margin:0;
         padding:0;
         list-style: none;
-        border-top:  1px solid var(--flr-dark-border);
+        border-top:  1px solid var(--flr-dark-light);
     }
     .md-typeset .flr-card-links.is-vertical > ul {
         flex-direction: column;
@@ -201,9 +208,9 @@ Use the contact buttons at the bottom of the page if there is anything you canno
         margin:0;
         display: flex;
         align-items: center;
-    } 
+    }
     .md-typeset .flr-card-links > ul li:not(:last-child) {
-        border-bottom: 1px solid var(--flr-dark-border);
+        border-bottom: 1px solid var(--flr-dark-light);
     }
     .md-typeset .flr-card-links > ul a {
         text-decoration: none;
@@ -247,7 +254,7 @@ Use the contact buttons at the bottom of the page if there is anything you canno
         background-image: url('assets/images/home/infrastructure-card-bkg.png');
     }
     .md-typeset h1 {
-        margin-bottom: 1.5rem;    
+        margin-bottom: 1.5rem;
     }
     .md-typeset h1 a {
         text-decoration: none;
@@ -259,9 +266,9 @@ Use the contact buttons at the bottom of the page if there is anything you canno
         margin-bottom: 0.25rem;
         margin-top: 2rem;
     }
-    
+
     /* Tablet+ */
-    @media screen and (min-width:60em) { 
+    @media screen and (min-width:60em) {
         .md-typeset .flr-card-links > ul {
             flex-direction: row;
         }
@@ -270,7 +277,7 @@ Use the contact buttons at the bottom of the page if there is anything you canno
             align-items: start;
         }
         .md-typeset .flr-card-links:not(.is-vertical) > ul li:not(:last-child) {
-            border-right: 1px solid var(--flr-dark-border);
+            border-right: 1px solid var(--flr-dark-light);
             border-bottom: none;
         }
     }
