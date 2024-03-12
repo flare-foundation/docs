@@ -1,8 +1,3 @@
-<!-- ---
-section_icon: exchange-icon.svg
-section_icon_type: stroked-svg
---- -->
-
 # Exchange Guides
 
 This section contains information and bits of advice for Exchanges willing to support the Flare blockchain.

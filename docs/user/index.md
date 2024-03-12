@@ -1,8 +1,3 @@
-<!-- ---
-section_icon: user-icon.svg
-section_icon_type: filled-svg
---- -->
-
 # User Guides
 
 This section contains step-by-step guides on how to use tools like the Block Explorer or the different wallets.

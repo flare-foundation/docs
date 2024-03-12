@@ -1,7 +1,7 @@
-<!-- ---
+---
 hide:
   - toc
---- -->
+---
 
 # Welcome to the Flare Network Technical Documentation
 
@@ -67,7 +67,7 @@ Quick links:
 
 in-depth information about the Flare smart contracts APIs
 
-<div class="flr-card-links is-vertical" markdown>
+<div class="flr-card-links" markdown>
 
 Quick links:
 

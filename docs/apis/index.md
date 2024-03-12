@@ -1,8 +1,3 @@
-<!-- ---
-section_icon: api-icon.svg
-section_icon_type: filled-svg
---- -->
-
 # APIs
 
 !!! info inline end "Access Nodes"

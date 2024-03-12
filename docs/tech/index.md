@@ -1,6 +1,4 @@
 ---
-# section_icon: tech-icon.svg
-# section_icon_type: filled-svg
 search:
   boost: 2
 ---

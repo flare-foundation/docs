@@ -12,15 +12,6 @@
     {% endif %}
 {% endblock %}
 
-{% block content %}
-    {% if page.meta.section_icon %}
-        <p markdown class="{{page.meta.section_icon_type}} big-svg">
-            {% include page.meta.section_icon %}
-        </p>
-    {% endif %}
-    {{ super() }}
-{% endblock %}
-
 {% block header %}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ config.extra.analytics.property }}"
