@@ -2,16 +2,12 @@
 
 The following collections of guides provide information to quickly start developing on the Flare networks.
 
-Note that we currenlty support EVM version up to London
+!!! warning "Only EVM versions up to London are currently supported"
 
-!!! warning "Currently we only support EVM version up to London"
+    All Flare networks support only EVM versions up to London.
 
-    Currently all of our networks only support EVM version up to London
-
-    You can read more what this means [here](https://docs.soliditylang.org/en/latest/using-the-compiler.html#setting-the-evm-version-to-target)
-
-    An example on how to set this up using Hardhat can be found [here](https://github.com/flare-foundation/flare-hardhat-starter/blob/master/hardhat.config.ts#L32)
-
+    Learn how to set the EVM version in your compiler in [the Solidity documentation](https://docs.soliditylang.org/en/latest/using-the-compiler.html#setting-the-evm-version-to-target).
+    [Example of how to do this using Hardhat](https://github.com/flare-foundation/flare-hardhat-starter/blob/master/hardhat.config.ts#L32).
 
 ## Guides
 
