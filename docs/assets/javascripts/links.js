@@ -1,10 +1,14 @@
 // External links
-var links = document.getElementsByTagName("a");
+const links = document.getElementsByTagName("a");
+const content = document.getElementsByClassName("md-content")[0];
 for (var i = 0, l = links.length; i < l; ++i) {
   const lk = links[i];
   if (lk.hostname != undefined && lk.hostname !== location.hostname) {
     lk.setAttribute("target", "_blank");
     lk.setAttribute("rel", "noopener noreferrer");
+    if (content.contains(lk) && !lk.classList.contains("md-icon")) {
+      lk.classList.add("external-link");
+    }
   }
 }
 

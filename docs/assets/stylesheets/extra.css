@@ -384,14 +384,22 @@ nav[data-md-level="2"] .md-nav__item>.md-nav__link:hover {
     font-weight: 300;
 }
 
-/* Underline links in the main text. Our primary color is too close
- * to the regular text color and links are invisible. */
+/* Links */
 .md-typeset a {
-    text-decoration: underline;
-    text-decoration-color: var(--md-primary-bg-color--light);
+    color: var(--md-accent-fg-color);
 }
-.md-typeset a:hover {
-    text-decoration-color: var(--md-accent-fg-color);
+.md-typeset a:hover,
+.md-typeset a:focus {
+    text-decoration: underline;
+}
+.md-typeset a:hover code,
+.md-typeset a:focus code {
+    background: var(--md-code-bg-color--transparent);
+}
+.md-typeset a.external-link:after {
+    content: '\2197';
+    margin-left: 5px;
+    display: inline-block;
 }
 
 /* Do not underline the permalinks in the headers */
