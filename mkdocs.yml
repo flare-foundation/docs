@@ -219,8 +219,6 @@ nav:
       - dev/tutorials/network-access/transaction-finalization.md
       - dev/tutorials/network-access/reliable-event-reading.md
       - dev/tutorials/network-access/obtaining-revert-reason.md
-    - dev/external-resources.md
-    - dev/tools.md
   - Developer Guides:
     - dev/index.md
     - FTSO:
@@ -235,6 +233,9 @@ nav:
     - dev/reference/explorers-and-indexers.md
     - dev/reference/the-flaredrop.md
     - dev/reference/wallets.md
+    - dev/external-resources.md
+    - dev/tools.md
+    - security/index.md
   - APIs:
     - apis/index.md
     - Smart Contracts API:
@@ -374,5 +375,3 @@ nav:
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
-  - Security:
-    - security/index.md
