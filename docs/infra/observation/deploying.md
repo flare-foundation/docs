@@ -15,7 +15,7 @@ This guide explains how to deploy your own observer node so you can reap the ben
 
 ## Prerequisites
 
-This guide contains different instructions depending on which Flare network you want to deploy to, so [make sure you are aware of the available networks](../../tech/flare.md#the-flare-networks).
+This guide contains different instructions depending on which Flare network you want to deploy to, so [make sure you are aware of the available networks](../../tech/flare.md#flare-networks).
 
 === "Flare"
 

@@ -6,7 +6,7 @@ Curated list of resources you can use to extend your knowledge of the Flare netw
 
 * [Filip Koprivec's Flare Tutorials on Medium](https://j0-0sko.medium.com/flare-blogposts-toc-8dc9d862f743)
 * [Uttam Singh's Using the Flare Time Series Oracle with Foundry](https://medium.com/flarenetwork/using-the-flare-time-series-oracle-with-foundry-a726afc993c1)
-* [Etherspot Prime on Flare](https://etherspot.fyi/getting-started-on-flare)
+* [Etherspot Prime on Flare](https://etherspot.fyi/prime-sdk/other-chains/getting-started-on-flare)
 
 ## Videos
 

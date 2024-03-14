@@ -420,7 +420,7 @@ dt:target {
 }
 
 /* Glossary links */
-a[href*="/glossary/#"] {
+a[href*="/glossary/#"]:hover {
     text-decoration-style: dotted;
     text-decoration-thickness: 1px;
 }

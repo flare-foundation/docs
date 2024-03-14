@@ -14,7 +14,7 @@ search:
 
 ## Flare Networks
 
-These are the values required to configure [the different Flare networks](../../tech/flare.md#the-flare-networks):
+These are the values required to configure [the different Flare networks](../../tech/flare.md#flare-networks):
 
 <div class="important-table" markdown>
 === "Flare"

@@ -173,6 +173,6 @@ The **DIP** will be distributed to ALL holders of FLR during 37 months.
 
 !!! danger "Trigger: Community-run FTSO validators are deemed reliable enough"
 
-[Flare Beta](#flare-beta) will end.
+[Flare Beta](../flare-beta.md) will end.
 
 FTSO validators' validation power is not artificially reduced anymore and validator rewards (20% of inflation) will be distributed equally among all validators according to their performance and stake.
