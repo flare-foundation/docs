@@ -67,8 +67,17 @@
 }
 .md-header__title {
     font-size: 14px;
-    padding-left: 1rem;
     color: var(--flr-grey-text);
+}
+
+/* Disable site title and page title switch */
+.md-header__title .md-header__topic {
+    opacity: 1;
+    transform: none;
+}
+
+.md-header__title .md-header__topic+.md-header__topic {
+    opacity: 0;
 }
 
 /* Mobile/tablet burger icon */
