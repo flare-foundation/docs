@@ -1,4 +1,4 @@
-site_name: Technical Documentation
+site_name: Documentation
 validation:
   omitted_files: warn
   absolute_links: ignore
