@@ -1,0 +1,2848 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://docs.flare.network/tech/fassets/collateral/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../minting/" rel="next"/>
+<link href="/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.13" name="generator"/>
+<title>Collateral - Documentation</title>
+<link href="../../../assets/stylesheets/main.7e359304.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<!-- Google Tag Manager -->
+<script>function __md_analytics(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX2D2TR');}</script>
+<!-- End Google Tag Manager -->
+<script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="flaredark" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#fassets-collateral">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WX2D2TR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine classes -->
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<!-- Link to home -->
+<a aria-label="Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Documentation">
+<svg height="28.854" version="1.1" viewbox="0 0 24.161 7.634" width="91.318" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-86.562 -149.865)">
+<g transform="matrix(.04216 0 0 .04216 86.008 149.317)">
+<path d="M148.08 81.07L58.52 81c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l89.56.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<path d="M193.48 13.08l-134.96-.07c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l134.96.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<circle cx="35.85" cy="171.4" r="22.7" transform="rotate(-10.9 35.84 171.43)"></circle>
+<path d="M289.44 35.77h24.3v135.71h-24.3z"></path>
+<path d="M586.26 125.31c0-25.24-17.76-46.36-42.81-46.36-26.92 0-44.12 22.06-44.12 47.3 0 28.41 20.38 47.11 47.48 47.11 14.02 0 28.41-5.79 37.2-16.26l-13.83-13.83c-4.3 4.67-12.53 10.47-22.81 10.47-12.9 0-23.18-8.79-24.49-21.5h62.81c.37-2.06.56-4.49.56-6.92zm-62.25-10.84c1.12-8.23 9.35-15.89 19.44-15.89 10.09 0 17.2 7.85 17.95 15.89z"></path>
+<path d="M398.83 89.4l-1.72-1.4c-7.33-5.98-16.5-9.14-26.52-9.14-24.96 0-44.51 20.81-44.51 47.38 0 11.87 4.12 23.18 11.61 31.85 8.26 9.6 21.05 15.33 34.23 15.33 9.57 0 18.03-3.07 25.16-9.13l1.73-1.47v8.69h21.82V80.77h-21.82v8.63zm-25.26 64.81c-14.57 0-26.43-12.45-26.43-27.76 0-15.31 11.86-27.76 26.43-27.76S400 111.14 400 126.45c0 15.31-11.86 27.76-26.43 27.76z"></path>
+<path d="M484.03 78.86c-10.02 0-19.19 3.16-26.52 9.14l-1.72 1.4v-8.63h-21.82v90.74h21.79v-47.29c0-7.3 2.97-14.38 8.48-19.17 4.57-3.97 10.43-6.36 16.81-6.36 4.23 0 8.22 1.05 11.77 2.91l7.21-19.69a43.158 43.158 0 00-16.01-3.06z"></path>
+<path d="M251.86 61.33l.02-.03c3.21-3.81 8.18-5.74 14.79-5.74 2.02 0 4.59.29 6.63.73l3.46-19.2c-4.23-1.02-8.34-1.45-13.54-1.45-11.13 0-21.14 3.77-28.2 10.62-6.67 6.47-9.64 15.58-9.64 29.52v4.89h-16.7v18.97h16.7v71.85h22.8V99.63h25.9V80.66h-25.9v-3.93c0-8.93 1.41-12.52 3.67-15.4z"></path>
+</g>
+</g>
+</svg>
+</a>
+<!-- Header title -->
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Collateral
+            
+          </span>
+</div>
+</div>
+</div>
+<!-- Color palette toggle -->
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="flaredark" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<!-- Site language selector -->
+<!-- Button to open search modal -->
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Button to open drawer -->
+<label class="md-header__button md-icon menu__burger" for="__drawer">
+<!-- 
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> -->
+<div class="menu__burger-container">
+<span></span>
+</div>
+</label>
+<!-- Repository information -->
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/flare-foundation/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<!-- Navigation tabs (sticky) -->
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Documentation">
+<svg height="28.854" version="1.1" viewbox="0 0 24.161 7.634" width="91.318" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-86.562 -149.865)">
+<g transform="matrix(.04216 0 0 .04216 86.008 149.317)">
+<path d="M148.08 81.07L58.52 81c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l89.56.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<path d="M193.48 13.08l-134.96-.07c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l134.96.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<circle cx="35.85" cy="171.4" r="22.7" transform="rotate(-10.9 35.84 171.43)"></circle>
+<path d="M289.44 35.77h24.3v135.71h-24.3z"></path>
+<path d="M586.26 125.31c0-25.24-17.76-46.36-42.81-46.36-26.92 0-44.12 22.06-44.12 47.3 0 28.41 20.38 47.11 47.48 47.11 14.02 0 28.41-5.79 37.2-16.26l-13.83-13.83c-4.3 4.67-12.53 10.47-22.81 10.47-12.9 0-23.18-8.79-24.49-21.5h62.81c.37-2.06.56-4.49.56-6.92zm-62.25-10.84c1.12-8.23 9.35-15.89 19.44-15.89 10.09 0 17.2 7.85 17.95 15.89z"></path>
+<path d="M398.83 89.4l-1.72-1.4c-7.33-5.98-16.5-9.14-26.52-9.14-24.96 0-44.51 20.81-44.51 47.38 0 11.87 4.12 23.18 11.61 31.85 8.26 9.6 21.05 15.33 34.23 15.33 9.57 0 18.03-3.07 25.16-9.13l1.73-1.47v8.69h21.82V80.77h-21.82v8.63zm-25.26 64.81c-14.57 0-26.43-12.45-26.43-27.76 0-15.31 11.86-27.76 26.43-27.76S400 111.14 400 126.45c0 15.31-11.86 27.76-26.43 27.76z"></path>
+<path d="M484.03 78.86c-10.02 0-19.19 3.16-26.52 9.14l-1.72 1.4v-8.63h-21.82v90.74h21.79v-47.29c0-7.3 2.97-14.38 8.48-19.17 4.57-3.97 10.43-6.36 16.81-6.36 4.23 0 8.22 1.05 11.77 2.91l7.21-19.69a43.158 43.158 0 00-16.01-3.06z"></path>
+<path d="M251.86 61.33l.02-.03c3.21-3.81 8.18-5.74 14.79-5.74 2.02 0 4.59.29 6.63.73l3.46-19.2c-4.23-1.02-8.34-1.45-13.54-1.45-11.13 0-21.14 3.77-28.2 10.62-6.67 6.47-9.64 15.58-9.64 29.52v4.89h-16.7v18.97h16.7v71.85h22.8V99.63h25.9V80.66h-25.9v-3.93c0-8.93 1.41-12.52 3.67-15.4z"></path>
+</g>
+</g>
+</svg>
+</a>
+    Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/flare-foundation/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../flare/">
+<span class="md-ellipsis">
+    What Is Flare?
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/">
+<span class="md-ellipsis">
+    User Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            User Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/wallets/">
+<span class="md-ellipsis">
+    Wallets
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Wallets
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/bifrost-wallet/">
+<span class="md-ellipsis">
+    Bifrost Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/brave-wallet/">
+<span class="md-ellipsis">
+    Brave Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/dcent-wallet/">
+<span class="md-ellipsis">
+    D'CENT Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/enkrypt-wallet/">
+<span class="md-ellipsis">
+    Enkrypt Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/how-to-access-flare-network-with-a-ledger-device/">
+<span class="md-ellipsis">
+    Ledger Nano X and Nano S
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/how-to-access-flare-network-with-metamask/">
+<span class="md-ellipsis">
+    MetaMask
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/safepal-s1-wallet/">
+<span class="md-ellipsis">
+    SafePal S1 Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/how-to-access-flare-network-with-a-trezor-device/">
+<span class="md-ellipsis">
+    Trezor T
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wrapping-tokens/">
+<span class="md-ellipsis">
+    Wrapping Flare Tokens
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/delegation/">
+<span class="md-ellipsis">
+    FTSO Delegation
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            FTSO Delegation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/delegation/managing-delegations/">
+<span class="md-ellipsis">
+    Managing Delegations
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/delegation/managing-rewards/">
+<span class="md-ellipsis">
+    Managing Rewards
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/personal-delegation-account/">
+<span class="md-ellipsis">
+    Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/staking/">
+<span class="md-ellipsis">
+    Staking on Validators
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            Staking on Validators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/staking/staking-flarestake/">
+<span class="md-ellipsis">
+    Using FlareStake
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/staking/staking-cli/">
+<span class="md-ellipsis">
+    Using the Command Line
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/claiming-the-flaredrop/">
+<span class="md-ellipsis">
+    Claiming the FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/automatic-claiming/">
+<span class="md-ellipsis">
+    Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/governance/voting/">
+<span class="md-ellipsis">
+    Voting
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/block-explorers/">
+<span class="md-ellipsis">
+    Block Explorers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Block Explorers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/finding-reward-epoch/">
+<span class="md-ellipsis">
+    Finding the Reward Epoch
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/managing-delegations/">
+<span class="md-ellipsis">
+    Managing Delegations
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/managing-rewards/">
+<span class="md-ellipsis">
+    Managing Rewards
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/verifying-vote-power-block/">
+<span class="md-ellipsis">
+    Verifying the Vote-Power Block
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-nfts/">
+<span class="md-ellipsis">
+    Viewing NFTs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-token-balances/">
+<span class="md-ellipsis">
+    Viewing Token Balances
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-token-transfers/">
+<span class="md-ellipsis">
+    Viewing Token Transfers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-transactions/">
+<span class="md-ellipsis">
+    Viewing Transactions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/user-interface/">
+<span class="md-ellipsis">
+    Block Explorer Dashboard
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../exchange/">
+<span class="md-ellipsis">
+    Exchange Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            Exchange Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/architecture/">
+<span class="md-ellipsis">
+    Architecture of an Exchange
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/delegation/">
+<span class="md-ellipsis">
+    Delegating on the User's Behalf
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/troubleshooting/">
+<span class="md-ellipsis">
+    Troubleshooting Guide
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../get-started-building/">
+<span class="md-ellipsis">
+    Get Started Building
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Get Started Building
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/getting-started/">
+<span class="md-ellipsis">
+    Getting Started
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/">
+<span class="md-ellipsis">
+    Setting Up Your Environment
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Setting Up Your Environment
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/remix/">
+<span class="md-ellipsis">
+    Using Remix
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/hardhat/">
+<span class="md-ellipsis">
+    Using Hardhat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/foundry/">
+<span class="md-ellipsis">
+    Using Foundry
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/contract-addresses/">
+<span class="md-ellipsis">
+    Retrieving Contract Addresses
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/">
+<span class="md-ellipsis">
+    Network Configuration
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Network Configuration
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/network-config/">
+<span class="md-ellipsis">
+    Network Configuration
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/transaction-finalization/">
+<span class="md-ellipsis">
+    Checking Transaction Finalization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/reliable-event-reading/">
+<span class="md-ellipsis">
+    Reliable Event Reading
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/obtaining-revert-reason/">
+<span class="md-ellipsis">
+    Obtaining a Transaction's Revert Reason
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/">
+<span class="md-ellipsis">
+    Developer Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Developer Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            FTSO
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/ftso/getting-data-feeds/">
+<span class="md-ellipsis">
+    Getting FTSO Data Feeds
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/sc/">
+<span class="md-ellipsis">
+    State Connector
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            State Connector
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/sc/address-validity/">
+<span class="md-ellipsis">
+    Basic Attestation Request
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/automatic-claiming/">
+<span class="md-ellipsis">
+    Integrate Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/personal-delegation-account/">
+<span class="md-ellipsis">
+    Integrate Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/explorers-and-indexers/">
+<span class="md-ellipsis">
+    Block Explorers and Indexers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/the-flaredrop/">
+<span class="md-ellipsis">
+    The FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/wallets/">
+<span class="md-ellipsis">
+    Wallets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/external-resources/">
+<span class="md-ellipsis">
+    External Learning Resources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tools/">
+<span class="md-ellipsis">
+    Tooling
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../security/">
+<span class="md-ellipsis">
+    Security
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/">
+<span class="md-ellipsis">
+    APIs
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/smart-contracts/">
+<span class="md-ellipsis">
+    Smart Contracts API
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Smart Contracts API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/AddressUpdatable/">
+<span class="md-ellipsis">
+    AddressUpdatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/AddressUpdater/">
+<span class="md-ellipsis">
+    AddressUpdater
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/AddressValidityVerification/">
+<span class="md-ellipsis">
+    AddressValidityVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/BalanceDecreasingTransactionVerification/">
+<span class="md-ellipsis">
+    BalanceDecreasingTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/CheckPointable/">
+<span class="md-ellipsis">
+    CheckPointable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/ClaimSetupManager/">
+<span class="md-ellipsis">
+    ClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/CleanupBlockNumberManager/">
+<span class="md-ellipsis">
+    CleanupBlockNumberManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/CloneFactory/">
+<span class="md-ellipsis">
+    CloneFactory
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/ConfirmedBlockHeightExistsVerification/">
+<span class="md-ellipsis">
+    ConfirmedBlockHeightExistsVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Delegatable/">
+<span class="md-ellipsis">
+    Delegatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/EVMTransactionVerification/">
+<span class="md-ellipsis">
+    EVMTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FlareContractRegistry/">
+<span class="md-ellipsis">
+    FlareContractRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FlareDaemon/">
+<span class="md-ellipsis">
+    FlareDaemon
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Ftso/">
+<span class="md-ellipsis">
+    Ftso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FtsoManager/">
+<span class="md-ellipsis">
+    FtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FtsoRegistry/">
+<span class="md-ellipsis">
+    FtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FtsoRewardManager/">
+<span class="md-ellipsis">
+    FtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernanceSettings/">
+<span class="md-ellipsis">
+    GovernanceSettings
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernanceVotePower/">
+<span class="md-ellipsis">
+    GovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Governed/">
+<span class="md-ellipsis">
+    Governed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernedAndFlareDaemonized/">
+<span class="md-ellipsis">
+    GovernedAndFlareDaemonized
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernedAtGenesis/">
+<span class="md-ellipsis">
+    GovernedAtGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernedBase/">
+<span class="md-ellipsis">
+    GovernedBase
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Inflation/">
+<span class="md-ellipsis">
+    Inflation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PaymentVerification/">
+<span class="md-ellipsis">
+    PaymentVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PChainStake/">
+<span class="md-ellipsis">
+    PChainStake
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PChainStakeMirror/">
+<span class="md-ellipsis">
+    PChainStakeMirror
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PriceSubmitter/">
+<span class="md-ellipsis">
+    PriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/ReferencedPaymentNonexistenceVerification/">
+<span class="md-ellipsis">
+    ReferencedPaymentNonexistenceVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/RevertErrorTracking/">
+<span class="md-ellipsis">
+    RevertErrorTracking
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/VoterWhitelister/">
+<span class="md-ellipsis">
+    VoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/VPContract/">
+<span class="md-ellipsis">
+    VPContract
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/VPToken/">
+<span class="md-ellipsis">
+    VPToken
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/WNat/">
+<span class="md-ellipsis">
+    WNat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IAddressValidityVerification/">
+<span class="md-ellipsis">
+    IAddressValidityVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IBalanceDecreasingTransactionVerification/">
+<span class="md-ellipsis">
+    IBalanceDecreasingTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IClaimSetupManager/">
+<span class="md-ellipsis">
+    IClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IConfirmedBlockHeightExistsVerification/">
+<span class="md-ellipsis">
+    IConfirmedBlockHeightExistsVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IEVMTransactionVerification/">
+<span class="md-ellipsis">
+    IEVMTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFlareContractRegistry/">
+<span class="md-ellipsis">
+    IFlareContractRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFlareDaemonize/">
+<span class="md-ellipsis">
+    IFlareDaemonize
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtso/">
+<span class="md-ellipsis">
+    IFtso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoGenesis/">
+<span class="md-ellipsis">
+    IFtsoGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoManager/">
+<span class="md-ellipsis">
+    IFtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoManagerGenesis/">
+<span class="md-ellipsis">
+    IFtsoManagerGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoRegistry/">
+<span class="md-ellipsis">
+    IFtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoRegistryGenesis/">
+<span class="md-ellipsis">
+    IFtsoRegistryGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoRewardManager/">
+<span class="md-ellipsis">
+    IFtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IGovernanceSettings/">
+<span class="md-ellipsis">
+    IGovernanceSettings
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IGovernanceVotePower/">
+<span class="md-ellipsis">
+    IGovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IInflationGenesis/">
+<span class="md-ellipsis">
+    IInflationGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IMerkleRootStorage/">
+<span class="md-ellipsis">
+    IMerkleRootStorage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPaymentVerification/">
+<span class="md-ellipsis">
+    IPaymentVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPChainStakeMirror/">
+<span class="md-ellipsis">
+    IPChainStakeMirror
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPChainVotePower/">
+<span class="md-ellipsis">
+    IPChainVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPriceSubmitter/">
+<span class="md-ellipsis">
+    IPriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IReferencedPaymentNonexistenceVerification/">
+<span class="md-ellipsis">
+    IReferencedPaymentNonexistenceVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IStateConnector/">
+<span class="md-ellipsis">
+    IStateConnector
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IVoterWhitelister/">
+<span class="md-ellipsis">
+    IVoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IVPContractEvents/">
+<span class="md-ellipsis">
+    IVPContractEvents
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IVPToken/">
+<span class="md-ellipsis">
+    IVPToken
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IWNat/">
+<span class="md-ellipsis">
+    IWNat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIAddressUpdatable/">
+<span class="md-ellipsis">
+    IIAddressUpdatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIAddressUpdater/">
+<span class="md-ellipsis">
+    IIAddressUpdater
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIClaimSetupManager/">
+<span class="md-ellipsis">
+    IIClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IICleanable/">
+<span class="md-ellipsis">
+    IICleanable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtso/">
+<span class="md-ellipsis">
+    IIFtso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtsoManager/">
+<span class="md-ellipsis">
+    IIFtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtsoRegistry/">
+<span class="md-ellipsis">
+    IIFtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtsoRewardManager/">
+<span class="md-ellipsis">
+    IIFtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIGovernanceVotePower/">
+<span class="md-ellipsis">
+    IIGovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIInflationReceiver/">
+<span class="md-ellipsis">
+    IIInflationReceiver
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIPriceSubmitter/">
+<span class="md-ellipsis">
+    IIPriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IITokenPool/">
+<span class="md-ellipsis">
+    IITokenPool
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIVoterWhitelister/">
+<span class="md-ellipsis">
+    IIVoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIVPContract/">
+<span class="md-ellipsis">
+    IIVPContract
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIVPToken/">
+<span class="md-ellipsis">
+    IIVPToken
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/REST/">
+<span class="md-ellipsis">
+    OpenAPI REST API
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            OpenAPI REST API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/attestation-client/">
+<span class="md-ellipsis">
+    Attestation client
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/btcverifier/">
+<span class="md-ellipsis">
+    Btcverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/dogeverifier/">
+<span class="md-ellipsis">
+    Dogeverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/evmverifier/">
+<span class="md-ellipsis">
+    Evmverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/xrpverifier/">
+<span class="md-ellipsis">
+    Xrpverifier
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/attestation-types/">
+<span class="md-ellipsis">
+    Attestation Types
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Attestation Types
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/AddressValidity/">
+<span class="md-ellipsis">
+    AddressValidity
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/BalanceDecreasingTransaction/">
+<span class="md-ellipsis">
+    BalanceDecreasingTransaction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/ConfirmedBlockHeightExists/">
+<span class="md-ellipsis">
+    ConfirmedBlockHeightExists
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/EVMTransaction/">
+<span class="md-ellipsis">
+    EVMTransaction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/Payment/">
+<span class="md-ellipsis">
+    Payment
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/ReferencedPaymentNonexistence/">
+<span class="md-ellipsis">
+    ReferencedPaymentNonexistence
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../products/">
+<span class="md-ellipsis">
+    Products
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Products
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../state-connector/">
+<span class="md-ellipsis">
+    State Connector
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    FAssets
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+            FAssets
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Collateral
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Collateral
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collateral-types">
+<span class="md-ellipsis">
+      Collateral Types
+    </span>
+</a>
+<nav aria-label="Collateral Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vault-collateral">
+<span class="md-ellipsis">
+      Vault Collateral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pool-collateral">
+<span class="md-ellipsis">
+      Pool Collateral
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fasset-minting-fees-and-debt">
+<span class="md-ellipsis">
+      FAsset-Minting Fees and Debt
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transferable-and-locked-cpts">
+<span class="md-ellipsis">
+      Transferable and Locked CPTs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-collateral-ratio">
+<span class="md-ellipsis">
+      The Collateral Ratio
+    </span>
+</a>
+<nav aria-label="The Collateral Ratio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-wide-thresholds">
+<span class="md-ellipsis">
+      System-wide Thresholds
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agent-thresholds">
+<span class="md-ellipsis">
+      Agent Thresholds
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#redemption-of-cpts">
+<span class="md-ellipsis">
+      Redemption of CPTs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agents-stake-in-the-collateral-pool">
+<span class="md-ellipsis">
+      Agent's Stake in the Collateral Pool
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#top-up">
+<span class="md-ellipsis">
+      Top-up
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../minting/">
+<span class="md-ellipsis">
+    Minting
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../redemption/">
+<span class="md-ellipsis">
+    Redemption
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../liquidation/">
+<span class="md-ellipsis">
+    Liquidation
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../validators/">
+<span class="md-ellipsis">
+    Validator Nodes
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api-portal/">
+<span class="md-ellipsis">
+    Flare API Portal
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Concepts
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../automatic-claiming/">
+<span class="md-ellipsis">
+    Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../flare-beta/">
+<span class="md-ellipsis">
+    Flare Beta
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../personal-delegation-account/">
+<span class="md-ellipsis">
+    Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../the-flaredrop/">
+<span class="md-ellipsis">
+    The FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tokenomics/">
+<span class="md-ellipsis">
+    Tokenomics
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../archive/">
+<span class="md-ellipsis">
+    Archive
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_9">
+<span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../archive/flare-launch-process/">
+<span class="md-ellipsis">
+    Flare Launch Process
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/attestation/">
+<span class="md-ellipsis">
+    Attestation Providers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Attestation Providers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/attestation/operating/">
+<span class="md-ellipsis">
+    Operating an Attestation Provider
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/data/">
+<span class="md-ellipsis">
+    FTSO Data Providers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_3">
+<span class="md-nav__icon md-icon"></span>
+            FTSO Data Providers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/operating/">
+<span class="md-ellipsis">
+    Operating a Data Provider
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/whitelisting/">
+<span class="md-ellipsis">
+    Working with Whitelists
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/">
+<span class="md-ellipsis">
+    Managing the Ecosystem
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_3_4">
+<span class="md-nav__icon md-icon"></span>
+            Managing the Ecosystem
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/exploring-collusion/">
+<span class="md-ellipsis">
+    Exploring Collusion
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/monitoring-price-history/">
+<span class="md-ellipsis">
+    Monitoring Price History
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/observation/">
+<span class="md-ellipsis">
+    Observer Nodes
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_4">
+<span class="md-nav__icon md-icon"></span>
+            Observer Nodes
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/observation/deploying/">
+<span class="md-ellipsis">
+    Deploying an Observer Node
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/validation/">
+<span class="md-ellipsis">
+    Validator Nodes
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_5">
+<span class="md-nav__icon md-icon"></span>
+            Validator Nodes
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/validation/deploying/">
+<span class="md-ellipsis">
+    Deploying a Validator Node
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collateral-types">
+<span class="md-ellipsis">
+      Collateral Types
+    </span>
+</a>
+<nav aria-label="Collateral Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vault-collateral">
+<span class="md-ellipsis">
+      Vault Collateral
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pool-collateral">
+<span class="md-ellipsis">
+      Pool Collateral
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fasset-minting-fees-and-debt">
+<span class="md-ellipsis">
+      FAsset-Minting Fees and Debt
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transferable-and-locked-cpts">
+<span class="md-ellipsis">
+      Transferable and Locked CPTs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-collateral-ratio">
+<span class="md-ellipsis">
+      The Collateral Ratio
+    </span>
+</a>
+<nav aria-label="The Collateral Ratio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-wide-thresholds">
+<span class="md-ellipsis">
+      System-wide Thresholds
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agent-thresholds">
+<span class="md-ellipsis">
+      Agent Thresholds
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#redemption-of-cpts">
+<span class="md-ellipsis">
+      Redemption of CPTs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#agents-stake-in-the-collateral-pool">
+<span class="md-ellipsis">
+      Agent's Stake in the Collateral Pool
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#top-up">
+<span class="md-ellipsis">
+      Top-up
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/flare-foundation/docs/edit/main/docs/tech/fassets/collateral.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="fassets-collateral">FAssets Collateral<a class="headerlink" href="#fassets-collateral" title="Permanent link">#</a></h1>
+<p><a href="../">FAssets</a> collateral is locked in contracts that ensure the minted FAssets can always be redeemed for the underlying assets they represent or compensated by collateral.</p>
+<p>Along with Flare's native token, <code>$FLR</code>, any governance-approved <a href="../../glossary/#erc20">ERC-20</a> token on the Flare blockchain can be used as collateral.</p>
+<h2 id="collateral-types">Collateral Types<a class="headerlink" href="#collateral-types" title="Permanent link">#</a></h2>
+<p>Two kinds of collateral secure FAssets: vault collateral and pool collateral.</p>
+<figure>
+<p><img alt="FAssets collateral types" class="allow-zoom" loading="lazy" src="../../../assets/images/tech/fassets-collateral.png"/>
+</p>
+<figcaption>FAssets collateral types.</figcaption>
+</figure>
+<p>Vault collateral is provided exclusively by agents and ensures they perform their duties.
+Pool collateral is provided by agents and <code>$FLR</code> holders who choose to contribute to the pool.
+It is a safeguard when a sudden drop in the price of the vault collateral makes it insufficient to back the underlying assets.</p>
+<p>The two types of collateral are explained next.
+Collateral pool tokens and minting fees are explained afterwards.</p>
+<h3 id="vault-collateral">Vault Collateral<a class="headerlink" href="#vault-collateral" title="Permanent link">#</a></h3>
+<p>Vault collateral consists of the types of collateral chosen by agents to store in <a href="../#vault-and-collateral-pool">their vaults</a>.
+Flare governance approves the valid types, which are generally <a href="../../glossary/#stablecoin">stablecoins</a>, such as <code>$USDC</code>, <code>$USDT</code>, or other highly liquid tokens on the Flare network.</p>
+<p>Agents choose one of the types defined by FAssets governance and use it as collateral in their vaults.
+Agents cannot switch to a different type after a vault is created, but they can create any number of vaults, with different types.</p>
+<p>Each collateral type defines an <a href="../../glossary/#erc20">ERC-20</a> token to use as collateral, a series of <a href="#the-collateral-ratio">collateral ratios</a>, and information to retrieve the asset's price from the FTSO system.
+Governance reserves the right to add new types or deprecate existing types.
+If governance deprecates a type, agents must switch to a supported type.</p>
+<p>Each vault is associated with a single, unique address on the underlying chain called the agent's underlying address.
+It receives underlying assets when they are minted into FAssets and sends underlying assets to the redeemer's address when they are redeemed.</p>
+<p>When an agent creates a vault, the underlying address is checked for validity using the State Connector.
+Otherwise, malicious agents could provide an address that systematically blocks payments and exploit the <a href="../minting/">minting process</a> to their advantage.</p>
+<h3 id="pool-collateral">Pool Collateral<a class="headerlink" href="#pool-collateral" title="Permanent link">#</a></h3>
+<p>When the price of the vault collateral changes in such a way that the vault collateral cannot fully back all the minted FAssets, a <a href="../liquidation/">liquidation</a> mechanism ensures enough FAssets are burned to restore balance.
+The pool collateral provides an additional source of backing for situations when the price fluctuates too rapidly for liquidations to correct the imbalance.</p>
+<p>Pool collateral is always native <code>$FLR</code> tokens (or <code>$SGB</code> tokens on the <a href="../../flare/#flare-networks">Songbird network</a>) and can be used as an additional source of collateral for <a href="../liquidation/">liquidations</a> and <a href="../redemption/#redemption-payment-failure">failed redemptions</a>.</p>
+<p>Anyone can participate in the FAssets system by providing native tokens to this pool.
+In return, providers receive <strong>collateral pool tokens</strong> (CPTs) as proof of the share of native tokens they provided to a specific pool from a specific agent.
+CPTs are <a href="../../glossary/#erc20">ERC-20</a> tokens specific to both an agent and a pool.</p>
+<p id="time-lock">Providers can redeem their CPTs for <code>$FLR</code>, or even transfer or trade them, after a governance-defined time period has elapsed since they entered the pool.
+This <strong>time lock</strong> is necessary to reduce <a href="../../glossary/#sandwiching">sandwiching</a> attacks.</p>
+<p>Additionally, CPT holders are entitled to a share of any fee the agent earns from minting FAssets using this pool as explained in the next section.</p>
+<details class="info">
+<summary>Formulas: CPT Conversion</summary>
+<p>The amount of collateral pool tokens a provider <span class="arithmatex">\(p\)</span> receives upon entering a pool is calculated as:</p>
+<div class="arithmatex">\[
+received\_CPT_p = { added\_collateral_p \over collateral\_in\_pool } \times currently\_issued\_CPT
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(added\_collateral_p\)</span> is the amount of <code>$FLR</code> tokens that provider <span class="arithmatex">\(p\)</span> is adding to the pool.</li>
+<li><span class="arithmatex">\(collateral\_in\_pool\)</span> is the amount of <code>$FLR</code> tokens in the pool before adding the new tokens.</li>
+<li><span class="arithmatex">\(currently\_issued\_CPT\)</span> is the circulating amount of collateral pool tokens.</li>
+</ul>
+<p>When a pool is first created, <span class="arithmatex">\(received\_CPT_p = added\_collateral_p\)</span>.</p>
+<p>The amount of <code>$FLR</code> collateral a provider receives when they redeem their CPT is calculated using the opposite formula:</p>
+<div class="arithmatex">\[
+received\_collateral_p = collateral\_in\_pool \times { redeemed\_CPT_p \over currently\_issued\_CPT }
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(redeemed\_CPT_p\)</span> is the amount of CPT the provider is returning to the pool.</li>
+</ul>
+</details>
+<div class="steps-table">
+<details class="example">
+<summary>Example: CPTs Conversion</summary>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th style="text-align: right;"><code>$FLR</code> in pool</th>
+<th style="text-align: right;">Issued CPTs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>An agent creates a new vault. The collateral pool is initially empty of <code>$FLR</code> and fees.</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Alice deposits 100 <code>$FLR</code> and gets 100 CPTs in return.</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Bob deposits 200 <code>$FLR</code> and gets 200 CPTs in return.</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">300</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Alice redeems 50 CPTs and receives 50 <code>$FLR</code> in return.</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">250</td>
+</tr>
+</tbody>
+</table>
+<p>Note that in general 1 FLR does not always correspond to 1 CPT, because of mechanisms like the <a href="#top-up">top-up</a>, for example.</p>
+</details>
+</div>
+<h2 id="fasset-minting-fees-and-debt">FAsset-Minting Fees and Debt<a class="headerlink" href="#fasset-minting-fees-and-debt" title="Permanent link">#</a></h2>
+<p>As part of the minting process, users pay a <a href="../minting/#minting-fee">minting fee</a> on the underlying chain.
+The agent's share of this fee remains on the underlying chain, whereas the pool's share triggers the minting of an equivalent amount of FAssets on the Flare network.</p>
+<p>These FAssets coming from the minting fee are added to the collateral pool, where they are shared between collateral providers in proportion to the amount of CPTs that providers have.
+At any time, providers can claim their due share of the fees in the pool.
+When providers exit the collateral pool by redeeming their CPTs, any remaining unclaimed fee is automatically transferred to them.</p>
+<p id="debt-lock">Providers are naturally only entitled to the minting fees accrued after they entered the pool.
+Therefore, providers entering a pool with preexisting fees are assigned a <strong>fee debt</strong>.
+The amount of fees a provider can actually withdraw from the pool is calculated by first subtracting their debt from the total amount of fees in the pool.
+In this way, the amount of fees that a provider can withdraw upon entering a pool is exactly zero.</p>
+<p>A provider's fee debt:</p>
+<div class="table-with-dividers">
+<table>
+<thead>
+<tr>
+<th>Increases when the provider</th>
+<th>Decreases when the provider</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enters a pool which already has fees in it.</td>
+<td>Exits the pool, partially or completely.</td>
+</tr>
+<tr>
+<td>Withdraws FAsset fees.</td>
+<td>Deposits FAssets, paying off part of the debt.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It is worth noting that:</p>
+<ul>
+<li>When a provider withdraws fees, their debt increases by the same amount.</li>
+<li>Since CPTs are ERC-20 tokens, a secondary market for them is expected to develop.
+    If CPTs become more valuable than the FAsset fees they represent, returning the FAssets and paying off part of their fee debt might be more lucrative for providers.</li>
+</ul>
+<details class="info">
+<summary>Formulas: Fee Entitlement</summary>
+<p>The following formulas consider all the above information to calculate each provider's due share of FAsset minting fees.</p>
+<p>The amount of debt a provider <span class="arithmatex">\(p\)</span> is assigned upon entering a pool is calculated as:</p>
+<div class="arithmatex">\[
+fee\_debt_p = { added\_collateral_p \over collateral\_in\_pool } \times fees\_in\_pool
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(added\_collateral_p\)</span> is the amount of <code>$FLR</code> tokens that provider <span class="arithmatex">\(p\)</span> is adding to the pool.</li>
+<li><span class="arithmatex">\(collateral\_in\_pool\)</span> is the amount of <code>$FLR</code> tokens in the pool before adding the new tokens.</li>
+<li><span class="arithmatex">\(fees\_in\_pool\)</span> is the amount of FAsset minting fees currently in the pool.</li>
+</ul>
+<p>The following formulas are based on the concept of <strong>virtual fees</strong>, which are the fees that a provider would be entitled to if they had no fee debt.</p>
+<p>The <strong>total virtual fees</strong> is the sum of all provider's virtual fees and can be expressed as:</p>
+<div class="arithmatex">\[
+total\_virtual\_fees = fees\_in\_pool + total\_fee\_debt
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(total\_fee\_debt\)</span> is the sum of the fee debt held by all providers <span class="arithmatex">\(= \sum_p fee\_debt_p\)</span></li>
+</ul>
+<p>Then, the virtual fees due to a provider <span class="arithmatex">\(p\)</span>, i.e., the amount of FAsset minting fees they would be entitled to if they had no debt, are:</p>
+<div class="arithmatex">\[
+virtual\_fees_p = { CPT_p \over currently\_issued\_CPT } \times total\_virtual\_fees
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(CPT_p\)</span> is the amount of CPTs provider <span class="arithmatex">\(p\)</span> holds.</li>
+<li><span class="arithmatex">\(currently\_issued\_CPT\)</span> is the circulating amount of CPTs.</li>
+</ul>
+<p>Finally, the amount of fees from the pool that a provider <span class="arithmatex">\(p\)</span> is free to withdraw at any given time is:</p>
+<div class="arithmatex">\[
+free\_fees_p = virtual\_fees_p - fee\_debt_p
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(fee\_debt_p\)</span> is the amount of fee debt that provider <span class="arithmatex">\(p\)</span> holds.</li>
+</ul>
+</details>
+<div class="steps-table">
+<details class="example">
+<summary>Example: Fee Entitlement</summary>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th style="text-align: right;"><code>$FLR</code> in pool</th>
+<th style="text-align: right;">Fees in pool</th>
+<th style="text-align: right;">Total fee debt</th>
+<th style="text-align: right;">Total virtual fees</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>An agent creates a new vault.</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Alice deposits 100 <code>$FLR</code> and gets 100 CPTs in return.</td>
+<td style="text-align: right;"><strong>100</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>10 FAssets of fees are added to the pool due to a mint.</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>10</strong></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Bob deposits 100 <code>$FLR</code> and gets 100s CPT in return.</td>
+<td style="text-align: right;"><strong>200</strong></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;"><strong>20</strong></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>10 more FAssets of fees are added to the pool due to another mint.</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;"><strong>20</strong></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;"><strong>30</strong></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>Alice withdraws 10 FAssets of fees.</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;"><strong>20</strong></td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>Bob exits the pool by returning the 100 CPTs and withdrawing 100 <code>$FLR</code>.</td>
+<td style="text-align: right;"><strong>100</strong></td>
+<td style="text-align: right;"><strong>5</strong></td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;"><strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<p>After step <strong>4</strong>, Bob is not entitled to any of the fees in the pool:</p>
+<ul>
+<li>Bob is assigned an initial fee debt of 10 FAssets, according to the <span class="arithmatex">\(fee\_debt_p\)</span> formula in the box above.</li>
+<li>As a result, the total virtual fees are increased to 20 FAssets. 10 of them are in fees, and 10 of them are in debt.</li>
+<li>Each user now holds half the total CPTs, therefore they are allowed to withdraw half the virtual fees, this is, 10 FAssets each.</li>
+<li>Alice has no debt, so she can withdraw 10 FAssets, which is all the fees in the pool, because she was the only CPT holder when these fees were accrued.</li>
+<li>Conversely, Bob has 10 FAssets of debt, so he can't withdraw any of the fees.</li>
+</ul>
+<p>After step <strong>5</strong>, the new fees are shared between both users, and the previous 10 FAssets still belong to Alice:</p>
+<ul>
+<li>The 10 FAssets in new fees increase the total virtual fees to 30.</li>
+<li>Both users are entitled to half of the total, which is 15 FAssets each.</li>
+<li>Alice has no debt, so she can withdraw 15 FAssets: the initial 10 plus half of the 10 that were added to the pool afterwards.</li>
+<li>Bob has 10 FAssets of debt, so he can only withdraw 5, this is, his entitlement (15) minus the debt (10).</li>
+</ul>
+<p>After step <strong>6</strong>:</p>
+<ul>
+<li>The 10 FAssets that Alice has withdrawn have converted into debt for her.</li>
+<li>However, this action does not change the total virtual fees because the sum of fees in the pool and total debt remains constant.</li>
+<li>Therefore, both users are still entitled to 15 FAssets each.</li>
+<li>However, now Alice has 10 FAssets of debt, so she can withdraw only 5 more.</li>
+<li>Nothing has changed for Bob, who can still withdraw 5 FAssets.</li>
+</ul>
+<p>In step <strong>7</strong>:</p>
+<ul>
+<li>Bob is returning 100 CPTs, which is 50% of the circulating CPTs, so he is entitled to half the total virtual fees, 15 FAssets.</li>
+<li>Because he is exiting the pool, all his debt, which is 10 FAssets, must be cancelled.</li>
+<li>He can withdraw the remaining 5 FAssets from the fees pool.</li>
+<li>After Bob withdraws his 5 FAssets, the pool contains only 5 FAssets, which correspond to the amount that Alice can withdraw.</li>
+</ul>
+</details>
+</div>
+<h2 id="transferable-and-locked-cpts">Transferable and Locked CPTs<a class="headerlink" href="#transferable-and-locked-cpts" title="Permanent link">#</a></h2>
+<p>CPTs can always be <strong>redeemed</strong> by exiting the pool, but only the portion of them above the fee debt can be <strong>transferred</strong> to another account.
+Therefore, CPTs held by providers are divided into two types:</p>
+<ul>
+<li><strong>Transferable</strong>: Tokens whose <a href="#time-lock">time lock</a> has expired and are also free of <a href="#debt-lock">fee debt</a>.
+    These tokens are fungible, and they can be transferred or traded just like any other ERC-20 token.</li>
+<li>
+<p><strong>Locked</strong>: The CPTs serve only as proof of ownership of some of the collateral in the pool, and they cannot be transferred nor traded.</p>
+<p>Locked CPTs are one of the following types:</p>
+<ul>
+<li><strong>Time-locked</strong>: Tokens whose <a href="#time-lock">time lock</a> has not expired must wait to become transferable or redeemable.</li>
+<li>
+<p><strong>Debt-locked</strong>: Tokens corresponding to an amount of fees below the provider's fee debt cannot be transferred because they would need to carry the debt with them.
+    However, they can be <a href="#redemption-of-cpts">redeemed</a>.</p>
+<p>As new fees arrive in the pool, some previously debt-locked tokens become transferable.</p>
+<p>These CPTs can also become transferable by <strong>adding</strong> FAssets to the pool, which settles, either partially or completely, the fee debt.</p>
+</li>
+</ul>
+</li>
+</ul>
+<details class="info">
+<summary>Formulas: Collateral Pool Token Transferability</summary>
+<p>The amount of CPTs that a given provider <span class="arithmatex">\(p\)</span> can transfer is calculated as:</p>
+<div class="arithmatex">\[
+transferable\_CPT_p = { free\_fees_p \over virtual\_fees_p } \times CPT_p
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(free\_fees_p\)</span> is the amount of fees from the pool that a provider <span class="arithmatex">\(p\)</span> can withdraw, as defined in the previous formula box.</li>
+<li><span class="arithmatex">\(virtual\_fees_p\)</span> is the amount of FAsset minting fees that provider <span class="arithmatex">\(p\)</span> would be entitled to if they had no debt, as defined in the previous formula box.</li>
+<li><span class="arithmatex">\(CPT_p\)</span> is the amount of CPTs provider <span class="arithmatex">\(p\)</span> holds.</li>
+</ul>
+<p>Accordingly, the amount of CPT that is locked and cannot be transferred is calculated as:</p>
+<div class="arithmatex">\[
+locked\_CPT_p = { fee\_debt_p \over virtual\_fees_p } \times CPT_p
+\]</div>
+<p>As new minting fees arrive in the pool, the <span class="arithmatex">\(transferable\_CPT_p\)</span> of all providers also increases.</p>
+<p>Conversely, when a provider withdraws fees from the pool, their debt increases in the same amount, and <span class="arithmatex">\(total\_virtual\_fee\)</span> remains the same.
+Therefore, only that provider's <span class="arithmatex">\(transferable\_CPT_p\)</span> is reduced, without affecting the rest of the providers.</p>
+</details>
+<div class="steps-table">
+<details class="example">
+<summary>Example: Collateral Pool Token Transferability</summary>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th style="text-align: right;">Issued CPTs</th>
+<th style="text-align: right;">Fees in pool</th>
+<th style="text-align: right;">Total fee debt</th>
+<th style="text-align: right;">Total virtual fees</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>An agent creates a new vault.</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Alice deposits 100 <code>$FLR</code> and receives 100 CPTs.</td>
+<td style="text-align: right;"><strong>100</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>10 FAssets of fees are added to the pool due to a mint.</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;"><strong>10</strong></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Alice withdraws 5 FAssets of fees.</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>5</strong></td>
+<td style="text-align: right;"><strong>5</strong></td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>10 more FAssets of fees are added to the pool due to another mint.</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;"><strong>15</strong></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;"><strong>20</strong></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>Alice transfers 75 CPTs to Bob.</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>Alice exits the pool by returning her remaining 25 CPTs.</td>
+<td style="text-align: right;"><strong>75</strong></td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<p>After step <strong>2</strong>, all of Alice's CPTs are transferable because she has no debt.</p>
+<p>After step <strong>3</strong>, all of Alice's CPTs continue to be transferable, and she is entitled to 100% of the fees in the pool.
+If she transferred or traded his CPTs, the recipient of those CPTs would be entitled to the fees.</p>
+<p>After step <strong>4</strong>, only half of Alice's CPTs are transferable (50 CPTs). The other half is debt-locked.</p>
+<p>After step <strong>5</strong>, only 25% of Alice's CPTs remain locked (25 CPTs), which correspond to her 5 FAssets of debt.</p>
+<p>After step <strong>6</strong>:</p>
+<ul>
+<li>Alice has 25 CPTs, which entitle her to 5 FAssets of virtual fees.
+  After subtracting her 5 FAssets of fees, her free fees are zero, which means she cannot withdraw any more fees.</li>
+<li>Bob has 75 CPTs and no debt, so he is entitled to 15 FAssets of fees, which are all the fees in the pool.</li>
+</ul>
+<p>In step <strong>7</strong>:</p>
+<ul>
+<li>Alice is returning 25 CPTs, which is 25% of the circulating CPTs, so she is entitled to 25% of the total virtual fees, which is 5 FAssets.</li>
+<li>Because she is exiting the pool, all her debt, which is 5 FAssets, must be cancelled.</li>
+<li>Her <span class="arithmatex">\(free\_fees_p\)</span> are 0, so she cannot take any of the remaining fees in the pool.</li>
+<li>The 15 FAssets that remain in the fee pool now belong entirely to Bob, who holds 100% of all the issued CPTs, which is 75 CPTs.</li>
+</ul>
+</details>
+</div>
+<h2 id="the-collateral-ratio">The Collateral Ratio<a class="headerlink" href="#the-collateral-ratio" title="Permanent link">#</a></h2>
+<p>The collateral ratio (CR) is the ratio between the value of all the tokens used as collateral and the total value of the underlying assets held by an agent at any given time.
+The agent's vault and the collateral pool each has its own unique collateral ratio, which is constantly changing as the value of the underlying assets and the collateral change.
+These values are obtained using the <a href="../../ftso/">FTSO system</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example: Vault and Pool CR</p>
+<p>Assume an amount of FAssets currently valued at $1000 USD, backed by $1500 worth of <code>$USDC</code> in vault collateral and $2000 worth of <code>$FLR</code> in pool collateral.</p>
+<p>The resulting vault CR is then <span class="arithmatex">\(\$1500 \over \$1000\)</span> = 1.5.</p>
+<p>The resulting pool CR is <span class="arithmatex">\(\$2000 \over \$1000\)</span> = 2.</p>
+</div>
+<p>Several thresholds are defined for the collateral ratio, and they are used at different times during the FAsset operations.
+Some are set by the system, and others are set by the agent:</p>
+<figure>
+<p><img alt="Collateral ratio thresholds" class="allow-zoom" loading="lazy" src="../../../assets/images/tech/fassets-cr.png"/>
+</p>
+<figcaption>Collateral ratio thresholds.</figcaption>
+</figure>
+<h3 id="system-wide-thresholds">System-wide Thresholds<a class="headerlink" href="#system-wide-thresholds" title="Permanent link">#</a></h3>
+<p>The following thresholds are set by the FAssets system's governance and are the same for all agents:</p>
+<ul>
+<li>
+<p><strong>Minimal CR</strong>: The lowest collateral ratio the agent vault and the collateral pool must maintain so that enough collateral exists to insure the minted FAssets and to compensate for redemption payments that fail.
+    The minimal CR can be different for each type of collateral.</p>
+<p>If an agent's CR remains below the minimal CR for longer than a governance-set amount of time, <a href="../liquidation/">liquidations</a> can start.</p>
+</li>
+<li>
+<p><strong>Collateral call band CR (CCB CR)</strong>: An agent's position is unhealthy when the agent's vault CR or pool CR fall below their minimal CR.
+    However, as long as the CR remains above CCB CR, the CR can briefly fall below the minimal CR.</p>
+<p>During this time, the agent can either deposit more collateral or self-close some backed FAssets to improve the position.</p>
+<p>However, if the CR falls below the CCB CR, <a href="../liquidation/">liquidations</a> can start immediately.</p>
+<p>The value of each CCB CR is approximately 10% less than the minimal CR.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Assume the <strong>minimal CR</strong> is 1.4 and the <strong>CCB CR</strong> is 1.3.</p>
+<p>If the agent's vault CR drops below 1.3, the agent's position can be liquidated immediately.
+If the agent's vault CR drops below 1.4 but not below 1.3, the agent has some time to amend the position before it can be liquidated.</p>
+<p>Adjusted for the collateral pool's minimal CR, the same example applies to the collateral pool.</p>
+</div>
+</li>
+<li>
+<p><strong>Safety CR</strong>: If one or both of the collateral types fall below CCB CR or below the minimum CR for a longer period of time, liquidation occurs.
+    When the offending collateral reaches a healthy CR again, the liquidation stops.
+    To prevent the agent from immediately reverting into liquidation after a small price change, the CR must reach the safety CR before it can start operating normally again and liquidation stops.</p>
+<p>Each of the collateral types, the agent's vault and the collateral pool, has its own unique safety CR.</p>
+</li>
+</ul>
+<h3 id="agent-thresholds">Agent Thresholds<a class="headerlink" href="#agent-thresholds" title="Permanent link">#</a></h3>
+<p>The following thresholds are set by each agent according to their own preferences:</p>
+<ul>
+<li>
+<p><strong>Minting CR</strong>: For each mint done by an agent, the maximum amount allowed to be minted is calculated so that the CR for the agent's vault and the CR for the agent's collateral pool after the mint remain higher than the minting CR for each collateral type.
+    To reduce the threat of liquidation, agents should set the minting CR well above the minimal CR to accommodate price fluctuations that might occur before the CR falls below the minimal CR after the mint and minting is no longer possible.</p>
+</li>
+<li>
+<p><strong>Exit CR</strong>: After a user redeems CPTs, the pool CR must be more than the exit CR.
+    If the pool CR is already below the exit CR, redemption cannot occur.
+    The exit CR is for the collateral pool only.</p>
+</li>
+<li>
+<p><strong>Top-up CR</strong>: To incentivize healthy collateral pools, if the pool CR falls below the top-up CR, anyone can add collateral to the pool and receive <a href="#pool-collateral">CPTs</a> at a reduced price.
+    <a href="#top-up">This top-up mechanism</a> decreases the likelihood of liquidations because of a low amount of pool collateral.</p>
+</li>
+</ul>
+<h2 id="redemption-of-cpts">Redemption of CPTs<a class="headerlink" href="#redemption-of-cpts" title="Permanent link">#</a></h2>
+<p>When collateral providers exit the pool by redeeming their CPTs, the FAssets system burns them and returns the appropriate share of the collateral plus the share of <a href="#fasset-minting-fees-and-debt">FAsset-minting fees minus any FAsset-fee debt</a>.</p>
+<p>Providers also have the option to exit the pool partially, by redeeming only some of their CPTs.
+In this case, they can choose one of the following options to manage their due FAsset fees: withdraw the fees, reduce the fee debt, or both, keeping the current fee-to-debt-ratio.</p>
+<p>However, providers can exit, either fully or partially, only when the <a href="#the-collateral-ratio">collateral ratio (CR)</a> is high enough.
+After they exit, the <strong>CR</strong> must be higher than the <strong>exit CR</strong> to prevent their exit from reducing the <strong>CR</strong> to a dangerous level.</p>
+<p>Therefore, exits are impossible when the <strong>CR</strong> is below the <strong>exit CR</strong>.
+In this case, if providers have enough FAssets, they can exit by <strong>self-closing</strong>, which burns enough of their FAssets, plus their fees, to release their collateral.</p>
+<p>Providers are mainly compensated in underlying assets for the burned FAssets, depending on <a href="../minting/#lots">the number of lots</a> of FAssets that need to be redeemed:</p>
+<ul>
+<li>If more than 1 lot needs to be redeemed, the value of the burned FAssets is redeemed through the standard <a href="../redemption/">redemption process</a>.</li>
+<li>
+<p>If less than 1 lot needs to be redeemed, the agent buys the underlying funds from the user using vault collateral, at the price reported by the <a href="../../ftso/">FTSO system</a> minus a percentage defined by the agent.
+    This purchase by the agent occurs because fees on underlying chains can be expensive, which makes redemption of small quantities too expensive for the agent.</p>
+<p>Providers can always request this option instead of receiving underlying tokens.
+Also, if enough vault collateral is not available, pool collateral is used instead.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the case where the agent does not redeem in the underlying asset, the FAssets system pays the provider in collateral from the agent's vault because the pool collateral backing the redeemed FAssets is already withdrawn.</p>
+<p>When this type of redemption occurs, users might receive less collateral than they would have received if they had made a normal redemption.</p>
+</div>
+<h2 id="agents-stake-in-the-collateral-pool">Agent's Stake in the Collateral Pool<a class="headerlink" href="#agents-stake-in-the-collateral-pool" title="Permanent link">#</a></h2>
+<p>Agents must have a stake in their collateral pools, which means they must hold the amount of CPTs proportional, by a system-defined constant, to the backed amount of FAssets.
+The maximum amount of minting is limited by the amount of collateral pool tokens held by the agents.
+The agents' tokens are locked, which means they cannot be redeemed or transferred, while agents back these FAssets.</p>
+<p>When the agent's portion of the collateral pool is below the threshold, new mintings are not allowed.
+However, this situation does not trigger a liquidation because only the total pool stake matters when collateral needs to be redeemed or a liquidation payment needs to be made.</p>
+<p>If an agent's actions force a payment to be made from the collateral pool, the agent's CPTs, valued by the paid native tokens and recalculated by the collateral-pool-price formula, are burned.
+These actions can cause the agent's CPTs to be burned:</p>
+<ul>
+<li>When a redemption payment fails, when enough vault collateral to compensate the redeemer is not available, or when the system is set to automatically pay for redemption failures from the collateral pool.</li>
+<li>Liquidation because the CR of the vault collateral is too low.</li>
+<li>Full liquidation because of an <a href="../redemption/#redemption-payment-failure">agent infraction</a> during a transfer on an underlying chain.</li>
+</ul>
+<h2 id="top-up">Top-up<a class="headerlink" href="#top-up" title="Permanent link">#</a></h2>
+<p>To reduce the likelihood of liquidations because the pool collateral is too low, the pool can be topped up at a reduced price when the <strong>CR</strong> is above the <strong>top-up CR</strong>.</p>
+<p>A top-up mechanism for vault collateral is not available.
+To prevent liquidation, agents can add vault collateral any time.</p>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+    2024-03-14
+  </span>
+</aside>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<!-- Social links -->
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/flarenetwork/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://flare.network" rel="noopener" target="_blank" title="flare.network">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4.1-2.8.1-4.2.1H392c-22.1 0-40-17.9-40-40v-88c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v88c0 22.1-17.9 40-40 40h-55.9c-1.5 0-3-.1-4.5-.2-1.2.1-2.4.2-3.6.2h-16c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9.1-2.8v-69.6H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/FlareNetworks" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/flare-foundation" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://t.me/FlareNetwork" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://discord.com/invite/flarenetwork" rel="noopener" target="_blank" title="discord.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"></path></svg>
+</a>
+</div>
+<!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<div class="md-copyright">
+<div>
+      © Flare Networks 2024
+    </div>
+<div class="md-copyright__highlight">
+<a href="#__consent">Cookie settings</a>
+</div>
+<div class="md-copyright__highlight">
+<a href="https://flare.network/privacy-policy/" rel="noopener" target="_blank">
+      Terms of Service</a>
+</div>
+<div>
+      Made with 
+      <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="github" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          GitHub
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "content.tabs.link", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+<script src="../../../assets/javascripts/mathjax.js"></script>
+<script src="../../../assets/javascripts/images.js"></script>
+<script src="../../../assets/javascripts/links.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

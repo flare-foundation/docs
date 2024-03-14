@@ -1,0 +1,2466 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://docs.flare.network/user/governance/voting/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../../block-explorers/" rel="next"/>
+<link href="/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.13" name="generator"/>
+<title>Voting - Documentation</title>
+<link href="../../../assets/stylesheets/main.7e359304.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<!-- Google Tag Manager -->
+<script>function __md_analytics(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX2D2TR');}</script>
+<!-- End Google Tag Manager -->
+<script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="flaredark" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#voting">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WX2D2TR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine classes -->
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<!-- Link to home -->
+<a aria-label="Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Documentation">
+<svg height="28.854" version="1.1" viewbox="0 0 24.161 7.634" width="91.318" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-86.562 -149.865)">
+<g transform="matrix(.04216 0 0 .04216 86.008 149.317)">
+<path d="M148.08 81.07L58.52 81c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l89.56.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<path d="M193.48 13.08l-134.96-.07c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l134.96.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<circle cx="35.85" cy="171.4" r="22.7" transform="rotate(-10.9 35.84 171.43)"></circle>
+<path d="M289.44 35.77h24.3v135.71h-24.3z"></path>
+<path d="M586.26 125.31c0-25.24-17.76-46.36-42.81-46.36-26.92 0-44.12 22.06-44.12 47.3 0 28.41 20.38 47.11 47.48 47.11 14.02 0 28.41-5.79 37.2-16.26l-13.83-13.83c-4.3 4.67-12.53 10.47-22.81 10.47-12.9 0-23.18-8.79-24.49-21.5h62.81c.37-2.06.56-4.49.56-6.92zm-62.25-10.84c1.12-8.23 9.35-15.89 19.44-15.89 10.09 0 17.2 7.85 17.95 15.89z"></path>
+<path d="M398.83 89.4l-1.72-1.4c-7.33-5.98-16.5-9.14-26.52-9.14-24.96 0-44.51 20.81-44.51 47.38 0 11.87 4.12 23.18 11.61 31.85 8.26 9.6 21.05 15.33 34.23 15.33 9.57 0 18.03-3.07 25.16-9.13l1.73-1.47v8.69h21.82V80.77h-21.82v8.63zm-25.26 64.81c-14.57 0-26.43-12.45-26.43-27.76 0-15.31 11.86-27.76 26.43-27.76S400 111.14 400 126.45c0 15.31-11.86 27.76-26.43 27.76z"></path>
+<path d="M484.03 78.86c-10.02 0-19.19 3.16-26.52 9.14l-1.72 1.4v-8.63h-21.82v90.74h21.79v-47.29c0-7.3 2.97-14.38 8.48-19.17 4.57-3.97 10.43-6.36 16.81-6.36 4.23 0 8.22 1.05 11.77 2.91l7.21-19.69a43.158 43.158 0 00-16.01-3.06z"></path>
+<path d="M251.86 61.33l.02-.03c3.21-3.81 8.18-5.74 14.79-5.74 2.02 0 4.59.29 6.63.73l3.46-19.2c-4.23-1.02-8.34-1.45-13.54-1.45-11.13 0-21.14 3.77-28.2 10.62-6.67 6.47-9.64 15.58-9.64 29.52v4.89h-16.7v18.97h16.7v71.85h22.8V99.63h25.9V80.66h-25.9v-3.93c0-8.93 1.41-12.52 3.67-15.4z"></path>
+</g>
+</g>
+</svg>
+</a>
+<!-- Header title -->
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Voting
+            
+          </span>
+</div>
+</div>
+</div>
+<!-- Color palette toggle -->
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="flaredark" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<!-- Site language selector -->
+<!-- Button to open search modal -->
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Button to open drawer -->
+<label class="md-header__button md-icon menu__burger" for="__drawer">
+<!-- 
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> -->
+<div class="menu__burger-container">
+<span></span>
+</div>
+</label>
+<!-- Repository information -->
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/flare-foundation/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<!-- Navigation tabs (sticky) -->
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Documentation">
+<svg height="28.854" version="1.1" viewbox="0 0 24.161 7.634" width="91.318" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-86.562 -149.865)">
+<g transform="matrix(.04216 0 0 .04216 86.008 149.317)">
+<path d="M148.08 81.07L58.52 81c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l89.56.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<path d="M193.48 13.08l-134.96-.07c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l134.96.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<circle cx="35.85" cy="171.4" r="22.7" transform="rotate(-10.9 35.84 171.43)"></circle>
+<path d="M289.44 35.77h24.3v135.71h-24.3z"></path>
+<path d="M586.26 125.31c0-25.24-17.76-46.36-42.81-46.36-26.92 0-44.12 22.06-44.12 47.3 0 28.41 20.38 47.11 47.48 47.11 14.02 0 28.41-5.79 37.2-16.26l-13.83-13.83c-4.3 4.67-12.53 10.47-22.81 10.47-12.9 0-23.18-8.79-24.49-21.5h62.81c.37-2.06.56-4.49.56-6.92zm-62.25-10.84c1.12-8.23 9.35-15.89 19.44-15.89 10.09 0 17.2 7.85 17.95 15.89z"></path>
+<path d="M398.83 89.4l-1.72-1.4c-7.33-5.98-16.5-9.14-26.52-9.14-24.96 0-44.51 20.81-44.51 47.38 0 11.87 4.12 23.18 11.61 31.85 8.26 9.6 21.05 15.33 34.23 15.33 9.57 0 18.03-3.07 25.16-9.13l1.73-1.47v8.69h21.82V80.77h-21.82v8.63zm-25.26 64.81c-14.57 0-26.43-12.45-26.43-27.76 0-15.31 11.86-27.76 26.43-27.76S400 111.14 400 126.45c0 15.31-11.86 27.76-26.43 27.76z"></path>
+<path d="M484.03 78.86c-10.02 0-19.19 3.16-26.52 9.14l-1.72 1.4v-8.63h-21.82v90.74h21.79v-47.29c0-7.3 2.97-14.38 8.48-19.17 4.57-3.97 10.43-6.36 16.81-6.36 4.23 0 8.22 1.05 11.77 2.91l7.21-19.69a43.158 43.158 0 00-16.01-3.06z"></path>
+<path d="M251.86 61.33l.02-.03c3.21-3.81 8.18-5.74 14.79-5.74 2.02 0 4.59.29 6.63.73l3.46-19.2c-4.23-1.02-8.34-1.45-13.54-1.45-11.13 0-21.14 3.77-28.2 10.62-6.67 6.47-9.64 15.58-9.64 29.52v4.89h-16.7v18.97h16.7v71.85h22.8V99.63h25.9V80.66h-25.9v-3.93c0-8.93 1.41-12.52 3.67-15.4z"></path>
+</g>
+</g>
+</svg>
+</a>
+    Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/flare-foundation/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/flare/">
+<span class="md-ellipsis">
+    What Is Flare?
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    User Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            User Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../wallets/">
+<span class="md-ellipsis">
+    Wallets
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Wallets
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/bifrost-wallet/">
+<span class="md-ellipsis">
+    Bifrost Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/brave-wallet/">
+<span class="md-ellipsis">
+    Brave Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/dcent-wallet/">
+<span class="md-ellipsis">
+    D'CENT Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/enkrypt-wallet/">
+<span class="md-ellipsis">
+    Enkrypt Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/how-to-access-flare-network-with-a-ledger-device/">
+<span class="md-ellipsis">
+    Ledger Nano X and Nano S
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/how-to-access-flare-network-with-metamask/">
+<span class="md-ellipsis">
+    MetaMask
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/safepal-s1-wallet/">
+<span class="md-ellipsis">
+    SafePal S1 Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wallets/how-to-access-flare-network-with-a-trezor-device/">
+<span class="md-ellipsis">
+    Trezor T
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wrapping-tokens/">
+<span class="md-ellipsis">
+    Wrapping Flare Tokens
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../delegation/">
+<span class="md-ellipsis">
+    FTSO Delegation
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            FTSO Delegation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../delegation/managing-delegations/">
+<span class="md-ellipsis">
+    Managing Delegations
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../delegation/managing-rewards/">
+<span class="md-ellipsis">
+    Managing Rewards
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../personal-delegation-account/">
+<span class="md-ellipsis">
+    Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../staking/">
+<span class="md-ellipsis">
+    Staking on Validators
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            Staking on Validators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../staking/staking-flarestake/">
+<span class="md-ellipsis">
+    Using FlareStake
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../staking/staking-cli/">
+<span class="md-ellipsis">
+    Using the Command Line
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../claiming-the-flaredrop/">
+<span class="md-ellipsis">
+    Claiming the FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../automatic-claiming/">
+<span class="md-ellipsis">
+    Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Voting
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Voting
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#governance-process-summary">
+<span class="md-ellipsis">
+      Governance Process Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requirements">
+<span class="md-ellipsis">
+      Requirements
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#guide">
+<span class="md-ellipsis">
+      Guide
+    </span>
+</a>
+<nav aria-label="Guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-connecting-to-the-portal">
+<span class="md-ellipsis">
+      1. Connecting to the Portal
+    </span>
+</a>
+<nav aria-label="1. Connecting to the Portal" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bifrost-wallet">
+<span class="md-ellipsis">
+      Bifrost Wallet
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metamask-mobile">
+<span class="md-ellipsis">
+      MetaMask Mobile
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ledger-nano-sx-and-chrome">
+<span class="md-ellipsis">
+      Ledger Nano S/X and Chrome
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metamask-or-brave-wallet">
+<span class="md-ellipsis">
+      MetaMask or Brave Wallet
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-getting-wrapped-tokens">
+<span class="md-ellipsis">
+      2. Getting Wrapped Tokens
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-casting-your-vote">
+<span class="md-ellipsis">
+      3. Casting Your Vote
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transferring-votes">
+<span class="md-ellipsis">
+      Transferring Votes
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../block-explorers/">
+<span class="md-ellipsis">
+    Block Explorers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Block Explorers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/finding-reward-epoch/">
+<span class="md-ellipsis">
+    Finding the Reward Epoch
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/managing-delegations/">
+<span class="md-ellipsis">
+    Managing Delegations
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/managing-rewards/">
+<span class="md-ellipsis">
+    Managing Rewards
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/verifying-vote-power-block/">
+<span class="md-ellipsis">
+    Verifying the Vote-Power Block
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/viewing-nfts/">
+<span class="md-ellipsis">
+    Viewing NFTs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/viewing-token-balances/">
+<span class="md-ellipsis">
+    Viewing Token Balances
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/viewing-token-transfers/">
+<span class="md-ellipsis">
+    Viewing Token Transfers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/viewing-transactions/">
+<span class="md-ellipsis">
+    Viewing Transactions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../block-explorers/user-interface/">
+<span class="md-ellipsis">
+    Block Explorer Dashboard
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../exchange/">
+<span class="md-ellipsis">
+    Exchange Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            Exchange Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/architecture/">
+<span class="md-ellipsis">
+    Architecture of an Exchange
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/delegation/">
+<span class="md-ellipsis">
+    Delegating on the User's Behalf
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/troubleshooting/">
+<span class="md-ellipsis">
+    Troubleshooting Guide
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../get-started-building/">
+<span class="md-ellipsis">
+    Get Started Building
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Get Started Building
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/getting-started/">
+<span class="md-ellipsis">
+    Getting Started
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/">
+<span class="md-ellipsis">
+    Setting Up Your Environment
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Setting Up Your Environment
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/remix/">
+<span class="md-ellipsis">
+    Using Remix
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/hardhat/">
+<span class="md-ellipsis">
+    Using Hardhat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/foundry/">
+<span class="md-ellipsis">
+    Using Foundry
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/contract-addresses/">
+<span class="md-ellipsis">
+    Retrieving Contract Addresses
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/">
+<span class="md-ellipsis">
+    Network Configuration
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Network Configuration
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/network-config/">
+<span class="md-ellipsis">
+    Network Configuration
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/transaction-finalization/">
+<span class="md-ellipsis">
+    Checking Transaction Finalization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/reliable-event-reading/">
+<span class="md-ellipsis">
+    Reliable Event Reading
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/obtaining-revert-reason/">
+<span class="md-ellipsis">
+    Obtaining a Transaction's Revert Reason
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/">
+<span class="md-ellipsis">
+    Developer Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Developer Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            FTSO
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/ftso/getting-data-feeds/">
+<span class="md-ellipsis">
+    Getting FTSO Data Feeds
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/sc/">
+<span class="md-ellipsis">
+    State Connector
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            State Connector
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/sc/address-validity/">
+<span class="md-ellipsis">
+    Basic Attestation Request
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/automatic-claiming/">
+<span class="md-ellipsis">
+    Integrate Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/personal-delegation-account/">
+<span class="md-ellipsis">
+    Integrate Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/explorers-and-indexers/">
+<span class="md-ellipsis">
+    Block Explorers and Indexers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/the-flaredrop/">
+<span class="md-ellipsis">
+    The FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/wallets/">
+<span class="md-ellipsis">
+    Wallets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/external-resources/">
+<span class="md-ellipsis">
+    External Learning Resources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tools/">
+<span class="md-ellipsis">
+    Tooling
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../security/">
+<span class="md-ellipsis">
+    Security
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/">
+<span class="md-ellipsis">
+    APIs
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/smart-contracts/">
+<span class="md-ellipsis">
+    Smart Contracts API
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Smart Contracts API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/AddressUpdatable/">
+<span class="md-ellipsis">
+    AddressUpdatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/AddressUpdater/">
+<span class="md-ellipsis">
+    AddressUpdater
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/AddressValidityVerification/">
+<span class="md-ellipsis">
+    AddressValidityVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/BalanceDecreasingTransactionVerification/">
+<span class="md-ellipsis">
+    BalanceDecreasingTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/CheckPointable/">
+<span class="md-ellipsis">
+    CheckPointable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/ClaimSetupManager/">
+<span class="md-ellipsis">
+    ClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/CleanupBlockNumberManager/">
+<span class="md-ellipsis">
+    CleanupBlockNumberManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/CloneFactory/">
+<span class="md-ellipsis">
+    CloneFactory
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/ConfirmedBlockHeightExistsVerification/">
+<span class="md-ellipsis">
+    ConfirmedBlockHeightExistsVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Delegatable/">
+<span class="md-ellipsis">
+    Delegatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/EVMTransactionVerification/">
+<span class="md-ellipsis">
+    EVMTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FlareContractRegistry/">
+<span class="md-ellipsis">
+    FlareContractRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FlareDaemon/">
+<span class="md-ellipsis">
+    FlareDaemon
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Ftso/">
+<span class="md-ellipsis">
+    Ftso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FtsoManager/">
+<span class="md-ellipsis">
+    FtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FtsoRegistry/">
+<span class="md-ellipsis">
+    FtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/FtsoRewardManager/">
+<span class="md-ellipsis">
+    FtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernanceSettings/">
+<span class="md-ellipsis">
+    GovernanceSettings
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernanceVotePower/">
+<span class="md-ellipsis">
+    GovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Governed/">
+<span class="md-ellipsis">
+    Governed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernedAndFlareDaemonized/">
+<span class="md-ellipsis">
+    GovernedAndFlareDaemonized
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernedAtGenesis/">
+<span class="md-ellipsis">
+    GovernedAtGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/GovernedBase/">
+<span class="md-ellipsis">
+    GovernedBase
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/Inflation/">
+<span class="md-ellipsis">
+    Inflation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PaymentVerification/">
+<span class="md-ellipsis">
+    PaymentVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PChainStake/">
+<span class="md-ellipsis">
+    PChainStake
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PChainStakeMirror/">
+<span class="md-ellipsis">
+    PChainStakeMirror
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/PriceSubmitter/">
+<span class="md-ellipsis">
+    PriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/ReferencedPaymentNonexistenceVerification/">
+<span class="md-ellipsis">
+    ReferencedPaymentNonexistenceVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/RevertErrorTracking/">
+<span class="md-ellipsis">
+    RevertErrorTracking
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/VoterWhitelister/">
+<span class="md-ellipsis">
+    VoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/VPContract/">
+<span class="md-ellipsis">
+    VPContract
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/VPToken/">
+<span class="md-ellipsis">
+    VPToken
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/WNat/">
+<span class="md-ellipsis">
+    WNat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IAddressValidityVerification/">
+<span class="md-ellipsis">
+    IAddressValidityVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IBalanceDecreasingTransactionVerification/">
+<span class="md-ellipsis">
+    IBalanceDecreasingTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IClaimSetupManager/">
+<span class="md-ellipsis">
+    IClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IConfirmedBlockHeightExistsVerification/">
+<span class="md-ellipsis">
+    IConfirmedBlockHeightExistsVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IEVMTransactionVerification/">
+<span class="md-ellipsis">
+    IEVMTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFlareContractRegistry/">
+<span class="md-ellipsis">
+    IFlareContractRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFlareDaemonize/">
+<span class="md-ellipsis">
+    IFlareDaemonize
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtso/">
+<span class="md-ellipsis">
+    IFtso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoGenesis/">
+<span class="md-ellipsis">
+    IFtsoGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoManager/">
+<span class="md-ellipsis">
+    IFtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoManagerGenesis/">
+<span class="md-ellipsis">
+    IFtsoManagerGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoRegistry/">
+<span class="md-ellipsis">
+    IFtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoRegistryGenesis/">
+<span class="md-ellipsis">
+    IFtsoRegistryGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IFtsoRewardManager/">
+<span class="md-ellipsis">
+    IFtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IGovernanceSettings/">
+<span class="md-ellipsis">
+    IGovernanceSettings
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IGovernanceVotePower/">
+<span class="md-ellipsis">
+    IGovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IInflationGenesis/">
+<span class="md-ellipsis">
+    IInflationGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IMerkleRootStorage/">
+<span class="md-ellipsis">
+    IMerkleRootStorage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPaymentVerification/">
+<span class="md-ellipsis">
+    IPaymentVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPChainStakeMirror/">
+<span class="md-ellipsis">
+    IPChainStakeMirror
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPChainVotePower/">
+<span class="md-ellipsis">
+    IPChainVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IPriceSubmitter/">
+<span class="md-ellipsis">
+    IPriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IReferencedPaymentNonexistenceVerification/">
+<span class="md-ellipsis">
+    IReferencedPaymentNonexistenceVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IStateConnector/">
+<span class="md-ellipsis">
+    IStateConnector
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IVoterWhitelister/">
+<span class="md-ellipsis">
+    IVoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IVPContractEvents/">
+<span class="md-ellipsis">
+    IVPContractEvents
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IVPToken/">
+<span class="md-ellipsis">
+    IVPToken
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IWNat/">
+<span class="md-ellipsis">
+    IWNat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIAddressUpdatable/">
+<span class="md-ellipsis">
+    IIAddressUpdatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIAddressUpdater/">
+<span class="md-ellipsis">
+    IIAddressUpdater
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIClaimSetupManager/">
+<span class="md-ellipsis">
+    IIClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IICleanable/">
+<span class="md-ellipsis">
+    IICleanable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtso/">
+<span class="md-ellipsis">
+    IIFtso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtsoManager/">
+<span class="md-ellipsis">
+    IIFtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtsoRegistry/">
+<span class="md-ellipsis">
+    IIFtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIFtsoRewardManager/">
+<span class="md-ellipsis">
+    IIFtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIGovernanceVotePower/">
+<span class="md-ellipsis">
+    IIGovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIInflationReceiver/">
+<span class="md-ellipsis">
+    IIInflationReceiver
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIPriceSubmitter/">
+<span class="md-ellipsis">
+    IIPriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IITokenPool/">
+<span class="md-ellipsis">
+    IITokenPool
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIVoterWhitelister/">
+<span class="md-ellipsis">
+    IIVoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIVPContract/">
+<span class="md-ellipsis">
+    IIVPContract
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/smart-contracts/IIVPToken/">
+<span class="md-ellipsis">
+    IIVPToken
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/REST/">
+<span class="md-ellipsis">
+    OpenAPI REST API
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            OpenAPI REST API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/attestation-client/">
+<span class="md-ellipsis">
+    Attestation client
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/btcverifier/">
+<span class="md-ellipsis">
+    Btcverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/dogeverifier/">
+<span class="md-ellipsis">
+    Dogeverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/evmverifier/">
+<span class="md-ellipsis">
+    Evmverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/REST/xrpverifier/">
+<span class="md-ellipsis">
+    Xrpverifier
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../apis/attestation-types/">
+<span class="md-ellipsis">
+    Attestation Types
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Attestation Types
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/AddressValidity/">
+<span class="md-ellipsis">
+    AddressValidity
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/BalanceDecreasingTransaction/">
+<span class="md-ellipsis">
+    BalanceDecreasingTransaction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/ConfirmedBlockHeightExists/">
+<span class="md-ellipsis">
+    ConfirmedBlockHeightExists
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/EVMTransaction/">
+<span class="md-ellipsis">
+    EVMTransaction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/Payment/">
+<span class="md-ellipsis">
+    Payment
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../apis/attestation-types/ReferencedPaymentNonexistence/">
+<span class="md-ellipsis">
+    ReferencedPaymentNonexistence
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../products/">
+<span class="md-ellipsis">
+    Products
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Products
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/state-connector/">
+<span class="md-ellipsis">
+    State Connector
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tech/fassets/">
+<span class="md-ellipsis">
+    FAssets
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+            FAssets
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/collateral/">
+<span class="md-ellipsis">
+    Collateral
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/minting/">
+<span class="md-ellipsis">
+    Minting
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/redemption/">
+<span class="md-ellipsis">
+    Redemption
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/liquidation/">
+<span class="md-ellipsis">
+    Liquidation
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/validators/">
+<span class="md-ellipsis">
+    Validator Nodes
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/api-portal/">
+<span class="md-ellipsis">
+    Flare API Portal
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tech/">
+<span class="md-ellipsis">
+    Concepts
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/automatic-claiming/">
+<span class="md-ellipsis">
+    Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/flare-beta/">
+<span class="md-ellipsis">
+    Flare Beta
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/personal-delegation-account/">
+<span class="md-ellipsis">
+    Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/the-flaredrop/">
+<span class="md-ellipsis">
+    The FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/tokenomics/">
+<span class="md-ellipsis">
+    Tokenomics
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tech/archive/">
+<span class="md-ellipsis">
+    Archive
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_9">
+<span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/archive/flare-launch-process/">
+<span class="md-ellipsis">
+    Flare Launch Process
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/attestation/">
+<span class="md-ellipsis">
+    Attestation Providers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Attestation Providers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/attestation/operating/">
+<span class="md-ellipsis">
+    Operating an Attestation Provider
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/data/">
+<span class="md-ellipsis">
+    FTSO Data Providers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_3">
+<span class="md-nav__icon md-icon"></span>
+            FTSO Data Providers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/operating/">
+<span class="md-ellipsis">
+    Operating a Data Provider
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/whitelisting/">
+<span class="md-ellipsis">
+    Working with Whitelists
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/">
+<span class="md-ellipsis">
+    Managing the Ecosystem
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_3_4">
+<span class="md-nav__icon md-icon"></span>
+            Managing the Ecosystem
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/exploring-collusion/">
+<span class="md-ellipsis">
+    Exploring Collusion
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/monitoring-price-history/">
+<span class="md-ellipsis">
+    Monitoring Price History
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/observation/">
+<span class="md-ellipsis">
+    Observer Nodes
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_4">
+<span class="md-nav__icon md-icon"></span>
+            Observer Nodes
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/observation/deploying/">
+<span class="md-ellipsis">
+    Deploying an Observer Node
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/validation/">
+<span class="md-ellipsis">
+    Validator Nodes
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_5">
+<span class="md-nav__icon md-icon"></span>
+            Validator Nodes
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/validation/deploying/">
+<span class="md-ellipsis">
+    Deploying a Validator Node
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#governance-process-summary">
+<span class="md-ellipsis">
+      Governance Process Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requirements">
+<span class="md-ellipsis">
+      Requirements
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#guide">
+<span class="md-ellipsis">
+      Guide
+    </span>
+</a>
+<nav aria-label="Guide" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-connecting-to-the-portal">
+<span class="md-ellipsis">
+      1. Connecting to the Portal
+    </span>
+</a>
+<nav aria-label="1. Connecting to the Portal" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bifrost-wallet">
+<span class="md-ellipsis">
+      Bifrost Wallet
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metamask-mobile">
+<span class="md-ellipsis">
+      MetaMask Mobile
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ledger-nano-sx-and-chrome">
+<span class="md-ellipsis">
+      Ledger Nano S/X and Chrome
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metamask-or-brave-wallet">
+<span class="md-ellipsis">
+      MetaMask or Brave Wallet
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-getting-wrapped-tokens">
+<span class="md-ellipsis">
+      2. Getting Wrapped Tokens
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-casting-your-vote">
+<span class="md-ellipsis">
+      3. Casting Your Vote
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transferring-votes">
+<span class="md-ellipsis">
+      Transferring Votes
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/flare-foundation/docs/edit/main/docs/user/governance/voting.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="voting">Voting<a class="headerlink" href="#voting" title="Permanent link">#</a></h1>
+<p>An integral part of the <a href="../../../tech/governance/">governance process</a>, voting is the way you influence decisions about how Flare and Songbird operate.</p>
+<p>This process can be performed directly through Flare's smart contracts, but the Flare Foundation has developed the <a href="https://portal.flare.network">Flare Portal</a> to enable you to conveniently cast your vote.</p>
+<p>The following information is about voting on the Flare and Songbird networks.
+Ensure you have selected one of these networks in your wallet.</p>
+<h2 id="governance-process-summary">Governance Process Summary<a class="headerlink" href="#governance-process-summary" title="Permanent link">#</a></h2>
+<p>This section summarizes the voting process, which is explained in more detail in the <a href="../../../tech/governance/">Governance page</a>.</p>
+<p>All changes to the Flare and Songbird networks are determined by the outcomes of votes on <a href="../../../tech/governance/#flare-improvement-proposals-and-songbird-test-proposals">Flare Improvement Proposals and Songbird Testing Proposals</a>.</p>
+<p>For now, all proposals are published by the Flare Foundation.</p>
+<p>On each network, each account can cast a number of votes equal to the amount of wrapped tokens it holds.
+Since this amount varies over time, a snapshot of all accounts is taken at a block randomly chosen before voting starts.
+This block is called the <a href="../../../tech/governance/#the-vote-count-block">vote count block</a>.</p>
+<p>Before snapshots are taken, a <strong>notice period</strong> occurs.
+If you need to wrap tokens before a voting, <strong>wrap them during this notice period so that they are always included in the snapshot</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is worth noting that you can use the same wrapped tokens to simultaneously vote on proposals and delegate to <a href="../../../tech/glossary/#data_provider">FTSO data providers</a>.</p>
+</div>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h2>
+<p>To vote on any proposal, you need an account that contains wrapped tokens.
+You can wrap your tokens by using the <a href="https://portal.flare.network">Flare Portal</a>, as shown in the <a href="#2-getting-wrapped-tokens">Getting Wrapped Tokens</a> section below.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only wrapped tokens held at the vote count block are considered towards your vote count.
+Tokens wrapped or received afterwards will <strong>not</strong> result in additional votes.</p>
+<p>If you need to wrap tokens, always do so during the <strong>notice period</strong>.</p>
+</div>
+<h2 id="guide">Guide<a class="headerlink" href="#guide" title="Permanent link">#</a></h2>
+<h3 id="1-connecting-to-the-portal">1. Connecting to the Portal<a class="headerlink" href="#1-connecting-to-the-portal" title="Permanent link">#</a></h3>
+<p>Copy the Flare Portal URL, since you will need it later:</p>
+<div class="highlight"><pre><span></span><code>https://portal.flare.network
+</code></pre></div>
+<p>The first step to use the portal is to connect your wallet to it, and the procedure is different for each wallet:</p>
+<h4 id="bifrost-wallet">Bifrost Wallet<a class="headerlink" href="#bifrost-wallet" title="Permanent link">#</a></h4>
+<ol>
+<li>Open Bifrost Wallet, log in, and click the web browser tab indicated by the four gray squares at the bottom of the screen.</li>
+<li>Paste the Flare Portal URL in the search field at the top of the window, and click <strong>Search</strong>.</li>
+<li>Click <strong>Connect to Wallet</strong>.</li>
+<li>Select <strong>Bifrost Wallet</strong>.</li>
+<li>Ensure either the Flare or Songbird network is selected in the pop-up window, and click <strong>Connect</strong>.</li>
+</ol>
+<p>Your wallet is now connected to the portal.</p>
+<h4 id="metamask-mobile">MetaMask Mobile<a class="headerlink" href="#metamask-mobile" title="Permanent link">#</a></h4>
+<ol>
+<li>Open MetaMask, and log in.</li>
+<li>Click the <strong>three-lines menu</strong>, and click <strong>Browser</strong>.</li>
+<li>Paste the Flare Portal URL in the search field at the top of the window, and click <strong>Go</strong>.</li>
+<li>Click <strong>Connect to Wallet</strong>, and click <strong>MetaMask</strong>.</li>
+</ol>
+<p>Your wallet is now connected to the portal.</p>
+<h4 id="ledger-nano-sx-and-chrome">Ledger Nano S/X and Chrome<a class="headerlink" href="#ledger-nano-sx-and-chrome" title="Permanent link">#</a></h4>
+<ol>
+<li>Connect to your Ledger device, and unlock it.</li>
+<li>Log into the MetaMask Chrome extension, and sync your Ledger device.</li>
+<li>Paste the Flare Portal URL in the search field at the top of the Chrome window, and click <strong>Enter</strong>.</li>
+<li>Click <strong>Connect to Wallet</strong>.</li>
+<li>Click <strong>MetaMask</strong>.</li>
+</ol>
+<p>Your wallet is now connected to the portal.</p>
+<h4 id="metamask-or-brave-wallet">MetaMask or Brave Wallet<a class="headerlink" href="#metamask-or-brave-wallet" title="Permanent link">#</a></h4>
+<ol>
+<li>Copy and paste the Flare Portal URL in the search bar at the top of your browser and press <strong>Enter</strong>.</li>
+<li>Click <strong>Connect to Wallet</strong>.</li>
+<li>Select <strong>MetaMask</strong>.</li>
+<li>Ensure the correct account address is selected and press <strong>Confirm</strong>.</li>
+</ol>
+<p>Your wallet is now connected to the portal.</p>
+<h3 id="2-getting-wrapped-tokens">2. Getting Wrapped Tokens<a class="headerlink" href="#2-getting-wrapped-tokens" title="Permanent link">#</a></h3>
+<p>Wrapped tokens are required to vote.</p>
+<p>To wrap your tokens:</p>
+<ol>
+<li>On the <strong>Account</strong> tab in the Flare Portal, ensure you are connected to the network on which the proposal will be voted.</li>
+<li>Locate your token balance, and click <strong>Wrap</strong>.</li>
+<li>
+<p>Specify the amount you want to wrap, and click <strong>Wrap</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Never wrap all your tokens</p>
+<p>Always leave some unwrapped tokens to pay for transaction fees.</p>
+</div>
+</li>
+<li>
+<p>Confirm the transaction in your wallet.</p>
+</li>
+</ol>
+<p>Remember to wrap your tokens before voting starts, as explained in the <a href="#governance-process-summary">Governance Process Summary</a> section above.</p>
+<h3 id="3-casting-your-vote">3. Casting Your Vote<a class="headerlink" href="#3-casting-your-vote" title="Permanent link">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Wrapped tokens are required to vote.
+Depending on the network, ensure you have either <code>$FLR</code> or <code>$SGB</code> in the wallet you will use to vote.
+For more information, see <a href="#2-getting-wrapped-tokens">Getting Wrapped Tokens</a>.</p>
+</div>
+<ol>
+<li>In the Flare Portal, select the <strong>Voting</strong> tab.
+   The <strong>Governance Proposals</strong> page is displayed.</li>
+<li>Locate your current number of votes in the black box.
+   If you have fewer votes than you expected, consider the warning in the <a href="#requirements">Requirements</a> section above.</li>
+<li>In the <strong>List of proposals</strong>, locate the proposal you want to vote on, and <strong>click on it</strong>.
+   The selected proposal is displayed.</li>
+<li>Review the information in the <strong>Proposal info</strong> and <strong>Voting details</strong> sections.</li>
+<li>
+<p>Cast your vote.
+   All your available votes will be assigned to the option you specify:</p>
+<ul>
+<li>To vote in favor of the proposal, click <strong>Vote For</strong>.</li>
+<li>To vote for the proposal to be rejected, click <strong>Vote Against</strong>.</li>
+</ul>
+</li>
+<li>
+<p>After you sign the transaction, your vote is final and cannot be changed.
+   To sign the transaction and lock your vote, click <strong>Confirm</strong>.</p>
+</li>
+</ol>
+<p>Your contribution to this proposal is now complete.</p>
+<h2 id="transferring-votes">Transferring Votes<a class="headerlink" href="#transferring-votes" title="Permanent link">#</a></h2>
+<p>Votes can be transferred to another account while the wrapped tokens remain in your possession.
+This is useful, for example, if you have wrapped tokens in multiple self-custody wallets, since you can simplify your voting process by transferring all the votes to a single wallet.</p>
+<p>You can read all the details about transferring votes in the <a href="../../../tech/governance/#vote-transfer">Governance page</a>.</p>
+<p>By completing the following process, you are crediting another account with votes only;
+the tokens themselves stay in the original wallet.</p>
+<ol>
+<li>Copy the Flare or Songbird address you want to transfer votes to.</li>
+<li>On the <strong>Voting</strong> tab in the Flare Portal, locate your amount of current votes in the black box, and click <strong>Transfer votes</strong>.
+   The <strong>Information about transferred votes</strong> window is displayed.</li>
+<li>Read the disclaimer, and click <strong>Transfer votes</strong>.
+   The <strong>Transfer votes</strong> window is displayed.</li>
+<li>In the <strong>Transfer all my votes to</strong> field, paste the address from Step 1, and click <strong>Confirm</strong>.</li>
+<li>Click <strong>Confirm</strong> on your wallet to sign the transaction.
+   Your votes are credited to the address you specified.
+   The tokens themselves stay in the original address.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Canceling vote transfers</p>
+<p>You can stop transferring your votes to another address, if you do so before the snapshot is taken.</p>
+<p>You can do so from the <strong>Transfer votes</strong> window using the <strong>Remove delegation</strong> button.
+This button is only available when you have previously transferred votes.</p>
+</div>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+    2024-03-14
+  </span>
+</aside>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<!-- Social links -->
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/flarenetwork/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://flare.network" rel="noopener" target="_blank" title="flare.network">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4.1-2.8.1-4.2.1H392c-22.1 0-40-17.9-40-40v-88c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v88c0 22.1-17.9 40-40 40h-55.9c-1.5 0-3-.1-4.5-.2-1.2.1-2.4.2-3.6.2h-16c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9.1-2.8v-69.6H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/FlareNetworks" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/flare-foundation" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://t.me/FlareNetwork" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://discord.com/invite/flarenetwork" rel="noopener" target="_blank" title="discord.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"></path></svg>
+</a>
+</div>
+<!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<div class="md-copyright">
+<div>
+      © Flare Networks 2024
+    </div>
+<div class="md-copyright__highlight">
+<a href="#__consent">Cookie settings</a>
+</div>
+<div class="md-copyright__highlight">
+<a href="https://flare.network/privacy-policy/" rel="noopener" target="_blank">
+      Terms of Service</a>
+</div>
+<div>
+      Made with 
+      <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="github" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          GitHub
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "content.tabs.link", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+<script src="../../../assets/javascripts/mathjax.js"></script>
+<script src="../../../assets/javascripts/images.js"></script>
+<script src="../../../assets/javascripts/links.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>

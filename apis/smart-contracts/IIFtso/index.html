@@ -1,0 +1,3984 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://docs.flare.network/apis/smart-contracts/IIFtso/" rel="canonical"/>
+<link href="../IICleanable/" rel="prev"/>
+<link href="../IIFtsoManager/" rel="next"/>
+<link href="/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.13" name="generator"/>
+<title>IIFtso - Documentation</title>
+<link href="../../../assets/stylesheets/main.7e359304.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<!-- Google Tag Manager -->
+<script>function __md_analytics(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WX2D2TR');}</script>
+<!-- End Google Tag Manager -->
+<script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="flaredark" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ct_iiftso">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WX2D2TR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Determine classes -->
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<!-- Link to home -->
+<a aria-label="Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Documentation">
+<svg height="28.854" version="1.1" viewbox="0 0 24.161 7.634" width="91.318" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-86.562 -149.865)">
+<g transform="matrix(.04216 0 0 .04216 86.008 149.317)">
+<path d="M148.08 81.07L58.52 81c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l89.56.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<path d="M193.48 13.08l-134.96-.07c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l134.96.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<circle cx="35.85" cy="171.4" r="22.7" transform="rotate(-10.9 35.84 171.43)"></circle>
+<path d="M289.44 35.77h24.3v135.71h-24.3z"></path>
+<path d="M586.26 125.31c0-25.24-17.76-46.36-42.81-46.36-26.92 0-44.12 22.06-44.12 47.3 0 28.41 20.38 47.11 47.48 47.11 14.02 0 28.41-5.79 37.2-16.26l-13.83-13.83c-4.3 4.67-12.53 10.47-22.81 10.47-12.9 0-23.18-8.79-24.49-21.5h62.81c.37-2.06.56-4.49.56-6.92zm-62.25-10.84c1.12-8.23 9.35-15.89 19.44-15.89 10.09 0 17.2 7.85 17.95 15.89z"></path>
+<path d="M398.83 89.4l-1.72-1.4c-7.33-5.98-16.5-9.14-26.52-9.14-24.96 0-44.51 20.81-44.51 47.38 0 11.87 4.12 23.18 11.61 31.85 8.26 9.6 21.05 15.33 34.23 15.33 9.57 0 18.03-3.07 25.16-9.13l1.73-1.47v8.69h21.82V80.77h-21.82v8.63zm-25.26 64.81c-14.57 0-26.43-12.45-26.43-27.76 0-15.31 11.86-27.76 26.43-27.76S400 111.14 400 126.45c0 15.31-11.86 27.76-26.43 27.76z"></path>
+<path d="M484.03 78.86c-10.02 0-19.19 3.16-26.52 9.14l-1.72 1.4v-8.63h-21.82v90.74h21.79v-47.29c0-7.3 2.97-14.38 8.48-19.17 4.57-3.97 10.43-6.36 16.81-6.36 4.23 0 8.22 1.05 11.77 2.91l7.21-19.69a43.158 43.158 0 00-16.01-3.06z"></path>
+<path d="M251.86 61.33l.02-.03c3.21-3.81 8.18-5.74 14.79-5.74 2.02 0 4.59.29 6.63.73l3.46-19.2c-4.23-1.02-8.34-1.45-13.54-1.45-11.13 0-21.14 3.77-28.2 10.62-6.67 6.47-9.64 15.58-9.64 29.52v4.89h-16.7v18.97h16.7v71.85h22.8V99.63h25.9V80.66h-25.9v-3.93c0-8.93 1.41-12.52 3.67-15.4z"></path>
+</g>
+</g>
+</svg>
+</a>
+<!-- Header title -->
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              IIFtso
+            
+          </span>
+</div>
+</div>
+</div>
+<!-- Color palette toggle -->
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="flaredark" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<!-- Site language selector -->
+<!-- Button to open search modal -->
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Button to open drawer -->
+<label class="md-header__button md-icon menu__burger" for="__drawer">
+<!-- 
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> -->
+<div class="menu__burger-container">
+<span></span>
+</div>
+</label>
+<!-- Repository information -->
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/flare-foundation/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+<!-- Navigation tabs (sticky) -->
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Documentation">
+<svg height="28.854" version="1.1" viewbox="0 0 24.161 7.634" width="91.318" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-86.562 -149.865)">
+<g transform="matrix(.04216 0 0 .04216 86.008 149.317)">
+<path d="M148.08 81.07L58.52 81c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l89.56.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<path d="M193.48 13.08l-134.96-.07c-24.42 0-44.72 19.31-45.36 44.13-.02.66.53 1.21 1.19 1.21l134.96.06c24.42.01 44.72-19.3 45.36-44.11.02-.66-.53-1.21-1.19-1.21z"></path>
+<circle cx="35.85" cy="171.4" r="22.7" transform="rotate(-10.9 35.84 171.43)"></circle>
+<path d="M289.44 35.77h24.3v135.71h-24.3z"></path>
+<path d="M586.26 125.31c0-25.24-17.76-46.36-42.81-46.36-26.92 0-44.12 22.06-44.12 47.3 0 28.41 20.38 47.11 47.48 47.11 14.02 0 28.41-5.79 37.2-16.26l-13.83-13.83c-4.3 4.67-12.53 10.47-22.81 10.47-12.9 0-23.18-8.79-24.49-21.5h62.81c.37-2.06.56-4.49.56-6.92zm-62.25-10.84c1.12-8.23 9.35-15.89 19.44-15.89 10.09 0 17.2 7.85 17.95 15.89z"></path>
+<path d="M398.83 89.4l-1.72-1.4c-7.33-5.98-16.5-9.14-26.52-9.14-24.96 0-44.51 20.81-44.51 47.38 0 11.87 4.12 23.18 11.61 31.85 8.26 9.6 21.05 15.33 34.23 15.33 9.57 0 18.03-3.07 25.16-9.13l1.73-1.47v8.69h21.82V80.77h-21.82v8.63zm-25.26 64.81c-14.57 0-26.43-12.45-26.43-27.76 0-15.31 11.86-27.76 26.43-27.76S400 111.14 400 126.45c0 15.31-11.86 27.76-26.43 27.76z"></path>
+<path d="M484.03 78.86c-10.02 0-19.19 3.16-26.52 9.14l-1.72 1.4v-8.63h-21.82v90.74h21.79v-47.29c0-7.3 2.97-14.38 8.48-19.17 4.57-3.97 10.43-6.36 16.81-6.36 4.23 0 8.22 1.05 11.77 2.91l7.21-19.69a43.158 43.158 0 00-16.01-3.06z"></path>
+<path d="M251.86 61.33l.02-.03c3.21-3.81 8.18-5.74 14.79-5.74 2.02 0 4.59.29 6.63.73l3.46-19.2c-4.23-1.02-8.34-1.45-13.54-1.45-11.13 0-21.14 3.77-28.2 10.62-6.67 6.47-9.64 15.58-9.64 29.52v4.89h-16.7v18.97h16.7v71.85h22.8V99.63h25.9V80.66h-25.9v-3.93c0-8.93 1.41-12.52 3.67-15.4z"></path>
+</g>
+</g>
+</svg>
+</a>
+    Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/flare-foundation/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/flare/">
+<span class="md-ellipsis">
+    What Is Flare?
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/">
+<span class="md-ellipsis">
+    User Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            User Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/wallets/">
+<span class="md-ellipsis">
+    Wallets
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Wallets
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/bifrost-wallet/">
+<span class="md-ellipsis">
+    Bifrost Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/brave-wallet/">
+<span class="md-ellipsis">
+    Brave Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/dcent-wallet/">
+<span class="md-ellipsis">
+    D'CENT Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/enkrypt-wallet/">
+<span class="md-ellipsis">
+    Enkrypt Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/how-to-access-flare-network-with-a-ledger-device/">
+<span class="md-ellipsis">
+    Ledger Nano X and Nano S
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/how-to-access-flare-network-with-metamask/">
+<span class="md-ellipsis">
+    MetaMask
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/safepal-s1-wallet/">
+<span class="md-ellipsis">
+    SafePal S1 Wallet
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wallets/how-to-access-flare-network-with-a-trezor-device/">
+<span class="md-ellipsis">
+    Trezor T
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/wrapping-tokens/">
+<span class="md-ellipsis">
+    Wrapping Flare Tokens
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/delegation/">
+<span class="md-ellipsis">
+    FTSO Delegation
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            FTSO Delegation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/delegation/managing-delegations/">
+<span class="md-ellipsis">
+    Managing Delegations
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/delegation/managing-rewards/">
+<span class="md-ellipsis">
+    Managing Rewards
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/personal-delegation-account/">
+<span class="md-ellipsis">
+    Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/staking/">
+<span class="md-ellipsis">
+    Staking on Validators
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            Staking on Validators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/staking/staking-flarestake/">
+<span class="md-ellipsis">
+    Using FlareStake
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/staking/staking-cli/">
+<span class="md-ellipsis">
+    Using the Command Line
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/claiming-the-flaredrop/">
+<span class="md-ellipsis">
+    Claiming the FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/automatic-claiming/">
+<span class="md-ellipsis">
+    Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/governance/voting/">
+<span class="md-ellipsis">
+    Voting
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../user/block-explorers/">
+<span class="md-ellipsis">
+    Block Explorers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+            Block Explorers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/finding-reward-epoch/">
+<span class="md-ellipsis">
+    Finding the Reward Epoch
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/managing-delegations/">
+<span class="md-ellipsis">
+    Managing Delegations
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/managing-rewards/">
+<span class="md-ellipsis">
+    Managing Rewards
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/verifying-vote-power-block/">
+<span class="md-ellipsis">
+    Verifying the Vote-Power Block
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-nfts/">
+<span class="md-ellipsis">
+    Viewing NFTs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-token-balances/">
+<span class="md-ellipsis">
+    Viewing Token Balances
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-token-transfers/">
+<span class="md-ellipsis">
+    Viewing Token Transfers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/viewing-transactions/">
+<span class="md-ellipsis">
+    Viewing Transactions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../user/block-explorers/user-interface/">
+<span class="md-ellipsis">
+    Block Explorer Dashboard
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../exchange/">
+<span class="md-ellipsis">
+    Exchange Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+            Exchange Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/architecture/">
+<span class="md-ellipsis">
+    Architecture of an Exchange
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/delegation/">
+<span class="md-ellipsis">
+    Delegating on the User's Behalf
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../exchange/troubleshooting/">
+<span class="md-ellipsis">
+    Troubleshooting Guide
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../get-started-building/">
+<span class="md-ellipsis">
+    Get Started Building
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Get Started Building
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/getting-started/">
+<span class="md-ellipsis">
+    Getting Started
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/">
+<span class="md-ellipsis">
+    Setting Up Your Environment
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Setting Up Your Environment
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/remix/">
+<span class="md-ellipsis">
+    Using Remix
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/hardhat/">
+<span class="md-ellipsis">
+    Using Hardhat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/setup/foundry/">
+<span class="md-ellipsis">
+    Using Foundry
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/getting-started/contract-addresses/">
+<span class="md-ellipsis">
+    Retrieving Contract Addresses
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/">
+<span class="md-ellipsis">
+    Network Configuration
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Network Configuration
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/network-config/">
+<span class="md-ellipsis">
+    Network Configuration
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/transaction-finalization/">
+<span class="md-ellipsis">
+    Checking Transaction Finalization
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/reliable-event-reading/">
+<span class="md-ellipsis">
+    Reliable Event Reading
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/network-access/obtaining-revert-reason/">
+<span class="md-ellipsis">
+    Obtaining a Transaction's Revert Reason
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/">
+<span class="md-ellipsis">
+    Developer Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Developer Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            FTSO
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/ftso/getting-data-feeds/">
+<span class="md-ellipsis">
+    Getting FTSO Data Feeds
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../dev/tutorials/sc/">
+<span class="md-ellipsis">
+    State Connector
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            State Connector
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tutorials/sc/address-validity/">
+<span class="md-ellipsis">
+    Basic Attestation Request
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/automatic-claiming/">
+<span class="md-ellipsis">
+    Integrate Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/personal-delegation-account/">
+<span class="md-ellipsis">
+    Integrate Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/explorers-and-indexers/">
+<span class="md-ellipsis">
+    Block Explorers and Indexers
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/the-flaredrop/">
+<span class="md-ellipsis">
+    The FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/reference/wallets/">
+<span class="md-ellipsis">
+    Wallets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/external-resources/">
+<span class="md-ellipsis">
+    External Learning Resources
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dev/tools/">
+<span class="md-ellipsis">
+    Tooling
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../security/">
+<span class="md-ellipsis">
+    Security
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    APIs
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Smart Contracts API
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Smart Contracts API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AddressUpdatable/">
+<span class="md-ellipsis">
+    AddressUpdatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AddressUpdater/">
+<span class="md-ellipsis">
+    AddressUpdater
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AddressValidityVerification/">
+<span class="md-ellipsis">
+    AddressValidityVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../BalanceDecreasingTransactionVerification/">
+<span class="md-ellipsis">
+    BalanceDecreasingTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../CheckPointable/">
+<span class="md-ellipsis">
+    CheckPointable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ClaimSetupManager/">
+<span class="md-ellipsis">
+    ClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../CleanupBlockNumberManager/">
+<span class="md-ellipsis">
+    CleanupBlockNumberManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../CloneFactory/">
+<span class="md-ellipsis">
+    CloneFactory
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ConfirmedBlockHeightExistsVerification/">
+<span class="md-ellipsis">
+    ConfirmedBlockHeightExistsVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Delegatable/">
+<span class="md-ellipsis">
+    Delegatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../EVMTransactionVerification/">
+<span class="md-ellipsis">
+    EVMTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FlareContractRegistry/">
+<span class="md-ellipsis">
+    FlareContractRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FlareDaemon/">
+<span class="md-ellipsis">
+    FlareDaemon
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Ftso/">
+<span class="md-ellipsis">
+    Ftso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FtsoManager/">
+<span class="md-ellipsis">
+    FtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FtsoRegistry/">
+<span class="md-ellipsis">
+    FtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FtsoRewardManager/">
+<span class="md-ellipsis">
+    FtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GovernanceSettings/">
+<span class="md-ellipsis">
+    GovernanceSettings
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GovernanceVotePower/">
+<span class="md-ellipsis">
+    GovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Governed/">
+<span class="md-ellipsis">
+    Governed
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GovernedAndFlareDaemonized/">
+<span class="md-ellipsis">
+    GovernedAndFlareDaemonized
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GovernedAtGenesis/">
+<span class="md-ellipsis">
+    GovernedAtGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GovernedBase/">
+<span class="md-ellipsis">
+    GovernedBase
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Inflation/">
+<span class="md-ellipsis">
+    Inflation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PaymentVerification/">
+<span class="md-ellipsis">
+    PaymentVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PChainStake/">
+<span class="md-ellipsis">
+    PChainStake
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PChainStakeMirror/">
+<span class="md-ellipsis">
+    PChainStakeMirror
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PriceSubmitter/">
+<span class="md-ellipsis">
+    PriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ReferencedPaymentNonexistenceVerification/">
+<span class="md-ellipsis">
+    ReferencedPaymentNonexistenceVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../RevertErrorTracking/">
+<span class="md-ellipsis">
+    RevertErrorTracking
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../VoterWhitelister/">
+<span class="md-ellipsis">
+    VoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../VPContract/">
+<span class="md-ellipsis">
+    VPContract
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../VPToken/">
+<span class="md-ellipsis">
+    VPToken
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../WNat/">
+<span class="md-ellipsis">
+    WNat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IAddressValidityVerification/">
+<span class="md-ellipsis">
+    IAddressValidityVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IBalanceDecreasingTransactionVerification/">
+<span class="md-ellipsis">
+    IBalanceDecreasingTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IClaimSetupManager/">
+<span class="md-ellipsis">
+    IClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IConfirmedBlockHeightExistsVerification/">
+<span class="md-ellipsis">
+    IConfirmedBlockHeightExistsVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IEVMTransactionVerification/">
+<span class="md-ellipsis">
+    IEVMTransactionVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFlareContractRegistry/">
+<span class="md-ellipsis">
+    IFlareContractRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFlareDaemonize/">
+<span class="md-ellipsis">
+    IFlareDaemonize
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtso/">
+<span class="md-ellipsis">
+    IFtso
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtsoGenesis/">
+<span class="md-ellipsis">
+    IFtsoGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtsoManager/">
+<span class="md-ellipsis">
+    IFtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtsoManagerGenesis/">
+<span class="md-ellipsis">
+    IFtsoManagerGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtsoRegistry/">
+<span class="md-ellipsis">
+    IFtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtsoRegistryGenesis/">
+<span class="md-ellipsis">
+    IFtsoRegistryGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IFtsoRewardManager/">
+<span class="md-ellipsis">
+    IFtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IGovernanceSettings/">
+<span class="md-ellipsis">
+    IGovernanceSettings
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IGovernanceVotePower/">
+<span class="md-ellipsis">
+    IGovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IInflationGenesis/">
+<span class="md-ellipsis">
+    IInflationGenesis
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IMerkleRootStorage/">
+<span class="md-ellipsis">
+    IMerkleRootStorage
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IPaymentVerification/">
+<span class="md-ellipsis">
+    IPaymentVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IPChainStakeMirror/">
+<span class="md-ellipsis">
+    IPChainStakeMirror
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IPChainVotePower/">
+<span class="md-ellipsis">
+    IPChainVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IPriceSubmitter/">
+<span class="md-ellipsis">
+    IPriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IReferencedPaymentNonexistenceVerification/">
+<span class="md-ellipsis">
+    IReferencedPaymentNonexistenceVerification
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IStateConnector/">
+<span class="md-ellipsis">
+    IStateConnector
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IVoterWhitelister/">
+<span class="md-ellipsis">
+    IVoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IVPContractEvents/">
+<span class="md-ellipsis">
+    IVPContractEvents
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IVPToken/">
+<span class="md-ellipsis">
+    IVPToken
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IWNat/">
+<span class="md-ellipsis">
+    IWNat
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIAddressUpdatable/">
+<span class="md-ellipsis">
+    IIAddressUpdatable
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIAddressUpdater/">
+<span class="md-ellipsis">
+    IIAddressUpdater
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIClaimSetupManager/">
+<span class="md-ellipsis">
+    IIClaimSetupManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IICleanable/">
+<span class="md-ellipsis">
+    IICleanable
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    IIFtso
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    IIFtso
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functions">
+<span class="md-ellipsis">
+      Functions
+    </span>
+</a>
+<nav aria-label="Functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_activateftso_2f0a6f3c">
+<span class="md-ellipsis">
+      activateFtso
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_active_02fb0c5e">
+<span class="md-ellipsis">
+      active
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_configureepochs_5a3c9d8e">
+<span class="md-ellipsis">
+      configureEpochs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_deactivateftso_555989da">
+<span class="md-ellipsis">
+      deactivateFtso
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_epochsconfiguration_e3749e0c">
+<span class="md-ellipsis">
+      epochsConfiguration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_fallbackfinalizepriceepoch_4afd5102">
+<span class="md-ellipsis">
+      fallbackFinalizePriceEpoch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_finalizepriceepoch_40462a2d">
+<span class="md-ellipsis">
+      finalizePriceEpoch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_forcefinalizepriceepoch_974d7a6b">
+<span class="md-ellipsis">
+      forceFinalizePriceEpoch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_ftsomanager_11a7aaaa">
+<span class="md-ellipsis">
+      ftsoManager
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getasset_5c222bad">
+<span class="md-ellipsis">
+      getAsset
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getassetftsos_18931c35">
+<span class="md-ellipsis">
+      getAssetFtsos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentepochid_a29a839f">
+<span class="md-ellipsis">
+      getCurrentEpochId
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentprice_eb91d37e">
+<span class="md-ellipsis">
+      getCurrentPrice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricedetails_040d73b8">
+<span class="md-ellipsis">
+      getCurrentPriceDetails
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricefromtrustedproviders_af52df08">
+<span class="md-ellipsis">
+      getCurrentPriceFromTrustedProviders
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricewithdecimals_65f5cd86">
+<span class="md-ellipsis">
+      getCurrentPriceWithDecimals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricewithdecimalsfromtrustedproviders_3cacb3ae">
+<span class="md-ellipsis">
+      getCurrentPriceWithDecimalsFromTrustedProviders
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentrandom_d89601fd">
+<span class="md-ellipsis">
+      getCurrentRandom
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getepochid_5303548b">
+<span class="md-ellipsis">
+      getEpochId
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getepochprice_7d1d6f12">
+<span class="md-ellipsis">
+      getEpochPrice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getepochpriceforvoter_c5d8b9e7">
+<span class="md-ellipsis">
+      getEpochPriceForVoter
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getpriceepochconfiguration_144e1591">
+<span class="md-ellipsis">
+      getPriceEpochConfiguration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getpriceepochdata_e3b3a3b3">
+<span class="md-ellipsis">
+      getPriceEpochData
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getrandom_cd4b6914">
+<span class="md-ellipsis">
+      getRandom
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getvoteweightingparameters_8357d08c">
+<span class="md-ellipsis">
+      getVoteWeightingParameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_initializecurrentepochstateforreveal_f670ebe3">
+<span class="md-ellipsis">
+      initializeCurrentEpochStateForReveal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_revealpricesubmitter_c1f6c36e">
+<span class="md-ellipsis">
+      revealPriceSubmitter
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_setasset_d0d552dd">
+<span class="md-ellipsis">
+      setAsset
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_setassetftsos_131fdee2">
+<span class="md-ellipsis">
+      setAssetFtsos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_setvotepowerblock_e536f396">
+<span class="md-ellipsis">
+      setVotePowerBlock
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_symbol_95d89b41">
+<span class="md-ellipsis">
+      symbol
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_updateinitialprice_306ba253">
+<span class="md-ellipsis">
+      updateInitialPrice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_wnat_9edbf007">
+<span class="md-ellipsis">
+      wNat
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_wnatvotepowercached_f72cab28">
+<span class="md-ellipsis">
+      wNatVotePowerCached
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIFtsoManager/">
+<span class="md-ellipsis">
+    IIFtsoManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIFtsoRegistry/">
+<span class="md-ellipsis">
+    IIFtsoRegistry
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIFtsoRewardManager/">
+<span class="md-ellipsis">
+    IIFtsoRewardManager
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIGovernanceVotePower/">
+<span class="md-ellipsis">
+    IIGovernanceVotePower
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIInflationReceiver/">
+<span class="md-ellipsis">
+    IIInflationReceiver
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIPriceSubmitter/">
+<span class="md-ellipsis">
+    IIPriceSubmitter
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IITokenPool/">
+<span class="md-ellipsis">
+    IITokenPool
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIVoterWhitelister/">
+<span class="md-ellipsis">
+    IIVoterWhitelister
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIVPContract/">
+<span class="md-ellipsis">
+    IIVPContract
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../IIVPToken/">
+<span class="md-ellipsis">
+    IIVPToken
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../REST/">
+<span class="md-ellipsis">
+    OpenAPI REST API
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            OpenAPI REST API
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../REST/attestation-client/">
+<span class="md-ellipsis">
+    Attestation client
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../REST/btcverifier/">
+<span class="md-ellipsis">
+    Btcverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../REST/dogeverifier/">
+<span class="md-ellipsis">
+    Dogeverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../REST/evmverifier/">
+<span class="md-ellipsis">
+    Evmverifier
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../REST/xrpverifier/">
+<span class="md-ellipsis">
+    Xrpverifier
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../attestation-types/">
+<span class="md-ellipsis">
+    Attestation Types
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Attestation Types
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../attestation-types/AddressValidity/">
+<span class="md-ellipsis">
+    AddressValidity
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../attestation-types/BalanceDecreasingTransaction/">
+<span class="md-ellipsis">
+    BalanceDecreasingTransaction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../attestation-types/ConfirmedBlockHeightExists/">
+<span class="md-ellipsis">
+    ConfirmedBlockHeightExists
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../attestation-types/EVMTransaction/">
+<span class="md-ellipsis">
+    EVMTransaction
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../attestation-types/Payment/">
+<span class="md-ellipsis">
+    Payment
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../attestation-types/ReferencedPaymentNonexistence/">
+<span class="md-ellipsis">
+    ReferencedPaymentNonexistence
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../products/">
+<span class="md-ellipsis">
+    Products
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Products
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/ftso/">
+<span class="md-ellipsis">
+    FTSO
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/state-connector/">
+<span class="md-ellipsis">
+    State Connector
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tech/fassets/">
+<span class="md-ellipsis">
+    FAssets
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+            FAssets
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/collateral/">
+<span class="md-ellipsis">
+    Collateral
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/minting/">
+<span class="md-ellipsis">
+    Minting
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/redemption/">
+<span class="md-ellipsis">
+    Redemption
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/fassets/liquidation/">
+<span class="md-ellipsis">
+    Liquidation
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/validators/">
+<span class="md-ellipsis">
+    Validator Nodes
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/api-portal/">
+<span class="md-ellipsis">
+    Flare API Portal
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tech/">
+<span class="md-ellipsis">
+    Concepts
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/automatic-claiming/">
+<span class="md-ellipsis">
+    Automatic Claiming
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/flare-beta/">
+<span class="md-ellipsis">
+    Flare Beta
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/governance/">
+<span class="md-ellipsis">
+    Governance
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/personal-delegation-account/">
+<span class="md-ellipsis">
+    Personal Delegation Accounts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/the-flaredrop/">
+<span class="md-ellipsis">
+    The FlareDrop
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/tokenomics/">
+<span class="md-ellipsis">
+    Tokenomics
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/glossary/">
+<span class="md-ellipsis">
+    Glossary
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tech/archive/">
+<span class="md-ellipsis">
+    Archive
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_9">
+<span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tech/archive/flare-launch-process/">
+<span class="md-ellipsis">
+    Flare Launch Process
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/">
+<span class="md-ellipsis">
+    Infrastructure
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Infrastructure
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/attestation/">
+<span class="md-ellipsis">
+    Attestation Providers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+            Attestation Providers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/attestation/operating/">
+<span class="md-ellipsis">
+    Operating an Attestation Provider
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/data/">
+<span class="md-ellipsis">
+    FTSO Data Providers
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_3">
+<span class="md-nav__icon md-icon"></span>
+            FTSO Data Providers
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/operating/">
+<span class="md-ellipsis">
+    Operating a Data Provider
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/whitelisting/">
+<span class="md-ellipsis">
+    Working with Whitelists
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/">
+<span class="md-ellipsis">
+    Managing the Ecosystem
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_3_4" id="__nav_8_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_8_3_4">
+<span class="md-nav__icon md-icon"></span>
+            Managing the Ecosystem
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/exploring-collusion/">
+<span class="md-ellipsis">
+    Exploring Collusion
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/data/managing-ecosystem/monitoring-price-history/">
+<span class="md-ellipsis">
+    Monitoring Price History
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/observation/">
+<span class="md-ellipsis">
+    Observer Nodes
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_4">
+<span class="md-nav__icon md-icon"></span>
+            Observer Nodes
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/observation/deploying/">
+<span class="md-ellipsis">
+    Deploying an Observer Node
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../infra/validation/">
+<span class="md-ellipsis">
+    Validator Nodes
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_5">
+<span class="md-nav__icon md-icon"></span>
+            Validator Nodes
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../infra/validation/deploying/">
+<span class="md-ellipsis">
+    Deploying a Validator Node
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functions">
+<span class="md-ellipsis">
+      Functions
+    </span>
+</a>
+<nav aria-label="Functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_activateftso_2f0a6f3c">
+<span class="md-ellipsis">
+      activateFtso
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_active_02fb0c5e">
+<span class="md-ellipsis">
+      active
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_configureepochs_5a3c9d8e">
+<span class="md-ellipsis">
+      configureEpochs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_deactivateftso_555989da">
+<span class="md-ellipsis">
+      deactivateFtso
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_epochsconfiguration_e3749e0c">
+<span class="md-ellipsis">
+      epochsConfiguration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_fallbackfinalizepriceepoch_4afd5102">
+<span class="md-ellipsis">
+      fallbackFinalizePriceEpoch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_finalizepriceepoch_40462a2d">
+<span class="md-ellipsis">
+      finalizePriceEpoch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_forcefinalizepriceepoch_974d7a6b">
+<span class="md-ellipsis">
+      forceFinalizePriceEpoch
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_ftsomanager_11a7aaaa">
+<span class="md-ellipsis">
+      ftsoManager
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getasset_5c222bad">
+<span class="md-ellipsis">
+      getAsset
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getassetftsos_18931c35">
+<span class="md-ellipsis">
+      getAssetFtsos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentepochid_a29a839f">
+<span class="md-ellipsis">
+      getCurrentEpochId
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentprice_eb91d37e">
+<span class="md-ellipsis">
+      getCurrentPrice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricedetails_040d73b8">
+<span class="md-ellipsis">
+      getCurrentPriceDetails
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricefromtrustedproviders_af52df08">
+<span class="md-ellipsis">
+      getCurrentPriceFromTrustedProviders
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricewithdecimals_65f5cd86">
+<span class="md-ellipsis">
+      getCurrentPriceWithDecimals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentpricewithdecimalsfromtrustedproviders_3cacb3ae">
+<span class="md-ellipsis">
+      getCurrentPriceWithDecimalsFromTrustedProviders
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getcurrentrandom_d89601fd">
+<span class="md-ellipsis">
+      getCurrentRandom
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getepochid_5303548b">
+<span class="md-ellipsis">
+      getEpochId
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getepochprice_7d1d6f12">
+<span class="md-ellipsis">
+      getEpochPrice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getepochpriceforvoter_c5d8b9e7">
+<span class="md-ellipsis">
+      getEpochPriceForVoter
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getpriceepochconfiguration_144e1591">
+<span class="md-ellipsis">
+      getPriceEpochConfiguration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getpriceepochdata_e3b3a3b3">
+<span class="md-ellipsis">
+      getPriceEpochData
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getrandom_cd4b6914">
+<span class="md-ellipsis">
+      getRandom
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_getvoteweightingparameters_8357d08c">
+<span class="md-ellipsis">
+      getVoteWeightingParameters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_initializecurrentepochstateforreveal_f670ebe3">
+<span class="md-ellipsis">
+      initializeCurrentEpochStateForReveal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_revealpricesubmitter_c1f6c36e">
+<span class="md-ellipsis">
+      revealPriceSubmitter
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_setasset_d0d552dd">
+<span class="md-ellipsis">
+      setAsset
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_setassetftsos_131fdee2">
+<span class="md-ellipsis">
+      setAssetFtsos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_setvotepowerblock_e536f396">
+<span class="md-ellipsis">
+      setVotePowerBlock
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_symbol_95d89b41">
+<span class="md-ellipsis">
+      symbol
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_updateinitialprice_306ba253">
+<span class="md-ellipsis">
+      updateInitialPrice
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_wnat_9edbf007">
+<span class="md-ellipsis">
+      wNat
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fn_wnatvotepowercached_f72cab28">
+<span class="md-ellipsis">
+      wNatVotePowerCached
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/flare-foundation/docs/edit/main/docs/apis/smart-contracts/IIFtso.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<!-- This is an autogenerated file. Do not edit! -->
+<h1 id="ct_iiftso"><code>IIFtso</code><a class="headerlink" href="#ct_iiftso" title="Permanent link">#</a></h1>
+<div class="api-node-source">
+<p><a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a> | Inherits from <a href="../IFtso/">IFtso</a>, <a href="../IFtsoGenesis/">IFtsoGenesis</a></p>
+</div>
+<div class="api-node-internal">
+<p>Internal interface for each of the FTSO contracts that handles an asset.
+Read the <a href="https://docs.flare.network/tech/ftso/">FTSO documentation page</a>
+for general information about the FTSO system.</p>
+</div>
+<div class="api-node-type">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
+<div class="api-node">
+<h3 id="fn_activateftso_2f0a6f3c"><code>activateFtso</code><a class="headerlink" href="#fn_activateftso_2f0a6f3c" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">activateFtso</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_firstEpochStartTs</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_submitPeriodSeconds</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_revealPeriodSeconds</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Initializes FTSO immutable settings and activates the contract.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_firstEpochStartTs</code></td>
+<td><code>uint256</code></td>
+<td>Timestamp of the first epoch in seconds from UNIX epoch.</td>
+</tr>
+<tr>
+<td><code>_submitPeriodSeconds</code></td>
+<td><code>uint256</code></td>
+<td>Duration of epoch submission window in seconds.</td>
+</tr>
+<tr>
+<td><code>_revealPeriodSeconds</code></td>
+<td><code>uint256</code></td>
+<td>Duration of epoch reveal window in seconds.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_active_02fb0c5e"><code>active</code><a class="headerlink" href="#fn_active_02fb0c5e" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">active</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">bool</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns whether FTSO is <a href="#fn_active_02fb0c5e"><code>active</code></a> or not.</p>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_configureepochs_5a3c9d8e"><code>configureEpochs</code><a class="headerlink" href="#fn_configureepochs_5a3c9d8e" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">configureEpochs</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_maxVotePowerNatThresholdFraction</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_maxVotePowerAssetThresholdFraction</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_lowAssetUSDThreshold</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_highAssetUSDThreshold</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_highAssetTurnoutThresholdBIPS</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_lowNatTurnoutThresholdBIPS</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_elasticBandRewardBIPS</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_elasticBandWidthPPM</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span>_trustedAddresses
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Sets configurable settings related to epochs.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_maxVotePowerNatThresholdFraction</code></td>
+<td><code>uint256</code></td>
+<td>High threshold for native token vote power per voter.</td>
+</tr>
+<tr>
+<td><code>_maxVotePowerAssetThresholdFraction</code></td>
+<td><code>uint256</code></td>
+<td>High threshold for asset vote power per voter.</td>
+</tr>
+<tr>
+<td><code>_lowAssetUSDThreshold</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for low asset vote power (in scaled USD).</td>
+</tr>
+<tr>
+<td><code>_highAssetUSDThreshold</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for high asset vote power (in scaled USD).</td>
+</tr>
+<tr>
+<td><code>_highAssetTurnoutThresholdBIPS</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for high asset turnout (in BIPS).</td>
+</tr>
+<tr>
+<td><code>_lowNatTurnoutThresholdBIPS</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for low nat turnout (in BIPS).</td>
+</tr>
+<tr>
+<td><code>_elasticBandRewardBIPS</code></td>
+<td><code>uint256</code></td>
+<td>Percentage of the rewards (in BIPS) that go to the <a href="https://docs.flare.network/tech/ftso/#rewards">secondary reward band</a>. The rest go to the primary reward band.</td>
+</tr>
+<tr>
+<td><code>_elasticBandWidthPPM</code></td>
+<td><code>uint256</code></td>
+<td>Width of the secondary reward band, in parts-per-milion of the median.</td>
+</tr>
+<tr>
+<td><code>_trustedAddresses</code></td>
+<td><code>address[]</code></td>
+<td>Trusted voters that will be used if low voter turnout is detected.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_deactivateftso_555989da"><code>deactivateFtso</code><a class="headerlink" href="#fn_deactivateftso_555989da" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">deactivateFtso</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Deactivates the contract.</p>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_epochsconfiguration_e3749e0c"><code>epochsConfiguration</code><a class="headerlink" href="#fn_epochsconfiguration_e3749e0c" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">epochsConfiguration</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_maxVotePowerNatThresholdFraction</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_maxVotePowerAssetThresholdFraction</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_lowAssetUSDThreshold</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_highAssetUSDThreshold</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_highAssetTurnoutThresholdBIPS</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_lowNatTurnoutThresholdBIPS</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_elasticBandRewardBIPS</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_elasticBandWidthPPM</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span>_trustedAddresses<span class="p">);</span>
+</code></pre></div>
+<p>Returns current configuration of epoch state.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_maxVotePowerNatThresholdFraction</code></td>
+<td><code>uint256</code></td>
+<td>High threshold for native token vote power per voter.</td>
+</tr>
+<tr>
+<td><code>_maxVotePowerAssetThresholdFraction</code></td>
+<td><code>uint256</code></td>
+<td>High threshold for asset vote power per voter.</td>
+</tr>
+<tr>
+<td><code>_lowAssetUSDThreshold</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for low asset vote power (in scaled USD).</td>
+</tr>
+<tr>
+<td><code>_highAssetUSDThreshold</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for high asset vote power (in scaled USD).</td>
+</tr>
+<tr>
+<td><code>_highAssetTurnoutThresholdBIPS</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for high asset turnout (in BIPS).</td>
+</tr>
+<tr>
+<td><code>_lowNatTurnoutThresholdBIPS</code></td>
+<td><code>uint256</code></td>
+<td>Threshold for low nat turnout (in BIPS).</td>
+</tr>
+<tr>
+<td><code>_elasticBandRewardBIPS</code></td>
+<td><code>uint256</code></td>
+<td>Percentage of the rewards (in BIPS) that go to the <a href="https://docs.flare.network/tech/ftso/#rewards">secondary reward band</a>. The rest go to the primary reward band.</td>
+</tr>
+<tr>
+<td><code>_elasticBandWidthPPM</code></td>
+<td><code>uint256</code></td>
+<td>Width of the secondary reward band, in parts-per-milion of the median.</td>
+</tr>
+<tr>
+<td><code>_trustedAddresses</code></td>
+<td><code>address[]</code></td>
+<td>Trusted voters that will be used if low voter turnout is detected.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_fallbackfinalizepriceepoch_4afd5102"><code>fallbackFinalizePriceEpoch</code><a class="headerlink" href="#fn_fallbackfinalizepriceepoch_4afd5102" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">fallbackFinalizePriceEpoch</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Forces finalization of a price epoch, calculating the median price from trusted addresses only.</p>
+<p>Used as a fallback method, for example, due to an unexpected error during normal epoch finalization or
+because the <a href="#fn_ftsomanager_11a7aaaa"><code>ftsoManager</code></a> enabled the fallback mode.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch to finalize.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_finalizepriceepoch_40462a2d"><code>finalizePriceEpoch</code><a class="headerlink" href="#fn_finalizepriceepoch_40462a2d" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">finalizePriceEpoch</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_returnRewardData</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span>_eligibleAddresses<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">[]</span><span class="w"> </span>_natWeights<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_totalNatWeight</span><span class="p">);</span>
+</code></pre></div>
+<p>Computes epoch price based on gathered votes.</p>
+<ul>
+<li>If the price reveal window for the epoch has ended, finalize the epoch.</li>
+<li>Iterate list of price submissions.</li>
+<li>Find weighted median.</li>
+<li>Find adjacent 50% of price submissions.</li>
+<li>Allocate rewards for price submissions.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch to finalize.</td>
+</tr>
+<tr>
+<td><code>_returnRewardData</code></td>
+<td><code>bool</code></td>
+<td>Parameter that determines if the reward data is returned.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_eligibleAddresses</code></td>
+<td><code>address[]</code></td>
+<td>List of addresses eligible for reward.</td>
+</tr>
+<tr>
+<td><code>_natWeights</code></td>
+<td><code>uint256[]</code></td>
+<td>List of native token weights corresponding to the eligible addresses.</td>
+</tr>
+<tr>
+<td><code>_totalNatWeight</code></td>
+<td><code>uint256</code></td>
+<td>Sum of weights in <code>_natWeights</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_forcefinalizepriceepoch_974d7a6b"><code>forceFinalizePriceEpoch</code><a class="headerlink" href="#fn_forcefinalizepriceepoch_974d7a6b" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">forceFinalizePriceEpoch</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Forces finalization of a price epoch by copying the price from the previous epoch.</p>
+<p>Used as a fallback method if <a href="#fn_fallbackfinalizepriceepoch_4afd5102"><code>fallbackFinalizePriceEpoch</code></a> fails due to an exception.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch to finalize.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_ftsomanager_11a7aaaa"><code>ftsoManager</code><a class="headerlink" href="#fn_ftsomanager_11a7aaaa" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">ftsoManager</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the FTSO manager's address.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>address</code></td>
+<td>Address of the FTSO manager contract.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getasset_5c222bad"><code>getAsset</code><a class="headerlink" href="#fn_getasset_5c222bad" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAsset</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">contract</span><span class="w"> </span><span class="ni">IIVPToken</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the FTSO asset.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>contract IIVPToken</code></td>
+<td>Address of the <a href="../IIVPToken/"><code>IIVPToken</code></a> tracked by this FTSO. <code>null</code> in case of multi-asset FTSO.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getassetftsos_18931c35"><code>getAssetFtsos</code><a class="headerlink" href="#fn_getassetftsos_18931c35" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAssetFtsos</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">contract</span><span class="w"> </span><span class="ni">IIFtso</span><span class="p">[]);</span>
+</code></pre></div>
+<p>Returns the asset FTSOs.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>contract IIFtso[]</code></td>
+<td>Array of <a href="./"><code>IIFtso</code></a> contract addresses. <code>null</code> in case of single-asset FTSO.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentepochid_a29a839f"><code>getCurrentEpochId</code><a class="headerlink" href="#fn_getcurrentepochid_a29a839f" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentEpochId</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the current epoch ID.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>uint256</code></td>
+<td>Currently running epoch ID. IDs are consecutive numbers starting from zero.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentprice_eb91d37e"><code>getCurrentPrice</code><a class="headerlink" href="#fn_getcurrentprice_eb91d37e" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentPrice</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_timestamp</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the current asset price.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_price</code></td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>ASSET_PRICE_USD_DECIMALS</code>.</td>
+</tr>
+<tr>
+<td><code>_timestamp</code></td>
+<td><code>uint256</code></td>
+<td>Time when price was updated for the last time, in seconds from UNIX epoch.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentpricedetails_040d73b8"><code>getCurrentPriceDetails</code><a class="headerlink" href="#fn_getcurrentpricedetails_040d73b8" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentPriceDetails</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_priceTimestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">enum</span><span class="w"> </span><span class="nv">IFtso</span><span class="p">.</span>PriceFinalizationType<span class="w"> </span>_priceFinalizationType<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_lastPriceEpochFinalizationTimestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">enum</span><span class="w"> </span><span class="nv">IFtso</span><span class="p">.</span>PriceFinalizationType<span class="w"> </span>_lastPriceEpochFinalizationType<span class="p">);</span>
+</code></pre></div>
+<p>Returns asset's current price details.
+All timestamps are in seconds from UNIX epoch.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_price</code></td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>ASSET_PRICE_USD_DECIMALS</code>.</td>
+</tr>
+<tr>
+<td><code>_priceTimestamp</code></td>
+<td><code>uint256</code></td>
+<td>Time when price was updated for the last time.</td>
+</tr>
+<tr>
+<td><code>_priceFinalizationType</code></td>
+<td><code>enum IFtso.PriceFinalizationType</code></td>
+<td>Finalization type when price was updated for the last time.</td>
+</tr>
+<tr>
+<td><code>_lastPriceEpochFinalizationTimestamp</code></td>
+<td><code>uint256</code></td>
+<td>Time when last price epoch was finalized.</td>
+</tr>
+<tr>
+<td><code>_lastPriceEpochFinalizationType</code></td>
+<td><code>enum IFtso.PriceFinalizationType</code></td>
+<td>Finalization type of last finalized price epoch.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentpricefromtrustedproviders_af52df08"><code>getCurrentPriceFromTrustedProviders</code><a class="headerlink" href="#fn_getcurrentpricefromtrustedproviders_af52df08" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentPriceFromTrustedProviders</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_timestamp</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns current asset price calculated only using input from trusted providers.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_price</code></td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>ASSET_PRICE_USD_DECIMALS</code>.</td>
+</tr>
+<tr>
+<td><code>_timestamp</code></td>
+<td><code>uint256</code></td>
+<td>Time when price was updated for the last time, in seconds from UNIX epoch.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentpricewithdecimals_65f5cd86"><code>getCurrentPriceWithDecimals</code><a class="headerlink" href="#fn_getcurrentpricewithdecimals_65f5cd86" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentPriceWithDecimals</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_assetPriceUsdDecimals</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns current asset price and number of decimals.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_price</code></td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>_assetPriceUsdDecimals</code>.</td>
+</tr>
+<tr>
+<td><code>_timestamp</code></td>
+<td><code>uint256</code></td>
+<td>Time when price was updated for the last time, in seconds from UNIX epoch.</td>
+</tr>
+<tr>
+<td><code>_assetPriceUsdDecimals</code></td>
+<td><code>uint256</code></td>
+<td>Number of decimals used to return the USD price.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentpricewithdecimalsfromtrustedproviders_3cacb3ae"><code>getCurrentPriceWithDecimalsFromTrustedProviders</code><a class="headerlink" href="#fn_getcurrentpricewithdecimalsfromtrustedproviders_3cacb3ae" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentPriceWithDecimalsFromTrustedProviders</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_assetPriceUsdDecimals</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns current asset price calculated only using input from trusted providers and number of decimals.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_price</code></td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>ASSET_PRICE_USD_DECIMALS</code>.</td>
+</tr>
+<tr>
+<td><code>_timestamp</code></td>
+<td><code>uint256</code></td>
+<td>Time when price was updated for the last time, in seconds from UNIX epoch.</td>
+</tr>
+<tr>
+<td><code>_assetPriceUsdDecimals</code></td>
+<td><code>uint256</code></td>
+<td>Number of decimals used to return the USD price.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getcurrentrandom_d89601fd"><code>getCurrentRandom</code><a class="headerlink" href="#fn_getcurrentrandom_d89601fd" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getCurrentRandom</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the random number for the previous price epoch, obtained from the random numbers
+provided by all data providers along with their data submissions.</p>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getepochid_5303548b"><code>getEpochId</code><a class="headerlink" href="#fn_getepochid_5303548b" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getEpochId</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_timestamp</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the ID of the epoch that was opened for price submission at the specified timestamp.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_timestamp</code></td>
+<td><code>uint256</code></td>
+<td>Queried timestamp in seconds from UNIX epoch.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>uint256</code></td>
+<td>Epoch ID corresponding to that timestamp. IDs are consecutive numbers starting from zero.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getepochprice_7d1d6f12"><code>getEpochPrice</code><a class="headerlink" href="#fn_getepochprice_7d1d6f12" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getEpochPrice</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns agreed asset price in the specified epoch.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch. Only the last 200 epochs can be queried. Out-of-bounds queries revert.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>ASSET_PRICE_USD_DECIMALS</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getepochpriceforvoter_c5d8b9e7"><code>getEpochPriceForVoter</code><a class="headerlink" href="#fn_getepochpriceforvoter_c5d8b9e7" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getEpochPriceForVoter</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_voter</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns asset price submitted by a voter in the specified epoch.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch being queried. Only the last 200 epochs can be queried. Out-of-bounds queries revert.</td>
+</tr>
+<tr>
+<td><code>_voter</code></td>
+<td><code>address</code></td>
+<td>Address of the voter being queried.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>uint256</code></td>
+<td>Price in USD multiplied by 10^<code>ASSET_PRICE_USD_DECIMALS</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getpriceepochconfiguration_144e1591"><code>getPriceEpochConfiguration</code><a class="headerlink" href="#fn_getpriceepochconfiguration_144e1591" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getPriceEpochConfiguration</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_firstEpochStartTs</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_submitPeriodSeconds</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_revealPeriodSeconds</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns current epoch's configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_firstEpochStartTs</code></td>
+<td><code>uint256</code></td>
+<td>First epoch start timestamp in seconds from UNIX epoch.</td>
+</tr>
+<tr>
+<td><code>_submitPeriodSeconds</code></td>
+<td><code>uint256</code></td>
+<td>Submit period in seconds.</td>
+</tr>
+<tr>
+<td><code>_revealPeriodSeconds</code></td>
+<td><code>uint256</code></td>
+<td>Reveal period in seconds.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getpriceepochdata_e3b3a3b3"><code>getPriceEpochData</code><a class="headerlink" href="#fn_getpriceepochdata_e3b3a3b3" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getPriceEpochData</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochSubmitEndTime</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochRevealEndTime</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_votePowerBlock</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_fallbackMode</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns current epoch data.
+Intervals are open on the right: End times are not included.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>Current epoch ID.</td>
+</tr>
+<tr>
+<td><code>_epochSubmitEndTime</code></td>
+<td><code>uint256</code></td>
+<td>End time of the price submission window in seconds from UNIX epoch.</td>
+</tr>
+<tr>
+<td><code>_epochRevealEndTime</code></td>
+<td><code>uint256</code></td>
+<td>End time of the price reveal window in seconds from UNIX epoch.</td>
+</tr>
+<tr>
+<td><code>_votePowerBlock</code></td>
+<td><code>uint256</code></td>
+<td>Vote power block for the current epoch.</td>
+</tr>
+<tr>
+<td><code>_fallbackMode</code></td>
+<td><code>bool</code></td>
+<td>Whether the current epoch is in fallback mode. Only votes from trusted addresses are used in this mode.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getrandom_cd4b6914"><code>getRandom</code><a class="headerlink" href="#fn_getrandom_cd4b6914" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getRandom</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the random number used in a specific past epoch, obtained from the random numbers
+provided by all data providers along with their data submissions.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the queried epoch. Current epoch cannot be queried, and the previous epoch is constantly updated as data providers reveal their prices and random numbers. Only the last 50 epochs can be queried and there is no bounds checking for this parameter. Out-of-bounds queries return undefined values.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>uint256</code></td>
+<td>The random number used in that epoch.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_getvoteweightingparameters_8357d08c"><code>getVoteWeightingParameters</code><a class="headerlink" href="#fn_getvoteweightingparameters_8357d08c" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getVoteWeightingParameters</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">contract</span><span class="w"> </span><span class="ni">IIVPToken</span><span class="p">[]</span><span class="w"> </span>_assets<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">[]</span><span class="w"> </span>_assetMultipliers<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_totalVotePowerNat</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_totalVotePowerAsset</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_assetWeightRatio</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_votePowerBlock</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns parameters necessary for replicating vote weighting (used in <a href="../VoterWhitelister/"><code>VoterWhitelister</code></a>).</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_assets</code></td>
+<td><code>contract IIVPToken[]</code></td>
+<td>The list of assets that are accounted in vote.</td>
+</tr>
+<tr>
+<td><code>_assetMultipliers</code></td>
+<td><code>uint256[]</code></td>
+<td>Weight multiplier of each asset in (multiasset) FTSO.</td>
+</tr>
+<tr>
+<td><code>_totalVotePowerNat</code></td>
+<td><code>uint256</code></td>
+<td>Total native token vote power at block.</td>
+</tr>
+<tr>
+<td><code>_totalVotePowerAsset</code></td>
+<td><code>uint256</code></td>
+<td>Total combined asset vote power at block.</td>
+</tr>
+<tr>
+<td><code>_assetWeightRatio</code></td>
+<td><code>uint256</code></td>
+<td>Ratio of combined asset vote power vs. native token vp (in BIPS).</td>
+</tr>
+<tr>
+<td><code>_votePowerBlock</code></td>
+<td><code>uint256</code></td>
+<td>Vote power block for the epoch.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_initializecurrentepochstateforreveal_f670ebe3"><code>initializeCurrentEpochStateForReveal</code><a class="headerlink" href="#fn_initializecurrentepochstateforreveal_f670ebe3" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">initializeCurrentEpochStateForReveal</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_circulatingSupplyNat</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_fallbackMode</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Initializes current epoch instance for reveal.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_circulatingSupplyNat</code></td>
+<td><code>uint256</code></td>
+<td>Epoch native token circulating supply.</td>
+</tr>
+<tr>
+<td><code>_fallbackMode</code></td>
+<td><code>bool</code></td>
+<td>Whether the current epoch is in fallback mode.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_revealpricesubmitter_c1f6c36e"><code>revealPriceSubmitter</code><a class="headerlink" href="#fn_revealpricesubmitter_c1f6c36e" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtsoGenesis</code> (<a href="../IFtsoGenesis/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoGenesis.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">revealPriceSubmitter</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_voter</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_price</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_voterWNatVP</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Reveals the price submitted by a voter on a specific epoch.
+The hash of _price and _random must be equal to the submitted hash</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_voter</code></td>
+<td><code>address</code></td>
+<td>Voter address.</td>
+</tr>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch in which the price hash was submitted.</td>
+</tr>
+<tr>
+<td><code>_price</code></td>
+<td><code>uint256</code></td>
+<td>Submitted price.</td>
+</tr>
+<tr>
+<td><code>_voterWNatVP</code></td>
+<td><code>uint256</code></td>
+<td>Voter's vote power in <a href="../WNat/"><code>WNat</code></a> units.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_setasset_d0d552dd"><code>setAsset</code><a class="headerlink" href="#fn_setasset_d0d552dd" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">setAsset</span><span class="p">(</span>
+<span class="w">    </span><span class="k">contract</span><span class="w"> </span><span class="ni">IIVPToken</span><span class="w"> </span>_asset
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Sets asset for FTSO to operate as single-asset oracle.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_asset</code></td>
+<td><code>contract IIVPToken</code></td>
+<td>Address of the <a href="../IIVPToken/"><code>IIVPToken</code></a> contract that will be the asset tracked by this FTSO.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_setassetftsos_131fdee2"><code>setAssetFtsos</code><a class="headerlink" href="#fn_setassetftsos_131fdee2" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">setAssetFtsos</span><span class="p">(</span>
+<span class="w">    </span><span class="k">contract</span><span class="w"> </span><span class="ni">IIFtso</span><span class="p">[]</span><span class="w"> </span>_assetFtsos
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Sets an array of FTSOs for FTSO to operate as multi-asset oracle.
+FTSOs implicitly determine the FTSO assets.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_assetFtsos</code></td>
+<td><code>contract IIFtso[]</code></td>
+<td>Array of FTSOs.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_setvotepowerblock_e536f396"><code>setVotePowerBlock</code><a class="headerlink" href="#fn_setvotepowerblock_e536f396" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">setVotePowerBlock</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_blockNumber</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Sets the current vote power block.
+Current vote power block will update per reward epoch.
+The FTSO doesn't have notion of reward epochs.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_blockNumber</code></td>
+<td><code>uint256</code></td>
+<td>Vote power block.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_symbol_95d89b41"><code>symbol</code><a class="headerlink" href="#fn_symbol_95d89b41" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtso</code> (<a href="../IFtso/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/userInterfaces/IFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">symbol</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">string</span><span class="p">);</span>
+</code></pre></div>
+<p>Returns the FTSO <a href="#fn_symbol_95d89b41"><code>symbol</code></a>.</p>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_updateinitialprice_306ba253"><code>updateInitialPrice</code><a class="headerlink" href="#fn_updateinitialprice_306ba253" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">updateInitialPrice</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_initialPriceUSD</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_initialPriceTimestamp</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<p>Updates initial asset price when the contract is not <a href="#fn_active_02fb0c5e"><code>active</code></a> yet.</p>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_wnat_9edbf007"><code>wNat</code><a class="headerlink" href="#fn_wnat_9edbf007" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IIFtso</code> (<a href="./">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/ftso/interface/IIFtso.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">wNat</span><span class="p">(</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">contract</span><span class="w"> </span><span class="ni">IIVPToken</span><span class="p">);</span>
+</code></pre></div>
+<p>Address of the <a href="../WNat/"><code>WNat</code></a> contract.</p>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>contract IIVPToken</code></td>
+<td>Address of the <a href="../WNat/"><code>WNat</code></a> contract.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="api-node">
+<h3 id="fn_wnatvotepowercached_f72cab28"><code>wNatVotePowerCached</code><a class="headerlink" href="#fn_wnatvotepowercached_f72cab28" title="Permanent link">#</a></h3>
+<div class="api-node-source">
+<p>Defined in <code>IFtsoGenesis</code> (<a href="../IFtsoGenesis/">Docs</a>, <a href="https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master/contracts/genesis/interface/IFtsoGenesis.sol">Source</a>).</p>
+</div>
+<div class="api-node-internal">
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">wNatVotePowerCached</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_voter</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_epochId</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">);</span>
+</code></pre></div>
+<p>Get and cache the vote power of a voter on a specific epoch, in <a href="../WNat/"><code>WNat</code></a> units.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_voter</code></td>
+<td><code>address</code></td>
+<td>Voter address.</td>
+</tr>
+<tr>
+<td><code>_epochId</code></td>
+<td><code>uint256</code></td>
+<td>ID of the epoch in which the price hash was submitted.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Returns</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td><code>uint256</code></td>
+<td>Voter's vote power in <a href="../WNat/"><code>WNat</code></a> units.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
+</span>
+    2024-03-14
+  </span>
+</aside>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<!-- Social links -->
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/company/flarenetwork/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://flare.network" rel="noopener" target="_blank" title="flare.network">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4.1-2.8.1-4.2.1H392c-22.1 0-40-17.9-40-40v-88c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v88c0 22.1-17.9 40-40 40h-55.9c-1.5 0-3-.1-4.5-.2-1.2.1-2.4.2-3.6.2h-16c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9.1-2.8v-69.6H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/FlareNetworks" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/flare-foundation" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://t.me/FlareNetwork" rel="noopener" target="_blank" title="t.me">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://discord.com/invite/flarenetwork" rel="noopener" target="_blank" title="discord.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"></path></svg>
+</a>
+</div>
+<!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<div class="md-copyright">
+<div>
+      © Flare Networks 2024
+    </div>
+<div class="md-copyright__highlight">
+<a href="#__consent">Cookie settings</a>
+</div>
+<div class="md-copyright__highlight">
+<a href="https://flare.network/privacy-policy/" rel="noopener" target="_blank">
+      Terms of Service</a>
+</div>
+<div>
+      Made with 
+      <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-consent" data-md-component="consent" hidden="" id="__consent">
+<div class="md-consent__overlay"></div>
+<aside class="md-consent__inner">
+<form class="md-consent__form md-grid md-typeset" name="consent">
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" id="__settings" type="checkbox"/>
+<div class="md-consent__settings">
+<ul class="task-list">
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="analytics" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+</li>
+<li class="task-list-item">
+<label class="task-list-control">
+<input checked="" name="github" type="checkbox"/>
+<span class="task-list-indicator"></span>
+          GitHub
+        </label>
+</li>
+</ul>
+</div>
+<div class="md-consent__controls">
+<button class="md-button md-button--primary">Accept</button>
+<label class="md-button" for="__settings">Manage settings</label>
+</div>
+</form>
+</aside>
+</div>
+<script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "content.tabs.link", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+<script src="../../../assets/javascripts/mathjax.js"></script>
+<script src="../../../assets/javascripts/images.js"></script>
+<script src="../../../assets/javascripts/links.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {
+            window.update_swagger_ui_iframe_height = function (id) {
+                var iFrameID = document.getElementById(id);
+                if (iFrameID) {
+                    full_height = (iFrameID.contentWindow.document.body.scrollHeight + 80) + "px";
+                    iFrameID.height = full_height;
+                    iFrameID.style.height = full_height;
+                }
+            }
+        
+            let iframe_id_list = []
+            var iframes = document.getElementsByClassName("swagger-ui-iframe");
+            for (var i = 0; i < iframes.length; i++) { 
+                iframe_id_list.push(iframes[i].getAttribute("id"))
+            }
+        
+            let ticking = true;
+            
+            document.addEventListener('scroll', function(e) {
+                if (!ticking) {
+                    window.requestAnimationFrame(()=> {
+                        let half_vh = window.innerHeight/2;
+                        for(var i = 0; i < iframe_id_list.length; i++) {
+                            let element = document.getElementById(iframe_id_list[i])
+                            if(element==null){
+                                return
+                            }
+                            let diff = element.getBoundingClientRect().top
+                            if(element.contentWindow.update_top_val){
+                                element.contentWindow.update_top_val(half_vh - diff)
+                            }
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        
+            const dark_scheme_name = "slate"
+            
+            window.scheme = document.body.getAttribute("data-md-color-scheme")
+            const options = {
+                attributeFilter: ['data-md-color-scheme'],
+            };
+            function color_scheme_callback(mutations) {
+                for (let mutation of mutations) {
+                    if (mutation.attributeName === "data-md-color-scheme") {
+                        scheme = document.body.getAttribute("data-md-color-scheme")
+                        var iframe_list = document.getElementsByClassName("swagger-ui-iframe")
+                        for(var i = 0; i < iframe_list.length; i++) {
+                            var ele = iframe_list.item(i);
+                            if (ele) {
+                                if (scheme === dark_scheme_name) {
+                                    ele.contentWindow.enable_dark_mode();
+                                } else {
+                                    ele.contentWindow.disable_dark_mode();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            observer = new MutationObserver(color_scheme_callback);
+            observer.observe(document.body, options);
+            })</script></body>
+</html>
