@@ -46,7 +46,7 @@ mkdocs-preview:
     name: review/$CI_COMMIT_REF_SLUG
     url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/-/${CI_PROJECT_NAME}/-/jobs/$CI_JOB_ID/artifacts/public/index.html
   before_script:
-  - !reference [.mkdocs-base, before_script]
+  - !reference [pages, before_script]
   - |
     # modify link in navbar according to current git branch (ref)
     cat mkdocs.yml | /usr/bin/yq '.repo_url = strenv(REPO_URL)' | sponge mkdocs.yml
