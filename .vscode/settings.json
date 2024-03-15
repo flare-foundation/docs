@@ -17,5 +17,8 @@
         "MD025": false, // We allow both H1 and front matter titles, to have shorter TOCs but full page titles
         "MD042": false, // We sometimes use empty links to create buttons
         "MD046": false, // Because Admonition indentation looks like an indented code block
-    }
+    },
+    "yaml.customTags": [
+        "!reference sequence"
+    ]
 }

@@ -1,4 +1,4 @@
-# This and ../CODEOWNERS files must match
+# This and .github/CODEOWNERS files must match
 
 * @segfaultxavi
 .github/workflows @aljazs-flare

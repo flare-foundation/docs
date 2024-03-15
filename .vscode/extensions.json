@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "davidanson.vscode-markdownlint",
+        "gitlab.gitlab-workflow",
+        "redhat.vscode-yaml"
+    ]
+}
