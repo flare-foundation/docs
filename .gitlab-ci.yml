@@ -2,12 +2,15 @@ pages:
   needs: []
   image: python:3.10-buster
   stage: deploy
-  variables:
-    GIT_DEPTH: 0
   environment:
     name: production
-    url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/-/${CI_PROJECT_NAME}/-/jobs/$CI_JOB_ID/artifacts/public/index.html
+    url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/${CI_PROJECT_NAME}/
     action: start
+  variables:
+    GIT_DEPTH: 0
+    REPO_NAME: ${CI_PROJECT_PATH}
+    REPO_URL: ${CI_PROJECT_URL}
+    EDIT_URL: https://gitlab.com/-/ide/project/${CI_PROJECT_PATH}/tree/${CI_COMMIT_REF_NAME}/-/
   cache:
     key:
       files:
@@ -15,14 +18,20 @@ pages:
     paths:
     - .cache
   before_script:
+  - if [ -d "public" ]; then echo "Directory ./public exists while it should not as it is used for docs artifacts" && exit 1; fi
+  - pip install -q -r requirements.txt 1> /dev/null
   - |
     # install for sponge
     apt-get update 1> /dev/null
     apt-get install moreutils -qqy curl 1> /dev/null
     # like jq, but for yml - https://github.com/mikefarah/yq
     wget --quiet https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
-  - if [ -d "public" ]; then echo "Directory ./public exists while it should not as it is used for docs artifacts" && exit 1; fi
-  - pip install -q -r requirements.txt 1> /dev/null
+  - |
+    # modify link in navbar according to current git branch (ref)
+    cat mkdocs.yml | /usr/bin/yq '.repo_url = strenv(REPO_URL)' | sponge mkdocs.yml
+    cat mkdocs.yml | /usr/bin/yq '.edit_uri = strenv(EDIT_URL)' | sponge mkdocs.yml
+    cat mkdocs.yml | /usr/bin/yq '.repo_name = strenv(REPO_NAME)' | sponge mkdocs.yml
+    cat mkdocs.yml | /usr/bin/yq '.site_url = strenv(CI_ENVIRONMENT_URL)' | sponge mkdocs.yml
   script:
   - |
     set -o pipefail
@@ -38,27 +47,16 @@ pages:
 mkdocs-preview:
   extends: pages
   stage: build
-  variables:
-    REPO_NAME: ${CI_PROJECT_PATH}
-    REPO_URL: ${CI_PROJECT_URL}/-/tree/${CI_COMMIT_REF_NAME}
-    EDIT_URL: https://gitlab.com/-/ide/project/${CI_PROJECT_PATH}/tree/${CI_COMMIT_REF_NAME}/-/
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/-/${CI_PROJECT_NAME}/-/jobs/$CI_JOB_ID/artifacts/public/index.html
-  before_script:
-  - !reference [pages, before_script]
-  - |
-    # modify link in navbar according to current git branch (ref)
-    cat mkdocs.yml | /usr/bin/yq '.repo_url = strenv(REPO_URL)' | sponge mkdocs.yml
-    cat mkdocs.yml | /usr/bin/yq '.edit_uri = strenv(EDIT_URL)' | sponge mkdocs.yml
-    cat mkdocs.yml | /usr/bin/yq '.repo_name = strenv(REPO_NAME)' | sponge mkdocs.yml
   rules:
-  - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-    when: never
   - if: $CI_MERGE_REQUEST_IID == null
     variables:
+      REPO_URL: ${CI_PROJECT_URL}/-/tree/${CI_COMMIT_REF_NAME}
       REPO_NAME: ${CI_PROJECT_PATH}:${CI_COMMIT_REF_NAME}
   - if: $CI_MERGE_REQUEST_IID != null
     variables:
       REPO_NAME: ${CI_PROJECT_PATH}!${CI_MERGE_REQUEST_IID}
       REPO_URL: ${CI_PROJECT_URL}/-/merge_requests/${CI_MERGE_REQUEST_IID}
+  - when: never
