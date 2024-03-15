@@ -50,6 +50,9 @@ mkdocs-preview:
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/-/${CI_PROJECT_NAME}/-/jobs/$CI_JOB_ID/artifacts/public/index.html
+  before_script:
+  - !reference [pages, before_script]
+  - cat mkdocs.yml | /usr/bin/yq '.use_directory_urls = false' | sponge mkdocs.yml
   rules:
   - if: $CI_MERGE_REQUEST_IID == null
     variables:
