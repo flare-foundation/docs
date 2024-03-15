@@ -10,7 +10,7 @@ pages:
     GIT_DEPTH: 0
     REPO_NAME: ${CI_PROJECT_PATH}
     REPO_URL: ${CI_PROJECT_URL}
-    EDIT_URL: https://gitlab.com/-/ide/project/${CI_PROJECT_PATH}/tree/${CI_COMMIT_REF_NAME}/-/
+    EDIT_URL: https://gitlab.com/-/ide/project/${CI_PROJECT_PATH}/tree/${CI_COMMIT_REF_NAME}/-/docs/
   cache:
     key:
       files:
