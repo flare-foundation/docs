@@ -15,6 +15,9 @@ jobs:
         python-version: 3.x
     - run: pip install -r requirements.txt
     - run: mkdocs build --strict
+    - uses: upload-pages-artifact
+      with:
+        path: public
 
   deploy:
     needs: build
@@ -29,5 +32,3 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-      with:
-        path: public
