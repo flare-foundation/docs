@@ -1,3 +1,28 @@
+include:
+  - template: Jobs/SAST.latest.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.latest.gitlab-ci.yml
+
+
+##
+## TESTS
+##
+
+sast:
+  needs: []
+
+iac-sast:
+  needs: []
+
+secret_detection:
+  needs: []
+
+
+
+
+##
+## GITLAB PAGES SETUP
+##
+
 pages:
   needs: []
   image: python:3.10-buster
