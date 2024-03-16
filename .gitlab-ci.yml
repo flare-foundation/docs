@@ -76,6 +76,8 @@ mkdocs-preview:
   - !reference [pages, before_script]
   - cat mkdocs.yml | /usr/bin/yq '.use_directory_urls = false' | sponge mkdocs.yml
   rules:
+  - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+    when: never
   - if: $CI_MERGE_REQUEST_IID == null
     variables:
       REPO_URL: ${CI_PROJECT_URL}/-/tree/${CI_COMMIT_REF_NAME}
@@ -84,4 +86,3 @@ mkdocs-preview:
     variables:
       REPO_NAME: ${CI_PROJECT_PATH}!${CI_MERGE_REQUEST_IID}
       REPO_URL: ${CI_PROJECT_URL}/-/merge_requests/${CI_MERGE_REQUEST_IID}
-  - when: never
