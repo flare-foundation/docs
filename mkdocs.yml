@@ -156,6 +156,7 @@ copyright: >-
 site_url: https://docs.flare.network
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
+site_dir: public
 nav:
   - Home:
     - index.md

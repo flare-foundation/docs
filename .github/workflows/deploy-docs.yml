@@ -14,10 +14,10 @@ jobs:
       with:
         python-version: 3.x
     - run: pip install -r requirements.txt
-    - run: mkdocs build --strict
+    - run: mkdocs build --verbose --strict
     - uses: upload-pages-artifact
       with:
-        path: public
+        path: ./public
 
   deploy:
     needs: build

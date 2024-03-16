@@ -57,7 +57,7 @@ pages:
   script:
   - |
     set -o pipefail
-    mkdocs build --verbose --strict --site-dir ./public 2>&1 | tee -a /tmp/mkdocs.build.log || { cat /tmp/mkdocs.build.log | grep "WARNING"; exit 1; }
+    mkdocs build --verbose --strict 2>&1 | tee -a /tmp/mkdocs.build.log || { cat /tmp/mkdocs.build.log | grep "WARNING"; exit 1; }
     test -f public/index.html && echo "View the generated docs at $CI_ENVIRONMENT_URL"
   artifacts:
     expire_in: 3 days
