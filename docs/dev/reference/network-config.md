@@ -204,6 +204,24 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         https://bnb-bsc-api.flare.network | jq
         ```
 
+??? info "Cosmos Hub"
+
+    * **RPC endpoint**: `https://cosmos-rpc-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -s -X GET -m 10 -H "Content-type: application/json" \
+        "https://cosmos-rpc-api.flare.network/block?height=19570438" | jq
+        ```
+
+    * **RPC endpoint**: `https://cosmos-rest-api.flare.network`
+    * **Sample query**:
+
+        ```bash
+        curl -s -X GET -m 10 -H "Content-type: application/json" \
+        https://cosmos-rest-api.flare.network/blocks/latest | jq
+        ```
+
 ??? info "Dogecoin"
 
     * **RPC endpoint**: `https://dogecoin-api.flare.network`
