@@ -76,7 +76,7 @@ The following distribution plans were offered. The FIP.01 Distribution Plan was 
 * **FIP.01 Distribution Plan**:
 
     * The new airdrop was sent to those who registered for the `$FLR` distribution upon the TDE, and the DIP was distributed to all `$FLR` token holders (actually, wrapped `$FLR` holders) over 36 months. Flare employees and companies were excluded.
-    * Inflation is 10% of available supply in the first year, then 7% the following year, 5% the year after and in perpetuity, except that from year 3 onwards inflation is capped at 5bn `$FLR` per year.
+    * Inflation is 10% of available supply in the first year, then 7% the following year, 5% the year after and in perpetuity, except that from year 3 onwards [inflation](glossary.md#inflation) is capped at 5bn `$FLR` per year.
     * Inflation distribution: 70% to [FTSO](../ftso.md) rewards, 20% to [validator](../validators.md) rewards and 10% to the default Attestation Provider Set of the [state connector](../state-connector.md).
 
 ## Launch Phases

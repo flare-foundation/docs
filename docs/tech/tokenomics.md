@@ -15,7 +15,7 @@ At network genesis, 100 billion `$FLR` tokens (100,000,000,000) were created.
 These tokens have been allocated to the following groups.
 Note the delegation, claiming, and voting abilities of each, defined here:
 
-* **Can delegate**: The entity can [delegate](./ftso.md#delegation) tokens to the Flare Time Series Oracle to earn standard inflationary rewards.
+* **Can delegate**: The entity can [delegate](./ftso.md#delegation) tokens to the Flare Time Series Oracle to earn standard [inflationary](glossary.md#inflation) rewards.
 * **Can claim**: The entity can wrap tokens to claim a portion of the [FlareDrop](./the-flaredrop.md).
 * **Can vote**: The entity can use its tokens to participate in [governance](./governance.md) by voting on Flare Improvement Proposals.
 
@@ -68,7 +68,7 @@ The early backers of the project that received 3.1 billion  `$FLR` tokens are di
 
 * **Group 1**: Received 1,066,111,520 `$FLR` tokens.
 
-    This group of investors was originally appointed to receive an additional 2,121,388,480 `$FLR` tokens but agreed to have them burned according to the following schedule:
+    This group of investors was originally appointed to receive an additional 2,121,388,480 `$FLR` tokens but agreed to have them [burned](glossary.md#burn) according to the following schedule:
 
     * 198,880,170.19 `$FLR` were burned in November 2023.
     * 66,293,390.06 `$FLR` are set to be burned monthly until March 2026.

@@ -9,29 +9,29 @@ search:
     ![Flare logo](logo-FLR.png){ .allow-zoom }
 
 Flare is the blockchain for data.
-It is a [layer 1](glossary.md#layer1), EVM smart contract platform designed to expand the utility of blockchain.
+It is a [layer 1](glossary.md#layer1), [EVM](glossary.md#evm) [smart contract](glossary.md#smart_contract) platform designed to expand the utility of blockchain.
 
 Flare's aim is to provide data as a public good, meaning that data is not controlled by a centralized entity and is available to all.
-The infrastructure providers, which perform doubly as [validators](../tech/validators.md) and [data providers](../infra/data/operating.md), enable two native oracles, the [FTSO](./ftso.md) and the [State Connector](./state-connector.md).
-This native processing provides developers on Flare with efficient access to large amounts of data and data proofs at minimal cost.
+The infrastructure providers, which perform doubly as [validators](../tech/validators.md) and [data providers](../infra/data/operating.md), enable two native [oracles](glossary.md#oracle), the [FTSO](./ftso.md) and the [State Connector](./state-connector.md).
+This [native](glossary.md#native) processing provides developers on Flare with efficient access to large amounts of data and [data proofs](glossary.md#data_proof) at minimal cost, with which to build software on the platform.
 
-By giving developers trustless access to the broadest range of data, Flare can advance the development of more blockchain use cases where data is important, such as in DeFi, gaming, NFT, music, and social networks.
+By giving developers [trustless](glossary.md#trustless) access to the broadest range of data needed by the software they build, Flare can advance the development of more blockchain use cases where data is important, such as in [DeFi](glossary.md#defi), gaming, [NFT](glossary.md#nft), music, social networks, Real World Assets [(RWAs)](glossary.md#rwa), Machine Learning (ML), and Artificial Intelligence (AI).
 
 ## Flare Protocols
 
 Flare has the following native data acquisition protocols at these stages of development:
 
-* The **[Flare Time-Series Oracle (FTSO)](./ftso.md)** provides continuous estimations of changing data, such as price pairs.
+* The **[Flare Time-Series Oracle (FTSO)](./ftso.md)** provides continuous estimations of changing data, such as [price pairs](glossary.md#price_pair).
 * The **[State Connector](./state-connector.md)** allows querying of verifiable, non-changing data from other chains and the internet.
 * The **[FAssets](./fassets/index.md)** system is being developed by Flare Labs. It allows tokens on blockchains that do not support smart contracts to be used trustlessly with smart contracts on the Flare blockchain.
-* Flare **LayerCake** is being developed by Flare Labs to provide a decentralized, trustless bridging system between smart contract networks. For an overview of trustless bridges, see [LayerCake](https://flare.network/layercake/).
+* Flare **LayerCake** is being developed by Flare Labs to provide a [decentralized](glossary.md#decentralized), trustless bridging system between smart contract networks. For an overview of trustless bridges, see [LayerCake](https://flare.network/layercake/).
 
 ## Developing on Flare
 
 Flare developers can work in a familiar Ethereum-like environment.
 It offers the same [API](../apis/index.md) and uses the Ethereum Virtual Machine ([EVM](glossary.md#evm)), so Ethereum's Solidity smart contracts can be used directly.
-Like Ethereum, Flare supports other assets, such as [NFTs](glossary.md#nft).
-See [Developer Docs](../dev/index.md).
+Like Ethereum, Flare supports other assets, such as NFTs.
+See [Getting Started](../dev/getting-started/index.md).
 
 The Flare native currency, `$FLR`, works the same as `$ETH` on the Ethereum blockchain.
 For those contracts that can only work with [ERC-20](glossary.md#erc20) tokens, `$FLR` can be easily [wrapped](../user/wrapping-tokens.md) as `$WFLR`, which is an ERC-20 representation of `$FLR`.

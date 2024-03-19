@@ -30,7 +30,7 @@ Users then receive an amount equal to their month's sampled `$WFLR` holdings div
 
 Upon claiming, the entitlement is sent directly to the account you claimed from.
 It is sent as `$FLR` to your **Main Account** and as `$WFLR` to your **[Personal Delegation Account (PDA)](./personal-delegation-account.md)**.
-Each distribution expires two bank months and a week (67 days) after it becomes claimable and expired tokens are burned.
+Each distribution expires two bank months and a week (67 days) after it becomes claimable and expired tokens are [burned](glossary.md#burn).
 
 To ensure having no effect on the amount of `$FLR` that each claiming address receives, Flare Foundation and team addresses opt out of the FlareDrop distribution.
 

@@ -24,7 +24,7 @@ This is the summary of the redemption process:
     The number of chosen redemption tickets is capped to avoid high gas consumption.
     If the redemption amount requires too many tickets, only a partial redemption is done.
 
-2. The system burns FAssets from the redeemer’s account in the amount of the total of the selected redemption tickets.
+2. The system [burns](glossary.md#burn) FAssets from the redeemer’s account in the amount of the total of the selected redemption tickets.
     If the redeemer's account does not contain enough FAssets, the redemption fails immediately.
 
 3. Each chosen ticket belongs to an agent.
