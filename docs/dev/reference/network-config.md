@@ -204,6 +204,32 @@ For a production-grade option check out Flare's [API Portal](../../tech/api-port
         https://bnb-bsc-api.flare.network | jq
         ```
 
+??? info "Cosmos Hub"
+
+    Cosmos Hub provides several APIs for accessing its functionalities:
+
+    * **RPC**: Tendermint RPC endpoint, offering a user-friendly API with larger over-the-wire message sizes (JSON).
+        * **Endpoint**: `https://cosmos-rpc-api.flare.network`
+        * **Sample query**:
+
+            ```bash
+            curl -s -X GET -m 10 -H "Content-type: application/json" \
+            "https://cosmos-rpc-api.flare.network/block?height=19570438" | jq
+            ```
+
+    * **REST**: REST endpoint, widely used for faster implementation with client libraries.
+        * **Endpoint**: `https://cosmos-rest-api.flare.network`
+        * **Sample query**:
+
+            ```bash
+            curl -s -X GET -m 10 -H "Content-type: application/json" \
+            https://cosmos-rest-api.flare.network/blocks/latest | jq
+            ```
+
+    * **gRPC endpoint**: gRPC endpoint, enabling the usage of code-generated stubs in various languages and supporting streaming.
+        * **Endpoint**: `https://cosmos-grpc-api.flare.network`
+        * Visit the [Cosmos SDK documentation](https://docs.cosmos.network/v0.46/run-node/interact-node.html#programmatically-via-go) for a detailed example.
+
 ??? info "Dogecoin"
 
     * **RPC endpoint**: `https://dogecoin-api.flare.network`
