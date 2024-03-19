@@ -26,7 +26,7 @@ pages:
   stage: deploy
   environment:
     name: production
-    url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/${CI_PROJECT_NAME}/
+    url: https://${CI_PROJECT_ROOT_NAMESPACE}.gitlab.io/docs-team/docs/
     action: start
   variables:
     GIT_DEPTH: 0
@@ -71,7 +71,7 @@ mkdocs-preview:
   stage: build
   environment:
     name: review/$CI_COMMIT_REF_SLUG
-    url: https://${CI_PROJECT_NAMESPACE}.gitlab.io/-/${CI_PROJECT_NAME}/-/jobs/$CI_JOB_ID/artifacts/public/index.html
+    url: https://${CI_PROJECT_ROOT_NAMESPACE}.gitlab.io/-/docs-team/docs/-/jobs/$CI_JOB_ID/artifacts/public/index.html
   before_script:
   - !reference [pages, before_script]
   - cat mkdocs.yml | /usr/bin/yq '.use_directory_urls = false' | sponge mkdocs.yml
