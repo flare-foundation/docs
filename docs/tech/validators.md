@@ -17,7 +17,7 @@ They all keep their own copy of the [ledger](glossary.md#ledger) and are constan
 
 The fact that the ledger is not under control of a single entity but **distributed among a network of independent validators** is what makes blockchains:
 
-* Require less trust than traditional options.
+* Require less trust than traditional options (said to be [_trustless_](glossary.md#trustless)).
 * Censorship resistant.
 * [Byzantine fault-tolerant](glossary.md#byzantine_fault_tolerance).
 

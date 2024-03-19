@@ -57,7 +57,7 @@ The following transaction information is provided:
 * **Max Priority Fee per Gas**: The maximum fee per unit of gas specified by the sender to pay a validator to prioritize the transaction.
   This fee is also called a tip.
 * **Priority Fee/Tip**: The priority fee specified by the sender to pay a validator to prioritize the transaction.
-* **Transaction Burnt Fee**: The amount of `$FLR` burned for the transaction.
+* **Transaction Burnt Fee**: The amount of `$FLR` [burned](glossary.md#burn) for the transaction.
 * **Gas Used by Transaction**: The actual amount of gas used by the transaction.
 * **Nonce Position**: The transaction number from the sender's address.
   Each transaction made by an address increases the nonce by one.

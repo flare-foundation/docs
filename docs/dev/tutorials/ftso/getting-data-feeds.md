@@ -7,7 +7,7 @@ search:
 
 # Getting FTSO Data Feeds
 
-This tutorial shows the simplest way to use the [FTSO system](../../../tech/ftso.md) to retrieve a specific data feed, like the price of Bitcoin.
+This tutorial shows the simplest way to use the [FTSO system](../../../tech/ftso.md) to retrieve a specific [data feed](glossary.md#data_feed), like the price of Bitcoin.
 
 The tutorial shows:
 

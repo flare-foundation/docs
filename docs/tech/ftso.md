@@ -11,7 +11,7 @@ To achieve a secure, decentralized system, a set of **independent data providers
 
 !!! note "Important"
 
-    When FTSOs were initially designed, they supported only cryptocurrency price pairs. Now, they support all types of data. However, contract names and methods still refer to prices and price epochs, and price pairs are used in the following information to show how FTSOs work.
+    When FTSOs were initially designed, they supported only cryptocurrency [price pairs](glossary.md#price_pair). Now, they support all types of data. However, contract names and methods still refer to prices and price epochs, and price pairs are used in the following information to show how FTSOs work.
 
 The following diagram shows how price pairs are submitted to and filtered by the FTSO system.
 
@@ -144,7 +144,7 @@ Delegating 100% of your vote power to reliable data providers committed to provi
 For the duration of the delegation, you will earn rewards that are commensurate with vote power and the performance of the chosen data providers.
 Rewards accumulate, and they become claimable for each reward epoch that is finalized.
 
-Inflation is distributed to everyone who participates in the FTSO system, which includes data providers and entities that delegate their vote power to the data providers.
+[Inflation](glossary.md#inflation) is distributed to everyone who participates in the FTSO system, which includes data providers and entities that delegate their vote power to the data providers.
 Delegated tokens are **not locked**, meaning that they remain in the user's control and the delegation can be removed at any time.
 
 Any `$WFLR` or `$WSGB` that is newly wrapped, sent, or received will automatically update your actual delegated vote power.
@@ -179,7 +179,7 @@ If you are an advanced user, you can [delegate manually](../user/block-explorers
 
 ## Rewards
 
-A percentage of the annual network **inflation** is reserved to reward FTSO data providers and distributed uniformly among the year's reward epochs.
+A percentage of the annual network **[inflation](glossary.md#inflation)** is reserved to reward FTSO data providers and distributed uniformly among the year's reward epochs.
 The mechanism that distributes rewards to data providers consists of several bands:
 
 * **Primary reward band**: This band rewards [50% of submitted data, weighted by vote power and centered around the median price](#how-results-are-calculated).
@@ -216,7 +216,7 @@ If you delegated to a data provider, the amount of your rewards depends on multi
 You can claim your rewards at the end of each reward epoch.
 
 You must claim your rewards within 90 days of their availability.
-After 90 days, unclaimed rewards on Flare are burned, and on Songbird, they are reallocated.
+After 90 days, unclaimed rewards on Flare are [burned](glossary.md#burn), and on Songbird, they are reallocated.
 
 ### Reward-Claiming Procedure
 

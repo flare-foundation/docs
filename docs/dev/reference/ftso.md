@@ -17,7 +17,7 @@ Using prices as an example, the following diagram shows the flow of data, querie
 
 The following list describes the most relevant contracts and their purposes:
 
-* **[FTSO](Ftso.md)**: Each data type is handled by its own FTSO contract, including calculation of the filtered feed.
+* **[FTSO](Ftso.md)**: Each data type is handled by its own FTSO contract, including calculation of the filtered [data feed](glossary.md#data_feed).
 
     To retrieve information about a data type, access this contract.
 

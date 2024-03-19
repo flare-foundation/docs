@@ -128,7 +128,7 @@ This section describes the similarity metric used to obtain the [cluster map](#c
 To estimate collusion, the similarity metric assigns a value of similarity between data submitted by pairs of data providers.
 As previously stated, collusion between data providers is evident when they submit similar data that is relatively distant from the median because similar algorithms will make similar mistakes.
 
-For data providers DP1 and DP2 during a given range of price epoch for comparison, the prices `P1` and `P2` submitted for each cryptocurrency pair and epoch are checked.
+For data providers DP1 and DP2 during a given range of price epoch for comparison, the prices `P1` and `P2` submitted for each cryptocurrency [pair](glossary.md#price_pair) and epoch are checked.
 If both prices are available alongside the median price `M`, the contribution to the collusion metric is calculated in the following way:
 
 ``` js

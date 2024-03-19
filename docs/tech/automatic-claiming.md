@@ -21,7 +21,7 @@ Instead, users can enlist the services of **executors** to claim for them, putti
 Automatic claiming through an executor saves user time and inconvenience, optimizes the opportunity for compound interest, and avoids unnecessary exposure of users' cold wallets.
 
 Automatic claiming is secure because the executor cannot claim to any address but the ones the user provides.
-It is trustless (does not require trust) because it is managed by a smart contract, not the executor.
+It is [trustless](glossary.md#trustless) (does not require trust) because it is managed by a smart contract, not the executor.
 
 For executors, automatic claiming is an opportunity to earn a fee for performing claiming as a service to users.
 
@@ -81,7 +81,7 @@ With a registered executor, all agreements happen on-chain.
 Here is how the registered claiming process works, with applications performing these actions on behalf of executors and users:
 
 1. Executors who want to make themselves publicly available to users register as executors, paying a registration fee.
-The fee to register as an executor is burned.
+The fee to register as an executor is [burned](glossary.md#burn).
 2. Registered executors post their fee for claiming rewards.
 3. Users who have accrued rewards and want an executor to claim on their behalf can choose from the list of registered executors.
 4. These users pay a setup fee to enable a registered executor to claim their rewards.

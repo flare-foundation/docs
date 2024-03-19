@@ -61,7 +61,7 @@ The following fees are paid to mint FAssets:
   { #crf }
 
     When the minter does not pay on the underlying chain, this fee compensates the agent and the CPT holders for the time their collateral was locked while the mint processed.
-    If the minter pays on the underlying chain, the CRF is burned.
+    If the minter pays on the underlying chain, the CRF is [burned](glossary.md#burn).
 
     For underlying chains on which proving payments takes a long time, the fee might be higher than the fee on chains that quickly prove payments.
 
