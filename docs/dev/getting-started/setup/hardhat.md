@@ -122,7 +122,7 @@ require('dotenv').config();
 require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {
-  solidity: "0.8.17",
+  solidity: "0.8.24",
   networks: {
     hardhat: {
     },
@@ -183,7 +183,7 @@ You should get:
 
 ### 6. Deploy the Contract
 
-Now, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using a Hardhat script from the `scripts` folder.
+Now, you will deploy the contract to Flare's test network, [Coston2](../../reference/network-config.md), using the Hardhat Ignition module and script inside the `ignition/modules`.
 
 !!! warning
 
@@ -198,13 +198,27 @@ Now, you will deploy the contract to Flare's test network, [Coston2](../../refer
 Run this command at the root of the project:
 
 ```bash
-npx hardhat run scripts/deploy.js --network coston2
+npx hardhat ignition deploy ./ignition/modules/Lock.js --network coston2
 ```
+
+Confirm that you want to deploy the contract on the Coston2 network.
 
 You should get an output similar to:
 
 ```text
-Lock with 1 ETH and unlock timestamp 1705592309 deployed to 0xdC7781FA9fA7e2d0313cd0229a5080B4e30663a5
+✔ Confirm deploy to network coston2 (114)? … yes
+Hardhat Ignition 🚀
+
+Deploying [ LockModule ]
+
+Batch #1
+  Executed LockModule#Lock
+
+[ LockModule ] successfully deployed 🚀
+
+Deployed Addresses
+
+LockModule#Lock - 0xDCCa38aF18A3b87c4171AEBD6c9753932Ad0c80F
 ```
 
 The last part is the address where the contract has been deployed.
