@@ -122,7 +122,16 @@ require('dotenv').config();
 require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {
-  solidity: "0.8.24",
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.17",
+        settings: {
+          evmVersion: "london"
+        },
+      }
+    ],
+  },
   networks: {
     hardhat: {
     },
@@ -248,7 +257,16 @@ require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-verify");
 
 module.exports = {
-  solidity: "0.8.17",
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.17",
+        settings: {
+          evmVersion: "london"
+        },
+      }
+    ],
+  },
   networks: {
     hardhat: {
     },

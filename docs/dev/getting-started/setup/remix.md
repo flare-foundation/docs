@@ -49,6 +49,7 @@ contract HelloWorld {
 ### 3. Compile Your Contract
 
 * Go to the Solidity Compiler tab (on the left), and select compiler version `0.8.17`.
+* Click on **Advanced Configurations**, and select `london` from the **EVM VERSION** drop down.
 * Now, click the **Compile HelloWorld.sol** button.
 
 After successful compilation, it will show a **Green tick mark** on the **Compiler** tab button.

@@ -92,21 +92,36 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
     ??? info "Building with Hardhat"
 
         1. Create a new folder and move into it.
-        2. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/)):
+        2. Initialize a new npm project and install dependencies:
             ```bash
             npm init
-            npm install hardhat @nomicfoundation/hardhat-toolbox
+            npm install hardhat @nomicfoundation/hardhat-toolbox @flarenetwork/flare-periphery-contracts
+            ```
+        3. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/)):
+            ```bash
             npx hardhat init
             ```
-        3. You will not be using the sample project, therefore:
+        4. You will not be using the sample project, therefore:
             * Remove `contracts/Lock.sol`
             * Remove `test/Lock.js`
-        4. Add Flare's Periphery Package as a dependency with:
-            ```bash
-            npm install @flarenetwork/flare-periphery-contracts
+        5. Edit `hardhat.config.js` to specify the correct EVM version. Make sure you include the highlighted lines:
+            ```js title="hardhat.config.js" hl_lines="5-12"
+            require("@nomicfoundation/hardhat-toolbox");
+
+            /** @type import('hardhat/config').HardhatUserConfig */
+            module.exports = {
+                solidity: {
+                    compilers: [{
+                        version: "0.8.17",
+                        settings: {
+                            evmVersion: "london"
+                        },
+                    }],
+                }
+            };
             ```
-        5. Copy the Solidity code above into a new file called `{{filename}}.sol` in the `contracts` folder.
-        6. Compile with:
+        6. Copy the Solidity code above into a new file called `{{filename}}.sol` in the `contracts` folder.
+        7. Compile with:
             ```bash
             npx hardhat compile
             ```
@@ -117,13 +132,20 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
         These instructions quickly show you how to use the former.
 
         1. Build the Hardhat project following the previous instructions.
-        2. Modify your `hardhat.config.js` to look like this:
-            ```js title="hardhat.config.js"
+        2. Include network information in the `hardhat.config.js` file. Make sure you include the highlighted lines:
+            ```js title="hardhat.config.js" hl_lines="13-19"
             require("@nomicfoundation/hardhat-toolbox");
 
             /** @type import('hardhat/config').HardhatUserConfig */
             module.exports = {
-                solidity: "0.8.19",
+                solidity: {
+                    compilers: [{
+                        version: "0.8.17",
+                        settings: {
+                            evmVersion: "london"
+                        },
+                    }],
+                },
                 networks: {
                     hardhat: {
                         forking: {
@@ -164,8 +186,9 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
             * Remove `src/Counter.sol`
             * Remove `test/Counter.t.sol`
         6. Copy the Solidity code above into a new file called `{{filename}}.sol` in the `src` folder.
-        7. Open the `foundry.toml` file, and add the following line at the end:
+        7. Open the `foundry.toml` file, and add the following lines at the end:
             ```toml
+            evm_version = "london"
             remappings = [ "@flarenetwork/flare-periphery-contracts/=lib/flare-foundry-periphery-package/src/"]
             ```
         8. Compile with:
@@ -189,7 +212,7 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
             ```
 === "Using Remix"
 
-    [Open In Remix](https://remix.ethereum.org/#url={{ config.site_url }}samples/{{folder}}{{filename}}.sol&evmVersion=paris){ .md-button }
+    [Open In Remix](https://remix.ethereum.org/#url={{ config.site_url }}samples/{{folder}}{{filename}}.sol&evmVersion=london){ .md-button }
 
 {% endmacro %}
 

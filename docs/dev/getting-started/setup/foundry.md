@@ -18,6 +18,7 @@ Foundry can quick-start your development by providing a sample project:
 
 ```bash
 forge init hello_foundry
+cd hello_foundry
 ```
 
 This creates a new directory `hello_foundry` from the default template which should look something like this:
@@ -27,12 +28,21 @@ This creates a new directory `hello_foundry` from the default template which sho
   <figcaption>Foundry project structure.</figcaption>
 </figure>
 
+Add the highlighted line to the `foundry.toml` file, to make sure the correct EVM version is used:
+
+```toml hl_lines="5"
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+evm_version = "london"
+```
+
 ### 3. Build the Contract
 
 To build the `Counter.sol` contract in the sample project run:
 
 ```bash
-cd hello_foundry
 forge build
 ```
 
