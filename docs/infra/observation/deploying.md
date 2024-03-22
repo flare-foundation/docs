@@ -338,13 +338,13 @@ You can read about all of them in the [Avalanche documentation](https://docs.ava
             "snowman-api-enabled": false,
             "coreth-admin-api-enabled": false,
             "eth-apis": [
-                "public-eth",
-                "public-eth-filter",
+                "eth",
+                "eth-filter",
                 "net",
                 "web3",
-                "internal-public-eth",
-                "internal-public-blockchain",
-                "internal-public-transaction-pool"
+                "internal-eth",
+                "internal-blockchain",
+                "internal-transaction-pool"
             ],
             "rpc-gas-cap": 50000000,
             "rpc-tx-fee-cap": 100,

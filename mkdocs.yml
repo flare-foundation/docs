@@ -373,6 +373,7 @@ nav:
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md
+      - infra/observation/deploying-docker.md
     - Validator Nodes:
       - infra/validation/index.md
       - infra/validation/deploying.md
