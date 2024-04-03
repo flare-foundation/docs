@@ -137,7 +137,7 @@ The full details are available in the [FIP.01 blog post][fip-01].
 The 28,524,921,372 `$FLR` public distribution is split into two parts:
 
 * The first 15%, the initial Airdrop, which equates to 4,278,738,206 `$FLR`, was distributed during the Token Distribution Event (TDE) on January 9, 2023 to wallets that held XRP on December 12, 2020.
-* The remaining 85% or 24,246,183,166 `$FLR`, the [FlareDrop](./the-flaredrop.md), are being distributed over 36 monthly amounts directly to token holders who have wrapped their `$FLR` into `$WFLR`. There will be 35 monthly distributions of 2.37% of the total (743,190,636 `$FLR`) and a final distribution of the remaining 2.05% of the total (642,844,240 `$FLR`) in month 36.
+* The remaining 85% or 24,246,183,166 `$FLR`, the [FlareDrop](./the-flaredrop.md), are being distributed over 36 monthly amounts directly to token holders who have wrapped their `$FLR` into `$WFLR`. There will be 35 monthly distributions of 2.37% of the total distribution (676,040,637 `$FLR`) and a final distribution of the remaining 2.05% of the total distribution (584,760,871 `$FLR`) in month 36.
 
 ## Inflation Calculation
 
