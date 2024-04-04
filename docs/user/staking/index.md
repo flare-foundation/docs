@@ -3,16 +3,25 @@
 This section contains information about staking Flare assets on [validators](../../tech/validators.md) and receiving rewards earned from your stake.
 
 * [Using FlareStake to Stake](./staking-flarestake.md)
+* [Using the Flare Portal to Stake](./staking-portal.md)
 * [Using the Command Line to Stake](./staking-cli.md)
 
 ## Lists of Validators
 
-Use any of the following tools to obtain the latest list of validators and their stats:
+Use any of the following tools to obtain the latest list of validators and analyze their statistics:
 
 * [FlareMetrics](https://flaremetrics.io/validators)
 * [Flarescan](http://flarescan.com/validators)
 * [flare.builders](https://www.flare.builders/validators)
 * [SolidiFi](https://solidifi.app/validators)
+
+!!! info "Conditions for Choosing Profitable Validators"
+
+    As you analyze validator statistics, remember that you will earn staking rewards in the current validation reward period only when the following conditions are met:
+
+      * Your chosen validator is running an FTSO data provider
+      * Your chosen validator is running an FTSO data provider that has earned any [FTSO rewards](../../tech/ftso.md#rewards) during the four FTSO reward epochs inside the current validation reward period
+      * Your chosen validator is operational at least 80% of the time
 
 ## Limits
 

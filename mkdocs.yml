@@ -182,6 +182,7 @@ nav:
     - Staking on Validators:
       - user/staking/index.md
       - user/staking/staking-flarestake.md
+      - user/staking/staking-portal.md
       - user/staking/staking-cli.md
     - user/claiming-the-flaredrop.md
     - user/automatic-claiming.md

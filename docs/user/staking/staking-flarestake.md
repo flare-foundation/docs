@@ -8,6 +8,7 @@ title: Using FlareStake
 
 Staking works by locking funds for a period of time to support a specific [network validator](../../tech/validators.md).
 When validator owners stake to their own nodes they _self-bond_, whereas all other participants are said to _delegate_ their stake to that validator.
+Note that delegating your stake to a validator is different from [FTSO delegation](../../tech/ftso.md/#delegation).
 
 !!! note
 
@@ -95,12 +96,6 @@ See the [Using the CLI to Stake](./staking-cli.md) guide to learn about it.
 You can now continue to the [Staking Guide](#staking-guide) or the [Reward Claiming Guide](#reward-claiming-guide).
 
 ## Staking Guide
-
-To stake on a validator node, you need to:
-
-1. Bind your C-chain and P-chain addresses.
-2. Move your funds from the C-chain to the P-chain.
-3. Stake them on a validator.
 
 ### 1. Binding Your Addresses
 

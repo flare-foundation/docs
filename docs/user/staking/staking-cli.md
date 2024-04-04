@@ -29,6 +29,7 @@ If you already know how staking on validators works on the Flare network, skip t
 
 Staking works by locking funds for a period of time to support a specific [network validator](../../tech/validators.md).
 When validator owners stake to their own nodes they _self-bond_, whereas all other participants are said to _delegate_ their stake to that validator.
+Note that delegating your stake to a validator is different from [FTSO delegation](../../tech/ftso.md/#delegation).
 
 Participants choose how much to stake and for how long their stake will be locked.
 The minimum values are:
@@ -287,7 +288,13 @@ To stake on a validator node, you need to:
 
     * The **node ID** of the validator you want to stake to.
 
-        If you created the validator, its `nodeID` was shown to you during the [deployment process](../../infra/observation/deploying.md).
+        If you created the validator, retrieve its node ID by running:
+
+        ```
+        curl --location 'http://localhost:9650/ext/info' \
+        --header 'Content-Type: application/json' \
+        --data '{ "jsonrpc":"2.0", "id":1, "method":"info.getNodeID" }'
+        ```
 
         If you want to stake to somebody else's validator, you can:
 
