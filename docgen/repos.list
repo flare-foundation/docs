@@ -1,2 +1,3 @@
 git@gitlab.com:flarenetwork/flare-smart-contracts.git master https://gitlab.com/flarenetwork/flare-smart-contracts/-/tree/master hardhatSetup.config.ts yarn compile
 git@gitlab.com:flarenetwork/state-connector-protocol.git main https://github.com/flare-foundation/songbird-state-connector-protocol/tree/main hardhat.config.ts yarn hardhat compile
+git@gitlab.com:flarenetwork/flare-smart-contracts-v2.git main https://github.com/flare-foundation/flare-smart-contracts-v2/tree/main hardhat.config.ts yarn compile

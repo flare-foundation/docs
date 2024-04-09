@@ -17,6 +17,7 @@ governance/implementation/Governed.md
 utils/implementation/GovernedAndFlareDaemonized.md
 governance/implementation/GovernedAtGenesis.md
 governance/implementation/GovernedBase.md
+governance/implementation/GovernorVotePower.md
 inflation/implementation/Inflation.md
 staking/implementation/PChainStake.md
 staking/implementation/PChainStakeMirror.md
@@ -61,3 +62,4 @@ tokenPools/interface/IITokenPool.md
 utils/interface/IIVoterWhitelister.md
 token/interface/IIVPContract.md
 token/interface/IIVPToken.md
+governance/implementation/GovernorProposer.md

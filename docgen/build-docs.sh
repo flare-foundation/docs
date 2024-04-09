@@ -12,7 +12,7 @@ interfaces=""
 internal_interfaces=""
 commits=""
 
-while read -r repo_url repo_branch repo_source_path hardhat_config_file build_command
+while IFS=' ' read -r repo_url repo_branch repo_source_path hardhat_config_file build_command || [ -n "$build_command" ];
 do
     repo_name=$(basename $repo_url .git)
     echo -e "\n${YELLOW}Clonning $repo_name:${NORMAL}"
@@ -37,7 +37,7 @@ do
     commits=$(printf "${commits} ${repo_name} $(git rev-parse --short HEAD)")
 
     cd ..
-    while read -r contract_path
+    while IFS='' read -r contract_path || [ -n "$contract_path" ];
     do
         name=$(basename $contract_path)
         path="${repo_name}/docs/api/${contract_path}"
@@ -110,6 +110,8 @@ echo >> $docs/index.md
 echo "<style>td:first-child {white-space: nowrap;}</style>" >> $docs/index.md
 
 # Generate mkdocs.yml entries
+# Keep lines after OpenAPI REST
+sed -n '/OpenAPI REST API/,$p' ../mkdocs.yml > ../mkdocs-bottom.yml.tmp
 # Remove all lines below "Smart Contracts API"
 sed '/- Smart Contracts API:/,$d' ../mkdocs.yml > ../mkdocs.yml.tmp
 # Now list all files
@@ -118,7 +120,9 @@ echo "      - apis/smart-contracts/index.md" >> ../mkdocs.yml.tmp
 print_yml $contracts
 print_yml $interfaces
 print_yml $internal_interfaces
-mv ../mkdocs.yml.tmp ../mkdocs.yml
+cat ../mkdocs.yml.tmp ../mkdocs-bottom.yml.tmp > ../mkdocs.yml
+rm ../mkdocs.yml.tmp
+rm ../mkdocs-bottom.yml.tmp
 
 # Copy all pages to the docs repo
 attestation_types=$(ls ../docs/apis/attestation-types)
