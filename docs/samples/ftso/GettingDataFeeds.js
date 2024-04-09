@@ -1,8 +1,8 @@
 const FLARE_PACKAGE = "@flarenetwork/flare-periphery-contract-artifacts";
 const FLARE_RPC = "https://flare-api.flare.network/ext/bc/C/rpc";
 
-async function runGettingDataFeeds(_symbol) {
-    console.log(`Retrieving current price of ${_symbol}...`);
+async function runGettingDataFeeds(symbol) {
+    console.log(`Retrieving current price of ${symbol}...`);
 
     // 1. Import dependencies
     const ethers = await import("ethers");
@@ -26,11 +26,11 @@ async function runGettingDataFeeds(_symbol) {
         provider);
 
     // 4. Get latest price
-    const [_price, _timestamp, _decimals] =
-        await ftsoRegistry["getCurrentPriceWithDecimals(string)"](_symbol);
+    const [price, timestamp, decimals] =
+        await ftsoRegistry["getCurrentPriceWithDecimals(string)"](symbol);
 
-    console.log(`${Number(_price) / Math.pow(10, Number(_decimals))} USD`);
-    console.log(`Calculated at ${new Date(Number(_timestamp) * 1000)}`);
+    console.log(`${Number(price) / Math.pow(10, Number(decimals))} USD`);
+    console.log(`Calculated at ${new Date(Number(timestamp) * 1000)}`);
 }
 
 runGettingDataFeeds("BTC");
