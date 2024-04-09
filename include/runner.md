@@ -20,7 +20,7 @@
     3. Initialize project and install dependencies with:
         ```bash
         npm init
-        npm install ethers@6.3 @flarenetwork/flare-periphery-contract-artifacts
+        npm install ethers@6.3 @flarenetwork/flare-periphery-contract-artifacts@0.1.7
         ```
     4. Run the program with:
         ```bash
