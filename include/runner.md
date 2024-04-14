@@ -95,8 +95,9 @@ Get test currency from <a href="https://faucet.flare.network/">the faucet</a> an
         2. Initialize a new npm project and install dependencies:
             ```bash
             npm init
-            npm install hardhat @nomicfoundation/hardhat-toolbox @flarenetwork/flare-periphery-contracts
+            npm install hardhat@2.20.1 @nomicfoundation/hardhat-toolbox @flarenetwork/flare-periphery-contracts
             ```
+            If you intend to test as explained in the following steps, be aware that [an open issue with Hardhat](https://github.com/NomicFoundation/hardhat/issues/5115) prevents using versions higher than `2.20.1`.
         3. Create a new Hardhat project (More information in [the Hardhat setup guide](/dev/getting-started/setup/hardhat/)):
             ```bash
             npx hardhat init
