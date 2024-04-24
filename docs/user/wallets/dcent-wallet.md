@@ -53,3 +53,5 @@ You can wrap and delegate your `$SGB` using D'CENT's native FTSO Portal:
 10. To add a second provider (up to two), repeat steps 7 through 9.
 
 Alternatively, wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).
+
+--8<-- "./include/wallet-warning.md"

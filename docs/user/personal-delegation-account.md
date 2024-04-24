@@ -21,6 +21,11 @@ You can enable and disable your PDA at any time in the [Flare Portal](https://po
     ![Main Account Opens](pda-main-account-opens.png){ loading=lazy .allow-zoom }
     <figcaption>Main Account opens.</figcaption>
     </figure>
+
+--8<--
+    ./include/wallet-warning.md
+--8<--
+
 3. To switch from the **Main Account** to your PDA, click **Delegation Account**.
 4. Click **Enable**.
     <figure markdown>

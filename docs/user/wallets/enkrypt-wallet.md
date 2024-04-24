@@ -79,3 +79,5 @@ After you set up your wallet, connect to Flare's networks, which will add each n
 When you delegate your vote power to FTSO data providers, you not only support the Flare ecosystem but also earn monetary rewards.
 
 Wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).
+
+--8<-- "./include/wallet-warning.md"

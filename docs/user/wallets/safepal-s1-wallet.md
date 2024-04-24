@@ -67,3 +67,5 @@ Other data providers host similar websites or dapps for wrapping and delegation.
 See the full list of signal providers on Songbird at [https://flaremetrics.io/](https://flaremetrics.io).
 
 Alternatively, wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).
+
+--8<-- "./include/wallet-warning.md"

@@ -174,7 +174,7 @@ Oracle { #oracle }
 : A mechanism to provide external information to a blockchain, so that it can be used by [smart contracts](#smart_contract), for example. Flare oracles include the [FTSO](#ftso) and the [State Connector](#state-connector).
 
 Price pair { #price_pair }
-: A token and its monetary unit, such as BTC USD. Price pairs are one of the types of data that Flare's FTSO can provide. Price pairs are one of the types of data that the [FTSO](#ftso) can provide.
+: A token and its monetary unit, such as BTC USD. Price pairs are one of the types of data that Flare's [FTSO](#ftso) can provide.
 
 Proof of Stake { #proof_of_stake }
 : A kind of [Sybil resistance](#sybil_resistance) based on staking assets to participate in consensus. The rationale is that a participant investing enough assets will not be interested in attacking the network that supports such assets. Moreover, if malicious behavior is detected part of the assets can be taken as punishment.

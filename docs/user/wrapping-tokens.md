@@ -23,6 +23,11 @@ When you need to convert your wrapped tokens into native tokens again, unwrap th
 
 2. Click **Connect to Wallet** and log into your wallet.
     The interface to your **Main Account** opens.
+
+--8<--
+    ./include/wallet-warning.md
+--8<--
+
 3. Ensure you are connected to the network you want.
     In the following image, the wallet is connected to the Flare network.
 

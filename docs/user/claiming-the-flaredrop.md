@@ -35,6 +35,11 @@ From there, you can see how many `$FLR` tokens you have to claim and you can cla
 
 1. Go to the [Flare Portal](https://portal.flare.network/).
 2. Click **Connect to Wallet** and log into your wallet.
+
+--8<--
+    ./include/wallet-warning.md
+--8<--
+
 3. Your **Main Account** is open by default.
    If you enabled a [PDA](../tech/personal-delegation-account.md) and want to claim for it instead, click **Delegation Account**.
 4. Under **Claim your FlareDrop distribution**, any `$FLR` you have to claim displays on the button.
@@ -50,7 +55,8 @@ From there, you can see how many `$FLR` tokens you have to claim and you can cla
     </figure>
     As a convenience, you have the choice to wrap your tokens after claiming them.
     In this way they are ready for the next FlareDrop or to be [delegated to the FTSO system](../tech/ftso.md#delegation), for example.
-6. Click on the **Claim All Distribution** button and confirm the transaction on your wallet.
+6. Click on the **Claim All Distribution** button.
+7. Confirm the transaction on your wallet.
 
 ## Nominating Executors
 

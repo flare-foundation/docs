@@ -22,6 +22,11 @@ Before you delegate your vote power, you must:
     </figure>
 
 2. Click **Connect to Wallet** and log into your wallet. The interface to your **Main Account** opens.
+
+--8<--
+    ./include/wallet-warning.md
+--8<--
+
 3. Ensure you are connected to the network you want. In the following image, the wallet is connected to the Flare network.
 
     <figure markdown>
@@ -30,6 +35,7 @@ Before you delegate your vote power, you must:
     </figure>
 
 4. On the **Main Account** tab, locate the **FTSO provider delegations** field, and click **Delegate**. The **Delegate FTSO providers** window is displayed.
+
 5. Click the **Main provider** dropdown menu, click the data provider you want, and drag the slider to select the percentage of your vote power you want to delegate to the data provider.
 
        <figure markdown>

@@ -54,7 +54,7 @@ See the [Using the CLI to Stake](./staking-cli.md) guide to learn about it.
 2. Click **Access Wallet**.
 3. Click **Ledger**.
 
-    Make sure your Ledger device is plugged in, it is unlocked with your PIN, and the Avalanche app is running
+    Make sure your Ledger device is plugged in, it is unlocked with your PIN, and the Avalanche app is running.
 
     ??? info "Installing the Avalanche application"
 
@@ -78,7 +78,7 @@ See the [Using the CLI to Stake](./staking-cli.md) guide to learn about it.
 
     ??? info "Derivation Paths"
         A single hardware wallet can generate an unlimited number of addresses by using a _derivation path_.
-        By using the same derivation path, multiple wallets like MetaMask of Bifrost can retrieve the same addresses from a hardware wallet.
+        By using the same derivation path, multiple wallets like MetaMask or Bifrost can retrieve the same addresses from a hardware wallet.
 
         You need to tell FlareStake the derivation path that was used to obtain the address containing the funds you want to stake.
         Fortunately, there are only two common paths:

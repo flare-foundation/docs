@@ -84,4 +84,6 @@ To confirm or reject a transaction, follow the on-screen instructions on your Le
 !!! warning
     Always review all transaction details on your Ledger device before confirming any transaction!
 
+--8<-- "./include/wallet-warning.md"
+
 To learn how to use Ledger, including signing transactions, go to [Ledger.com](https://www.ledger.com/).

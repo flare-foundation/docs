@@ -64,6 +64,8 @@ Follow the on screen instructions to confirm or reject the transaction on your T
 !!! warning
     Always review all transaction details on your Trezor device before confirming any transaction!
 
+--8<-- "./include/wallet-warning.md"
+
 ## Wrap and Delegate
 
 Once connected to a Flare network, enter the address of the website or dapp you wish to use to wrap and delegate in the MetaMask browser.

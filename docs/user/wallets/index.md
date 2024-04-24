@@ -30,3 +30,13 @@ If your wallet is not in the list, you might be able to configure it to connect 
     | **Asset Ticker**        | `SGB`                                             |
     | **RPC endpoint**        | `https://songbird-api.flare.network/ext/bc/C/rpc` |
     | **Block Explorer**      | <https://songbird-explorer.flare.network>         |
+
+!!! warning "Caution"
+    When you connect your wallet to a dapp such as the [Flare Portal](https://portal.flare.network/), always double-check that the address shown in the dapp is the one you intend.
+
+    For some wallets, you must explicitly grant dapps access to each account on your wallet.
+    This is typically done through a "Connect to Wallet" button.
+
+    If you did not grant this access, the account you select on your wallet might not even be visible to the dapp.
+    Therefore, always double-check that the address shown in the dapp is the one you intend to use.
+    { #unconnected_account }

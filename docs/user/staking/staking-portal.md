@@ -95,7 +95,7 @@ Make sure you leave enough funds on the C-chain after the transfer, or it will f
 2. In the **Amount to deposit** field, specify the amount of `$FLR` from your main account that you want to deposit into your staking account, and click **Deposit**.
     The **Deposit funds** window is displayed to begin the **export** transaction.
 
-    As a security measure, you should verify all transactions when using blind signing.
+    As an additional security measure, verify all transactions when using blind signing as follows:
     { #transaction-verification }
 
     !!! note "Transaction Verification"

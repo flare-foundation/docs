@@ -61,6 +61,8 @@ After you set up your wallet, add the native tokens `$FLR` and `$SGB` and the wr
 !!! warning
     Always review all transaction details in MetaMask before confirming any transaction!
 
+--8<-- "./include/wallet-warning.md"
+
 ## Wrap and Delegate
 
 When you delegate your vote power to FTSO data providers, you not only support the Flare ecosystem but also earn monetary rewards.

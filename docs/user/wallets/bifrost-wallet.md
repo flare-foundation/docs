@@ -26,3 +26,5 @@ When you delegate your vote power to FTSO data providers, you not only support t
 To wrap and delegate your `$FLR` or `$SGB` tokens using Bifrost Wallet, see Bifrost's [guide for wrapping and delegating $FLR](https://support.bifrostwallet.com/en/articles/6545558-wrap-and-delegate-flare) and [guide for wrapping and delegating $SGB](https://support.bifrostwallet.com/en/articles/5588951-wrap-and-delegate-songbird).
 
 Alternatively, wrap and delegate your `$FLR` or `$SGB` tokens using the [Flare Portal](https://portal.flare.network/). First, [wrap your tokens](../wrapping-tokens.md), and then [delegate them](../delegation/managing-delegations.md#delegating-your-vote-power).
+
+--8<-- "./include/wallet-warning.md"
