@@ -123,3 +123,23 @@ mkdocs serve
 If any changes are made to the documentation (i.e., if any smart contract comments have been updated), the script stages these changes and creates a new commit in your local Git repository.
 
 After the commit is created, you can review the changes. If everything looks good, you can manually push the commit to the remote repository.
+
+# Automatically Generate REST API Docs from Source Code Comments
+
+Generate REST API documentation automatically from source code comments in JSON format.
+
+## Install jq
+
+Install jq to run the script. It is a lightweight and flexible command-line JSON processor.
+
+```bash
+sudo apt install jq
+```
+
+## Usage
+
+To generate the REST API documentation, run the `build-openapi-spec.sh` script followed by a type argument. Available types are: `btc`, `doge`, `xrp`, `proof`, `evm`.
+
+```bash
+sh build-openapi-spec.sh <type>
+```
