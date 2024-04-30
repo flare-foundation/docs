@@ -183,7 +183,7 @@ For something more permanent and usable for the future, follow the Docker Compos
       -v /opt/flare/logs:/app/logs \
       -p 0.0.0.0:9650:9650 \
       -p 0.0.0.0:9651:9651 \
-      flarefoundation/go-flare:v1.7.1806
+      flarefoundation/go-flare:v1.7.1807
     ```
 
     Confirm your container is running and inspect that logs are printing:
@@ -278,7 +278,7 @@ For something more permanent and usable for the future, follow the Docker Compos
       -v /opt/flare/logs:/app/logs \
       -p 0.0.0.0:9650:9650 \
       -p 0.0.0.0:9651:9651 \
-      flarefoundation/go-flare:v1.7.1806
+      flarefoundation/go-flare:v1.7.1807
     ```
 
     Confirm your container is running and inspect that logs are printing:
@@ -374,13 +374,13 @@ Create the working directory, set the ownership and create the `docker-compose.y
     services:
       observer:
         container_name: flare-observer
-        image: flarefoundation/go-flare:v1.7.1806
+        image: flarefoundation/go-flare:v1.7.1807
         restart: on-failure
         environment:
-          - AUTOCONFIGURE_BOOTSTRAP="1"
-          - NETWORK_ID="flare"
-          - AUTOCONFIGURE_PUBLIC_IP="1"
-          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT="https://flare.flare.network/ext/info"
+          - AUTOCONFIGURE_BOOTSTRAP=1
+          - NETWORK_ID=flare
+          - AUTOCONFIGURE_PUBLIC_IP=1
+          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT=https://flare.flare.network/ext/info
         volumes:
           - /mnt/db:/app/db
           - /opt/flare/conf:/app/conf/C
@@ -405,10 +405,10 @@ Create the working directory, set the ownership and create the `docker-compose.y
         image: flarefoundation/go-songbird:v0.6.4
         restart: on-failure
         environment:
-          - AUTOCONFIGURE_BOOTSTRAP="1"
-          - NETWORK_ID="songbird"
-          - AUTOCONFIGURE_PUBLIC_IP="1"
-          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT="https://songbird.flare.network/ext/info"
+          - AUTOCONFIGURE_BOOTSTRAP=1
+          - NETWORK_ID=songbird
+          - AUTOCONFIGURE_PUBLIC_IP=1
+          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT=https://songbird.flare.network/ext/info
         volumes:
           - /mnt/db:/app/db
           - /opt/flare/conf:/app/conf/C
@@ -433,10 +433,10 @@ Create the working directory, set the ownership and create the `docker-compose.y
         image: flarefoundation/go-songbird:v0.6.4
         restart: on-failure
         environment:
-          - AUTOCONFIGURE_BOOTSTRAP="1"
-          - NETWORK_ID="coston"
-          - AUTOCONFIGURE_PUBLIC_IP="1"
-          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT="https://coston.flare.network/ext/info"
+          - AUTOCONFIGURE_BOOTSTRAP=1
+          - NETWORK_ID=coston
+          - AUTOCONFIGURE_PUBLIC_IP=1
+          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT=https://coston.flare.network/ext/info
         volumes:
           - /mnt/db:/app/db
           - /opt/flare/conf:/app/conf/C
@@ -458,13 +458,13 @@ Create the working directory, set the ownership and create the `docker-compose.y
     services:
       observer:
         container_name: coston2-observer
-        image: flarefoundation/go-flare:v1.7.1806
+        image: flarefoundation/go-flare:v1.7.1807
         restart: on-failure
         environment:
-          - AUTOCONFIGURE_BOOTSTRAP="1"
-          - NETWORK_ID="costwo"
-          - AUTOCONFIGURE_PUBLIC_IP="1"
-          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT="https://coston2.flare.network/ext/info"
+          - AUTOCONFIGURE_BOOTSTRAP=1
+          - NETWORK_ID=costwo
+          - AUTOCONFIGURE_PUBLIC_IP=1
+          - AUTOCONFIGURE_BOOTSTRAP_ENDPOINT=https://coston2.flare.network/ext/info
         volumes:
           - /mnt/db:/app/db
           - /opt/flare/conf:/app/conf/C
