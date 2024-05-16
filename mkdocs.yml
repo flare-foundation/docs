@@ -230,6 +230,7 @@ nav:
     - State Connector:
       - dev/tutorials/sc/index.md
       - dev/tutorials/sc/address-validity.md
+      - dev/tutorials/sc/evm-transaction.md
     - dev/reference/automatic-claiming.md
     - dev/reference/personal-delegation-account.md
     - dev/reference/explorers-and-indexers.md
