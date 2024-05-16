@@ -13,3 +13,7 @@ Curated list of resources you can use to extend your knowledge of the Flare netw
 * [Tim Rowley's Explainer Videos on YouTube](https://www.youtube.com/@timothyrowley/videos)
 * [FTSO (Flare Time Series Oracle) | Learn how to Query Prices on Flare](https://youtu.be/tSODrEVA3BI)
 * [Introduction to Etherspot's TransactionKit on Flare](https://www.youtube.com/watch?v=80Ycm-nYBwg)
+
+## Sample Source Code
+
+* [Flare's Examples Repository](https://github.com/flare-foundation/flare-demo-examples)
