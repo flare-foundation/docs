@@ -209,6 +209,7 @@ export function linkify(this: DocItemWithContext, text?: string, joinLines?: boo
         // brackets).
         // It's not foolproof, results still need to be reviewed.
         const suffix = node.nodeType == 'FunctionDefinition' ? "_" + node.functionSelector : "";
+        // nosemgrep: detect-non-literal-regexp
         ret = ret.replace(new RegExp(`\`?\\b${node.name}\\b(\\(\\))*\`?(?![^\\[]*])(?<!]\\([^)]*)`, 'g'),
           `[\`${node.name}\`](#${anchorName(node.nodeType, node.name, suffix)})`);
       });
@@ -216,6 +217,7 @@ export function linkify(this: DocItemWithContext, text?: string, joinLines?: boo
   }
   // Look for references to other contract names. Same regex as before, same comments.
   globalContractTable.forEach(s => {
+    // nosemgrep: detect-non-literal-regexp
     ret = ret.replace(new RegExp(`\`?\\b${s}\\b(\\(\\))*\`?(?![^\\[]*])(?<!]\\([^)]*)`, 'g'),
       `[\`${s}\`](./${s}.md)`);
   });
