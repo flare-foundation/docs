@@ -9,6 +9,7 @@ Select one of the topics below:
 * [Claiming the FlareDrop](./claiming-the-flaredrop.md)
 * [FTSO Delegation](./delegation/index.md)
 * [Governance](./governance/index.md)
+* [Minting and Redeeming FAssets](./fassets/minting-redeeming.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
 * [Staking on Validators](./staking/index.md)
 * [Wallets](./wallets/index.md)

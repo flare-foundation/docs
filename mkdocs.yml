@@ -174,6 +174,9 @@ nav:
       - user/wallets/safepal-s1-wallet.md
       - user/wallets/how-to-access-flare-network-with-a-trezor-device.md
     - user/wrapping-tokens.md
+    - FAssets:
+      - user/fassets/index.md
+      - user/fassets/minting-redeeming.md
     - FTSO Delegation:
       - user/delegation/index.md
       - Managing Delegations: user/delegation/managing-delegations.md
@@ -341,6 +344,7 @@ nav:
     - tech/state-connector.md
     - FAssets:
       - tech/fassets/index.md
+      - tech/fassets/open-beta.md
       - tech/fassets/collateral.md
       - tech/fassets/minting.md
       - tech/fassets/redemption.md
@@ -373,6 +377,9 @@ nav:
         - infra/data/managing-ecosystem/index.md
         - infra/data/managing-ecosystem/exploring-collusion.md
         - infra/data/managing-ecosystem/monitoring-price-history.md
+    - FAssets Agents:
+      - infra/fassets/index.md
+      - infra/fassets/agent.md
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md
