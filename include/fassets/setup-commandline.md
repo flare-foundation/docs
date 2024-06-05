@@ -9,6 +9,10 @@ You will need knowledge of the following tools:
 * Command line terminal;
 * Code editor.
 
+!!! warning
+
+    If you are using Windows, it is strongly recommended to use [Windows Subsystem for Linux, version 2](https://docs.microsoft.com/en-us/windows/wsl/about) (WSL 2).
+
 ## Setting up the FAssets tools
 
 ### Clone and Setup the Tools Repository
