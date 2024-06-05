@@ -60,7 +60,7 @@ The FAsset agents operate with multiple keys for the Flare and underlying networ
 
 Configuring the native address links your agent's work address to the management address and grants access.
 
-1. Navigate with the Coston block explorer to `AgentOwnerRegistry` smart contract on address [0x746cBEAa5F4CAB057f70e10c2001b3137Ac223B7](https://coston-explorer.flare.network/address/0x746cBEAa5F4CAB057f70e10c2001b3137Ac223B7/write-contract#address-tabs) and open the Write Contract tab.
+1. Navigate with the Coston block explorer to `AgentOwnerRegistry` smart contract on address [0xDb6c11b8D074D4488f5fFd0129AA5F91C4f00fb6](https://coston-explorer.flare.network/address/0xDb6c11b8D074D4488f5fFd0129AA5F91C4f00fb6/write-contract#address-tabs) and open the Write Contract tab.
 
 2. Connect the cold wallet you used to generate the access keys.
 
