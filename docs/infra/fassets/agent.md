@@ -16,6 +16,30 @@ This guide provides the following information:
 
     --8<-- "./include/fassets/issue-collector.html"
 
+## Contract Addresses
+
+These are important FAssets smart contract addresses representing test tokens and notable system components, provided for your convenience during the Open Beta on the Coston test network. Please note that these addresses are exclusive to the Coston test network and unavailable on other Flare networks.
+
+### Test Tokens
+
+These are ERC-20 representations of test tokens to be used by the FAssets system:
+
+* `testUSDC`: [0xeBf4179831E9f20099e2da516E209FB0Dd68E2d2](https://coston-explorer.flare.network/address/0xeBf4179831E9f20099e2da516E209FB0Dd68E2d2)
+
+* `testUSDT`: [0x48373950d5adF84cC86517B809cDd917f052fca1](https://coston-explorer.flare.network/address/0x48373950d5adF84cC86517B809cDd917f052fca1)
+
+* `testETH`: [0xCc255bC593100C1FC19E9c5389D2ecE2E9C72ff0](https://coston-explorer.flare.network/address/0xCc255bC593100C1FC19E9c5389D2ecE2E9C72ff0)
+
+### FAssets System Contracts
+
+* `AgentOwnerRegistry`: [0xDb6c11b8D074D4488f5fFd0129AA5F91C4f00fb6](https://coston-explorer.flare.network/address/0xDb6c11b8D074D4488f5fFd0129AA5F91C4f00fb6)
+
+    Allows whitelisting agents, and setting, and retrieving information like their work and management address, name, description and icon.
+
+* `FTestXRP`: [0x5905Df703221d4Ea311E85edEa860734b2072C7d](https://coston-explorer.flare.network/address/0x5905Df703221d4Ea311E85edEa860734b2072C7d)
+
+    The FAsset-wrapped TestXRP token, ready to be used on Coston.
+
 --8<-- "./include/fassets/setup-commandline.md"
 
 ### Configure the Access Keys
