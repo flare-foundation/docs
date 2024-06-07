@@ -24,7 +24,7 @@ You will need knowledge of the following tools:
 1. Clone the repository and enter the working directory:
 
     ```console
-    git clone git@github.com:flare-labs-ltd/fasset-bots.git
+    git clone https://github.com/flare-labs-ltd/fasset-bots.git
     cd fasset-bots
     ```
 
