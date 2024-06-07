@@ -56,9 +56,9 @@ The FAsset agents operate with multiple keys for the Flare and underlying networ
 
     --8<-- "./include/fassets/generate-keys-info.md"
 
-3. The `secrets.json` file contains the `owner.native.address` field, representing the Flare account responsible for funding agent vaults and covering gas fees for smart contract calls. Please ensure this wallet has enough CFLR tokens to cover gas fees for smart contract calls. You can obtain CFLR tokens from the [Flare faucet](https://faucet.flare.network/).
+3. Follow [the whitelisting process](#whitelist-the-management-address) to grant your agent's management address access to the FAssets system. While waiting for approval, you can proceed to the next steps.
 
-4. Whitelist the Flare account belonging to your agent owner (use `owner.management.address` from the `secrets.json` file) via the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot).
+4. The `secrets.json` file contains the `owner.native.address` field, representing the Flare account responsible for funding agent vaults and covering gas fees for smart contract calls. Please ensure this wallet has enough CFLR tokens to cover gas fees for smart contract calls. You can obtain CFLR tokens from the [Flare faucet](https://faucet.flare.network/).
 
 5. Prevent other users from reading the `secrets.json` file:
 
@@ -77,6 +77,26 @@ The FAsset agents operate with multiple keys for the Flare and underlying networ
     !!! info
 
         These values apply only to the [Coston Testnet](../../dev/reference/network-config.md) and will be different for other networks.
+
+### Whitelist the Management Address
+
+To access the FAssets system during the open beta, you must be whitelisted for security reasons.
+This ensures only authorized participants interact with the system, maintaining a secure and controlled environment for testing and platform improvement.
+The whitelisting process will be removed after the opening beta.
+
+1. Find your agent owner address, which is the value from the `secrets.json` file in the `owner.management.address` field.
+2. Use the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot), specifically designed for registration, and provide the necessary information, including your agent name and description and, optionally, a link to your icon.
+3. Enter the information and confirm, and the Telegram bot will inform you about the successful process.
+4. You need to wait for Flare support engineers to approve registrations and issue test assets, such as Coston Flare (CFLR), testUSDC, testUSDT, and testETH. While you wait, you can continue with the rest of this guide.
+5. If the information you entered is correct, the Telegram Bot will notify you that you have been whitelisted for the FAssets Open Beta.
+
+#### Check Whitelist Status
+
+Checking if your agent's management address has been whitelisted is a straightforward process. Follow these steps:
+
+1. Navigate with the Coston block explorer to `AgentOwnerRegistry` smart contract on address [0xDb6c11b8D074D4488f5fFd0129AA5F91C4f00fb6](https://coston-explorer.flare.network/address/0xDb6c11b8D074D4488f5fFd0129AA5F91C4f00fb6/read-contract#address-tabs) and open the Read Contract tab.
+2. Connect your wallet with any address to the block explorer so you can gain access to read functions from the smart contract.
+3. Execute the `isWhitelisted` function with the value of `owner.management.address` from the `secrets.json` file. This function returns `bool`: `true` for whitelisted or `false` for not whitelisted.
 
 ## Setting Up the Agent
 
