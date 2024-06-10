@@ -87,7 +87,8 @@ The whitelisting process will be removed after the opening beta.
 1. Find your agent owner address, which is the value from the `secrets.json` file in the `owner.management.address` field.
 2. Use the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot), specifically designed for registration, and provide the necessary information, including your agent name and description and, optionally, a link to your icon.
 3. Enter the information and confirm, and the Telegram bot will inform you about the successful process.
-4. You need to wait for Flare support engineers to approve registrations and issue test assets, such as Coston Flare (CFLR), testUSDC, testUSDT, and testETH. While you wait, you can continue with the rest of this guide.
+4. You need to wait for Flare support engineers to approve registrations and issue test assets such as Coston Flare (CFLR), testUSDC, testUSDT, and testETH assets, which will be sent to your `owner.management.address`.
+While you wait, you can continue with the rest of this guide.
 5. If the information you entered is correct, the Telegram Bot will notify you that you have been whitelisted for the FAssets Open Beta.
 
 #### Check Whitelist Status
@@ -143,6 +144,7 @@ This command will print out your agent's address.
 
 To make your newly created agent public, it must hold enough [collateral](../../tech/fassets/collateral.md) to mint one lot.
 This means its agent vault contract needs to be funded with the two collaterals (CFLR and a stablecoin or wrapped ETH) held by your `owner.native.address`.
+Flare support sends test assets to your `owner.management.address`, so remember to move these funds to the `owner.native.address`.
 
 You have two options: either deposit the vault collateral and buy pool collateral separately or use the system function to calculate the needed collateral for you.
 
