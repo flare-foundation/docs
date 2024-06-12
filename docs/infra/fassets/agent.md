@@ -24,11 +24,11 @@ These are important FAssets smart contract addresses representing test tokens an
 
 These are ERC-20 representations of test tokens to be used by the FAssets system:
 
-* `testUSDC`: [0xeBf4179831E9f20099e2da516E209FB0Dd68E2d2](https://coston-explorer.flare.network/address/0xeBf4179831E9f20099e2da516E209FB0Dd68E2d2)
+* `testUSDC`: [0xd20D9284E8b43C60365BcA90662C67B5A0B91dd6](https://coston-explorer.flare.network/address/0xd20D9284E8b43C60365BcA90662C67B5A0B91dd6)
 
-* `testUSDT`: [0x48373950d5adF84cC86517B809cDd917f052fca1](https://coston-explorer.flare.network/address/0x48373950d5adF84cC86517B809cDd917f052fca1)
+* `testUSDT`: [0x18bd7bE80F76055aeB4F1575A99d0c4d7893B8b5](https://coston-explorer.flare.network/address/0x18bd7bE80F76055aeB4F1575A99d0c4d7893B8b5)
 
-* `testETH`: [0xCc255bC593100C1FC19E9c5389D2ecE2E9C72ff0](https://coston-explorer.flare.network/address/0xCc255bC593100C1FC19E9c5389D2ecE2E9C72ff0)
+* `testETH`: [0x17c3E6318cb45B4267998940d7D65BA95A32954F](https://coston-explorer.flare.network/address/0x17c3E6318cb45B4267998940d7D65BA95A32954F)
 
 ### FAssets System Contracts
 
