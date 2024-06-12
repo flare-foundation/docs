@@ -1,1 +1,2 @@
-*.md linguist-detectable
+# So GitHub and GitLab correctly show Markdown as a language
+*.md linguist-detectable linguist-vendored=false
