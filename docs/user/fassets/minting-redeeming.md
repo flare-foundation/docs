@@ -5,8 +5,8 @@ Users of the [FAssets](../../tech//fassets/index.md) system can mint and redeem 
 This guide provides the following information:
 
 * How to set up the FAssets command-line tool.
-* How to convert testnet XRP to FAssets (FXRP) on the Flare test network (minting).
-* How to convert FAssets (FXRP) from Flare test network back to testnet XRP Ledger network (redemption).
+* How to convert testnet XRP to FAssets (FTestXRP) on the Flare test network (minting).
+* How to convert FAssets (FTestXRP) from Flare test network back to testnet XRP Ledger network (redemption).
 
 !!! info "Open Beta"
 
