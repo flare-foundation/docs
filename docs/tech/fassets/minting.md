@@ -80,6 +80,7 @@ The following fees are paid to mint FAssets:
         The agent can use this balance freely.
     * **Pool's share**: This share is minted as FAssets and sent to the [collateral pool](./collateral.md#pool-collateral).
         The percentage of this share is defined by the agent and can be changed by the agent after a delay that provides time for minters to notice the change.
+        { #pool-share }
 
     The [Collateral page](./collateral.md#fasset-minting-fees-and-debt) contains more information about this fee.
 

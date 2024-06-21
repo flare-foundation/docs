@@ -56,7 +56,7 @@ This is the summary of the redemption process:
 Agents have a limited time to pay the redeemer on the underlying chain.
 The amount of time is defined by the last block and the last timestamp on the underlying chain.
 If the payment is not made in time, the redeemer has to prove nonpayment to be compensated.
-After the redeemer presents the nonpayment proof, he is paid with the agent's collateral plus a premium.
+After the redeemer presents the nonpayment proof, he is paid with the agent's collateral plus a _redemption default premium_.
 The premium is intended to encourage the agent to complete redemptions by paying with the underlying asset instead of collateral.
 
 If a payment fails and the failed transaction is recorded on the underlying chain, the agent must submit a proof of failed payment.

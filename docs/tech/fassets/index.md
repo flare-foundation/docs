@@ -67,6 +67,7 @@ After the agent is verified, its management address is added to a list of allowe
 The **backing factor** is a system-wide setting that specifies how much of the kept assets must be locked, i.e., not freely used by agents.
 This factor is currently 100%, meaning that agents should not transfer out of their account any underlying that is backing FAssets, unless they receive a [redemption request](./redemption.md).
 Decreasing the underlying below the backing factor is an [illegal action](./liquidation.md#illegal-payments) and is reported by [challengers](#challengers).
+{ #backing-factor }
 
 ### Users
 
@@ -121,3 +122,4 @@ Select one of the following topics to continue learning about FAssets:
 * [The minting process](./minting.md)
 * [The redemption process](./redemption.md)
 * [Liquidation](./liquidation.md)
+* [Operational Parameters](./parameters.md)

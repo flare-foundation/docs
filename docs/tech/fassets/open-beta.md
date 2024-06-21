@@ -1,7 +1,15 @@
+---
+title: Open Beta
+search:
+  boost: 2
+---
+
 # FAssets Open Beta
 
 The FAssets system is currently in the open-beta period on the [Coston](../flare.md#flare-networks) test network.
 To ensure a seamless experience for open-beta participants, the FAssets codebase was updated based on the results of the closed-beta.
+
+Currently, the Open Beta period only supports minting of test `$XRP` assets, which produces `$FtestXRP` FAssets.
 
 ## FAssets Open Beta Objectives
 

@@ -331,11 +331,13 @@ The following thresholds are set by the FAssets system's governance and are the 
 
 * **Minimal CR**: The lowest collateral ratio the agent vault and the collateral pool must maintain so that enough collateral exists to insure the minted FAssets and to compensate for redemption payments that fail.
     The minimal CR can be different for each type of collateral.
+    { #minimal-cr }
 
     If an agent's CR remains below the minimal CR for longer than a governance-set amount of time, [liquidations](./liquidation.md) can start.
 
 * **Collateral call band CR (CCB CR)**: An agent's position is unhealthy when the agent's vault CR or pool CR fall below their minimal CR.
     However, as long as the CR remains above CCB CR, the CR can briefly fall below the minimal CR.
+    { #collateral-call-band-cr }
 
     During this time, the agent can either deposit more collateral or self-close some backed FAssets to improve the position.
 
@@ -354,6 +356,7 @@ The following thresholds are set by the FAssets system's governance and are the 
 * **Safety CR**: If one or both of the collateral types fall below CCB CR or below the minimum CR for a longer period of time, liquidation occurs.
     When the offending collateral reaches a healthy CR again, the liquidation stops.
     To prevent the agent from immediately reverting into liquidation after a small price change, the CR must reach the safety CR before it can start operating normally again and liquidation stops.
+    { #safety-cr }
 
     Each of the collateral types, the agent's vault and the collateral pool, has its own unique safety CR.
 
@@ -363,13 +366,16 @@ The following thresholds are set by each agent according to their own preference
 
 * **Minting CR**: For each mint done by an agent, the maximum amount allowed to be minted is calculated so that the CR for the agent's vault and the CR for the agent's collateral pool after the mint remain higher than the minting CR for each collateral type.
     To reduce the threat of liquidation, agents should set the minting CR well above the minimal CR to accommodate price fluctuations that might occur before the CR falls below the minimal CR after the mint and minting is no longer possible.
+    { #minting-cr }
 
 * **Exit CR**: After a user redeems CPTs, the pool CR must be more than the exit CR.
     If the pool CR is already below the exit CR, redemption cannot occur.
     The exit CR is for the collateral pool only.
+    { #exit-cr }
 
 * **Top-up CR**: To incentivize healthy collateral pools, if the pool CR falls below the top-up CR, anyone can add collateral to the pool and receive [CPTs](#pool-collateral) at a reduced price.
     [This top-up mechanism](#top-up) decreases the likelihood of liquidations because of a low amount of pool collateral.
+    { #top-up-cr }
 
 ## Redemption of CPTs
 
