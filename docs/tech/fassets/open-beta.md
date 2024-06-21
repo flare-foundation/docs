@@ -30,7 +30,7 @@ Although other advanced users can join, they can interact with the FAssets syste
 
 !!! info "Open Beta"
 
-    To participate, please begin by joining the [Telegram channel](https://t.me/FlareSupport).
+    To participate, please begin by joining the [Telegram channel](https://t.me/FlareSupport) or contact [support@flarelabs.org](mailto:support@flarelabs.org).
     Thank you for supporting the development of FAssets.
 
     --8<-- "./include/fassets/issue-collector.html"

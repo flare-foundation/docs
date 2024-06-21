@@ -16,6 +16,8 @@ This guide provides the following information:
 
     --8<-- "./include/fassets/issue-collector.html"
 
+    Alternatively, you can contact [support@flarelabs.org](mailto:support@flarelabs.org).
+
 ## Contract Addresses
 
 These are important FAssets smart contract addresses representing test tokens and notable system components, provided for your convenience during the Open Beta on the Coston test network. Please note that these addresses are exclusive to the Coston test network and unavailable on other Flare networks.

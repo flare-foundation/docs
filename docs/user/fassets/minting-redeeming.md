@@ -15,6 +15,8 @@ This guide provides the following information:
 
     --8<-- "./include/fassets/issue-collector.html"
 
+    Alternatively, you can contact [support@flarelabs.org](mailto:support@flarelabs.org).
+
 --8<-- "./include/fassets/setup-commandline.md"
 
 ### Configure User's Access Keys
