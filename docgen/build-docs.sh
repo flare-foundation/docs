@@ -23,10 +23,10 @@ do
 
     echo -e "\n${YELLOW}Adding docgen to $repo_name:${NORMAL}"
     yarn add solidity-docgen
-    sed -i -E "1s/^/import 'solidity-docgen';\n/" $hardhat_config_file
-    sed -i -E "/HardhatUserConfig = / r ../hardhat.config.ts.patch" $hardhat_config_file
+    sed -i='' -E "1s/^/import 'solidity-docgen';\n/" $hardhat_config_file
+    sed -i='' -E "/HardhatUserConfig = / r ../hardhat.config.ts.patch" $hardhat_config_file
     cp -r ../template .
-    sed -i "s#^const flareRepoURL =.*#const flareRepoURL = '${repo_source_path}'#g" template/helpers.ts
+    sed -i='' "s#^const flareRepoURL =.*#const flareRepoURL = '${repo_source_path}';#g" template/helpers.ts
 
     echo -e "\n${YELLOW}Compiling $repo_name:${NORMAL}"
     eval ${build_command}
@@ -133,11 +133,11 @@ do
     # and replace them with the correct link.
     cat $f | sed -E "s%(\[[^]]*\]\()\./(($attestation_types)\))%\1../attestation-types/\2%g" > $docs/$(basename $f)
     # And insert a search de-boost, since these pages should not typically be the first result returned by search.
-    sed -i '2 a \
+    sed -i='' '2 a \
 search:\
   boost: 0.5' $docs/$(basename $f)
 done
-sed -i -E "s%(\[[^]]*\]\()\./(($attestation_types)\))%\1../attestation-types/\2%g" $docs/index.md
+sed -i='' -E "s%(\[[^]]*\]\()\./(($attestation_types)\))%\1../attestation-types/\2%g" $docs/index.md
 
 # Commit and push changes
 # If there are no changes, nothing will be committed nor pushed.
