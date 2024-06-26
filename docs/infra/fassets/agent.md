@@ -210,6 +210,124 @@ When you want to stop the server, press Ctrl + C.
 
     Run the run-agent as a service to maximize uptime for production use. Here, you have instructions to run the agent as a `systemd` service for [running the bot as a daemon](https://github.com/flare-labs-ltd/fasset-bots/blob/main/docs/systemd/systemd-service.md).
 
+## Verifying Collateral Pool Smart Contracts
+
+Verification of a smart contract on a block explorer allows future users of the smart contract to inspect the Solidity source code instead of the bytecode, greatly improving the security and transparency of the ecosystem.
+Follow these steps to upload the source code for the Collateral Pool and Collateral Pool Token smart contracts, verifying them on the [Original Flare block explorer](../../user/block-explorers/index.md).
+
+1. Execute the FAssets system information command to determine your collateral pool smart contract address.
+
+    ```bash
+    yarn agent-bot info AGENT_ADDRESS --fasset FTestXRP
+    ```
+
+    Look for the value of the **Agent collateral pool** field and copy the address
+
+    ```text hl_lines="30"
+    Tokens:
+       Native token: CFLR
+       Wrapped native token: WCFLR
+       FAsset token: FTestXRP
+       Underlying token: testXRP
+       Vault collateral token: testETH
+       Collateral pool token: FCPT-SIMX-KGR-25061612
+    Network exchange rates:
+       CFLR/USD: 0.033
+       testETH/USD: 3800
+       testXRP/USD: 0.53
+    Agent mint and collateral:
+       Status: healthy
+       Public: true
+       Free lots: 10
+       Minted: 0 FTestXRP  (0 lots)
+       Reserved: 0 FTestXRP  (0 lots)
+       Redeeming: 0 FTestXRP  (0 lots)
+       Vault CR: <inf>  (minCR=1.4, mintingCR=1.6)
+       Pool CR: <inf>  (minCR=2, mintingCR=2.4)
+       Free vault collateral: 0.046863112858734529 testETH  (10 lots)
+       Free pool collateral: 8071.878095157464265083 WCFLR  (10 lots)
+    Lots:
+       Lot size: 20 testXRP
+       Lot vault collateral: 0.004463157894736842 testETH
+       Lot pool collateral: 770.909090909090909091 CFLR
+    Agent address (vault): 0xa6d7dF2d68b4b687d7408Cd613192103DBdA1F33
+       Balance: 0.046863112858734529 testETH
+       Balance: 8071.878095157464265083 FCPT-SIMX-KGR-25061612
+    Agent collateral pool: 0x5Bf5cD267F5a5185d0d91567979CCa397A2E504a
+       Balance: 8071.878095157464265083 WCFLR
+       Collected fees: 0 FTestXRP
+    Agent vault underlying (testXRP) address: r4aiumSs3xrSeeeQ9frhrDkhJ6dL1Sr1iL
+       Actual balance: 10 testXRP
+       Tracked balance: 0 testXRP
+       Required balance: 0 testXRP
+       Free balance: 0 testXRP
+    Agent owner management address: 0x6827101103BE87eDadf77202F8973c5046245401
+       Balance: 90.4216184475 CFLR
+       Balance: 0 testETH
+    Agent owner work address: 0xEfA4D9561fEc607eAe35D76a8034d9dBBe730449
+       Balance: 4105.334310744331909805 CFLR  (5 lots)
+       Balance: 0.042177240174410518 testETH  (9 lots)
+    Agent owner underlying (testXRP) address: rndED5w8xQ2sVC2hT5J5e8GTfxouRcKfjR
+       Balance: 40.27988 testXRP
+    ```
+
+2. Clone the FAsset repository in a new directory and enter it:
+
+    ```console
+    git clone https://github.com/flare-labs-ltd/fassets.git
+    cd fassets
+    ```
+
+3. Switch to the `open_beta` branch:
+
+    ```console
+    git checkout open_beta
+    ```
+
+4. Install dependencies and build the project:
+
+    ```console
+    yarn && yarn c
+    ```
+
+    !!! info
+
+        A fresh build can take more than 10 minutes, depending on if you have cached dependencies before.
+
+5. Verify the Collateral Pool and Collateral Pool Token smart contracts by running the following command and specifying the collateral pool address that you obtained in the first step as `AGENT_POOL_ADDRESS`:
+
+    ```bash
+    yarn verify-collateral-pool-coston AGENT_POOL_ADDRESS
+    ```
+
+    Verifying the smart contract on the blockchain will take a minute or two, and you should get an output stating that Collateral Pool and Collateral Pool Token smart contracts have been verified.
+    It should be similar to this:
+
+    ```text
+    Verifying CollateralPool at 0x5Bf5cD267F5a5185d0d91567979CCa397A2E504a
+    Successfully submitted source code for contract
+    contracts/fasset/implementation/CollateralPool.sol:CollateralPool at 0x5Bf5cD267F5a5185d0d91567979CCa397A2E504a
+    for verification on the block explorer. Waiting for verification result...
+
+    Successfully verified contract CollateralPool on the block explorer.
+    https://coston-explorer.flare.network/address/0x5Bf5cD267F5a5185d0d91567979CCa397A2E504a#code
+
+    Verifying CollateralPoolToken at 0x63937c0AD9506C61B2Fca6103E1828E2fcEf8a08
+    Successfully submitted source code for contract
+    contracts/fasset/implementation/CollateralPoolToken.sol:CollateralPoolToken at 0x63937c0AD9506C61B2Fca6103E1828E2fcEf8a08
+    for verification on the block explorer. Waiting for verification result...
+
+    Successfully verified contract CollateralPoolToken on the block explorer.
+    https://coston-explorer.flare.network/address/0x63937c0AD9506C61B2Fca6103E1828E2fcEf8a08#code    
+    ```
+
+
+Visit the original Flare block explorer at the address of the contract you just verified:
+
+    https://coston-explorer.flare.network/address/{AGENT_POOL_ADDRESS}
+
+And check that the **Code** tab has a green checkmark next to it.
+
 ## Related Docs
 
 * [Minting and Redeeming FAssets](../../user/fassets/minting-redeeming.md)
