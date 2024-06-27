@@ -380,9 +380,10 @@ nav:
         - infra/data/managing-ecosystem/index.md
         - infra/data/managing-ecosystem/exploring-collusion.md
         - infra/data/managing-ecosystem/monitoring-price-history.md
-    - FAssets Agents:
+    - FAssets:
       - infra/fassets/index.md
       - infra/fassets/agent.md
+      - infra/fassets/liquidator.md
     - Observer Nodes:
       - infra/observation/index.md
       - infra/observation/deploying.md

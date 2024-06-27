@@ -19,24 +19,24 @@ You will need knowledge of the following tools:
 
 !!! info
 
-    If you set up an FAssets agent or user, please use a separate directory for each setup.
+    If you set up an FAssets agent, bot or user, please use a separate directory for each role.
 
 1. Clone the repository and enter the working directory:
 
-    ```console
+    ```bash
     git clone https://github.com/flare-labs-ltd/fasset-bots.git
     cd fasset-bots
     ```
 
 2. Switch to the `open_beta` branch:
 
-    ```console
+    ```bash
     git checkout open_beta
     ```
 
 3. Install dependencies and build the project:
 
-    ```console
+    ```bash
     yarn && yarn build
     ```
 
@@ -46,6 +46,6 @@ You will need knowledge of the following tools:
 
 4. Copy the environment file from a template `.env.template` to `.env`:
 
-    ```console
+    ```bash
     cp .env.template .env
     ```

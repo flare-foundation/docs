@@ -1,8 +1,9 @@
 !!! info
 
     This command can only be executed once, after which all secret keys will be generated.
-    To set up a new agent or mint and redeem FAssets, use a separate directory per each setup.
+    You must use a separate directory for each role you want to perform: agent, bot, or minter and redeemer.
 
 !!! warning
 
-    To prevent serious security risks, avoid storing your addresses and private keys in the `secrets.json` file. Instead, transfer funds from your wallet to these generated addresses.
+    The addresses in `secrets.json` are designed to be used as hot wallets and should not hold large amounts of tokens, since their private keys are accessible on a machine that is permanently online.
+    Instead, it's best to keep your main account in an offline wallet and transfer funds to these hot wallets as needed.

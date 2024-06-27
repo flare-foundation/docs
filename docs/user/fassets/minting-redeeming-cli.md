@@ -8,14 +8,7 @@ This guide provides the following information:
 * How to convert testnet XRP to FAssets (FTestXRP) on the Flare test network (minting).
 * How to convert FAssets (FTestXRP) from Flare test network back to testnet XRP Ledger network (redemption).
 
-!!! info "Open Beta"
-
-    The FAssets system is currently in the [Open Beta](../../tech/fassets/open-beta.md) period.
-    During this phase, user-friendly tools are still being developed.
-
-    --8<-- "./include/fassets/issue-collector.html"
-
-    Alternatively, you can contact [support@flarelabs.org](mailto:support@flarelabs.org).
+--8<-- "./include/fassets/open-beta.md"
 
 --8<-- "./include/fassets/setup-commandline.md"
 

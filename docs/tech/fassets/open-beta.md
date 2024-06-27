@@ -37,7 +37,8 @@ Although other advanced users can join, they can interact with the FAssets syste
 
 Following the Coston open beta, the next stage will launch on Songbird.
 
-## Related Docs
+## Related Pages
 
 * [Minting and Redeeming FAssets](../../user/fassets/index.md)
 * [Deploying FAssets Agent](../../infra/fassets/agent.md)
+* [Setting up an FAssets Liquidator](../../infra/fassets/liquidator.md)

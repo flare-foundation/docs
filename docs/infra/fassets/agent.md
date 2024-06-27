@@ -9,14 +9,7 @@ This guide provides the following information:
 * How to set up an FAssets agent and provide collateral;
 * How to run the agent so FAssets system users can convert (mint and redeem) assets from the testnet XRP Ledger to the Flare test network and back.
 
-!!! info "Open Beta"
-
-    The FAssets system is currently in the [Open Beta](../../tech/fassets/open-beta.md) period.
-    During this phase, user-friendly tools are still being developed.
-
-    --8<-- "./include/fassets/issue-collector.html"
-
-    Alternatively, you can contact [support@flarelabs.org](mailto:support@flarelabs.org).
+--8<-- "./include/fassets/open-beta.md"
 
 ## Contract Addresses
 
@@ -328,7 +321,8 @@ Visit the original Flare block explorer at the address of the contract you just 
 
 And check that the **Code** tab has a green checkmark next to it.
 
-## Related Docs
+## Related Pages
 
 * [Minting and Redeeming FAssets](../../user/fassets/index.md)
+* [Setting up an FAssets Liquidator](./liquidator.md)
 * [FAssets Open Beta](../../tech/fassets/open-beta.md)
