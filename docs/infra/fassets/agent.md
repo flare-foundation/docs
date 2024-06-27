@@ -330,5 +330,5 @@ And check that the **Code** tab has a green checkmark next to it.
 
 ## Related Docs
 
-* [Minting and Redeeming FAssets](../../user/fassets/minting-redeeming.md)
+* [Minting and Redeeming FAssets](../../user/fassets/index.md)
 * [FAssets Open Beta](../../tech/fassets/open-beta.md)

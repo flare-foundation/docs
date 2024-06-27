@@ -116,6 +116,7 @@ plugins:
           'user/delegation/reward-claiming.md': 'tech/ftso.md'
           'user/delegation/reward-claiming-faq.md': 'tech/ftso.md'
           'user/delegation/reward-claiming-in-detail.md': 'tech/ftso.md'
+          'user/fassets/minting-redeeming.md': 'user/fassets/index.md'
           'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
           'infra/observation/faq.md': 'infra/observation/deploying.md'
 
@@ -188,7 +189,8 @@ nav:
     - user/automatic-claiming.md
     - FAssets:
       - user/fassets/index.md
-      - user/fassets/minting-redeeming.md
+      - user/fassets/minting-redeeming-cli.md
+      - user/fassets/minting-redeeming-dapp.md
     - Governance:
       - user/governance/index.md
       - user/governance/voting.md

@@ -1,4 +1,4 @@
-# Minting and Redeeming FAssets
+# Using the Command Line to Mint and Redeem FAssets
 
 Users of the [FAssets](../../tech//fassets/index.md) system can mint and redeem FAssets, allowing tokens on blockchains that do not support smart contracts to be used trustlessly with smart contracts on the Flare blockchain.
 

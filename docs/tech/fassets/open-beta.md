@@ -39,5 +39,5 @@ Following the Coston open beta, the next stage will launch on Songbird.
 
 ## Related Docs
 
-* [Minting and Redeeming FAssets](../../user/fassets/minting-redeeming.md)
+* [Minting and Redeeming FAssets](../../user/fassets/index.md)
 * [Deploying FAssets Agent](../../infra/fassets/agent.md)
