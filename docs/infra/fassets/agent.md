@@ -80,7 +80,7 @@ This ensures only authorized participants interact with the system, maintaining 
 The whitelisting process will be removed after the opening beta.
 
 1. Find your agent owner address, which is the value from the `secrets.json` file in the `owner.management.address` field.
-2. Use the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot), specifically designed for registration, and provide the necessary information, including your agent name and description and, optionally, a link to your icon.
+2. Use the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot), specifically designed for registration, and provide the necessary information, including your agent name, description, and a link to your icon.
 3. Enter the information and confirm, and the Telegram bot will inform you about the successful process.
 4. You need to wait for Flare support engineers to approve registrations and issue test assets such as Coston Flare (CFLR), testUSDC, testUSDT, and testETH assets, which will be sent to your `owner.management.address`.
 While you wait, you can continue with the rest of this guide.
