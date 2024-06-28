@@ -232,6 +232,7 @@ nav:
       - dev/tutorials/ftso/index.md
       - dev/reference/ftso.md
       - dev/tutorials/ftso/getting-data-feeds.md
+      - dev/tutorials/ftso/getting-random-numbers.md
     - State Connector:
       - dev/tutorials/sc/index.md
       - dev/tutorials/sc/address-validity.md
