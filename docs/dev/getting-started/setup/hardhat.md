@@ -251,7 +251,7 @@ In the `hardhat.config.js` file, import the Hardhat verify plugin and add a new 
 
 Now the configuration file looks like this:
 
-```javascript hl_lines="31-45"
+```javascript hl_lines="40-54"
 require('dotenv').config();
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-verify");
