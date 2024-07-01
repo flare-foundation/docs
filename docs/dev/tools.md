@@ -21,7 +21,6 @@ Blockchains typically store the history of all transactions but not the latest, 
 The companies below provide fast access to this information
 
 * [Ankr](https://www.ankr.com/blog/flare-ankr-s-next-blockchain-connection/)
-* [Covalent](https://www.covalenthq.com/docs/networks/flare/)
 * [SubQuery](https://academy.subquery.network/quickstart/quickstart_chains/flare.html)
 * [Subsquid](https://docs.subsquid.io/evm-indexing/supported-networks/)
 
