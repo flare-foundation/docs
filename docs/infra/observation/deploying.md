@@ -39,13 +39,13 @@ This guide contains different instructions depending on which Flare network you 
 
 === "Coston"
 
-    |                 | Hardware    |                      | Software                                             |
-    | --------------: | :---------- | -------------------: | ---------------------------------------------------- |
-    |   **CPU cores** | 4           | **Operating System** | Ubuntu (18.04 or 20.04) or macOS (>= 10.15 Catalina) |
-    |         **RAM** | 16 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.16.8)     |
-    |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/)                          |
-    | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                          |
-    |                 |             |                      | [jq](https://stedolan.github.io/jq/)                 |
+    |                 | Hardware    |                      | Software                                       |
+    | --------------: | :---------- | -------------------: | ---------------------------------------------- |
+    |   **CPU cores** | 4           | **Operating System** | Ubuntu (20.04 or 22.04)                        |
+    |         **RAM** | 16 GB       |     **Dependencies** | [Go](https://golang.org/doc/install) (>= 1.21) |
+    |  **Disk space** | 500 GB SSD  |                      | [gcc](https://gcc.gnu.org/)                    |
+    | **Disk growth** | 250 GB/year |                      | [g++](https://gcc.gnu.org/)                    |
+    |                 |             |                      | [jq](https://stedolan.github.io/jq/)           |
 
 === "Coston2"
 
@@ -65,9 +65,12 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
 
 ### 1. Installation
 
-=== "Flare & Coston2"
+=== "Flare, Coston & Coston2"
 
-    Clone the [go-flare](https://github.com/flare-foundation/go-flare) repository and run the `build.sh` script:
+    Clone the [go-flare](https://github.com/flare-foundation/go-flare) repository and run the `build.sh` script.
+
+    !!! note
+        For Coston, use the `v0.6.6-coston` tag.
 
     ```bash
     git clone https://github.com/flare-foundation/go-flare.git
@@ -88,7 +91,7 @@ Keep in mind that enabling [pruning](glossary.md#pruning) as [described below](#
         cd ../avalanchego
         ```
 
-=== "Songbird & Coston"
+=== "Songbird"
 
     Clone the [go-songbird](https://github.com/flare-foundation/go-songbird) repository and run the `build.sh` script:
 
