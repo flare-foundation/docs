@@ -105,5 +105,5 @@ Redeem the FTestXRP for the underlying asset obtained in the previous step by ru
 
 ## Related Pages
 
-* [Deploying an FAssets Agent](../../infra//fassets//agent.md)
+* [Deploying an FAssets Agent](../../infra/fassets/deploying-agent.md)
 * [FAssets Open Beta](../../tech/fassets/open-beta.md)

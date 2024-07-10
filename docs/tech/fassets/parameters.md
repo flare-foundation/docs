@@ -57,7 +57,7 @@ Otherwise, it includes a description of the purpose of the parameter.
 
 ## Default Agent Settings
 
-These are the default values for [the agent bot provided by the Flare foundation](../../infra/fassets/agent.md#setting-up-the-agent).
+These are the default values for [the agent bot provided by the Flare foundation](../../infra/fassets/deploying-agent.md#setting-up-the-agent).
 Agents are free to adjust these settings as they see fit.
 
 | Parameter                                    | Open Beta (Coston) |

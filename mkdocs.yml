@@ -383,7 +383,8 @@ nav:
         - infra/data/managing-ecosystem/monitoring-price-history.md
     - FAssets:
       - infra/fassets/index.md
-      - infra/fassets/agent.md
+      - infra/fassets/deploying-agent.md
+      - infra/fassets/managing-agent.md
       - infra/fassets/liquidator.md
     - Observer Nodes:
       - infra/observation/index.md

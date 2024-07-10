@@ -67,5 +67,5 @@ Using this guide, you must change the `agent-bot` to the `liquidator-bot`.
 ## Related Pages
 
 * [Minting and Redeeming FAssets](../../user/fassets/index.md)
-* [Deploying an FAssets Agent](agent.md)
+* [Deploying an FAssets Agent](deploying-agent.md)
 * [FAssets Open Beta](../../tech/fassets/open-beta.md)

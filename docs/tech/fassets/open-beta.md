@@ -40,5 +40,5 @@ Following the Coston open beta, the next stage will launch on Songbird.
 ## Related Pages
 
 * [Minting and Redeeming FAssets](../../user/fassets/index.md)
-* [Deploying FAssets Agent](../../infra/fassets/agent.md)
+* [Deploying FAssets Agent](../../infra/fassets/deploying-agent.md)
 * [Setting up an FAssets Liquidator](../../infra/fassets/liquidator.md)

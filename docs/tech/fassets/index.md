@@ -19,6 +19,7 @@ The following diagram summarizes the relationship between the FAssets system, it
 Anyone on the Flare blockchain can mint FAssets as wrapped versions of the original tokens from other blockchains, known as underlying networks.
 The original tokens from these chains, such as `$BTC`, `$LTC`, `$DOGE`, and `$XRP`, are called underlying assets.
 For example, the FAsset version of `$BTC` is `$FBTC`.
+{ #fasset-type }
 
 You can then use these FAssets in smart contracts and decentralized applications on Flare, and at any time you can redeem them for the underlying asset.
 
@@ -34,16 +35,18 @@ All these entities are independent of the Flare Foundation.
 
 The following roles participate in the FAssets system:
 
-* [Agents](#agents)
-* [Users](#users)
-* [Collateral providers](#collateral-providers)
-* [Liquidators](#liquidators)
-* [Challengers](#challengers)
+- [FAssets](#fassets)
+  - [Roles in the FAssets System](#roles-in-the-fassets-system)
+    - [Agents](#agents)
+    - [Users](#users)
+    - [Collateral Providers](#collateral-providers)
+    - [Liquidators](#liquidators)
+    - [Challengers](#challengers)
 
 ### Agents
 
 The main purpose of agents is to keep the underlying assets while the minted FAssets are circulating.
-Agents are off-chain programs, that:
+Agents are off-chain programs, or bots, that:
 
 * Manage the account that holds an underlying asset, like `$BTC`.
 * Provide the main part of the [collateral](./collateral.md).

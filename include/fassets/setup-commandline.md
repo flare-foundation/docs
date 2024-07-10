@@ -4,10 +4,11 @@ To participate in the open beta, you need a server with at least a minimum of 2 
 
 You will need knowledge of the following tools:
 
-* [Git](https://git-scm.com/) version control system;
-* [Yarn](https://yarnpkg.com/) package manager;
-* Command line terminal;
-* Code editor.
+* [Git](https://git-scm.com/) version control system
+* [Yarn](https://yarnpkg.com/) package manager
+* A [wallet](../../user/wallets/index.md) configured for [Flare networks](../../dev/reference/network-config.md)
+* Command-line terminal
+* Code editor
 
 !!! warning
 
