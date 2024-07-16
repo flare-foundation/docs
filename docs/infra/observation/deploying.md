@@ -171,7 +171,7 @@ To understand each parameter read the following step before launching the node.
 === "Coston"
 
     ``` bash
-    ./build/flare --network-id=coston --http-host= \
+    ./build/avalanchego --network-id=coston --http-host= \
       --bootstrap-ips="$(curl -m 10 -sX POST \
         --data '{ "jsonrpc":"2.0", "id":1, "method":"info.getNodeIP" }' \
         -H 'content-type:application/json;' https://coston.flare.network/ext/info \
