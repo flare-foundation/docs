@@ -24,13 +24,13 @@ Block { #block }
 : For performance reasons, [blockchains](#blockchain) do not process transactions one by one. Instead, transactions are grouped together in blocks which are then validated by the [consensus](#consensus) algorithm.
 
 Block Explorer { #block_explorer }
-: A tool that enables its users to analyze transactions and interact with addresses on blockchains. [Read more...](../user/block-explorers/index.md)
+: A tool that enables its users to analyze transactions and interact with addresses on blockchains.
 
 Blockchain { #blockchain }
 : Digital [ledger](#ledger) storing data and transactions on a distributed network of computers to make it more robust. Cryptography protects against information tampering, and a [consensus](#consensus) algorithm ensures that the majority of the network agrees on the stored data even if some of its nodes act maliciously.
 
 Bootstrapping Node { #bootstrapping_node }
-: An observation node associated with a [validator node](#validator) and acting as its bastion: the bootstrapping node exposes a minimum RPC interface, so the validator does not have to. The nodeID and nodeIP returned by the bootstrapping node's RPC allow an external node to connect and peer with the core network of validators. The bootstrapping node also [gossips](https://en.wikipedia.org/wiki/Gossip_protocol) the core network's validators nodeIDs and nodeIPs to the external node to peer to. The main purpose of a bootstrapping node is to allow new nodes to connect to the network (hence the name "bootstrapping") while reducing its associated validator node attack surface. [Flare offers some public bootstrapping nodes](../dev/reference/network-config.md#flare-networks).
+: An observation node associated with a [validator node](#validator) and acting as its bastion: the bootstrapping node exposes a minimum RPC interface, so the validator does not have to. The nodeID and nodeIP returned by the bootstrapping node's RPC allow an external node to connect and peer with the core network of validators. The bootstrapping node also [gossips](https://en.wikipedia.org/wiki/Gossip_protocol) the core network's validators nodeIDs and nodeIPs to the external node to peer to. The main purpose of a bootstrapping node is to allow new nodes to connect to the network (hence the name "bootstrapping") while reducing its associated validator node attack surface.
 
 Bridge { #bridge }
 : A protocol that connects otherwise independent blockchains, enabling interoperability between them. Read more about Flare's bridging: [LayerCake](#layercake).
@@ -195,7 +195,8 @@ Quorum Slice { #quorum_slice }
 : In [FBA](#fba) consensus each node has multiple lists of other nodes which it voluntarily decides to trust, forming its quorum slices. All nodes in a quorum slice agreeing on a result are enough to convince the node of that result. If the quorum slices are correctly built, global quorum emerges from these local quorum slices.
 
 RPC { #rpc }
-: Remote Procedure Call is a protocol that allows a program executing on a computer to request a service from another program, typically running on a different computer. [Flare offers some public and private nodes with RPC capabilities](../apis/index.md#access-nodes).
+: Remote Procedure Call is a protocol that allows a program executing on a computer to request a service from another program, typically running on a different computer.
+Flare offers some public and private nodes with RPC capabilities.
 
 Real World Assets { #rwa }
 : Tokens that represent tangible or intangible assets, such as real estate or government bonds, respectively, as opposed to digital assets such as cryptocurrency.

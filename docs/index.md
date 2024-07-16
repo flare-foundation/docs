@@ -26,63 +26,6 @@ Quick links:
 </div>
 </div>
 
-#### For developers
-
-<div class="flr-cards" markdown>
-
-<div class="flr-card has-background2" markdown>
-
-## Get Started Building
-
-Information to quickly start developing on the Flare networks
-
-<div class="flr-card-links is-vertical" markdown>
-
-Quick links:
-
-* [Retrieving Contract Addresses](./dev/getting-started/contract-addresses.md)
-* [Using Remix](./dev/getting-started/setup/remix.md)
-* [Using Hardhat](./dev/getting-started/setup/hardhat.md)
-
-</div>
-</div>
-
-<div class="flr-card has-background3" markdown>
-
-## Developer Guides
-
-In-depth information about the Flare networks
-
-<div class="flr-card-links is-vertical" markdown>
-
-Quick links:
-
-* [State Connector Attestation Request](./dev/tutorials/sc/address-validity.md)
-* [Getting FTSO Data Feeds](./dev/tutorials/ftso/getting-data-feeds.md)
-* [Demo examples](https://github.com/flare-foundation/flare-demo-examples)
-
-</div>
-</div>
-
-<div class="flr-card has-background4 is-fullwidth" markdown>
-
-## API Reference
-
-in-depth information about the Flare smart contracts APIs
-
-<div class="flr-card-links" markdown>
-
-Quick links:
-
-* [Smart Contracts](./apis/smart-contracts/index.md)
-* [State Connector REST Endpoints](./apis/REST/index.md)
-* [Attestation types](./apis/attestation-types/index.md)
-
-</div>
-</div>
-
-</div>
-
 #### For everyone
 
 <div class="flr-cards" markdown>

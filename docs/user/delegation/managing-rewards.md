@@ -2,7 +2,7 @@
 
 [Rewards](../../tech/ftso.md#rewards) are accrued from your delegations to FTSO data providers whose submitted data is close to the calculated median value in a price epoch.
 
-Use this information to claim FTSO delegation rewards by using the Flare Portal. Alternatively, if you have used block explorers for other networks and are competent interacting with smart contracts without a user interface, you can [use the block explorer](../block-explorers/managing-rewards.md), which provides more options but can be more complex. Using it is intended for advanced users.
+Use this information to claim FTSO delegation rewards by using the Flare Portal. Alternatively, if you have used block explorers for other networks and are competent interacting with smart contracts without a user interface, you can use the block explorer, which provides more options but can be more complex. Using it is intended for advanced users.
 
 1. Open the [Flare Portal](https://portal.flare.network). The home page is displayed.
 

@@ -67,11 +67,11 @@ plugins:
   - autolinks                   # Use just filenames instead of full or relative paths
   - redirects:                  # Allow creating redirects for moved pages
       redirect_maps:
-          'en/state-connector.md':  'tech/state-connector.md'
+          'en/state-connector.md': 'tech/state-connector.md'
           'technology/glossary.md': 'tech/glossary.md'
           'technology/state-connector.md': 'tech/state-connector.md'
-          'networks/songbird.md': 'dev/reference/network-config.md'
-          'networks/coston-testnet.md': 'dev/reference/network-config.md'
+          'networks/songbird.md': 'developer-hub.md'
+          'networks/coston-testnet.md': 'developer-hub.md'
           'tech/flare-launch-process.md': 'tech/archive/flare-launch-process.md'
           'tutorials/wallets/index.md': 'user/wallets/index.md'
           'tutorials/wallets/bifrost-wallet.md': 'user/wallets/bifrost-wallet.md'
@@ -81,10 +81,10 @@ plugins:
           'tutorials/wallets/how-to-access-flare-network-with-metamask.md': 'user/wallets/how-to-access-flare-network-with-metamask.md'
           'tutorials/wallets/safepal-s1-wallet.md': 'user/wallets/safepal-s1-wallet.md'
           'tutorials/wallets/brave-wallet.md': 'user/wallets/brave-wallet.md'
-          'tutorials/explorer/songbird-explorer.md': 'user/block-explorers/index.md'
-          'tutorials/explorer/coston-explorer.md': 'user/block-explorers/index.md'
-          'tutorials/developing-on-top-of-flare/README.md': 'dev/index.md'
-          'tutorials/developing-on-top-of-flare/important-links.md': 'dev/index.md'
+          'tutorials/explorer/songbird-explorer.md': 'developer-hub.md'
+          'tutorials/explorer/coston-explorer.md': developer-hub.md
+          'tutorials/developing-on-top-of-flare/README.md': 'developer-hub.md'
+          'tutorials/developing-on-top-of-flare/important-links.md': 'developer-hub.md'
           'tutorials/delegation/README.md': 'user/delegation/index.md'
           'tutorials/delegation/delegation-in-detail.md': 'tech/ftso.md'
           'tutorials/delegation-faq/README.md': 'tech/ftso.md'
@@ -100,15 +100,145 @@ plugins:
           'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'infra/data/whitelisting.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'infra/data/whitelisting.md'
           'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/operating.md'
-          'infra/data/deploying.md':  'infra/data/operating.md'
+          'infra/data/deploying.md': 'infra/data/operating.md'
           'tutorials/price-provider/troubleshooting/observation-node.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
-          'dev/reference/flare.md': 'dev/reference/network-config.md'
-          'dev/reference/songbird.md': 'dev/reference/network-config.md'
-          'dev/reference/coston-testnet.md': 'dev/reference/network-config.md'
-          'dev/reference/network-configs.md': 'dev/reference/network-config.md'
-          'dev/contracts.md': 'dev/getting-started/contract-addresses.md'
+          'dev/getting-started/index.md': 'developer-hub.md'
+          'dev/getting-started/setup/index.md': 'developer-hub.md'
+          'dev/getting-started/setup/remix.md': 'developer-hub.md'
+          'dev/getting-started/setup/hardhat.md': 'developer-hub.md'
+          'dev/getting-started/setup/foundry.md': 'developer-hub.md'
+          'dev/getting-started/contract-addresses.md': 'developer-hub.md'
+          'dev/tutorials/network-access/index.md': 'developer-hub.md'
+          'dev/tutorials/network-access/transaction-finalization.md': 'developer-hub.md'
+          'dev/tutorials/network-access/reliable-event-reading.md': 'developer-hub.md'
+          'dev/tutorials/network-access/obtaining-revert-reason.md': 'developer-hub.md'
+          'dev/tutorials/ftso/index.md': 'developer-hub.md'
+          'dev/tutorials/ftso/getting-data-feeds.md': 'developer-hub.md'
+          'dev/tutorials/ftso/getting-random-numbers.md': 'developer-hub.md'
+          'dev/tutorials/sc/index.md': 'developer-hub.md'
+          'dev/tutorials/sc/address-validity.md': 'developer-hub.md'
+          'dev/reference/automatic-claiming.md': 'developer-hub.md'
+          'dev/reference/personal-delegation-account.md': 'developer-hub.md'
+          'dev/reference/explorers-and-indexers.md': 'developer-hub.md'
+          'dev/reference/the-flaredrop.md': 'developer-hub.md'
+          'dev/reference/wallets.md': 'developer-hub.md'
+          'dev/external-resources.md': 'developer-hub.md'
+          'dev/tools.md': 'developer-hub.md'
+          'security/index.md': 'developer-hub.md'
+          'apis/index.md': 'developer-hub.md'
+          'apis/smart-contracts/index.md': 'developer-hub.md'
+          'apis/smart-contracts/AddressUpdatable.md': 'developer-hub.md'
+          'apis/smart-contracts/AddressUpdater.md': 'developer-hub.md'
+          'apis/smart-contracts/AddressValidityVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/BalanceDecreasingTransactionVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/CheckPointable.md': 'developer-hub.md'
+          'apis/smart-contracts/ClaimSetupManager.md': 'developer-hub.md'
+          'apis/smart-contracts/CleanupBlockNumberManager.md': 'developer-hub.md'
+          'apis/smart-contracts/CloneFactory.md': 'developer-hub.md'
+          'apis/smart-contracts/ConfirmedBlockHeightExistsVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/Delegatable.md': 'developer-hub.md'
+          'apis/smart-contracts/EVMTransactionVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/FlareContractRegistry.md': 'developer-hub.md'
+          'apis/smart-contracts/FlareDaemon.md': 'developer-hub.md'
+          'apis/smart-contracts/Ftso.md': 'developer-hub.md'
+          'apis/smart-contracts/FtsoManager.md': 'developer-hub.md'
+          'apis/smart-contracts/FtsoRegistry.md': 'developer-hub.md'
+          'apis/smart-contracts/FtsoRewardManager.md': 'developer-hub.md'
+          'apis/smart-contracts/GovernanceSettings.md': 'developer-hub.md'
+          'apis/smart-contracts/GovernanceVotePower.md': 'developer-hub.md'
+          'apis/smart-contracts/Governed.md': 'developer-hub.md'
+          'apis/smart-contracts/GovernedAndFlareDaemonized.md': 'developer-hub.md'
+          'apis/smart-contracts/GovernedAtGenesis.md': 'developer-hub.md'
+          'apis/smart-contracts/GovernedBase.md': 'developer-hub.md'
+          'apis/smart-contracts/Inflation.md': 'developer-hub.md'
+          'apis/smart-contracts/PaymentVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/PChainStake.md': 'developer-hub.md'
+          'apis/smart-contracts/PChainStakeMirror.md': 'developer-hub.md'
+          'apis/smart-contracts/PriceSubmitter.md': 'developer-hub.md'
+          'apis/smart-contracts/ReferencedPaymentNonexistenceVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/RevertErrorTracking.md': 'developer-hub.md'
+          'apis/smart-contracts/VoterWhitelister.md': 'developer-hub.md'
+          'apis/smart-contracts/VPContract.md': 'developer-hub.md'
+          'apis/smart-contracts/VPToken.md': 'developer-hub.md'
+          'apis/smart-contracts/WNat.md': 'developer-hub.md'
+          'apis/smart-contracts/IAddressValidityVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/IBalanceDecreasingTransactionVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/IClaimSetupManager.md': 'developer-hub.md'
+          'apis/smart-contracts/IConfirmedBlockHeightExistsVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/IEVMTransactionVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/IFlareContractRegistry.md': 'developer-hub.md'
+          'apis/smart-contracts/IFlareDaemonize.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtso.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtsoGenesis.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtsoManager.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtsoManagerGenesis.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtsoRegistry.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtsoRegistryGenesis.md': 'developer-hub.md'
+          'apis/smart-contracts/IFtsoRewardManager.md': 'developer-hub.md'
+          'apis/smart-contracts/IGovernanceSettings.md': 'developer-hub.md'
+          'apis/smart-contracts/IGovernanceVotePower.md': 'developer-hub.md'
+          'apis/smart-contracts/IInflationGenesis.md': 'developer-hub.md'
+          'apis/smart-contracts/IMerkleRootStorage.md': 'developer-hub.md'
+          'apis/smart-contracts/IPaymentVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/IPChainStakeMirror.md': 'developer-hub.md'
+          'apis/smart-contracts/IPChainVotePower.md': 'developer-hub.md'
+          'apis/smart-contracts/IPriceSubmitter.md': 'developer-hub.md'
+          'apis/smart-contracts/IReferencedPaymentNonexistenceVerification.md': 'developer-hub.md'
+          'apis/smart-contracts/IStateConnector.md': 'developer-hub.md'
+          'apis/smart-contracts/IVoterWhitelister.md': 'developer-hub.md'
+          'apis/smart-contracts/IVPContractEvents.md': 'developer-hub.md'
+          'apis/smart-contracts/IVPToken.md': 'developer-hub.md'
+          'apis/smart-contracts/IWNat.md': 'developer-hub.md'
+          'apis/smart-contracts/IIAddressUpdatable.md': 'developer-hub.md'
+          'apis/smart-contracts/IIAddressUpdater.md': 'developer-hub.md'
+          'apis/smart-contracts/IIClaimSetupManager.md': 'developer-hub.md'
+          'apis/smart-contracts/IICleanable.md': 'developer-hub.md'
+          'apis/smart-contracts/IIFtso.md': 'developer-hub.md'
+          'apis/smart-contracts/IIFtsoManager.md': 'developer-hub.md'
+          'apis/smart-contracts/IIFtsoRegistry.md': 'developer-hub.md'
+          'apis/smart-contracts/IIFtsoRewardManager.md': 'developer-hub.md'
+          'apis/smart-contracts/IIGovernanceVotePower.md': 'developer-hub.md'
+          'apis/smart-contracts/IIInflationReceiver.md': 'developer-hub.md'
+          'apis/smart-contracts/IIPriceSubmitter.md': 'developer-hub.md'
+          'apis/smart-contracts/IITokenPool.md': 'developer-hub.md'
+          'apis/smart-contracts/IIVoterWhitelister.md': 'developer-hub.md'
+          'apis/smart-contracts/IIVPContract.md': 'developer-hub.md'
+          'apis/smart-contracts/IIVPToken.md': 'developer-hub.md'
+          'apis/REST/index.md': 'developer-hub.md'
+          'apis/REST/attestation-client.md': 'developer-hub.md'
+          'apis/REST/btcverifier.md': 'developer-hub.md'
+          'apis/REST/dogeverifier.md': 'developer-hub.md'
+          'apis/REST/evmverifier.md': 'developer-hub.md'
+          'apis/REST/xrpverifier.md': 'developer-hub.md'
+          'apis/attestation-types/index.md': 'developer-hub.md'
+          'apis/attestation-types/AddressValidity.md': 'developer-hub.md'
+          'apis/attestation-types/BalanceDecreasingTransaction.md': 'developer-hub.md'
+          'apis/attestation-types/ConfirmedBlockHeightExists.md': 'developer-hub.md'
+          'apis/attestation-types/EVMTransaction.md': 'developer-hub.md'
+          'apis/attestation-types/Payment.md': 'developer-hub.md'
+          'apis/attestation-types/ReferencedPaymentNonexistence.md': 'developer-hub.md'
+          'dev/reference/flare.md': 'developer-hub.md'
+          'dev/reference/songbird.md': 'developer-hub.md'
+          'dev/reference/coston-testnet.md': 'developer-hub.md'
+          'dev/reference/network-configs.md': 'developer-hub.md'
+          'dev/contracts.md': 'developer-hub.md'
+          'exchange/index.md': 'developer-hub.md'
+          'exchange/architecture.md': 'developer-hub.md'
+          'exchange/delegation.md': 'developer-hub.md'
+          'exchange/troubleshooting.md': 'developer-hub.md'
+          'get-started-building/index.md': 'developer-hub.md'
           'user/delegation/delegation-overview.md': 'tech/ftso.md'
+          'user/block-explorers/index.md': 'developer-hub.md'
+          'user/block-explorers/finding-reward-epoch.md': 'developer-hub.md'
+          'user/block-explorers/managing-delegations.md': 'developer-hub.md'
+          'user/block-explorers/managing-rewards.md': 'developer-hub.md'
+          'user/block-explorers/verifying-vote-power-block.md': 'developer-hub.md'
+          'user/block-explorers/viewing-nfts.md': 'developer-hub.md'
+          'user/block-explorers/viewing-token-balances.md': 'developer-hub.md'
+          'user/block-explorers/viewing-token-transfers.md': 'developer-hub.md'
+          'user/block-explorers/viewing-transactions.md': 'developer-hub.md'
+          'user/block-explorers/user-interface.md': 'developer-hub.md'
           'user/delegation/delegation-faq.md': 'tech/ftso.md'
           'user/delegation/delegation-in-detail.md': 'tech/ftso.md'
           'user/delegation/manual-delegation.md': 'user/delegation/managing-delegations.md'
@@ -126,7 +256,6 @@ extra_javascript:
   - assets/javascripts/mathjax.js
   - assets/javascripts/images.js
   - assets/javascripts/links.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra:
   social:
@@ -162,6 +291,7 @@ nav:
   - Home:
     - index.md
     - tech/flare.md
+    - developer-hub.md
   - User Guides:
     - user/index.md
     - Wallets:
@@ -194,153 +324,10 @@ nav:
     - Governance:
       - user/governance/index.md
       - user/governance/voting.md
-    - Block Explorers:
-      - user/block-explorers/index.md
-      - user/block-explorers/finding-reward-epoch.md
-      - Managing Delegations: user/block-explorers/managing-delegations.md
-      - Managing Rewards: user/block-explorers/managing-rewards.md
-      - user/block-explorers/verifying-vote-power-block.md
-      - user/block-explorers/viewing-nfts.md
-      - user/block-explorers/viewing-token-balances.md
-      - user/block-explorers/viewing-token-transfers.md
-      - user/block-explorers/viewing-transactions.md
-      - user/block-explorers/user-interface.md
-    - Exchange Guides:
-      - exchange/index.md
-      - exchange/architecture.md
-      - exchange/delegation.md
-      - exchange/troubleshooting.md
-  - Get Started Building:
-    - get-started-building/index.md
-    - Getting Started:
-      - dev/getting-started/index.md
-      - Setting Up Your Environment:
-        - dev/getting-started/setup/index.md
-        - Using Remix: dev/getting-started/setup/remix.md
-        - Using Hardhat: dev/getting-started/setup/hardhat.md
-        - Using Foundry: dev/getting-started/setup/foundry.md
-      - dev/getting-started/contract-addresses.md
-    - Network Configuration:
-      - dev/tutorials/network-access/index.md
-      - dev/reference/network-config.md
-      - dev/tutorials/network-access/transaction-finalization.md
-      - dev/tutorials/network-access/reliable-event-reading.md
-      - dev/tutorials/network-access/obtaining-revert-reason.md
   - Developer Guides:
-    - dev/index.md
-    - FTSO:
-      - dev/tutorials/ftso/index.md
+      - dev/index.md
       - dev/reference/ftso.md
-      - dev/tutorials/ftso/getting-data-feeds.md
-      - dev/tutorials/ftso/getting-random-numbers.md
-    - State Connector:
-      - dev/tutorials/sc/index.md
-      - dev/tutorials/sc/address-validity.md
-      - dev/tutorials/sc/evm-transaction.md
-    - dev/reference/automatic-claiming.md
-    - dev/reference/personal-delegation-account.md
-    - dev/reference/explorers-and-indexers.md
-    - dev/reference/the-flaredrop.md
-    - dev/reference/wallets.md
-    - dev/external-resources.md
-    - dev/tools.md
-    - security/index.md
-  - APIs:
-    - apis/index.md
-    - Smart Contracts API:
-      - apis/smart-contracts/index.md
-      - apis/smart-contracts/AddressUpdatable.md
-      - apis/smart-contracts/AddressUpdater.md
-      - apis/smart-contracts/AddressValidityVerification.md
-      - apis/smart-contracts/BalanceDecreasingTransactionVerification.md
-      - apis/smart-contracts/CheckPointable.md
-      - apis/smart-contracts/ClaimSetupManager.md
-      - apis/smart-contracts/CleanupBlockNumberManager.md
-      - apis/smart-contracts/CloneFactory.md
-      - apis/smart-contracts/ConfirmedBlockHeightExistsVerification.md
-      - apis/smart-contracts/Delegatable.md
-      - apis/smart-contracts/EVMTransactionVerification.md
-      - apis/smart-contracts/FlareContractRegistry.md
-      - apis/smart-contracts/FlareDaemon.md
-      - apis/smart-contracts/Ftso.md
-      - apis/smart-contracts/FtsoManager.md
-      - apis/smart-contracts/FtsoRegistry.md
-      - apis/smart-contracts/FtsoRewardManager.md
-      - apis/smart-contracts/GovernanceSettings.md
-      - apis/smart-contracts/GovernanceVotePower.md
-      - apis/smart-contracts/Governed.md
-      - apis/smart-contracts/GovernedAndFlareDaemonized.md
-      - apis/smart-contracts/GovernedAtGenesis.md
-      - apis/smart-contracts/GovernedBase.md
-      - apis/smart-contracts/Inflation.md
-      - apis/smart-contracts/PaymentVerification.md
-      - apis/smart-contracts/PChainStake.md
-      - apis/smart-contracts/PChainStakeMirror.md
-      - apis/smart-contracts/PriceSubmitter.md
-      - apis/smart-contracts/ReferencedPaymentNonexistenceVerification.md
-      - apis/smart-contracts/RevertErrorTracking.md
-      - apis/smart-contracts/VoterWhitelister.md
-      - apis/smart-contracts/VPContract.md
-      - apis/smart-contracts/VPToken.md
-      - apis/smart-contracts/WNat.md
-      - apis/smart-contracts/IAddressValidityVerification.md
-      - apis/smart-contracts/IBalanceDecreasingTransactionVerification.md
-      - apis/smart-contracts/IClaimSetupManager.md
-      - apis/smart-contracts/IConfirmedBlockHeightExistsVerification.md
-      - apis/smart-contracts/IEVMTransactionVerification.md
-      - apis/smart-contracts/IFlareContractRegistry.md
-      - apis/smart-contracts/IFlareDaemonize.md
-      - apis/smart-contracts/IFtso.md
-      - apis/smart-contracts/IFtsoGenesis.md
-      - apis/smart-contracts/IFtsoManager.md
-      - apis/smart-contracts/IFtsoManagerGenesis.md
-      - apis/smart-contracts/IFtsoRegistry.md
-      - apis/smart-contracts/IFtsoRegistryGenesis.md
-      - apis/smart-contracts/IFtsoRewardManager.md
-      - apis/smart-contracts/IGovernanceSettings.md
-      - apis/smart-contracts/IGovernanceVotePower.md
-      - apis/smart-contracts/IInflationGenesis.md
-      - apis/smart-contracts/IMerkleRootStorage.md
-      - apis/smart-contracts/IPaymentVerification.md
-      - apis/smart-contracts/IPChainStakeMirror.md
-      - apis/smart-contracts/IPChainVotePower.md
-      - apis/smart-contracts/IPriceSubmitter.md
-      - apis/smart-contracts/IReferencedPaymentNonexistenceVerification.md
-      - apis/smart-contracts/IStateConnector.md
-      - apis/smart-contracts/IVoterWhitelister.md
-      - apis/smart-contracts/IVPContractEvents.md
-      - apis/smart-contracts/IVPToken.md
-      - apis/smart-contracts/IWNat.md
-      - apis/smart-contracts/IIAddressUpdatable.md
-      - apis/smart-contracts/IIAddressUpdater.md
-      - apis/smart-contracts/IIClaimSetupManager.md
-      - apis/smart-contracts/IICleanable.md
-      - apis/smart-contracts/IIFtso.md
-      - apis/smart-contracts/IIFtsoManager.md
-      - apis/smart-contracts/IIFtsoRegistry.md
-      - apis/smart-contracts/IIFtsoRewardManager.md
-      - apis/smart-contracts/IIGovernanceVotePower.md
-      - apis/smart-contracts/IIInflationReceiver.md
-      - apis/smart-contracts/IIPriceSubmitter.md
-      - apis/smart-contracts/IITokenPool.md
-      - apis/smart-contracts/IIVoterWhitelister.md
-      - apis/smart-contracts/IIVPContract.md
-      - apis/smart-contracts/IIVPToken.md
-    - OpenAPI REST API:
-      - apis/REST/index.md
-      - apis/REST/attestation-client.md
-      - apis/REST/btcverifier.md
-      - apis/REST/dogeverifier.md
-      - apis/REST/evmverifier.md
-      - apis/REST/xrpverifier.md
-    - Attestation Types:
-      - apis/attestation-types/index.md
-      - apis/attestation-types/AddressValidity.md
-      - apis/attestation-types/BalanceDecreasingTransaction.md
-      - apis/attestation-types/ConfirmedBlockHeightExists.md
-      - apis/attestation-types/EVMTransaction.md
-      - apis/attestation-types/Payment.md
-      - apis/attestation-types/ReferencedPaymentNonexistence.md
+      - dev/reference/network-config.md
   - Products:
     - products/index.md
     - tech/ftso.md
@@ -353,13 +340,13 @@ nav:
       - tech/fassets/liquidation.md
       - tech/fassets/open-beta.md
       - tech/fassets/parameters.md
-    - tech/validators.md
     - tech/api-portal.md
   - Concepts:
     - tech/index.md
     - tech/automatic-claiming.md
     - tech/flare-beta.md
     - tech/flare-systems-protocol.md
+    - tech/validators.md
     - tech/governance.md
     - tech/personal-delegation-account.md
     - tech/the-flaredrop.md
@@ -370,9 +357,6 @@ nav:
       - tech/archive/flare-launch-process.md
   - Infrastructure:
     - infra/index.md
-    - Attestation Providers:
-      - infra/attestation/index.md
-      - infra/attestation/operating.md
     - FTSO Data Providers:
       - infra/data/index.md
       - infra/data/operating.md

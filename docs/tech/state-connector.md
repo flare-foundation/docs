@@ -45,19 +45,6 @@ Requests must adhere to one of the [**available request types**](#attestation-ty
 Otherwise, queries like "What is the weather like in Paris?" would have a hard time reaching consensus among the different attestation providers.
 Section [Adding New Attestation Types](#adding-new-attestation-types) below contains more details.
 
-??? example "Making a request (for App developers)"
-
-    Make your requests using the `requestAttestations` method (#2) of the [StateConnector contract](../dev/getting-started/contract-addresses.md):
-
-    ```solidity
-    function requestAttestations(
-        bytes calldata data
-    ) external;
-    ```
-
-    The `requestAttestations` method has a single parameter, `data`, which is a byte array with a content that depends on the desired **request type**.
-    You can learn how to build this array in the [state-connector-attestation-types repository](https://github.com/flare-foundation/state-connector-attestation-types).
-
 ### 2. Request forwarding
 
 The State Connector simply **forwards the request** to all connected attestation providers through an [EVM](glossary.md#evm) event.
@@ -98,14 +85,6 @@ If **at least 50%** of the attestation providers submitted the same answer, it i
 Otherwise, **no consensus is achieved**: requests remain **unanswered** and must be issued again.
 
 **The answers are stored in the State Connector smart contract for a week**, where anybody can read them, including the original requester.
-
-??? example "Retrieving your request's answer (for App developers)"
-
-    To retrieve the stored answers just read the `merkleRoots` public array (#8) in the [StateConnector contract](../dev/getting-started/contract-addresses.md).
-
-    More information on how to retrieve a particular answer in the [State Connector contract source code](https://gitlab.com/flarenetwork/flare-smart-contracts/-/blob/master/contracts/genesis/implementation/StateConnector.sol#L59).
-
-    As shown below, multiple answers are actually packed into a single Merkle root. The [Attestation Packing](#attestation-packing) section explains how to retrieve an individual answer.
 
 ## Attestation Protocols
 
@@ -183,39 +162,6 @@ Additional points worth noting:
 
 * The exact way in which the root hash is calculated can be changed without impacting the State Connector contract, which will continue to vote only on the hash value.
 
-??? example "Proof Unpacking (for App developers)"
-
-    The procedure for apps to check whether the State Connector answered yes or no to their request is detailed in the [Attestation Client repository](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/verification-workflow.md). What follows is an illustrative summary.
-
-    The basic idea is that you must **retrieve all data** (both requests and answers) for the round from an attestation provider.
-    You then **rebuild the Merkle tree** with this data and check that it matches the Attestation Proof provided by the State Connector.
-
-    <figure markdown>
-      ![Proof unpacking](SC-proof-unpacking.png){ loading=lazy .allow-zoom }
-      <figcaption>Proof unpacking.</figcaption>
-    </figure>
-
-    1. In the attestation round after you made the request (3 attestation phases, so from 3 to 4.5 minutes) the **Attestation Proof** for the round should be available in the State Connector.
-        Retrieve it using method `getAttestation` (#7) of the [StateConnector contract](../dev/getting-started/contract-addresses.md).
-
-    2. **Select any attestation provider** you want and use the [Proof API](https://github.com/flare-foundation/attestation-client/blob/main/docs/end-users/apis.md#proof-api-on-attestation-provider-server) path `api/proof/votes-for-round/{roundId}` to **retrieve all data for the round**.
-
-    3. **Rebuild the Merkle tree** for the retrieved data.
-    There are tools to help you, like the [MerkleTree.ts](https://github.com/flare-foundation/attestation-client/blob/main/src/utils/data-structures/MerkleTree.ts) library.
-
-    4. **Check** that the tree's root matches the Attestation Proof from step 1.
-    If it does not match, this provider did not submit the answer agreed by the majority.
-    Choose another provider in step 2.
-
-        Conversely, you can use the `api/proof/get-specific-proof` API in step 2 which does steps 2, 3 and 4 for you.
-        This API returns the JSON response data, including the attestation proof, if the attestation request was successfully verified in the given round.
-
-    5. Now that you know that the retrieved data has been agreed upon by the consensus, you can use it.
-    **Look for your request inside the returned data**.
-    If it is not present, your request was deemed **invalid** (for example, the queried transaction was not present).
-
-        Otherwise, your request is valid and you can find any extra information about it in the data array.
-
 ## Branching Protocol
 
 Besides the consensus algorithm that runs on all received attestations, the State Connector provides **one further security mechanism**:
@@ -227,7 +173,7 @@ To achieve this, two **sets** of attestation providers are defined:
 
 * **Default attestation providers set**
 
-    Anybody can submit attestations to the State Connector, but the contract will only accept submissions from attestation providers in the [**default set**](../infra/attestation/operating.md).
+    Anybody can submit attestations to the State Connector, but the contract will only accept submissions from attestation providers in the [**default set**].
     **Every validator node** in the Flare network relies on this set.
 
 * **Local attestation providers set**
@@ -337,8 +283,8 @@ In summary, validators using at least one reliable local attestation provider do
 
 Attestation providers currently support these attestation types:
 
-* [**AddressValidity**](AddressValidity.md): Whether a given address is valid in the specified network.
-* [**Balance-decreasing transaction**](BalanceDecreasingTransaction.md): Whether a transaction that might have decreased a balance occurred.
+* **AddressValidity**: Whether a given address is valid in the specified network.
+* **Balance-decreasing transaction**: Whether a transaction that might have decreased a balance occurred.
     This type allows for several possibilities:
 
     * During a transaction, funds, including fees, were deducted from the balance at an address.
@@ -346,10 +292,10 @@ Attestation providers currently support these attestation types:
     * During a transaction, funds to pay for fees were deducted from the balance at an address at the same time as more funds arrived.
     As a result, the balance at the address experienced a decrease, but the final balance is more than the balance was before the transaction.
 
-* [**Confirmed block height**](ConfirmedBlockHeightExists.md): Whether a block on a certain height exists and was confirmed.
-* [**EVMTransaction**](EVMTransaction.md): A relay of a transaction from an EVM chain.
-* [**Payment**](Payment.md): Whether a payment transaction occurred in which funds were sent from one address to another address.
-* [**Referenced payment nonexistence**](ReferencedPaymentNonexistence.md): Whether an account did not receive funds from a different account by a specific deadline.
+* **Confirmed block height**: Whether a block on a certain height exists and was confirmed.
+* **EVMTransaction**: A relay of a transaction from an EVM chain.
+* **Payment**: Whether a payment transaction occurred in which funds were sent from one address to another address.
+* **Referenced payment nonexistence**: Whether an account did not receive funds from a different account by a specific deadline.
 This type can serve as proof that a user's payment obligations to a DeFi protocol have been breached, considering the following cases:
 
     * The required transaction was not confirmed on time.

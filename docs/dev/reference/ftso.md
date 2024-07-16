@@ -17,7 +17,7 @@ Using prices as an example, the following diagram shows the flow of data, querie
 
 The following list describes the most relevant contracts and their purposes:
 
-* **[FTSO](Ftso.md)**: Each data type is handled by its own FTSO contract, including calculation of the filtered [data feed](glossary.md#data_feed).
+* **FTSO**: Each data type is handled by its own FTSO contract, including calculation of the filtered [data feed](glossary.md#data_feed).
 
     To retrieve information about a data type, access this contract.
 
@@ -26,19 +26,15 @@ The following list describes the most relevant contracts and their purposes:
         If an FTSO contract is **redeployed** (for example, to fix a bug), **its address will change** and apps using it will need to be updated.
         The FTSO Registry contract below tracks this change for you.
 
-    You can retrieve the addresses of all FTSO contracts using the [`getAllFtsos`](FtsoRegistry.md#fn_getallftsos_2bcdd6ab) method in the FTSO Registry.
+    You can retrieve the addresses of all FTSO contracts using the `getAllFtsos` method in the FTSO Registry.
 
-* **[FTSO Registry](FtsoRegistry.md)**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
+* **FTSO Registry**: Aggregates the output of each individual FTSO contract and provides a convenient one-stop API to retrieve all data.
 
-* **[Price Submitter](PriceSubmitter.md)**: This contract is used by the FTSO data providers to submit their data. Although the contract is called [`PriceSubmitter`](PriceSubmitter.md), data is not limited to prices.
+* **Price Submitter**: This contract is used by the FTSO data providers to submit their data. Although the contract is called `PriceSubmitter`, data is not limited to prices.
 
-* **[Reward Manager](FtsoRewardManager.md)**: Use this contract to claim your [rewards](../../tech//ftso.md#rewards), whether you are a data provider or a [delegator](../../tech//ftso.md#delegation).
+* **Reward Manager**: Use this contract to claim your [rewards](../../tech//ftso.md#rewards), whether you are a data provider or a [delegator](../../tech//ftso.md#delegation).
 
-* **[Wrapped Native (WNat)](WNat.md)**: This contract is not exclusively related to the FTSO system, but it is required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
-
-!!! note
-
-    The [Contract Addresses](../getting-started/contract-addresses.md) page explains how to securely retrieve each contract's address.
+* **Wrapped Native (WNat)**: This contract is not exclusively related to the FTSO system, but it is required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
 
 ## Manual Delegation and Claiming
 
@@ -68,7 +64,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 === "Flare"
 
-    FTSO data providers submit data through the [PriceSubmitter contract](../getting-started/contract-addresses.md).
+    FTSO data providers submit data through the `PriceSubmitter` contract.
 
     - **Commit**: A single hash is needed for each submission.
 
@@ -92,7 +88,7 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 === "Songbird"
 
-    FTSO data providers submit data through the [PriceSubmitter contract](../getting-started/contract-addresses.md).
+    FTSO data providers submit data through the `PriceSubmitter` contract.
 
     - **Commit**: A separate hash is needed for each submission.
 
@@ -119,8 +115,8 @@ The submission API is slightly different for the Flare and Songbird networks:
 
 Data produced by the FTSO is **publicly available** on the Flare and Songbird networks.
 
-All data can be retrieved either through the [`FtsoRegistry`](FtsoRegistry.md) contract or directly through one of the [`Ftso`](Ftso.md) contracts.
-In any case, using the [`getCurrentPriceWithDecimals`](FtsoRegistry.md#fn_getcurrentpricewithdecimals_257cbd3a) method is recommended.
+All data can be retrieved either through the `FtsoRegistry` contract or directly through one of the `Ftso` contracts.
+In any case, using the `getCurrentPriceWithDecimals` method is recommended.
 The following examples show how to use this method to retrieve price data.
 
 === "Retrieve by pair index"
@@ -181,7 +177,3 @@ That is, the actual price is `_price` \* 10 ^-`_assetPriceUsdDecimals`^.
 For example, a return value of `2603` with `_assetPriceUsdDecimals` of `5` means a price of `0.02603 USD` (There are only **5** significant decimal places).
 
 A [standard Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) of the last price update is also returned.
-
-## Related Tutorials
-
-* [FTSO](../tutorials/ftso/index.md)

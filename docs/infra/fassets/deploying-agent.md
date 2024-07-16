@@ -206,7 +206,7 @@ When you want to stop the server, press Ctrl + C.
 ## Verifying Collateral Pool Smart Contracts
 
 Verification of a smart contract on a block explorer allows future users of the smart contract to inspect the Solidity source code instead of the bytecode, greatly improving the security and transparency of the ecosystem.
-Follow these steps to upload the source code for the Collateral Pool and Collateral Pool Token smart contracts, verifying them on the [Original Flare block explorer](../../user/block-explorers/index.md).
+Follow these steps to upload the source code for the Collateral Pool and Collateral Pool Token smart contracts, verifying them on the block explorer.
 
 1. Execute the FAssets system information command to determine your collateral pool smart contract address.
 

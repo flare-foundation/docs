@@ -2,7 +2,7 @@
 
 When you make delegations to data providers, you increase their vote power, reinforce the stability of the FTSO ecosystem, and earn monetary rewards.
 
-This information explains how to manage your delegations using the [Flare Portal](https://portal.flare.network). Alternatively, if you have used block explorers for other networks and are competent interacting with smart contracts without a user interface, you can [use the block explorer](../block-explorers/managing-delegations.md), which provides more options but can be more complex. Using it is intended for advanced users.
+This information explains how to manage your delegations using the [Flare Portal](https://portal.flare.network). Alternatively, if you have used block explorers for other networks and are competent interacting with smart contracts without a user interface, you can use the block explorer, which provides more options but can be more complex. Using it is intended for advanced users.
 
 ## Prerequisites
 

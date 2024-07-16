@@ -33,10 +33,8 @@ The `PollingFtso` contract handles interactions such as managing group members, 
 The following procedure explains how to interact directly with this contract.
 However, if you prefer a simpler interface, the Flare community is developing front-ends to facilitate the interactions, such as [Flaremetrics](https://flaremetrics.io/ftso/proposals).
 
-1. Open a [block explorer](../../../user/block-explorers/index.md) for the appropriate network.
-2. Follow the [Retrieval from Blockchain procedure](../../../dev/getting-started/contract-addresses.md#retrieval-from-blockchain) to find and open the `PollingFtso` contract.
-    The **Contract Address Details** page is displayed.
-3. Optional: If you need to call a method in the **Write** tab, click the **Write Contract** tab, click **Connect Wallet**, and complete the steps to connect your wallet.
+1. Find the address of the `PollingFtso` contract in the [Developer Hub](https://dev.flare.network).
+2. Open a block explorer for the appropriate network and go to the `PollingFtso` address.
 
 After the `PollingFtso` contract is open in the explorer, you can complete operations to manage members and chill proposals.
 

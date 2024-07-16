@@ -11,7 +11,7 @@ However, the Flare Portal does not help you find executor addresses, so you must
 
 * [Manual executors](../tech/automatic-claiming.md#manual-claiming-process) are ones that you locate yourself.
     Whether they charge a fee or not and how you pay it is between you and the executor.
-* [Registered executors](../tech/automatic-claiming.md#registered-claiming-process) are listed in a [smart contract](glossary.md#smart_contract) and can be retrieved, for instance, using the [block explorer](./block-explorers/index.md) or third-party applications.
+* [Registered executors](../tech/automatic-claiming.md#registered-claiming-process) are listed in a [smart contract](glossary.md#smart_contract) and can be retrieved, for instance, using the block explorer or third-party applications.
     These executors charge a fee when you set them up and every time they claim for you.
 
 !!! note "Overview of autoclaiming functionality"
@@ -22,20 +22,7 @@ However, the Flare Portal does not help you find executor addresses, so you must
 
 To enable an executor, obtain its address off-chain or, for registered executors, on-chain.
 
-The list of registered executors has not been added yet to the Flare Portal, but a manual method is given below using the [block explorer](./block-explorers/index.md) (recommended for advanced users).
-
-??? example "Find a registered executor (using the Block Explorer)"
-
-    To find an executor you will need to use the `ClaimSetupManager` contract.
-    See the [Contract Addresses](../dev/getting-started/contract-addresses.md) page to learn how to find the address of this contract.
-
-    1. In the [Block Explorer](https://flare-explorer.flare.network/), paste the address of the `ClaimSetupManager` contract and scroll down to select the **Read Contract** tab.
-    2. To get the available executors' addresses, scroll down to `getRegisteredExecutors` and enter a range of how many addresses to check, for example, `0` in the **_start** field and `10` in the **_end** field.
-    3. Click **Query**. The Block Explorer returns the addresses and the total number available, so you can know if you've gotten them all.
-    4. To get the executor's fee, copy one address at a time and enter it in the executor field for `getExecutorCurrentFeeValue`.
-    5. Click **Query**.
-    In the future, there will be more criteria to help with making this decision.
-    6. Choose an executor and copy its address.
+Note that the list of registered executors has not been added yet to the Flare Portal.
 
 ## Enabling Automatic Claiming
 

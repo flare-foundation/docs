@@ -175,8 +175,6 @@ You can [delegate your tokens using the Flare Portal](../user/delegation/managin
 Some FTSO data providers have already started providing these dapps as a convenience.
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
-If you are an advanced user, you can [delegate manually](../user/block-explorers/managing-delegations.md) by interacting directly with the FTSO smart contracts.
-
 ## Rewards
 
 A percentage of the annual network **[inflation](glossary.md#inflation)** is reserved to reward FTSO data providers and distributed uniformly among the year's reward epochs.
@@ -226,8 +224,6 @@ Instead, the amounts are accumulated in a smart contract and must be claimed **o
 You can [claim your rewards using the Flare Portal](../user/delegation/managing-rewards.md), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
-If you are an advanced user, you can [claim manually](../user/block-explorers/managing-rewards.md) by interacting directly with the FTSO smart contracts.
-
 To save on gas costs, rewards from multiple reward epochs are claimed simultaneously when you use the Portal. However, be aware that **rewards expire after 90 days**.
 Moreover, you probably want to claim soon, to redelegate the received amount and obtain compounded rewards.
 
@@ -247,8 +243,3 @@ It is also worth noting that:
 * [Operating a Data Provider](../infra/data/operating.md)
 * [Working with Whitelists](../infra/data/whitelisting.md)
 * [Managing the Ecosystem](../infra/data/managing-ecosystem/index.md)
-
-## Related Developer Docs
-
-* [FTSO Reference](../dev/reference/ftso.md)
-* [FTSO Tutorials](../dev/tutorials/ftso/index.md)

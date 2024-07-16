@@ -50,7 +50,3 @@ You can also enable [automatic claiming](./automatic-claiming.md) to make sure y
 
 * [Claiming the FlareDrop](../user/claiming-the-flaredrop.md)
 * [Wrapping tokens](../user/wrapping-tokens.md)
-
-## Related Developer Docs
-
-* [The FlareDrop](../dev/reference/the-flaredrop.md)

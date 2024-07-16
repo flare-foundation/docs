@@ -50,7 +50,7 @@ Install [linkchecker-markdown](https://github.com/scivision/linkchecker-markdown
 pip install linkcheckmd
 ```
 
-And run `linkcheckmarkdown -r docs` before submitting PRs to verify you are not introducing broken links.
+And run `linkcheckmarkdown --recurse --sync docs` before submitting PRs to verify you are not introducing broken links.
 
 These are currently false positives which can be safely ignored:
 

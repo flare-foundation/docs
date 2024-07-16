@@ -5,7 +5,6 @@ This section contains step-by-step guides on how to use tools like the Block Exp
 Select one of the topics below:
 
 * [Automatic Claiming](./automatic-claiming.md)
-* [Block Explorers](./block-explorers/index.md)
 * [Claiming the FlareDrop](./claiming-the-flaredrop.md)
 * [FTSO Delegation](./delegation/index.md)
 * [Governance](./governance/index.md)

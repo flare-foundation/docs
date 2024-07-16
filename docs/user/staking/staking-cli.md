@@ -427,14 +427,14 @@ Press the down key a few times for this last option to show.
             secp256k1 public key: 0x●●●●●●●●●●●●●●●●
             ```
 
-        2. You need to interact with the `AddressBinder` smart contract, so you must retrieve its address from the `FlareContractRegistry` as explained in the [retrieving Contract Addresses page](../../dev/getting-started/contract-addresses.md).
-        3. Enter the address of the `AddressBinder` contract in the [Block Explorer](../block-explorers/index.md), and go to the **Write Contract** tab.
+        2. You need to interact with the `AddressBinder` smart contract, so you must retrieve its address from the `FlareContractRegistry`.
+        3. Enter the address of the `AddressBinder` contract in the block explorer, and go to the **Write Contract** tab.
         4. Click on **Connect Wallet**.
             You do not need to use the same account as the one you are binding.
         5. Locate the `registerPublicKey` method and paste the public key from step 1 into the `_publicKey` field.
         6. Click on **Write** and confirm the transaction from your wallet.
 
-        If the transaction is successful, your account's P and C-chain addresses are now bound.
+        If the transaction is successful, your account's P- and C-chain addresses are now bound.
 
 You then need to provide the following information:
 
@@ -595,8 +595,8 @@ Finished execution
 
     Rewards can also be claimed directly from the `ValidatorRewardManager` contract that accumulates them:
 
-    1. You need to interact with the `ValidatorRewardManager` smart contract, so you must retrieve its address from the `FlareContractRegistry` as explained in the [retrieving Contract Addresses page](../../dev/getting-started/contract-addresses.md).
-    2. Enter the address of the `ValidatorRewardManager` contract in the [Block Explorer](../block-explorers/index.md), and go to the **Write Contract** tab.
+    1. You need to interact with the `ValidatorRewardManager` smart contract, so you must retrieve its address from the `FlareContractRegistry`.
+    2. Enter the address of the `ValidatorRewardManager` contract in the block explorer, and go to the **Write Contract** tab.
     3. Click on **Connect Wallet**.
         You need to connect the account for which you are claiming.
     4. Locate the `claim` method and enter the following information:

@@ -114,14 +114,6 @@ Additionally, this avoids the fee that a public executor will typically charge.
     The Flare network offers only the possibility of setting up an automatic execution service and is not liable for any damages if this service is not performed.
     For more information, see [FLARE TERMS OF SERVICE & PRIVACY POLICY](https://flare.network/privacy-policy/).
 
-!!! example "Developing autoclaiming functionality"
-
-    For information on how to develop an executor, or how to write an application that supports autoclaiming, see [Automatic Claiming](../dev/reference/automatic-claiming.md) in the Developer section.
-
 ## Related User Guides
 
 * [Automatic claiming](../user/automatic-claiming.md)
-
-## Related Developer Docs
-
-* [Automatic claiming](../dev/reference/automatic-claiming.md)

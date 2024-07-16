@@ -69,7 +69,7 @@ Other useful contracts are:
 * `FtsoManager`: Holds epoch and voting-related configuration data, oversees all FTSOs, and gives access to additional useful contracts, such as the `Inflation` and `Supply` contracts.
 * `VoterWhitelister`: Accepts the names of data providers that list themselves to submit data.
 
-Find these contract's addresses in the [Contract Addresses](../../dev/getting-started/contract-addresses.md) page.
+Find these contract addresses in the [Developer Hub](https://dev.flare.network/).
 
 ## Generating Random Numbers
 

@@ -28,21 +28,7 @@ Flare has the following native data acquisition protocols at these stages of dev
 
 ## Developing on Flare
 
-Flare developers can work in a familiar Ethereum-like environment.
-It offers the same [API](../apis/index.md) and uses the Ethereum Virtual Machine ([EVM](glossary.md#evm)), so Ethereum's Solidity smart contracts can be used directly.
-Like Ethereum, Flare supports other assets, such as NFTs.
-See [Getting Started](../dev/getting-started/index.md).
-
-The Flare native currency, `$FLR`, works the same as `$ETH` on the Ethereum blockchain.
-For those contracts that can only work with [ERC-20](glossary.md#erc20) tokens, `$FLR` can be easily [wrapped](../user/wrapping-tokens.md) as `$WFLR`, which is an ERC-20 representation of `$FLR`.
-Flare's [FTSO delegation](./ftso.md#delegation) and Flare [governance](./governance.md) are examples of such apps.
-
-Common blockchain tools like [wallets](../user/wallets/index.md), a [token management portal](https://portal.flare.network/), and [block explorers](../user/block-explorers/index.md) are available on Flare.
-
-Flare is actively seeking developers eager to discover what new utility can be brought to the blockchain industry when acquiring data is possible in a decentralized way.
-To start, since Flare is EVM-compatible, you can migrate Ethereum smart-contract dapps to Flare.
-Then consider, for example, creating DeFi, gaming, NFT, music, or social network dapps.
-See [Start Building](https://flare.network/start-building/), for more information.
+For information about developing on Flare, see the [Flare Developer Hub](https://dev.flare.network/).
 
 ## Flare Networks
 
@@ -58,16 +44,9 @@ Flare has 4 networks with different purposes:
 <figcaption>General feature adoption flow.</figcaption>
 </figure>
 
-For technical details about each network see [Network Configuration](../dev/reference/network-config.md).
-
 ## Flare Chains
 
 Flare uses two chains and is developing a built-in interoperability mechanism between them.
 
 * **C-Chain:** The contract chain that is used for smart contracts. It is where the Ethereum Virtual Machine operates, and is the chain where the vast bulk of the community currently interact.
 * **P-Chain:** The platform chain that accommodates [staking](../tech/validators.md) and provides rewards to its validators.
-
-## Security
-
-The Flare source code has been audited and is secure and safe.
-[View the audit reports](../security/index.md) on Flare clients and smart contracts.

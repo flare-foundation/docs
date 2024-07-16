@@ -15,7 +15,6 @@ You can claim:
 
 * Using the [Flare Portal](https://portal.flare.network/).
 * Through an [executor](../tech/automatic-claiming.md), which you can configure using the Portal, or
-* [Directly against a smart contract](../dev/reference/the-flaredrop.md) (for advanced users).
 
 !!! warning "Two steps to ensure receiving all your `$FLR` !"
 
