@@ -1,8 +1,8 @@
 ## Prerequisites
 
-To participate in the open beta, you need a server with at least a minimum of 2 CPUs and 4GB RAM, or 2GB if the database is on a separate server.
+You need a server with at least a minimum of 2 CPUs and 4GB RAM, or 2GB if the database is on a separate server.
 
-You will need knowledge of the following tools:
+You need knowledge of the following tools:
 
 * [Git](https://git-scm.com/) version control system
 * [Yarn](https://yarnpkg.com/) package manager

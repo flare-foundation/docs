@@ -1,6 +1,11 @@
+---
+title: Minting and Redeeming (Dapp)
+---
+
 # Using the FAssets Demo Dapp to Mint and Redeem FAssets
 
 Users of the [FAssets](../../tech//fassets/index.md) system can use the FAssets Demo Dapp with their [Bifrost wallet](https://bifrostwallet.com/?utm_source=flare_network&utm_medium=blog&utm_campaign=fasset_open_beta) to mint and redeem FAssets, which allow tokens on blockchains that do not support smart contracts to be used trustlessly with smart contracts on the Flare blockchain.
+Alternatively, you can [use the command line to mint and redeem FAssets](./minting-redeeming-cli.md).
 
 In this guide you will deposit some test XRP tokens into an XRP account and use the FAssets system to mint them into FTestXRP FAsset tokens on the Coston network.
 You will receive these tokens in a Coston account.

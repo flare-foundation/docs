@@ -319,6 +319,7 @@ nav:
     - user/automatic-claiming.md
     - FAssets:
       - user/fassets/index.md
+      - user/fassets/depositing-collateral-cli.md
       - user/fassets/minting-redeeming-cli.md
       - user/fassets/minting-redeeming-dapp.md
     - Governance:
