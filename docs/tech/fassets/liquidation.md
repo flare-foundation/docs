@@ -1,5 +1,6 @@
 ---
 title: Liquidation
+mathjax: true
 search:
   boost: 2
 ---

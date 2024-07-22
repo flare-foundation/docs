@@ -1,5 +1,6 @@
 ---
 title: Collateral
+mathjax: true
 search:
   boost: 2
 ---
