@@ -11,4 +11,26 @@
       {% include "partials/copyright.html" %}
     </div>
   </div>
+
+  <!-- Cookbook Onboard (AI Assistant). API key is public so it's fine to just hardcode it here. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var element = document.getElementById('__cookbook');
+      if (!element) {
+        element = document.createElement('div');
+        element.id = '__cookbook';
+        element.dataset.apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWYxZGYyODc2ZTY2YjI4MGI4NDY5NzciLCJpYXQiOjE3MTAzNTAxMjAsImV4cCI6MjAyNTkyNjEyMH0.I3prXWEgijTM9b_l-EYr4sP3VES621JgApJM7rNhVQk';
+        document.body.appendChild(element);
+      }
+
+      var script = document.getElementById('__cookbook-script');
+      if (!script) {
+        script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@cookbookdev/docsbot/dist/standalone/index.cjs.js';
+        script.id = '__cookbook-script';
+        script.defer = true;
+        document.body.appendChild(script);
+      }
+    });
+  </script>
 </footer>
