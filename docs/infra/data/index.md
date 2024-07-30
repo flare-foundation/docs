@@ -1,6 +1,6 @@
 # FTSO Data Providers
 
-These guides explain how to manage the infrastructure required for the [FTSO system](../../tech/ftso.md).
+These guides explain how to manage the infrastructure required for the [FTSO system](../../tech/ftso/index.md).
 
 Select one of the guides below:
 

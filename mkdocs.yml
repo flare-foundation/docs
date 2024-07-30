@@ -86,12 +86,12 @@ plugins:
           'tutorials/developing-on-top-of-flare/README.md': 'developer-hub.md'
           'tutorials/developing-on-top-of-flare/important-links.md': 'developer-hub.md'
           'tutorials/delegation/README.md': 'user/delegation/index.md'
-          'tutorials/delegation/delegation-in-detail.md': 'tech/ftso.md'
-          'tutorials/delegation-faq/README.md': 'tech/ftso.md'
+          'tutorials/delegation/delegation-in-detail.md': 'tech/ftso/index.md'
+          'tutorials/delegation-faq/README.md': 'tech/ftso/index.md'
           'tutorials/delegation-faq/block-explorer-+-metamask.md': 'user/delegation/managing-delegations.md'
-          'tutorials/reward-claiming/README.md': 'tech/ftso.md'
+          'tutorials/reward-claiming/README.md': 'tech/ftso/index.md'
           'tutorials/reward-claiming/reward-claiming-in-detail.md': 'user/delegation/managing-rewards.md'
-          'tutorials/reward-faq/README.md': 'tech/ftso.md'
+          'tutorials/reward-faq/README.md': 'tech/ftso/index.md'
           'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/managing-rewards.md'
           'tutorials/price-provider/setting-up-an-observation-node/README.md': 'infra/observation/deploying.md'
           'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'infra/observation/deploying.md'
@@ -228,7 +228,7 @@ plugins:
           'exchange/delegation.md': 'developer-hub.md'
           'exchange/troubleshooting.md': 'developer-hub.md'
           'get-started-building/index.md': 'developer-hub.md'
-          'user/delegation/delegation-overview.md': 'tech/ftso.md'
+          'user/delegation/delegation-overview.md': 'tech/ftso/index.md'
           'user/block-explorers/index.md': 'developer-hub.md'
           'user/block-explorers/finding-reward-epoch.md': 'developer-hub.md'
           'user/block-explorers/managing-delegations.md': 'developer-hub.md'
@@ -239,13 +239,13 @@ plugins:
           'user/block-explorers/viewing-token-transfers.md': 'developer-hub.md'
           'user/block-explorers/viewing-transactions.md': 'developer-hub.md'
           'user/block-explorers/user-interface.md': 'developer-hub.md'
-          'user/delegation/delegation-faq.md': 'tech/ftso.md'
-          'user/delegation/delegation-in-detail.md': 'tech/ftso.md'
+          'user/delegation/delegation-faq.md': 'tech/ftso/index.md'
+          'user/delegation/delegation-in-detail.md': 'tech/ftso/index.md'
           'user/delegation/manual-delegation.md': 'user/delegation/managing-delegations.md'
           'user/delegation/manual-reward-claiming.md': 'user/delegation/managing-rewards.md'
-          'user/delegation/reward-claiming.md': 'tech/ftso.md'
-          'user/delegation/reward-claiming-faq.md': 'tech/ftso.md'
-          'user/delegation/reward-claiming-in-detail.md': 'tech/ftso.md'
+          'user/delegation/reward-claiming.md': 'tech/ftso/index.md'
+          'user/delegation/reward-claiming-faq.md': 'tech/ftso/index.md'
+          'user/delegation/reward-claiming-in-detail.md': 'tech/ftso/index.md'
           'user/fassets/minting-redeeming.md': 'user/fassets/index.md'
           'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
           'infra/observation/faq.md': 'infra/observation/deploying.md'
@@ -329,7 +329,10 @@ nav:
       - dev/reference/network-config.md
   - Products:
     - products/index.md
-    - tech/ftso.md
+    - FTSO:
+      - tech/ftso/index.md
+      - tech/ftso/ftso-scaling.md
+      - tech/ftso/ftso-fast-updates.md
     - tech/state-connector.md
     - FAssets:
       - tech/fassets/index.md
@@ -354,6 +357,7 @@ nav:
     - Archive:
       - tech/archive/index.md
       - tech/archive/flare-launch-process.md
+      - tech/archive/ftso-v1.md
   - Infrastructure:
     - infra/index.md
     - FTSO Data Providers:

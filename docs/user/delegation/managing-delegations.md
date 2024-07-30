@@ -9,8 +9,8 @@ This information explains how to manage your delegations using the [Flare Portal
 Before you delegate your vote power, you must:
 
 * [Wrap your native tokens](../wrapping-tokens.md). Wrapped tokens are required to delegate your vote power to data providers.
-* Choose 1 or 2 data providers. Multiple lists of data providers are available online, such as [FlareMetrics](https://flaremetrics.io/). As you browse the lists, consider the [factors that affect the potential for rewards](../../tech/ftso.md#rewards).
-* [Understand how the timing of delegations affects rewards](../../tech/ftso.md#effects-of-the-vote-power-block-snapshot-on-delegations), and consider the following implications about the vote-power snapshot that will affect your rewards.
+* Choose 1 or 2 data providers. Multiple lists of data providers are available online, such as [FlareMetrics](https://flaremetrics.io/). As you browse the lists, consider the [factors that affect the potential for rewards](../../tech/ftso/index.md#rewards).
+* [Understand how the timing of delegations affects rewards](../../tech/ftso/index.md#effects-of-the-vote-power-block-snapshot-on-delegations), and consider the following implications about the vote-power snapshot that will affect your rewards.
 
 ### Delegating Your Vote Power
 

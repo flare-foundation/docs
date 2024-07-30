@@ -28,7 +28,7 @@ For example, Flare uses the **Snowman++** consensus protocol from [Avalanche](gl
     During each round, a validator is **randomly selected** to act as the **leader** and propose new blocks to be added to the ledger, which are then validated by the rest of nodes.
     To provide [Sybil resistance](glossary.md#sybil_resistance), the probability that a node is elected the leader is **proportional to the node's stake**, effectively enacting a [proof-of-stake](glossary.md#proof_of_stake) consensus.
 
-With its vision to be the blockchain for data, Flare adds the [FTSO Data provider](./ftso.md) and [Attestation Provider](./state-connector.md) roles to validators, creating a single _infrastructure entity_.
+With its vision to be the blockchain for data, Flare adds the [FTSO Data provider](./ftso/index.md) and [Attestation Provider](./state-connector.md) roles to validators, creating a single _infrastructure entity_.
 
 When fully operational, these decentralized infrastructure entities are responsible for:
 
@@ -83,7 +83,7 @@ Professional validators are expected to cease operating at this point, unless th
 The Flare Foundation might delegate stake to FTSO data providers that went through the KYC process, to help kick-start the system.
 This is known as stake boosting and will run only for a limited amount of time.
 
-Staked funds can earn [FlareDrops](./the-flaredrop.md) and participate in [governance](./governance.md), but not earn [FTSO rewards](./ftso.md#rewards).
+Staked funds can earn [FlareDrops](./the-flaredrop.md) and participate in [governance](./governance.md), but not earn [FTSO rewards](./ftso/index.md#rewards).
 
 Staking rewards will:
 
@@ -95,7 +95,7 @@ Staking rewards will:
 ### Phase 3
 
 After secure communication between the P- and C-chains is available, staking rewards will be managed entirely on-chain.
-The goal is that funds staked on the P-chain will have the same rights as wrapped `$FLR` on the C-chain, opening the possibility to earn [FTSO rewards](./ftso.md#rewards), [FlareDrops](./the-flaredrop.md) and participate in [governance](./governance.md).
+The goal is that funds staked on the P-chain will have the same rights as wrapped `$FLR` on the C-chain, opening the possibility to earn [FTSO rewards](./ftso/index.md#rewards), [FlareDrops](./the-flaredrop.md) and participate in [governance](./governance.md).
 
 ### Summary
 

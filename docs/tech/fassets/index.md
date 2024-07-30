@@ -25,7 +25,7 @@ You can then use these FAssets in smart contracts and decentralized applications
 
 The system is enabled by these Flare protocols:
 
-* [FTSO](../ftso.md), whose contracts provide decentralized price feeds for multiple tokens.
+* [FTSO](../ftso/index.md), whose contracts provide decentralized price feeds for multiple tokens.
 * [State Connector](../state-connector.md), which brings payment data from any connected chain into Flare.
 
 FAssets are backed by collateral provided by entities in the following roles that maintain the infrastructure of the system and hold Flare's native assets.

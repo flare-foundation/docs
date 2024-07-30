@@ -1,9 +1,16 @@
 ---
 search:
-  boost: 2
+  boost: 0.5
 ---
 
-# FTSO
+# FTSO v1
+
+!!! warning "Archived content"
+
+    This is an archived page corresponding to a phased-out version of the FTSO.
+
+    This page is only maintained for historical reasons.
+    You can find the latest version in the [FTSO concept page](../ftso/index.md).
 
 The **Flare Time Series Oracle** (FTSO) is a smart contract running on the Flare network that **provides continuous estimations for different types of data**. It does so in a **decentralized manner** (no single party is in control of the process) and **securely** (it takes a lot of effort to disrupt the process).
 
@@ -55,7 +62,7 @@ Using price data as an example, the procedure in the following diagram runs cont
     During a **3-minute** price epoch, providers fetch the information, run their algorithms, and **submit a hash** of the data (_commit_).
     Then, during the first half of the following price epoch (**1.5 minutes**), providers submit the actual data (_reveal_).
 
-    See technical details about the [data-submission process](../dev/reference/ftso.md#data-submission-process) in the developer reference section.
+    See technical details about the [data-submission process](../../dev/reference/ftso.md#data-submission-process) in the developer reference section.
 
 3. The FTSO system calculates the **resulting median**, taking into account each provider's vote power (see [How Results are Calculated](#how-results-are-calculated) below).
 
@@ -123,7 +130,7 @@ See all details [in the Flare whitepaper](https://flare.network/whitepapers/).
 If you hold `$FLR` or `$SGB` tokens, you can **delegate** them to an FTSO data provider to increase its [vote power](#vote-power) and earn a share of its [rewards](#rewards), resulting in a **mutually beneficial arrangement**.
 When you delegate your vote power, you not only earn rewards but also support reliable data providers, which strengthens the stability of the FTSO and the whole ecosystem.
 
-Before you can delegate your native `$FLR` and `$SGB` tokens, you must [wrap these tokens](../user/wrapping-tokens.md) into **ERC-20** `$WFLR` and `$WSGB` tokens, an operation you can reverse at any time.
+Before you can delegate your native `$FLR` and `$SGB` tokens, you must [wrap these tokens](../../user/wrapping-tokens.md) into **ERC-20** `$WFLR` and `$WSGB` tokens, an operation you can reverse at any time.
 
 After you wrap your tokens, you will have the vote power that is equivalent to the wrapped token balance, and you can delegate 100% of this vote power to 1 or 2 data providers.
 Delegating 100% of your vote power to reliable data providers committed to providing accurate data maximizes your rewards and enhances the stability of the ecosystem.
@@ -148,7 +155,7 @@ Rewards accumulate, and they become claimable for each reward epoch that is fina
 Delegated tokens are **not locked**, meaning that they remain in the user's control and the delegation can be removed at any time.
 
 Any `$WFLR` or `$WSGB` that is newly wrapped, sent, or received will automatically update your actual delegated vote power.
-However, if you receive native tokens, you must [wrap them](../user/wrapping-tokens.md) before you contribute to existing delegations.
+However, if you receive native tokens, you must [wrap them](../../user/wrapping-tokens.md) before you contribute to existing delegations.
 
 ### Immediate Delegation Revocation
 
@@ -157,7 +164,7 @@ Sometimes, a data provider might maliciously attack the FTSO system to skew the 
 In this situation, an off-chain process, such as a Twitter storm, calls for users to revoke vote power from the data provider that has attacked the system.
 When vote power is revoked, the revocation occurs immediately.
 
-[Learn how to perform this operation](../user/delegation/managing-delegations.md#revoking-vote-power) from the block explorer.
+[Learn how to perform this operation](../../user/delegation/managing-delegations.md#revoking-vote-power) from the block explorer.
 
 ### Effects of the Vote-Power Block Snapshot on Delegations
 
@@ -171,7 +178,7 @@ The following table shows when new, changed, and revoked delegations take effect
 
 ### Delegation Procedure
 
-You can [delegate your tokens using the Flare Portal](../user/delegation/managing-delegations.md), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
+You can [delegate your tokens using the Flare Portal](../../user/delegation/managing-delegations.md), a supported wallet like [Bifrost](../../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Some FTSO data providers have already started providing these dapps as a convenience.
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
@@ -221,7 +228,7 @@ After 90 days, unclaimed rewards on Flare are [burned](glossary.md#burn), and on
 FTSO rewards are not automatically transferred to their recipients.
 Instead, the amounts are accumulated in a smart contract and must be claimed **once the reward epoch is finished**.
 
-You can [claim your rewards using the Flare Portal](../user/delegation/managing-rewards.md), a supported wallet like [Bifrost](../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
+You can [claim your rewards using the Flare Portal](../../user/delegation/managing-rewards.md), a supported wallet like [Bifrost](../../user/wallets/bifrost-wallet.md), or a [dapp](glossary.md#dapp).
 Take a look at [flaremetrics.io](https://flaremetrics.io/) and pick the one you prefer.
 
 To save on gas costs, rewards from multiple reward epochs are claimed simultaneously when you use the Portal. However, be aware that **rewards expire after 90 days**.
@@ -234,12 +241,12 @@ It is also worth noting that:
 
 ## Related User Guides
 
-* [Managing delegations](../user/delegation/managing-delegations.md)
-* [Managing rewards](../user/delegation/managing-rewards.md)
-* [Wrapping tokens](../user/wrapping-tokens.md)
+* [Managing delegations](../../user/delegation/managing-delegations.md)
+* [Managing rewards](../../user/delegation/managing-rewards.md)
+* [Wrapping tokens](../../user/wrapping-tokens.md)
 
 ## Related Infrastructure Guides
 
-* [Operating a Data Provider](../infra/data/operating.md)
-* [Working with Whitelists](../infra/data/whitelisting.md)
-* [Managing the Ecosystem](../infra/data/managing-ecosystem/index.md)
+* [Operating a Data Provider](../../infra/data/operating.md)
+* [Working with Whitelists](../../infra/data/whitelisting.md)
+* [Managing the Ecosystem](../../infra/data/managing-ecosystem/index.md)

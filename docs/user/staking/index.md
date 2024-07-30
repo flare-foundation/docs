@@ -20,7 +20,7 @@ Use any of the following tools to obtain the latest list of validators and analy
     As you analyze validator statistics, remember that you will earn staking rewards in the current validation reward period only when the following conditions are met:
 
       * Your chosen validator is running an FTSO data provider
-      * Your chosen validator is running an FTSO data provider that has earned any [FTSO rewards](../../tech/ftso.md#rewards) during the four FTSO reward epochs inside the current validation reward period
+      * Your chosen validator is running an FTSO data provider that has earned any [FTSO rewards](../../tech/ftso/index.md#rewards) during the four FTSO reward epochs inside the current validation reward period
       * Your chosen validator is operational at least 80% of the time
 
 ## Limits

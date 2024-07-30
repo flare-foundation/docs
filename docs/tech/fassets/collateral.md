@@ -308,7 +308,7 @@ Therefore, CPTs held by providers are divided into two types:
 
 The collateral ratio (CR) is the ratio between the value of all the tokens used as collateral and the total value of the underlying assets held by an agent at any given time.
 The agent's vault and the collateral pool each has its own unique collateral ratio, which is constantly changing as the value of the underlying assets and the collateral change.
-These values are obtained using the [FTSO system](../ftso.md).
+These values are obtained using the [FTSO system](../ftso/index.md).
 
 !!! example "Example: Vault and Pool CR"
 
@@ -394,7 +394,7 @@ In this case, if providers have enough FAssets, they can exit by **self-closing*
 Providers are mainly compensated in underlying assets for the burned FAssets, depending on [the number of lots](./minting.md#lots) of FAssets that need to be redeemed:
 
 * If more than 1 lot needs to be redeemed, the value of the burned FAssets is redeemed through the standard [redemption process](./redemption.md).
-* If less than 1 lot needs to be redeemed, the agent buys the underlying funds from the user using vault collateral, at the price reported by the [FTSO system](../ftso.md) minus a percentage defined by the agent.
+* If less than 1 lot needs to be redeemed, the agent buys the underlying funds from the user using vault collateral, at the price reported by the [FTSO system](../ftso/index.md) minus a percentage defined by the agent.
     This purchase by the agent occurs because fees on underlying chains can be expensive, which makes redemption of small quantities too expensive for the agent.
 
     Providers can always request this option instead of receiving underlying tokens.

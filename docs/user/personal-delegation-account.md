@@ -1,6 +1,6 @@
 # Personal Delegation Accounts
 
-You can receive `$WFLR` rewards for making contributions to the Flare community, for example, by [delegating](../tech/ftso.md#delegation) your tokens to FTSO data providers.
+You can receive `$WFLR` rewards for making contributions to the Flare community, for example, by [delegating](../tech/ftso/index.md#delegation) your tokens to FTSO data providers.
 
 A Personal Delegation Account (PDA) allows you to keep these rewards temporarily separate from your main account, so that you can track them, for example, as a personal record or for tax purposes.
 In certain jurisdictions, delaying the realization of earnings for a specified time can lead to a reduced tax rate.

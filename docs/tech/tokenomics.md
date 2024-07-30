@@ -15,7 +15,7 @@ At network genesis, 100 billion `$FLR` tokens (100,000,000,000) were created.
 These tokens have been allocated to the following groups.
 Note the delegation, claiming, and voting abilities of each, defined here:
 
-* **Can delegate**: The entity can [delegate](./ftso.md#delegation) tokens to the Flare Time Series Oracle to earn standard [inflationary](glossary.md#inflation) rewards.
+* **Can delegate**: The entity can [delegate](./ftso/index.md#delegation) tokens to the Flare Time Series Oracle to earn standard [inflationary](glossary.md#inflation) rewards.
 * **Can claim**: The entity can wrap tokens to claim a portion of the [FlareDrop](./the-flaredrop.md).
 * **Can vote**: The entity can use its tokens to participate in [governance](./governance.md) by voting on Flare Improvement Proposals.
 
@@ -124,7 +124,7 @@ This access enables new use cases and monetization models, while allowing apps t
 `$FLR` is the network token and provides support for each of these functions:
 
 * Staking to [validator nodes](./validators.md) to provide network security through proof of stake consensus.
-* Incentivized [delegation](./ftso.md#delegation) to the Flare Time Series Oracle (FTSO) to support the provision of reliable decentralized data.
+* Incentivized [delegation](./ftso/index.md#delegation) to the Flare Time Series Oracle (FTSO) to support the provision of reliable decentralized data.
 * Collateral within decentralized applications built on Flare blockchains (cross-chain or solely native).
 * Participation within network [governance](./governance.md).
 * Transaction fees to prevent spam attacks.

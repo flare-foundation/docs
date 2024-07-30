@@ -3,7 +3,7 @@
 ## Introduction
 
 To be a data provider, you must be **whitelisted**.
-Only the top 100 data providers with the most [vote power](../../tech/ftso.md#vote-power) per FTSO can submit data.
+Only the top 100 data providers with the most [vote power](../../tech/ftso/index.md#vote-power) per FTSO can submit data.
 Therefore, to enter the whitelist you must have higher vote power than the lowest provider currently in the list.
 Per FTSO, a data provider's vote power is based on its balance of `$WFLR` or `$WSGB`.
 When a data provider tries to whitelist itself, its vote power is calculated by the vote-power block of the current reward epoch.

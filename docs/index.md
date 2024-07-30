@@ -40,7 +40,7 @@ Descriptions of Flare’s products
 
 Quick links:
 
-* [FTSO](./tech/ftso.md)
+* [FTSO](./tech/ftso/index.md)
 * [State Connector](./tech/state-connector.md)
 * [FAssets](./tech/fassets/index.md)
 

@@ -22,7 +22,7 @@ You can claim:
 
     1. **Wrap `$FLR` to receive it.**
     Rewards are proportional to the `$WFLR` balance, not `$FLR`, so always wrap as much `$FLR` as you can!
-    Wrapping has no downside: Wrapped tokens continue to be available for [delegation](../tech/ftso.md#delegation) and [governance voting](../tech/governance.md), for example, and they can be unwrapped at any time.
+    Wrapping has no downside: Wrapped tokens continue to be available for [delegation](../tech/ftso/index.md#delegation) and [governance voting](../tech/governance.md), for example, and they can be unwrapped at any time.
     See [Wrapping Flare Tokens](../user/wrapping-tokens.md).
     2. **Claim before the distribution expires.**
     After the distribution becomes claimable, it expires in two bank months and a week (67 days).
@@ -53,7 +53,7 @@ From there, you can see how many `$FLR` tokens you have to claim and you can cla
     <figcaption>FlareDrop claiming confirmation.</figcaption>
     </figure>
     As a convenience, you have the choice to wrap your tokens after claiming them.
-    In this way they are ready for the next FlareDrop or to be [delegated to the FTSO system](../tech/ftso.md#delegation), for example.
+    In this way they are ready for the next FlareDrop or to be [delegated to the FTSO system](../tech/ftso/index.md#delegation), for example.
 6. Click on the **Claim All Distribution** button.
 7. Confirm the transaction on your wallet.
 

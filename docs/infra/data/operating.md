@@ -190,12 +190,12 @@ Each FTSO emits these events.
 
 ## Managing Vote Power
 
-* To check your [vote power](../../tech/ftso.md#vote-power) in a specific vote power block, use the  `votePowerOfAt` method in the `WNat` contract.
+* To check your [vote power](../../tech/ftso/index.md#vote-power) in a specific vote power block, use the  `votePowerOfAt` method in the `WNat` contract.
 
 * To find the vote-power block of the current reward epoch, use the `getCurrentRewardEpoch` method in the `FtsoManager` contract.
   Then, use the `getRewardEpochVotePowerBlock` method in the same contract.
 
-* Vote power [delegated](../../tech/ftso.md#delegation) to you belongs to only you; you cannot redelegate it.
+* Vote power [delegated](../../tech/ftso/index.md#delegation) to you belongs to only you; you cannot redelegate it.
   To retrieve information about delegations you receive, listen to `Delegate` events because this information is not contained in any on-chain structure.
 
 ## Retrieving Price Epoch Information

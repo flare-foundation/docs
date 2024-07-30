@@ -6,7 +6,7 @@ search:
 # Wrapping Flare Tokens
 
 This information explains how to wrap and unwrap native tokens on various Flare networks using the [Flare Portal](https://portal.flare.network) or the block explorer.
-Wrapped tokens are required to [delegate your vote power](../tech/ftso.md#delegation) to FTSO data providers and to [vote on decisions](../tech/governance.md) that affect how Flare networks operate.
+Wrapped tokens are required to [delegate your vote power](../tech/ftso/index.md#delegation) to FTSO data providers and to [vote on decisions](../tech/governance.md) that affect how Flare networks operate.
 
 When you complete the following steps for wrapping, your native tokens, such as `$FLR` and `$SGB`, are wrapped into `$WFLR` and `$WSGB`, respectively, so that you can participate in FTSO delegation and governance.
 When you need to convert your wrapped tokens into native tokens again, unwrap the wrapped tokens using similar steps, as described below.

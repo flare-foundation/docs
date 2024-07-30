@@ -5,7 +5,7 @@ search:
 
 # Personal Delegation Accounts
 
-Flare token holders are eligible to receive a number of rewards, for example through [FTSO Delegation](./ftso.md#delegation).
+Flare token holders are eligible to receive a number of rewards, for example through [FTSO Delegation](./ftso/index.md#delegation).
 The Flare network offers the option to set up Personal Delegation Accounts (PDAs) to temporarily receive and store rewards to track which funds are from rewards, for example, for personal or tax purposes.
 In certain jurisdictions, delaying the realization of earnings for a specified time can lead to a reduced tax rate.
 

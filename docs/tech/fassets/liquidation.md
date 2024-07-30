@@ -63,7 +63,7 @@ However, an agent can still self-close positions to avoid paying a premium to li
 
     1. Initial conditions:
 
-        * The agent is backing 1 `$FBTC`, currently valued at $20K, according to the [FTSO system](../ftso.md).
+        * The agent is backing 1 `$FBTC`, currently valued at $20K, according to the [FTSO system](../ftso/index.md).
         * The minimal CR is **1.3** for the vault collateral and **2.5** for pool collateral.
         * [The agent must hold 20% of the pool's minimal CR](./collateral.md#agents-stake-in-the-collateral-pool).
             In this case, 20% of 2.5 times \$20K is **\$10K**.
@@ -128,7 +128,7 @@ However, an agent can still self-close positions to avoid paying a premium to li
 
     1. Initial conditions:
 
-        * The agent is backing 1 `$FBTC`, currently valued at $20K, according to the [FTSO system](../ftso.md).
+        * The agent is backing 1 `$FBTC`, currently valued at $20K, according to the [FTSO system](../ftso/index.md).
         * The minimal CR is **1.3** for the vault collateral and **2.5** for pool collateral.
         * [The agent must hold 20% of the pool's minimal CR](./collateral.md#agents-stake-in-the-collateral-pool).
             In this case, 20% of 2.5 times \$20K is **\$10K**.

@@ -111,7 +111,7 @@ Front-running { #front_running }
 : When a network [validator](#validator) reorders transactions before adding them to a [block](#block) so that his own transactions appear before the rest, extracting value in the process. Compare with [sandwiching](#sandwiching).
 
 FTSO { #ftso }
-: The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information. [Read more...](./ftso.md)
+: The Flare Time Series Oracles provide external information to the Flare network in a decentralized manner, by using multiple independent data providers that are rewarded for providing accurate information. [Read more...](./ftso/index.md)
 
 Governance { #governance }
 : Mechanism to propose, vote, and implement changes on a blockchain protocol. On Flare, anybody can propose updates and token holders vote to accept them. [Read more...](./governance.md)

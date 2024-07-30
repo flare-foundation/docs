@@ -1,6 +1,8 @@
-# FTSO
+# FTSO Developer Overview
 
-The [Flare Time Series Oracle (FTSO)](../../tech/ftso.md) is a smart contract that utilizes the Flare network to **provide continuous estimations for various data types**. This process is completely **decentralized**, meaning that no single party has control over it, and is highly **secure**, making it very difficult to disrupt.
+!!! note "This page refers to a previous iteration of the FTSO protocol described in [the archive](../../tech/archive/ftso-v1.md)."
+
+The [Flare Time Series Oracle (FTSO)](../../tech/ftso/index.md) is a smart contract that utilizes the Flare network to **provide continuous estimations for various data types**. This process is completely **decentralized**, meaning that no single party has control over it, and is highly **secure**, making it very difficult to disrupt.
 
 This page serves as a guide to understanding and using the FTSO in different applications.
 
@@ -32,7 +34,7 @@ The following list describes the most relevant contracts and their purposes:
 
 * **Price Submitter**: This contract is used by the FTSO data providers to submit their data. Although the contract is called `PriceSubmitter`, data is not limited to prices.
 
-* **Reward Manager**: Use this contract to claim your [rewards](../../tech//ftso.md#rewards), whether you are a data provider or a [delegator](../../tech//ftso.md#delegation).
+* **Reward Manager**: Use this contract to claim your [rewards](../../tech/ftso/index.md#rewards), whether you are a data provider or a [delegator](../../tech/ftso/index.md#delegation).
 
 * **Wrapped Native (WNat)**: This contract is not exclusively related to the FTSO system, but it is required to wrap and unwrap native tokens into the `$WFLR` and `$WSGB` that delegation requires.
 

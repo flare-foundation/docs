@@ -10,7 +10,7 @@ Alternatively, you can use the [FlareStake command-line interface](./staking-cli
 
 Staking works by locking funds for a period of time to support a specific [network validator](../../tech/validators.md).
 When validator owners stake to their own nodes they _self-bond_, whereas all other participants are said to _delegate_ their stake to that validator.
-Note that delegating your stake to a validator is different from [FTSO delegation](../../tech/ftso.md/#delegation).
+Note that delegating your stake to a validator is different from [FTSO delegation](../../tech/ftso/index.md/#delegation).
 
 !!! note
 
@@ -26,7 +26,7 @@ The minimum values are:
 | Minimum amount   | 1M `$FLR` | 50K `$FLR` |
 | Minimum duration |   60 days |    14 days |
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+At the end of every [reward epoch](../../tech/ftso/index.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
 
 !!! info "Staking limits"
 

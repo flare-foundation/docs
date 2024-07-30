@@ -29,7 +29,7 @@ If you already know how staking on validators works on the Flare network, skip t
 
 Staking works by locking funds for a period of time to support a specific [network validator](../../tech/validators.md).
 When validator owners stake to their own nodes they _self-bond_, whereas all other participants are said to _delegate_ their stake to that validator.
-Note that delegating your stake to a validator is different from [FTSO delegation](../../tech/ftso.md/#delegation).
+Note that delegating your stake to a validator is different from [FTSO delegation](../../tech/ftso/index.md/#delegation).
 
 Participants choose how much to stake and for how long their stake will be locked.
 The minimum values are:
@@ -40,7 +40,7 @@ The minimum values are:
 | Minimum amount   | 1M `$FLR` | 50K `$FLR` |
 | Minimum duration |   60 days |    14 days |
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
+At the end of every [reward epoch](../../tech/ftso/index.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period.
 
 !!! info "Staking limits"
 
@@ -558,7 +558,7 @@ If you encounter any problem, see the [Troubleshooting](#troubleshooting) sectio
 
 ## Reward Claiming Guide
 
-At the end of every [reward epoch](../../tech/ftso.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period, but these rewards are not claimable yet.
+At the end of every [reward epoch](../../tech/ftso/index.md#reward-epoch), participants are rewarded according to how well their chosen validator performed in that period, but these rewards are not claimable yet.
 
 Every 4 reward epochs, rewards are accumulated in a dedicated smart contract and can then be claimed from the Flare Stake CLI tool:
 

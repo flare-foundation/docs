@@ -9,9 +9,9 @@ Automatic claiming enables users to appoint an executor to claim rewards on thei
 
 ## Introduction
 
-The Flare network **rewards** users that contribute to it, for example, by [delegating to an FTSO data provider](./ftso.md#delegation).
+The Flare network **rewards** users that contribute to it, for example, by [delegating to an FTSO data provider](./ftso/index.md#delegation).
 
-**[Delegation rewards](./ftso.md#rewards)** accrue every 3.5 days when users have delegated wrapped Flare tokens (WFLR) to FTSO data providers.
+**[Delegation rewards](./ftso/index.md#rewards)** accrue every 3.5 days when users have delegated wrapped Flare tokens (WFLR) to FTSO data providers.
 These rewards must be claimed periodically by users, since rewards expire after a few months.
 
 For users, claiming rewards can be inconvenient and can risk losing rewards and compound interest if overlooked.
