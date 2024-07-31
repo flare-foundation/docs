@@ -21,7 +21,7 @@ As an added security measure, individual validators can also define **local atte
   <figcaption>The State Connector.</figcaption>
 </figure>
 
-The State Connector can, for instance, **check whether a deposit has been made on another blockchain**, opening the door to more advanced mechanisms like the FAsset or the Layer Cake bridges.
+The State Connector can, for instance, **check whether a deposit has been made on another blockchain**, opening the door to more advanced mechanisms like FAssets or bridges.
 
 This page gives technical details about the whole procedure, the different security and scalability measures that have been taken into account in its design and the kind of queries that can be performed.
 

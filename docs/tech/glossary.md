@@ -33,7 +33,7 @@ Bootstrapping Node { #bootstrapping_node }
 : An observation node associated with a [validator node](#validator) and acting as its bastion: the bootstrapping node exposes a minimum RPC interface, so the validator does not have to. The nodeID and nodeIP returned by the bootstrapping node's RPC allow an external node to connect and peer with the core network of validators. The bootstrapping node also [gossips](https://en.wikipedia.org/wiki/Gossip_protocol) the core network's validators nodeIDs and nodeIPs to the external node to peer to. The main purpose of a bootstrapping node is to allow new nodes to connect to the network (hence the name "bootstrapping") while reducing its associated validator node attack surface.
 
 Bridge { #bridge }
-: A protocol that connects otherwise independent blockchains, enabling interoperability between them. Read more about Flare's bridging: [LayerCake](#layercake).
+: A protocol that connects otherwise independent blockchains, enabling interoperability between them.
 
 Byzantine Fault Tolerance { #byzantine_fault_tolerance }
 : Property of a distributed system that is capable of continuous operation even when some of its participants are unreliable. Participants acting against the interest of the whole system, by accident or on purpose, are said to have “gone Byzantine”.
@@ -127,9 +127,6 @@ Inflation { #inflation }
 
 Know Your Customer (KYC) { #kyc }
 : The process an entity completes to verify the identities of its users to comply with global requirements.
-
-LayerCake { #layercake }
-: Being developed by Flare Labs to provide a decentralized, [trustless](#trustless) [bridging](#bridge) system between [smart contract](#smart-contract) networks. For an overview of trustless bridges, see [LayerCake](https://flare.network/layercake/).
 
 Layer 1 { #layer1 }
 : An L1 is a blockchain in the classical sense, in that it comprises a network of nodes that exchange information to guarantee the integrity of a shared ledger and offer functionality like token exchange and programmability. Compare it to an L2, which is built on top of an existing L1.

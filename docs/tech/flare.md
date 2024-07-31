@@ -24,7 +24,6 @@ Flare has the following native data acquisition protocols at these stages of dev
 * The **[Flare Time-Series Oracle (FTSO)](./ftso/index.md)** provides continuous estimations of changing data, such as [price pairs](glossary.md#price_pair).
 * The **[State Connector](./state-connector.md)** allows querying of verifiable, non-changing data from other chains and the internet.
 * The **[FAssets](./fassets/index.md)** system is being developed by Flare Labs. It allows tokens on blockchains that do not support smart contracts to be used trustlessly with smart contracts on the Flare blockchain.
-* Flare **LayerCake** is being developed by Flare Labs to provide a [decentralized](glossary.md#decentralized), trustless bridging system between smart contract networks. For an overview of trustless bridges, see [LayerCake](https://flare.network/layercake/).
 
 ## Developing on Flare
 
