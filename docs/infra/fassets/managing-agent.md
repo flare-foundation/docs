@@ -32,8 +32,10 @@ After you have successfully deployed the agent bot and it is running, you can co
 2. Copy the following text, and paste it into the `.env` file you just created:
 
     ```ini
-    ## Path to config file for the agent bot (and other bots)
-    FASSET_BOT_CONFIG="../fasset-bots-core/run-config/coston-bot.json"
+    ## Path to config file for the agent bot (and other bots) for MYSQL
+    FASSET_BOT_CONFIG="../fasset-bots-core/run-config/coston-bot-mysql.json"
+    ## If you want to use SQLite (not recommended), uncomment the line below and comment on the line above
+    # FASSET_BOT_CONFIG="../fasset-bots-core/run-config/coston-bot.json"
 
     ## Path to secrets file for the agent bot (and other bots)
     FASSET_BOT_SECRETS="../../secrets.json"
@@ -50,15 +52,15 @@ After you have successfully deployed the agent bot and it is running, you can co
     ## parameter.
     # FASSET_USER_SECRETS=""
 
-    ## (Optional) Path to directory, used for storing unexecuted minting.
-    ## Defaults to `fasset` subdirectory in user's home directory.
+    ## (Optional) Path to directory, used for storing unexecuted minting
+    ## Defaults to `fasset` subdirectory in user's home directory
     # FASSET_USER_DATA_DIR=""
 
-    ## (Optional) Path to database file for the bot.
-    FASSET_BOT_SQLITE_DB="../../path-to-.db-file"
+    ## (Optional) Path to the database file for the bot (only needed if SQLite database)
+    # FASSET_BOT_SQLITE_DB="../../path-to-.db-file"
     ```
 
-3. Choose one of the following options:
+3. If you are using SQLite (not recommended) choose one of the following options:
     * If you already have [agent vaults](../../tech/fassets/collateral.md#vault-collateral):
         1. Navigate to the root of the `fasset-bots` repository, and locate the `.db` file.
             The file name will be in the
@@ -80,7 +82,7 @@ You can enable alerts to be sent to the backend and displayed in the frontend.
 
     ```json
     {
-         "extends": "coston-bot.json",
+         "extends": "coston-bot-mysql.json",
          "apiNotifierConfigs": [
          {
                  "apiKey": "",
@@ -90,16 +92,43 @@ You can enable alerts to be sent to the backend and displayed in the frontend.
     }
     ```
 
+    Optionally (not recommended), if you use SQLite, change the `extends` value in the JSON to `coston-bot.json`.
+
 3. Open the `.env` file in this same folder, and change the path specified for `FASSET_BOT_CONFIG` to the `alerts.json` file:
 
     ```ini
     FASSET_BOT_CONFIG="./alerts.json"
     ```
 
+## Configure Existing Agents to Setup MySQL
+
+Agents that already have successfully configured `fasset-bots` backend need to do the following:
+
+1. Install the MySQL server.
+2. Create a user in MySQL as stated above.
+3. In the `.env` file located at the root of the repository, you should modify the `FASSET_BOT_CONFIG` variable:
+    ```
+    FASSET_BOT_CONFIG="./packages/fasset-bots-core/run-config/coston-bot-mysql.json"
+    ```
+4. In the `secrets.json` file, fill the `database` field with the username and password you created in MySQL.
+5. In the `.env` file located at `fasset-bots/packages/fasset-bots-api`, you must update the `FASSET_BOT_CONFIG` variable:
+    ```
+    FASSET_BOT_CONFIG="../fasset-bots-core/run-config/coston-bot-mysql.json"
+    ```
+6. If you have enabled alerts, you need to change the `extends` parameter in `alerts.json`: 
+    ```
+    "extends": "coston-bot-mysql.json"
+    ```
+
+
 ### Running the Admin Console Backend
 
 1. In the root of the repository, run the command:
 
+    ```bash
+    yarn start_agent_api
+    ```
+    or
     ```bash
     yarn start_agent_api_debug
     ```
@@ -109,7 +138,7 @@ When you are finished using the UI and want to stop the server, press Ctrl + C.
 
 !!! info
 
-    Run start_agent_api_debug as a service to maximize uptime for production use. Here, you have instructions to run the agent as a `systemd` service for [running the bot as a daemon](https://github.com/flare-labs-ltd/fasset-bots/blob/main/docs/systemd/systemd-service.md).
+    Run `start_agent_api` or `start_agent_api_debug` as a service to maximize uptime for production use. Here, you have instructions to run the agent as a `systemd` service for [running the bot as a daemon](https://github.com/flare-labs-ltd/fasset-bots/blob/main/docs/systemd/systemd-service.md).
 
 ### Setting Up the Admin Console
 

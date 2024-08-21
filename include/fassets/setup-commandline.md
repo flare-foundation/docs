@@ -1,20 +1,21 @@
-## Prerequisites
-
-You need a server with at least a minimum of 2 CPUs and 4GB RAM, or 2GB if the database is on a separate server.
-
-You need knowledge of the following tools:
-
-* [Git](https://git-scm.com/) version control system
-* [Yarn](https://yarnpkg.com/) package manager
-* A [wallet](../../user/wallets/index.md) configured for [Flare networks](../../dev/reference/network-config.md)
-* Command-line terminal
-* Code editor
-
 !!! warning
 
     If you are using Windows, it is strongly recommended to use [Windows Subsystem for Linux, version 2](https://docs.microsoft.com/en-us/windows/wsl/about) (WSL 2).
 
 ## Setting up the FAssets tools
+
+### Setting up After Testnet XRP Reset
+
+!!! info
+
+    This section is only for users using FAssets before the testnet XRP reset, so please [read more](https://flare.network/important-update-xrp-testnet-reset-fassets-beta-reset/).
+
+Suppose you previously ran the FAssets agent before the XRP testnet reset. You will need to skip the whitelisting part but still need to:
+
+* pull the latest changes from the repository by `git pull`;
+* build then with `yarn && yarn build`;
+* installing the MySQL database and setting it up [following the guide](#setting-up-mysql-database) later in this document;
+* create a new agent using the existing management address following the guide.
 
 ### Clone and Setup the Tools Repository
 

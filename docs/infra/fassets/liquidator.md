@@ -9,6 +9,7 @@ This guide explains how to run a program called an FAssets bot that observes the
 
 --8<-- "./include/fassets/open-beta.md"
 
+--8<-- "./include/fassets/prerequisites-agent.md"
 --8<-- "./include/fassets/setup-commandline.md"
 
 ## Configure the Access Keys

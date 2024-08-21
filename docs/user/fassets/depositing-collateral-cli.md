@@ -17,6 +17,7 @@ It provides the following information:
 
 --8<-- "./include/fassets/open-beta.md"
 
+--8<-- "./include/fassets/prerequisites-user.md"
 --8<-- "./include/fassets/setup-commandline.md"
 
 ### Configure User's Access Keys

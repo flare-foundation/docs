@@ -35,7 +35,9 @@ These are ERC-20 representations of test tokens to be used by the FAssets system
 
     The FAsset-wrapped TestXRP token, ready to be used on Coston.
 
+--8<-- "./include/fassets/prerequisites-agent.md"
 --8<-- "./include/fassets/setup-commandline.md"
+--8<-- "./include/fassets/setup-mysql.md"
 
 ### Configure the Access Keys
 
@@ -68,10 +70,30 @@ The FAsset agents operate with multiple keys for the Flare and underlying networ
     "xrp_rpc": "4tg3AxysaZodxTqsCtcMnBdBIEkR6KDKGTdqBEA8g9MKq4bH",
     "indexer": "123456",
     ```
-
     !!! info
 
         These values apply only to the [Coston Testnet](../../dev/reference/network-config.md) and will be different for other networks.
+
+    
+7. Fill in the `database` field in the `secrets.json` with the MySQL database username and password you created during setup.
+
+### MySQL Setup for Existing Agents
+
+Agents who have already configured `fasset-bots` to switch to MySQL should follow these steps:
+
+1. Install MySQL server.
+2. [Create a user](#setting-up-mysql-database) in the MySQL database.
+3. Modify the `FASSET_BOT_CONFIG` variable in the `.env` file located in the root of the repository:
+	```json
+	FASSET_BOT_CONFIG="./packages/fasset-bots-core/run-config/coston-bot-mysql.json"
+	```
+4. In the `secrets.json` file, add a new key, `database` which is an object with two keys `username` and `password` and fill with values you used when created the user in the MySQL database:
+    ```json
+    "database": {
+        "user": "fassetbot",
+        "password": "VerySafePassword"
+    }
+    ```
 
 ### Whitelist the Management Address
 
