@@ -31,7 +31,7 @@ These are ERC-20 representations of test tokens to be used by the FAssets system
 
     Allows whitelisting agents, and setting, and retrieving information like their work and management address, name, description and icon.
 
-* `FTestXRP`: [0x51B1ac96027e55c29Ece8a6fD99DdDdd01F22F6c](https://coston-explorer.flare.network/address/0x5905Df703221d4Ea311E85edEa860734b2072C7d)
+* `FTestXRP`: [0x51B1ac96027e55c29Ece8a6fD99DdDdd01F22F6c](https://coston-explorer.flare.network/address/0x51B1ac96027e55c29Ece8a6fD99DdDdd01F22F6c)
 
     The FAsset-wrapped TestXRP token, ready to be used on Coston.
 
