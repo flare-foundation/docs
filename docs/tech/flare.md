@@ -12,7 +12,7 @@ Flare is the blockchain for data.
 It is a [layer 1](glossary.md#layer1), [EVM](glossary.md#evm) [smart contract](glossary.md#smart_contract) platform designed to expand the utility of blockchain.
 
 Flare's aim is to provide data as a public good, meaning that data is not controlled by a centralized entity and is available to all.
-The infrastructure providers, which perform doubly as [validators](../tech/validators.md) and [data providers](../infra/data/operating.md), enable two native [oracles](glossary.md#oracle), the [FTSO](./ftso/index.md) and the [State Connector](./state-connector.md).
+The infrastructure providers, which perform doubly as [validators](../tech/validators.md) and data providers, enable two native [oracles](glossary.md#oracle), the [FTSO](./ftso/index.md) and the [State Connector](./state-connector.md).
 This [native](glossary.md#native) processing provides developers on Flare with efficient access to large amounts of data and [data proofs](glossary.md#data_proof) at minimal cost, with which to build software on the platform.
 
 By giving developers [trustless](glossary.md#trustless) access to the broadest range of data needed by the software they build, Flare can advance the development of more blockchain use cases where data is important, such as in [DeFi](glossary.md#defi), gaming, [NFT](glossary.md#nft), music, social networks, Real World Assets [(RWAs)](glossary.md#rwa), Machine Learning (ML), and Artificial Intelligence (AI).

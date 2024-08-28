@@ -95,12 +95,12 @@ plugins:
           'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/managing-rewards.md'
           'tutorials/price-provider/setting-up-an-observation-node/README.md': 'developer-hub.md'
           'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'developer-hub.md'
-          'tutorials/price-provider/ftso-price-provider/README.md': 'infra/data/operating.md'
-          'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'infra/data/operating.md'
+          'tutorials/price-provider/ftso-price-provider/README.md': 'developer-hub.md'
+          'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'developer-hub.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'infra/data/whitelisting.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'infra/data/whitelisting.md'
-          'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/operating.md'
-          'infra/data/deploying.md': 'infra/data/operating.md'
+          'tutorials/price-provider/troubleshooting/price-provider.md': 'developer-hub.md'
+          'infra/data/deploying.md': 'developer-hub.md'
           'tutorials/price-provider/troubleshooting/observation-node.md': 'developer-hub.md'
           'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
           'dev/getting-started/index.md': 'developer-hub.md'
@@ -247,6 +247,7 @@ plugins:
           'user/delegation/reward-claiming-faq.md': 'tech/ftso/index.md'
           'user/delegation/reward-claiming-in-detail.md': 'tech/ftso/index.md'
           'user/fassets/minting-redeeming.md': 'user/fassets/index.md'
+          'infra/data/operating.md': 'developer-hub.md'
           'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
           'infra/observation/faq.md': 'developer-hub.md'
           'infra/observation/index.md': 'developer-hub.md'
@@ -254,6 +255,8 @@ plugins:
           'infra/observation/deploying-docker.md': 'developer-hub.md'
           'infra/validation/index.md': 'developer-hub.md'
           'infra/validation/deploying.md': 'developer-hub.md'
+          'tech/ftso/ftso-scaling.md': 'https://dev.flare.network/ftso/overview/'
+          'tech/ftso/ftso-fast-updates.md': 'https://dev.flare.network/ftso/overview/'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -336,8 +339,6 @@ nav:
     - products/index.md
     - FTSO:
       - tech/ftso/index.md
-      - tech/ftso/ftso-scaling.md
-      - tech/ftso/ftso-fast-updates.md
     - tech/state-connector.md
     - FAssets:
       - tech/fassets/index.md
@@ -367,7 +368,6 @@ nav:
     - infra/index.md
     - FTSO Data Providers:
       - infra/data/index.md
-      - infra/data/operating.md
       - infra/data/whitelisting.md
       - Managing the Ecosystem:
         - infra/data/managing-ecosystem/index.md

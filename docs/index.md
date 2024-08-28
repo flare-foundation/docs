@@ -40,7 +40,7 @@ Descriptions of Flare’s products
 
 Quick links:
 
-* [FTSO](./tech/ftso/index.md)
+* [FTSO](https://dev.flare.network/ftso/overview)
 * [State Connector](./tech/state-connector.md)
 * [FAssets](./tech/fassets/index.md)
 
@@ -60,11 +60,6 @@ Quick links:
 * [Governance](./user/governance/index.md)
 * [The FlareDrop](./user/claiming-the-flaredrop.md)
 * [Personal Delegation Accounts](./user/personal-delegation-account.md)
-
-</div>
-</div>
-
-</div>
 
 </div>
 </div>

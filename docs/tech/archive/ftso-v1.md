@@ -247,6 +247,5 @@ It is also worth noting that:
 
 ## Related Infrastructure Guides
 
-* [Operating a Data Provider](../../infra/data/operating.md)
 * [Working with Whitelists](../../infra/data/whitelisting.md)
 * [Managing the Ecosystem](../../infra/data/managing-ecosystem/index.md)
