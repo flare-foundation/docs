@@ -6,5 +6,3 @@ Select one of the topics below:
 
 * [Deploying FAssets Agent](./fassets/index.md)
 * [FTSO Data Providers](./data/index.md)
-* [Observer Nodes](./observation/index.md)
-* [Validator Nodes](./validation/index.md)

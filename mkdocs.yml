@@ -93,15 +93,15 @@ plugins:
           'tutorials/reward-claiming/reward-claiming-in-detail.md': 'user/delegation/managing-rewards.md'
           'tutorials/reward-faq/README.md': 'tech/ftso/index.md'
           'tutorials/reward-faq/block-explorer-+-metamask.md': 'user/delegation/managing-rewards.md'
-          'tutorials/price-provider/setting-up-an-observation-node/README.md': 'infra/observation/deploying.md'
-          'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'infra/observation/deploying.md'
+          'tutorials/price-provider/setting-up-an-observation-node/README.md': 'developer-hub.md'
+          'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'developer-hub.md'
           'tutorials/price-provider/ftso-price-provider/README.md': 'infra/data/operating.md'
           'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'infra/data/operating.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'infra/data/whitelisting.md'
           'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'infra/data/whitelisting.md'
           'tutorials/price-provider/troubleshooting/price-provider.md': 'infra/data/operating.md'
           'infra/data/deploying.md': 'infra/data/operating.md'
-          'tutorials/price-provider/troubleshooting/observation-node.md': 'infra/observation/deploying.md'
+          'tutorials/price-provider/troubleshooting/observation-node.md': 'developer-hub.md'
           'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
           'dev/getting-started/index.md': 'developer-hub.md'
           'dev/getting-started/setup/index.md': 'developer-hub.md'
@@ -248,7 +248,12 @@ plugins:
           'user/delegation/reward-claiming-in-detail.md': 'tech/ftso/index.md'
           'user/fassets/minting-redeeming.md': 'user/fassets/index.md'
           'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
-          'infra/observation/faq.md': 'infra/observation/deploying.md'
+          'infra/observation/faq.md': 'developer-hub.md'
+          'infra/observation/index.md': 'developer-hub.md'
+          'infra/observation/deploying.md': 'developer-hub.md'
+          'infra/observation/deploying-docker.md': 'developer-hub.md'
+          'infra/validation/index.md': 'developer-hub.md'
+          'infra/validation/deploying.md': 'developer-hub.md'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -373,10 +378,3 @@ nav:
       - infra/fassets/deploying-agent.md
       - infra/fassets/managing-agent.md
       - infra/fassets/liquidator.md
-    - Observer Nodes:
-      - infra/observation/index.md
-      - infra/observation/deploying.md
-      - infra/observation/deploying-docker.md
-    - Validator Nodes:
-      - infra/validation/index.md
-      - infra/validation/deploying.md

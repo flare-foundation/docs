@@ -112,7 +112,7 @@ The goal is that funds staked on the P-chain will have the same rights as wrappe
 
 ## Related Infrastructure Guides
 
-* [Deploying a Validator Node](../infra/validation/deploying.md)
+* [Deploying a Validator Node](https://dev.flare.network/run-node/validator-node)
 
 <script type="module">
     const btables = document.getElementsByClassName('boolean-table');

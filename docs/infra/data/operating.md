@@ -231,7 +231,7 @@ To run on the real network, you need to:
 
 Use the following tips:
 
-* Run your own [observer node](../observation/deploying.md) and submit all your data through it.
+* Run your own [observer node](https://dev.flare.network/run-node/rpc-node) and submit all your data through it.
   This will allow you to more efficiently and securely operate your data provider.
 * Gather your data directly from each source instead of using APIs provided by data aggregators.
 * Write your own code instead of relying entirely on third-party code.

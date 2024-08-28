@@ -3,7 +3,6 @@
 !!! info inline end "Quick links"
 
     * [Network Configuration](./reference/network-config.md)
-    * [How to run a node](../infra/observation/index.md)
 
 All Flare networks are a fork of the Avalanche project, which runs the [Ethereum Virtual Machine](glossary.md#evm).
 Therefore, all Ethereum contracts and tools work on Flare, Songbird and Coston.

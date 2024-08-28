@@ -66,22 +66,6 @@ Quick links:
 
 </div>
 
-#### For infrastructure providers
-
-<div class="flr-card has-background7" markdown>
-
-## Infrastructure Guides
-
-Step-by-step guides on how to deploy the different components that make up the Flare ecosystem
-
-<div class="flr-card-links" markdown>
-
-Quick links:
-
-* [Deploying an Observer Node](./infra/observation/deploying.md)
-* [Deploying a Validator Node](./infra/validation/deploying.md)
-* [Observer Nodes](./infra/observation/index.md)
-
 </div>
 </div>
 
