@@ -72,9 +72,9 @@ The FAsset agents operate with multiple keys for the Flare and underlying networ
     ```
     !!! info
 
-        These values apply only to the [Coston Testnet](../../dev/reference/network-config.md) and will be different for other networks.
+        These values apply only to the [Coston Testnet](https://dev.flare.network/network/overview) and will be different for other networks.
 
-    
+
 7. Fill in the `database` field in the `secrets.json` with the MySQL database username and password you created during setup.
 
 ### MySQL Setup for Existing Agents

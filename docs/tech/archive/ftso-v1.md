@@ -62,7 +62,7 @@ Using price data as an example, the procedure in the following diagram runs cont
     During a **3-minute** price epoch, providers fetch the information, run their algorithms, and **submit a hash** of the data (_commit_).
     Then, during the first half of the following price epoch (**1.5 minutes**), providers submit the actual data (_reveal_).
 
-    See technical details about the [data-submission process](../../dev/reference/ftso.md#data-submission-process) in the developer reference section.
+    See technical details about the FTSO in the [Flare Dev Hub](https://dev.flare.network/ftso/overview).
 
 3. The FTSO system calculates the **resulting median**, taking into account each provider's vote power (see [How Results are Calculated](#how-results-are-calculated) below).
 

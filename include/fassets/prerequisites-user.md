@@ -6,6 +6,6 @@ You need knowledge of the following tools:
 
 * [Git](https://git-scm.com/) version control system
 * [Yarn](https://yarnpkg.com/) package manager
-* A [wallet](../../user/wallets/index.md) configured for [Flare networks](../../dev/reference/network-config.md)
+* A [wallet](../../user/wallets/index.md) configured for [Flare networks](https://dev.flare.network/network/overview)
 * Command-line terminal
 * Code editor

@@ -93,7 +93,7 @@ FAssets { #fassets }
 : Allows tokens on blockchains that do not support smart contracts to be used [trustlessly](#trustless) with [smart contracts](#smart_contract) on the Flare blockchain. [Read more...](./fassets/index.md)
 
 Faucet { #faucet }
-: A [dapp](#dapp) that distributes test tokens to anyone that requests them. Used only on [test networks](#test_network), obviously. See the [Network Configuration](../dev/reference/network-config.md) page to learn about Flare's faucets.
+: A [dapp](#dapp) that distributes test tokens to anyone that requests them. Used only on [test networks](#test_network), obviously. See the [Network Configuration](https://dev.flare.network/network/overview) page to learn about Flare's faucets.
 
 FBA { #fba }
 : Federated Byzantine Agreement is a form of [Byzantine fault tolerance](#byzantine_fault_tolerance) where each node keeps its own list of trusted nodes. It does not require nodes to invest stake or computing power as [Proof of Stake](#proof_of_stake) or [Proof of Work](#proof_of_work) protocols do.

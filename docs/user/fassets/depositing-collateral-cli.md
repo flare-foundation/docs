@@ -50,7 +50,7 @@ The FAsset user operates with multiple keys for the Flare and underlying network
 
     !!! info
 
-        These values apply only to the [Coston Testnet](../../dev/reference/network-config.md) and will be different for other networks.
+        These values apply only to the [Coston Testnet](https://dev.flare.network/network/overview) and will be different for other networks.
 
 ## Depositing Collateral into an Agent's Collateral Pool
 

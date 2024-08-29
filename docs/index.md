@@ -26,6 +26,16 @@ Quick links:
 </div>
 </div>
 
+#### For developers
+
+<div class="flr-card has-background2" markdown>
+
+## Developer Guides
+
+All developer guides are now in the [Flare Dev Hub](https://dev.flare.network/).
+
+</div>
+
 #### For everyone
 
 <div class="flr-cards" markdown>

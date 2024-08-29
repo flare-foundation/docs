@@ -218,6 +218,9 @@ plugins:
           'apis/attestation-types/EVMTransaction.md': 'developer-hub.md'
           'apis/attestation-types/Payment.md': 'developer-hub.md'
           'apis/attestation-types/ReferencedPaymentNonexistence.md': 'developer-hub.md'
+          'dev/index.md': 'developer-hub.md'
+          'dev/reference/ftso.md': 'developer-hub.md'
+          'dev/reference/network-config.md': 'developer-hub.md'
           'dev/reference/flare.md': 'developer-hub.md'
           'dev/reference/songbird.md': 'developer-hub.md'
           'dev/reference/coston-testnet.md': 'developer-hub.md'
@@ -331,10 +334,6 @@ nav:
     - Governance:
       - user/governance/index.md
       - user/governance/voting.md
-  - Developer Guides:
-      - dev/index.md
-      - dev/reference/ftso.md
-      - dev/reference/network-config.md
   - Products:
     - products/index.md
     - FTSO:
