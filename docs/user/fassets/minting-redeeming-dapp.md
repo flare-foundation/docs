@@ -89,7 +89,7 @@ Before you can use faucets to get the tokens, you must get from Bifrost the addr
 You will need the addresses you copied in the previous step to get the testnet tokens.
 Testnet tokens are free and have no monetary value.
 
-1. On your computer, open the [FAssets Demo Dapp](https://coston-fasset-mint-demo.flare.rocks/connect).
+1. On your computer, open the [FAssets Demo Dapp](https://fasset-beta-minting.flarelabs.org/).
 2. On the home page, click **Get Your textXRP here**.
    The **XRPL Testnet Faucet** page is displayed.
 3. Copy the XRPL address that you saved in Step 3 above, and paste it in the **XRPL address** field on the faucet page.
