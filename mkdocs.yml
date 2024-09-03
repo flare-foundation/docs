@@ -97,12 +97,12 @@ plugins:
           'tutorials/price-provider/setting-up-an-observation-node/observation-node-faq.md': 'developer-hub.md'
           'tutorials/price-provider/ftso-price-provider/README.md': 'developer-hub.md'
           'tutorials/price-provider/ftso-price-provider/price-provider-faq.md': 'developer-hub.md'
-          'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'infra/data/whitelisting.md'
-          'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'infra/data/whitelisting.md'
+          'tutorials/price-provider/ftso-price-provider/whitelisting-a-price-provider.md': 'developer-hub.md'
+          'tutorials/price-provider/ftso-price-provider/whitelisting-price-provider-faq.md': 'developer-hub.md'
           'tutorials/price-provider/troubleshooting/price-provider.md': 'developer-hub.md'
           'infra/data/deploying.md': 'developer-hub.md'
           'tutorials/price-provider/troubleshooting/observation-node.md': 'developer-hub.md'
-          'tutorials/price-provider/whitelisting.md': 'infra/data/whitelisting.md'
+          'tutorials/price-provider/whitelisting.md': 'developer-hub.md'
           'dev/getting-started/index.md': 'developer-hub.md'
           'dev/getting-started/setup/index.md': 'developer-hub.md'
           'dev/getting-started/setup/remix.md': 'developer-hub.md'
@@ -258,6 +258,11 @@ plugins:
           'infra/observation/deploying-docker.md': 'developer-hub.md'
           'infra/validation/index.md': 'developer-hub.md'
           'infra/validation/deploying.md': 'developer-hub.md'
+          'infra/data/index.md': 'developer-hub.md'
+          'infra/data/whitelisting.md': 'developer-hub.md'
+          'infra/data/managing-ecosystem/index.md': 'developer-hub.md'
+          'infra/data/managing-ecosystem/exploring-collusion.md': 'developer-hub.md'
+          'infra/data/managing-ecosystem/monitoring-price-history.md': 'developer-hub.md'
           'tech/ftso/ftso-scaling.md': 'https://dev.flare.network/ftso/overview/'
           'tech/ftso/ftso-fast-updates.md': 'https://dev.flare.network/ftso/overview/'
 
@@ -365,13 +370,6 @@ nav:
       - tech/archive/ftso-v1.md
   - Infrastructure:
     - infra/index.md
-    - FTSO Data Providers:
-      - infra/data/index.md
-      - infra/data/whitelisting.md
-      - Managing the Ecosystem:
-        - infra/data/managing-ecosystem/index.md
-        - infra/data/managing-ecosystem/exploring-collusion.md
-        - infra/data/managing-ecosystem/monitoring-price-history.md
     - FAssets:
       - infra/fassets/index.md
       - infra/fassets/deploying-agent.md
