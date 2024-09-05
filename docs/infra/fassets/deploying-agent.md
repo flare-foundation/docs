@@ -35,6 +35,10 @@ These are ERC-20 representations of test tokens to be used by the FAssets system
 
     The FAsset-wrapped TestXRP token, ready to be used on Coston.
 
+* `FTestBTC`: [0xe01b2151b684b83C771449D8A6D1d1764f03829e](https://coston-explorer.flare.network/token/0xe01b2151b684b83C771449D8A6D1d1764f03829e)
+
+    The FAsset-wrapped TextBTC token, ready to be used on Coston.
+
 --8<-- "./include/fassets/prerequisites-agent.md"
 --8<-- "./include/fassets/setup-commandline.md"
 --8<-- "./include/fassets/setup-mysql.md"
@@ -128,7 +132,7 @@ Configuring the native address links your agent's work address to the management
 
 3. Register the work address by executing the `setWorkAddress` function with the value of `owner.native.address` from the `secrets.json` file.
 
-### Configure the Agent
+### Configure the Agent for XRP
 
 You need to set up your agent's parameters like name, collateral, and fund with underlying assets.
 
@@ -210,6 +214,51 @@ You need to make your agent available to mint and redeem FAssets.
 
 If you don't have available lots, check if the vault and pool [collaterals are enough](../../tech/fassets/collateral.md#the-collateral-ratio).
 
+### Upgrade Your Agent to Support BTC
+
+1. Repeat the steps to [clone and set up the Tools repository](#clone-and-setup-the-tools-repository).
+2. Generate a new `secrets.json` file using this command by replacing the `MANAGEMENT_WALLET_ADDRESS` with your cold wallet address:
+
+    ```console
+    yarn key-gen generateSecrets --user --agent MANAGEMENT_WALLET_ADDRESS --other -o secrets.json
+    ```
+
+3. Make a copy of your old `secrets.json` file, open it, and replace the owner and user testBTC addresses and private keys from the generated `secrets.json` in the previous step.
+    A new instance with your old `secrets.json` file that includes your BTC addresses is created.
+4. In the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot), run `/register_btc_address ADDRESS`, where `ADDRESS` is your TestBTC address in the `secrets.json` file.
+    Your TestBTC address is registered, an amount of TestBTC is sent to the address, and your API key is returned.
+5. In your `secrets.json` file, add the `btc_rpc` parameter to the `apiKey` section.
+6. Prepare the agent for FTestBTC:
+
+    ```console
+    yarn agent-bot --fasset FTestBTC create --prepare
+    ```
+
+7. Choose a suffix for your agent's collateral pool and fill in the `poolTokenSuffix` field in the `tmp.agent-settings.json` file with it.
+    The `poolTokenSuffix` should only include uppercase letters, numbers, and the `-` symbol.
+    This suffix will be used for the [FAsset Collateral Pool Token](../../tech/fassets/collateral.md#pool-collateral). For example, if you use `MY-ALPHA-AGENT-1`, it would be `FCPT-TBTC-MY-ALPHA-AGENT-1`.
+
+8. If you need more TestBTC, request more from the [TestBTC faucet](https://bitcoinfaucet.uo1.net/).
+9. Top up your `owner.testBTC` address from `secrets.json` with at least 0.5 TestBTC.
+10. Create the agent by specifying the FAsset and agent settings, noting that this operation can take up to 10 minutes because the FAssets verifies the underlying assets.
+This command will print out your agent's address.
+
+    ```console
+    yarn agent-bot --fasset FTestBTC create tmp.agent-settings.json
+    ```
+
+11. Deposit collaterals for your agent:
+
+    ```console
+    yarn agent-bot depositCollaterals AGENT_ADDRESS LOTS --fasset FTestBTC
+    ```
+
+12. Register your agent as available to the network by executing this command replacing the `AGENT_ADDRESS` with your agent address:
+
+    ```console
+    yarn agent-bot enter AGENT_ADDRESS --fasset FTestBTC
+    ```
+
 ## Running the Agent
 
 The agent bot responds to all requests made to the agent vaults you have created.
@@ -232,11 +281,19 @@ Follow these steps to upload the source code for the Collateral Pool and Collate
 
 1. Execute the FAssets system information command to determine your collateral pool smart contract address.
 
+    For XRP, run:
+
     ```bash
     yarn agent-bot info AGENT_ADDRESS --fasset FTestXRP
     ```
 
-    Look for the value of the **Agent collateral pool** field and copy the address
+    For BTC, run:
+
+    ```bash
+    yarn agent-bot info AGENT_ADDRESS --fasset FTestBTC
+    ```
+
+    Look for the value of the **Agent collateral pool** field and copy the address, as shown in the following example for XRP.
 
     ```text hl_lines="30"
     Tokens:
