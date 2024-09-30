@@ -139,9 +139,9 @@ Create a new user in PostgreSQL that will be used by the `fasset-bots` to connec
 !!! warning
 	You only need to create the user in the database and grant privileges to that user. Do not create the database.
 
-1. Open your terminal or command prompt and login to PostgreSQL database using the `psql` command with the appropriate credentials:
+1. Open your terminal or command prompt and login to PostgreSQL database using the `psql` command with the appropriate credentials.
 
-2. Create a new user `fassetbot` in the PostgreSQL database command with the password "VerySafePassword" and grant the superuser privileges.:
+2. Create a new user `fassetbot` in the PostgreSQL database command with the password "VerySafePassword" and grant the superuser privileges:
      
     ```pgsql
     CREATE ROLE fassetbot WITH SUPERUSER LOGIN PASSWORD 'VerySafePassword';
