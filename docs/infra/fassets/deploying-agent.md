@@ -41,7 +41,7 @@ These are ERC-20 representations of test tokens to be used by the FAssets system
 
 --8<-- "./include/fassets/prerequisites-agent.md"
 --8<-- "./include/fassets/setup-commandline.md"
---8<-- "./include/fassets/setup-mysql.md"
+--8<-- "./include/fassets/setup-database.md"
 
 ### Configure the Access Keys
 
@@ -83,15 +83,23 @@ The FAsset agents operate with multiple keys for the Flare and underlying networ
 
 ### MySQL Setup for Existing Agents
 
-Agents who have already configured `fasset-bots` to switch to MySQL should follow these steps:
+Agents who have already configured `fasset-bots` to switch to MySQL or PostgreSQL should follow these steps:
 
-1. Install MySQL server.
-2. [Create a user](#setting-up-mysql-database) in the MySQL database.
-3. Modify the `FASSET_BOT_CONFIG` variable in the `.env` file located in the root of the repository:
-	```json
-	FASSET_BOT_CONFIG="./packages/fasset-bots-core/run-config/coston-bot-mysql.json"
-	```
-4. In the `secrets.json` file, add a new key, `database` which is an object with two keys `username` and `password` and fill with values you used when created the user in the MySQL database:
+1. Install MySQL or PostgreSQL server.
+2. [Create a user](#setting-up-database) in the MySQL or PostgreSQL database.
+3. Modify the `FASSET_BOT_CONFIG` variable in the `.env` file located in the root of the repository.
+
+    * MySQL database:
+     	```json
+     	FASSET_BOT_CONFIG="./packages/fasset-bots-core/run-config/coston-bot-mysql.json"
+     	```
+    
+    * PostgreSQL database:
+        ```json
+     	FASSET_BOT_CONFIG="./packages/fasset-bots-core/run-config/coston-bot-postgresql.json"
+     	```
+
+4. In the `secrets.json` file, add a new key, `database` which is an object with two keys `username` and `password` and fill with the values you used when creating the user in the MySQL or PostgreSQL database:
     ```json
     "database": {
         "user": "fassetbot",

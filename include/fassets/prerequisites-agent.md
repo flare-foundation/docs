@@ -9,4 +9,4 @@ You need knowledge of the following tools:
 * A [wallet](../../user/wallets/index.md) configured for [Flare networks](https://dev.flare.network/network/overview)
 * Command-line terminal
 * Code editor
-* [MySQL](https://dev.mysql.com/doc/) server
+* [MySQL](https://dev.mysql.com/doc/) or [PostgreSQL](https://www.postgresql.org/) server
