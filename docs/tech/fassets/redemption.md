@@ -32,7 +32,7 @@ This is the summary of the redemption process:
 
     * Redeemer’s underlying address.
 
-        Agents can use the State Connector to ensure the validity of this address.
+        Agents can use the Flare Data Connector to ensure the validity of this address.
         Otherwise, malicious redeemers could provide an address that systematically blocks payments and exploit the redeeming process to their advantage (See [Redemption Payment Failure](#redemption-payment-failure) below).
 
     * Amount to pay minus the fee that was already subtracted.
@@ -45,7 +45,7 @@ This is the summary of the redemption process:
     Agents can pay the redemption from any address they control on the underlying chain.
     It does not need to be the same address where they receive minting payments.
 
-5. After the payment is finalized, the agent uses the [State Connector](../state-connector.md) to prove the payment and obtain a payment proof.
+5. After the payment is finalized, the agent uses the [Flare Data Connector](../data-connector.md) to prove the payment and obtain a payment proof.
 
 6. After the payment proof is presented to the FAssets system, the agent's vault collateral and pool collateral that were backing those FAssets are released.
 
@@ -67,7 +67,7 @@ If the agent does not report the failed payment in time, anyone can report the f
 
 !!! note "Blocked Payments"
 
-    When payment fails because of the redeemer, the agent can obtain a proof of the failed payment from the State Connector and present it to the FAssets system.
+    When payment fails because of the redeemer, the agent can obtain a proof of the failed payment from the Flare Data Connector and present it to the FAssets system.
     The agent's obligation is then fulfilled, and he can keep both the collateral and the underlying.
 
     Two different proofs can be used:
@@ -76,11 +76,11 @@ If the agent does not report the failed payment in time, anyone can report the f
     * Proof of blocked payment: Even if the address is valid, it might contain a contract that blocks the payment.
         This can only happen on underlying networks supporting smart contracts.
 
-        The agent must still try to pay and, if the payment is blocked, the agent can request this proof from the State Connector and present it to the FAssets system.
+        The agent must still try to pay and, if the payment is blocked, the agent can request this proof from the Flare Data Connector and present it to the FAssets system.
 
 During step 4 above, if any agent does not to pay on the underlying chain, the redeemer completes the following procedure separately for each nonpaying agent:
 
-1. The redeemer obtains a proof of nonpayment from the State Connector.
+1. The redeemer obtains a proof of nonpayment from the Flare Data Connector.
 2. The redeemer presents the nonpayment proofs to the FAssets system, which triggers a redemption failure.
 3. The redeemer is paid with collateral, according to the current price plus a premium.
 4. FAssets are overcollateralized, so, even after paying the redeemer with a premium, a remainder is released.
@@ -96,7 +96,7 @@ During step 4 above, if any agent does not to pay on the underlying chain, the r
   Because the agent has already paid, the redeemer is not affected.
   However, the system still requires the payment proof to correctly track the agent's balance on the underlying chain.
   After enough time for the agent to present the proof has elapsed, anyone can present the payment proof and receive collateral from the agent’s vault.
-* **Expired proof**: Proofs provided by the State Connector are available for only 24 hours, approximately.
+* **Expired proof**: Proofs provided by the Flare Data Connector are available for only 24 hours, approximately.
   If neither the redeemer nor the agent presents the proof of payment or nonpayment within 24 hours, the regular redeeming process cannot continue, and the agent's collateral could be locked indefinitely.
 
     The procedure to recover this collateral is the same as the [procedure in the minting case](./minting.md#edge-cases).

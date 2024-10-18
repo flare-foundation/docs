@@ -42,7 +42,7 @@ If governance deprecates a type, agents must switch to a supported type.
 Each vault is associated with a single, unique address on the underlying chain called the agent's underlying address.
 It receives underlying assets when they are minted into FAssets and sends underlying assets to the redeemer's address when they are redeemed.
 
-When an agent creates a vault, the underlying address is checked for validity using the State Connector.
+When an agent creates a vault, the underlying address is checked for validity using the Flare Data Connector.
 Otherwise, malicious agents could provide an address that systematically blocks payments and exploit the [minting process](./minting.md) to their advantage.
 
 ### Pool Collateral

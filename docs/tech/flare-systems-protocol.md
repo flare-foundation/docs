@@ -28,7 +28,7 @@ The FSP coordinates several components, including smart contracts, indexers for 
 These protocols receive data from other blockchains and internet APIs:
 
 * The [Flare Time-Series Oracle (FTSO)](./ftso/index.md).
-* The [Data Connector](./state-connector.md) (formerly the State Connector).
+* The [Data Connector](./data-connector.md) (formerly the State Connector).
 
 The FSP has also been designed to accommodate future data protocols, such as Fast FTSO and Stake mirroring.
 

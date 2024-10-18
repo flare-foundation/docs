@@ -185,7 +185,7 @@ The Coston address is the address that starts with `0x`.
 
 5. Click **Confirm** and input either your PIN or your biometrics, depending on the way you set up your wallet.
    The transaction is approved.
-   The [Data Connector](../../tech/state-connector.md) trustlessly proves that you, via the FAssets Demo Dapp, sent the right amount of testXRP to the correct address with the correct reference.
+   The [Data Connector](../../tech/data-connector.md) trustlessly proves that you, via the FAssets Demo Dapp, sent the right amount of testXRP to the correct address with the correct reference.
    This process for the Data Connector to come to consensus and provide the FAssets system with a proof that this has occurred takes approximately 5 minutes.
    Progress through the four stages of processing the mint is displayed.
 

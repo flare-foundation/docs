@@ -19,7 +19,7 @@ Select one of the topics below:
 * [FTSO](./ftso/index.md)
 * [Governance](./governance.md)
 * [Personal Delegation Accounts](./personal-delegation-account.md)
-* [State Connector](./state-connector.md)
+* [Flare Data Connector](./data-connector.md)
 * [Tokenomics](./tokenomics.md)
 * [Validator Nodes](./validators.md)
 * [Glossary](./glossary.md)

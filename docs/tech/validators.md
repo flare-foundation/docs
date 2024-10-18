@@ -28,13 +28,13 @@ For example, Flare uses the **Snowman++** consensus protocol from [Avalanche](gl
     During each round, a validator is **randomly selected** to act as the **leader** and propose new blocks to be added to the ledger, which are then validated by the rest of nodes.
     To provide [Sybil resistance](glossary.md#sybil_resistance), the probability that a node is elected the leader is **proportional to the node's stake**, effectively enacting a [proof-of-stake](glossary.md#proof_of_stake) consensus.
 
-With its vision to be the blockchain for data, Flare adds the [FTSO Data provider](./ftso/index.md) and [Attestation Provider](./state-connector.md) roles to validators, creating a single _infrastructure entity_.
+With its vision to be the blockchain for data, Flare adds the [FTSO Data provider](./ftso/index.md) and [Attestation Provider](./data-connector.md) roles to validators, creating a single _infrastructure entity_.
 
 When fully operational, these decentralized infrastructure entities are responsible for:
 
 * Securing the network through proof-of-stake consensus.
 * Providing continuous data to the FTSO system.
-* Answering the State Connector's queries for attestations.
+* Answering the Data Connector's queries for attestations.
 
 In this way, the stake required to operate these entities secures all three functions.
 
@@ -57,7 +57,7 @@ The Flare Foundation managed these nodes and gradually reassigned 16 of them to 
 These entities, known as professional validators, are infrastructure providers with experience managing blockchain nodes.
 
 During this period FTSO data providers operated completely independently of validators.
-The State Connector protocol was still being developed, so no attestation providers were available.
+The Data Connector protocol was still being developed, so no attestation providers were available.
 
 ### Phase 1
 

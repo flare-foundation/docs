@@ -240,10 +240,10 @@ Fees for gas on the underlying chain can create issues for the FAssets system, s
 Expensive gas fees can cause an address to have fewer assets than it should have and trigger a liquidation.
 Therefore, consider these actions:
 
-* **Cap the gas usage on underlying chains**: On smart-contract chains, the State Connector defines a cap on the gas amount to enable any simple transaction to pass.
+* **Cap the gas usage on underlying chains**: On smart-contract chains, the Flare Data Connector defines a cap on the gas amount to enable any simple transaction to pass.
     If senders limit their gas amount to this cap and a transaction still fails due to insufficient gas, the failure is considered the receiver's fault, and the transaction is labeled as blocked.
 
-    The gas cap is defined by the State Connector, not the FAssets system, because it is the State Connector that labels transactions as blocked.
+    The gas cap is defined by the Flare Data Connector, not the FAssets system, because it is the Flare Data Connector that labels transactions as blocked.
 
 * **Maintain the underlying balance**: Agents must ensure that the payment plus the transaction fee for a redemption never reduce their balance to an amount lower than the amount required to back the FAssets.
     Agents can ensure that redemptions do not reduce that balance in several ways:
@@ -266,7 +266,7 @@ The FAssets system must keep track of the agent's underlying funds, so when perf
 
 1. Announce the withdrawal to the FAssets system and obtain a payment reference.
 2. Perform the withdrawal, using the payment reference.
-3. Use the [State Connector](../state-connector.md) to obtain a proof of payment.
+3. Use the [Flare Data Connector](../data-connector.md) to obtain a proof of payment.
 4. Present the proof of payment to the FAssets system, which clears the announcement.
 
     If the agent does not present the proof of payment, anyone can present it after a while and receive a reward from the agent's vault.
@@ -292,7 +292,7 @@ A payment from the agent's underlying address without a payment reference or wit
 
 This challenge is performed in the following way:
 
-1. The challenger obtains proof of the illegal payment using the State Connector.
+1. The challenger obtains proof of the illegal payment using the Flare Data Connector.
 2. The challenger presents the proof to the FAssets system, which triggers:
 
     * A vault collateral payment from the agent's vault to the challenger's address as a reward.
@@ -310,7 +310,7 @@ The double payment challenge catches this attempt as soon as the payments are fi
 
 This challenge is performed in the following way:
 
-1. The challenger detects two seemingly legal payments from the same agent's underlying address and with equal payment reference, and obtains proofs for both using the State Connector.
+1. The challenger detects two seemingly legal payments from the same agent's underlying address and with equal payment reference, and obtains proofs for both using the Flare Data Connector.
 2. The challenger presents the two proofs to the FAssets system and triggers the reward payment and full liquidation.
 
 #### Negative Balance Challenge

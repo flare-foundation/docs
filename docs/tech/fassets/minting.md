@@ -39,7 +39,7 @@ This is the summary of the minting process:
       In this situation, the block numbers do not increment but the block timestamps do.
 
 4. After this event is emitted, the minter must pay the full underlying amount plus the fee to the agent on the underlying chain in a certain amount of time.
-5. Using the State Connector, the minter proves the payment on Flare.
+5. Using the Flare Data Connector, the minter proves the payment on Flare.
 6. After the payment is proved, the minter executes the minting process, which sends FAssets to the minter's account.
 
 When minting is executed, the [minting fee](#fees) is split between the agent and the pool:
@@ -95,7 +95,7 @@ The [agent's registration process](./index.md#agents) verifies that the agent's 
 !!! example "Example: Proof of Nonpayment"
     The following example shows how the nonpayment proof works.
 
-    The [State Connector](../state-connector.md)'s [payment nonexistence attestation type](https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/specs/attestations/active-types/ReferencedPaymentNonexistence.md?ref_type=heads) proves nonpayment.
+    The [Flare Connector](../data-connector.md)'s [payment nonexistence attestation type](https://gitlab.com/flarenetwork/state-connector-protocol/-/blob/main/specs/attestations/active-types/ReferencedPaymentNonexistence.md?ref_type=heads) proves nonpayment.
 
     1. The minter sends a request to mint `$FBTC`.
         At the time the request is received, the last mined block on the Bitcoin chain is number 92, with timestamp 09:00 AM.
@@ -127,14 +127,14 @@ The [agent's registration process](./index.md#agents) verifies that the agent's 
     In this case, the agent can present the payment proof and execute minting at any time.
     FAssets are still transferred to the minter's account, and the agent's collateral becomes redeemable.
 
-* **Expired proof**: Proofs provided by the State Connector are available for only 24 hours, approximately.
+* **Expired proof**: Proofs provided by the Flare Data Connector are available for only 24 hours, approximately.
     If neither the minter nor the agent presents the proof of payment or nonpayment within 24 hours, the regular minting process cannot continue, and the agent's collateral could be locked indefinitely.
 
     In this case, the agent can still recover the collateral by buying it back with native tokens.
     The recovery is accomplished with the following procedure:
 
     1. Request the proof from the time when the deposit should have happened.
-        The State Connector's answer will indicate that payments proofs are no longer available for that time.
+        The Data Connector's answer will indicate that payments proofs are no longer available for that time.
     2. Provide the amount of `$FLR` collateral equivalent to the price of the underlying assets that should have been deposited.
     3. Present the proof.
 
@@ -152,7 +152,7 @@ The maximum duration of the process is the sum of:
 * A system-defined maximum time for deposit.
     It is either a few blocks on the underlying chain or a few minutes, whichever is longer.
 * The underlying chain's finalization time.
-* The State Connector proof time, which is approximately 3 - 5 minutes, independent of the underlying chain.
+* The Data Connector proof time, which is approximately 3 - 5 minutes, independent of the underlying chain.
 
 On fast chains like XRPL, the maximum total time is less than 10 minutes, while on Bitcoin it is approximately 1.5 hours.
 For payment failures, the agent needs to wait the maximum time, as defined above, before the nonpayment proof can be retrieved.

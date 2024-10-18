@@ -109,7 +109,7 @@ Redeem the FTestXRP for the underlying asset obtained in the previous step by ru
 !!! info
 
     The [redemption](../../tech/fassets/redemption.md) may take an hour or more for the underlying funds to arrive at the user's address. If the agent pays immediately, redemption takes about 5 minutes.
-    However, if the agent delays, the redeemer must wait 500 testXRP blocks or 900 seconds, plus 5 minutes for [state connector](../../tech/state-connector.md) proof, to execute redemption default.
+    However, if the agent delays, the redeemer must wait 500 testXRP blocks or 900 seconds, plus 5 minutes for [Flare Data connector](../../tech/data-connector.md) proof, to execute redemption default.
 
 ## Related Pages
 

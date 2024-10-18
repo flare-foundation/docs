@@ -51,7 +51,7 @@ Descriptions of Flare’s products
 Quick links:
 
 * [FTSO](https://dev.flare.network/ftso/overview)
-* [State Connector](./tech/state-connector.md)
+* [Flare Data Connector](./tech/data-connector.md)
 * [FAssets](./tech/fassets/index.md)
 
 </div>

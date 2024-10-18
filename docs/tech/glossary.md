@@ -12,7 +12,7 @@ Address { #address }
 : In blockchain, an address is a synonym for wallet and [account](#account).
 
 Attestation { #attestation }
-: A data proof provided to the [State Connector](#state_connector) by a decentralized set of Attestation Providers that confirms the validity or otherwise of any request. [Read more...](state-connector.md)
+: A data proof provided to the [Data Connector](#data_connector) by a decentralized set of Attestation Providers that confirms the validity or otherwise of any request. [Read more...](data-connector.md)
 
 Autoclaiming { #autoclaiming }
 : Automatic claiming enables users to appoint an [executor](#executor) to claim rewards on their behalf. [Read more...](./automatic-claiming.md)
@@ -147,10 +147,10 @@ Main Network (MAINNET) { #main_network }
 : The computer network that supports a [blockchain](#blockchain) in its production stage, i.e., the real thing (instead of a [Canary](#canary_network) or [Test](#test_network) network).
 
 Merkle Root { #merkle_root }
-: The single [hash](#hash) that encapsulates the entirety of the data represented in a [Merkle tree](#merkle_tree). For instance, it is used by the [State Connector](#state_connector) to store only the Merkle root and avoid having to store the whole tree.
+: The single [hash](#hash) that encapsulates the entirety of the data represented in a [Merkle tree](#merkle_tree). For instance, it is used by the [Flare Data Connector](#data_connector) to store only the Merkle root and avoid having to store the whole tree.
 
 Merkle Tree { #merkle_tree }
-: A cryptographic data structure that aggregates large sets of data into a single [hash](#hash), enabling fast verification of data integrity and membership. For example, in the [State Connector](#state_connector), Merkle trees play a crucial role in organizing and verifying [attestations](#attestation), which are hashed representations of data records like address validity proofs. For more information, check the [State Connector](./state-connector.md#attestation-packing) protocol. [Read more...](https://en.wikipedia.org/wiki/Merkle_tree)
+: A cryptographic data structure that aggregates large sets of data into a single [hash](#hash), enabling fast verification of data integrity and membership. For example, in the [Flare Data Connector](#data_connector), Merkle trees play a crucial role in organizing and verifying [attestations](#attestation), which are hashed representations of data records like address validity proofs. For more information, check the [Flare Data Connector](./data-connector.md#attestation-packing) protocol. [Read more...](https://en.wikipedia.org/wiki/Merkle_tree)
 
 Metaverse { #metaverse }
 : An old concept, at times called Virtual Reality or Cyberspace, that translates human interaction to virtual (i.e., non-physical) worlds. Currently in vogue again because blockchain technology promises to link the physical and the virtual worlds and thus bring a degree of reality to the latter.
@@ -168,7 +168,7 @@ NFT { #nft }
 : Non-Fungible Tokens are digital representations of assets which are unique and therefore non-mergeable (non-fungible), made impossible to copy by blockchain technology. Common use cases are certificates of authenticity or ownership, or limited edition collectibles. Most NFT tokens are built on the [Ethereum network](https://ethereum.org/en/) using standards [ERC-721](https://eips.ethereum.org/EIPS/eip-721) and [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155).
 
 Oracle { #oracle }
-: A mechanism to provide external information to a blockchain, so that it can be used by [smart contracts](#smart_contract), for example. Flare oracles include the [FTSO](#ftso) and the [State Connector](#state-connector).
+: A mechanism to provide external information to a blockchain, so that it can be used by [smart contracts](#smart_contract), for example. Flare oracles include the [FTSO](#ftso) and the [Flare Data Connector](#data-connector).
 
 Price pair { #price_pair }
 : A token and its monetary unit, such as BTC USD. Price pairs are one of the types of data that Flare's [FTSO](#ftso) can provide.
@@ -207,8 +207,8 @@ Smart Contract { #smart_contract }
 Songbird { #songbird }
 : Flare's [canary network](#canary_network), launched in September 2021.
 
-State Connector { #state_connector }
-: Piece of the Flare network that keeps track of the state of other networks, facilitating the implementation of advanced mechanisms like the FAssets. The State Connector uses several independent Attestation Providers that are rewarded for providing correct information. [Read more...](state-connector.md)
+Flare Connector { #data_connector }
+: Piece of the Flare network that keeps track of the state of other networks, facilitating the implementation of advanced mechanisms like the FAssets. The Data Connector uses several independent Attestation Providers that are rewarded for providing correct information. [Read more...](data-connector.md)
 
 Stablecoin { #stablecoin }
 : A cryptocurrency whose value is pegged to the value of another currency.

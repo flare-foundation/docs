@@ -67,9 +67,9 @@ plugins:
   - autolinks                   # Use just filenames instead of full or relative paths
   - redirects:                  # Allow creating redirects for moved pages
       redirect_maps:
-          'en/state-connector.md': 'tech/state-connector.md'
+          'en/data-connector.md': 'tech/data-connector.md'
           'technology/glossary.md': 'tech/glossary.md'
-          'technology/state-connector.md': 'tech/state-connector.md'
+          'technology/data-connector.md': 'tech/data-connector.md'
           'networks/songbird.md': 'developer-hub.md'
           'networks/coston-testnet.md': 'developer-hub.md'
           'tech/flare-launch-process.md': 'tech/archive/flare-launch-process.md'
@@ -343,7 +343,7 @@ nav:
     - products/index.md
     - FTSO:
       - tech/ftso/index.md
-    - tech/state-connector.md
+    - tech/data-connector.md
     - FAssets:
       - tech/fassets/index.md
       - tech/fassets/collateral.md
