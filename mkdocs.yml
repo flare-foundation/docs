@@ -370,6 +370,7 @@ nav:
       - tech/archive/ftso-v1.md
   - Infrastructure:
     - infra/index.md
+    - infra/connected-networks.md
     - FAssets:
       - infra/fassets/index.md
       - infra/fassets/deploying-agent.md
