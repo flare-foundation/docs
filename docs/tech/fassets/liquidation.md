@@ -90,7 +90,7 @@ However, an agent can still self-close positions to avoid paying a premium to li
         !!! warning "Liquidation Trigger"
             Because one of the CRs is below the minimal CR, liquidation can start after a system-defined wait period.
 
-            If any of the CRs go below the [CCB CR](./collateral.md#system-wide-thresholds), liquidations can start immediately.
+            If any of the CRs go below the [Liquidation CR](./collateral.md#system-wide-thresholds), liquidations can start immediately.
 
     3. A liquidator notices the CR levels and decides to liquidate $10K worth of FAssets by returning 0.48 `$FBTC` to the FAssets system.
 

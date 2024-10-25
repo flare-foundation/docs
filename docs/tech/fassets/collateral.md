@@ -336,25 +336,25 @@ The following thresholds are set by the FAssets system's governance and are the 
 
     If an agent's CR remains below the minimal CR for longer than a governance-set amount of time, [liquidations](./liquidation.md) can start.
 
-* **Collateral call band CR (CCB CR)**: An agent's position is unhealthy when the agent's vault CR or pool CR fall below their minimal CR.
-    However, as long as the CR remains above CCB CR, the CR can briefly fall below the minimal CR.
+* **Liquidation CR**: An agent's position is unhealthy when the agent's vault CR or pool CR fall below their minimal CR.
+    However, as long as the CR remains above the Liquidation CR, the CR can briefly fall below the minimal CR.
     { #collateral-call-band-cr }
 
     During this time, the agent can either deposit more collateral or self-close some backed FAssets to improve the position.
 
-    However, if the CR falls below the CCB CR, [liquidations](./liquidation.md) can start immediately.
+    However, if the CR falls below the Liquidation CR, [liquidations](./liquidation.md) can start immediately.
 
-    The value of each CCB CR is approximately 10% less than the minimal CR.
+    The value of each Liquidation CR is approximately 10% less than the minimal CR.
 
     !!! example
-        Assume the **minimal CR** is 1.4 and the **CCB CR** is 1.3.
+        Assume the **minimal CR** is 1.4 and the **Liquidation CR** is 1.3.
 
         If the agent's vault CR drops below 1.3, the agent's position can be liquidated immediately.
         If the agent's vault CR drops below 1.4 but not below 1.3, the agent has some time to amend the position before it can be liquidated.
 
         Adjusted for the collateral pool's minimal CR, the same example applies to the collateral pool.
 
-* **Safety CR**: If one or both of the collateral types fall below CCB CR or below the minimum CR for a longer period of time, liquidation occurs.
+* **Safety CR**: If one or both of the collateral types fall below Liquidation CR or below the minimum CR for a longer period of time, liquidation occurs.
     When the offending collateral reaches a healthy CR again, the liquidation stops.
     To prevent the agent from immediately reverting into liquidation after a small price change, the CR must reach the safety CR before it can start operating normally again and liquidation stops.
     { #safety-cr }
