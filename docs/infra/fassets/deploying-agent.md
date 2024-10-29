@@ -278,9 +278,45 @@ yarn run-agent
 
 When you want to stop the server, press Ctrl + C.
 
-!!! info
+To run the `run-agent` as a service to maximize uptime for production use, follow instructions for running the agent as a `system` service for [running the bot as a daemon](https://github.com/flare-labs-ltd/fasset-bots/blob/main/docs/systemd/systemd-service.md).
 
-    Run the run-agent as a service to maximize uptime for production use. Here, you have instructions to run the agent as a `systemd` service for [running the bot as a daemon](https://github.com/flare-labs-ltd/fasset-bots/blob/main/docs/systemd/systemd-service.md).
+!!! warning
+
+    If you upgraded your agent code and see an error stating that `owner.testBTC.address` isn't defined when running the agent, you need to generate it using this command:
+    ```bash
+    yarn key-gen createAccount testBTC
+    ```
+
+    This command generates a test BTC account and displays the address and private key as follows:
+
+    ```text
+    Address: tb1qtu86wueft8zafn3ppejsrq3c8z0rd2h9a8n6sa
+    Private key: cQ9tgyod95qw88LxwgAYXxnkJY9UWBauB1ejEHcJJsy3hHbchFbF
+    ```
+
+    Then, add this object under the `owner` and `user` sections in the `secrets.json` file, filling it out with the address and private key obtained when generating the test BTC account.
+
+    ```json
+    "owner": {
+        
+        ...
+
+        "testBTC": {
+            "address": "tb1qtu86wueft8zafn3ppejsrq3c8z0rd2h9a8n6sa",
+            "private_key": "cQ9tgyod95qw88LxwgAYXxnkJY9UWBauB1ejEHcJJsy3hHbchFbF"
+        }
+    },
+    ...
+    "user" : {
+        
+        ...
+
+        "testBTC": {
+            "address": "tb1qtu86wueft8zafn3ppejsrq3c8z0rd2h9a8n6sa",
+            "private_key": "cQ9tgyod95qw88LxwgAYXxnkJY9UWBauB1ejEHcJJsy3hHbchFbF"
+        }
+    }
+    ```
 
 ## Verifying Collateral Pool Smart Contracts
 
