@@ -5,9 +5,9 @@ The [FAssets](./../../tech/fassets/index.md) agents play an essential role and h
 This guide provides the following information:
 
 * How to set up the FAssets command line interface;
-* How to set up access keys for interacting with the Flare test and test XRP Ledger network;
+* How to set up access keys for interacting with the Flare test and FAssets underlying networks;
 * How to set up an FAssets agent and provide collateral;
-* How to run the agent so FAssets system users can convert (mint and redeem) assets from the testnet XRP Ledger to the Flare test network and back.
+* How to run the agent so FAssets system users can convert (mint and redeem) assets from the underlying networks to the Flare test network and back.
 
 --8<-- "./include/fassets/open-beta.md"
 
@@ -38,6 +38,10 @@ These are ERC-20 representations of test tokens to be used by the FAssets system
 * `FTestBTC`: [0xe01b2151b684b83C771449D8A6D1d1764f03829e](https://coston-explorer.flare.network/token/0xe01b2151b684b83C771449D8A6D1d1764f03829e)
 
     The FAsset-wrapped TextBTC token, ready to be used on Coston.
+
+* `FTestDOGE`: [0x353D20c6eB0C7bfcE3B828665C992DE995eF67bd](https://coston-explorer.flare.network/token/0x353D20c6eB0C7bfcE3B828665C992DE995eF67bd)
+
+    The FAsset-wrapped TextDOGE token, ready to be used on Coston.
 
 --8<-- "./include/fassets/prerequisites-agent.md"
 --8<-- "./include/fassets/setup-commandline.md"
@@ -140,33 +144,39 @@ Configuring the native address links your agent's work address to the management
 
 3. Register the work address by executing the `setWorkAddress` function with the value of `owner.native.address` from the `secrets.json` file.
 
-### Configure the Agent for XRP
+### Configure the Agent
 
 You need to set up your agent's parameters like name, collateral, and fund with underlying assets.
 
-1. Prepare the agent settings `tmp.agent-settings.json` file:
+1. Prepare the agent settings `tmp.agent-settings.json` exchanging `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you want to work on:
 
     ```console
-    yarn agent-bot --fasset FTestXRP create --prepare
+    yarn agent-bot --fasset FASSET create --prepare
     ```
 
 2. Choose a suffix for your agent's collateral pool and fill in the `poolTokenSuffix` field in the `tmp.agent-settings.json` file with it.
 The `poolTokenSuffix` should only include uppercase letters, numbers, and the `-` symbol.
-This suffix will be used for the [FAsset Collateral Pool Token](../../tech/fassets/collateral.md#pool-collateral). For example, if you use `MY-ALPHA-AGENT-1`, it would be `FCPT-TXRP-MY-ALPHA-AGENT-1`.
+This suffix will be used for the [FAsset Collateral Pool Token](../../tech/fassets/collateral.md#pool-collateral). For example, for `FTestXRP`, if you use `MY-ALPHA-AGENT-1`, it would be `FCPT-TXRP-MY-ALPHA-AGENT-1`.
 
 3. Choose one of the stable tokens (`testUSDT` or `testUSDC`) or wrapped ETH in `vaultCollateralFtsoSymbol` to back up the agent vault collateral.
 
-4. In the `secrets.json` file, the `owner.testXRP.address` field is the underlying testnet XRP Ledger account that pays the underlying chain's transaction fees.
-Activate your underlying XRP Ledger account by sending at least 100 test-XRP to it by using one of the XRP Ledger testnet faucets:
+4. In the `secrets.json` file, the `owner.testXRP.address`, `owner.testBTC.address`, and `owner.testDOGE.address` fields represent the underlying testnet accounts that will pay transaction fees for XRP, BTC, and DOGE, respectively. Ensure each account is activated by sending a minimum required amount of test cryptocurrency from the appropriate faucet.
+    * for XRP activate your underlying XRP Ledger account by sending at least 100 test-XRP using one of these XRP Ledger testnet faucets:
+        * [XRP Testnet Faucet](https://test.bithomp.com/faucet/)
+        * [XRP Ledger Faucet](https://faucet.tequ.dev/)
 
-    * [XRP Testnet Faucet](https://test.bithomp.com/faucet/)
-    * [XRP Ledger Faucet](https://faucet.tequ.dev/)
+    * for BTC use the following faucet to receive testnet Bitcoin [TestBTC Faucet](https://bitcoinfaucet.uo1.net/)
+
+    * for DOGE activate your Dogecoin account by sending test-DOGE using one of these faucets:
+        * [Doge Toys Faucet](https://faucet.doge.toys/)
+        * [Ruan's Dogecoin Faucet](https://dogecoin-faucet.ruan.dev/)
 
 5. Create the agent by specifying the FAsset and agent settings, noting that this operation can take up to 10 minutes because the FAssets verifies the underlying assets.
 This command will print out your agent's address.
+Exchange `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you are creating the agent.
 
     ```console
-    yarn agent-bot --fasset FTestXRP create tmp.agent-settings.json
+    yarn agent-bot --fasset FASSET create tmp.agent-settings.json
     ```
 
 ### Deposit Collateral
@@ -179,34 +189,34 @@ You have two options: either deposit the vault collateral and buy pool collatera
 
 #### Deposit Collaterals Together
 
-To deposit both vault and pool collateral together and let the tool calculate the [minimum required collateral](../../tech/fassets/collateral.md#the-collateral-ratio) to back the lots, you can use the `depositCollateral` function to the agent, specifying your created agent address in the `AGENT_ADDRESS` and lot size in the `LOTS`:
+To deposit both vault and pool collateral together and let the tool calculate the [minimum required collateral](../../tech/fassets/collateral.md#the-collateral-ratio) to back the lots, you can use the `depositCollateral` function to the agent, specifying your created agent address in the `AGENT_ADDRESS` and lot size in the `LOTS`, as well exchange `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you are creating the agent:
 
 ```console
-yarn agent-bot depositCollaterals AGENT_ADDRESS LOTS --fasset FTestXRP
+yarn agent-bot depositCollaterals AGENT_ADDRESS LOTS --fasset FASSET
 ```
 
 #### Deposit Collateral Separately
 
-1. Deposit enough vault collateral to the agent specifying your created agent address in the `AGENT_ADDRESS` and the amount of the stablecoin or wrapped ETH in the `AMOUNT` field.
+1. Deposit enough vault collateral to the agent specifying your created agent address in the `AGENT_ADDRESS` and the amount of the stablecoin or wrapped ETH in the `AMOUNT` field, as well exchange `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you are creating the agent.
 
     ```console
-    yarn agent-bot depositVaultCollateral AGENT_ADDRESS AMOUNT --fasset FTestXRP
+    yarn agent-bot depositVaultCollateral AGENT_ADDRESS AMOUNT --fasset FASSET
     ```
 
-2. Buy enough pool collateral for the agent specifying your agent's address in the `AGENT_ADDRESS` and the amount of the CFLR in the `CFLR_AMOUNT` field.
+2. Buy enough pool collateral for the agent specifying your agent's address in the `AGENT_ADDRESS` and the amount of the CFLR in the `CFLR_AMOUNT` field, as well exchange `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you are creating the agent.
 
     ```console
-    yarn agent-bot buyPoolCollateral AGENT_ADDRESS CFLR_AMOUNT --fasset FTestXRP
+    yarn agent-bot buyPoolCollateral AGENT_ADDRESS CFLR_AMOUNT --fasset FASSET
     ```
 
 ### Register the Agent as Available
 
 You need to make your agent available to mint and redeem FAssets.
 
-1. Register your agent as available to the network by executing this command replacing the `AGENT_ADDRESS` with your agent address:
+1. Register your agent as available to the network by executing this command replacing the `AGENT_ADDRESS` with your agent address, as well exchange `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you are entering the agent:
 
     ```console
-    yarn agent-bot enter AGENT_ADDRESS --fasset FTestXRP
+    yarn agent-bot enter AGENT_ADDRESS --fasset FASSET
     ```
 
     !!! info
@@ -214,7 +224,7 @@ You need to make your agent available to mint and redeem FAssets.
         Note that your agent owner's Flare account has to be whitelisted via the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot).
         Otherwise, it will fail.
 
-2. If you deposited enough collateral, you should see that your agent has at least one lot available by running the command.
+2. If you deposited enough collateral, you should see that your agent has at least one lot available by running the command replacing `FASSET` with `FTestXRP`, `FTestBTC` or `FTestDOGE` according to which underlying network you are running the agent.
 
     ```console
     yarn user-bot agents --fasset FTestXRP
@@ -265,6 +275,53 @@ This command will print out your agent's address.
 
     ```console
     yarn agent-bot enter AGENT_ADDRESS --fasset FTestBTC
+    ```
+
+### Upgrade Your Agent to Support DOGE
+
+1. Repeat the steps to [clone and set up the Tools repository](#clone-and-setup-the-tools-repository).
+2. Generate a new `secrets.json` file using this command by replacing the `MANAGEMENT_WALLET_ADDRESS` with your cold wallet address:
+
+    ```console
+    yarn key-gen generateSecrets --user --agent MANAGEMENT_WALLET_ADDRESS --other -o secrets.json
+    ```
+
+3. Make a copy of your old `secrets.json` file, open it, and replace the owner and user testDOGE addresses and private keys from the generated `secrets.json` in the previous step.
+    A new instance with your old `secrets.json` file that includes your DOGE addresses is created.
+4. In the [FlareFAssetsBot Telegram channel](https://t.me/FlareFAssetsBot), run `/register_btc_address ADDRESS`, where `ADDRESS` is your TestBTC address in the `secrets.json` file.
+    Your TestBTC address is registered, an amount of TestBTC is sent to the address, and your API key is returned.
+5. In your `secrets.json` file, add the `doge_rpc` parameter to the `apiKey` section.
+6. Prepare the agent for `FTestDOGE`:
+
+    ```console
+    yarn agent-bot --fasset FTestDOGE create --prepare
+    ```
+
+7. Choose a suffix for your agent's collateral pool and fill in the `poolTokenSuffix` field in the `tmp.agent-settings.json` file with it.
+    The `poolTokenSuffix` should only include uppercase letters, numbers, and the `-` symbol.
+    This suffix will be used for the [FAsset Collateral Pool Token](../../tech/fassets/collateral.md#pool-collateral). For example, if you use `MY-ALPHA-AGENT-1`, it would be `FCPT-TDOGE-MY-ALPHA-AGENT-1`.
+
+8. If you need more TestDOGE, request more from the TestDOGE faucets:
+    * [https://faucet.doge.toys/](https://faucet.doge.toys/)
+    * [https://dogecoin-faucet.ruan.dev/](https://dogecoin-faucet.ruan.dev/)
+1.  Top up your `owner.testDOGE` address from `secrets.json`.
+2.  Create the agent by specifying the FAsset and agent settings, noting that this operation can take up to 10 minutes because the FAssets verifies the underlying assets.
+This command will print out your agent's address.
+
+    ```console
+    yarn agent-bot --fasset FTestDOGE create tmp.agent-settings.json
+    ```
+
+1.   Deposit collaterals for your agent:
+
+    ```console
+    yarn agent-bot depositCollaterals AGENT_ADDRESS LOTS --fasset FTestDOGE
+    ```
+
+2.   Register your agent as available to the network by executing this command replacing the `AGENT_ADDRESS` with your agent address:
+
+    ```console
+    yarn agent-bot enter AGENT_ADDRESS --fasset FTestDOGE
     ```
 
 ## Running the Agent
@@ -335,6 +392,12 @@ Follow these steps to upload the source code for the Collateral Pool and Collate
 
     ```bash
     yarn agent-bot info AGENT_ADDRESS --fasset FTestBTC
+    ```
+
+    For DOGE, run:
+
+    ```bash
+    yarn agent-bot info AGENT_ADDRESS --fasset FTestDOGE
     ```
 
     Look for the value of the **Agent collateral pool** field and copy the address, as shown in the following example for XRP.
