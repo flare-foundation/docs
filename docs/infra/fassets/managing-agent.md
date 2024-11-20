@@ -23,6 +23,17 @@ You need to [have deployed an agent bot and have it running](./deploying-agent.m
 
 ## Configuration Guide
 
+### Adding login password to secrets
+
+Agent UI uses a password login. The password is set in `secrets.json`, where you need to set the parameter `apiKey.agent_bot` with a password
+that you will use to login to agent UI with. Example of `secrets.json` after adding the password:
+```json
+    "apiKey": {
+            "agent_bot": "verySafePassword",
+            ... other secrets
+        }
+```
+
 ### Configuring the Backend Bot
 
 After you have successfully deployed the agent bot and it is running, you can configure the backend that links it with the Admin Console UI.
@@ -85,19 +96,45 @@ You can enable alerts to be sent to the backend and displayed in the frontend.
          "extends": "coston-bot-mysql.json",
          "apiNotifierConfigs": [
          {
-                 "apiKey": "",
+                 "apiKey": "myApiSecret",
+                 "apiUrl": "http://localhost:1234/"
+         }
+         ]
+    }
+    ```
+    Fill the `apiKey` parameter with some random string. This will be used as api key by the bot to send notifications to the backend.
+    Optionally (not recommended), if you use SQLite, change the `extends` value in the JSON to `coston-bot.json`.
+
+3. In `secrets.json` add add the same string to `apiKey.notifier_key`, which is used by the backend to accept alerts from the bot. For example
+    if your `alerts.json` file looks like this
+    ```json
+    {
+         "extends": "coston-bot-mysql.json",
+         "apiNotifierConfigs": [
+         {
+                 "apiKey": "myApiSecret",
                  "apiUrl": "http://localhost:1234/"
          }
          ]
     }
     ```
 
-    Optionally (not recommended), if you use SQLite, change the `extends` value in the JSON to `coston-bot.json`.
+    Then in the `secrets.json` you will have
+    ```json
+    "apiKey": {
+            "notifier_key": "myApiSecret",
+            ... other secrets
+        }
+    ```
 
-3. Open the `.env` file in this same folder, and change the path specified for `FASSET_BOT_CONFIG` to the `alerts.json` file:
+4. Open the `.env` file in this same folder, and change the path specified for `FASSET_BOT_CONFIG` to the `alerts.json` file:
 
     ```ini
     FASSET_BOT_CONFIG="./alerts.json"
+    ```
+Then move to the folder in `fasset-bots/packages/fasset-bots-api` and also change `FASSET_BOT_CONFIG` to the alerts.json file:
+    ```ini
+    FASSET_BOT_CONFIG="../../alerts.json"
     ```
 
 ## Configure Existing Agents to Setup MySQL
