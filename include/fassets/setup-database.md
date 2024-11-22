@@ -14,20 +14,20 @@ You have two options to set up a MySQL database: using Docker (preferred) or ins
     services:
       mysql:
         image: mysql:8.0
-      environment:
-        MYSQL_ROOT_PASSWORD: 'root'
-        MYSQL_DATABASE: 'fasset_bots'
-        MYSQL_USER: 'fassetbot'
-        MYSQL_PASSWORD: 'my1beta2password3'
-      volumes:
-        - ./data:/var/lib/mysql
-        - ./init.mysql.sql:/docker-entrypoint-initdb.d/init.mysql.sql
-      ports:
-        - "3306:3306"
-      healthcheck:
-        test: ['CMD', 'mysqladmin', 'ping', '-h', '127.0.0.1', '-u', 'root', '-p$MYSQL_ROOT_PASSWORD']
-        timeout: 20s
-        retries: 10
+        environment:
+          MYSQL_ROOT_PASSWORD: 'root'
+          MYSQL_DATABASE: 'fasset_bots'
+          MYSQL_USER: 'fassetbot'
+          MYSQL_PASSWORD: 'my1beta2password3'
+        volumes:
+          - mysql_data:/var/lib/mysql
+          - ./init.mysql.sql:/docker-entrypoint-initdb.d/init.mysql.sql
+        ports:
+          - "3306:3306"
+        healthcheck:
+          test: ['CMD', 'mysqladmin', 'ping', '-h', '127.0.0.1', '-u', 'root', '-p$MYSQL_ROOT_PASSWORD']
+          timeout: 20s
+          retries: 10
 
     volumes:
       mysql_data:
