@@ -11,7 +11,7 @@ Select one of the topics below:
 
 * [What Is Flare?](./flare.md)
 * [Automatic Claiming](./automatic-claiming.md)
-* [FAssets](./fassets/index.md)
+* [FAssets](https://dev.flare.network/fassets/overview)
 * [Flare API Portal](./api-portal.md)
 * [Flare Beta](./flare-beta.md)
 * [Flare Systems Protocol](./flare-systems-protocol.md)

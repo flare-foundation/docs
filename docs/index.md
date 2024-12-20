@@ -52,7 +52,7 @@ Quick links:
 
 * [FTSO](https://dev.flare.network/ftso/overview)
 * [Flare Data Connector](./tech/data-connector.md)
-* [FAssets](./tech/fassets/index.md)
+* [FAssets](https://dev.flare.network/fassets/overview)
 
 </div>
 </div>

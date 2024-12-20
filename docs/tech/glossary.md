@@ -90,7 +90,7 @@ Executor { #executor }
 : Users who do not want to claim rewards themselves can set an executor to claim rewards for them and send them directly to their users' accounts. [Read more...](./automatic-claiming.md)
 
 FAssets { #fassets }
-: Allows tokens on blockchains that do not support smart contracts to be used [trustlessly](#trustless) with [smart contracts](#smart_contract) on the Flare blockchain. [Read more...](./fassets/index.md)
+: Allows tokens on blockchains that do not support smart contracts to be used [trustlessly](#trustless) with [smart contracts](#smart_contract) on the Flare blockchain. [Read more...](https://dev.flare.network/fassets/overview)
 
 Faucet { #faucet }
 : A [dapp](#dapp) that distributes test tokens to anyone that requests them. Used only on [test networks](#test_network), obviously. See the [Network Configuration](https://dev.flare.network/network/overview) page to learn about Flare's faucets.

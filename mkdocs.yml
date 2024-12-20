@@ -249,7 +249,6 @@ plugins:
           'user/delegation/reward-claiming.md': 'tech/ftso/index.md'
           'user/delegation/reward-claiming-faq.md': 'tech/ftso/index.md'
           'user/delegation/reward-claiming-in-detail.md': 'tech/ftso/index.md'
-          'user/fassets/minting-redeeming.md': 'user/fassets/index.md'
           'infra/data/operating.md': 'developer-hub.md'
           'infra/validation/staking-cli.md': 'user/staking/staking-cli.md'
           'infra/observation/faq.md': 'developer-hub.md'
@@ -265,6 +264,21 @@ plugins:
           'infra/data/managing-ecosystem/monitoring-price-history.md': 'developer-hub.md'
           'tech/ftso/ftso-scaling.md': 'https://dev.flare.network/ftso/overview/'
           'tech/ftso/ftso-fast-updates.md': 'https://dev.flare.network/ftso/overview/'
+          'infra/fassets/index.md': 'https://dev.flare.network/category/fassets-guides'
+          'infra/fassets/deploying-agent.md': 'https://dev.flare.network/fassets/guides/deploy-fassets-agent'
+          'infra/fassets/managing-agent.md': 'https://dev.flare.network/fassets/guides/create-fasset-agent-ui'
+          'infra/fassets/liquidator.md': 'https://dev.flare.network/fassets/guides/deploy-fassets-agent'
+          'tech/fassets/index.md': 'https://dev.flare.network/fassets/overview'
+          'tech/fassets/collateral.md': 'https://dev.flare.network/fassets/collateral'
+          'tech/fassets/minting.md': 'https://dev.flare.network/fassets/minting'
+          'tech/fassets/redemption.md': 'https://dev.flare.network/fassets/redemption'
+          'tech/fassets/liquidation.md': 'https://dev.flare.network/fassets/liquidation'
+          'tech/fassets/open-beta.md': 'https://dev.flare.network/fassets/songbird'
+          'tech/fassets/parameters.md': 'https://dev.flare.network/fassets/operational-parameters'
+          'user/fassets/index.md': 'developer-hub.md'
+          'user/fassets/depositing-collateral-cli.md': 'developer-hub.md'
+          'user/fassets/minting-redeeming-cli.md': 'developer-hub.md'
+          'user/fassets/minting-redeeming-dapp.md': 'developer-hub.md'
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -331,11 +345,6 @@ nav:
       - user/staking/staking-cli.md
     - user/claiming-the-flaredrop.md
     - user/automatic-claiming.md
-    - FAssets:
-      - user/fassets/index.md
-      - user/fassets/depositing-collateral-cli.md
-      - user/fassets/minting-redeeming-cli.md
-      - user/fassets/minting-redeeming-dapp.md
     - Governance:
       - user/governance/index.md
       - user/governance/voting.md
@@ -344,14 +353,6 @@ nav:
     - FTSO:
       - tech/ftso/index.md
     - tech/data-connector.md
-    - FAssets:
-      - tech/fassets/index.md
-      - tech/fassets/collateral.md
-      - tech/fassets/minting.md
-      - tech/fassets/redemption.md
-      - tech/fassets/liquidation.md
-      - tech/fassets/open-beta.md
-      - tech/fassets/parameters.md
     - tech/api-portal.md
   - Concepts:
     - tech/index.md
@@ -371,8 +372,3 @@ nav:
   - Infrastructure:
     - infra/index.md
     - infra/connected-networks.md
-    - FAssets:
-      - infra/fassets/index.md
-      - infra/fassets/deploying-agent.md
-      - infra/fassets/managing-agent.md
-      - infra/fassets/liquidator.md
