@@ -54,20 +54,25 @@ See the [Using the CLI to Stake](./staking-cli.md) guide to learn about it.
 2. Click **Access Wallet**.
 3. Click **Ledger**.
 
-    Make sure your Ledger device is plugged in, it is unlocked with your PIN, and the Avalanche app is running.
+    Make sure your Ledger device is plugged in, it is unlocked with your PIN, and the Flare app is running.
 
-    ??? info "Installing the Avalanche application"
+    ??? info "Installing the Flare application"
 
         1. Connect the device to your computer and unlock it using your PIN code.
         2. Open the [Ledger Live](https://www.ledger.com/ledger-live) application.
             Go to the **My Ledger** tab and make sure the device is using the latest firmware.
-        3. In the **App catalog** tab, search for "Avalanche" and click on the **Install** button.
+        3. In the **App catalog** tab, search for "Flare" and click on the **Install** button.
 
-            Version should be at least v0.6.5.
+            If the Flare app does not appear on search, update firmware, restart the Ledger Live client, then search again.
 
-            Note that this app requires all available space on a **Ledger Nano S** device (138 KB).
-            You might need to remove other apps first to free up space.
-        4. Exit the Ledger Live application and make sure the device is not connected to any other application like MetaMask.
+            
+        4. Once Ledger Live is updated and relaunched, search again and click **Install** on the Flare Network app.
+        5. Enable Expert mode on your Ledger device:
+             - Open the Flare Network app on your device
+             - Click through (right button press) until you see "Expert mode:" option
+             - If you see "Expert mode: disabled," press both buttons simultaneously to enable it
+
+        Note that Expert mode is similar to "blind signing" support, enabling permissions needed for staking or delegating FLR.
 
 4. Click the top dropdown menu to select whether the account containing the funds you want to stake was created using Ledger Live or some other wallet like MetaMask.
 
