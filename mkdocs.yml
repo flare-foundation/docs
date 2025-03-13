@@ -1,6 +1,6 @@
 site_name: Documentation
 validation:
-  omitted_files: warn
+  omitted_files: ignore
   absolute_links: ignore
   unrecognized_links: warn
 theme:
@@ -320,40 +320,6 @@ nav:
     - index.md
     - tech/flare.md
     - developer-hub.md
-  - User Guides:
-    - user/index.md
-    - Wallets:
-      - user/wallets/index.md
-      - user/wallets/bifrost-wallet.md
-      - user/wallets/brave-wallet.md
-      - user/wallets/dcent-wallet.md
-      - user/wallets/enkrypt-wallet.md
-      - user/wallets/how-to-access-flare-network-with-a-ledger-device.md
-      - user/wallets/how-to-access-flare-network-with-metamask.md
-      - user/wallets/safepal-s1-wallet.md
-      - user/wallets/how-to-access-flare-network-with-a-trezor-device.md
-    - user/wrapping-tokens.md
-    - FTSO Delegation:
-      - user/delegation/index.md
-      - Managing Delegations: user/delegation/managing-delegations.md
-      - Managing Rewards: user/delegation/managing-rewards.md
-    - user/personal-delegation-account.md
-    - Staking on Validators:
-      - user/staking/index.md
-      - user/staking/staking-flarestake.md
-      - user/staking/staking-portal.md
-      - user/staking/staking-cli.md
-    - user/claiming-the-flaredrop.md
-    - user/automatic-claiming.md
-    - Governance:
-      - user/governance/index.md
-      - user/governance/voting.md
-  - Products:
-    - products/index.md
-    - FTSO:
-      - tech/ftso/index.md
-    - tech/data-connector.md
-    - tech/api-portal.md
   - Concepts:
     - tech/index.md
     - tech/automatic-claiming.md
@@ -369,6 +335,4 @@ nav:
       - tech/archive/index.md
       - tech/archive/flare-launch-process.md
       - tech/archive/ftso-v1.md
-  - Infrastructure:
-    - infra/index.md
-    - infra/connected-networks.md
+
