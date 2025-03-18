@@ -2,6 +2,9 @@
 
 [![pipeline status](https://gitlab.com/flarenetwork/docs-team/docs/badges/main/pipeline.svg)](https://gitlab.com/flarenetwork/docs-team/docs/-/commits/main)
 
+# ⚠️ REPOSITORY DEPRECATED ⚠️
+# 🚨 PLEASE GO TO THE FLARE DEVELOPER HUB INSTEAD: https://github.com/flare-foundation/developer-hub 🚨
+
 This is the source repository for the [Flare docs](https://docs.flare.network/) site.
 
 ## Run locally
