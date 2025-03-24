@@ -3,9 +3,8 @@ hide:
   - toc
 ---
 
-# Welcome to the Flare Network Documentation
 
-Flare is the blockchain for data. It is a Layer 1, EVM smart contract platform designed to expand the utility of blockchain. Read more in [**What Is Flare?**](https://dev.flare.network/intro)
+
 
 <div class="migration-alert" markdown>
 
@@ -13,7 +12,7 @@ Flare is the blockchain for data. It is a Layer 1, EVM smart contract platform d
 
 ## All Flare developer documentation is now available at the [Flare Developer Hub](https://dev.flare.network/)
 
-Visit [https://dev.flare.network/](https://dev.flare.network/) for the most up-to-date developer guides, API references, and technical documentation.
+
 
 Source code repository: [https://github.com/flare-foundation/developer-hub](https://github.com/flare-foundation/developer-hub)
 

@@ -956,3 +956,28 @@ img.inline-image {
         font-size: 0.8rem;
     }
 }
+
+/* Hide the sidebar completely */
+.md-sidebar--primary {
+    display: none !important;
+}
+
+/* Make the main content use full width */
+.md-content {
+    max-width: none;
+}
+
+.md-main__inner {
+    margin-left: 0;
+}
+
+/* Adjust padding when sidebar is hidden */
+@media screen and (min-width: 76.25em) {
+    .md-content {
+        margin-left: 0;
+    }
+
+    .md-sidebar--secondary {
+        margin-left: 0;
+    }
+}

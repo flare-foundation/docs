@@ -28,8 +28,9 @@ theme:
     edit: material/pencil
   features:
     - navigation.top            # "Back to top" button appears upon upward scrolling
-    - navigation.indexes        # Allow section headers to have a page (see tech/index.md)
-    - navigation.sections       # to show first level of sections expanded
+    # - navigation.tabs         # REMOVED: Top navigation tabs
+    # - navigation.indexes      # REMOVED: Allow section headers to have a page (see tech/index.md)
+    # - navigation.sections     # REMOVED: to show first level of sections expanded
     - content.tabs.link
     - search.suggest            # Search will display the likeliest completion for the last word
     - search.highlight          # Highlight all occurrences after following the link
@@ -316,9 +317,4 @@ site_url: https://docs.flare.network
 repo_url: https://github.com/flare-foundation/docs
 edit_uri: edit/main/docs/
 site_dir: public
-nav:
-  - Home:
-      - index.md
-      - tech/flare.md
-      - developer-hub.md
-      - tech/tokenomics.md
+nav: []  # Empty navigation to remove all tabs
